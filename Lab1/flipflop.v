@@ -4,10 +4,10 @@ module DFlipFlop(q, qBar, D, clk, rst);
 	reg q;
 	not n1 (qBar, q);
 		always@ (negedge rst or posedge clk)
-		begin
+		begin  // Statements need to be non-blocking
 			if(!rst)
-				q = 0;
+				q <= 0;
 			else
-				q = D;
+				q <= D;
 		end
 endmodule
