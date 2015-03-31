@@ -7,7 +7,7 @@ module testBench;
   wire [3:0] out;
 
   // declare an instance of the Johnson
-  myJohnson myJohnson (rst, clk, out);
+  Johnson myJohnson (rst, clk, out);
 
   // declare an instance of the testIt module
   Tester aTester (rst, clk, out);
@@ -22,8 +22,8 @@ endmodule
 
 // johnsonTop.v cont.
 module Tester (rst, clk, out);
-  input reg [3:0] out;
-	output clk, rst;
+	input [3:0] out;
+	output reg clk, rst;
 
   parameter stimDelay = 20;
 
@@ -36,7 +36,7 @@ module Tester (rst, clk, out);
   initial // Stimulus
   begin
     clk = 0; rst = 0;
-    #stimDelay clk = 1; 
+    #stimDelay clk = 1; rst = 1;
     #stimDelay clk = 0; 
     #stimDelay clk = 1; 
     #stimDelay clk = 0;
@@ -52,11 +52,15 @@ module Tester (rst, clk, out);
     #stimDelay clk = 0;
     #stimDelay clk = 1; 
     #stimDelay clk = 0;
-    #stimDelay clk = 1; rst = 1; 
+    #stimDelay clk = 1;  
     #stimDelay clk = 0; 
+    #stimDelay clk = 1;
+    #stimDelay clk = 0;
     #stimDelay clk = 1; rst = 0;
     #stimDelay clk = 0;
-    #stimDelay clk = 1;
+	#stimDelay clk = 1; rst = 1;
+    #stimDelay clk = 0;
+	#stimDelay clk = 1;
     #stimDelay clk = 0;
 
     #(2*stimDelay); // needed to see END of simulation
