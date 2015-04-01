@@ -16,7 +16,7 @@ module testBench;
 	// file for gtkwave
 	initial
 	begin
-		$dumpfile("johnson.vcd");
+		$dumpfile("mySynchronousDown.vcd");
 		$dumpvars(1,mySynchronousDown);
 	end
 endmodule 
