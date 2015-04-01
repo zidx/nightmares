@@ -11,7 +11,7 @@ module Tester (rst, clk, out);
   initial // Response
   begin
     $display("\t\t out \t rst \t clk \t Time ");
-		$monitor("\t\t %b \t %b \t %b", out, rst, clk, $time );
+	$monitor("\t\t %b \t %b \t %b", out, rst, clk, $time );
   end
 
   initial // Stimulus
