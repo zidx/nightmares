@@ -18,8 +18,8 @@ module Tester (rst, clk, out);
   begin
     rst = 0; clk = 0;
     #stimDelay rst = 1;
-    #(20 * stimDelay) rst = 0;
-	#(3 * stimDelay) rst = 1;
+    #(64 * stimDelay) rst = 0;
+    #(3 * stimDelay) rst = 1;
     #(4*stimDelay); // needed to see END of simulation
     $finish; // finish simulation
   end
