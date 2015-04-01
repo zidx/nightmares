@@ -30,7 +30,8 @@ module Johnson(rst, clk, out);
 			s4: ns = s5;
 			s5: ns = s6;
 			s6: ns = s7;
-			s7: ns = s8;
+			s7: ns = s0;
 			default: ns = s0;
 		endcase
+	end
 endmodule

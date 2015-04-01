@@ -1,0 +1,8 @@
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Warning (10034): Output port "HEX0" at DE1_SoC.sv(4) has no driver
+Warning (10034): Output port "HEX1" at DE1_SoC.sv(4) has no driver
+Warning (10034): Output port "HEX2" at DE1_SoC.sv(4) has no driver
+Warning (10034): Output port "HEX3" at DE1_SoC.sv(4) has no driver
+Warning (10034): Output port "HEX4" at DE1_SoC.sv(4) has no driver
+Warning (10034): Output port "HEX5" at DE1_SoC.sv(4) has no driver
+Warning (10034): Output port "LEDR[9..4]" at DE1_SoC.sv(5) has no driver

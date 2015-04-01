@@ -13,3 +13,4 @@ module RippleUp(rst, clk, out);
 	DFlipFlop flip3(out[2], qBar3, qBar3, qBar2, rst);
 	DFlipFlop flip4(out[3], qBar4, qBar4, qBar3, rst);
 endmodule
+
