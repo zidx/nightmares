@@ -1,0 +1,240 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_00592340 .scope module, "testBench" "testBench" 2 6;
+ .timescale 0 0;
+v005D0448_0 .net "clk", 0 0, v00595690_0; 1 drivers
+RS_005A3FEC .resolv tri, L_005CFFD0, L_005CFCB8, L_005D0238, L_005D04A0;
+v005D0290_0 .net8 "out", 3 0, RS_005A3FEC; 4 drivers
+v005CFE18_0 .net "rst", 0 0, v00595480_0; 1 drivers
+S_00592560 .scope module, "mySynchronousDown" "SynchronousDown" 2 11, 3 5, S_00592340;
+ .timescale 0 0;
+L_00596940 .functor NOT 1, L_005D04F8, C4<0>, C4<0>, C4<0>;
+L_00596A58 .functor XOR 1, L_005D05A8, L_005D0708, C4<0>, C4<0>;
+L_005A14E0 .functor NOT 1, L_00596A58, C4<0>, C4<0>, C4<0>;
+L_005A1080 .functor OR 1, L_005D03F0, L_005D0080, C4<0>, C4<0>;
+L_005A1438 .functor AND 1, L_005CFF20, L_005A1080, C4<1>, C4<1>;
+L_005A1320 .functor OR 1, L_005D02E8, L_005D0340, C4<0>, C4<0>;
+L_005A11D0 .functor OR 1, L_005A1320, L_005D0600, C4<0>, C4<0>;
+L_005A10F0 .functor NOT 1, L_005A11D0, C4<0>, C4<0>, C4<0>;
+L_005A15C0 .functor OR 1, L_005A1438, L_005A10F0, C4<0>, C4<0>;
+L_005A1208 .functor OR 1, L_005CFDC0, L_005D0658, C4<0>, C4<0>;
+L_005A1710 .functor OR 1, L_005A1208, L_005D06B0, C4<0>, C4<0>;
+L_005A1240 .functor AND 1, L_005D0398, L_005A1710, C4<1>, C4<1>;
+L_005A1198 .functor OR 1, L_005CFF78, L_005CFD10, C4<0>, C4<0>;
+L_005D1260 .functor OR 1, L_005A1198, L_005D0188, C4<0>, C4<0>;
+L_005D1308 .functor OR 1, L_005D1260, L_005CFC60, C4<0>, C4<0>;
+L_005D1228 .functor NOT 1, L_005D1308, C4<0>, C4<0>, C4<0>;
+L_005D10D8 .functor OR 1, L_005A1240, L_005D1228, C4<0>, C4<0>;
+v005CF3E8_0 .net *"_s13", 0 0, L_005D05A8; 1 drivers
+v005CECB0_0 .net *"_s15", 0 0, L_005D0708; 1 drivers
+v005CEEC0_0 .net *"_s16", 0 0, L_00596A58; 1 drivers
+v005CF078_0 .net *"_s21", 0 0, L_005CFF20; 1 drivers
+v005CED60_0 .net *"_s23", 0 0, L_005D03F0; 1 drivers
+v005CF2E0_0 .net *"_s25", 0 0, L_005D0080; 1 drivers
+v005CED08_0 .net *"_s26", 0 0, L_005A1080; 1 drivers
+v005CEE10_0 .net *"_s28", 0 0, L_005A1438; 1 drivers
+v005CEE68_0 .net *"_s31", 0 0, L_005D02E8; 1 drivers
+v005CEF18_0 .net *"_s33", 0 0, L_005D0340; 1 drivers
+v005CEFC8_0 .net *"_s34", 0 0, L_005A1320; 1 drivers
+v005CF020_0 .net *"_s37", 0 0, L_005D0600; 1 drivers
+v005CF0D0_0 .net *"_s38", 0 0, L_005A11D0; 1 drivers
+v005CF338_0 .net *"_s40", 0 0, L_005A10F0; 1 drivers
+v005CF128_0 .net *"_s45", 0 0, L_005D0398; 1 drivers
+v005CF180_0 .net *"_s47", 0 0, L_005CFDC0; 1 drivers
+v005CEC58_0 .net *"_s49", 0 0, L_005D0658; 1 drivers
+v005CF1D8_0 .net *"_s50", 0 0, L_005A1208; 1 drivers
+v005CF230_0 .net *"_s53", 0 0, L_005D06B0; 1 drivers
+v005CF288_0 .net *"_s54", 0 0, L_005A1710; 1 drivers
+v005CF390_0 .net *"_s56", 0 0, L_005A1240; 1 drivers
+v005CF650_0 .net *"_s59", 0 0, L_005CFF78; 1 drivers
+v005CF440_0 .net *"_s61", 0 0, L_005CFD10; 1 drivers
+v005CF4F0_0 .net *"_s62", 0 0, L_005A1198; 1 drivers
+v005CF548_0 .net *"_s65", 0 0, L_005D0188; 1 drivers
+v005CF5F8_0 .net *"_s66", 0 0, L_005D1260; 1 drivers
+v005CF808_0 .net *"_s69", 0 0, L_005CFC60; 1 drivers
+v005CF968_0 .net *"_s70", 0 0, L_005D1308; 1 drivers
+v005CFAC8_0 .net *"_s72", 0 0, L_005D1228; 1 drivers
+v005CF860_0 .net *"_s9", 0 0, L_005D04F8; 1 drivers
+v005CF8B8_0 .alias "clk", 0 0, v005D0448_0;
+v005CF910_0 .net "d0", 0 0, L_00596940; 1 drivers
+v005CF7B0_0 .net "d1", 0 0, L_005A14E0; 1 drivers
+v005CF9C0_0 .net "d2", 0 0, L_005A15C0; 1 drivers
+v005CF758_0 .net "d3", 0 0, L_005D10D8; 1 drivers
+v005CFA18_0 .alias "out", 3 0, v005D0290_0;
+v005CFA70_0 .net "qBar0", 0 0, L_00596A20; 1 drivers
+v005CFB20_0 .net "qBar1", 0 0, L_00596C18; 1 drivers
+v005CFB78_0 .net "qBar2", 0 0, L_00596C50; 1 drivers
+v005CFBD0_0 .net "qBar3", 0 0, L_00596A90; 1 drivers
+v005D0550_0 .alias "rst", 0 0, v005CFE18_0;
+L_005CFFD0 .part/pv v005CF6A8_0, 0, 1, 4;
+L_005CFCB8 .part/pv v005954D8_0, 1, 1, 4;
+L_005D0238 .part/pv v00595110_0, 2, 1, 4;
+L_005D04A0 .part/pv v00595270_0, 3, 1, 4;
+L_005D04F8 .part RS_005A3FEC, 0, 1;
+L_005D05A8 .part RS_005A3FEC, 0, 1;
+L_005D0708 .part RS_005A3FEC, 1, 1;
+L_005CFF20 .part RS_005A3FEC, 2, 1;
+L_005D03F0 .part RS_005A3FEC, 1, 1;
+L_005D0080 .part RS_005A3FEC, 0, 1;
+L_005D02E8 .part RS_005A3FEC, 2, 1;
+L_005D0340 .part RS_005A3FEC, 1, 1;
+L_005D0600 .part RS_005A3FEC, 0, 1;
+L_005D0398 .part RS_005A3FEC, 3, 1;
+L_005CFDC0 .part RS_005A3FEC, 2, 1;
+L_005D0658 .part RS_005A3FEC, 1, 1;
+L_005D06B0 .part RS_005A3FEC, 0, 1;
+L_005CFF78 .part RS_005A3FEC, 3, 1;
+L_005CFD10 .part RS_005A3FEC, 2, 1;
+L_005D0188 .part RS_005A3FEC, 1, 1;
+L_005CFC60 .part RS_005A3FEC, 0, 1;
+S_005925E8 .scope module, "flip0" "DFlipFlop" 3 12, 4 1, S_00592560;
+ .timescale 0 0;
+L_00596A20 .functor NOT 1, v005CF6A8_0, C4<0>, C4<0>, C4<0>;
+v005CF5A0_0 .alias "D", 0 0, v005CF910_0;
+v005CEF70_0 .alias "clk", 0 0, v005D0448_0;
+v005CF6A8_0 .var "q", 0 0;
+v005CEDB8_0 .alias "qBar", 0 0, v005CFA70_0;
+v005CF700_0 .alias "rst", 0 0, v005CFE18_0;
+S_005924D8 .scope module, "flip1" "DFlipFlop" 3 13, 4 1, S_00592560;
+ .timescale 0 0;
+L_00596C18 .functor NOT 1, v005954D8_0, C4<0>, C4<0>, C4<0>;
+v00595588_0 .alias "D", 0 0, v005CF7B0_0;
+v00595378_0 .alias "clk", 0 0, v005D0448_0;
+v005954D8_0 .var "q", 0 0;
+v00595530_0 .alias "qBar", 0 0, v005CFB20_0;
+v005CF498_0 .alias "rst", 0 0, v005CFE18_0;
+S_00591F00 .scope module, "flip2" "DFlipFlop" 3 14, 4 1, S_00592560;
+ .timescale 0 0;
+L_00596C50 .functor NOT 1, v00595110_0, C4<0>, C4<0>, C4<0>;
+v005956E8_0 .alias "D", 0 0, v005CF9C0_0;
+v00595168_0 .alias "clk", 0 0, v005D0448_0;
+v00595110_0 .var "q", 0 0;
+v00595740_0 .alias "qBar", 0 0, v005CFB78_0;
+v00595320_0 .alias "rst", 0 0, v005CFE18_0;
+S_005923C8 .scope module, "flip3" "DFlipFlop" 3 15, 4 1, S_00592560;
+ .timescale 0 0;
+L_00596A90 .functor NOT 1, v00595270_0, C4<0>, C4<0>, C4<0>;
+v005953D0_0 .alias "D", 0 0, v005CF758_0;
+v00595638_0 .alias "clk", 0 0, v005D0448_0;
+v00595270_0 .var "q", 0 0;
+v005950B8_0 .alias "qBar", 0 0, v005CFBD0_0;
+v005951C0_0 .alias "rst", 0 0, v005CFE18_0;
+E_005967D0/0 .event negedge, v00595480_0;
+E_005967D0/1 .event posedge, v00595690_0;
+E_005967D0 .event/or E_005967D0/0, E_005967D0/1;
+S_00591C58 .scope module, "aTester" "Tester" 2 14, 5 1, S_00592340;
+ .timescale 0 0;
+P_005967B4 .param/l "stimDelay" 5 5, +C4<010100>;
+v00595690_0 .var "clk", 0 0;
+v005957F0_0 .alias "out", 3 0, v005D0290_0;
+v00595480_0 .var "rst", 0 0;
+    .scope S_005925E8;
+T_0 ;
+    %wait E_005967D0;
+    %load/v 8, v005CF700_0, 1;
+    %inv 8, 1;
+    %jmp/0xz  T_0.0, 8;
+    %ix/load 0, 1, 0;
+    %assign/v0 v005CF6A8_0, 0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/v 8, v005CF5A0_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v005CF6A8_0, 0, 8;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_005924D8;
+T_1 ;
+    %wait E_005967D0;
+    %load/v 8, v005CF498_0, 1;
+    %inv 8, 1;
+    %jmp/0xz  T_1.0, 8;
+    %ix/load 0, 1, 0;
+    %assign/v0 v005954D8_0, 0, 0;
+    %jmp T_1.1;
+T_1.0 ;
+    %load/v 8, v00595588_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v005954D8_0, 0, 8;
+T_1.1 ;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_00591F00;
+T_2 ;
+    %wait E_005967D0;
+    %load/v 8, v00595320_0, 1;
+    %inv 8, 1;
+    %jmp/0xz  T_2.0, 8;
+    %ix/load 0, 1, 0;
+    %assign/v0 v00595110_0, 0, 0;
+    %jmp T_2.1;
+T_2.0 ;
+    %load/v 8, v005956E8_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v00595110_0, 0, 8;
+T_2.1 ;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_005923C8;
+T_3 ;
+    %wait E_005967D0;
+    %load/v 8, v005951C0_0, 1;
+    %inv 8, 1;
+    %jmp/0xz  T_3.0, 8;
+    %ix/load 0, 1, 0;
+    %assign/v0 v00595270_0, 0, 0;
+    %jmp T_3.1;
+T_3.0 ;
+    %load/v 8, v005953D0_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v00595270_0, 0, 8;
+T_3.1 ;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_00591C58;
+T_4 ;
+    %delay 20, 0;
+    %load/v 8, v00595690_0, 1;
+    %inv 8, 1;
+    %set/v v00595690_0, 8, 1;
+    %jmp T_4;
+    .thread T_4;
+    .scope S_00591C58;
+T_5 ;
+    %vpi_call 5 13 "$display", "\011\011 out \011 rst \011 clk \011 Time ";
+    %vpi_call 5 14 "$monitor", "\011\011 %b \011 %b \011 %b", v005957F0_0, v00595480_0, v00595690_0, $time;
+    %end;
+    .thread T_5;
+    .scope S_00591C58;
+T_6 ;
+    %set/v v00595480_0, 0, 1;
+    %set/v v00595690_0, 0, 1;
+    %delay 20, 0;
+    %set/v v00595480_0, 1, 1;
+    %delay 1280, 0;
+    %set/v v00595480_0, 0, 1;
+    %delay 60, 0;
+    %set/v v00595480_0, 1, 1;
+    %delay 80, 0;
+    %vpi_call 5 24 "$finish";
+    %end;
+    .thread T_6;
+    .scope S_00592340;
+T_7 ;
+    %vpi_call 2 19 "$dumpfile", "mySynchronousDown.vcd";
+    %vpi_call 2 20 "$dumpvars", 2'sb01, S_00592560;
+    %end;
+    .thread T_7;
+# The file index is used to find the file name in the following table.
+:file_names 6;
+    "N/A";
+    "<interactive>";
+    "synchronousDownTop.v";
+    "./synchronousDown.v";
+    "./flipflop.v";
+    "./tester.v";
