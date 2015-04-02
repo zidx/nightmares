@@ -6,13 +6,13 @@ module Johnson(rst, clk, out);
 	reg [3:0] ns;
 	
 	parameter s0 = 4'b0000;
-	parameter s1 = 4'b1000;
-	parameter s2 = 4'b1100;
-	parameter s3 = 4'b1110;
+	parameter s1 = 4'b0001;
+	parameter s2 = 4'b0011;
+	parameter s3 = 4'b0111;
 	parameter s4 = 4'b1111;
-	parameter s5 = 4'b0111;
-	parameter s6 = 4'b0011;
-	parameter s7 = 4'b0001;
+	parameter s5 = 4'b1110;
+	parameter s6 = 4'b1100;
+	parameter s7 = 4'b1000;
 	
 	always@(posedge clk or negedge rst) begin
 		if(~rst)
