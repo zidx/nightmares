@@ -11,6 +11,7 @@
 // Krista Holden
 //
 //----------------------------------------------------------- 
+
 module Johnson(rst, clk, out);
 	input clk, rst;
 	output reg [3:0] out;
