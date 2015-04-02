@@ -1,3 +1,18 @@
+//-----------------------------------------------------------
+// Module name:
+// Tester
+//
+// Description:
+// Module implemented as part of testing system.
+// Tests all possible states of all counters.
+// Tests reset.
+// 
+// Author(s):
+// Krista Holden
+// Cody Ohlsen
+//
+//----------------------------------------------------------- 
+
 module Tester (rst, clk, out);
 	input [3:0] out;
 	output reg clk, rst;

@@ -1,5 +1,16 @@
-// Johnson Counter
-
+//-----------------------------------------------------------
+// Module name:
+// Johnson
+//
+// Description:
+// Module implemented as Johnson counter.
+// Counts using the Johnson method.
+// 
+// Author(s):
+// Zach Nehrenberg
+// Krista Holden
+//
+//----------------------------------------------------------- 
 module Johnson(rst, clk, out);
 	input clk, rst;
 	output reg [3:0] out;

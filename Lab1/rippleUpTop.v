@@ -1,6 +1,18 @@
-// rippleUpTop.v
 `include "rippleUp.v"
 `include "tester.v"
+
+//-----------------------------------------------------------
+// Module name:
+// testBench
+//
+// Description:
+// Module implemented as part of testing system.
+// Test RippleUp counter with Tester module.
+// 
+// Author(s):
+// Zach Nehrenburg
+// Cody Ohlsen
+//-----------------------------------------------------------
 
 module testBench;
   // connect the two modules
@@ -18,5 +30,5 @@ module testBench;
   begin
     $dumpfile("myRippleUp.vcd");
     $dumpvars(1,myRippleUp);
-    end
+  end
 endmodule 

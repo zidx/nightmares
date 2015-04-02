@@ -1,6 +1,18 @@
-// johnsonTop.v
 `include "johnson.v"
 `include "tester.v"
+
+//-----------------------------------------------------------
+// Module name:
+// testBench
+//
+// Description:
+// Module implemented as part of testing system.
+// Test Johnson counter with Tester module.
+// 
+// Author(s):
+// Krista Holden
+//
+//-----------------------------------------------------------
 
 module testBench;
   // connect the two modules
@@ -18,5 +30,5 @@ module testBench;
   begin
     $dumpfile("johnson.vcd");
     $dumpvars(1,myJohnson);
-    end
+  end
 endmodule 
