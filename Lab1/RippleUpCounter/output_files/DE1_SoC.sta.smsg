@@ -97,23 +97,23 @@ Warning (332049): Ignored set_output_delay at DE1_SoC.sdc(93): Argument <targets
 Warning (332049): Ignored set_output_delay at DE1_SoC.sdc(93): Argument -clock is not an object ID
 Warning (332049): Ignored set_output_delay at DE1_SoC.sdc(94): Argument <targets> is an empty collection
 Warning (332049): Ignored set_output_delay at DE1_SoC.sdc(94): Argument -clock is not an object ID
-Warning (332060): Node: ClockDivider:cdiv|divided_clocks[20] was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: RippleUp:ripple|DFlipFlop:flip1|q was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: RippleUp:ripple|DFlipFlop:flip2|q was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: RippleUp:ripple|DFlipFlop:flip1|q~reg0 was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: ClockDivider:cdiv|divided_clocks[5] was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: RippleUp:ripple|DFlipFlop:flip3|q was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: ClockDivider:cdiv|divided_clocks[10] was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: ClockDivider:cdiv|divided_clocks[20] was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: RippleUp:ripple|DFlipFlop:flip1|q was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: ClockDivider:cdiv|divided_clocks[0] was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: RippleUp:ripple|DFlipFlop:flip2|q was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: RippleUp:ripple|DFlipFlop:flip1|q~reg0 was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: ClockDivider:cdiv|divided_clocks[5] was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: RippleUp:ripple|DFlipFlop:flip3|q was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: ClockDivider:cdiv|divided_clocks[10] was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: ClockDivider:cdiv|divided_clocks[20] was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: RippleUp:ripple|DFlipFlop:flip1|q was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: ClockDivider:cdiv|divided_clocks[0] was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: RippleUp:ripple|DFlipFlop:flip2|q was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: RippleUp:ripple|DFlipFlop:flip1|q~reg0 was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: ClockDivider:cdiv|divided_clocks[5] was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: RippleUp:ripple|DFlipFlop:flip3|q was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: ClockDivider:cdiv|divided_clocks[10] was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: ClockDivider:cdiv|divided_clocks[20] was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: RippleUp:ripple|DFlipFlop:flip1|q was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: ClockDivider:cdiv|divided_clocks[0] was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: RippleUp:ripple|DFlipFlop:flip2|q was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: RippleUp:ripple|DFlipFlop:flip1|q~reg0 was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: ClockDivider:cdiv|divided_clocks[5] was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: RippleUp:ripple|DFlipFlop:flip3|q was determined to be a clock but was found without an associated clock assignment.
-Warning (332060): Node: ClockDivider:cdiv|divided_clocks[10] was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: ClockDivider:cdiv|divided_clocks[0] was determined to be a clock but was found without an associated clock assignment.
