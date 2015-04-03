@@ -1,6 +1,6 @@
 Flow report for DE1_SoC
-Tue Mar 31 17:51:47 2015
-Quartus II 64-Bit Version 14.0.1 Build 205 08/13/2014 SJ Web Edition
+Thu Apr 02 17:38:17 2015
+Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Full Version
 
 
 ---------------------
@@ -38,29 +38,29 @@ agreement for further details.
 
 
 
-+------------------------------------------------------------------------------+
-; Flow Summary                                                                 ;
-+---------------------------------+--------------------------------------------+
-; Flow Status                     ; Successful - Tue Mar 31 17:51:47 2015      ;
-; Quartus II 64-Bit Version       ; 14.0.1 Build 205 08/13/2014 SJ Web Edition ;
-; Revision Name                   ; DE1_SoC                                    ;
-; Top-level Entity Name           ; DE1_SoC                                    ;
-; Family                          ; Cyclone V                                  ;
-; Device                          ; 5CSEMA5F31C6                               ;
-; Timing Models                   ; Final                                      ;
-; Logic utilization (in ALMs)     ; 16 / 32,070 ( < 1 % )                      ;
-; Total registers                 ; 30                                         ;
-; Total pins                      ; 67 / 457 ( 15 % )                          ;
-; Total virtual pins              ; 0                                          ;
-; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                      ;
-; Total DSP Blocks                ; 0 / 87 ( 0 % )                             ;
-; Total HSSI RX PCSs              ; 0                                          ;
-; Total HSSI PMA RX Deserializers ; 0                                          ;
-; Total HSSI TX PCSs              ; 0                                          ;
-; Total HSSI PMA TX Serializers   ; 0                                          ;
-; Total PLLs                      ; 0 / 6 ( 0 % )                              ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                              ;
-+---------------------------------+--------------------------------------------+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++---------------------------------+---------------------------------------------+
+; Flow Status                     ; Successful - Thu Apr 02 17:38:17 2015       ;
+; Quartus II 64-Bit Version       ; 14.0.0 Build 200 06/17/2014 SJ Full Version ;
+; Revision Name                   ; DE1_SoC                                     ;
+; Top-level Entity Name           ; DE1_SoC                                     ;
+; Family                          ; Cyclone V                                   ;
+; Device                          ; 5CSEMA5F31C6                                ;
+; Timing Models                   ; Final                                       ;
+; Logic utilization (in ALMs)     ; 409 / 32,070 ( 1 % )                        ;
+; Total registers                 ; 659                                         ;
+; Total pins                      ; 67 / 457 ( 15 % )                           ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 655,360 / 4,065,280 ( 16 % )                ;
+; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0 / 6 ( 0 % )                               ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
++---------------------------------+---------------------------------------------+
 
 
 +-----------------------------------------+
@@ -68,30 +68,57 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/31/2015 17:49:55 ;
+; Start date & time ; 04/02/2015 17:37:02 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE1_SoC             ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                           ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 277411203734299.142784939401344       ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                     ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)       ; <None>        ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                              ; --            ; --          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; --          ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --             ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --          ; --             ;
-; STATE_MACHINE_PROCESSING            ; User-Encoded                          ; Auto          ; --          ; --             ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                      ;
++-------------------------------------+----------------------------------------------------------------+---------------+-------------+------------------+
+; Assignment Name                     ; Value                                                          ; Default Value ; Entity Name ; Section Id       ;
++-------------------------------------+----------------------------------------------------------------+---------------+-------------+------------------+
+; COMPILER_SIGNATURE_ID               ; 91770741814.142802142206156                                    ; --            ; --          ; --               ;
+; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                                              ; --            ; --          ; eda_simulation   ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)                                ; <None>        ; --          ; --               ;
+; ENABLE_SIGNALTAP                    ; On                                                             ; --            ; --          ; --               ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                             ; --            ; --          ; --               ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                              ; --            ; --          ; --               ;
+; PARTITION_COLOR                     ; 16764057                                                       ; --            ; --          ; Top              ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                          ; --            ; --          ; Top              ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                                         ; --            ; --          ; Top              ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                            ; --            ; --          ; --               ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                          ; --            ; --          ; --               ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                   ; --            ; --          ; --               ;
+; SLD_FILE                            ; db/stp5_auto_stripped.stp                                      ; --            ; --          ; --               ;
+; SLD_NODE_CREATOR_ID                 ; 110                                                            ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                                  ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_BLOCK_TYPE=AUTO                                        ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334528                                        ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                                         ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0                  ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                                     ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                                 ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                              ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                                         ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                                   ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INCREMENTAL_ROUTING=1                                      ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                                   ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                                  ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=5                                                ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_BITS=5                                   ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                            ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                           ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=131072                                        ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=131072                                        ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=4                                             ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=0000000000000000000000000000000000000000000 ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=43                                   ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=0                                       ; --            ; --          ; auto_signaltap_0 ;
+; STATE_MACHINE_PROCESSING            ; User-Encoded                                                   ; Auto          ; --          ; --               ;
+; USE_SIGNALTAP_FILE                  ; stp5.stp                                                       ; --            ; --          ; --               ;
++-------------------------------------+----------------------------------------------------------------+---------------+-------------+------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -99,12 +126,13 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:08     ; 1.0                     ; 564 MB              ; 00:00:01                           ;
-; Fitter                    ; 00:00:42     ; 1.0                     ; 1523 MB             ; 00:00:37                           ;
-; Assembler                 ; 00:00:11     ; 1.0                     ; 655 MB              ; 00:00:09                           ;
-; TimeQuest Timing Analyzer ; 00:00:25     ; 1.0                     ; 903 MB              ; 00:00:07                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 532 MB              ; 00:00:01                           ;
-; Total                     ; 00:01:28     ; --                      ; --                  ; 00:00:55                           ;
+; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 693 MB              ; 00:00:04                           ;
+; Partition Merge           ; 00:00:04     ; 1.0                     ; 765 MB              ; 00:00:04                           ;
+; Fitter                    ; 00:00:28     ; 1.7                     ; 2224 MB             ; 00:00:42                           ;
+; Assembler                 ; 00:00:11     ; 1.0                     ; 682 MB              ; 00:00:11                           ;
+; TimeQuest Timing Analyzer ; 00:00:17     ; 2.0                     ; 1036 MB             ; 00:00:26                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 577 MB              ; 00:00:02                           ;
+; Total                     ; 00:01:06     ; --                      ; --                  ; 00:01:29                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -113,19 +141,21 @@ agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; BITTERSWEET      ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; BITTERSWEET      ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; BITTERSWEET      ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; BITTERSWEET      ; Windows 7 ; 6.1        ; x86_64         ;
-; EDA Netlist Writer        ; BITTERSWEET      ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; Partition Merge           ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
-quartus_fit --read_settings_files=off --write_settings_files=off DE1_SoC -c DE1_SoC
+quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC --recompile=on
+quartus_cdb --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC --merge=on --recompile=on
+quartus_fit --read_settings_files=off --write_settings_files=off DE1_SoC -c DE1_SoC --recompile=on
 quartus_asm --read_settings_files=off --write_settings_files=off DE1_SoC -c DE1_SoC
 quartus_sta DE1_SoC -c DE1_SoC
 quartus_eda --read_settings_files=off --write_settings_files=off DE1_SoC -c DE1_SoC

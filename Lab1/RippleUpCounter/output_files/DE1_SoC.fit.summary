@@ -1,15 +1,15 @@
-Fitter Status : Successful - Tue Mar 31 17:50:51 2015
-Quartus II 64-Bit Version : 14.0.1 Build 205 08/13/2014 SJ Web Edition
+Fitter Status : Successful - Thu Apr 02 17:37:41 2015
+Quartus II 64-Bit Version : 14.0.0 Build 200 06/17/2014 SJ Full Version
 Revision Name : DE1_SoC
 Top-level Entity Name : DE1_SoC
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 16 / 32,070 ( < 1 % )
-Total registers : 30
+Logic utilization (in ALMs) : 409 / 32,070 ( 1 % )
+Total registers : 659
 Total pins : 67 / 457 ( 15 % )
 Total virtual pins : 0
-Total block memory bits : 0 / 4,065,280 ( 0 % )
+Total block memory bits : 655,360 / 4,065,280 ( 16 % )
 Total DSP Blocks : 0 / 87 ( 0 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
