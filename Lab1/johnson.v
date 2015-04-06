@@ -28,7 +28,7 @@ module Johnson(rst, clk, out);
 	
 	always@(posedge clk or negedge rst) begin
 		if(~rst)
-			out <= 4'b0000;
+			out <= s0;
 		else
 			out <= ns;
 	end

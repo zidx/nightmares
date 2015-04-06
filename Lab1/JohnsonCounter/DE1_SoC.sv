@@ -8,7 +8,7 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 
 	 // Generate clk off of CLOCK_50, whichClock picks rate.
 	 wire [31:0] clk;
-	 parameter whichClock = 25;
+	 parameter whichClock = 20;
 	 ClockDivider cdiv (CLOCK_50, clk);
 
 	 Johnson johnson (SW[0], clk[whichClock], LEDR[3:0]);
