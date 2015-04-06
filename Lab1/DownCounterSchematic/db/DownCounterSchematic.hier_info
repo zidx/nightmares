@@ -1,0 +1,80 @@
+|DownCounterSchematic
+PIN_V18 <= DFlipFlop:inst6.q
+PIN_AF14 => ClockDivider:inst2.clock
+PIN_AB12 => DFlipFlop:inst3.rst
+PIN_AB12 => DFlipFlop:inst4.rst
+PIN_AB12 => DFlipFlop:inst5.rst
+PIN_AB12 => DFlipFlop:inst6.rst
+PIN_V17 <= DFlipFlop:inst5.q
+PIN_W16 <= DFlipFlop:inst4.q
+PIN_V16 <= DFlipFlop:inst3.q
+
+
+|DownCounterSchematic|DFlipFlop:inst6
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qBar <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D => q~reg0.DATAIN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+
+
+|DownCounterSchematic|DFlipFlop:inst4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qBar <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D => q~reg0.DATAIN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+
+
+|DownCounterSchematic|DFlipFlop:inst3
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qBar <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D => q~reg0.DATAIN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+
+
+|DownCounterSchematic|ClockDivider:inst2
+clock => divided_clocks[0].CLK
+clock => divided_clocks[1].CLK
+clock => divided_clocks[2].CLK
+clock => divided_clocks[3].CLK
+clock => divided_clocks[4].CLK
+clock => divided_clocks[5].CLK
+clock => divided_clocks[6].CLK
+clock => divided_clocks[7].CLK
+clock => divided_clocks[8].CLK
+clock => divided_clocks[9].CLK
+clock => divided_clocks[10].CLK
+clock => divided_clocks[11].CLK
+clock => divided_clocks[12].CLK
+clock => divided_clocks[13].CLK
+clock => divided_clocks[14].CLK
+clock => divided_clocks[15].CLK
+clock => divided_clocks[16].CLK
+clock => divided_clocks[17].CLK
+clock => divided_clocks[18].CLK
+clock => divided_clocks[19].CLK
+clock => divided_clocks[20].CLK
+clock => divided_clocks[21].CLK
+clock => divided_clocks[22].CLK
+clock => divided_clocks[23].CLK
+clock => divided_clocks[24].CLK
+clock => divided_clocks[25].CLK
+clock => divided_clocks[26].CLK
+clock => divided_clocks[27].CLK
+clock => divided_clocks[28].CLK
+clock => divided_clocks[29].CLK
+clock => divided_clocks[30].CLK
+clock => divided_clocks[31].CLK
+out <= divided_clocks[20].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DownCounterSchematic|DFlipFlop:inst5
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qBar <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D => q~reg0.DATAIN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+
+

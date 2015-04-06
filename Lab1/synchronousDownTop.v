@@ -1,4 +1,16 @@
-// Synchronous Down counter
+//-----------------------------------------------------------
+// Module name:
+// testBench
+//
+// Description:
+// Module implemented as part of testing system.
+// Test synchronous down counter with Tester module.
+// 
+// Author(s):
+// Zach Nehrenburg
+// Cody Ohlsen
+// Krista Holden
+//-----------------------------------------------------------
 
 `include "synchronousDown.v"
 `include "tester.v"
@@ -7,13 +19,13 @@ module testBench;
 	wire clk, rst;
 	wire [3:0] out;
 	
-	//declare instance of synchonous down counter.
+	//declare instance of synchronous down counter.
 	SynchronousDown mySynchronousDown (rst, clk, out);
 
-	// declare an instance of the testIt module
+	// declare an instance of the Tester module
 	Tester aTester (rst, clk, out);
 
-	// file for gtkwave
+	// generate file for gtkwave
 	initial
 	begin
 		$dumpfile("mySynchronousDown.vcd");

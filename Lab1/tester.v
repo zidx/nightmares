@@ -17,8 +17,10 @@ module Tester (rst, clk, out);
 	input [3:0] out;
 	output reg clk, rst;
 
+  // creates a clock with specified delay
   parameter stimDelay = 20;
 
+  //clock changes every delay
   always begin
     #stimDelay clk = !clk;
   end
