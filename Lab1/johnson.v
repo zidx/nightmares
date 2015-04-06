@@ -17,6 +17,7 @@ module Johnson(rst, clk, out);
 	output reg [3:0] out;
 	reg [3:0] ns;
 	
+	// each state of the 4-bit Johnson counter
 	parameter s0 = 4'b0000;
 	parameter s1 = 4'b0001;
 	parameter s2 = 4'b0011;
@@ -26,6 +27,7 @@ module Johnson(rst, clk, out);
 	parameter s6 = 4'b1100;
 	parameter s7 = 4'b1000;
 	
+	// each clock cycle, checks for reset and changes state
 	always@(posedge clk or negedge rst) begin
 		if(~rst)
 			out <= 4'b0000;
@@ -33,6 +35,8 @@ module Johnson(rst, clk, out);
 			out <= ns;
 	end
 	
+	// state encoding.
+	// determine next state from previous state. 
 	always@(*) begin
 		case(out)
 			s0: ns = s1;

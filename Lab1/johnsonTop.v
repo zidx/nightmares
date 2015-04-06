@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 `include "johnson.v"
 `include "johsonTester.v"
 
+=======
+>>>>>>> ee2d46b48e64a536a394ff29c950d296863ac56f
 //-----------------------------------------------------------
 // Module name:
 // testBench
@@ -13,6 +16,9 @@
 // Krista Holden
 //
 //-----------------------------------------------------------
+
+`include "johnson.v"
+`include "tester.v"
 
 module testBench;
   // connect the two modules

@@ -1,6 +1,3 @@
-`include "rippleUp.v"
-`include "tester.v"
-
 //-----------------------------------------------------------
 // Module name:
 // testBench
@@ -13,6 +10,9 @@
 // Zach Nehrenburg
 // Cody Ohlsen
 //-----------------------------------------------------------
+
+`include "rippleUp.v"
+`include "tester.v"
 
 module testBench;
   // connect the two modules

@@ -1,4 +1,15 @@
-// Synchronous Down counter
+//-----------------------------------------------------------
+// Module name:
+// SynchronousDown
+//
+// Description:
+// Module implemented as a synchronous down counter.
+// Includes inputs reset and clock, and outputs the count.
+// 
+// Author(s):
+// Zach Nerhenberg
+//
+//----------------------------------------------------------- 
 
 `include "flipflop.v"
 
