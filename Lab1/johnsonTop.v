@@ -1,6 +1,3 @@
-`include "johnson.v"
-`include "tester.v"
-
 //-----------------------------------------------------------
 // Module name:
 // testBench
@@ -13,6 +10,9 @@
 // Krista Holden
 //
 //-----------------------------------------------------------
+
+`include "johnson.v"
+`include "tester.v"
 
 module testBench;
   // connect the two modules

@@ -58,12 +58,13 @@
         <trigger_in_editor bit_condition="rising edge" is_enabled="true" is_hps_event_selected="false" is_hps_trigger_in_selected="false" is_hps_trigger_out_selected="false" is_node_selected="true" is_pin_selected="false" node_name="RippleUp:ripple|rst" pin_name="auto_stp_trigger_in_auto_signaltap_0"/>
         <trigger_out_editor/>
       </presentation>
-      <trigger CRC="2B2065D5" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2015/04/02 17:42:42  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="16384" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_in="rising edge" trigger_type="circular">
+      <trigger CRC="2B2065D5" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2015/04/02 17:42:42  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="16384" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_in="rising edge" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no" trigger_in="high"/>
         <events use_custom_flow_control="no">
           <level enabled="yes" name="condition1" type="basic">'RippleUp:ripple|rst' == rising edge
             <power_up enabled="yes">
-            </power_up><op_node>
+            </power_up>
+            <op_node>
               <op_node left="610" top="190" type="Advanced Trigger Level Result"/>
             </op_node>
           </level>
