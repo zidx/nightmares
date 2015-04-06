@@ -30,7 +30,7 @@ module Johnson(rst, clk, out);
 	// each clock cycle, checks for reset and changes state
 	always@(posedge clk or negedge rst) begin
 		if(~rst)
-			out <= 4'b0000;
+			out <= s0;
 		else
 			out <= ns;
 	end
