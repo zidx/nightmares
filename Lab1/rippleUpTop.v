@@ -12,7 +12,7 @@
 //-----------------------------------------------------------
 
 `include "rippleUp.v"
-`include "tester.v"
+`include "rippleUpTester.v"
 
 module testBench;
   // connect the two modules
@@ -23,7 +23,7 @@ module testBench;
   RippleUp myRippleUp (rst, clk, out);
 
   // declare an instance of the testIt module
-  Tester aTester (rst, clk, out);
+  RippleUpTester aTester (rst, clk, out);
 
   // file for gtkwave
   initial

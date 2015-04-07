@@ -12,7 +12,7 @@
 //-----------------------------------------------------------
 
 `include "johnson.v"
-`include "tester.v"
+`include "johnsonTester.v"
 
 module testBench;
   // connect the two modules
@@ -23,7 +23,7 @@ module testBench;
   Johnson myJohnson (rst, clk, out);
 
   // declare an instance of the testIt module
-  Tester aTester (rst, clk, out);
+  JohnsonTester myJohnsonTester (rst, clk, out);
 
   // file for gtkwave
   initial

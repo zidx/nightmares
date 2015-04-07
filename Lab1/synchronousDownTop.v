@@ -13,7 +13,7 @@
 //-----------------------------------------------------------
 
 `include "synchronousDown.v"
-`include "tester.v"
+`include "synchronousDownTester.v"
 
 module testBench;
 	wire clk, rst;
@@ -23,7 +23,7 @@ module testBench;
 	SynchronousDown mySynchronousDown (rst, clk, out);
 
 	// declare an instance of the Tester module
-	Tester aTester (rst, clk, out);
+	SynchronousDownTester aTester (rst, clk, out);
 
 	// generate file for gtkwave
 	initial
