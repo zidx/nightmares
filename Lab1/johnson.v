@@ -28,11 +28,11 @@ module Johnson(rst, clk, out);
 	parameter s7 = 4'b1000;
 	
 	// each clock cycle, checks for reset and changes state
-	always@(posedge clk or negedge rst) begin
-		if(~rst)
-			out <= s0;
-		else
+	always@(posedge clk) begin
+		if(rst)
 			out <= ns;
+		else
+			out <= s0;
 	end
 	
 	// state encoding.
