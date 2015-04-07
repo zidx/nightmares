@@ -12,7 +12,7 @@
 //-----------------------------------------------------------
 
 `include "rippleUp.v"
-`include "tester.v"
+`include "rippleTester.v"
 
 module testBench;
   // connect the two modules

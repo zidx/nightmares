@@ -1,6 +1,6 @@
 //-----------------------------------------------------------
 // Module name:
-// JohnsonTester
+// RippleTester
 //
 // Description:
 // Module implemented as part of testing system.
@@ -13,7 +13,7 @@
 //
 //----------------------------------------------------------- 
 
-module JohnsonTester (rst, clk, out);
+module RippleTester (rst, clk, out);
 	input [3:0] out;
 	output reg clk, rst;
 
