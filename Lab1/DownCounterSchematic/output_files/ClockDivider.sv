@@ -10,6 +10,6 @@ module ClockDivider (clock, out);
 	 always @(posedge clock)
 	 divided_clocks = divided_clocks + 1;
 	 
-	 parameter whichClock = 20;
+	 parameter whichClock = 10;
 	 assign out = divided_clocks[whichClock];
 endmodule 
