@@ -13,7 +13,7 @@
 //
 //----------------------------------------------------------- 
 
-module RippleTester (rst, clk, out);
+module RippleUpTester (rst, clk, out);
 	input [3:0] out;
 	output reg clk, rst;
 
