@@ -32,10 +32,10 @@ module SynchronousDownSchematicTester (rst, clk, out);
   initial // Stimulus
   begin
     rst = 0; clk = 0;
-    #stimDelay rst = 1;
+    #(5 * stimDelay) rst = 1;
     #(64 * stimDelay) rst = 0;
     #(3 * stimDelay) rst = 1;
-    #(4*stimDelay); // needed to see END of simulation
+    #(4 * stimDelay); // needed to see END of simulation
     $finish; // finish simulation
   end
 endmodule 

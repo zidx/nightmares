@@ -3,11 +3,11 @@ module DFlipFlop(q, qBar, D, clk, rst);
 	output q, qBar;
 	reg q;
 	not n1 (qBar, q);
-		always@ (negedge rst or posedge clk)
+		always@ (posedge clk) // Reset needs to be synchronous
 		begin  // Statements need to be non-blocking
-			if(!rst)
-				q <= 0;
-			else
+			if(rst)
 				q <= D;
+			else
+				q <= 0;
 		end
 endmodule
