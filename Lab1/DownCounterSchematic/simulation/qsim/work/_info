@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\zachn\Documents\nightmares\Lab1\DownCounterSchematic\simulation\qsim
+vDownCounterSchematic
+Z1 !s100 cECBS18Hoke]N[4Z1S:EU0
+Z2 I2IRB<?bho_0X>SDi?KBQH2
+Z3 VRD[XnRWS0eBHYP]j@[7Om3
+Z4 dC:\Users\zachn\Documents\nightmares\Lab1\DownCounterSchematic\simulation\qsim
+Z5 w1428374902
+Z6 8DownCounterSchematic.vo
+Z7 FDownCounterSchematic.vo
+L0 32
+Z8 OV;L;10.1e;51
+r1
+31
+Z9 !s90 -work|work|DownCounterSchematic.vo|
+Z10 o-work work -O0
+Z11 n@down@counter@schematic
+!i10b 1
+!s85 0
+Z12 !s108 1428374903.503000
+Z13 !s107 DownCounterSchematic.vo|
+!s101 -O0
+vDownCounterSchematic_vlg_check_tst
+!i10b 1
+Z14 !s100 jVcU6Mj32VYg2U8<L9TN_2
+Z15 I3kn=W?KzfPF9a[NQNL2K^0
+Z16 VTzSJe`BklnDBV:o0;ASge0
+R4
+Z17 w1428374900
+Z18 8Waveform.vwf.vt
+Z19 FWaveform.vwf.vt
+L0 60
+R8
+r1
+!s85 0
+31
+Z20 !s108 1428374903.936000
+Z21 !s107 Waveform.vwf.vt|
+Z22 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R10
+Z23 n@down@counter@schematic_vlg_check_tst
+vDownCounterSchematic_vlg_sample_tst
+!i10b 1
+Z24 !s100 fjfTX>LS9k<Q[kVMH_MN?2
+Z25 IC]Ua5QV;jImd5Tl@O9bBC1
+Z26 VhPiEfcClEBoekE91U6HF>2
+R4
+R17
+R18
+R19
+L0 30
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@down@counter@schematic_vlg_sample_tst
+vDownCounterSchematic_vlg_vec_tst
+!i10b 1
+Z28 !s100 0EGlc010`N1dnJQIifQJc1
+Z29 IMVOTXG4aWb1_^7;iG]We>0
+Z30 V25DW56752YLGzKoD3m<n90
+R4
+R17
+R18
+R19
+Z31 L0 236
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z32 n@down@counter@schematic_vlg_vec_tst

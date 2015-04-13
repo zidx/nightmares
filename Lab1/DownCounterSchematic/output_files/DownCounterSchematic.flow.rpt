@@ -1,5 +1,5 @@
 Flow report for DownCounterSchematic
-Mon Apr 06 17:24:43 2015
+Tue Apr 07 15:41:20 2015
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Full Version
 
 
@@ -41,7 +41,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Mon Apr 06 17:24:43 2015       ;
+; Flow Status                     ; Successful - Tue Apr 07 15:41:20 2015       ;
 ; Quartus II 64-Bit Version       ; 14.0.0 Build 200 06/17/2014 SJ Full Version ;
 ; Revision Name                   ; DownCounterSchematic                        ;
 ; Top-level Entity Name           ; DownCounterSchematic                        ;
@@ -131,7 +131,25 @@ agreement for further details.
 ; Assembler                 ; 00:00:10     ; 1.0                     ; 679 MB              ; 00:00:11                           ;
 ; TimeQuest Timing Analyzer ; 00:00:15     ; 1.9                     ; 1025 MB             ; 00:00:22                           ;
 ; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 573 MB              ; 00:00:02                           ;
-; Total                     ; 00:01:08     ; --                      ; --                  ; 00:01:33                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 553 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 569 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 553 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 569 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 553 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 581 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:08     ; 1.0                     ; 860 MB              ; 00:00:08                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 553 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 569 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 553 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 569 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 553 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 553 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 569 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 553 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 569 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 553 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 569 MB              ; 00:00:01                           ;
+; Total                     ; 00:01:41     ; --                      ; --                  ; 00:01:59                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -146,6 +164,24 @@ agreement for further details.
 ; Assembler                 ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
 ; TimeQuest Timing Analyzer ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
 ; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
@@ -158,6 +194,24 @@ quartus_fit --read_settings_files=off --write_settings_files=off DownCounterSche
 quartus_asm --read_settings_files=off --write_settings_files=off DownCounterSchematic -c DownCounterSchematic
 quartus_sta DownCounterSchematic -c DownCounterSchematic
 quartus_eda --read_settings_files=off --write_settings_files=off DownCounterSchematic -c DownCounterSchematic
+quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog DownCounterSchematic -c DownCounterSchematic --vector_source=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/Waveform.vwf --testbench_file=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/simulation/qsim/Waveform.vwf.vt
+quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/simulation/qsim/ DownCounterSchematic -c DownCounterSchematic
+quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog DownCounterSchematic -c DownCounterSchematic --vector_source=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/Waveform.vwf --testbench_file=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/simulation/qsim/Waveform.vwf.vt
+quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/simulation/qsim/ DownCounterSchematic -c DownCounterSchematic
+quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog DownCounterSchematic -c DownCounterSchematic --vector_source=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/Waveform.vwf --testbench_file=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/simulation/qsim/Waveform.vwf.vt
+quartus_eda --functional=off --flatten_buses=off --timescale=1ps --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/simulation/qsim/ DownCounterSchematic -c DownCounterSchematic
+quartus_sta DownCounterSchematic -c DownCounterSchematic
+quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog DownCounterSchematic -c DownCounterSchematic --vector_source=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/Waveform.vwf --testbench_file=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/simulation/qsim/Waveform.vwf.vt
+quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/simulation/qsim/ DownCounterSchematic -c DownCounterSchematic
+quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog DownCounterSchematic -c DownCounterSchematic --vector_source=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/Waveform.vwf --testbench_file=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/simulation/qsim/Waveform.vwf.vt
+quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/simulation/qsim/ DownCounterSchematic -c DownCounterSchematic
+quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog DownCounterSchematic -c DownCounterSchematic --vector_source=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/Waveform.vwf --testbench_file=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/simulation/modelsim/Waveform.vwf.vt
+quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog DownCounterSchematic -c DownCounterSchematic --vector_source=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/Waveform.vwf --testbench_file=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/simulation/qsim/Waveform.vwf.vt
+quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/simulation/qsim/ DownCounterSchematic -c DownCounterSchematic
+quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog DownCounterSchematic -c DownCounterSchematic --vector_source=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/Waveform.vwf --testbench_file=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/simulation/qsim/Waveform.vwf.vt
+quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/simulation/qsim/ DownCounterSchematic -c DownCounterSchematic
+quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog DownCounterSchematic -c DownCounterSchematic --vector_source=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/Waveform.vwf --testbench_file=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/simulation/qsim/Waveform.vwf.vt
+quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/zachn/Documents/nightmares/Lab1/DownCounterSchematic/simulation/qsim/ DownCounterSchematic -c DownCounterSchematic
 
 
 
