@@ -1,0 +1,19 @@
+//-----------------------------------------------------------
+// Module name:
+// UserInputTop
+//
+// Description:
+// Module implemented as part of testing system.
+// Test UserInput with UserInputTester module.
+// 
+// Author(s):
+// Krista Holden
+//
+//-----------------------------------------------------------
+
+`include "UserInput.v"
+`include "UserInputTester.v"
+
+module UserInputTop ();
+
+endmodule
