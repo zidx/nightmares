@@ -11,7 +11,7 @@
 //
 //----------------------------------------------------------- 
 
-`include "rippleUp.v"
+`include "SynchronousUp.v"
 
 module AtStateCounter(rst, clk, out);
 	input clk, rst;
@@ -26,7 +26,7 @@ module AtStateCounter(rst, clk, out);
 	
 	assign out = {atFive, atSeven, atEight};
 	
-	RippleUp counter(rst, clk, count);
+	SynchronousUp counter(rst, clk, count);
 	
 	assign atFive = (count == five);
 	assign atSeven = (count == seven);

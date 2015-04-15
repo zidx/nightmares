@@ -1,0 +1,32 @@
+//-----------------------------------------------------------
+// Module name:
+// AtStateCounter
+//
+// Description:
+// Implements a 4-bit ripple up counter with reset active low
+// where counting beings at 0000 and loops back after 1111
+// 
+// Author(s):
+// Krista Holden
+//
+//----------------------------------------------------------- 
+
+`include "rippleUp.v"
+
+module AtStateCounter(rst, clk, out);
+	input clk, rst;
+	output [2:0] out;
+	
+	wire [3:0] count;
+	
+	parameter five_mask = 4'b0101;
+	parameter seven_mask = 4'b0111;
+	parameter eight_mask = 4'b1000;
+	
+	RippleUp counter(rst, clk, count);
+	
+	assign out[0] = (count == five_mask);
+	assign out[1] = (count == seven_mask);
+	assign out[2] = (count == eight_mask);
+	
+endmodule
