@@ -950,7 +950,7 @@ set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_CK_N
 #============================================================
 
 
-set_global_assignment -name LAST_QUARTUS_VERSION 14.0
+set_global_assignment -name LAST_QUARTUS_VERSION 14.1.0
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -964,19 +964,12 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_global_assignment -name STATE_MACHINE_PROCESSING "USER-ENCODED"
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name VERILOG_FILE flipflop.v
-set_global_assignment -name VERILOG_FILE rippleUpTop.v
-set_global_assignment -name VERILOG_FILE rippleUpTester.v
-set_global_assignment -name VERILOG_FILE rippleUp.v
 set_global_assignment -name SDC_FILE DE1_SoC.sdc
 set_global_assignment -name SYSTEMVERILOG_FILE DE1_SoC.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Timer.sv
 set_global_assignment -name VERILOG_FILE UserInput.v
-set_global_assignment -name VERILOG_FILE UserInputTop.v
-set_global_assignment -name VERILOG_FILE UserInputTester.v
-set_global_assignment -name VERILOG_FILE AtStateCounterTop.v
-set_global_assignment -name VERILOG_FILE AtStateCounterTester.v
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name VERILOG_FILE leavingUranus.v
 
+
+set_global_assignment -name SYSTEMVERILOG_FILE enteringUranus.sv
+set_global_assignment -name SYSTEMVERILOG_FILE leavingUranus.sv
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

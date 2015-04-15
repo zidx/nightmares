@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SoC
-Tue Apr 14 17:37:11 2015
+Tue Apr 14 17:59:22 2015
 Quartus II 64-Bit Version 14.1.0 Build 186 12/03/2014 SJ Web Edition
 
 
@@ -48,7 +48,7 @@ agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Apr 14 17:37:11 2015      ;
+; Analysis & Synthesis Status     ; Successful - Tue Apr 14 17:59:21 2015      ;
 ; Quartus II 64-Bit Version       ; 14.1.0 Build 186 12/03/2014 SJ Web Edition ;
 ; Revision Name                   ; DE1_SoC                                    ;
 ; Top-level Entity Name           ; DE1_SoC                                    ;
@@ -235,6 +235,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Parameter Name ; Value     ; Type                                       ;
 +----------------+-----------+--------------------------------------------+
 ; whichClock     ; 6         ; Signed Integer                             ;
+; noMin          ; 000       ; Unsigned Binary                            ;
+; fiveMin        ; 001       ; Unsigned Binary                            ;
+; sevenMin       ; 010       ; Unsigned Binary                            ;
+; eightMin       ; 100       ; Unsigned Binary                            ;
 ; uranusOpens    ; 111100000 ; Unsigned Binary                            ;
 ; uranusFive     ; 100101100 ; Unsigned Binary                            ;
 +----------------+-----------+--------------------------------------------+
@@ -300,15 +304,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 14.1.0 Build 186 12/03/2014 SJ Web Edition
-    Info: Processing started: Tue Apr 14 17:37:01 2015
+    Info: Processing started: Tue Apr 14 17:59:12 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
 Info (12021): Found 2 design units, including 2 entities, in source file de1_soc.sv
     Info (12023): Found entity 1: DE1_SoC
     Info (12023): Found entity 2: ClockDivider
 Info (12021): Found 1 design units, including 1 entities, in source file timer.sv
     Info (12023): Found entity 1: Timer
+Info (12021): Found 1 design units, including 1 entities, in source file userinput.v
+    Info (12023): Found entity 1: UserInput
 Info (12021): Found 1 design units, including 1 entities, in source file enteringuranus.sv
     Info (12023): Found entity 1: enteringUranus
+Info (12021): Found 1 design units, including 1 entities, in source file leavinguranus.sv
+    Info (12023): Found entity 1: leavingUranus
 Info (12127): Elaborating entity "DE1_SoC" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at DE1_SoC.sv(10): object "spacecraftArriving" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at DE1_SoC.sv(11): object "spacecraftDeparting" assigned a value but never read
@@ -324,9 +332,9 @@ Info (21057): Implemented 67 device resources after synthesis - the final resour
     Info (21059): Implemented 52 output pins
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 659 megabytes
-    Info: Processing ended: Tue Apr 14 17:37:11 2015
+    Info: Processing ended: Tue Apr 14 17:59:22 2015
     Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Total CPU time (on all processors): 00:00:22
 
 
 +------------------------------------------+
