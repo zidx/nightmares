@@ -30,5 +30,6 @@ module AtStateCounter(rst, clk, out);
 	
 	assign atFive = (count == five);
 	assign atSeven = (count == seven);
-	assign atEight = (count == eight);	
+	assign atEight = (count == eight);
+	
 endmodule
