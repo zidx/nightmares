@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SoC
-Thu Apr 02 18:10:00 2015
+Tue Apr 14 15:08:29 2015
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Full Version
 
 
@@ -16,21 +16,23 @@ Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Full Version
   8. Registers Removed During Synthesis
   9. General Register Statistics
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Source assignments for sld_signaltap:auto_signaltap_1
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |DE1_SoC
- 13. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_1
- 14. Port Connectivity Checks: "SynchronousDown:syncDown|DFlipFlop:flip3"
- 15. Port Connectivity Checks: "SynchronousDown:syncDown|DFlipFlop:flip2"
- 16. Port Connectivity Checks: "SynchronousDown:syncDown|DFlipFlop:flip1"
- 17. Port Connectivity Checks: "SynchronousDown:syncDown|DFlipFlop:flip0"
- 18. Port Connectivity Checks: "ClockDivider:cdiv"
- 19. SignalTap II Logic Analyzer Settings
- 20. Post-Synthesis Netlist Statistics for Top Partition
- 21. Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub
- 22. Analysis & Synthesis Resource Utilization by Entity
- 23. Elapsed Time Per Partition
- 24. Analysis & Synthesis Messages
- 25. Analysis & Synthesis Suppressed Messages
+ 11. Source assignments for sld_signaltap:auto_signaltap_0
+ 12. Source assignments for sld_signaltap:auto_signaltap_1
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |DE1_SoC
+ 14. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 15. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_1
+ 16. Port Connectivity Checks: "SynchronousDown:syncDown|DFlipFlop:flip3"
+ 17. Port Connectivity Checks: "SynchronousDown:syncDown|DFlipFlop:flip2"
+ 18. Port Connectivity Checks: "SynchronousDown:syncDown|DFlipFlop:flip1"
+ 19. Port Connectivity Checks: "SynchronousDown:syncDown|DFlipFlop:flip0"
+ 20. Port Connectivity Checks: "ClockDivider:cdiv"
+ 21. SignalTap II Logic Analyzer Settings
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub
+ 24. Analysis & Synthesis Resource Utilization by Entity
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
+ 27. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -57,7 +59,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Apr 02 18:10:00 2015       ;
+; Analysis & Synthesis Status     ; Successful - Tue Apr 14 15:08:29 2015       ;
 ; Quartus II 64-Bit Version       ; 14.0.0 Build 200 06/17/2014 SJ Full Version ;
 ; Revision Name                   ; DE1_SoC                                     ;
 ; Top-level Entity Name           ; DE1_SoC                                     ;
@@ -174,11 +176,12 @@ agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.0%      ;
+;     Processors 2-4         ; < 0.1%      ;
+;     Processors 5-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -248,23 +251,23 @@ agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimate of Logic utilization (ALMs needed) ; 13    ;
+; Estimate of Logic utilization (ALMs needed) ; 12    ;
 ;                                             ;       ;
-; Combinational ALUT usage for logic          ; 26    ;
+; Combinational ALUT usage for logic          ; 24    ;
 ;     -- 7 input functions                    ; 0     ;
 ;     -- 6 input functions                    ; 0     ;
 ;     -- 5 input functions                    ; 0     ;
 ;     -- 4 input functions                    ; 1     ;
-;     -- <=3 input functions                  ; 25    ;
+;     -- <=3 input functions                  ; 23    ;
 ;                                             ;       ;
-; Dedicated logic registers                   ; 25    ;
+; Dedicated logic registers                   ; 23    ;
 ;                                             ;       ;
 ; I/O pins                                    ; 0     ;
 ; Total DSP Blocks                            ; 0     ;
 ; Maximum fan-out node                        ; ~GND  ;
 ; Maximum fan-out                             ; 48    ;
-; Total fan-out                               ; 163   ;
-; Average fan-out                             ; 1.31  ;
+; Total fan-out                               ; 155   ;
+; Average fan-out                             ; 1.29  ;
 +---------------------------------------------+-------+
 
 
@@ -273,8 +276,8 @@ agreement for further details.
 +-------------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------------------------------------+--------------+
 ; Compilation Hierarchy Node    ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Library Name ;
 +-------------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------------------------------------+--------------+
-; |DE1_SoC                      ; 26 (1)            ; 25 (0)       ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC                                          ; work         ;
-;    |ClockDivider:cdiv|        ; 21 (21)           ; 21 (21)      ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|ClockDivider:cdiv                        ; work         ;
+; |DE1_SoC                      ; 24 (1)            ; 23 (0)       ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC                                          ; work         ;
+;    |ClockDivider:cdiv|        ; 19 (19)           ; 19 (19)      ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|ClockDivider:cdiv                        ; work         ;
 ;    |SynchronousDown:syncDown| ; 4 (2)             ; 4 (0)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|SynchronousDown:syncDown                 ; work         ;
 ;       |DFlipFlop:flip0|       ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|SynchronousDown:syncDown|DFlipFlop:flip0 ; work         ;
 ;       |DFlipFlop:flip1|       ; 0 (0)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|SynchronousDown:syncDown|DFlipFlop:flip1 ; work         ;
@@ -289,8 +292,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------+--------------------+
 ; Register name                            ; Reason for Removal ;
 +------------------------------------------+--------------------+
-; ClockDivider:cdiv|divided_clocks[21..31] ; Lost fanout        ;
-; Total Number of Removed Registers = 11   ;                    ;
+; ClockDivider:cdiv|divided_clocks[19..31] ; Lost fanout        ;
+; Total Number of Removed Registers = 13   ;                    ;
 +------------------------------------------+--------------------+
 
 
@@ -299,7 +302,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 25    ;
+; Total registers                              ; 23    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 4     ;
@@ -314,14 +317,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE1_SoC|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg[2]                    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE1_SoC|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg[0]                    ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE1_SoC|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg[3]                    ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |DE1_SoC|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|mixer_addr_reg[4]                       ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |DE1_SoC|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|word_counter[0] ;
-; 6:1                ; 9 bits    ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |DE1_SoC|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irsr_reg[2]                             ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |DE1_SoC|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irf_reg[2][3]                           ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |DE1_SoC|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irf_reg[1][5]                           ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |DE1_SoC|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|word_counter[4] ;
+; 7:1                ; 10 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |DE1_SoC|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|shadow_irf_reg[2][8]                    ;
+; 7:1                ; 10 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |DE1_SoC|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|shadow_irf_reg[1][2]                    ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 20 LEs               ; 30 LEs                 ; Yes        ; |DE1_SoC|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irsr_reg[3]                             ;
 ; 34:1               ; 4 bits    ; 88 LEs        ; 64 LEs               ; 24 LEs                 ; Yes        ; |DE1_SoC|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[0]                      ;
-; 20:1               ; 4 bits    ; 52 LEs        ; 32 LEs               ; 20 LEs                 ; Yes        ; |DE1_SoC|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|WORD_SR[3]      ;
+; 28:1               ; 4 bits    ; 72 LEs        ; 56 LEs               ; 16 LEs                 ; Yes        ; |DE1_SoC|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|WORD_SR[0]      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Source assignments for sld_signaltap:auto_signaltap_0 ;
++-----------------+-------+------+----------------------+
+; Assignment      ; Value ; From ; To                   ;
++-----------------+-------+------+----------------------+
+; MESSAGE_DISABLE ; 13410 ; -    ; -                    ;
++-----------------+-------+------+----------------------+
 
 
 +-------------------------------------------------------+
@@ -338,8 +354,68 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+-------+------------------------------------------------+
 ; Parameter Name ; Value ; Type                                           ;
 +----------------+-------+------------------------------------------------+
-; whichClock     ; 20    ; Signed Integer                                 ;
+; whichClock     ; 18    ; Signed Integer                                 ;
 +----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0                       ;
++-------------------------------------------------+------------------------------------+----------------+
+; Parameter Name                                  ; Value                              ; Type           ;
++-------------------------------------------------+------------------------------------+----------------+
+; lpm_type                                        ; sld_signaltap                      ; String         ;
+; sld_node_info                                   ; 805334528                          ; Untyped        ;
+; SLD_IP_VERSION                                  ; 6                                  ; Signed Integer ;
+; SLD_IP_MINOR_VERSION                            ; 0                                  ; Signed Integer ;
+; SLD_COMMON_IP_VERSION                           ; 0                                  ; Signed Integer ;
+; sld_data_bits                                   ; 5                                  ; Untyped        ;
+; sld_trigger_bits                                ; 1                                  ; Untyped        ;
+; SLD_NODE_CRC_BITS                               ; 32                                 ; Signed Integer ;
+; SLD_NODE_CRC_HIWORD                             ; 41394                              ; Signed Integer ;
+; SLD_NODE_CRC_LOWORD                             ; 50132                              ; Signed Integer ;
+; sld_incremental_routing                         ; 1                                  ; Untyped        ;
+; sld_sample_depth                                ; 131072                             ; Untyped        ;
+; sld_segment_size                                ; 131072                             ; Untyped        ;
+; sld_ram_block_type                              ; AUTO                               ; Untyped        ;
+; sld_state_bits                                  ; 11                                 ; Untyped        ;
+; sld_buffer_full_stop                            ; 1                                  ; Untyped        ;
+; SLD_MEM_ADDRESS_BITS                            ; 7                                  ; Signed Integer ;
+; SLD_DATA_BIT_CNTR_BITS                          ; 4                                  ; Signed Integer ;
+; sld_trigger_level                               ; 1                                  ; Untyped        ;
+; sld_trigger_in_enabled                          ; 1                                  ; Untyped        ;
+; SLD_HPS_TRIGGER_IN_ENABLED                      ; 0                                  ; Signed Integer ;
+; SLD_HPS_TRIGGER_OUT_ENABLED                     ; 0                                  ; Signed Integer ;
+; SLD_HPS_EVENT_ENABLED                           ; 0                                  ; Signed Integer ;
+; SLD_HPS_EVENT_ID                                ; 0                                  ; Signed Integer ;
+; sld_advanced_trigger_entity                     ; basic,1,                           ; Untyped        ;
+; sld_trigger_level_pipeline                      ; 1                                  ; Untyped        ;
+; sld_enable_advanced_trigger                     ; 0                                  ; Untyped        ;
+; SLD_ADVANCED_TRIGGER_1                          ; NONE                               ; String         ;
+; SLD_ADVANCED_TRIGGER_2                          ; NONE                               ; String         ;
+; SLD_ADVANCED_TRIGGER_3                          ; NONE                               ; String         ;
+; SLD_ADVANCED_TRIGGER_4                          ; NONE                               ; String         ;
+; SLD_ADVANCED_TRIGGER_5                          ; NONE                               ; String         ;
+; SLD_ADVANCED_TRIGGER_6                          ; NONE                               ; String         ;
+; SLD_ADVANCED_TRIGGER_7                          ; NONE                               ; String         ;
+; SLD_ADVANCED_TRIGGER_8                          ; NONE                               ; String         ;
+; SLD_ADVANCED_TRIGGER_9                          ; NONE                               ; String         ;
+; SLD_ADVANCED_TRIGGER_10                         ; NONE                               ; String         ;
+; sld_inversion_mask_length                       ; 34                                 ; Untyped        ;
+; sld_inversion_mask                              ; 0000000000000000000000000000000000 ; Untyped        ;
+; sld_power_up_trigger                            ; 0                                  ; Untyped        ;
+; SLD_STATE_FLOW_MGR_ENTITY                       ; state_flow_mgr_entity.vhd          ; String         ;
+; sld_state_flow_use_generated                    ; 0                                  ; Untyped        ;
+; sld_current_resource_width                      ; 1                                  ; Untyped        ;
+; sld_attribute_mem_mode                          ; OFF                                ; Untyped        ;
+; sld_storage_qualifier_bits                      ; 5                                  ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_GAP_RECORD                ; 0                                  ; Signed Integer ;
+; SLD_STORAGE_QUALIFIER_MODE                      ; OFF                                ; String         ;
+; SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION ; 0                                  ; Signed Integer ;
+; sld_storage_qualifier_inversion_mask_length     ; 0                                  ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_ADVANCED_CONDITION_ENTITY ; basic                              ; String         ;
+; SLD_STORAGE_QUALIFIER_PIPELINE                  ; 0                                  ; Signed Integer ;
++-------------------------------------------------+------------------------------------+----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -444,8 +520,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port                   ; Type   ; Severity ; Details                                                                             ;
 +------------------------+--------+----------+-------------------------------------------------------------------------------------+
-; divided_clocks[31..21] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; divided_clocks[19..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; divided_clocks[31..19] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; divided_clocks[17..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -454,6 +530,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
 ; Instance Index ; Instance Name    ; Trigger Input Width ; Data Input Width ; Sample Depth ; Segments ; Storage Qualifier Type ; Trigger Flow Control ; Trigger Conditions ; Advanced Trigger Conditions ; Trigger In Used ; Trigger Out Used ; Power-Up Trigger Enabled ;
 +----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; 0              ; auto_signaltap_0 ; 1                   ; 5                ; 131072       ; 1        ; continuous             ; sequential           ; 1                  ; 0                           ; no              ; no               ; no                       ;
 ; 1              ; auto_signaltap_1 ; 4                   ; 5                ; 131072       ; 1        ; continuous             ; sequential           ; 1                  ; 0                           ; no              ; no               ; no                       ;
 +----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
 
@@ -463,12 +540,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 25                          ;
+; arriav_ff             ; 23                          ;
 ;     CLR               ; 4                           ;
-;     plain             ; 21                          ;
-; arriav_lcell_comb     ; 26                          ;
-;     arith             ; 20                          ;
-;         1 data inputs ; 19                          ;
+;     plain             ; 19                          ;
+; arriav_lcell_comb     ; 24                          ;
+;     arith             ; 18                          ;
+;         1 data inputs ; 17                          ;
 ;         2 data inputs ; 1                           ;
 ;     normal            ; 6                           ;
 ;         0 data inputs ; 1                           ;
@@ -478,8 +555,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         4 data inputs ; 1                           ;
 ; boundary_port         ; 73                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.90                        ;
-; Average LUT depth     ; 2.01                        ;
+; Max LUT depth         ; 2.70                        ;
+; Average LUT depth     ; 1.88                        ;
 +-----------------------+-----------------------------+
 
 
@@ -488,28 +565,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+------------------------------------------+
 ; Type                  ; Count                                    ;
 +-----------------------+------------------------------------------+
-; arriav_ff             ; 90                                       ;
-;     CLR               ; 5                                        ;
+; arriav_ff             ; 122                                      ;
+;     CLR               ; 6                                        ;
 ;     ENA               ; 30                                       ;
-;     ENA CLR           ; 23                                       ;
-;     ENA CLR SLD       ; 10                                       ;
+;     ENA CLR           ; 15                                       ;
+;     ENA CLR SLD       ; 49                                       ;
 ;     SCLR              ; 7                                        ;
 ;     plain             ; 15                                       ;
-; arriav_lcell_comb     ; 90                                       ;
-;     extend            ; 1                                        ;
-;         7 data inputs ; 1                                        ;
-;     normal            ; 89                                       ;
+; arriav_lcell_comb     ; 114                                      ;
+;     extend            ; 2                                        ;
+;         7 data inputs ; 2                                        ;
+;     normal            ; 112                                      ;
 ;         0 data inputs ; 1                                        ;
-;         1 data inputs ; 6                                        ;
-;         2 data inputs ; 18                                       ;
-;         3 data inputs ; 14                                       ;
-;         4 data inputs ; 15                                       ;
-;         5 data inputs ; 25                                       ;
-;         6 data inputs ; 10                                       ;
-; boundary_port         ; 60                                       ;
+;         1 data inputs ; 5                                        ;
+;         2 data inputs ; 23                                       ;
+;         3 data inputs ; 16                                       ;
+;         4 data inputs ; 12                                       ;
+;         5 data inputs ; 33                                       ;
+;         6 data inputs ; 22                                       ;
+; boundary_port         ; 83                                       ;
 ;                       ;                                          ;
 ; Max LUT depth         ; 3.00                                     ;
-; Average LUT depth     ; 1.34                                     ;
+; Average LUT depth     ; 1.21                                     ;
 +-----------------------+------------------------------------------+
 
 
@@ -518,10 +595,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                           ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                              ; Library Name ;
 +------------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------+--------------+
-; |DE1_SoC                                             ; 90 (0)            ; 90 (0)       ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC                                                                                         ; work         ;
-;    |sld_hub:auto_hub|                                ; 90 (1)            ; 90 (0)       ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|sld_hub:auto_hub                                                                        ; work         ;
-;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst| ; 89 (57)           ; 90 (62)      ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                           ; work         ;
-;          |sld_rom_sr:hub_info_reg|                   ; 15 (15)           ; 9 (9)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg   ; work         ;
+; |DE1_SoC                                             ; 114 (0)           ; 122 (0)      ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC                                                                                         ; work         ;
+;    |sld_hub:auto_hub|                                ; 114 (1)           ; 122 (0)      ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|sld_hub:auto_hub                                                                        ; work         ;
+;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst| ; 113 (80)          ; 122 (94)     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                           ; work         ;
+;          |sld_rom_sr:hub_info_reg|                   ; 16 (16)           ; 9 (9)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg   ; work         ;
 ;          |sld_shadow_jsm:shadow_jsm|                 ; 17 (17)           ; 19 (19)      ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_shadow_jsm:shadow_jsm ; work         ;
 +------------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -543,7 +620,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Full Version
-    Info: Processing started: Thu Apr 02 18:09:56 2015
+    Info: Processing started: Tue Apr 14 15:08:23 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC --recompile=on
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 2 entities, in source file /users/zachn/documents/nightmares/lab1/synchronousdown.v
@@ -580,27 +657,28 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cntr
     Info (12023): Found entity 1: cntr_kri
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_99c.tdf
     Info (12023): Found entity 1: cmpr_99c
+Info (12033): Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
 Info (12033): Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_1"
 Info (12244): Starting Rapid Recompile for partition "Top"
 Info (12245): Skipping Rapid Recompile in synthesis for partition "Top" because of one of the following reasons:
     Info (12246): Rapid Recompile could not find previous synthesis results for this partition
     Info (12247): Rapid Recompile has determined that this partition will not benefit from Rapid Recompile optimizations
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
-Info (17049): 11 registers lost all their fanouts during netlist optimizations.
-Info (21057): Implemented 99 device resources after synthesis - the final resource count might be different
+Info (17049): 13 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 97 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 58 output pins
-    Info (21061): Implemented 26 logic cells
+    Info (21061): Implemented 24 logic cells
 Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
-Info (21057): Implemented 188 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 21 input pins
-    Info (21059): Implemented 39 output pins
-    Info (21061): Implemented 128 logic cells
+Info (21057): Implemented 255 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 33 input pins
+    Info (21059): Implemented 50 output pins
+    Info (21061): Implemented 172 logic cells
 Info (144001): Generated suppressed messages file C:/Users/zachn/Documents/nightmares/Lab1/SynchronousDownCounter/output_files/DE1_SoC.map.smsg
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 719 megabytes
-    Info: Processing ended: Thu Apr 02 18:10:01 2015
-    Info: Elapsed time: 00:00:05
+    Info: Peak virtual memory: 728 megabytes
+    Info: Processing ended: Tue Apr 14 15:08:29 2015
+    Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:05
 
 

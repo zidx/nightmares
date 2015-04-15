@@ -53,13 +53,12 @@
         <trigger_in_editor bit_condition="rising edge" is_enabled="true" node_name="PIN_AB12"/>
         <trigger_out_editor/>
       </presentation>
-      <trigger CRC="6B48548B" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2015/04/06 17:16:23  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="64" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_in="rising edge" trigger_type="circular">
+      <trigger CRC="6B48548B" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2015/04/06 17:16:23  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="64" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_in="rising edge" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no" trigger_in="high"/>
         <events use_custom_flow_control="no">
           <level enabled="yes" name="condition1" type="basic">'PIN_AB12' == rising edge
             <power_up enabled="yes">
-            </power_up>
-            <op_node/>
+            </power_up><op_node/>
           </level>
         </events>
         <storage_qualifier_events>
@@ -149,13 +148,12 @@
         <trigger_in_editor/>
         <trigger_out_editor/>
       </presentation>
-      <trigger CRC="A334C1F3" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2015/04/06 17:23:24  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="64" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
+      <trigger CRC="A334C1F3" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2015/04/06 17:23:24  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="64" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
         <events use_custom_flow_control="no">
           <level enabled="yes" name="condition1" type="basic">'PIN_V16' == low &amp;&amp; 'PIN_V17' == high &amp;&amp; 'PIN_V18' == high &amp;&amp; 'PIN_W16' == high
             <power_up enabled="yes">
-            </power_up>
-            <op_node/>
+            </power_up><op_node/>
           </level>
         </events>
         <storage_qualifier_events>
@@ -182,12 +180,12 @@
     </signal_set>
     <position_info>
       <single attribute="active tab" value="0"/>
-      <single attribute="data horizontal scroll position" value="8021"/>
+      <single attribute="data horizontal scroll position" value="57973"/>
       <single attribute="data vertical scroll position" value="0"/>
       <single attribute="setup horizontal scroll position" value="0"/>
       <single attribute="setup vertical scroll position" value="0"/>
       <single attribute="zoom level denominator" value="1"/>
-      <single attribute="zoom level numerator" value="2"/>
+      <single attribute="zoom level numerator" value="8"/>
       <single attribute="zoom offset denominator" value="1"/>
       <single attribute="zoom offset numerator" value="0"/>
     </position_info>

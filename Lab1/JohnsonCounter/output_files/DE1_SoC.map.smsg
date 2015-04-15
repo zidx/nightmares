@@ -5,3 +5,4 @@ Warning (10034): Output port "HEX3" at DE1_SoC.sv(4) has no driver
 Warning (10034): Output port "HEX4" at DE1_SoC.sv(4) has no driver
 Warning (10034): Output port "HEX5" at DE1_SoC.sv(4) has no driver
 Warning (10034): Output port "LEDR[9..4]" at DE1_SoC.sv(5) has no driver
+Warning (13024): Output pins are stuck at VCC or GND
