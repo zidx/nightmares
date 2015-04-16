@@ -2,9 +2,9 @@
 //active low reset
 module Timer (clock, reset, seconds);
 	input clock, reset;
-	output [8:0] seconds;
+	output [3:0] seconds;
 	
-	reg [8:0] secondsPassed;
+	reg [3:0] secondsPassed;
 	reg [18:0] clkCounter;
 	
 	 //number of clock cycles to represent one second
