@@ -1,10 +1,11 @@
-module enteringUranus(rst, rstCounter, clock, innerPort, outerPort, arriving, evac, pressurize, counterVal);
+module enteringUranus(rst, rstCounter, clock, innerPort, outerPort, arriving, evac, pressurize, counterVal, display);
 
 input clock;
 input rst, innerPort, outerPort, arriving, evac, pressurize;
 input [2:0] counterVal;
 
 output rstCounter;
+output [6:0] display;
 
 reg[3:0] ps;
 reg[3:0] ns;
@@ -20,9 +21,15 @@ parameter 	defaultState 		= 3'b000,
 				waitForPressurize = 3'b100,
 				pressurizeTiming  = 3'b101;
 				
+parameter  	a	 	= 7'b0001000;
+parameter 	e		= 7'b0000110;
+parameter 	p		= 7'b0001100;
+parameter 	nothing = 7'b1111111;
+				
 always @(*) begin
 	case(ps)
 		defaultState:	begin
+			display = nothing;
 			if(arriving) begin
 				ns = arriveTiming;
 				rstCounter = 1;		//timing for next state begins
@@ -33,6 +40,7 @@ always @(*) begin
 			end
 		end
 		arriveTiming:	begin
+			display = a;
 			rstCounter = 0;			//brings down timer
 			if(fiveSec)	//waits 5 seconds
 				ns = waitForEvacuate;
@@ -40,6 +48,7 @@ always @(*) begin
 				ns = arriveTiming;
 		end
 		waitForEvacuate: 	begin	//waits for user to press evacuate
+			display = nothing;
 			if(evac && !innerPort && !outerPort) begin
 				ns = evacTiming;
 				rstCounter = 1;
@@ -50,6 +59,7 @@ always @(*) begin
 			end
 		end
 		evacTiming:	begin
+			display = e;
 			rstCounter = 0;			//brings down timer
 			if(sevenSec)	//waits 5 seconds
 				ns = waitForPressurize;
@@ -57,6 +67,7 @@ always @(*) begin
 				ns = evacTiming;
 		end
 		waitForPressurize: 	begin	//waits for user to press evacuate
+			display = nothing;
 			if(pressurize && !outerPort && !innerPort) begin
 				ns = pressurizeTiming;
 				rstCounter = 1;
@@ -67,6 +78,7 @@ always @(*) begin
 			end
 		end
 		pressurizeTiming:	begin
+			display = p;
 			rstCounter = 0;			//brings down timer
 			if(eightSec)	//waits eight seconds
 				ns = defaultState;
@@ -74,6 +86,7 @@ always @(*) begin
 				ns = pressurizeTiming;
 		end
 		default: begin
+			display = nothing;
 			ns = defaultState;
 			rstCounter = 0;
 		end

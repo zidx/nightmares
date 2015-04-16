@@ -1,61 +1,61 @@
 |DE1_SoC
 CLOCK_50 => CLOCK_50.IN1
-HEX0[0] << <GND>
-HEX0[1] << <GND>
-HEX0[2] << <GND>
-HEX0[3] << <GND>
-HEX0[4] << <GND>
-HEX0[5] << <GND>
-HEX0[6] << <GND>
-HEX1[0] << <GND>
-HEX1[1] << <GND>
-HEX1[2] << <GND>
-HEX1[3] << <GND>
-HEX1[4] << <GND>
-HEX1[5] << <GND>
-HEX1[6] << <GND>
-HEX2[0] << <GND>
-HEX2[1] << <GND>
-HEX2[2] << <GND>
-HEX2[3] << <GND>
-HEX2[4] << <GND>
-HEX2[5] << <GND>
-HEX2[6] << <GND>
-HEX3[0] << <GND>
-HEX3[1] << <GND>
-HEX3[2] << <GND>
-HEX3[3] << <GND>
-HEX3[4] << <GND>
-HEX3[5] << <GND>
-HEX3[6] << <GND>
-HEX4[0] << <GND>
-HEX4[1] << <GND>
-HEX4[2] << <GND>
-HEX4[3] << <GND>
-HEX4[4] << <GND>
-HEX4[5] << <GND>
-HEX4[6] << <GND>
-HEX5[0] << <GND>
-HEX5[1] << <GND>
-HEX5[2] << <GND>
-HEX5[3] << <GND>
-HEX5[4] << <GND>
-HEX5[5] << <GND>
-HEX5[6] << <GND>
+HEX0[0] <= enteringUranus:enteringInterlock.port9
+HEX0[1] <= enteringUranus:enteringInterlock.port9
+HEX0[2] <= enteringUranus:enteringInterlock.port9
+HEX0[3] <= enteringUranus:enteringInterlock.port9
+HEX0[4] <= enteringUranus:enteringInterlock.port9
+HEX0[5] <= enteringUranus:enteringInterlock.port9
+HEX0[6] <= enteringUranus:enteringInterlock.port9
+HEX1[0] <= <GND>
+HEX1[1] <= <GND>
+HEX1[2] <= <GND>
+HEX1[3] <= <GND>
+HEX1[4] <= <GND>
+HEX1[5] <= <GND>
+HEX1[6] <= <GND>
+HEX2[0] <= <GND>
+HEX2[1] <= <GND>
+HEX2[2] <= <GND>
+HEX2[3] <= <GND>
+HEX2[4] <= <GND>
+HEX2[5] <= <GND>
+HEX2[6] <= <GND>
+HEX3[0] <= <GND>
+HEX3[1] <= <GND>
+HEX3[2] <= <GND>
+HEX3[3] <= <GND>
+HEX3[4] <= <GND>
+HEX3[5] <= <GND>
+HEX3[6] <= <GND>
+HEX4[0] <= <GND>
+HEX4[1] <= <GND>
+HEX4[2] <= <GND>
+HEX4[3] <= <GND>
+HEX4[4] <= <GND>
+HEX4[5] <= <GND>
+HEX4[6] <= <GND>
+HEX5[0] <= <GND>
+HEX5[1] <= <GND>
+HEX5[2] <= <GND>
+HEX5[3] <= <GND>
+HEX5[4] <= <GND>
+HEX5[5] <= <GND>
+HEX5[6] <= <GND>
 KEY[0] => reset.IN1
 KEY[1] => pressurizeChamber.IN1
 KEY[2] => evacuateChamber.IN1
 KEY[3] => ~NO_FANOUT~
-LEDR[0] << <GND>
-LEDR[1] << <GND>
-LEDR[2] << <GND>
-LEDR[3] << <GND>
-LEDR[4] << <GND>
-LEDR[5] << <GND>
-LEDR[6] << <GND>
-LEDR[7] << <GND>
-LEDR[8] << <GND>
-LEDR[9] << <GND>
+LEDR[0] <= spacecraftArrivingUI.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] <= spacecraftDepartingUI.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= outerPortUI.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] <= innerPortUI.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[4] <= <GND>
+LEDR[5] <= Timer:secTimer.port2
+LEDR[6] <= <GND>
+LEDR[7] <= <GND>
+LEDR[8] <= <GND>
+LEDR[9] <= <GND>
 SW[0] => spacecraftArriving.IN1
 SW[1] => spacecraftDeparting.IN1
 SW[2] => outerPort.IN1
@@ -135,32 +135,32 @@ divided_clocks[30] <= divided_clocks[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 divided_clocks[31] <= divided_clocks[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE1_SoC|UserInput:arriving
-clk => prev.CLK
-in => pressed.IN1
-in => prev.DATAIN
-pressed <= pressed.DB_MAX_OUTPUT_PORT_TYPE
+|DE1_SoC|DFlipFlop:arriving
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D => q.DATAA
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
 
 
-|DE1_SoC|UserInput:departing
-clk => prev.CLK
-in => pressed.IN1
-in => prev.DATAIN
-pressed <= pressed.DB_MAX_OUTPUT_PORT_TYPE
+|DE1_SoC|DFlipFlop:departing
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D => q.DATAA
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
 
 
-|DE1_SoC|UserInput:outPort
-clk => prev.CLK
-in => pressed.IN1
-in => prev.DATAIN
-pressed <= pressed.DB_MAX_OUTPUT_PORT_TYPE
+|DE1_SoC|DFlipFlop:outPort
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D => q.DATAA
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
 
 
-|DE1_SoC|UserInput:inPort
-clk => prev.CLK
-in => pressed.IN1
-in => prev.DATAIN
-pressed <= pressed.DB_MAX_OUTPUT_PORT_TYPE
+|DE1_SoC|DFlipFlop:inPort
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D => q.DATAA
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
 
 
 |DE1_SoC|UserInput:resetInput
@@ -261,6 +261,13 @@ counterVal[1] => Selector4.IN5
 counterVal[1] => Selector3.IN2
 counterVal[2] => Selector0.IN5
 counterVal[2] => Selector5.IN2
+display[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= display[2].DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= display[3].DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |DE1_SoC|leavingUranus:leavingInterlock

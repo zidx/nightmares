@@ -11,15 +11,17 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 
 	 reg rstCounterEntering;
 	 reg rstCounterExiting;
-
+	 
 	 //user input wire assignments
-	 wire spacecraftArriving   = ~SW[0];
-	 wire spacecraftDeparting  = ~SW[1];
+	 wire spacecraftArriving   =  SW[0];
+	 wire spacecraftDeparting  =  SW[1];
 	 wire outerPort				=  SW[2];
 	 wire innerPort 				=  SW[3];
-	 wire reset 					= KEY[0];
-	 wire pressurizeChamber    = KEY[1];
-	 wire evacuateChamber 		= KEY[2];
+	 wire reset 					=  KEY[0];
+	 wire pressurizeChamber    = ~KEY[1];
+	 wire evacuateChamber 		= ~KEY[2];
+	 wire [6:0] displayArrive	=  HEX0;
+	 wire [6:0] displayDepart	=  HEX1;
 	 
 	 //User Input Wires
 	 wire spacecraftArrivingUI;
@@ -38,7 +40,7 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 wire [3:0] numSeconds;
 	 
 	 wire [2:0] counterVal;
-	 assign counterVal = {numSeconds == fiveSec, numSeconds == sevenSec, numSeconds == eightSec};
+	 assign counterVal = {numSeconds == fiveSec, numSeconds == sevenSec, numSeconds == eightSec};	 
 	 	 
 	 //clock cycles for timer output to time number of seconds
 	 parameter fiveSec  = 4'b0101;
@@ -49,11 +51,19 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 parameter whichClock = 6;
 	 ClockDivider cdiv (CLOCK_50, clk);	 
 	 
+	 assign LEDR[0] = spacecraftArrivingUI;
+	 assign LEDR[1] = spacecraftDepartingUI;
+	 assign LEDR[2] = outerPortUI;
+	 assign LEDR[3] = innerPortUI;
+	 
+	 assign LEDR[5] = numSeconds[0];
+	 
 	 //sends all asynchronous input through a DFF
-	 UserInput arriving (clock, spacecraftArriving, spacecraftArrivingUI );
-	 UserInput departing (clock, spacecraftDeparting, spacecraftDepartingUI );
-	 UserInput outPort (clock, outerPort, outerPortUI );
-	 UserInput inPort (clock, innerPort, innerPortUI );
+	 DFlipFlop arriving (spacecraftArrivingUI , spacecraftArriving, clock, resetUI);
+	 DFlipFlop departing (spacecraftDepartingUI, spacecraftDeparting, clock, resetUI );
+	 DFlipFlop outPort (outerPortUI, outerPort, clock, resetUI );
+	 DFlipFlop inPort (innerPortUI, innerPort, clock, resetUI );
+	 
 	 UserInput resetInput (clock, reset, resetUI );
 	 UserInput pressurizeInput (clock, pressurizeChamber, pressurizeChamberUI );
 	 UserInput evacuateInput (clock, evacuateChamber, evacuateChamberUI );
@@ -62,7 +72,7 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 Timer secTimer  (clock, reset | rstCounterEntering | rstCounterExiting, numSeconds);	 
 	 
 	 //instantiate both State Machines
-	 enteringUranus enteringInterlock (resetUI, rstCounterEntering, clock, innerPortUI, outerPortUI, spacecraftArrivingUI, evacuateChamberUI, pressurizeChamberUI, counterVal);
+	 enteringUranus enteringInterlock (resetUI, rstCounterEntering, clock, innerPortUI, outerPortUI, spacecraftArrivingUI, evacuateChamberUI, pressurizeChamberUI, counterVal, HEX0);
 	 leavingUranus  leavingInterlock  (resetUI, rstCounterExiting, clock, innerPortUI, outerPortUI, spacecraftDepartingUI, evacuateChamberUI, pressurizeChamberUI, counterVal);
 	 
 endmodule
