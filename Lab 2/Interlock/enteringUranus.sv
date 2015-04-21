@@ -7,8 +7,8 @@ input [2:0] counterVal;
 output rstCounter;
 output [6:0] display;
 
-reg[3:0] ps;
-reg[3:0] ns;
+reg[2:0] ps;
+reg[2:0] ns;
 
 wire fiveSec = counterVal[0];
 wire sevenSec = counterVal[1];
@@ -42,7 +42,7 @@ always @(*) begin
 		arriveTiming:	begin
 			display = a;
 			rstCounter = 0;			//brings down timer
-			if(fiveSec)	//waits 5 seconds
+			if(fiveSec)					//waits 5 seconds
 				ns = waitForEvacuate;
 			else
 				ns = arriveTiming;
@@ -90,8 +90,6 @@ always @(*) begin
 			ns = defaultState;
 			rstCounter = 0;
 		end
-		
-		
 	endcase
 end
 

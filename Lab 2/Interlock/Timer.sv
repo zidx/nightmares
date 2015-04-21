@@ -12,9 +12,9 @@ module Timer (clock, reset, seconds);
 	
 	 //after number of clock cycles, one second has passed.
 	 always @(posedge clock) begin
-		if(!reset) begin
+		if(reset) begin
 			clkCounter <= 19'b0000000000000000000;
-			secondsPassed <= 1'b0;
+			secondsPassed <= 3'b000;
 		end
 		else if (uranusHz == clkCounter) begin
 			secondsPassed <= secondsPassed + 1'b1;

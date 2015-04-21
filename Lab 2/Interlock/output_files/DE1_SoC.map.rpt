@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SoC
-Wed Apr 15 21:11:11 2015
+Mon Apr 20 17:57:48 2015
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Full Version
 
 
@@ -53,13 +53,13 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Apr 15 21:11:11 2015       ;
+; Analysis & Synthesis Status     ; Successful - Mon Apr 20 17:57:48 2015       ;
 ; Quartus II 64-Bit Version       ; 14.0.0 Build 200 06/17/2014 SJ Full Version ;
 ; Revision Name                   ; DE1_SoC                                     ;
 ; Top-level Entity Name           ; DE1_SoC                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 43                                          ;
+; Total registers                 ; 45                                          ;
 ; Total pins                      ; 67                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -197,23 +197,23 @@ agreement for further details.
 +---------------------------------------------+-------------------------------------+
 ; Resource                                    ; Usage                               ;
 +---------------------------------------------+-------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 48                                  ;
+; Estimate of Logic utilization (ALMs needed) ; 49                                  ;
 ;                                             ;                                     ;
-; Combinational ALUT usage for logic          ; 75                                  ;
+; Combinational ALUT usage for logic          ; 81                                  ;
 ;     -- 7 input functions                    ; 1                                   ;
-;     -- 6 input functions                    ; 19                                  ;
-;     -- 5 input functions                    ; 5                                   ;
-;     -- 4 input functions                    ; 8                                   ;
-;     -- <=3 input functions                  ; 42                                  ;
+;     -- 6 input functions                    ; 15                                  ;
+;     -- 5 input functions                    ; 6                                   ;
+;     -- 4 input functions                    ; 12                                  ;
+;     -- <=3 input functions                  ; 47                                  ;
 ;                                             ;                                     ;
-; Dedicated logic registers                   ; 43                                  ;
+; Dedicated logic registers                   ; 45                                  ;
 ;                                             ;                                     ;
 ; I/O pins                                    ; 67                                  ;
 ; Total DSP Blocks                            ; 0                                   ;
 ; Maximum fan-out node                        ; ClockDivider:cdiv|divided_clocks[6] ;
-; Maximum fan-out                             ; 37                                  ;
-; Total fan-out                               ; 456                                 ;
-; Average fan-out                             ; 1.81                                ;
+; Maximum fan-out                             ; 39                                  ;
+; Total fan-out                               ; 478                                 ;
+; Average fan-out                             ; 1.84                                ;
 +---------------------------------------------+-------------------------------------+
 
 
@@ -222,18 +222,20 @@ agreement for further details.
 +---------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------+--------------+
 ; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                       ; Library Name ;
 +---------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------+--------------+
-; |DE1_SoC                              ; 75 (5)            ; 43 (0)       ; 0                 ; 0          ; 67   ; 0            ; |DE1_SoC                                  ; work         ;
+; |DE1_SoC                              ; 81 (4)            ; 45 (0)       ; 0                 ; 0          ; 67   ; 0            ; |DE1_SoC                                  ; work         ;
 ;    |ClockDivider:cdiv|                ; 7 (7)             ; 7 (7)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|ClockDivider:cdiv                ; work         ;
 ;    |DFlipFlop:arriving|               ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|DFlipFlop:arriving               ; work         ;
 ;    |DFlipFlop:departing|              ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|DFlipFlop:departing              ; work         ;
+;    |DFlipFlop:dffdelay2|              ; 2 (2)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|DFlipFlop:dffdelay2              ; work         ;
+;    |DFlipFlop:dffdelay|               ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|DFlipFlop:dffdelay               ; work         ;
 ;    |DFlipFlop:inPort|                 ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|DFlipFlop:inPort                 ; work         ;
 ;    |DFlipFlop:outPort|                ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|DFlipFlop:outPort                ; work         ;
-;    |Timer:secTimer|                   ; 31 (31)           ; 23 (23)      ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|Timer:secTimer                   ; work         ;
+;    |Timer:secTimer|                   ; 28 (28)           ; 23 (23)      ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|Timer:secTimer                   ; work         ;
 ;    |UserInput:evacuateInput|          ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|UserInput:evacuateInput          ; work         ;
 ;    |UserInput:pressurizeInput|        ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|UserInput:pressurizeInput        ; work         ;
-;    |UserInput:resetInput|             ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|UserInput:resetInput             ; work         ;
-;    |enteringUranus:enteringInterlock| ; 13 (13)           ; 3 (3)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|enteringUranus:enteringInterlock ; work         ;
-;    |leavingUranus:leavingInterlock|   ; 12 (12)           ; 3 (3)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|leavingUranus:leavingInterlock   ; work         ;
+;    |UserInput:resetInput|             ; 2 (2)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|UserInput:resetInput             ; work         ;
+;    |enteringUranus:enteringInterlock| ; 12 (12)           ; 3 (3)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|enteringUranus:enteringInterlock ; work         ;
+;    |leavingUranus:leavingInterlock|   ; 19 (19)           ; 3 (3)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|leavingUranus:leavingInterlock   ; work         ;
 +---------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -275,9 +277,8 @@ Encoding Type:  User-Encoded
 +-----------------------------------------+--------------------+
 ; Register name                           ; Reason for Removal ;
 +-----------------------------------------+--------------------+
-; enteringUranus:enteringInterlock|ps~5   ; Lost fanout        ;
 ; ClockDivider:cdiv|divided_clocks[7..31] ; Lost fanout        ;
-; Total Number of Removed Registers = 26  ;                    ;
+; Total Number of Removed Registers = 25  ;                    ;
 +-----------------------------------------+--------------------+
 
 
@@ -286,7 +287,7 @@ Encoding Type:  User-Encoded
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 43    ;
+; Total registers                              ; 45    ;
 ; Number of registers using Synchronous Clear  ; 19    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -301,7 +302,7 @@ Encoding Type:  User-Encoded
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE1_SoC|Timer:secTimer|secondsPassed[3] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE1_SoC|Timer:secTimer|secondsPassed[0] ;
 ; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |DE1_SoC|Timer:secTimer|clkCounter[5]    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
 
@@ -350,18 +351,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +-----------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: leavingUranus:leavingInterlock ;
-+----------------+-------+----------------------------------------------------+
-; Parameter Name ; Value ; Type                                               ;
-+----------------+-------+----------------------------------------------------+
-; s0             ; 000   ; Unsigned Binary                                    ;
-; s1             ; 001   ; Unsigned Binary                                    ;
-; s2             ; 010   ; Unsigned Binary                                    ;
-; s3             ; 011   ; Unsigned Binary                                    ;
-; s4             ; 100   ; Unsigned Binary                                    ;
-; s5             ; 101   ; Unsigned Binary                                    ;
-; s6             ; 110   ; Unsigned Binary                                    ;
-; s7             ; 111   ; Unsigned Binary                                    ;
-+----------------+-------+----------------------------------------------------+
++----------------+---------+--------------------------------------------------+
+; Parameter Name ; Value   ; Type                                             ;
++----------------+---------+--------------------------------------------------+
+; s0             ; 000     ; Unsigned Binary                                  ;
+; s1             ; 001     ; Unsigned Binary                                  ;
+; s2             ; 010     ; Unsigned Binary                                  ;
+; s3             ; 011     ; Unsigned Binary                                  ;
+; s4             ; 100     ; Unsigned Binary                                  ;
+; s5             ; 101     ; Unsigned Binary                                  ;
+; s6             ; 110     ; Unsigned Binary                                  ;
+; s7             ; 111     ; Unsigned Binary                                  ;
+; l              ; 1000111 ; Unsigned Binary                                  ;
+; e              ; 0000110 ; Unsigned Binary                                  ;
+; p              ; 0001100 ; Unsigned Binary                                  ;
+; nothing        ; 1111111 ; Unsigned Binary                                  ;
++----------------+---------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -380,28 +385,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 43                          ;
+; arriav_ff             ; 45                          ;
 ;     ENA               ; 4                           ;
 ;     SCLR              ; 19                          ;
-;     plain             ; 20                          ;
-; arriav_lcell_comb     ; 80                          ;
+;     plain             ; 22                          ;
+; arriav_lcell_comb     ; 90                          ;
 ;     arith             ; 25                          ;
 ;         1 data inputs ; 24                          ;
 ;         2 data inputs ; 1                           ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 54                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 7                           ;
-;         2 data inputs ; 4                           ;
-;         3 data inputs ; 10                          ;
-;         4 data inputs ; 8                           ;
-;         5 data inputs ; 5                           ;
-;         6 data inputs ; 19                          ;
+;     normal            ; 64                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 11                          ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 12                          ;
+;         5 data inputs ; 6                           ;
+;         6 data inputs ; 15                          ;
 ; boundary_port         ; 67                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 2.26                        ;
+; Average LUT depth     ; 2.07                        ;
 +-----------------------+-----------------------------+
 
 
@@ -420,7 +425,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Full Version
-    Info: Processing started: Wed Apr 15 21:11:09 2015
+    Info: Processing started: Mon Apr 20 17:57:46 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 2 entities, in source file de1_soc.sv
@@ -446,17 +451,17 @@ Info (12128): Elaborating entity "Timer" for hierarchy "Timer:secTimer"
 Info (12128): Elaborating entity "enteringUranus" for hierarchy "enteringUranus:enteringInterlock"
 Info (12128): Elaborating entity "leavingUranus" for hierarchy "leavingUranus:leavingInterlock"
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 26 registers lost all their fanouts during netlist optimizations.
+Info (17049): 25 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/output_files/DE1_SoC.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 143 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 148 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 76 logic cells
+    Info (21061): Implemented 81 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 636 megabytes
-    Info: Processing ended: Wed Apr 15 21:11:11 2015
+    Info: Processing ended: Mon Apr 20 17:57:48 2015
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
