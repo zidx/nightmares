@@ -28,10 +28,10 @@ module CountUp(count, hex);
 	
 	parameter nothing = 7'b1111111;
 	parameter zero		= 7'b1000000;
-	parameter one 		= 7'b1100111;
+	parameter one 		= 7'b1001111;
 	parameter two 		= 7'b0100100;
 	parameter three 	= 7'b0110000;
-	parameter four 	= 7'b1000110;
+	parameter four 	= 7'b0011001;
 	parameter five 	= 7'b0010010;
 	parameter six 		= 7'b0000010;
 	parameter seven 	= 7'b1111000;
@@ -43,7 +43,7 @@ module CountUp(count, hex);
 	
 	always @(*) begin
 		case(count)
-			c0: current = one;
+			c0: current = nothing;
 			c1: current = one;
 			c2: current = two;
 			c3: current = three;
