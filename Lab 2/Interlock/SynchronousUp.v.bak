@@ -1,0 +1,30 @@
+//-----------------------------------------------------------
+// Module name:
+// SynchronousUp
+//
+// Description:
+// Module implemented as a synchronous up counter.
+// Includes inputs reset and clock, and outputs the count.
+// 
+// Author(s):
+// Krista Holden
+//
+//----------------------------------------------------------- 
+
+module SynchronousUp(rst, clk, out);
+	input clk, rst;
+	output [3:0] out;
+	
+	parameter start = 4'b0000;
+	parameter increment = 4'b0001;
+	
+	always(*) begin
+		if(rst) begin
+			out = start;
+		end
+		else begin
+			out <= out + increment;
+		end
+	end	
+
+endmodule
