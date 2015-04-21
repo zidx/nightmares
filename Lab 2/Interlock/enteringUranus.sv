@@ -1,11 +1,11 @@
-module enteringUranus(rst, rstCounter, clock, innerPort, outerPort, arriving, evac, pressurize, counterVal, display);
+module enteringUranus(rst, rstCounter, clock, innerPort, outerPort, arriving, evac, pressurize, counterVal, display, canOut, canIn);
 
 input clock;
 input rst, innerPort, outerPort, arriving, evac, pressurize;
 input [2:0] counterVal;
 
-output reg rstCounter;
-output reg [6:0] display;
+output rstCounter, canOut, canIn;
+output [6:0] display;
 
 reg[2:0] ps;
 reg[2:0] ns;
@@ -30,6 +30,8 @@ parameter 	nothing = 7'b1111111;
 always @(*) begin
 	case(ps)
 		defaultState:	begin
+			canOut = 0;
+			canIn = 1;
 			display = nothing;
 			if(arriving) begin
 				ns = arriveTiming;
@@ -41,6 +43,8 @@ always @(*) begin
 			end
 		end
 		arriveTiming:	begin
+			canOut = 0;
+			canIn = 1;
 			display = a;
 			rstCounter = 0;			//brings down timer
 			if(fiveSec)					//waits 5 seconds
@@ -49,6 +53,8 @@ always @(*) begin
 				ns = arriveTiming;
 		end
 		waitForEvacuate: 	begin	//waits for user to press evacuate
+			canOut = 0;
+			canIn = 1;
 			display = nothing;
 			if(evac && !innerPort && !outerPort) begin
 				ns = evacTiming;
@@ -60,6 +66,8 @@ always @(*) begin
 			end
 		end
 		evacTiming:	begin
+			canOut = 0;
+			canIn = 0;
 			display = e;
 			rstCounter = 0;			//brings down timer
 			if(sevenSec)	//waits 5 seconds
@@ -68,6 +76,8 @@ always @(*) begin
 				ns = evacTiming;
 		end
 		waitForPressurize: 	begin	//waits for user to press evacuate
+			canOut = 1;
+			canIn = 0;
 			display = nothing;
 			if(pressurize && !outerPort && !innerPort) begin
 				ns = pressurizeTiming;
@@ -79,6 +89,8 @@ always @(*) begin
 			end
 		end
 		pressurizeTiming:	begin
+			canOut = 0;
+			canIn = 0;
 			display = p;
 			rstCounter = 0;			//brings down timer
 			if(eightSec)	//waits eight seconds
@@ -87,6 +99,8 @@ always @(*) begin
 				ns = pressurizeTiming;
 		end
 		exit:	begin
+			canOut = 0;
+			canIn = 1;
 			display = nothing;
 			rstCounter = 0;			//brings down timer
 			if(~arriving)	//waits eight seconds
@@ -95,6 +109,8 @@ always @(*) begin
 				ns = exit;
 		end
 		default: begin
+			canOut = 0;
+			canIn = 1;
 			display = nothing;
 			ns = defaultState;
 			rstCounter = 0;
