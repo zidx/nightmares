@@ -1,0 +1,77 @@
+# Reading C:/altera/14.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do DE1_SoC_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/UserInput.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module UserInput
+# 
+# Top level modules:
+# 	UserInput
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module DE1_SoC
+# -- Compiling module ClockDivider
+# 
+# Top level modules:
+# 	DE1_SoC
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/Timer.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module Timer
+# 
+# Top level modules:
+# 	Timer
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module enteringUranus
+# 
+# Top level modules:
+# 	enteringUranus
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module leavingUranus
+# -- Compiling module leavingUranus_testbench
+# 
+# Top level modules:
+# 	leavingUranus_testbench
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/flipflop.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module DFlipFlop
+# 
+# Top level modules:
+# 	DFlipFlop
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/countUp.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module CountUp
+# 
+# Top level modules:
+# 	CountUp
+# 
+vsim work.leavingUranus_testbench
+# vsim work.leavingUranus_testbench 
+# Loading sv_std.std
+# Loading work.leavingUranus_testbench
+# Loading work.leavingUranus
+add wave -position end  sim:/leavingUranus_testbench/CLOCK_PERIOD
+add wave -position end  sim:/leavingUranus_testbench/oneSec
+add wave -position end  sim:/leavingUranus_testbench/rst
+add wave -position end  sim:/leavingUranus_testbench/clock
+add wave -position end  sim:/leavingUranus_testbench/innerPort
+add wave -position end  sim:/leavingUranus_testbench/outerPort
+add wave -position end  sim:/leavingUranus_testbench/leaving
+add wave -position end  sim:/leavingUranus_testbench/evac
+add wave -position end  sim:/leavingUranus_testbench/pressurize
+add wave -position end  sim:/leavingUranus_testbench/counterVal
+add wave -position end  sim:/leavingUranus_testbench/helper
+add wave -position end  sim:/leavingUranus_testbench/rstCounter
+add wave -position end  sim:/leavingUranus_testbench/display
+run -all
+# Break in Module leavingUranus_testbench at C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv line 161

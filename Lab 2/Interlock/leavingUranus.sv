@@ -3,8 +3,8 @@ module leavingUranus(rst, rstCounter, clock, innerPort, outerPort, leaving, evac
 	input innerPort, outerPort, leaving, evac, pressurize;
 	input [2:0] counterVal;
 
-	output rstCounter;
-	output [6:0] display;
+	output reg rstCounter;
+	output reg [6:0] display;
 	
 	reg [2:0] ps;
 	reg [2:0] ns;
@@ -98,3 +98,68 @@ module leavingUranus(rst, rstCounter, clock, innerPort, outerPort, leaving, evac
 	end
 			
 endmodule
+
+module leavingUranus_testbench();
+	// Inputs
+	reg rst, clock;
+	reg innerPort, outerPort, leaving, evac, pressurize;
+	reg [2:0] counterVal;
+	
+	// Helper clock
+	reg helper;
+	
+	// Outputs
+	reg rstCounter;
+	reg [6:0] display;
+	
+	// Set up the clock. 
+	parameter CLOCK_PERIOD=100; 
+	initial clock=1; 
+	always begin 
+		#(CLOCK_PERIOD/2); 
+		clock = ~clock; 
+	end
+	
+	parameter oneSec = 390625;
+	
+	leavingUranus dut (rst, rstCounter, clock, innerPort, outerPort, leaving, evac, pressurize, counterVal, display);
+	
+	// We don't test opening and closing the ports when we're not supposed to.
+	// This is because opening and closing them during operation is trivial.
+	// Everyone would die anyway if you open them at the wrong time
+	integer i;
+	initial begin
+		#(CLOCK_PERIOD)					rst = 1; innerPort = 0; 
+												outerPort = 0; leaving = 0; 
+												evac = 0; pressurize = 0;	
+		#(CLOCK_PERIOD)
+		#(CLOCK_PERIOD)
+		
+		#(CLOCK_PERIOD)					leaving = 1;
+		#(CLOCK_PERIOD)					evac = 1;	//Check evac isn't recognized yet
+		#(CLOCK_PERIOD)					evac = 0;
+		#(CLOCK_PERIOD)					pressurize = 1;	//Check pressurize isn't recognized yet
+		#(CLOCK_PERIOD)					pressurize = 0;
+		
+		#(5 * oneSec * CLOCK_PERIOD)	evac = 1;
+		#(CLOCK_PERIOD)					evac = 0;
+		#(CLOCK_PERIOD)					pressurize = 1;	//Check pressurize isn't recognized
+		#(CLOCK_PERIOD)					pressurize = 0;
+		#(7 * oneSec * CLOCK_PERIOD)	// Wait for evac to occur
+		
+		#(CLOCK_PERIOD)					outerPort = 1;
+		#(16 * CLOCK_PERIOD)				outerPort = 1; leaving = 0;  // Exit the station and close port
+		
+		#(CLOCK_PERIOD)					pressurize = 1;
+		#(CLOCK_PERIOD)					evac = 1;	//Check evac isn't recognized
+		#(CLOCK_PERIOD)					evac = 0;
+		#(8 * oneSec * CLOCK_PERIOD)	pressurize = 0;
+		
+		#(16 * CLOCK_PERIOD)				leaving = 1;
+		#(16 * CLOCK_PERIOD)				// Make sure FSM loops
+		
+		$stop;
+	end
+	
+endmodule
+	

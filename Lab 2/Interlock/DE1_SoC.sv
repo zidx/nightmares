@@ -47,13 +47,6 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 // Generate clk off of CLOCK_50, whichClock picks rate.
 	 wire [31:0] clk;
 	 
-	 //clock 6 used in operation for the timer.
-	 wire clock = clk[whichClock];
-	 wire [3:0] numSeconds;
-	 
-	 wire [2:0] counterVal;
-	 assign counterVal = {numSeconds == eightSec, numSeconds == sevenSec, numSeconds == fiveSec};	 
-	 	 
 	 //clock cycles for timer output to time number of seconds
 	 parameter fiveSec  = 4'b0101;
 	 parameter sevenSec = 4'b0111;
@@ -61,6 +54,17 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 
 	 //uses clock 6 to use the lowest whole number of Hz for exactly precise timing.
 	 parameter whichClock = 6;
+	 
+	 //clock 6 used in operation for the timer.
+	 wire clock = clk[whichClock];
+	 wire [3:0] numSeconds;
+	 
+	 wire [2:0] counterVal;
+	 assign counterVal = {numSeconds == eightSec, numSeconds == sevenSec, numSeconds == fiveSec};	 
+	 	 
+	 
+	 
+	 
 	 ClockDivider cdiv (CLOCK_50, clk);	 
 	 
 	 assign LEDR[0] = spacecraftArrivingUI;
