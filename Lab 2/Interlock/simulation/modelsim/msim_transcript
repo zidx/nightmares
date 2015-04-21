@@ -26,9 +26,44 @@
 # vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/Timer.sv}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module Timer
+# -- Compiling module TimerTestbench
+# ** Error: C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/Timer.sv(71): (vlog-2730) Undefined variable: 'reset'.
+# 
+# ** Error: C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/Timer.sv(74): (vlog-2730) Undefined variable: 'in'.
+# 
+# ** Error: C:/altera/14.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./DE1_SoC_run_msim_rtl_verilog.do line 10
+# C:/altera/14.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/Timer.sv}"
+do DE1_SoC_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/UserInput.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module UserInput
 # 
 # Top level modules:
-# 	Timer
+# 	UserInput
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module DE1_SoC
+# -- Compiling module ClockDivider
+# 
+# Top level modules:
+# 	DE1_SoC
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/Timer.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module Timer
+# -- Compiling module TimerTestbench
+# 
+# Top level modules:
+# 	TimerTestbench
 # vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module enteringUranus
@@ -60,10 +95,7 @@ vsim work.leavingUranus_testbench
 # Loading sv_std.std
 # Loading work.leavingUranus_testbench
 # Loading work.leavingUranus
-add wave -position end  sim:/leavingUranus_testbench/CLOCK_PERIOD
-add wave -position end  sim:/leavingUranus_testbench/oneSec
 add wave -position end  sim:/leavingUranus_testbench/rst
-add wave -position end  sim:/leavingUranus_testbench/clock
 add wave -position end  sim:/leavingUranus_testbench/innerPort
 add wave -position end  sim:/leavingUranus_testbench/outerPort
 add wave -position end  sim:/leavingUranus_testbench/leaving
@@ -74,4 +106,4 @@ add wave -position end  sim:/leavingUranus_testbench/helper
 add wave -position end  sim:/leavingUranus_testbench/rstCounter
 add wave -position end  sim:/leavingUranus_testbench/display
 run -all
-# Break in Module leavingUranus_testbench at C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv line 161
+# Break in Module leavingUranus_testbench at C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv line 175

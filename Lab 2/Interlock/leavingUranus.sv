@@ -114,13 +114,19 @@ module leavingUranus_testbench();
 	
 	// Set up the clock. 
 	parameter CLOCK_PERIOD=100; 
-	initial clock=1; 
+	parameter ONE_SEC = 390625;
+	initial clock=1;
+	initial helper = 0;
 	always begin 
 		#(CLOCK_PERIOD/2); 
 		clock = ~clock; 
 	end
 	
-	parameter oneSec = 390625;
+	always begin
+		#((CLOCK_PERIOD * ONE_SEC)/2)
+		helper = ~helper;
+	end
+	
 	
 	leavingUranus dut (rst, rstCounter, clock, innerPort, outerPort, leaving, evac, pressurize, counterVal, display);
 	
@@ -129,34 +135,42 @@ module leavingUranus_testbench();
 	// Everyone would die anyway if you open them at the wrong time
 	integer i;
 	initial begin
-		#(CLOCK_PERIOD)					rst = 1; innerPort = 0; 
-												outerPort = 0; leaving = 0; 
-												evac = 0; pressurize = 0;	
-		#(CLOCK_PERIOD)
-		#(CLOCK_PERIOD)
+		rst <= 1; innerPort <= 0; 			
+		outerPort <= 0; leaving <= 0; 
+		evac <= 0; pressurize <= 0;	@(posedge helper)
+		rst <= 0;							@(posedge helper)
 		
-		#(CLOCK_PERIOD)					leaving = 1;
-		#(CLOCK_PERIOD)					evac = 1;	//Check evac isn't recognized yet
-		#(CLOCK_PERIOD)					evac = 0;
-		#(CLOCK_PERIOD)					pressurize = 1;	//Check pressurize isn't recognized yet
-		#(CLOCK_PERIOD)					pressurize = 0;
+		leaving <= 1;						@(posedge helper)
+		evac <= 1;							@(posedge helper)
+		evac <= 0;							@(posedge helper)
+		pressurize <= 1;					@(posedge helper)
+		pressurize <= 0;					@(posedge helper)
+												@(posedge helper)
+												
+		evac <= 1;							@(posedge helper)
+		evac <= 0;							@(posedge helper)
+		pressurize <= 1;					@(posedge helper)
+		pressurize <= 0;					@(posedge helper)
+												@(posedge helper)
+												@(posedge helper)
+												@(posedge helper)
+												@(posedge helper)
+												
+			
+		outerPort <= 1;					@(posedge helper)
+		outerPort <= 1; leaving <= 0; @(posedge helper)
 		
-		#(5 * oneSec * CLOCK_PERIOD)	evac = 1;
-		#(CLOCK_PERIOD)					evac = 0;
-		#(CLOCK_PERIOD)					pressurize = 1;	//Check pressurize isn't recognized
-		#(CLOCK_PERIOD)					pressurize = 0;
-		#(7 * oneSec * CLOCK_PERIOD)	// Wait for evac to occur
+		pressurize <= 1;					@(posedge helper)
+		pressurize <= 0;					@(posedge helper)
+		evac <= 1;							@(posedge helper)
+		evac <= 0;							@(posedge helper)
+												@(posedge helper)
+												@(posedge helper)
+												@(posedge helper)
+												@(posedge helper)
+												@(posedge helper)
 		
-		#(CLOCK_PERIOD)					outerPort = 1;
-		#(16 * CLOCK_PERIOD)				outerPort = 1; leaving = 0;  // Exit the station and close port
-		
-		#(CLOCK_PERIOD)					pressurize = 1;
-		#(CLOCK_PERIOD)					evac = 1;	//Check evac isn't recognized
-		#(CLOCK_PERIOD)					evac = 0;
-		#(8 * oneSec * CLOCK_PERIOD)	pressurize = 0;
-		
-		#(16 * CLOCK_PERIOD)				leaving = 1;
-		#(16 * CLOCK_PERIOD)				// Make sure FSM loops
+		leaving <= 1;						@(posedge helper)
 		
 		$stop;
 	end

@@ -17,7 +17,7 @@ Z9 L0 101
 Z10 OV;L;10.1e;51
 r1
 31
-Z11 !s108 1429657432.726000
+Z11 !s108 1429658384.978000
 Z12 !s107 C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv|
 Z13 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock|C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv|
 Z14 o-sv -work work -O0
@@ -36,7 +36,7 @@ VBzCEoTHdnWSUUooXHERdd0
 !s105 countUp_sv_unit
 S1
 R5
-Z18 w1429652809
+w1429652809
 8C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/countUp.sv
 FC:/Users/zachn/Documents/nightmares/Lab 2/Interlock/countUp.sv
 L0 13
@@ -44,7 +44,7 @@ R10
 r1
 !s85 0
 31
-!s108 1429657433.155000
+!s108 1429658385.529000
 !s107 C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/countUp.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock|C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/countUp.sv|
 !s101 -O0
@@ -53,8 +53,8 @@ R15
 n@count@up
 vDE1_SoC
 R1
-Z19 IDJ[e:>okC5fI>3PMQY6_Y3
-Z20 Vf_Xcl[PAlH?H]<GUS7l;<3
+Z18 IDJ[e:>okC5fI>3PMQY6_Y3
+Z19 Vf_Xcl[PAlH?H]<GUS7l;<3
 R4
 S1
 R5
@@ -70,149 +70,173 @@ R12
 R13
 R14
 R15
-Z21 n@d@e1_@so@c
-Z22 !s100 MHzmI`bN>>aBS5nIe8@K62
+Z20 n@d@e1_@so@c
+Z21 !s100 MHzmI`bN>>aBS5nIe8@K62
 !i10b 1
 !s85 0
 !s101 -O0
 vDFlipFlop
 R1
-Z23 I<Zjn3bCBz8C]z`ogzAL=40
-Z24 VFLZl[_Y9Sz=YdCCc=CU[f3
+Z22 I<Zjn3bCBz8C]z`ogzAL=40
+Z23 VFLZl[_Y9Sz=YdCCc=CU[f3
 S1
 R5
-Z25 w1429572741
-Z26 8C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/flipflop.sv
-Z27 FC:/Users/zachn/Documents/nightmares/Lab 2/Interlock/flipflop.sv
+Z24 w1429572741
+Z25 8C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/flipflop.sv
+Z26 FC:/Users/zachn/Documents/nightmares/Lab 2/Interlock/flipflop.sv
 L0 16
 R10
 r1
 31
 R14
 R15
-Z28 n@d@flip@flop
+Z27 n@d@flip@flop
 !i10b 1
-Z29 !s100 Co1iEX_8oGXdAoD^PPDBU3
-Z30 !s105 flipflop_sv_unit
+Z28 !s100 Co1iEX_8oGXdAoD^PPDBU3
+Z29 !s105 flipflop_sv_unit
 !s85 0
-Z31 !s108 1429657433.094000
-Z32 !s107 C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/flipflop.sv|
-Z33 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock|C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/flipflop.sv|
+Z30 !s108 1429658385.442000
+Z31 !s107 C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/flipflop.sv|
+Z32 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock|C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/flipflop.sv|
 !s101 -O0
 venteringUranus
 R1
-Z34 Ila`YDY;o4gCAzP@TMkiDl3
-Z35 V`f]^_TfCf57XH2:?;agc32
+Z33 Ila`YDY;o4gCAzP@TMkiDl3
+Z34 V`f]^_TfCf57XH2:?;agc32
 S1
 R5
-Z36 w1429657379
-Z37 8C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv
-Z38 FC:/Users/zachn/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv
+Z35 w1429657379
+Z36 8C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv
+Z37 FC:/Users/zachn/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv
 L0 1
 R10
 r1
 31
 R14
 R15
-Z39 nentering@uranus
-Z40 !s100 i36N:ZcDnhTO58?d>g:5f1
-Z41 !s105 enteringUranus_sv_unit
-Z42 !s108 1429657432.946000
-Z43 !s107 C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv|
-Z44 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock|C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv|
+Z38 nentering@uranus
+Z39 !s100 i36N:ZcDnhTO58?d>g:5f1
+Z40 !s105 enteringUranus_sv_unit
+Z41 !s108 1429658385.173000
+Z42 !s107 C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv|
+Z43 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock|C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv|
 !i10b 1
 !s85 0
 !s101 -O0
 vleavingUranus
 R1
-Z45 I@XkFk0HGF_6G@6z5OV1ha1
-Z46 V?4UK`PFP2C=oKiozNc8BH1
-Z47 !s105 leavingUranus_sv_unit
+Z44 I@XkFk0HGF_6G@6z5OV1ha1
+Z45 V?4UK`PFP2C=oKiozNc8BH1
+Z46 !s105 leavingUranus_sv_unit
 S1
 R5
-Z48 w1429657417
-Z49 8C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv
-Z50 FC:/Users/zachn/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv
+Z47 w1429658267
+Z48 8C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv
+Z49 FC:/Users/zachn/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv
 L0 1
 R10
 r1
 31
-Z51 !s108 1429657433.012000
-Z52 !s107 C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv|
-Z53 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock|C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv|
+Z50 !s108 1429658385.246000
+Z51 !s107 C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv|
+Z52 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock|C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv|
 R14
 R15
-Z54 nleaving@uranus
-Z55 !s100 @NE`W0BRGi6UQ?DZ2Fz2C1
+Z53 nleaving@uranus
+Z54 !s100 @NE`W0BRGi6UQ?DZ2Fz2C1
 !i10b 1
 !s85 0
 !s101 -O0
 vleavingUranus_testbench
 R1
-Z56 I@>VEe`RQC>d3mcWMic24I0
-Z57 VJR]nUn4R4e<_g]1bRbX;73
-R47
+Z55 I:62mCO>?=b^iRMGii@z>]3
+Z56 VV]FJ@ATbU7Mem_GP@``lI2
+R46
 S1
 R5
+R47
 R48
 R49
-R50
-Z58 L0 102
+Z57 L0 102
 R10
 r1
 31
+R50
 R51
 R52
-R53
 R14
 R15
-Z59 nleaving@uranus_testbench
-Z60 !s100 M@aXI089U6J4hcBFYWYFL0
+Z58 nleaving@uranus_testbench
+Z59 !s100 f@U^<NU;`jPQMS5VOCUO71
 !i10b 1
 !s85 0
 !s101 -O0
 vTimer
 R1
-Z61 Iooc`eTlbzVez0mYa0OP9;0
-Z62 Vi5<;Mja3koe0>I^moXCjz2
+Z60 IVz<::Ygez^]UGX;O9`?S@3
+Z61 Vi5<;Mja3koe0>I^moXCjz2
+Z62 !s105 Timer_sv_unit
 S1
 R5
-R18
-Z63 8C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/Timer.sv
-Z64 FC:/Users/zachn/Documents/nightmares/Lab 2/Interlock/Timer.sv
-L0 3
-R10
-r1
-31
-R14
-R15
-Z65 n@timer
-Z66 !s100 MCW[nI[Hm4NRQBTT]3H6T1
-Z67 !s105 Timer_sv_unit
-Z68 !s108 1429657432.804000
-Z69 !s107 C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/Timer.sv|
-Z70 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock|C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/Timer.sv|
-!i10b 1
-!s85 0
-!s101 -O0
-vUserInput
-Z71 Imml@fYG>mnM:OMJ`nSA1f0
-Z72 VkQicUC:aX<IhBVgYCN08W0
-R5
-Z73 w1429142485
-Z74 8C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/UserInput.v
-Z75 FC:/Users/zachn/Documents/nightmares/Lab 2/Interlock/UserInput.v
+Z63 w1429658370
+Z64 8C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/Timer.sv
+Z65 FC:/Users/zachn/Documents/nightmares/Lab 2/Interlock/Timer.sv
 L0 14
 R10
 r1
 31
-Z76 o-vlog01compat -work work -O0
-Z77 n@user@input
-Z78 !s100 KEbho;LSY^?bKmQaGCzWk0
-Z79 !s108 1429657432.668000
-Z80 !s107 C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/UserInput.v|
-Z81 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock|C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/UserInput.v|
-Z82 !s92 -vlog01compat -work work {+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock} -O0
+Z66 !s108 1429658385.075000
+Z67 !s107 C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/Timer.sv|
+Z68 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock|C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/Timer.sv|
+R14
+R15
+Z69 n@timer
+Z70 !s100 OJJEogoMGm`QlCe=F@2mI0
+!i10b 1
+!s85 0
+!s101 -O0
+vTimerTestbench
+R1
+Z71 IP[8[a_8lCA;0mY5Tg_U8K1
+Z72 VL=lGX6>`6n_MJ`K:7_Pn`2
+R62
+S1
+R5
+R63
+R64
+R65
+L0 54
+R10
+r1
+31
+R66
+R67
+R68
+R14
+R15
+Z73 n@timer@testbench
+Z74 !s100 zTIYdZkNo6@E[L8E29e:>0
+!i10b 1
+!s85 0
+!s101 -O0
+vUserInput
+Z75 Imml@fYG>mnM:OMJ`nSA1f0
+Z76 VkQicUC:aX<IhBVgYCN08W0
+R5
+Z77 w1429142485
+Z78 8C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/UserInput.v
+Z79 FC:/Users/zachn/Documents/nightmares/Lab 2/Interlock/UserInput.v
+L0 14
+R10
+r1
+31
+Z80 o-vlog01compat -work work -O0
+Z81 n@user@input
+Z82 !s100 KEbho;LSY^?bKmQaGCzWk0
+Z83 !s108 1429658384.910000
+Z84 !s107 C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/UserInput.v|
+Z85 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock|C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/UserInput.v|
+Z86 !s92 -vlog01compat -work work {+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock} -O0
 !i10b 1
 !s85 0
 !s101 -O0

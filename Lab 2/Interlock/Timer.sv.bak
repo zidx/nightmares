@@ -68,11 +68,11 @@ module TimerTestbench ();
 	initial rst = 0;
 	
 	initial begin
-		#(CLOCK_PERIOD)		rst = 1;
-		#(CLOCK_PERIOD / 2) 	rst = 0;
-		#(CLOCK_PERIOD / 2) 	rst = 1;
-		#(16 * CLOCK_PERIOD); 				//in = 0;
-		#(16 * CLOCK_PERIOD); 				//in = 1;
+		#(CLOCK_PERIOD)		reset = 1;
+		#(CLOCK_PERIOD / 2) 	reset = 0;
+		#(CLOCK_PERIOD / 2) 	reset = 1;
+		#(16 * CLOCK_PERIOD) 				in = 0;
+		#(16 * CLOCK_PERIOD) 				in = 1;
 		#(CLOCK_PERIOD);
 		
 		$stop; // End the simulation.
