@@ -19,7 +19,8 @@ parameter 	defaultState 		= 3'b000,
 				waitForEvacuate	= 3'b010,
 				evacTiming		   = 3'b011,
 				waitForPressurize = 3'b100,
-				pressurizeTiming  = 3'b101;
+				pressurizeTiming  = 3'b101,
+				exit 					= 3'b110;
 				
 parameter  	a	 	= 7'b0001000;
 parameter 	e		= 7'b0000110;
@@ -81,9 +82,17 @@ always @(*) begin
 			display = p;
 			rstCounter = 0;			//brings down timer
 			if(eightSec)	//waits eight seconds
-				ns = defaultState;
+				ns = exit;
 			else
 				ns = pressurizeTiming;
+		end
+		exit:	begin
+			display = nothing;
+			rstCounter = 0;			//brings down timer
+			if(~arriving)	//waits eight seconds
+				ns = defaultState;
+			else
+				ns = exit;
 		end
 		default: begin
 			display = nothing;

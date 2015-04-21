@@ -18,3 +18,4 @@ ps.waitForEvacuate 0 1 0
 ps.evacTiming 0 1 1 
 ps.waitForPressurize 1 0 0 
 ps.pressurizeTiming 1 0 1 
+ps.exit 1 1 0 

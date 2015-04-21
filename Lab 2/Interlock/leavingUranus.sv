@@ -41,7 +41,7 @@ module leavingUranus(rst, rstCounter, clock, innerPort, outerPort, leaving, evac
 				else ns = s1;
 			end
 			s2: begin
-				display = l;
+				display = nothing;
 				rstCounter = 0;
 				if (~outerPort & ~innerPort & evac) begin
 					rstCounter = 1;
@@ -56,7 +56,7 @@ module leavingUranus(rst, rstCounter, clock, innerPort, outerPort, leaving, evac
 				else ns = s3;
 			end
 			s4: begin
-				display = e;
+				display = nothing;
 				rstCounter = 0;
 				if (outerPort & ~innerPort) ns = s5;
 				else ns = s4;
