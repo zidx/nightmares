@@ -105,8 +105,6 @@ module leavingUranus_testbench();
 	reg innerPort, outerPort, leaving, evac, pressurize;
 	reg [2:0] counterVal;
 	
-	// Helper clock
-	reg helper;
 	
 	// Outputs
 	reg rstCounter;
@@ -114,17 +112,10 @@ module leavingUranus_testbench();
 	
 	// Set up the clock. 
 	parameter CLOCK_PERIOD=100; 
-	parameter ONE_SEC = 390625;
-	initial clock=1;
-	initial helper = 0;
+	initial clock=0;
 	always begin 
 		#(CLOCK_PERIOD/2); 
 		clock = ~clock; 
-	end
-	
-	always begin
-		#((CLOCK_PERIOD * ONE_SEC)/2)
-		helper = ~helper;
 	end
 	
 	
@@ -136,41 +127,45 @@ module leavingUranus_testbench();
 	integer i;
 	initial begin
 		rst <= 1; innerPort <= 0; 			
-		outerPort <= 0; leaving <= 0; 
-		evac <= 0; pressurize <= 0;	@(posedge helper)
-		rst <= 0;							@(posedge helper)
+		outerPort <= 0; leaving <= 0;
+		counterVal <= 3'b000;
+		evac <= 0; pressurize <= 0;	@(posedge clock);
+		rst <= 0;							@(posedge clock);
 		
-		leaving <= 1;						@(posedge helper)
-		evac <= 1;							@(posedge helper)
-		evac <= 0;							@(posedge helper)
-		pressurize <= 1;					@(posedge helper)
-		pressurize <= 0;					@(posedge helper)
-												@(posedge helper)
+		leaving <= 1;						@(posedge clock);
+		evac <= 1;							@(posedge clock);
+		evac <= 0;							@(posedge clock);
+		pressurize <= 1;					@(posedge clock);
+		pressurize <= 0;					@(posedge clock);
+		counterVal <= 3'b001;			@(posedge clock); // 5 seconds passed
+		counterVal <= 3'b000;
 												
-		evac <= 1;							@(posedge helper)
-		evac <= 0;							@(posedge helper)
-		pressurize <= 1;					@(posedge helper)
-		pressurize <= 0;					@(posedge helper)
-												@(posedge helper)
-												@(posedge helper)
-												@(posedge helper)
-												@(posedge helper)
+		evac <= 1;							@(posedge clock);
+		evac <= 0;							@(posedge clock);
+		pressurize <= 1;					@(posedge clock);
+		pressurize <= 0;					@(posedge clock);
+		counterVal <= 3'b010;			@(posedge clock);
+		counterVal <= 3'b000;			@(posedge clock);
+
 												
 			
-		outerPort <= 1;					@(posedge helper)
-		outerPort <= 1; leaving <= 0; @(posedge helper)
+		outerPort <= 1;					@(posedge clock);
+		outerPort <= 0; leaving <= 0; @(posedge clock);
 		
-		pressurize <= 1;					@(posedge helper)
-		pressurize <= 0;					@(posedge helper)
-		evac <= 1;							@(posedge helper)
-		evac <= 0;							@(posedge helper)
-												@(posedge helper)
-												@(posedge helper)
-												@(posedge helper)
-												@(posedge helper)
-												@(posedge helper)
+		pressurize <= 1;					@(posedge clock);
+		pressurize <= 0;					@(posedge clock);
+		evac <= 1;							@(posedge clock);
+		evac <= 0;							@(posedge clock);
+		counterVal <= 3'b100;			@(posedge clock);
+		counterVal <= 3'b000;			@(posedge clock);
+												@(posedge clock);
+												@(posedge clock);
 		
-		leaving <= 1;						@(posedge helper)
+		leaving <= 1;						@(posedge clock);
+												@(posedge clock);
+												@(posedge clock);
+												@(posedge clock);
+												@(posedge clock);
 		
 		$stop;
 	end
