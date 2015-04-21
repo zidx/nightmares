@@ -17,7 +17,7 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 wire spacecraftDeparting  =  SW[1];
 	 wire outerPort				=  SW[2];
 	 wire innerPort 				=  SW[3];
-	 wire reset 					=  KEY[0];
+	 wire reset 					= ~KEY[0];
 	 wire pressurizeChamber    = ~KEY[1];
 	 wire evacuateChamber 		= ~KEY[2];
 	 wire [6:0] displayArrive	=  HEX0;
@@ -40,7 +40,7 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 wire [3:0] numSeconds;
 	 
 	 wire [2:0] counterVal;
-	 assign counterVal = {numSeconds == fiveSec, numSeconds == sevenSec, numSeconds == eightSec};	 
+	 assign counterVal = {numSeconds == eightSec, numSeconds == sevenSec, numSeconds == fiveSec};	 
 	 	 
 	 //clock cycles for timer output to time number of seconds
 	 parameter fiveSec  = 4'b0101;
@@ -56,7 +56,7 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 assign LEDR[2] = outerPortUI;
 	 assign LEDR[3] = innerPortUI;
 	 
-	 assign LEDR[5] = numSeconds[0];
+	 assign LEDR[8:5] = numSeconds;
 	 
 	 //sends all asynchronous input through a DFF
 	 DFlipFlop arriving (spacecraftArrivingUI , spacecraftArriving, clock, resetUI);
@@ -64,16 +64,21 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 DFlipFlop outPort (outerPortUI, outerPort, clock, resetUI );
 	 DFlipFlop inPort (innerPortUI, innerPort, clock, resetUI );
 	 
+	 wire rstEnteringDFF;
+	 wire rstExitingDFF;
+	 DFlipFlop dffdelay (rstEnteringDFF, rstCounterEntering, clock, resetUI );
+	 DFlipFlop dffdelay2 (rstExitingDFF, rstCounterExiting, clock, resetUI );
+	 
 	 UserInput resetInput (clock, reset, resetUI );
 	 UserInput pressurizeInput (clock, pressurizeChamber, pressurizeChamberUI );
 	 UserInput evacuateInput (clock, evacuateChamber, evacuateChamberUI );
 	  
 	 //instantiates the timer to get the number of seconds
-	 Timer secTimer  (clock, reset | rstCounterEntering | rstCounterExiting, numSeconds);	 
+	 Timer secTimer  (clock, reset | rstEnteringDFF | rstExitingDFF, numSeconds);	 
 	 
 	 //instantiate both State Machines
 	 enteringUranus enteringInterlock (resetUI, rstCounterEntering, clock, innerPortUI, outerPortUI, spacecraftArrivingUI, evacuateChamberUI, pressurizeChamberUI, counterVal, HEX0);
-	 leavingUranus  leavingInterlock  (resetUI, rstCounterExiting, clock, innerPortUI, outerPortUI, spacecraftDepartingUI, evacuateChamberUI, pressurizeChamberUI, counterVal);
+	 leavingUranus  leavingInterlock  (resetUI, rstCounterExiting, clock, innerPortUI, outerPortUI, spacecraftDepartingUI, evacuateChamberUI, pressurizeChamberUI, counterVal, HEX1);
 	 
 endmodule
 
