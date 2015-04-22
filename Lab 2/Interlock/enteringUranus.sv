@@ -93,7 +93,7 @@ always @(*) begin
 			canIn = 0;
 			display = p;
 			rstCounter = 0;			//brings down timer
-			if(eightSec)	//waits eight seconds
+			if(eightSec)			//waits eight seconds
 				ns = exit;
 			else
 				ns = pressurizeTiming;
@@ -103,7 +103,7 @@ always @(*) begin
 			canIn = 1;
 			display = nothing;
 			rstCounter = 0;			//brings down timer
-			if(~arriving)	//waits eight seconds
+			if(~arriving)			//waits eight seconds
 				ns = defaultState;
 			else
 				ns = exit;
