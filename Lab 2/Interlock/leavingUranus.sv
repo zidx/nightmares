@@ -1,9 +1,9 @@
-module leavingUranus(rst, rstCounter, clock, innerPort, outerPort, leaving, evac, pressurize, counterVal, display);
+module leavingUranus(rst, rstCounter, clock, innerPort, outerPort, leaving, evac, pressurize, counterVal, display, canOut, canIn);
 	input clock, rst;
 	input innerPort, outerPort, leaving, evac, pressurize;
 	input [2:0] counterVal;
 
-	output reg rstCounter;
+	output reg rstCounter, canOut, canIn;
 	output reg [6:0] display;
 	
 	reg [2:0] ps;
@@ -26,6 +26,8 @@ module leavingUranus(rst, rstCounter, clock, innerPort, outerPort, leaving, evac
 	always @(*) begin
 		case(ps)
 			s0: begin
+				canOut = 0;
+				canIn = 1;
 				display = nothing;
 				rstCounter = 0;
 				if (~outerPort  & leaving) begin
@@ -35,12 +37,16 @@ module leavingUranus(rst, rstCounter, clock, innerPort, outerPort, leaving, evac
 				else ns = s0;
 			end
 			s1: begin
+				canOut = 0;
+				canIn = 1;
 				display = l;
 				rstCounter = 0;
 				if (counterVal == 3'b001) ns = s2;
 				else ns = s1;
 			end
 			s2: begin
+				canOut = 0;
+				canIn = 1;
 				display = nothing;
 				rstCounter = 0;
 				if (~outerPort & ~innerPort & evac) begin
@@ -50,24 +56,32 @@ module leavingUranus(rst, rstCounter, clock, innerPort, outerPort, leaving, evac
 				else ns = s2;
 			end
 			s3: begin
+				canOut = 0;
+				canIn = 0;
 				display = e;
 				rstCounter = 0;
 				if (counterVal == 3'b010) ns = s4;
 				else ns = s3;
 			end
 			s4: begin
+				canOut = 1;
+				canIn = 0;
 				display = nothing;
 				rstCounter = 0;
 				if (outerPort & ~innerPort) ns = s5;
 				else ns = s4;
 			end
 			s5: begin
+				canOut = 1;
+				canIn = 0;
 				display = nothing;
 				rstCounter = 0;
 				if (~outerPort & ~innerPort & ~leaving) ns = s6;
 				else ns = s5;
 			end
 			s6: begin
+				canOut = 1;
+				canIn = 0;
 				display = nothing;
 				rstCounter = 0;
 				if (~outerPort & ~innerPort & pressurize) begin
@@ -77,6 +91,8 @@ module leavingUranus(rst, rstCounter, clock, innerPort, outerPort, leaving, evac
 				else ns = s6;
 			end
 			s7: begin
+				canOut = 0;
+				canIn = 0;
 				display = p;
 				rstCounter = 0;
 				if (counterVal == 3'b100) begin
@@ -85,6 +101,8 @@ module leavingUranus(rst, rstCounter, clock, innerPort, outerPort, leaving, evac
 				else ns = s7;
 			end
 			default: begin
+				canOut = 0;
+				canIn = 1;
 				display = nothing;
 				rstCounter = 0;
 				ns = s0;

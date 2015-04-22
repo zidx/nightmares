@@ -4,8 +4,8 @@ input clock;
 input rst, innerPort, outerPort, arriving, evac, pressurize;
 input [2:0] counterVal;
 
-output rstCounter, canOut, canIn;
-output [6:0] display;
+output reg rstCounter, canOut, canIn;
+output reg [6:0] display;
 
 reg[2:0] ps;
 reg[2:0] ns;

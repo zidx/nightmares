@@ -23,6 +23,7 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 wire [6:0] displayArrive;
 	 wire [6:0] displayDepart;
 	 wire [6:0] displaySeconds;
+	 wire enteringCanOut, enteringCanIn, leavingCanOut, leavingCanIn;
 	 
 	 parameter blank = 7'b1111111;
 	 assign HEX0 = displayArrive;
@@ -69,8 +70,8 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 
 	 assign LEDR[0] = spacecraftArrivingUI;
 	 assign LEDR[1] = spacecraftDepartingUI;
-	 assign LEDR[2] = outerPortUI;
-	 assign LEDR[3] = innerPortUI;
+	 assign LEDR[2] = outerPortUI & (enteringCanOut | leavingCanOut);
+	 assign LEDR[3] = innerPortUI & (enteringCanIn  & leavingCanIn );
 	 
 	 assign LEDR[8:5] = numSeconds;
 	 
@@ -93,8 +94,8 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 Timer secTimer  (clock, reset | rstEnteringDFF | rstExitingDFF, numSeconds);	 
 	 
 	 //instantiate both State Machines
-	 enteringUranus enteringInterlock (resetUI, rstCounterEntering, clock, innerPortUI, outerPortUI, spacecraftArrivingUI, evacuateChamberUI, pressurizeChamberUI, counterVal, displayArrive);
-	 leavingUranus  leavingInterlock  (resetUI, rstCounterExiting, clock, innerPortUI, outerPortUI, spacecraftDepartingUI, evacuateChamberUI, pressurizeChamberUI, counterVal, displayDepart);
+	 enteringUranus enteringInterlock (resetUI, rstCounterEntering, clock, innerPortUI, outerPortUI, spacecraftArrivingUI, evacuateChamberUI, pressurizeChamberUI, counterVal, displayArrive, enteringCanOut, enteringCanIn);
+	 leavingUranus  leavingInterlock  (resetUI, rstCounterExiting, clock, innerPortUI, outerPortUI, spacecraftDepartingUI, evacuateChamberUI, pressurizeChamberUI, counterVal, displayDepart, leavingCanOut,  leavingCanIn );
 	 
 endmodule
 
