@@ -52,28 +52,47 @@ endmodule
 //
 //----------------------------------------------------------- 
 module TimerTestbench ();
-	reg        clk, rst;
+	reg        clock, rst;
 	wire [3:0] seconds;
-	Timer dut (clk, rst, seconds);
 	
-	// Set up the clock.
-	parameter CLOCK_PERIOD=100;
-	initial clk = 1;
-
+	
+	reg helper;
+	parameter oneSec = 390625;
+	
+	parameter clkDur = 100;
+	
+	
+	// Set up the clock. 
+	initial clock=0;
+	initial helper = 0;
 	always begin 
-		#(CLOCK_PERIOD/2);
-		clk = ~clk;
+		#(clkDur/2); 
+		clock = ~clock; 
 	end
 	
+	always begin
+		#((clkDur * oneSec) / 2)
+		helper = ~helper;
+	end
 	initial rst = 0;
 	
+	Timer dut (clock, rst, seconds);
+	
 	initial begin
-		#(CLOCK_PERIOD)		rst = 1;
-		#(CLOCK_PERIOD / 2) 	rst = 0;
-		#(CLOCK_PERIOD / 2) 	rst = 1;
-		#(16 * CLOCK_PERIOD); 				//in = 0;
-		#(16 * CLOCK_PERIOD); 				//in = 1;
-		#(CLOCK_PERIOD);
+			rst = 0;		@(posedge helper);
+		 	rst = 1;		@(posedge helper);
+		 	rst = 0;		@(posedge helper);
+							@(posedge helper);
+							@(posedge helper);
+							@(posedge helper);
+							@(posedge helper);
+							@(posedge helper);
+							@(posedge helper);
+							@(posedge helper);
+							@(posedge helper);
+		 	rst = 1;		@(posedge helper);
+		 	rst = 0;		@(posedge helper);
+		
 		
 		$stop; // End the simulation.
 	end
