@@ -125,5 +125,78 @@ always @(posedge clock) begin
 		ps <= ns;
 end
 endmodule
+
+module enteringUranus_testbench();
+	// Inputs
+	reg rst, clock;
+	reg innerPort, outerPort, arriving, evac, pressurize;
+	reg [2:0] counterVal;
+	
+	
+	// Outputs
+	reg rstCounter;
+	reg [6:0] display;
+	
+	// Set up the clock. 
+	parameter CLOCK_PERIOD=100; 
+	initial clock=0;
+	always begin 
+		#(CLOCK_PERIOD/2); 
+		clock = ~clock; 
+	end
+	
+	
+	enteringUranus dut (rst, rstCounter, clock, innerPort, outerPort, arriving, evac, pressurize, counterVal, display);
+	
+	// We don't test opening and closing the ports when we're not supposed to.
+	// This is because opening and closing them during operation is trivial.
+	// Everyone would die anyway if you open them at the wrong time
+	integer i;
+	initial begin
+		rst <= 1; innerPort <= 0; 			
+		outerPort <= 0; arriving <= 0;
+		counterVal <= 3'b000;
+		evac <= 0; pressurize <= 0;	@(posedge clock);
+		rst <= 0;							@(posedge clock);
+		
+		arriving <= 1;						@(posedge clock);
+		evac <= 1;							@(posedge clock);
+		evac <= 0;							@(posedge clock);
+		pressurize <= 1;					@(posedge clock);
+		pressurize <= 0;					@(posedge clock);
+		counterVal <= 3'b001;			@(posedge clock); // 5 seconds passed
+		counterVal <= 3'b000;
+												
+		evac <= 1;							@(posedge clock);
+		evac <= 0;							@(posedge clock);
+		pressurize <= 1;					@(posedge clock);
+		pressurize <= 0;					@(posedge clock);
+		counterVal <= 3'b010;			@(posedge clock);
+		counterVal <= 3'b000;			@(posedge clock);
+
+												
+			
+		outerPort <= 1;					@(posedge clock);
+		outerPort <= 0; arriving <= 0; @(posedge clock);
+		
+		pressurize <= 1;					@(posedge clock);
+		pressurize <= 0;					@(posedge clock);
+		evac <= 1;							@(posedge clock);
+		evac <= 0;							@(posedge clock);
+		counterVal <= 3'b100;			@(posedge clock);
+		counterVal <= 3'b000;			@(posedge clock);
+												@(posedge clock);
+												@(posedge clock);
+		
+		arriving <= 1;						@(posedge clock);
+												@(posedge clock);
+												@(posedge clock);
+												@(posedge clock);
+												@(posedge clock);
+		
+		$stop;
+	end
+	
+endmodule
 		
 				
