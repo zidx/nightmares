@@ -25,12 +25,56 @@
 # vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module DE1_SoC
-# ** Error: C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv(90): (vlog-2730) Undefined variable: 'rst'.
-# 
 # -- Compiling module ClockDivider
 # -- Compiling module DE1_SoC_testbench
-# ** Error: C:/altera/14.0/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./DE1_SoC_run_msim_rtl_verilog.do line 10
-# C:/altera/14.0/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv}"
+# 
+# Top level modules:
+# 	DE1_SoC_testbench
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/Timer.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module Timer
+# -- Compiling module TimerTestbench
+# 
+# Top level modules:
+# 	TimerTestbench
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module enteringUranus
+# -- Compiling module enteringUranus_testbench
+# 
+# Top level modules:
+# 	enteringUranus_testbench
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module leavingUranus
+# -- Compiling module leavingUranus_testbench
+# 
+# Top level modules:
+# 	leavingUranus_testbench
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/flipflop.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module DFlipFlop
+# 
+# Top level modules:
+# 	DFlipFlop
+# 
+vsim work.TimerTestbench
+# vsim work.TimerTestbench 
+# Loading sv_std.std
+# Loading work.TimerTestbench
+# Loading work.Timer
+add wave -position end  sim:/TimerTestbench/oneSec
+add wave -position end  sim:/TimerTestbench/rst
+add wave -position end  sim:/TimerTestbench/seconds
+add wave -position end  sim:/TimerTestbench/helper
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: klholden  Hostname: EE-137PC04  ProcessID: 8200
+# 
+#           Attempting to use alternate WLF file "./wlftrs1mwy".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftrs1mwy
+# 
+run -all
+# Break in Module TimerTestbench at C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/Timer.sv line 97
