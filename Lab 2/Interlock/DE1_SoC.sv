@@ -87,7 +87,7 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 // Keep track if a ship is docked
 	 initial shipDocked = 0;
 	 always @(*) begin
-		if(rst) begin
+		if(reset) begin
 			shipDocked = 0;
 		end
 		else begin
