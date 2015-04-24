@@ -10,19 +10,19 @@
 # ** Warning: Copied C:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 2/Interlock {C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/UserInput.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/UserInput.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module UserInput
 # 
 # Top level modules:
 # 	UserInput
-# vlog -vlog01compat -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 2/Interlock {C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/countup.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/countup.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module CountUp
 # 
 # Top level modules:
 # 	CountUp
-# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 2/Interlock {C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv}
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module DE1_SoC
 # -- Compiling module ClockDivider
@@ -30,100 +30,119 @@
 # 
 # Top level modules:
 # 	DE1_SoC_testbench
-# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 2/Interlock {C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/Timer.sv}
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/Timer.sv}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module Timer
 # -- Compiling module TimerTestbench
 # 
 # Top level modules:
 # 	TimerTestbench
-# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 2/Interlock {C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv}
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module enteringUranus
 # -- Compiling module enteringUranus_testbench
 # 
 # Top level modules:
 # 	enteringUranus_testbench
-# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 2/Interlock {C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv}
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module leavingUranus
 # -- Compiling module leavingUranus_testbench
 # 
 # Top level modules:
 # 	leavingUranus_testbench
-# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 2/Interlock {C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/flipflop.sv}
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 2/Interlock {C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/flipflop.sv}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module DFlipFlop
 # 
 # Top level modules:
 # 	DFlipFlop
 # 
-vsim work.DE1_SoC_testbench
-# vsim work.DE1_SoC_testbench 
+vsim work.enteringUranus_testbench
+# vsim work.enteringUranus_testbench 
 # Loading sv_std.std
-# Loading work.DE1_SoC_testbench
-# Loading work.DE1_SoC
-# Loading work.ClockDivider
-# Loading work.CountUp
-# Loading work.DFlipFlop
-# Loading work.UserInput
-# Loading work.Timer
+# Loading work.enteringUranus_testbench
 # Loading work.enteringUranus
-# Loading work.leavingUranus
-add wave -position end  sim:/DE1_SoC_testbench/dut/blank
-add wave -position end  sim:/DE1_SoC_testbench/dut/fiveSec
-add wave -position end  sim:/DE1_SoC_testbench/dut/sevenSec
-add wave -position end  sim:/DE1_SoC_testbench/dut/eightSec
-add wave -position end  sim:/DE1_SoC_testbench/dut/whichClock
-add wave -position end  sim:/DE1_SoC_testbench/dut/CLOCK_50
-add wave -position end  sim:/DE1_SoC_testbench/dut/HEX0
-add wave -position end  sim:/DE1_SoC_testbench/dut/HEX1
-add wave -position end  sim:/DE1_SoC_testbench/dut/HEX2
-add wave -position end  sim:/DE1_SoC_testbench/dut/HEX3
+# ** Warning: (vsim-3017) C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv(149): [TFMPC] - Too few port connections. Expected 12, found 10.
+# 
+#         Region: /enteringUranus_testbench/dut
+# ** Warning: (vsim-3722) C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv(149): [TFMPC] - Missing connection for port 'canOut'.
+# 
+# ** Warning: (vsim-3722) C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv(149): [TFMPC] - Missing connection for port 'canIn'.
+# 
+add wave -position end  sim:/enteringUranus_testbench/rst
+add wave -position end  sim:/enteringUranus_testbench/clock
+add wave -position end  sim:/enteringUranus_testbench/innerPort
+add wave -position end  sim:/enteringUranus_testbench/outerPort
+add wave -position end  sim:/enteringUranus_testbench/arriving
+add wave -position end  sim:/enteringUranus_testbench/evac
+add wave -position end  sim:/enteringUranus_testbench/pressurize
+add wave -position end  sim:/enteringUranus_testbench/counterVal
+add wave -position end  sim:/enteringUranus_testbench/rstCounter
+add wave -position end  sim:/enteringUranus_testbench/display
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 # 
 #           File in use by: klholden  Hostname: EE-137PC04  ProcessID: 8200
 # 
-#           Attempting to use alternate WLF file "./wlftwnaq5a".
+#           Attempting to use alternate WLF file "./wlftt6qm4v".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlftwnaq5a
-# 
-# Load canceled
-vsim work.DE1_SoC_testbench
-# vsim work.DE1_SoC_testbench 
-# Loading sv_std.std
-# Loading work.DE1_SoC_testbench
-# Loading work.DE1_SoC
-# Loading work.ClockDivider
-# Loading work.CountUp
-# Loading work.DFlipFlop
-# Loading work.UserInput
-# Loading work.Timer
-# Loading work.enteringUranus
-# Loading work.leavingUranus
-add wave -position end  sim:/DE1_SoC_testbench/oneSec
-add wave -position end  sim:/DE1_SoC_testbench/clkDur
-add wave -position end  sim:/DE1_SoC_testbench/clock
-add wave -position end  sim:/DE1_SoC_testbench/HEX0
-add wave -position end  sim:/DE1_SoC_testbench/HEX1
-add wave -position end  sim:/DE1_SoC_testbench/HEX2
-add wave -position end  sim:/DE1_SoC_testbench/HEX3
-add wave -position end  sim:/DE1_SoC_testbench/HEX4
-add wave -position end  sim:/DE1_SoC_testbench/HEX5
-add wave -position end  sim:/DE1_SoC_testbench/LEDR
-add wave -position end  sim:/DE1_SoC_testbench/KEY
-add wave -position end  sim:/DE1_SoC_testbench/SW
-add wave -position end  sim:/DE1_SoC_testbench/rst
-add wave -position end  sim:/DE1_SoC_testbench/helper
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-# 
-#           File in use by: klholden  Hostname: EE-137PC04  ProcessID: 8200
-# 
-#           Attempting to use alternate WLF file "./wlftyhd6x6".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-# 
-#           Using alternate file: ./wlftyhd6x6
+#           Using alternate file: ./wlftt6qm4v
 # 
 run -all
-# Break in Module DE1_SoC_testbench at C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv line 172
+# Break in Module enteringUranus_testbench at C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv line 197
+vsim work.leavingUranus_testbench
+# vsim work.leavingUranus_testbench 
+# Loading sv_std.std
+# Loading work.leavingUranus_testbench
+# Loading work.leavingUranus
+# ** Warning: (vsim-3017) C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv(140): [TFMPC] - Too few port connections. Expected 12, found 10.
+# 
+#         Region: /leavingUranus_testbench/dut
+# ** Warning: (vsim-3722) C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv(140): [TFMPC] - Missing connection for port 'canOut'.
+# 
+# ** Warning: (vsim-3722) C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv(140): [TFMPC] - Missing connection for port 'canIn'.
+# 
+add wave -position end  sim:/leavingUranus_testbench/rst
+add wave -position end  sim:/leavingUranus_testbench/clock
+add wave -position end  sim:/leavingUranus_testbench/innerPort
+add wave -position end  sim:/leavingUranus_testbench/outerPort
+add wave -position end  sim:/leavingUranus_testbench/leaving
+add wave -position end  sim:/leavingUranus_testbench/evac
+add wave -position end  sim:/leavingUranus_testbench/pressurize
+add wave -position end  sim:/leavingUranus_testbench/counterVal
+add wave -position end  sim:/leavingUranus_testbench/rstCounter
+add wave -position end  sim:/leavingUranus_testbench/display
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: klholden  Hostname: EE-137PC04  ProcessID: 8200
+# 
+#           Attempting to use alternate WLF file "./wlfttz8gzx".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlfttz8gzx
+# 
+run -all
+# Break in Module leavingUranus_testbench at C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv line 188
+vsim work.TimerTestbench
+# vsim work.TimerTestbench 
+# Loading sv_std.std
+# Loading work.TimerTestbench
+# Loading work.Timer
+add wave -position end  sim:/TimerTestbench/oneSec
+add wave -position end  sim:/TimerTestbench/clkDur
+add wave -position end  sim:/TimerTestbench/clock
+add wave -position end  sim:/TimerTestbench/rst
+add wave -position end  sim:/TimerTestbench/seconds
+add wave -position end  sim:/TimerTestbench/helper
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: klholden  Hostname: EE-137PC04  ProcessID: 8200
+# 
+#           Attempting to use alternate WLF file "./wlft2nqzni".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlft2nqzni
+# 
+run -all
+# Break in Module TimerTestbench at C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/Timer.sv line 97

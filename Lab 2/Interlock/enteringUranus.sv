@@ -102,8 +102,8 @@ always @(*) begin
 			canOut = 0;
 			canIn = 1;
 			display = nothing;
-			rstCounter = 0;			//brings down timer
-			if(~arriving)			//waits eight seconds
+			rstCounter = 0;			
+			if(~arriving)			
 				ns = defaultState;
 			else
 				ns = exit;
