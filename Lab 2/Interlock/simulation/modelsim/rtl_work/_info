@@ -5,25 +5,25 @@ cModel Technology
 Z0 dC:\Users\zachn\Documents\nightmares\Lab 2\Interlock\simulation\modelsim
 vClockDivider
 Z1 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
-Z2 IL26Yn<QUXFehGDHFQGzo40
+Z2 IGP<_>68RB]i7E>A0PEDSn3
 Z3 VECfnOSAF3DOcO<o@hR5Cb3
 Z4 !s105 DE1_SoC_sv_unit
 S1
 Z5 dC:\Users\zachn\Documents\nightmares\Lab 2\Interlock\simulation\modelsim
-Z6 w1429844865
+Z6 w1429847254
 Z7 8C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv
 Z8 FC:/Users/zachn/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv
-Z9 L0 107
+Z9 L0 124
 Z10 OV;L;10.1e;51
 r1
 31
-Z11 !s108 1429846290.132000
+Z11 !s108 1429847362.849000
 Z12 !s107 C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv|
 Z13 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock|C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv|
 Z14 o-sv -work work -O0
 Z15 !s92 -sv -work work {+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock} -O0
 Z16 n@clock@divider
-Z17 !s100 _8kkJAN`XfLF@OI^mkRFo3
+Z17 !s100 [Eeh>32aCHHR;1kfXJLGz0
 !i10b 1
 !s85 0
 !s101 -O0
@@ -42,7 +42,7 @@ Z23 o-vlog01compat -work work -O0
 Z24 !s92 -vlog01compat -work work {+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock} -O0
 Z25 n@count@up
 Z26 !s100 MM092l8?d]6mHboJWo;U:1
-Z27 !s108 1429846290.074000
+Z27 !s108 1429847362.435000
 Z28 !s107 C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/countup.v|
 Z29 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock|C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/countup.v|
 !i10b 1
@@ -50,7 +50,7 @@ Z29 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/zachn/Doc
 !s101 -O0
 vDE1_SoC
 R1
-Z30 I[O2eo82KT0ETjh=c_?gU@1
+Z30 IH?Nl[48IX7TSmX45MhbCl3
 Z31 Vf_Xcl[PAlH?H]<GUS7l;<3
 R4
 S1
@@ -68,13 +68,13 @@ R13
 R14
 R15
 Z32 n@d@e1_@so@c
-Z33 !s100 Z6GGCgP3Q5DHW<2;:1eVJ2
+Z33 !s100 ?T62Xc=?dmcM@8ZVhPFFA1
 !i10b 1
 !s85 0
 !s101 -O0
 vDE1_SoC_testbench
 R1
-Z34 IiMihoZVBn;3Q9Zm0[W2OL1
+Z34 Inb[W<6o5nNS>YjLzoPcYM1
 Z35 V_aU@_bHgT6YUPCJ9P^54z2
 R4
 S1
@@ -82,7 +82,7 @@ R5
 R6
 R7
 R8
-Z36 L0 131
+Z36 L0 148
 R10
 r1
 31
@@ -92,7 +92,7 @@ R13
 R14
 R15
 Z37 n@d@e1_@so@c_testbench
-Z38 !s100 A5?cmAVXIj21eK_[inkBi1
+Z38 !s100 N1JJPHJ?kikHSR<l<Md8N0
 !i10b 1
 !s85 0
 !s101 -O0
@@ -113,7 +113,7 @@ R10
 r1
 !s85 0
 31
-!s108 1429846290.724000
+!s108 1429847363.397000
 !s107 C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/flipflop.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock|C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/flipflop.sv|
 !s101 -O0
@@ -134,7 +134,7 @@ L0 1
 R10
 r1
 31
-Z45 !s108 1429846290.526000
+Z45 !s108 1429847363.137000
 Z46 !s107 C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv|
 Z47 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock|C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv|
 R14
@@ -182,7 +182,7 @@ L0 1
 R10
 r1
 31
-Z61 !s108 1429846290.640000
+Z61 !s108 1429847363.291000
 Z62 !s107 C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv|
 Z63 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock|C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv|
 R14
@@ -230,7 +230,7 @@ L0 14
 R10
 r1
 31
-Z77 !s108 1429846290.369000
+Z77 !s108 1429847362.987000
 Z78 !s107 C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/Timer.sv|
 Z79 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock|C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/Timer.sv|
 R14
@@ -278,7 +278,7 @@ r1
 R23
 Z91 n@user@input
 Z92 !s100 KEbho;LSY^?bKmQaGCzWk0
-Z93 !s108 1429846290.012000
+Z93 !s108 1429847362.369000
 Z94 !s107 C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/UserInput.v|
 Z95 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 2/Interlock|C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/UserInput.v|
 R24
