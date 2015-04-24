@@ -62,19 +62,24 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 
 	 wire [2:0] counterVal;
 	 assign counterVal = {numSeconds == eightSec, numSeconds == sevenSec, numSeconds == fiveSec};	 
-	 	 
 	 
 	 
-	 
-	 ClockDivider cdiv (CLOCK_50, clk);	 
-	 
+	 // LEDR[0] says spacecraft is arriving
+	 // LEDR[1] indicates spacecraft is departing
 	 assign LEDR[0] = spacecraftArrivingUI;
 	 assign LEDR[1] = spacecraftDepartingUI;
+	 
+	 // LEDR[2] is On if the outer port is open
+	 // LEDR[3] is on if the inner port is open
 	 assign LEDR[2] = outerPortUI & (enteringCanOut | leavingCanOut);
 	 assign LEDR[3] = innerPortUI & (enteringCanIn  & leavingCanIn );
 	 
-	 assign LEDR[8:5] = numSeconds;
+	 // LEDR[4] corresponds to pressurized
+	 // LEDR[5] corresponds to depressurzed
+	 assign LEDR[4] = enteringCanIn | leavingCanIn;
+	 assign LEDR[4] = enteringCanOut | leavingCanOut;
 	 
+	 ClockDivider cdiv (CLOCK_50, clk);	 
 	 CountUp countUpinst ( numSeconds, displaySeconds );
 	 
 	 //sends all asynchronous input through a DFF
