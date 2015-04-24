@@ -10,23 +10,120 @@
 # ** Warning: Copied C:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vlog -sv -work work +incdir+C:/Users/klholden/Documents/nightmares/Lab\ 2/Interlock {C:/Users/klholden/Documents/nightmares/Lab 2/Interlock/Timer.sv}
+# vlog -vlog01compat -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 2/Interlock {C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/UserInput.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module UserInput
+# 
+# Top level modules:
+# 	UserInput
+# vlog -vlog01compat -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 2/Interlock {C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/countup.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module CountUp
+# 
+# Top level modules:
+# 	CountUp
+# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 2/Interlock {C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module DE1_SoC
+# -- Compiling module ClockDivider
+# -- Compiling module DE1_SoC_testbench
+# 
+# Top level modules:
+# 	DE1_SoC_testbench
+# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 2/Interlock {C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/Timer.sv}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module Timer
 # -- Compiling module TimerTestbench
 # 
 # Top level modules:
 # 	TimerTestbench
+# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 2/Interlock {C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module enteringUranus
+# -- Compiling module enteringUranus_testbench
 # 
-vsim work.TimerTestbench
-# vsim work.TimerTestbench 
+# Top level modules:
+# 	enteringUranus_testbench
+# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 2/Interlock {C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module leavingUranus
+# -- Compiling module leavingUranus_testbench
+# 
+# Top level modules:
+# 	leavingUranus_testbench
+# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 2/Interlock {C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/flipflop.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module DFlipFlop
+# 
+# Top level modules:
+# 	DFlipFlop
+# 
+vsim work.DE1_SoC_testbench
+# vsim work.DE1_SoC_testbench 
 # Loading sv_std.std
-# Loading work.TimerTestbench
+# Loading work.DE1_SoC_testbench
+# Loading work.DE1_SoC
+# Loading work.ClockDivider
+# Loading work.CountUp
+# Loading work.DFlipFlop
+# Loading work.UserInput
 # Loading work.Timer
-add wave -position end  sim:/TimerTestbench/rst
-add wave -position end  sim:/TimerTestbench/seconds
-add wave -position end  sim:/TimerTestbench/helper
-run-a
-# invalid command name "run-a"
+# Loading work.enteringUranus
+# Loading work.leavingUranus
+add wave -position end  sim:/DE1_SoC_testbench/dut/blank
+add wave -position end  sim:/DE1_SoC_testbench/dut/fiveSec
+add wave -position end  sim:/DE1_SoC_testbench/dut/sevenSec
+add wave -position end  sim:/DE1_SoC_testbench/dut/eightSec
+add wave -position end  sim:/DE1_SoC_testbench/dut/whichClock
+add wave -position end  sim:/DE1_SoC_testbench/dut/CLOCK_50
+add wave -position end  sim:/DE1_SoC_testbench/dut/HEX0
+add wave -position end  sim:/DE1_SoC_testbench/dut/HEX1
+add wave -position end  sim:/DE1_SoC_testbench/dut/HEX2
+add wave -position end  sim:/DE1_SoC_testbench/dut/HEX3
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: klholden  Hostname: EE-137PC04  ProcessID: 8200
+# 
+#           Attempting to use alternate WLF file "./wlftwnaq5a".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftwnaq5a
+# 
+# Load canceled
+vsim work.DE1_SoC_testbench
+# vsim work.DE1_SoC_testbench 
+# Loading sv_std.std
+# Loading work.DE1_SoC_testbench
+# Loading work.DE1_SoC
+# Loading work.ClockDivider
+# Loading work.CountUp
+# Loading work.DFlipFlop
+# Loading work.UserInput
+# Loading work.Timer
+# Loading work.enteringUranus
+# Loading work.leavingUranus
+add wave -position end  sim:/DE1_SoC_testbench/oneSec
+add wave -position end  sim:/DE1_SoC_testbench/clkDur
+add wave -position end  sim:/DE1_SoC_testbench/clock
+add wave -position end  sim:/DE1_SoC_testbench/HEX0
+add wave -position end  sim:/DE1_SoC_testbench/HEX1
+add wave -position end  sim:/DE1_SoC_testbench/HEX2
+add wave -position end  sim:/DE1_SoC_testbench/HEX3
+add wave -position end  sim:/DE1_SoC_testbench/HEX4
+add wave -position end  sim:/DE1_SoC_testbench/HEX5
+add wave -position end  sim:/DE1_SoC_testbench/LEDR
+add wave -position end  sim:/DE1_SoC_testbench/KEY
+add wave -position end  sim:/DE1_SoC_testbench/SW
+add wave -position end  sim:/DE1_SoC_testbench/rst
+add wave -position end  sim:/DE1_SoC_testbench/helper
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: klholden  Hostname: EE-137PC04  ProcessID: 8200
+# 
+#           Attempting to use alternate WLF file "./wlftyhd6x6".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftyhd6x6
+# 
 run -all
-# Break in Module TimerTestbench at C:/Users/klholden/Documents/nightmares/Lab 2/Interlock/Timer.sv line 97
+# Break in Module DE1_SoC_testbench at C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv line 172

@@ -110,3 +110,65 @@ module ClockDivider (clock, divided_clocks);
 	 always @(posedge clock)
 	 divided_clocks = divided_clocks + 1;
 endmodule 
+
+//-----------------------------------------------------------
+// Module name:
+// DE1_SoC_testbench
+//
+// Description:
+// Module implemented as part of testing system.
+// Tests all possible states of DE1_SoC_testbench.
+// 
+// Author(s):
+// Krista Holden
+//
+//----------------------------------------------------------- 
+module DE1_SoC_testbench ();
+	 reg        clock;
+	 wire [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5; 
+	 wire [9:0] LEDR; 
+	 reg [3:0] KEY; 
+	 reg [9:0] SW; 
+	 reg rst = ~KEY[0];
+	
+	reg helper;
+	parameter oneSec = 390625;
+	
+	parameter clkDur = 100;
+	
+	
+	// Set up the clock. 
+	initial clock=0;
+	initial helper = 0;
+	always begin 
+		#(clkDur/2); 
+		clock = ~clock; 
+	end
+	
+	always begin
+		#((clkDur * oneSec) / 2)
+		helper = ~helper;
+	end
+	initial rst = 0;
+	
+	DE1_SoC  dut (clock, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW); 
+	
+	initial begin
+			rst = 0;		@(posedge helper);
+		 	rst = 1;		@(posedge helper);
+		 	rst = 0;		@(posedge helper);
+							@(posedge helper);
+							@(posedge helper);
+							@(posedge helper);
+							@(posedge helper);
+							@(posedge helper);
+							@(posedge helper);
+							@(posedge helper);
+							@(posedge helper);
+		 	rst = 1;		@(posedge helper);
+		 	rst = 0;		@(posedge helper);
+		
+		
+		$stop; // End the simulation.
+	end
+endmodule

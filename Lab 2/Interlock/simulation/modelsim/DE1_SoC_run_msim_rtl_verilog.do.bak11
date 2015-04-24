@@ -5,5 +5,5 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -sv -work work +incdir+C:/Users/klholden/Documents/nightmares/Lab\ 2/Interlock {C:/Users/klholden/Documents/nightmares/Lab 2/Interlock/Timer.sv}
+vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 2/Interlock {C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/Timer.sv}
 

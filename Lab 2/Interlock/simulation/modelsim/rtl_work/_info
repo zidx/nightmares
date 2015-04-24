@@ -2,52 +2,286 @@ m255
 K3
 13
 cModel Technology
-Z0 dC:\Users\klholden\Documents\nightmares\Lab 2\Interlock\simulation\modelsim
-vTimer
+Z0 dC:\Users\codyohl\Documents\nightmares\Lab 2\Interlock\simulation\modelsim
+vClockDivider
 Z1 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
-!i10b 1
-!s100 M5CkMPgkAaTOQWJOb7[bm1
-IVMCRMTOBe_]zo0F>Y9GXC1
-Vi5<;Mja3koe0>I^moXCjz2
-Z2 !s105 Timer_sv_unit
+Z2 IdDM3Rg=;Ak4j1k4JZYeA<3
+Z3 VECfnOSAF3DOcO<o@hR5Cb3
+Z4 !s105 DE1_SoC_sv_unit
 S1
-Z3 dC:\Users\klholden\Documents\nightmares\Lab 2\Interlock\simulation\modelsim
-Z4 w1429665800
-Z5 8C:/Users/klholden/Documents/nightmares/Lab 2/Interlock/Timer.sv
-Z6 FC:/Users/klholden/Documents/nightmares/Lab 2/Interlock/Timer.sv
-L0 14
-Z7 OV;L;10.1e;51
+Z5 dC:\Users\codyohl\Documents\nightmares\Lab 2\Interlock\simulation\modelsim
+Z6 w1429843702
+Z7 8C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv
+Z8 FC:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv
+Z9 L0 102
+Z10 OV;L;10.1e;51
 r1
-!s85 0
 31
-Z8 !s108 1429665812.904000
-Z9 !s107 C:/Users/klholden/Documents/nightmares/Lab 2/Interlock/Timer.sv|
-Z10 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/klholden/Documents/nightmares/Lab 2/Interlock|C:/Users/klholden/Documents/nightmares/Lab 2/Interlock/Timer.sv|
-!s101 -O0
-Z11 o-sv -work work -O0
-Z12 !s92 -sv -work work {+incdir+C:/Users/klholden/Documents/nightmares/Lab 2/Interlock} -O0
-n@timer
-vTimerTestbench
-R1
+Z11 !s108 1429844119.026000
+Z12 !s107 C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv|
+Z13 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock|C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv|
+Z14 o-sv -work work -O0
+Z15 !s92 -sv -work work {+incdir+C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock} -O0
+Z16 n@clock@divider
+Z17 !s100 KQ1@LTg5=j]CCh69a9RTC0
 !i10b 1
-!s100 A@^Q<Jak0zn7_jVfHC2gF1
-IYV[@e1jVjTbUmzT3FlfkA3
-V^[9=]i]Kc1D7@7BOM`9jU3
-R2
-S1
-R3
+!s85 0
+!s101 -O0
+vCountUp
+Z18 IKH]zHbQBcEXMDC5CeX>iF0
+Z19 VBzCEoTHdnWSUUooXHERdd0
+R5
+Z20 w1429659751
+Z21 8C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/countup.v
+Z22 FC:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/countup.v
+L0 13
+R10
+r1
+31
+Z23 o-vlog01compat -work work -O0
+Z24 !s92 -vlog01compat -work work {+incdir+C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock} -O0
+Z25 n@count@up
+Z26 !s100 EHPEn8alROK>7Ezen5@5Y3
+Z27 !s108 1429844118.944000
+Z28 !s107 C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/countup.v|
+Z29 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock|C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/countup.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vDE1_SoC
+R1
+Z30 IUNOg<bUWHLcWdlT>iBc9H2
+Z31 Vf_Xcl[PAlH?H]<GUS7l;<3
 R4
+S1
 R5
 R6
-L0 54
 R7
+R8
+L0 2
+R10
+r1
+31
+R11
+R12
+R13
+R14
+R15
+Z32 n@d@e1_@so@c
+Z33 !s100 Y5DAYn7Io2`GT9?DWB4Dl3
+!i10b 1
+!s85 0
+!s101 -O0
+vDE1_SoC_testbench
+R1
+Z34 I=S;J``JYzY50NHC@5e^m[2
+Z35 V_aU@_bHgT6YUPCJ9P^54z2
+R4
+S1
+R5
+R6
+R7
+R8
+Z36 L0 126
+R10
+r1
+31
+R11
+R12
+R13
+R14
+R15
+Z37 n@d@e1_@so@c_testbench
+Z38 !s100 J2A67A;C_nnJzg=0ji<`40
+!i10b 1
+!s85 0
+!s101 -O0
+vDFlipFlop
+R1
+!i10b 1
+!s100 F<hIZ;FJQbM4TJcCV]LlZ2
+IVFYGgJCV5AJ:dIG?D_aYD1
+VFLZl[_Y9Sz=YdCCc=CU[f3
+!s105 flipflop_sv_unit
+S1
+R5
+w1429156120
+8C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/flipflop.sv
+FC:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/flipflop.sv
+L0 16
+R10
 r1
 !s85 0
 31
-R8
-R9
-R10
+!s108 1429844119.378000
+!s107 C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/flipflop.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock|C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/flipflop.sv|
 !s101 -O0
-R11
-R12
-n@timer@testbench
+R14
+R15
+n@d@flip@flop
+venteringUranus
+R1
+Z39 IA3kjMfkQ[FJeLOjOSk[XH1
+Z40 Vka7ZD0`I<?m:C94]WLzz^2
+Z41 !s105 enteringUranus_sv_unit
+S1
+R5
+Z42 w1429666646
+Z43 8C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv
+Z44 FC:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv
+L0 1
+R10
+r1
+31
+Z45 !s108 1429844119.208000
+Z46 !s107 C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv|
+Z47 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock|C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv|
+R14
+R15
+Z48 nentering@uranus
+Z49 !s100 6RVX9B>56Bo`m292]V?>;0
+!i10b 1
+!s85 0
+!s101 -O0
+venteringUranus_testbench
+R1
+Z50 If_GHc8@zT8JCM86V?ij>92
+Z51 VBFi_lbLZe8P[?CcE6[1:d2
+R41
+S1
+R5
+R42
+R43
+R44
+Z52 L0 129
+R10
+r1
+31
+R45
+R46
+R47
+R14
+R15
+Z53 nentering@uranus_testbench
+Z54 !s100 0KmUj2Sf9c@k2dAQ=I6H=2
+!i10b 1
+!s85 0
+!s101 -O0
+vleavingUranus
+R1
+Z55 I:o:R6zJR01mNKzMMQ5`kd1
+Z56 VdO:TEe7:XCDLLZ_F:>X?B3
+Z57 !s105 leavingUranus_sv_unit
+S1
+R5
+Z58 w1429662331
+Z59 8C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv
+Z60 FC:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv
+L0 1
+R10
+r1
+31
+Z61 !s108 1429844119.291000
+Z62 !s107 C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv|
+Z63 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock|C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv|
+R14
+R15
+Z64 nleaving@uranus
+!i10b 1
+Z65 !s100 czU3AjMjdU1UXVWLPag>X3
+!s85 0
+!s101 -O0
+vleavingUranus_testbench
+R1
+Z66 I7U9ShD8RokR:`9<Y6mYSY1
+Z67 V8TbcOiOSz2V3^QR4^725`0
+R57
+S1
+R5
+R58
+R59
+R60
+Z68 L0 120
+R10
+r1
+31
+R61
+R62
+R63
+R14
+R15
+Z69 nleaving@uranus_testbench
+!i10b 1
+Z70 !s100 `UjXz9bkDLnDQdmR?J4R>1
+!s85 0
+!s101 -O0
+vTimer
+R1
+Z71 IC?^g1?859@P;lN7EeWI@Y0
+Z72 Vi5<;Mja3koe0>I^moXCjz2
+Z73 !s105 Timer_sv_unit
+S1
+R5
+Z74 w1429666645
+Z75 8C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/Timer.sv
+Z76 FC:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/Timer.sv
+L0 14
+R10
+r1
+31
+Z77 !s108 1429844119.127000
+Z78 !s107 C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/Timer.sv|
+Z79 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock|C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/Timer.sv|
+R14
+R15
+Z80 n@timer
+Z81 !s100 iTO6dV1QR9]G[BAZ931na1
+!i10b 1
+!s85 0
+!s101 -O0
+vTimerTestbench
+R1
+Z82 IDT4TCLjYMo_kGNZG2bl5_0
+Z83 V^[9=]i]Kc1D7@7BOM`9jU3
+R73
+S1
+R5
+R74
+R75
+R76
+L0 54
+R10
+r1
+31
+R77
+R78
+R79
+R14
+R15
+Z84 n@timer@testbench
+Z85 !s100 M1Nn16im8_BWU=1>RfCWW3
+!i10b 1
+!s85 0
+!s101 -O0
+vUserInput
+Z86 I]TB[5]:k2]TWBPcYa5WKM1
+Z87 VkQicUC:aX<IhBVgYCN08W0
+R5
+Z88 w1429141504
+Z89 8C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/UserInput.v
+Z90 FC:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/UserInput.v
+L0 14
+R10
+r1
+31
+R23
+Z91 n@user@input
+Z92 !s100 Id_<L3Inb]E6;ZG[3;_lG3
+Z93 !s108 1429844118.870000
+Z94 !s107 C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/UserInput.v|
+Z95 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock|C:/Users/codyohl/Documents/nightmares/Lab 2/Interlock/UserInput.v|
+R24
+!i10b 1
+!s85 0
+!s101 -O0
