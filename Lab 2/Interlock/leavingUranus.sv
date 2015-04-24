@@ -18,6 +18,10 @@ module leavingUranus(rst, rstCounter, clock, innerPort, outerPort, leaving, evac
 				 s6 = 3'b110, 
 				 s7 = 3'b111;
 				 
+	parameter counterFive  = 3'b001;
+	parameter counterSeven = 3'b010;
+	parameter counterEight = 3'b100;
+				 
 	parameter  	l	 	= 7'b1000111;
 	parameter 	e		= 7'b0000110;
 	parameter 	p		= 7'b0001100;
@@ -41,7 +45,7 @@ module leavingUranus(rst, rstCounter, clock, innerPort, outerPort, leaving, evac
 				canIn = 1;
 				display = l;
 				rstCounter = 0;
-				if (counterVal == 3'b001) ns = s2;
+				if (counterVal == counterFive) ns = s2;
 				else ns = s1;
 			end
 			s2: begin
@@ -60,7 +64,7 @@ module leavingUranus(rst, rstCounter, clock, innerPort, outerPort, leaving, evac
 				canIn = 0;
 				display = e;
 				rstCounter = 0;
-				if (counterVal == 3'b010) ns = s4;
+				if (counterVal == counterSeven) ns = s4;
 				else ns = s3;
 			end
 			s4: begin
@@ -95,7 +99,7 @@ module leavingUranus(rst, rstCounter, clock, innerPort, outerPort, leaving, evac
 				canIn = 0;
 				display = p;
 				rstCounter = 0;
-				if (counterVal == 3'b100) begin
+				if (counterVal == counterEight) begin
 					ns = s0;
 				end
 				else ns = s7;
