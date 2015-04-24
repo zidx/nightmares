@@ -12,8 +12,6 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 reg rstCounterEntering;
 	 reg rstCounterExiting;
 	 
-	 reg shipDocked;
-	 
 	 //user input wire assignments
 	 wire spacecraftArriving   =  SW[0];
 	 wire spacecraftDeparting  =  SW[1];
@@ -78,23 +76,11 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 
 	 // LEDR[4] corresponds to pressurized
 	 // LEDR[5] corresponds to depressurzed
-	 assign LEDR[4] = enteringCanIn | leavingCanIn;
+	 assign LEDR[4] = enteringCanIn & leavingCanIn;
 	 assign LEDR[5] = enteringCanOut | leavingCanOut;
-	 
-	 // LEDR[8] corresponds to if a ship is docked
-	 assign LEDR[8] = shipDocked;
-	 
+	  
 	 // Keep track if a ship is docked
-	 initial shipDocked = 0;
-	 always @(*) begin
-		if(resetUI) begin
-			shipDocked = 0;
-		end
-		else begin
-			if(spacecraftArrivingUI) shipDocked = 1;
-			else if(spacecraftDepartingUI) shipDocked = 0;			
-		end
-	 end
+	 ContainsShip interlocked (clock, resetUI, LEDR[9], spacecraftArrivingUI, spacecraftDepartingUI, (outerPortUI & (enteringCanOut | leavingCanOut)));
 	 
 	 ClockDivider cdiv (CLOCK_50, clk);	 
 	 CountUp countUpinst ( numSeconds, displaySeconds );

@@ -1,2 +1,1 @@
-Warning (10034): Output port "LEDR[9]" at DE1_SoC.sv(5) has no driver
-Warning (10034): Output port "LEDR[4]" at DE1_SoC.sv(5) has no driver
+Warning (10034): Output port "LEDR[8..6]" at DE1_SoC.sv(5) has no driver
