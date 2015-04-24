@@ -87,7 +87,7 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 // Keep track if a ship is docked
 	 initial shipDocked = 0;
 	 always @(*) begin
-		if(reset) begin
+		if(resetUI) begin
 			shipDocked = 0;
 		end
 		else begin
@@ -113,7 +113,7 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 UserInput evacuateInput (clock, evacuateChamber, evacuateChamberUI );
 	  
 	 //instantiates the timer to get the number of seconds
-	 Timer secTimer  (clock, reset | rstEnteringDFF | rstExitingDFF, numSeconds);	 
+	 Timer secTimer  (clock, resetUI | rstEnteringDFF | rstExitingDFF, numSeconds);	 
 	 
 	 //instantiate both State Machines
 	 enteringUranus enteringInterlock (resetUI, rstCounterEntering, clock, innerPortUI, outerPortUI, spacecraftArrivingUI, evacuateChamberUI, pressurizeChamberUI, counterVal, displayArrive, enteringCanOut, enteringCanIn);
