@@ -1,6 +1,6 @@
 //-----------------------------------------------------------
 // Module name:
-// DE1_SoC
+// leavingUranus
 //
 // Description:
 // State machine for leaving the interlock. Returns output
