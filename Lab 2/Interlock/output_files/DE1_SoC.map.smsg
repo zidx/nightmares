@@ -1,7 +1,1 @@
-<<<<<<< HEAD
-Warning (10034): Output port "LEDR[9]" at DE1_SoC.sv(5) has no driver
-Warning (10034): Output port "LEDR[7..6]" at DE1_SoC.sv(5) has no driver
-Warning (13024): Output pins are stuck at VCC or GND
-=======
 Warning (10034): Output port "LEDR[8..6]" at DE1_SoC.sv(5) has no driver
->>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a
