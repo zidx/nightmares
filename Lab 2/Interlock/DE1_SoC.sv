@@ -138,13 +138,22 @@ module DE1_SoC_testbench ();
 	 reg [3:0] KEY; 
 	 reg [9:0] SW; 
 	 
-	 reg rst = ~KEY[0];
-	 reg spacecraftArriving   =  SW[0];
-	 reg spacecraftDeparting  =  SW[1];
-	 reg outerPort				=  SW[2];
-	 reg innerPort 			=  SW[3];
-	 reg pressurizeChamber  = ~KEY[1];
-	 reg evacuateChamber 	= ~KEY[2];
+	 reg rst;
+	 reg spacecraftArriving;
+	 reg spacecraftDeparting;
+	 reg outerPort	;
+	 reg innerPort ;
+	 reg pressurizeChamber;
+	 reg evacuateChamber;
+	 
+	 
+	assign KEY[0] = ~rst;
+	assign SW[0] = spacecraftArriving;
+	assign SW[1] = spacecraftDeparting;
+	assign SW[2] = outerPort;
+	assign SW[3] = innerPort;
+	assign KEY[1] = ~pressurizeChamber;
+	assign KEY[2] = ~evacuateChamber;
 	
 	reg helper;
 	parameter oneSec = 390625;
