@@ -1,3 +1,15 @@
+//-----------------------------------------------------------
+// Module name:
+// enteringUranus
+//
+// Description:
+// State machine for entering the interlock. Returns output
+// values to the DE_SoC1 to keep track of the current state.
+// 
+// Author(s):
+// Cody Ohlsen
+//
+//----------------------------------------------------------- 
 module enteringUranus(rst, rstCounter, clock, innerPort, outerPort, arriving, evac, pressurize, counterVal, display, canOut, canIn);
 
 input clock;
@@ -126,6 +138,18 @@ always @(posedge clock) begin
 end
 endmodule
 
+//-----------------------------------------------------------
+// Module name:
+// enteringUranus_testbench
+//
+// Description:
+// Testbench for enteringUranus. Tests all states for cycle
+// as well as superfluous and errored input.
+// 
+// Author(s):
+// Cody Ohlsen
+//
+//----------------------------------------------------------- 
 module enteringUranus_testbench();
 	// Inputs
 	reg rst, clock;
