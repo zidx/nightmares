@@ -56,11 +56,11 @@ void part2() {
 	int result = 0;
 
 	// Declare and initialize pointers to variables
-	int aPoint = &a;
-	int bPoint = &b;
-	int cPoint = &c;
-	int dPoint = &d;
-	int ePoint = &e;
+	int *aPoint = &a;
+	int *bPoint = &b;
+	int *cPoint = &c;
+	int *dPoint = &d;
+	int *ePoint = &e;
 
 	// Compute ((A - B)*(C+D))/E using pointers
 	result = ((*aPoint - *bPoint) * (*cPoint + *dPoint)) / *ePoint;
