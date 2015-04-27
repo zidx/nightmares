@@ -11,8 +11,8 @@
 //
 //-----------------------------------------------------------
 
-`include "countup.v"
-`include "countupTester.v"
+`include "containsShip.v"
+`include "containsTester.v"
 
 module UserInputTop ();
   // connect the two modules
@@ -28,6 +28,6 @@ module UserInputTop ();
   initial
   begin
     $dumpfile("ContainsShip.vcd");
-    $dumpvars(1,myCountains);
+    $dumpvars(1,myContains);
   end
 endmodule
