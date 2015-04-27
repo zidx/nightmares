@@ -9,14 +9,14 @@ module leavingUranus(rst, rstCounter, clock, innerPort, outerPort, leaving, evac
 	reg [2:0] ps;
 	reg [2:0] ns;
 	
-	parameter s0 = 3'b000, 
-				 s1 = 3'b001, 
-				 s2 = 3'b010, 
-				 s3 = 3'b011, 
-				 s4 = 3'b100, 
-				 s5 = 3'b101, 
-				 s6 = 3'b110, 
-				 s7 = 3'b111;
+	parameter defaultState = 3'b000, 
+				 exitingTimer = 3'b001, 
+				 exitingState = 3'b010, 
+				 evacuateTimer = 3'b011, 
+				 evacuateState = 3'b100, 
+				 outerOpenState = 3'b101, 
+				 pressurizeReady = 3'b110, 
+				 pressurizingState = 3'b111;
 				 
 	parameter counterFive  = 3'b001;
 	parameter counterSeven = 3'b010;
@@ -29,93 +29,93 @@ module leavingUranus(rst, rstCounter, clock, innerPort, outerPort, leaving, evac
 	
 	always @(*) begin
 		case(ps)
-			s0: begin
+			defaultState: begin
 				canOut = 0;
 				canIn = 1;
 				display = nothing;
 				rstCounter = 0;
 				if (~outerPort  & leaving) begin
-					ns = s1;
+					ns = exitingTimer;
 					rstCounter = 1;
 				end
-				else ns = s0;
+				else ns = defaultState;
 			end
-			s1: begin
+			exitingTimer: begin
 				canOut = 0;
 				canIn = 1;
 				display = l;
 				rstCounter = 0;
-				if (counterVal == counterFive) ns = s2;
-				else ns = s1;
+				if (counterVal == counterFive) ns = exitingState;
+				else ns = exitingTimer;
 			end
-			s2: begin
+			exitingState: begin
 				canOut = 0;
 				canIn = 1;
 				display = nothing;
 				rstCounter = 0;
 				if (~outerPort & ~innerPort & evac) begin
 					rstCounter = 1;
-					ns = s3;
+					ns = evacuateTimer;
 				end
-				else ns = s2;
+				else ns = exitingState;
 			end
-			s3: begin
+			evacuateTimer: begin
 				canOut = 0;
 				canIn = 0;
 				display = e;
 				rstCounter = 0;
-				if (counterVal == counterSeven) ns = s4;
-				else ns = s3;
+				if (counterVal == counterSeven) ns = evacuateState;
+				else ns = evacuateTimer;
 			end
-			s4: begin
+			evacuateState: begin
 				canOut = 1;
 				canIn = 0;
 				display = nothing;
 				rstCounter = 0;
-				if (outerPort & ~innerPort) ns = s5;
-				else ns = s4;
+				if (outerPort & ~innerPort) ns = outerOpenState;
+				else ns = evacuateState;
 			end
-			s5: begin
+			outerOpenState: begin
 				canOut = 1;
 				canIn = 0;
 				display = nothing;
 				rstCounter = 0;
-				if (~outerPort & ~innerPort & ~leaving) ns = s6;
-				else ns = s5;
+				if (~outerPort & ~innerPort & ~leaving) ns = pressurizeReady;
+				else ns = outerOpenState;
 			end
-			s6: begin
+			pressurizeReady: begin
 				canOut = 1;
 				canIn = 0;
 				display = nothing;
 				rstCounter = 0;
 				if (~outerPort & ~innerPort & pressurize) begin
 					rstCounter = 1;
-					ns = s7;
+					ns = pressurizingState;
 				end
-				else ns = s6;
+				else ns = pressurizeReady;
 			end
-			s7: begin
+			pressurizingState: begin
 				canOut = 0;
 				canIn = 0;
 				display = p;
 				rstCounter = 0;
 				if (counterVal == counterEight) begin
-					ns = s0;
+					ns = defaultState;
 				end
-				else ns = s7;
+				else ns = pressurizingState;
 			end
 			default: begin
 				canOut = 0;
 				canIn = 1;
 				display = nothing;
 				rstCounter = 0;
-				ns = s0;
+				ns = defaultState;
 			end
 		endcase
 	end
 	
 	always @(posedge clock) begin
-		if (rst) ps <= s0;
+		if (rst) ps <= defaultState;
 		else ps <= ns;
 	end
 			
