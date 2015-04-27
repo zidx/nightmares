@@ -1,4 +1,18 @@
-// Top Level module
+//-----------------------------------------------------------
+// Module name:
+// DE1_SoC
+//
+// Description:
+// Top level module. Runs the interlock on the DE_SoC1. 
+// Connects all helper modules with the switches, buttons,
+// LEDs, and hex lights on the board.
+// 
+// Author(s):
+// Cody Ohlsen
+// Zach Nehrenberg
+// Krista Holden
+//
+//----------------------------------------------------------- 
 module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW); 
 	 input CLOCK_50;
 	 output reg [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5; 
