@@ -1,5 +1,5 @@
 Flow report for DE1_SoC
-Thu Apr 23 21:17:00 2015
+Sun Apr 26 18:53:36 2015
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Full Version
 
 
@@ -41,25 +41,25 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu Apr 23 21:17:00 2015       ;
+; Flow Status                     ; Successful - Sun Apr 26 18:53:36 2015       ;
 ; Quartus II 64-Bit Version       ; 14.0.0 Build 200 06/17/2014 SJ Full Version ;
 ; Revision Name                   ; DE1_SoC                                     ;
 ; Top-level Entity Name           ; DE1_SoC                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 45                                          ;
-; Total pins                      ; 67                                          ;
+; Logic utilization (in ALMs)     ; 2,841 / 32,070 ( 9 % )                      ;
+; Total registers                 ; 4886                                        ;
+; Total pins                      ; 67 / 457 ( 15 % )                           ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
+; Total block memory bits         ; 3,047,424 / 4,065,280 ( 75 % )              ;
+; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
 ; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
+; Total PLLs                      ; 0 / 6 ( 0 % )                               ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
 +---------------------------------+---------------------------------------------+
 
 
@@ -68,56 +68,290 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/23/2015 21:16:58 ;
+; Start date & time ; 04/26/2015 18:47:59 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE1_SoC             ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                           ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 91758288366.142984901801920           ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                     ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)       ; <None>        ; --          ; --             ;
-; ENABLE_OCT_DONE                     ; Off                                   ; On            ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                              ; --            ; --          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; --          ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --             ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --          ; --             ;
-; STATE_MACHINE_PROCESSING            ; User-Encoded                          ; Auto          ; --          ; --             ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                     ;
++-------------------------------------+------------------------------------------------------+---------------+-------------+---------------------------+
+; Assignment Name                     ; Value                                                ; Default Value ; Entity Name ; Section Id                ;
++-------------------------------------+------------------------------------------------------+---------------+-------------+---------------------------+
+; COMPILER_SIGNATURE_ID               ; 91770741814.143009927907592                          ; --            ; --          ; --                        ;
+; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                                    ; --            ; --          ; eda_simulation            ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)                      ; <None>        ; --          ; --                        ;
+; ENABLE_OCT_DONE                     ; Off                                                  ; On            ; --          ; --                        ;
+; ENABLE_SIGNALTAP                    ; On                                                   ; --            ; --          ; --                        ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                   ; --            ; --          ; --                        ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                    ; --            ; --          ; --                        ;
+; PARTITION_COLOR                     ; 16764057                                             ; --            ; --          ; Top                       ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                ; --            ; --          ; Top                       ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                               ; --            ; --          ; Top                       ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                  ; --            ; --          ; --                        ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                ; --            ; --          ; --                        ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                         ; --            ; --          ; --                        ;
+; SLD_FILE                            ; db/stp1_auto_stripped.stp                            ; --            ; --          ; --                        ;
+; SLD_NODE_CREATOR_ID                 ; 110                                                  ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_CREATOR_ID                 ; 110                                                  ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_CREATOR_ID                 ; 110                                                  ; --            ; --          ; Timer                     ;
+; SLD_NODE_CREATOR_ID                 ; 110                                                  ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_CREATOR_ID                 ; 110                                                  ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_CREATOR_ID                 ; 110                                                  ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_CREATOR_ID                 ; 110                                                  ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_CREATOR_ID                 ; 110                                                  ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_CREATOR_ID                 ; 110                                                  ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                        ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                        ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                        ; --            ; --          ; Timer                     ;
+; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                        ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                        ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                        ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                        ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                        ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                        ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_BLOCK_TYPE=AUTO                              ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=16                                     ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=1                                   ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_BITS=16                        ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334528                              ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                               ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=00000000000000000000000000000000  ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=32                         ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0        ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=32768                               ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                           ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                       ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                    ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                               ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                         ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INCREMENTAL_ROUTING=1                            ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                  ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=32768                               ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=1                             ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                 ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                         ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                        ; --            ; --          ; Arriving_Switch           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_BLOCK_TYPE=AUTO                              ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=13                                     ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=1                                   ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_BITS=13                        ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334529                              ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                               ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=00000000000000000000000000000000  ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=32                         ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0        ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=32768                               ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                           ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                       ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                    ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                               ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                         ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INCREMENTAL_ROUTING=1                            ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                  ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=32768                               ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=1                             ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                 ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                         ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                        ; --            ; --          ; Leaving_Switch            ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_BLOCK_TYPE=AUTO                              ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=1                                   ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334530                              ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                               ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0        ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                           ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                       ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                    ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                               ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                         ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INCREMENTAL_ROUTING=1                            ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                  ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=1                             ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                 ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                         ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                        ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=000000000000000000000000000000000 ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=33                         ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=65536                               ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=65536                               ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=5                                      ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_BITS=5                         ; --            ; --          ; Timer                     ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_BLOCK_TYPE=AUTO                              ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=15                                     ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=1                                   ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_BITS=15                        ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334531                              ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                               ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=00000000000000000000000000000000  ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=32                         ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0        ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=32768                               ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                           ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                       ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                    ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                               ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                         ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INCREMENTAL_ROUTING=1                            ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                  ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=32768                               ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=1                             ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                 ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                         ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                        ; --            ; --          ; Evacuate_Chamber_Switch   ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_BLOCK_TYPE=AUTO                              ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=15                                     ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=1                                   ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_BITS=15                        ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334532                              ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                               ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=00000000000000000000000000000000  ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=32                         ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0        ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=32768                               ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                           ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                       ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                    ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                               ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                         ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INCREMENTAL_ROUTING=1                            ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                  ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=32768                               ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=1                             ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                 ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                         ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                        ; --            ; --          ; Pressurize_Chamber_Switch ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_BLOCK_TYPE=AUTO                              ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=4                                      ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=1                                   ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_BITS=4                         ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334533                              ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                               ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=000000000000000000000000000000000 ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=33                         ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0        ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=65536                               ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                           ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                       ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                    ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                               ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                         ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INCREMENTAL_ROUTING=1                            ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                  ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=65536                               ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=1                             ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                 ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                         ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                        ; --            ; --          ; Outer_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_BLOCK_TYPE=AUTO                              ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=4                                      ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=1                                   ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_BITS=4                         ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334534                              ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                               ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=000000000000000000000000000000000 ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=33                         ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0        ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=65536                               ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                           ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                       ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                    ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                               ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                         ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INCREMENTAL_ROUTING=1                            ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                  ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=65536                               ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=1                             ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                 ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                         ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                        ; --            ; --          ; Inner_Port_Open           ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_BLOCK_TYPE=AUTO                              ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=2                                      ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=1                                   ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_BITS=2                         ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334535                              ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                               ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=000000000000000000000000000000000 ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=33                         ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0        ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=65536                               ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                           ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                       ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                    ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                               ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                         ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INCREMENTAL_ROUTING=1                            ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                  ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=65536                               ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=1                             ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                 ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                         ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                        ; --            ; --          ; Ship_Docked               ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_BLOCK_TYPE=AUTO                              ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=2                                      ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=1                                   ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_BITS=2                         ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334536                              ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                               ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=000000000000000000000000000000000 ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=33                         ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0        ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=65536                               ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                           ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                       ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                    ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                               ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                         ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INCREMENTAL_ROUTING=1                            ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                  ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=65536                               ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=1                             ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                 ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                         ; --            ; --          ; Ship_Left                 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                        ; --            ; --          ; Ship_Left                 ;
+; STATE_MACHINE_PROCESSING            ; User-Encoded                                         ; Auto          ; --          ; --                        ;
+; USE_SIGNALTAP_FILE                  ; stp1.stp                                             ; --            ; --          ; --                        ;
++-------------------------------------+------------------------------------------------------+---------------+-------------+---------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:01     ; 1.0                     ; 640 MB              ; 00:00:02                           ;
-; Total                ; 00:00:01     ; --                      ; --                  ; 00:00:02                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:11     ; 1.0                     ; 783 MB              ; 00:00:10                           ;
+; Partition Merge           ; 00:00:14     ; 1.0                     ; 857 MB              ; 00:00:14                           ;
+; Fitter                    ; 00:01:52     ; 1.4                     ; 2354 MB             ; 00:02:17                           ;
+; Assembler                 ; 00:00:18     ; 1.0                     ; 757 MB              ; 00:00:17                           ;
+; TimeQuest Timing Analyzer ; 00:02:47     ; 1.5                     ; 1194 MB             ; 00:03:47                           ;
+; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 723 MB              ; 00:00:03                           ;
+; Total                     ; 00:05:25     ; --                      ; --                  ; 00:06:48                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Flow OS Summary                                                                   ;
-+----------------------+------------------+-----------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
-+----------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis ; EE-137PC03       ; Windows 7 ; 6.2        ; x86_64         ;
-+----------------------+------------------+-----------+------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; Partition Merge           ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
+quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC --recompile=on
+quartus_cdb --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC --merge=on --recompile=on
+quartus_fit --read_settings_files=off --write_settings_files=off DE1_SoC -c DE1_SoC --recompile=on
+quartus_asm --read_settings_files=off --write_settings_files=off DE1_SoC -c DE1_SoC
+quartus_sta DE1_SoC -c DE1_SoC
+quartus_eda --read_settings_files=off --write_settings_files=off DE1_SoC -c DE1_SoC
 
 
 
