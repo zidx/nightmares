@@ -1,6 +1,10 @@
 <sld_project_info>
   <project>
+<<<<<<< HEAD
     <hash md5_digest_80b="f029b48e030844d29f58"/>
+=======
+    <hash md5_digest_80b="4d26c756a5853c38db31"/>
+>>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a
   </project>
   <file_info>
     <file device="5CSEMA5F31C6" path="DE1_SoC.sof" usercode="0xFFFFFFFF"/>

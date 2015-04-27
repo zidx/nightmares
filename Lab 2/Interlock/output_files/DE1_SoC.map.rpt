@@ -1,5 +1,13 @@
 Analysis & Synthesis report for DE1_SoC
+<<<<<<< HEAD
 Sun Apr 26 18:48:09 2015
+=======
+<<<<<<< HEAD
+Thu Apr 23 23:55:08 2015
+=======
+Thu Apr 23 21:17:00 2015
+>>>>>>> c7d94a5f663b794fe608b74bcaf4a159bf8f82d1
+>>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Full Version
 
 
@@ -13,6 +21,7 @@ Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Full Version
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
+<<<<<<< HEAD
   8. User-Specified and Inferred Latches
   9. Registers Removed During Synthesis
  10. Removed Registers Triggering Further Register Optimizations
@@ -53,6 +62,25 @@ Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Full Version
  45. Elapsed Time Per Partition
  46. Analysis & Synthesis Messages
  47. Analysis & Synthesis Suppressed Messages
+=======
+  8. State Machine - |DE1_SoC|leavingUranus:leavingInterlock|ps
+  9. State Machine - |DE1_SoC|enteringUranus:enteringInterlock|ps
+ 10. Logic Cells Representing Combinational Loops
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: Top-level Entity: |DE1_SoC
+ 15. Parameter Settings for User Entity Instance: ContainsShip:interlocked
+ 16. Parameter Settings for User Entity Instance: CountUp:countUpinst
+ 17. Parameter Settings for User Entity Instance: Timer:secTimer
+ 18. Parameter Settings for User Entity Instance: enteringUranus:enteringInterlock
+ 19. Parameter Settings for User Entity Instance: leavingUranus:leavingInterlock
+ 20. Port Connectivity Checks: "ClockDivider:cdiv"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
+ 24. Analysis & Synthesis Suppressed Messages
+>>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a
 
 
 
@@ -79,11 +107,20 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
+<<<<<<< HEAD
 ; Analysis & Synthesis Status     ; Successful - Sun Apr 26 18:48:09 2015       ;
+=======
+<<<<<<< HEAD
+; Analysis & Synthesis Status     ; Successful - Thu Apr 23 23:55:08 2015       ;
+=======
+; Analysis & Synthesis Status     ; Successful - Thu Apr 23 21:17:00 2015       ;
+>>>>>>> c7d94a5f663b794fe608b74bcaf4a159bf8f82d1
+>>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a
 ; Quartus II 64-Bit Version       ; 14.0.0 Build 200 06/17/2014 SJ Full Version ;
 ; Revision Name                   ; DE1_SoC                                     ;
 ; Top-level Entity Name           ; DE1_SoC                                     ;
 ; Family                          ; Cyclone V                                   ;
+<<<<<<< HEAD
 ; Logic utilization (in ALMs)     ; N/A until Partition Merge                   ;
 ; Total registers                 ; N/A until Partition Merge                   ;
 ; Total pins                      ; N/A until Partition Merge                   ;
@@ -96,6 +133,20 @@ agreement for further details.
 ; Total HSSI PMA TX Serializers   ; N/A until Partition Merge                   ;
 ; Total PLLs                      ; N/A until Partition Merge                   ;
 ; Total DLLs                      ; N/A until Partition Merge                   ;
+=======
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 47                                          ;
+; Total pins                      ; 67                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
+>>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a
 +---------------------------------+---------------------------------------------+
 
 
@@ -205,6 +256,7 @@ agreement for further details.
 +----------------------------+-------------+
 
 
+<<<<<<< HEAD
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Source Files Read                                                                                                                                    ;
 +----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------+---------+
@@ -288,6 +340,22 @@ agreement for further details.
 ; sld_hub.vhd                      ; yes             ; Encrypted Megafunction       ; c:/altera/14.0/quartus/libraries/megafunctions/sld_hub.vhd                  ;         ;
 ; sld_jtag_hub.vhd                 ; yes             ; Encrypted Megafunction       ; c:/altera/14.0/quartus/libraries/megafunctions/sld_jtag_hub.vhd             ;         ;
 +----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------+---------+
+=======
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                 ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                             ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
+; DE1_SoC.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/klholden/Documents/nightmares/Lab 2/Interlock/DE1_SoC.sv        ;         ;
+; Timer.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/klholden/Documents/nightmares/Lab 2/Interlock/Timer.sv          ;         ;
+; UserInput.v                      ; yes             ; User Verilog HDL File        ; C:/Users/klholden/Documents/nightmares/Lab 2/Interlock/UserInput.v       ;         ;
+; enteringUranus.sv                ; yes             ; User SystemVerilog HDL File  ; C:/Users/klholden/Documents/nightmares/Lab 2/Interlock/enteringUranus.sv ;         ;
+; leavingUranus.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/klholden/Documents/nightmares/Lab 2/Interlock/leavingUranus.sv  ;         ;
+; flipflop.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/klholden/Documents/nightmares/Lab 2/Interlock/flipflop.sv       ;         ;
+; countup.v                        ; yes             ; User Verilog HDL File        ; C:/Users/klholden/Documents/nightmares/Lab 2/Interlock/countup.v         ;         ;
+; containsShip.v                   ; yes             ; User Verilog HDL File        ; C:/Users/klholden/Documents/nightmares/Lab 2/Interlock/containsShip.v    ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
+>>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a
 
 
 +-----------------------------------------------------------------------------------+
@@ -295,6 +363,7 @@ agreement for further details.
 +---------------------------------------------+-------------------------------------+
 ; Resource                                    ; Usage                               ;
 +---------------------------------------------+-------------------------------------+
+<<<<<<< HEAD
 ; Estimate of Logic utilization (ALMs needed) ; 69                                  ;
 ;                                             ;                                     ;
 ; Combinational ALUT usage for logic          ; 122                                 ;
@@ -305,13 +374,31 @@ agreement for further details.
 ;     -- <=3 input functions                  ; 76                                  ;
 ;                                             ;                                     ;
 ; Dedicated logic registers                   ; 49                                  ;
+=======
+; Estimate of Logic utilization (ALMs needed) ; 60                                  ;
+;                                             ;                                     ;
+; Combinational ALUT usage for logic          ; 97                                  ;
+;     -- 7 input functions                    ; 3                                   ;
+;     -- 6 input functions                    ; 20                                  ;
+;     -- 5 input functions                    ; 7                                   ;
+;     -- 4 input functions                    ; 17                                  ;
+;     -- <=3 input functions                  ; 50                                  ;
+;                                             ;                                     ;
+; Dedicated logic registers                   ; 47                                  ;
+>>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a
 ;                                             ;                                     ;
 ; I/O pins                                    ; 0                                   ;
 ; Total DSP Blocks                            ; 0                                   ;
 ; Maximum fan-out node                        ; ClockDivider:cdiv|divided_clocks[6] ;
+<<<<<<< HEAD
 ; Maximum fan-out                             ; 39                                  ;
 ; Total fan-out                               ; 564                                 ;
 ; Average fan-out                             ; 2.19                                ;
+=======
+; Maximum fan-out                             ; 41                                  ;
+; Total fan-out                               ; 564                                 ;
+; Average fan-out                             ; 2.03                                ;
+>>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a
 +---------------------------------------------+-------------------------------------+
 
 
@@ -320,9 +407,16 @@ agreement for further details.
 +---------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------+--------------+
 ; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                       ; Library Name ;
 +---------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------+--------------+
+<<<<<<< HEAD
 ; |DE1_SoC                              ; 122 (14)          ; 49 (0)       ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC                                  ; work         ;
 ;    |ClockDivider:cdiv|                ; 11 (11)           ; 11 (11)      ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|ClockDivider:cdiv                ; work         ;
 ;    |CountUp:countUpinst|              ; 14 (14)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|CountUp:countUpinst              ; work         ;
+=======
+; |DE1_SoC                              ; 97 (8)            ; 47 (0)       ; 0                 ; 0          ; 67   ; 0            ; |DE1_SoC                                  ; work         ;
+;    |ClockDivider:cdiv|                ; 7 (7)             ; 7 (7)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|ClockDivider:cdiv                ; work         ;
+;    |ContainsShip:interlocked|         ; 7 (7)             ; 2 (2)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|ContainsShip:interlocked         ; work         ;
+;    |CountUp:countUpinst|              ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|CountUp:countUpinst              ; work         ;
+>>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a
 ;    |DFlipFlop:arriving|               ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|DFlipFlop:arriving               ; work         ;
 ;    |DFlipFlop:departing|              ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|DFlipFlop:departing              ; work         ;
 ;    |DFlipFlop:dffdelay2|              ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC|DFlipFlop:dffdelay2              ; work         ;
@@ -351,6 +445,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
+<<<<<<< HEAD
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Registers Removed During Synthesis                                                                                                                                                                                                                                                                                                                                                  ;
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -439,6 +534,30 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; sld_signaltap:Ship_Left|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc|lfsr[15]   ; Stuck at GND              ; sld_signaltap:Ship_Left|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc|lfsr[14],   ;
 ;                                                                                                                                                         ; due to stuck port data_in ; sld_signaltap:Ship_Left|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc|lfsr[13]    ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+=======
++------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops               ;
++--------------------------------------------------------+---+
+; Logic Cell Name                                        ;   ;
++--------------------------------------------------------+---+
+; ContainsShip:interlocked|always0~1                     ;   ;
+; ContainsShip:interlocked|Mux2~0                        ;   ;
+; ContainsShip:interlocked|Mux3~0                        ;   ;
+; ContainsShip:interlocked|Mux1~0                        ;   ;
+; Number of logic cells representing combinational loops ; 4 ;
++--------------------------------------------------------+---+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------+
+; Registers Removed During Synthesis                           ;
++-----------------------------------------+--------------------+
+; Register name                           ; Reason for Removal ;
++-----------------------------------------+--------------------+
+; ClockDivider:cdiv|divided_clocks[7..31] ; Lost fanout        ;
+; Total Number of Removed Registers = 25  ;                    ;
++-----------------------------------------+--------------------+
+>>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a
 
 
 +------------------------------------------------------+
@@ -446,7 +565,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
+<<<<<<< HEAD
 ; Total registers                              ; 49    ;
+=======
+; Total registers                              ; 47    ;
+>>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a
 ; Number of registers using Synchronous Clear  ; 19    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -597,6 +720,19 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; eightSec       ; 1000    ; Unsigned Binary                              ;
 ; whichClock     ; 6       ; Signed Integer                               ;
 +----------------+---------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ContainsShip:interlocked ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; empty          ; 00    ; Unsigned Binary                              ;
+; enter          ; 10    ; Unsigned Binary                              ;
+; exit           ; 01    ; Unsigned Binary                              ;
+; contains       ; 11    ; Unsigned Binary                              ;
++----------------+-------+----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1254,6 +1390,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
+<<<<<<< HEAD
 ; arriav_ff             ; 49                          ;
 ;     ENA               ; 4                           ;
 ;     SCLR              ; 19                          ;
@@ -1276,6 +1413,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
 ; Average LUT depth     ; 2.09                        ;
+=======
+; arriav_ff             ; 47                          ;
+;     ENA               ; 4                           ;
+;     SCLR              ; 19                          ;
+;     plain             ; 24                          ;
+; arriav_lcell_comb     ; 114                         ;
+;     arith             ; 25                          ;
+;         1 data inputs ; 24                          ;
+;         2 data inputs ; 1                           ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 86                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 19                          ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 14                          ;
+;         4 data inputs ; 17                          ;
+;         5 data inputs ; 7                           ;
+;         6 data inputs ; 20                          ;
+; boundary_port         ; 67                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.05                        ;
+>>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a
 +-----------------------+-----------------------------+
 
 
@@ -1516,8 +1677,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Full Version
+<<<<<<< HEAD
     Info: Processing started: Sun Apr 26 18:47:58 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC --recompile=on
+=======
+<<<<<<< HEAD
+    Info: Processing started: Thu Apr 23 23:55:06 2015
+=======
+    Info: Processing started: Thu Apr 23 21:16:58 2015
+>>>>>>> c7d94a5f663b794fe608b74bcaf4a159bf8f82d1
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
+>>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 3 design units, including 3 entities, in source file de1_soc.sv
     Info (12023): Found entity 1: DE1_SoC
@@ -1538,9 +1708,15 @@ Info (12021): Found 1 design units, including 1 entities, in source file flipflo
     Info (12023): Found entity 1: DFlipFlop
 Info (12021): Found 1 design units, including 1 entities, in source file countup.v
     Info (12023): Found entity 1: CountUp
+Info (12021): Found 1 design units, including 1 entities, in source file containsship.v
+    Info (12023): Found entity 1: ContainsShip
 Info (12127): Elaborating entity "DE1_SoC" for the top level hierarchy
+<<<<<<< HEAD
 Warning (10240): Verilog HDL Always Construct warning at DE1_SoC.sv(90): inferring latch(es) for variable "shipDocked", which holds its previous value in one or more paths through the always construct
 Info (10041): Inferred latch for "shipDocked" at DE1_SoC.sv(94)
+=======
+Info (12128): Elaborating entity "ContainsShip" for hierarchy "ContainsShip:interlocked"
+>>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a
 Info (12128): Elaborating entity "ClockDivider" for hierarchy "ClockDivider:cdiv"
 Info (12128): Elaborating entity "CountUp" for hierarchy "CountUp:countUpinst"
 Info (12128): Elaborating entity "DFlipFlop" for hierarchy "DFlipFlop:arriving"
@@ -1548,6 +1724,7 @@ Info (12128): Elaborating entity "UserInput" for hierarchy "UserInput:resetInput
 Info (12128): Elaborating entity "Timer" for hierarchy "Timer:secTimer"
 Info (12128): Elaborating entity "enteringUranus" for hierarchy "enteringUranus:enteringInterlock"
 Info (12128): Elaborating entity "leavingUranus" for hierarchy "leavingUranus:leavingInterlock"
+<<<<<<< HEAD
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_t784.tdf
     Info (12023): Found entity 1: altsyncram_t784
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_8la.tdf
@@ -1657,11 +1834,36 @@ Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
     Info: Processing ended: Sun Apr 26 18:48:09 2015
     Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:11
+=======
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 25 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/klholden/Documents/nightmares/Lab 2/Interlock/output_files/DE1_SoC.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 164 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 52 output pins
+    Info (21061): Implemented 97 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
+<<<<<<< HEAD
+    Info: Peak virtual memory: 643 megabytes
+    Info: Processing ended: Thu Apr 23 23:55:08 2015
+=======
+    Info: Peak virtual memory: 640 megabytes
+    Info: Processing ended: Thu Apr 23 21:17:00 2015
+>>>>>>> c7d94a5f663b794fe608b74bcaf4a159bf8f82d1
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+>>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
+<<<<<<< HEAD
 The suppressed messages can be found in C:/Users/zachn/Documents/nightmares/Lab 2/Interlock/output_files/DE1_SoC.map.smsg.
+=======
+The suppressed messages can be found in C:/Users/klholden/Documents/nightmares/Lab 2/Interlock/output_files/DE1_SoC.map.smsg.
+>>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a
 
 

@@ -974,6 +974,7 @@ set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_WE_N
 set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_RESET_N
 set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_CK_P
 set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_CK_N
+<<<<<<< HEAD
 set_global_assignment -name ENABLE_SIGNALTAP ON
 set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
 set_global_assignment -name SIGNALTAP_FILE stp1.stp
@@ -1385,3 +1386,7 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -to Inner_Port_Open|vcc -section_id Inner_Port_Open
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=131072" -section_id Inner_Port_Open
 set_global_assignment -name SLD_FILE db/stp1_auto_stripped.stp
+=======
+set_global_assignment -name VERILOG_FILE containsShip.v
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+>>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a

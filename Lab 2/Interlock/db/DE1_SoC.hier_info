@@ -46,6 +46,7 @@ KEY[0] => reset.IN1
 KEY[1] => pressurizeChamber.IN1
 KEY[2] => evacuateChamber.IN1
 KEY[3] => ~NO_FANOUT~
+<<<<<<< HEAD
 LEDR[0] << spacecraftArrivingUI.DB_MAX_OUTPUT_PORT_TYPE
 LEDR[1] << spacecraftDepartingUI.DB_MAX_OUTPUT_PORT_TYPE
 LEDR[2] << LEDR.DB_MAX_OUTPUT_PORT_TYPE
@@ -56,6 +57,18 @@ LEDR[6] << <GND>
 LEDR[7] << <GND>
 LEDR[8] << shipDocked.DB_MAX_OUTPUT_PORT_TYPE
 LEDR[9] << <GND>
+=======
+LEDR[0] <= spacecraftArrivingUI.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] <= spacecraftDepartingUI.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] <= LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[4] <= LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[5] <= LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[6] <= <GND>
+LEDR[7] <= <GND>
+LEDR[8] <= <GND>
+LEDR[9] <= ContainsShip:interlocked.port2
+>>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a
 SW[0] => spacecraftArriving.IN1
 SW[1] => spacecraftDeparting.IN1
 SW[2] => outerPort.IN1
@@ -66,6 +79,18 @@ SW[6] => ~NO_FANOUT~
 SW[7] => ~NO_FANOUT~
 SW[8] => ~NO_FANOUT~
 SW[9] => ~NO_FANOUT~
+
+
+|DE1_SoC|ContainsShip:interlocked
+clock => ps[0].CLK
+clock => ps[1].CLK
+reset => ps.OUTPUTSELECT
+reset => ps.OUTPUTSELECT
+shipDocked <= ps[0].DB_MAX_OUTPUT_PORT_TYPE
+arriving => always0.IN1
+departing => always0.IN1
+openDoor => always0.IN1
+openDoor => always0.IN0
 
 
 |DE1_SoC|ClockDivider:cdiv

@@ -1,12 +1,21 @@
+<<<<<<< HEAD
 Fitter Status : Successful - Sun Apr 26 18:50:19 2015
+=======
+Fitter Status : Successful - Thu Apr 23 23:55:47 2015
+>>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a
 Quartus II 64-Bit Version : 14.0.0 Build 200 06/17/2014 SJ Full Version
 Revision Name : DE1_SoC
 Top-level Entity Name : DE1_SoC
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
+<<<<<<< HEAD
 Logic utilization (in ALMs) : 2,841 / 32,070 ( 9 % )
 Total registers : 4886
+=======
+Logic utilization (in ALMs) : 61 / 32,070 ( < 1 % )
+Total registers : 47
+>>>>>>> f2abc42cb201c5af00e9161273343572e22a8e6a
 Total pins : 67 / 457 ( 15 % )
 Total virtual pins : 0
 Total block memory bits : 3,047,424 / 4,065,280 ( 75 % )
