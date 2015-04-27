@@ -1,3 +1,15 @@
+//-----------------------------------------------------------
+// Module name:
+// DE1_SoC
+//
+// Description:
+// State machine for leaving the interlock. Returns output
+// values to the DE_SoC1 to keep track of the current state.
+// 
+// Author(s):
+// Zach Nehrenberg
+//
+//----------------------------------------------------------- 
 module leavingUranus(rst, rstCounter, clock, innerPort, outerPort, leaving, evac, pressurize, counterVal, display, canOut, canIn);
 	input clock, rst;
 	input innerPort, outerPort, leaving, evac, pressurize;
@@ -121,6 +133,19 @@ module leavingUranus(rst, rstCounter, clock, innerPort, outerPort, leaving, evac
 			
 endmodule
 
+
+//-----------------------------------------------------------
+// Module name:
+// leavingUranus_testbench
+//
+// Description:
+// Testbench for leavingUranus. Tests all states for cycle
+// as well as superfluous and errored input.
+// 
+// Author(s):
+// Zach Nehrenberg
+//
+//----------------------------------------------------------- 
 module leavingUranus_testbench();
 	// Inputs
 	reg rst, clock;
