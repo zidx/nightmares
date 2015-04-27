@@ -17,37 +17,40 @@ void part1() {
 	// is declared.
 	// Declaring variables of type int
 	int intA = 0;
-	int intB = 0;
+	int intB = 1;
 
 	// Declare variables of type float
 	float floatA = 0.0;
-	float floatB = 0.0;
+	float floatB = 1.0;
 
 	// Declare variables of type char
-	char charA = '';
-	char charB = '';
+	char charA = 'a';
+	char charB = 'b';
 
 	// Declare all pointer types
-	// Initialize to the addresses of our above variables 
-	// in the same line
-	int *intPointA = &intA;
-	int *intPointB = &intB;
+	int *int_ptr;
+	float *float_ptr;
+	char *char_ptr;
+	
+	// Print values all variables
+	// "Print out the value"
+	int_ptr = &intA;
+	printf("Value of int A at address %p: %i\n", int_ptr, *int_ptr);
+	
+	int_ptr = &intB;
+	printf("Value of int B at address %p: %i\n", int_ptr, *int_ptr);
 
-	float *floatPointA = &floatA;
-	float *floatPointB = &floatB;
+	float_ptr = &floatA;
+	printf("Value of float A at address %p: %f\n", float_ptr, *float_ptr);
+	
+	float_ptr = &floatB;
+	printf("Value of float B at address %p: %f\n", float_ptr, *float_ptr);
 
-	char *charPointA = &charA;
-	char *charPointB = &charB;
-
-	// Print addresses all variables
-	printf("Address of int A: %p\n", intPointA);
-	printf("Address of int B: %p\n", intPointB);
-
-	printf("Address of float A: %p\n", floatPointA);
-	printf("Address of float B: %p\n", floatPointB);
-
-	printf("Address of char A: %p\n", charPointA);
-	printf("Address of char B: %p\n", charPointB);
+	char_ptr = &charA;
+	printf("Value of char A at address %p: %c\n", char_ptr, *char_ptr);
+	
+	char_ptr = &charB;
+	printf("Value of char B at address %p: %c\n", char_ptr, *char_ptr);
 }
 
 void part2() {
