@@ -27,7 +27,7 @@ int main(int argc, char *args) {
 	convertFrom = getChoice();
 
 	// Checks if the input is valid
-	if(!checkNotBelowAbs0(convertFrom, temp) {
+	if(!checkNotBelowAbs0(convertFrom, temp)) {
 		printf("Your value is below Absolute Zero and therefore unrealistic.");
 	} else {
 		// Get the desired units
@@ -77,7 +77,7 @@ bool checkNotBelowAbs0(int type, double *value) {
 
 int getChoice() {
 	int choice = -1;
-	while (0 > choice || choice > 4)
+	while (0 > choice || choice > 4) {
 		printf("Please enter the # representing your choice:\n");
 		printf("(1) Kelvin\n");
 		printf("(2) Fahrenheit\n");
