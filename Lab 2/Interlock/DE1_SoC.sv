@@ -92,9 +92,6 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 // LEDR[5] corresponds to depressurzed
 	 assign LEDR[4] = enteringCanIn & leavingCanIn;
 	 assign LEDR[5] = enteringCanOut | leavingCanOut;
-	  
-	 // Keep track if a ship is docked
-	 ContainsShip interlocked (clock, resetUI, LEDR[9], spacecraftArrivingUI, spacecraftDepartingUI, (outerPortUI & (enteringCanOut | leavingCanOut)));
 	 
 	 ClockDivider cdiv (CLOCK_50, clk);	 
 	 CountUp countUpinst ( numSeconds, displaySeconds );
