@@ -968,3 +968,7 @@ set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_
 set_global_assignment -name STATE_MACHINE_PROCESSING "USER-ENCODED"
 set_global_assignment -name SYSTEMVERILOG_FILE DE1_SoC.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Camera.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Timer.sv
+set_global_assignment -name SYSTEMVERILOG_FILE CountUp.sv
+set_global_assignment -name SYSTEMVERILOG_FILE DFlipFlop.sv
+set_global_assignment -name SYSTEMVERILOG_FILE UserInput.sv
