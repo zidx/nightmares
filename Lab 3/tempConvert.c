@@ -5,11 +5,16 @@ void welcome();
 void convertC2K(double *value);
 void convertK2F(double *value);
 void convertF2C(double *value);
+void run();
 
 bool checkNotBelowAbs0(int type, double *value);
 int getChoice();
 
 int main(int argc, char *args) {
+	run();
+}
+
+void run() {
 	// Prints out a welcome
 	welcome();
 
@@ -42,7 +47,7 @@ int main(int argc, char *args) {
 			convertFrom = (convertFrom % 3) + 1;
 		}
 		printf("\nYour value converted is " + temp);
-	}	
+	}		
 }
 
 void welcome() {
