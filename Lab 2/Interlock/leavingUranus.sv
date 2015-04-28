@@ -21,7 +21,7 @@ module leavingUranus(rst, rstCounter, clock, innerPort, outerPort, leaving, evac
 	reg [2:0] ps;
 	reg [2:0] ns;
 	
-	parameter defaultState = 3'b000, 
+	parameter 	 defaultState = 3'b000, 
 				 exitingTimer = 3'b001, 
 				 exitingState = 3'b010, 
 				 evacuateTimer = 3'b011, 
@@ -176,7 +176,7 @@ module leavingUranus_testbench();
 		rst <= 1; innerPort <= 0; 			
 		outerPort <= 0; leaving <= 0;
 		counterVal <= 3'b000;
-		evac <= 0; pressurize <= 0;	@(posedge clock);
+		evac <= 0; pressurize <= 0;			@(posedge clock);
 		rst <= 0;							@(posedge clock);
 		
 		leaving <= 1;						@(posedge clock);
@@ -184,36 +184,35 @@ module leavingUranus_testbench();
 		evac <= 0;							@(posedge clock);
 		pressurize <= 1;					@(posedge clock);
 		pressurize <= 0;					@(posedge clock);
-		counterVal <= 3'b001;			@(posedge clock); // 5 seconds passed
+		counterVal <= 3'b001;				@(posedge clock); // 5 seconds passed
 		counterVal <= 3'b000;
 												
 		evac <= 1;							@(posedge clock);
 		evac <= 0;							@(posedge clock);
 		pressurize <= 1;					@(posedge clock);
 		pressurize <= 0;					@(posedge clock);
-		counterVal <= 3'b010;			@(posedge clock);
-		counterVal <= 3'b000;			@(posedge clock);
+		counterVal <= 3'b010;				@(posedge clock);
+		counterVal <= 3'b000;				@(posedge clock);
 
 												
 			
-		outerPort <= 1;					@(posedge clock);
-		outerPort <= 0; leaving <= 0; @(posedge clock);
+		outerPort <= 1;						@(posedge clock);
+		outerPort <= 0; leaving <= 0; 		@(posedge clock);
 		
 		pressurize <= 1;					@(posedge clock);
 		pressurize <= 0;					@(posedge clock);
 		evac <= 1;							@(posedge clock);
 		evac <= 0;							@(posedge clock);
-		counterVal <= 3'b100;			@(posedge clock);
-		counterVal <= 3'b000;			@(posedge clock);
-												@(posedge clock);
-												@(posedge clock);
+		counterVal <= 3'b100;				@(posedge clock);
+		counterVal <= 3'b000;				@(posedge clock);
+											@(posedge clock);
+											@(posedge clock);
 		
 		leaving <= 1;						@(posedge clock);
-												@(posedge clock);
-												@(posedge clock);
-												@(posedge clock);
-												@(posedge clock);
-		
+											@(posedge clock);
+											@(posedge clock);
+											@(posedge clock);
+											@(posedge clock);
 		$stop;
 	end
 	

@@ -27,12 +27,12 @@ wire sevenSec = counterVal[1];
 wire eightSec = counterVal[2];
 
 parameter 	defaultState 		= 3'b000,
-				arriveTiming		= 3'b001,
-				waitForEvacuate	= 3'b010,
-				evacTiming		   = 3'b011,
-				waitForPressurize = 3'b100,
-				pressurizeTiming  = 3'b101,
-				exit 					= 3'b110;
+			arriveTiming		= 3'b001,
+			waitForEvacuate		= 3'b010,
+			evacTiming		   	= 3'b011,
+			waitForPressurize 	= 3'b100,
+			pressurizeTiming  	= 3'b101,
+			exit 				= 3'b110;
 				
 parameter  	a	 	= 7'b0001000;
 parameter 	e		= 7'b0000110;
@@ -180,7 +180,7 @@ module enteringUranus_testbench();
 		rst <= 1; innerPort <= 0; 			
 		outerPort <= 0; arriving <= 0;
 		counterVal <= 3'b000;
-		evac <= 0; pressurize <= 0;	@(posedge clock);
+		evac <= 0; pressurize <= 0;			@(posedge clock);
 		rst <= 0;							@(posedge clock);
 		
 		arriving <= 1;						@(posedge clock);
@@ -188,39 +188,38 @@ module enteringUranus_testbench();
 		evac <= 0;							@(posedge clock);
 		pressurize <= 1;					@(posedge clock);
 		pressurize <= 0;					@(posedge clock);
-		counterVal <= 3'b001;			@(posedge clock); // 5 seconds passed
+		counterVal <= 3'b001;				@(posedge clock); // 5 seconds passed
 		counterVal <= 3'b000;
 												
 		evac <= 1;							@(posedge clock);
 		evac <= 0;							@(posedge clock);
 		pressurize <= 1;					@(posedge clock);
 		pressurize <= 0;					@(posedge clock);
-		counterVal <= 3'b010;			@(posedge clock);
-		counterVal <= 3'b000;			@(posedge clock);
+		counterVal <= 3'b010;				@(posedge clock);
+		counterVal <= 3'b000;				@(posedge clock);
 
 												
 			
-		outerPort <= 1;					@(posedge clock);
-		outerPort <= 0; arriving <= 0; @(posedge clock);
+		outerPort <= 1;						@(posedge clock);
+		outerPort <= 0; arriving <= 0; 		@(posedge clock);
 		
 		pressurize <= 1;					@(posedge clock);
 		pressurize <= 0;					@(posedge clock);
 		evac <= 1;							@(posedge clock);
 		evac <= 0;							@(posedge clock);
-		counterVal <= 3'b100;			@(posedge clock);
-		counterVal <= 3'b000;			@(posedge clock);
-												@(posedge clock);
-												@(posedge clock);
+		counterVal <= 3'b100;				@(posedge clock);
+		counterVal <= 3'b000;				@(posedge clock);
+											@(posedge clock);
+											@(posedge clock);
 		
 		arriving <= 1;						@(posedge clock);
-												@(posedge clock);
-												@(posedge clock);
-												@(posedge clock);
-												@(posedge clock);
+											@(posedge clock);
+											@(posedge clock);
+											@(posedge clock);
+											@(posedge clock);
 		
 		$stop;
 	end
-	
 endmodule
 		
 				

@@ -7,7 +7,7 @@
 // Includes input to clock and outputs q and qBar.
 // 
 // Author(s):
-// Included file from EE371
+// Included file from EE371 Lab 1
 //
 // *NOTE: modified the always block assign statements to be
 //        non-blocking statements for correct verilog usage.

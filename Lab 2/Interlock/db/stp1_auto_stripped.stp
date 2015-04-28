@@ -1,4 +1,4 @@
-<session jtag_chain="DE-SoC [USB-1]" jtag_device="@2: 5CSE(BA5|MA5)/5CSTFD5D5/.. (0x02D120DD)" sof_file="../output_files/DE1_SoC.sof">
+<session jtag_chain="Disabled" jtag_device="" sof_file="../output_files/DE1_SoC.sof">
   <display_tree gui_logging_enabled="0">
     <display_branch instance="Arriving Switch" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
     <display_branch instance="Leaving Switch" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
