@@ -33,7 +33,7 @@ void run() {
 	convertFrom = getChoice();
 
 	// Checks if the input is valid
-	if(!checkNotBelowAbs0(convertFrom, temp)) {
+	if(!checkNotBelowAbs0(convertFrom, &temp)) {
 		printf("Your value is below Absolute Zero and therefore unrealistic.");
 	} else {
 		// Get the desired units
@@ -42,20 +42,21 @@ void run() {
 
 		// Loop and keep converting until the value is converted as desired
 		while(convertFrom != convertTo) {
-			if(convertFrom == 1) convertK2F(temp);
-			else if(convertFrom == 2) convertF2C(temp);
-			else convertC2K(temp);
+			if(convertFrom == 1) convertK2F(&temp);
+			else if(convertFrom == 2) convertF2C(&temp);
+			else convertC2K(&temp);
 			convertFrom = (convertFrom % 3) + 1;
 		}
-		printf("\nYour value converted is " + temp);
+		printf("\nYour value converted is %lf.\n", temp);
 	}		
 }
 
 void welcome() {
 	printf("Welcome to the tempature converter!\n");
-	printf("We cover all of your tempature converting needs."
-		+ " Have a value in Kelvin, Celsius, or Fahrenheit, but "
-		+ "want your value in another unit? We'll convert it!\n");
+	printf("We cover all of your tempature converting needs.");
+	printf(" Have a value in Kelvin, Celsius, or Fahrenheit, but ");
+	printf("want your value in another unit? We'll convert it!\n");
+	
 	printf("\nOf course if your input isn't valid (i.e below"
 		+ " Absolute Zero) we can't help you!\n\n");
 }
