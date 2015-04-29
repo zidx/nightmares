@@ -33,8 +33,8 @@ void run() {
 	convertFrom = getChoice();
 
 	// Checks if the input is valid
-	if(checkNotBelowAbs0(convertFrom, &temp) == 1) {
-		printf("Your value is below Absolute Zero and therefore unrealistic.");
+	if(checkNotBelowAbs0(convertFrom, &temp) != 1) {
+		printf("Your value is below Absolute Zero and therefore unrealistic.\n");
 	} else {
 		// Get the desired units
 		printf("Enter Desired Units\n");
