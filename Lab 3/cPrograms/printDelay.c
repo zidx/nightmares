@@ -41,7 +41,8 @@ uint32_t calculate(uint32_t num_devices) {
 
 void debug() {
 	uint32_t exp = 18;
-	for(uint32_t i = 0; i < 9; i++) {
+	uint32_t i;
+	for(i = 0; i < 9; i++) {
 		verify(i, calculate(i), exp);
 		exp += 18 + 5000;
 	}
