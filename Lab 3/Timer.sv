@@ -3,19 +3,20 @@
 // Timer
 //
 // Description:
-// Timer to count seconds passed. Resets to 0. Returns
-// number of seconds passed through seconds.
+// Counts the percent done of a camera. Resets to 0. Returns
+// amount of percent done through percent.
+// 10 is done, etc.
 // 
 // Author(s):
 // Cody Ohlsen
 // Zach Nehrenberg
 //
 //----------------------------------------------------------- 
-module Timer (clock, reset, seconds);
-	input clock, reset;
-	output [3:0] seconds;
+module Percents (clock, reset, countDirection, pause, percent);
+	input clock, reset, countDirection, pause;
+	output [3:0] percent;
 	
-	reg [3:0] secondsPassed;
+	reg [3:0] percentPassed;
 	reg [18:0] clkCounter;
 	
 	 //number of clock cycles to represent one second
@@ -25,17 +26,21 @@ module Timer (clock, reset, seconds);
 	 always @(posedge clock) begin
 		if(reset) begin
 			clkCounter <= 19'b0000000000000000000;
-			secondsPassed <= 3'b000;
+			percentPassed <= 3'b000;
 		end
 		else if (uranusHz == clkCounter) begin
-			secondsPassed <= secondsPassed + 1'b1;
+			if (pause) percentPassed = percentPassed;
+			else begin:
+				if (countDirection) percentPassed <= percentPassed - 2'b10;
+				else percentPassed <= percentPassed + 1'b1;
+			end
 			clkCounter <= 19'b0000000000000000000;
 		end
 		else 
 			clkCounter <= clkCounter + 1'b1;
 	 end
 	 
-	 assign seconds = secondsPassed;
+	 assign seconds = percentPassed;
 	 
 endmodule
 
@@ -51,7 +56,7 @@ endmodule
 // Krista Holden
 //
 //----------------------------------------------------------- 
-module TimerTestbench ();
+module PercentTestbench ();
 	reg        clock, rst;
 	wire [3:0] seconds;
 	

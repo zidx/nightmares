@@ -1,0 +1,6 @@
+Warning (10268): Verilog HDL information at Camera.sv(175): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at Percents.sv(26): always construct contains both blocking and non-blocking assignments
+Warning (10034): Output port "LEDR[7..5]" at DE1_SoC.sv(19) has no driver
+Warning (10034): Output port "LEDR[2..0]" at DE1_SoC.sv(19) has no driver
+Warning (284006): Flipped 1 bits in user-encoded state machine |DE1_SoC|Camera:camera2|ps
+Warning (284006): Flipped 1 bits in user-encoded state machine |DE1_SoC|Camera:camera1|ps

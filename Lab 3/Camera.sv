@@ -8,133 +8,191 @@
 // 
 // Author(s):
 // Cody Ohlsen
+// Zach Nehrenberg
 //
 //----------------------------------------------------------- 
-module Camera(rst, rstCounter, clock, innerPort, outerPort, arriving, evac, pressurize, counterVal, display, canOut, canIn);
+module Camera(myStandby, myFilm, pauseCounter, countNegative, display, outSignals, rst, clock, download, inSignals, rstBehavior, percentVal);
 
 input clock;
-input rst, innerPort, outerPort, arriving, evac, pressurize;
-input [2:0] counterVal;
+input rst, rstBehavior, download;
+input [3:0] percentVal;
+input [2:0] inSignals;
 
-output reg rstCounter, canOut, canIn;
+// Signals
+//	  111  =  nothing
+//	  110  =  fifty percent
+//	  101  =  send standby signal
+//	  011  =  send filming signal
+output reg [2:0] outSignals;
+
+output reg countNegative;
+output reg pauseCounter;
 output reg [6:0] display;
 
-reg[2:0] ps;
-reg[2:0] ns;
+output reg myStandby;
+output reg myFilm;
 
-wire fiveSec = counterVal[0];
-wire sevenSec = counterVal[1];
-wire eightSec = counterVal[2];
+reg[3:0] ps;
+reg[3:0] ns;
 
-parameter 	defaultState 		= 3'b000,
-			arriveTiming		= 3'b001,
-			waitForEvacuate		= 3'b010,
-			evacTiming		   	= 3'b011,
-			waitForPressurize 	= 3'b100,
-			pressurizeTiming  	= 3'b101,
-			exit 				= 3'b110;
+parameter zeroSec 	= 4'b0000;
+parameter fiveSec 	= 4'b0101;
+parameter eightSec	= 4'b1000;
+parameter nineSec 	= 4'b1001;
+parameter tenSec 		= 4'b1010;
+
+parameter fiftyPercent  = 3'b110;
+parameter standbySignal = 3'b101;
+parameter filmSignal		= 3'b011;
+parameter noSignal		= 3'b111;
+
+parameter 	lowPower			 		= 4'b0000,
+				standBy					= 4'b0001,
+				active	  		 		= 4'b0010,
+				reaches50		   	= 4'b0011,
+				signalToDownload	 	= 4'b0100,
+				reaches90			  	= 4'b0101,
+				downloading 			= 4'b0110,
+				idle						= 4'b0111,
+				flushing					= 4'b1000;
 				
-parameter  	a	 	= 7'b0001000;
-parameter 	e		= 7'b0000110;
-parameter 	p		= 7'b0001100;
-parameter 	nothing = 7'b1111111;
-				
+parameter  	low 		= 7'b1000111;
+parameter 	hold		= 7'b0001001;
+parameter   activeD  = 7'b0001000;
+parameter   downloadD	= 7'b0100001;
+parameter	idleD  	= 7'b0111111;
+parameter	flush 	= 7'b0001110;
+parameter	fifty 	= 7'b0010010;
+parameter	eighty	= 7'b0000000;
+parameter	ninty		= 7'b0011000;
+
 always @(*) begin
 	case(ps)
-		defaultState:	begin
-			canOut = 0;
-			canIn = 1;
-			display = nothing;
-			if(arriving) begin
-				ns = arriveTiming;
-				rstCounter = 1;		//timing for next state begins
-			end
-			else begin
-				ns = defaultState;
-				rstCounter = 0;
-			end
-		end
-		arriveTiming:	begin
-			canOut = 0;
-			canIn = 1;
-			display = a;
-			rstCounter = 0;			//brings down timer
-			if(fiveSec)					//waits 5 seconds
-				ns = waitForEvacuate;
+		lowPower: begin
+			pauseCounter = 1;
+			countNegative = 0;
+			display = low;
+			outSignals = noSignal;
+			if (~myStandby)
+				ns = standBy;
 			else
-				ns = arriveTiming;
+				ns = lowPower;
 		end
-		waitForEvacuate: 	begin	//waits for user to press evacuate
-			canOut = 0;
-			canIn = 1;
-			display = nothing;
-			if(evac && !innerPort && !outerPort) begin
-				ns = evacTiming;
-				rstCounter = 1;
-			end
-			else begin
-				ns = waitForEvacuate;
-				rstCounter = 0;
-			end
-		end
-		evacTiming:	begin
-			canOut = 0;
-			canIn = 0;
-			display = e;
-			rstCounter = 0;			//brings down timer
-			if(sevenSec)	//waits 5 seconds
-				ns = waitForPressurize;
+		standBy: begin
+			pauseCounter = 1;
+			countNegative = 0;
+			display = hold;
+			outSignals = noSignal;
+			if (~myFilm)
+				ns = active;
 			else
-				ns = evacTiming;
+				ns = standBy;
 		end
-		waitForPressurize: 	begin	//waits for user to press evacuate
-			canOut = 1;
-			canIn = 0;
-			display = nothing;
-			if(pressurize && !outerPort && !innerPort) begin
-				ns = pressurizeTiming;
-				rstCounter = 1;
-			end
-			else begin
-				ns = waitForPressurize;
-				rstCounter = 0;
-			end
-		end
-		pressurizeTiming:	begin
-			canOut = 0;
-			canIn = 0;
-			display = p;
-			rstCounter = 0;			//brings down timer
-			if(eightSec)			//waits eight seconds
-				ns = exit;
+		active: begin
+			pauseCounter = 0;
+			countNegative = 0;
+			display = activeD;
+			outSignals = noSignal;
+			if (percentVal == fiveSec)
+				ns = reaches50;
 			else
-				ns = pressurizeTiming;
+				ns = active;
 		end
-		exit:	begin
-			canOut = 0;
-			canIn = 1;
-			display = nothing;
-			rstCounter = 0;			
-			if(~arriving)			
-				ns = defaultState;
+		reaches50: begin
+			pauseCounter = 0;
+			countNegative = 0;
+			display = fifty;
+			outSignals = fiftyPercent;
+			if (percentVal == eightSec)
+				ns = signalToDownload;
 			else
-				ns = exit;
+				ns = reaches50;
+		end
+		signalToDownload: begin
+			pauseCounter = 0;
+			countNegative = 0;
+			display = eighty;
+			outSignals = standbySignal;
+			if (percentVal == nineSec)
+				ns = reaches90;
+			else
+				ns = signalToDownload;
+		end
+		reaches90: begin
+			pauseCounter = 0;
+			countNegative = 0;
+			display = ninty;
+			outSignals = filmSignal;
+			if(download & (percentVal == tenSec)) 
+				ns = downloading;
+			else if (percentVal == tenSec)
+				ns = idle;
+			else
+				ns = reaches90;
+		end
+		idle: begin
+			pauseCounter = 1;
+			countNegative = 0;
+			display = idleD;
+			outSignals = noSignal;
+			if(inSignals == fiftyPercent) 
+				ns = flushing;
+			else if (download)
+				ns = downloading;
+			else
+				ns = idle;
+		end
+		downloading: begin
+			pauseCounter = 0;
+			countNegative = 1;
+			display = downloadD;
+			outSignals = noSignal;
+			if(percentVal == zeroSec) 
+				ns = lowPower;
+			else
+				ns = downloading;
+		end
+		flushing: begin
+			pauseCounter = 0;
+			countNegative = 1;
+			display = flush;
+			outSignals = noSignal;
+			if(percentVal == zeroSec) 
+				ns = lowPower;
+			else
+				ns = flushing;
 		end
 		default: begin
-			canOut = 0;
-			canIn = 1;
-			display = nothing;
-			ns = defaultState;
-			rstCounter = 0;
+			pauseCounter = 1;
+			countNegative = 0;
+			display = low;
+			outSignals = noSignal;
+			ns = lowPower;
 		end
 	endcase
 end
 
 always @(posedge clock) begin
-	if(rst)
-		ps <= defaultState;
-	else
+	if(rst & rstBehavior) begin
+		ps <= active;
+		myStandby = 1'b1;
+		myFilm = 1'b1;
+	end
+	else if (rst) begin
+		ps <= lowPower;
+		myFilm = 1'b1;
+		myStandby = 1'b1;
+	end
+	else begin
 		ps <= ns;
+		if (inSignals == standbySignal) myStandby <= 1'b0;
+		else if (ps == standBy || ps == active) myStandby <= 1'b1;
+		else myStandby = myStandby;
+		
+		if (inSignals == filmSignal) myFilm <= 1'b0;
+		else if (ps == active) myFilm <= 1'b1;
+		else myFilm = myFilm;
+	end
 end
 endmodule
 
@@ -150,7 +208,7 @@ endmodule
 // Cody Ohlsen
 //
 //----------------------------------------------------------- 
-module Camera_testbench();
+/*module Camera_testbench();
 	// Inputs
 	reg rst, clock;
 	reg innerPort, outerPort, arriving, evac, pressurize;
@@ -179,7 +237,7 @@ module Camera_testbench();
 	initial begin
 		rst <= 1; innerPort <= 0; 			
 		outerPort <= 0; arriving <= 0;
-		counterVal <= 3'b000;
+		counterVal <= 4'b0000;
 		evac <= 0; pressurize <= 0;			@(posedge clock);
 		rst <= 0;							@(posedge clock);
 		
@@ -188,15 +246,15 @@ module Camera_testbench();
 		evac <= 0;							@(posedge clock);
 		pressurize <= 1;					@(posedge clock);
 		pressurize <= 0;					@(posedge clock);
-		counterVal <= 3'b001;				@(posedge clock); // 5 seconds passed
-		counterVal <= 3'b000;
+		counterVal <= 4'b0001;				@(posedge clock); // 5 seconds passed
+		counterVal <= 4'b0000;
 												
 		evac <= 1;							@(posedge clock);
 		evac <= 0;							@(posedge clock);
 		pressurize <= 1;					@(posedge clock);
 		pressurize <= 0;					@(posedge clock);
-		counterVal <= 3'b010;				@(posedge clock);
-		counterVal <= 3'b000;				@(posedge clock);
+		counterVal <= 4'b0010;				@(posedge clock);
+		counterVal <= 4'b0000;				@(posedge clock);
 
 												
 			
@@ -207,8 +265,8 @@ module Camera_testbench();
 		pressurize <= 0;					@(posedge clock);
 		evac <= 1;							@(posedge clock);
 		evac <= 0;							@(posedge clock);
-		counterVal <= 3'b100;				@(posedge clock);
-		counterVal <= 3'b000;				@(posedge clock);
+		counterVal <= 4'b0100;				@(posedge clock);
+		counterVal <= 4'b0000;				@(posedge clock);
 											@(posedge clock);
 											@(posedge clock);
 		
@@ -220,6 +278,6 @@ module Camera_testbench();
 		
 		$stop;
 	end
-endmodule
+endmodule*/
 		
 				
