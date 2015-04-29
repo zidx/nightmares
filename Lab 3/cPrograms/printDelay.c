@@ -84,5 +84,8 @@ uint32_t getChoice() {
 			printf("Please try again\n\n");
 		}
 	}
+	
+	printf("\nYou have entered %d logic devices.", choice);
+	
 	return choice;
 }
