@@ -6,7 +6,7 @@ void welcome();
 int getChoice();
 void run();
 void debug();
-void verify(int val, int exp, int act);
+int verify(int val, int exp, int act);
 int calculate(int num_devices);
 
 int main(int argc, char **args) {
@@ -14,8 +14,8 @@ int main(int argc, char **args) {
 	welcome();
 
 	// Run the program
-	if (argc > 2) {
-		printf("\n You are running in debug mode.\n");
+	if (argc > 1) {
+		printf("\nYou are running in debug mode.\n");
 		debug();
 	} else {
 		run();
@@ -34,7 +34,7 @@ void run() {
 	delay = calculate(num_devices);
 
 	// Output delay
-	printf("\n Your circuit has a delay of %d picoseconds.\n\n", delay);
+	printf("\nYour circuit has a delay of %d picoseconds.\n\n", delay);
 }
 
 int calculate(int num_devices) {
@@ -44,18 +44,27 @@ int calculate(int num_devices) {
 void debug() {
 	int exp = 18;
 	int i;
+	
+	int passed = 0;
+	
 	for(i = 0; i < 9; i++) {
-		verify(i, calculate(i), exp);
+		passed += verify(i, calculate(i), exp);
 		exp += 18 + 5000;
 	}
 
-	verify(800, calculate(800), 4014418);
-	verify(50000, calculate(50000), 250900018);
+	passed += verify(800, calculate(800), 4014418);
+	passed += verify(50000, calculate(50000), 250900018);
+	
+	printf("\nYou passed all the tests.\n\n");
 }
 
-void verify(int val, int exp, int act) {
-	if(exp != act)
+int verify(int val, int exp, int act) {
+	if(exp != act) {
 		printf("Test failed for input value %d\nExp: %d\nAct: %d\n", val, exp, act);
+		return 1;
+	} else {
+		return 0;
+	}
 }
 
 void welcome() {
