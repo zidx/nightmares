@@ -11,13 +11,14 @@ bool checkNotBelowAbs0(int type, double *value);
 int getChoice();
 
 int main(int argc, char *args) {
+	// Prints out a welcome
+	welcome();
+
+	// Run the program
 	run();
 }
 
 void run() {
-	// Prints out a welcome
-	welcome();
-
 	// Initializes values
 	double temp = 0.0;	
 	int convertFrom;
