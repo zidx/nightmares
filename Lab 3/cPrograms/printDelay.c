@@ -6,7 +6,7 @@ void welcome();
 uint32_t getChoice();
 void run();
 void debug();
-void verify(uint32_t exp, uint32_t act);
+void verify(uint32_t val, uint32_t exp, uint32_t act);
 
 int main(uint32_t argc, char **args) {
 	// Prints out a welcome
@@ -56,17 +56,17 @@ void verify(uint32_t val, uint32_t exp, uint32_t act) {
 
 void welcome() {
 	printf("Welcome to the Logic Device Delay!\n");
-	printf("We cover all of your delay calculating needs."
-		+ " Have a signal path with logic devices, but "
-		+ "don't know your total delay? We'll find it!\n");
+	printf("We cover all of your delay calculating needs.");
+	printf(" Have a signal path with logic devices, but ");
+	printf("don't know your total delay? We'll find it!\n");
 
-	printf("\nWe assume that there are printed circuit traces "
-		+ "on both side of the exterior logic gates and that "
-		+ "in the case of no logic gates that there is one "
-		+ "circuit board trace.\n");
+	printf("\nWe assume that there are printed circuit traces ");
+	printf("on both side of the exterior logic gates and that ");
+	printf("in the case of no logic gates that there is one ");
+	printf("circuit board trace.\n");
 
-	printf("\nOf course if your input isn't valid (i.e "
-		+ "negative num of devices) we can't help you!\n\n");
+	printf("\nOf course if your input isn't valid (i.e ");
+	printf("negative num of devices) we can't help you!\n\n");
 }
 
 uint32_t getChoice() {
