@@ -7,7 +7,7 @@ void convertK2F(double *value);
 void convertF2C(double *value);
 void run();
 
-bool checkNotBelowAbs0(int type, double *value);
+int checkNotBelowAbs0(int type, double *value);
 int getChoice();
 
 int main(int argc, char **args) {
@@ -33,7 +33,7 @@ void run() {
 	convertFrom = getChoice();
 
 	// Checks if the input is valid
-	if(!checkNotBelowAbs0(convertFrom, &temp)) {
+	if(checkNotBelowAbs0(convertFrom, &temp) == 1) {
 		printf("Your value is below Absolute Zero and therefore unrealistic.");
 	} else {
 		// Get the desired units
@@ -76,10 +76,13 @@ void convertF2C(double *value) {
 	*value = (old - 32.0) * (5.0 / 9.0);
 }
 
-bool checkNotBelowAbs0(int type, double *value) {
-	if(type == 1) return *value >= 0.0;
-	else if(type == 2) return *value >= -273.15;
-	else return *value >= -459.67;
+int checkNotBelowAbs0(int type, double *value) {
+	if((type == 1 && *value >= 0.0) || (type == 2 && *value >= -273.15) 
+		|| (type == 3 && *value >= -459.67)) {
+		return 1;
+	} else {
+		return 0;
+	}
 }
 
 int getChoice() {
