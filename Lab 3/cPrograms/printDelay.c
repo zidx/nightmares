@@ -37,7 +37,7 @@ void run() {
 	delay = calculate(num_devices);
 
 	// Output delay
-	printf("\nYour circuit has a delay of %d picoseconds.\n\n", delay);
+	printf("\nYour circuit has a delay of %lf picoseconds.\n\n", delay);
 }
 
 // int calculate(int num_devices) {
