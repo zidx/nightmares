@@ -55,19 +55,19 @@ void debug() {
 	int passed = 0;
 	
 	for(i = 0; i < 9; i++) {
-	//	passed += verify(i, calculate(i), exp);
-		exp += 18 + 5000;
+		passed += verify(i, calculate(i), exp);
+		exp += 18.0 + 5000.0;
 	}
 
-	//passed += verify(800, calculate(800), 4014418);
-	//passed += verify(50000, calculate(50000), 250900018);
+	passed += verify(800, calculate(800), 4014418.0);
+	passed += verify(50000, calculate(50000), 250900018.0);
 	
 	printf("\nYou passed all the tests.\n\n");
 }
 
-int verify(int val, int exp, int act) {
+int verify(int val, double exp, double act) {
 	if(exp != act) {
-		printf("Test failed for input value %d\nExp: %d\nAct: %d\n", val, exp, act);
+		printf("Test failed for input value %d\nExp: %f\nAct: %f\n", val, exp, act);
 		return 1;
 	} else {
 		return 0;
