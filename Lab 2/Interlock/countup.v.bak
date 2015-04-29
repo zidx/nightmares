@@ -1,0 +1,42 @@
+module CountUp(count, hex);
+	input [3:0] count;
+	output [6:0] hex;
+		
+	parameter c0 = 4'0000;
+	parameter c1 = 4'0001;
+	parameter c2 = 4'0010;
+	parameter c3 = 4'0011;
+	parameter c4 = 4'0100;
+	parameter c5 = 4'0101;
+	parameter c6 = 4'0110;
+	parameter c7 = 4'0111;
+	parameter c8 = 4'1000;
+	
+	parameter nothing = 7'b1111111;
+	parameter one 		= 7'b0011000;
+	parameter two 		= 7'b1111111;
+	parameter three 	= 7'b1111111;
+	parameter four 	= 7'b1111111;
+	parameter five 	= 7'b1111111;
+	parameter six 		= 7'b1111111;
+	parameter seven 	= 7'b1111111;
+	parameter eight 	= 7'b0000000;
+	
+	initial hex = nothing;
+	
+	always @(*) begin
+		case(count) begin
+			c0: hex <= one;
+			c1: hex <= two;
+			c2: hex <= three;
+			c3: hex <= four;
+			c4: hex <= five;
+			c5: hex <= six;
+			c6: hex <= seven;
+			c7: hex <= eight;
+			default: hex <= nothing;
+		end
+	end
+	
+endmodule	
+	
