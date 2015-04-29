@@ -87,7 +87,7 @@ int checkNotBelowAbs0(int type, double *value) {
 
 int getChoice() {
 	int choice = -1;
-	while (0 > choice || choice > 4) {
+	while (0 > choice || choice > 3) {
 		printf("Please enter the # representing your choice:\n");
 		printf("(1) Kelvin\n");
 		printf("(2) Fahrenheit\n");
@@ -96,7 +96,7 @@ int getChoice() {
 
 		scanf("%u", &choice);
 
-		if(0 > choice || choice > 4) {
+		if(0 > choice || choice > 3) {
 			printf("\nYour choice was not one of the integers 1, 2, or 3.\n");
 			printf("Please try again\n\n");
 		}
