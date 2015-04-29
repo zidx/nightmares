@@ -57,8 +57,8 @@ void welcome() {
 	printf(" Have a value in Kelvin, Celsius, or Fahrenheit, but ");
 	printf("want your value in another unit? We'll convert it!\n");
 	
-	printf("\nOf course if your input isn't valid (i.e below"
-		+ " Absolute Zero) we can't help you!\n\n");
+	printf("\nOf course if your input isn't valid (i.e below");
+	printf(" Absolute Zero) we can't help you!\n\n");
 }
 
 void convertC2K(double *value) {
