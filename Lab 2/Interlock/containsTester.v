@@ -29,20 +29,20 @@ module ContainsShipTester (clock, reset, shipDocked, arriving, departing, openDo
 	$monitor("\t\t %b \t %b", clock, reset, openDoor, arriving, departing);
   end
 
-  initial // Stimulus
+  initial // Stimulus
   begin
-					 openDoor = 0;	departing = 0;	arriving = 0;	reset = 1; // empty
-																	reset = 0;
+	openDoor = 0;	departing = 0;	arriving = 0;	reset = 1; // empty
+	reset = 0;
 	
 	// Departing Cycle (nothing happens)
-	#(3 * stimDelay) 				departing = 1;                             
-	#stimDelay 						departing = 0;
+	#(3 * stimDelay) 	departing = 1;                             
+	#stimDelay 			departing = 0;
 	#stimDelay 		 	 openDoor = 1;
 	#stimDelay 		 	 openDoor = 0;
 	
 	// Arriving Cycle (empty -> enter -> contains)
-	#stimDelay 										arriving = 1;
-	#stimDelay 										arriving = 0;
+	#stimDelay 			arriving = 1;
+	#stimDelay 			arriving = 0;
 	#stimDelay 		 	openDoor = 1;
 	#stimDelay 		 	openDoor = 0;
 	
@@ -51,48 +51,48 @@ module ContainsShipTester (clock, reset, shipDocked, arriving, departing, openDo
 	#stimDelay 		 	openDoor = 0;
 	
 	// Arriving Again (nothing happens)
-	#stimDelay 										arriving = 1;
-	#stimDelay 										arriving = 0;
+	#stimDelay 			arriving = 1;
+	#stimDelay 			arriving = 0;
 	#stimDelay 		 	openDoor = 1;
 	#stimDelay 		 	openDoor = 0;
 	
 	// Departing Cycle (contains -> exit -> empty)
-	#(3 * stimDelay) 				departing = 1;                             
-	#stimDelay 						departing = 0;
+	#(3 * stimDelay) 	departing = 1;                             
+	#stimDelay 			departing = 0;
 	#stimDelay 		 	openDoor = 1;
-	#stimDelay 		 	 openDoor = 0;
+	#stimDelay 		 	openDoor = 0;
 	
 	// Opening The Door (nothing happens)
 	#stimDelay 		 	openDoor = 1;
 	#stimDelay 		 	openDoor = 0;
 	
 	// Signal Reset @ empty
-	#stimDelay 		 												reset = 1;
-	#stimDelay 		 												reset = 0;
+	#stimDelay 		 	reset = 1;
+	#stimDelay 		 	reset = 0;
 	
 	// Signal Reset @ enter
-	#stimDelay 										arriving = 1;
-	#stimDelay 										arriving = 0;
-	#stimDelay 		 												reset = 1;
-	#stimDelay 		 												reset = 0;
+	#stimDelay 			arriving = 1;
+	#stimDelay 			arriving = 0;
+	#stimDelay 		 	reset = 1;
+	#stimDelay 		 	reset = 0;
 	
 	// Signal Reset @ contains
-	#stimDelay 										arriving = 1;
-	#stimDelay 										arriving = 0;
-	#stimDelay 		 openDoor = 1;
-	#stimDelay 		 openDoor = 0;
-	#stimDelay 		 												reset = 1;
-	#stimDelay 		 												reset = 0;
-	
-	// Signal Reset @ exit
-	#stimDelay 										arriving = 1;
-	#stimDelay 										arriving = 0;
+	#stimDelay 			arriving = 1;
+	#stimDelay 			arriving = 0;
 	#stimDelay 		 	openDoor = 1;
 	#stimDelay 		 	openDoor = 0;
-	#(3 * stimDelay) 				departing = 1;                             
-	#stimDelay 						departing = 0;
-	#stimDelay 		 												reset = 1;
-	#stimDelay 		 												reset = 0;
+	#stimDelay 		 	reset = 1;
+	#stimDelay 		 	reset = 0;
+	
+	// Signal Reset @ exit
+	#stimDelay 			arriving = 1;
+	#stimDelay 			arriving = 0;
+	#stimDelay 		 	openDoor = 1;
+	#stimDelay 		 	openDoor = 0;
+	#(3 * stimDelay) 	departing = 1;                             
+	#stimDelay 			departing = 0;
+	#stimDelay 		 	reset = 1;
+	#stimDelay 		 	reset = 0;
 	
 	 
     #(4*stimDelay); // needed to see END of simulation

@@ -7,19 +7,20 @@
 // Includes input to clock and outputs q and qBar.
 // 
 // Author(s):
-// Included file from EE371 Lab 1
+// Included file from EE371
 //
 // *NOTE: modified the always block assign statements to be
 //        non-blocking statements for correct verilog usage.
 //----------------------------------------------------------- 
 
-module DFlipFlop(q,  D, clk, rst);
+module DFlipFlop(q, qBar, D, clk, rst);
 	input D, clk, rst;
-	output q;
+	output q, qBar;
 	reg q;
-		always@ (posedge clk)
+	not n1 (qBar, q);
+		always@ (negedge rst or posedge clk)
 		begin  // Statements need to be non-blocking
-			if(rst)
+			if(!rst)
 				q <= 0;
 			else
 				q <= D;

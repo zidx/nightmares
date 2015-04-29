@@ -1,8 +1,20 @@
+// cPointers tests pointers in C using two functions:
+//   Part1: 
+//		Tests memory address printing and value dereference
+//   Part2:
+//		Tests integer computation with dereferenced pointers
+//
+//   Author (s):
+//	 Zach Nehrenberg
+//   Krista Holden
+
 //  preprocessor directive to support printing to the display
 #include <stdio.h>
 
+// Tests memory address retrieval
 void part1();
 
+// Tests dereferenced pointer arithmetic
 void part2();
 
 int main(int argc, char *args) {

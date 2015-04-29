@@ -1,6 +1,6 @@
 //-----------------------------------------------------------
 // Module name:
-// enteringUranus
+// Camera
 //
 // Description:
 // State machine for entering the interlock. Returns output
@@ -10,7 +10,7 @@
 // Cody Ohlsen
 //
 //----------------------------------------------------------- 
-module enteringUranus(rst, rstCounter, clock, innerPort, outerPort, arriving, evac, pressurize, counterVal, display, canOut, canIn);
+module Camera(rst, rstCounter, clock, innerPort, outerPort, arriving, evac, pressurize, counterVal, display, canOut, canIn);
 
 input clock;
 input rst, innerPort, outerPort, arriving, evac, pressurize;
@@ -140,17 +140,17 @@ endmodule
 
 //-----------------------------------------------------------
 // Module name:
-// enteringUranus_testbench
+// Camera_testbench
 //
 // Description:
-// Testbench for enteringUranus. Tests all states for cycle
+// Testbench for Camera. Tests all states for cycle
 // as well as superfluous and errored input.
 // 
 // Author(s):
 // Cody Ohlsen
 //
 //----------------------------------------------------------- 
-module enteringUranus_testbench();
+module Camera_testbench();
 	// Inputs
 	reg rst, clock;
 	reg innerPort, outerPort, arriving, evac, pressurize;
@@ -170,7 +170,7 @@ module enteringUranus_testbench();
 	end
 	
 	
-	enteringUranus dut (rst, rstCounter, clock, innerPort, outerPort, arriving, evac, pressurize, counterVal, display);
+	Camera dut (rst, rstCounter, clock, innerPort, outerPort, arriving, evac, pressurize, counterVal, display);
 	
 	// We don't test opening and closing the ports when we're not supposed to.
 	// This is because opening and closing them during operation is trivial.
