@@ -6,8 +6,7 @@ void welcome();
 int getChoice();
 void run();
 void debug();
-int verify(int val, int exp, int act);
-//int calculate(int num_devices);
+int verify(int val, double exp, double act);
 double calculate(int num_devices);
 
 
@@ -26,7 +25,6 @@ int main(int argc, char **args) {
 
 void run() {
 	// Initializes values
-	//int delay = 0;
 	double delay = 0.0;
 	int num_devices = 0;
 
@@ -39,10 +37,6 @@ void run() {
 	// Output delay
 	printf("\nYour circuit has a delay of %lf picoseconds.\n\n", delay);
 }
-
-// int calculate(int num_devices) {
-// 	return 18 * (num_devices + 1) + 5000 * (num_devices);
-// }
 
 double calculate(int num_devices) {
  	return 18.0 * (num_devices + 1) + 5000.0 * (num_devices);
