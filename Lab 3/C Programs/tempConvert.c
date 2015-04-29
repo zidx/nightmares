@@ -10,7 +10,7 @@ void run();
 bool checkNotBelowAbs0(int type, double *value);
 int getChoice();
 
-int main(int argc, char *args) {
+int main(int argc, char **args) {
 	// Prints out a welcome
 	welcome();
 
