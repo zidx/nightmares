@@ -14,11 +14,12 @@ int main(uint32_t argc, char **args) {
 	welcome();
 
 	// Run the program
-	if (argc > 2)
+	if (argc > 2) {
 		printf("\n You are running in debug mode.\n");
 		debug();
-	else
+	} else {
 		run();
+	}
 }
 
 void run() {
