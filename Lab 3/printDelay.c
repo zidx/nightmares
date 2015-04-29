@@ -1,30 +1,57 @@
 //  preprocessor directive to support printing to the display
 #include <stdio.h>
+#include <stdint.h>
 
 void welcome();
-int getChoice();
+uint32_t getChoice();
 void run();
+void debug();
+void verify(uint32_t exp, uint32_t act);
 
-int main(int argc, char *args) {
-	run();
-}
-
-void run() {
+int main(uint32_t argc, char **args) {
 	// Prints out a welcome
 	welcome();
 
+	// Run the program
+	if (argc > 2)
+		debug();
+	else
+		run();
+}
+
+void run() {
 	// Initializes values
-	int delay = 0;	
-	int num_devices = 0;
+	uint32_t delay = 0;	
+	uint32_t num_devices = 0;
 
 	// Get the number of devices input value
 	num_devices = getChoice();
 
 	// Calculate delay
-	delay = 18 * (num_devices + 1) + 5000 * (num_devices);
+	delay = calculate(num_devices);
 
 	// Output delay
-	printf("\n Your circuit has a delay of " + delay + "picoseconds.");
+	printf("\n Your circuit has a delay of %d picoseconds.", delay);
+}
+
+uint32_t calculate(uint32_t num_devices) {
+	return 18 * (num_devices + 1) + 5000 * (num_devices);
+}
+
+void debug() {
+	uint32_t exp = 18;
+	for(uint32_t i = 0; i < 9; i++) {
+		verify(i, calculate(i), exp);
+		exp += 18 + 5000;
+	}
+
+	verify(800, calculate(800), 4014418);
+	verify(50000, calculate(50000), 250900018);
+}
+
+void verify(uint32_t val, uint32_t exp, uint32_t act) {
+	if(exp != act)
+		printf("Test failed for input value %d\nExp: %d\nAct: %d\n", val, exp, act);
 }
 
 void welcome() {
@@ -42,14 +69,14 @@ void welcome() {
 		+ "negative num of devices) we can't help you!\n\n");
 }
 
-int getChoice() {
-	int choice = -1;
+uint32_t getChoice() {
+	uint32_t choice = -1;
 	while (0 > choice) {
 		printf("Please enter your # of logic devices: ");
 		scanf("%u", &choice);
 
 		if(0 > choice || choice > 4) {
-			printf("\nYour choice was not a positive integer.\n");
+			printf("\nYour choice was not a positive uint32_teger.\n");
 			printf("Please try again\n\n");
 		}
 	}
