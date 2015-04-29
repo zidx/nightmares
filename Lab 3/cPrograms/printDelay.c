@@ -88,7 +88,7 @@ int getChoice() {
 		printf("Please enter your # of logic devices: ");
 		scanf("%u", &choice);
 
-		if(0 > choice || choice > 4) {
+		if(0 > choice) {
 			printf("\nYour choice was either not a positive integer\n");
 			printf("or too large and caused overflow.\n");
 			printf("Please try again\n\n");
