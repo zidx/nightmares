@@ -7,6 +7,7 @@ uint32_t getChoice();
 void run();
 void debug();
 void verify(uint32_t val, uint32_t exp, uint32_t act);
+uint32_t calculate(uint32_t num_devices);
 
 int main(uint32_t argc, char **args) {
 	// Prints out a welcome
