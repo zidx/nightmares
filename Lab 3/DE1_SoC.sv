@@ -3,7 +3,12 @@
 // DE1_SoC
 //
 // Description:
-// 
+// Implements a two-camrea system for a space station. When one camera is
+// filming, it notifies the other camera when its buffer is 80% full to get
+// ready for filming, then at 90% full, signals the other camera to start
+// filming. When the other camera's buffer reaches 50% full, the first camera
+// flushes its buffer if it has not recieved a signal to download by this time.
+//
 // Author(s):
 // Cody Ohlsen
 // Zach Nehrenberg
@@ -26,8 +31,8 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 wire resetUI;
 
 	 // Camera wires:
-	 // Each camera has a series of variables associated with it.
-	 // All inputs are active high and all outputs are active low.
+	 //  Each camera has a series of variables associated with it.
+	 //  All inputs are active high and all outputs are active low.
 	 //	displayCam:
 	 //		Output to the HEX display the current
 	 //		state of the camera
