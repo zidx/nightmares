@@ -59,7 +59,7 @@ parameter 	lowPower			 		= 4'b0000,
 parameter  	low 		= 7'b1000111;
 parameter 	hold		= 7'b0001001;
 parameter   activeD  = 7'b0001000;
-parameter   downloadD	= 7'b0100001;
+parameter   downloadD= 7'b0100001;
 parameter	idleD  	= 7'b0111111;
 parameter	flush 	= 7'b0001110;
 parameter	fifty 	= 7'b0010010;
@@ -208,16 +208,17 @@ endmodule
 // Cody Ohlsen
 //
 //----------------------------------------------------------- 
-/*module Camera_testbench();
-	// Inputs
-	reg rst, clock;
-	reg innerPort, outerPort, arriving, evac, pressurize;
-	reg [2:0] counterVal;
-	
-	
-	// Outputs
-	reg rstCounter;
-	reg [6:0] display;
+module Camera_testbench();
+reg clock;
+reg rst, rstBehavior, download;
+reg [3:0] percentVal;
+reg [2:0] inSignals;
+reg [2:0] outSignals;
+reg countNegative;
+reg pauseCounter;
+reg [6:0] display;
+reg myStandby;
+reg myFilm;
 	
 	// Set up the clock. 
 	parameter CLOCK_PERIOD=100; 
@@ -227,57 +228,60 @@ endmodule
 		clock = ~clock; 
 	end
 	
-	
-	Camera dut (rst, rstCounter, clock, innerPort, outerPort, arriving, evac, pressurize, counterVal, display);
-	
-	// We don't test opening and closing the ports when we're not supposed to.
-	// This is because opening and closing them during operation is trivial.
-	// Everyone would die anyway if you open them at the wrong time
+	Camera dut (myStandby, myFilm, pauseCounter, countNegative, display, outSignals, rst, clock, download, inSignals, rstBehavior, percentVal);
+
 	integer i;
 	initial begin
-		rst <= 1; innerPort <= 0; 			
-		outerPort <= 0; arriving <= 0;
-		counterVal <= 4'b0000;
-		evac <= 0; pressurize <= 0;			@(posedge clock);
-		rst <= 0;							@(posedge clock);
+		rstBehavior <= 0;
+		rst <= 0; 
+		@(posedge clock);
+		rst <= 1;
+		@(posedge clock);
+		rst <= 0;
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		inSignals <= 3'b101;	//gets signal to enter standby from other camera
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		inSignals <= 3'b011; //gets signal to start film from other camera
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		percentVal <= 4'b0101;
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		percentVal <= 4'b1000;
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		percentVal <= 4'b1001;
+		//begins download sequence 
+		@(posedge clock);
+		@(posedge clock);
+		download <= 1; percentVal <= 4'b1010; //(download & (percentVal == tenSec)
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		percentVal <= 4'b0000;
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
 		
-		arriving <= 1;						@(posedge clock);
-		evac <= 1;							@(posedge clock);
-		evac <= 0;							@(posedge clock);
-		pressurize <= 1;					@(posedge clock);
-		pressurize <= 0;					@(posedge clock);
-		counterVal <= 4'b0001;				@(posedge clock); // 5 seconds passed
-		counterVal <= 4'b0000;
-												
-		evac <= 1;							@(posedge clock);
-		evac <= 0;							@(posedge clock);
-		pressurize <= 1;					@(posedge clock);
-		pressurize <= 0;					@(posedge clock);
-		counterVal <= 4'b0010;				@(posedge clock);
-		counterVal <= 4'b0000;				@(posedge clock);
-
-												
-			
-		outerPort <= 1;						@(posedge clock);
-		outerPort <= 0; arriving <= 0; 		@(posedge clock);
+		//runs program again but through flush sequence
 		
-		pressurize <= 1;					@(posedge clock);
-		pressurize <= 0;					@(posedge clock);
-		evac <= 1;							@(posedge clock);
-		evac <= 0;							@(posedge clock);
-		counterVal <= 4'b0100;				@(posedge clock);
-		counterVal <= 4'b0000;				@(posedge clock);
-											@(posedge clock);
-											@(posedge clock);
+		//runs program again but with different default reset behavior
 		
-		arriving <= 1;						@(posedge clock);
-											@(posedge clock);
-											@(posedge clock);
-											@(posedge clock);
-											@(posedge clock);
-		
+		////runs program again but through flush sequence with different default reset behavior
 		$stop;
 	end
-endmodule*/
-		
-				
+endmodule
