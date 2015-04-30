@@ -63,6 +63,49 @@ module CountUp(count, hex);
 			default: hex = nothing;
 		endcase
 	end
-	
 endmodule	
+
+//-----------------------------------------------------------
+// Module name:
+// CountUp
+//
+// Description:
+// Module implemented as part of testing system.
+// Tests all possible states of CountUp.
+// 
+// Author(s):
+// Krista Holden
+//
+//----------------------------------------------------------- 
+module CountUpTestbench ();
+	wire [6:0] hex;
+   wire [3:0] count;
 	
+	parameter stimDelay = 20;
+	
+	CountUp dut (count, hex);
+	
+   initial // Stimulus
+   begin
+	 #stimDelay count = 4'b0000;
+	 #stimDelay count = 4'b0001;
+	 #stimDelay count = 4'b0010;
+	 #stimDelay count = 4'b0011;
+	 #stimDelay count = 4'b0100;
+	 #stimDelay count = 4'b0101;
+	 #stimDelay count = 4'b0110;
+	 #stimDelay count = 4'b0111;
+	 #stimDelay count = 4'b1000;
+	 #stimDelay count = 4'b1001;
+	 #stimDelay count = 4'b1010;
+	 #stimDelay count = 4'b1011;
+	 #stimDelay count = 4'b1100;
+	 #stimDelay count = 4'b1101;
+	 #stimDelay count = 4'b1110;
+	 #stimDelay count = 4'b1111;
+	 #stimDelay count = 4'b0000;
+	 
+    #(4*stimDelay); // needed to see END of simulation
+    $finish; // finish simulation
+  end
+endmodule
