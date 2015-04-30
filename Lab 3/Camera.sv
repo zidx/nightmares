@@ -253,6 +253,7 @@ reg myFilm;
 
 	integer i;
 	initial begin
+		download <= 0;
 		rstBehavior <= 0;
 		rst <= 0; 
 		@(posedge clock);
@@ -298,9 +299,164 @@ reg myFilm;
 		@(posedge clock);
 		@(posedge clock);
 		
+		//runs program again but through flush sequence
+		download <= 0;
+		rst <= 0; 
+		@(posedge clock);
+		rst <= 1;
+		@(posedge clock);
+		rst <= 0;
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		inSignals <= 3'b101;	//gets signal to enter standby from other camera
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		inSignals <= 3'b011; //gets signal to start film from other camera
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		percentVal <= 4'b0101;
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		percentVal <= 4'b1000;
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		percentVal <= 4'b1001;
+		//begins download sequence 
+		@(posedge clock);
+		@(posedge clock);
+		download <= 0; percentVal <= 4'b1010; //(percentVal == tenSec)
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		inSignals <= 3'b110; //signal that it is at 50 percetn and needs to flush
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		percentVal <= 4'b0000;	//done flushing
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		
 		//runs program again but with different default reset behavior
 		
-		////runs program again but through flush sequence with different default reset behavior
+		download <= 0;
+		rstBehavior <= 1;
+		rst <= 0; 
+		@(posedge clock);
+		rst <= 1;
+		@(posedge clock);
+		rst <= 0;
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		inSignals <= 3'b101;	//gets signal to enter standby from other camera
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		inSignals <= 3'b011; //gets signal to start film from other camera
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		percentVal <= 4'b0101;
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		percentVal <= 4'b1000;
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		percentVal <= 4'b1001;
+		//begins download sequence 
+		@(posedge clock);
+		@(posedge clock);
+		download <= 1; percentVal <= 4'b1010; //(download & (percentVal == tenSec)
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		percentVal <= 4'b0000;
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		
+		//runs program again but through flush sequence with different rst behavior
+		download <= 0;
+		rst <= 0; 
+		@(posedge clock);
+		rst <= 1;
+		@(posedge clock);
+		rst <= 0;
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		inSignals <= 3'b101;	//gets signal to enter standby from other camera
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		inSignals <= 3'b011; //gets signal to start film from other camera
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		percentVal <= 4'b0101;
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		percentVal <= 4'b1000;
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		percentVal <= 4'b1001;
+		//begins download sequence 
+		@(posedge clock);
+		@(posedge clock);
+		download <= 0; percentVal <= 4'b1010; //(percentVal == tenSec)
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		inSignals <= 3'b110; //signal that it is at 50 percetn and needs to flush
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		percentVal <= 4'b0000;	//done flushing
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		@(posedge clock);
+		
 		$stop;
 	end
 endmodule
