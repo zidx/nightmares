@@ -14,7 +14,7 @@
 
 module CountUp(count, hex);
 	input  [3:0] count;
-	output [6:0] hex;
+	output reg [6:0] hex;
 
 	
 	// State encodings
@@ -43,9 +43,6 @@ module CountUp(count, hex);
 	parameter eight 	= 7'b0000000;
 	parameter nine		= 7'b0011000;
 	parameter ten		= 7'b0100010;
-	
-	
-	assign hex = hex;
 	
 	always @(*) begin
 		case(count)
@@ -78,8 +75,8 @@ endmodule
 //
 //----------------------------------------------------------- 
 module CountUpTestbench ();
-	wire [6:0] hex;
-   wire [3:0] count;
+	reg [6:0] hex;
+   reg [3:0] count;
 	
 	parameter stimDelay = 20;
 	

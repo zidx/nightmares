@@ -102,7 +102,7 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 // Generate clk off of CLOCK_50, whichClock picks rate.
 	 // Rate determines buffer fill and empty rate
 	 wire [31:0] clk;
-	 parameter whichClock = 7;
+	 parameter whichClock = 6;
 	 
 	 // Clock 6 used in operation for the buffer, but for debugging
 	 // clock 7 can be used to keep more time between states.
@@ -151,372 +151,64 @@ endmodule
 // Cody Ohlsen
 //
 //----------------------------------------------------------- 
-//module DE1_SoC_testbench ();
-//	 reg        clock;
-//	 wire [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5; 
-//	 wire [9:0] LEDR; 
-//	 reg [3:0] KEY; 
-//	 reg [9:0] SW; 
-//	 
-//	 reg rst;
-//	 reg spacecraftArriving;
-//	 reg spacecraftDeparting;
-//	 reg outerPort	;
-//	 reg innerPort ;
-//	 reg pressurizeChamber;
-//	 reg evacuateChamber;
-//	 
-//	 
-//	assign KEY[0] = ~rst;
-//	assign SW[0] = spacecraftArriving;
-//	assign SW[1] = spacecraftDeparting;
-//	assign SW[2] = outerPort;
-//	assign SW[3] = innerPort;
-//	assign KEY[1] = ~pressurizeChamber;
-//	assign KEY[2] = ~evacuateChamber;
-//	
-//	reg helper;
-//	parameter oneSec = 390625;
-//	
-//	parameter clkDur = 100;
-//	
-//	
-//	// Set up the clock. 
-//	initial clock=0;
-//	initial helper = 0;
-//	always begin 
-//		#(clkDur/2); 
-//		clock = ~clock; 
-//	end
-//	
-//	always begin
-//		#((clkDur * oneSec) / 2)
-//		helper = ~helper;
-//	end
-//	initial rst = 0;
-//	
-//	DE1_SoC  dut (clock, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW); 
-//	
-//	initial begin
-//			pressurizeChamber = 0;
-//			evacuateChamber = 0;
-//			outerPort = 0;
-//			innerPort = 0;
-//			spacecraftArriving = 0;
-//			spacecraftDeparting = 0;
-//			
-//			//arriving
-//												@(posedge helper);
-//			rst = 0;							@(posedge helper);
-//												@(posedge helper);
-//		 	rst = 1;							@(posedge helper);
-//		 	rst = 0;							@(posedge helper);
-//			rst = 0;							@(posedge helper);
-//												@(posedge helper);
-//		 	rst = 1;							@(posedge helper);
-//		 	rst = 0;							@(posedge helper);
-//												@(posedge helper);
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//			spacecraftArriving = 1;				@(posedge helper);
-//												@(posedge helper);
-//			spacecraftArriving = 0;				@(posedge helper);
-//												@(posedge helper);
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//			evacuateChamber = 1;      			@(posedge helper);
-//			evacuateChamber = 0;      			@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//			pressurizeChamber = 1;				@(posedge helper);
-//			pressurizeChamber = 0;				@(posedge helper);
-//			evacuateChamber = 1;				@(posedge helper);
-//			evacuateChamber = 0;				@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												
-//			// departing now
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//			spacecraftDeparting = 1;			@(posedge helper);
-//												@(posedge helper);
-//			spacecraftDeparting = 0;			@(posedge helper);
-//												@(posedge helper);
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//			evacuateChamber = 1;       			@(posedge helper);
-//			evacuateChamber = 0;       			@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//			pressurizeChamber = 1;				@(posedge helper);
-//			pressurizeChamber = 0;				@(posedge helper);
-//			evacuateChamber = 1;				@(posedge helper);
-//			evacuateChamber = 0;				@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//			pressurizeChamber = 1;				@(posedge helper);
-//			pressurizeChamber = 0;				@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//												@(posedge helper);
-//		 	rst = 1;							@(posedge helper);
-//		 	rst = 0;							@(posedge helper);
-//												@(posedge helper);
-//												
-//			//testing invalid inputs before arrive/depart signal
-//			pressurizeChamber = 1;				@(posedge helper);
-//			pressurizeChamber = 0;				@(posedge helper);
-//			evacuateChamber = 1;				@(posedge helper);
-//			evacuateChamber = 0;				@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//			rst = 1;							@(posedge helper);
-//		 	rst = 0;							@(posedge helper);
-//			
-//			//testing invalid/valid inputs at all stages in arrive
-//												@(posedge helper);
-//			spacecraftArriving = 1;				@(posedge helper);
-//												@(posedge helper);
-//			spacecraftArriving = 0;				@(posedge helper);
-//												@(posedge helper);
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//			//testing wrong inputs
-//			pressurizeChamber = 1;				@(posedge helper);
-//			pressurizeChamber = 0;				@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//			evacuateChamber = 1;       			@(posedge helper);
-//			evacuateChamber = 0;       			@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//			//testing wrong inputs
-//			evacuateChamber = 1;				@(posedge helper);
-//			evacuateChamber = 0;				@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//												@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//			pressurizeChamber = 1;				@(posedge helper);
-//			pressurizeChamber = 0;				@(posedge helper);
-//			evacuateChamber = 1;				@(posedge helper);
-//			evacuateChamber = 0;				@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//			//testing wrong inputs
-//			pressurizeChamber = 1;				@(posedge helper);
-//			pressurizeChamber = 0;				@(posedge helper);
-//			evacuateChamber = 1;				@(posedge helper);
-//			evacuateChamber = 0;				@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//			rst = 1;							@(posedge helper);
-//		 	rst = 0;							@(posedge helper);
-//			
-//			
-//			
-//			//testing invalid/valid inputs at all stages in depart
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//			//testing invalid inputs before arrive/depart signal
-//			pressurizeChamber = 1;				@(posedge helper);
-//			pressurizeChamber = 0;				@(posedge helper);
-//			evacuateChamber = 1;				@(posedge helper);
-//			evacuateChamber = 0;				@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//												@(posedge helper);
-//			spacecraftDeparting = 1;			@(posedge helper);
-//												@(posedge helper);
-//			spacecraftDeparting = 0;			@(posedge helper);
-//												@(posedge helper);
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//			//testing invalid inputs before arrive/depart signal
-//			pressurizeChamber = 1;				@(posedge helper);
-//			pressurizeChamber = 0;				@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//			evacuateChamber = 1;       			@(posedge helper);
-//			evacuateChamber = 0;       			@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//			//testing invalid inputs before arrive/depart signal
-//			pressurizeChamber = 1;				@(posedge helper);
-//			pressurizeChamber = 0;				@(posedge helper);
-//			evacuateChamber = 1;				@(posedge helper);
-//			evacuateChamber = 0;				@(posedge helper);
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//												@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//			pressurizeChamber = 1;				@(posedge helper);
-//			pressurizeChamber = 0;				@(posedge helper);
-//			evacuateChamber = 1;				@(posedge helper);
-//			evacuateChamber = 0;				@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//			//testing invalid inputs before arrive/depart signal
-//			evacuateChamber = 1;				@(posedge helper);
-//			evacuateChamber = 0;				@(posedge helper);
-//			outerPort = 1;						@(posedge helper);
-//			outerPort = 0;						@(posedge helper);
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//												@(posedge helper);
-//			pressurizeChamber = 1;				@(posedge helper);
-//			pressurizeChamber = 0;				@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//												@(posedge helper);
-//			innerPort = 1;						@(posedge helper);
-//			innerPort = 0;						@(posedge helper);
-//												@(posedge helper);
-//		 	rst = 1;							@(posedge helper);
-//		 	rst = 0;							@(posedge helper);
-//												@(posedge helper);
-//		
-//		$stop; // End the simulation.
-//	end
-//endmodule
+module DE1_SoC_testbench ();
+	 reg        clock;
+	 reg [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5; 
+	 reg [9:0] LEDR; 
+	 reg [3:0] KEY; 
+	 reg [9:0] SW; 
+	 
+	 reg rst;
+	 reg download;
+	 
+	assign KEY[0] = rst;
+	assign SW[0] = download;
+	
+	reg helper;
+	parameter oneSec = 390625;
+	
+	parameter clkDur = 100;
+	
+	
+	// Set up the clock. 
+	initial clock = 0;
+	initial helper = 0;
+	always begin 
+		#(clkDur/2); 
+		clock = ~clock; 
+	end
+	
+	always begin
+		#((clkDur * oneSec) / 2)
+		helper = ~helper;
+	end
+	
+	DE1_SoC  dut (clock, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW); 
+	
+	initial begin
+			download <= 0; rst <= 0;	@(posedge helper);
+			//arriving
+		 	rst <= 1;						@(posedge helper);
+		 	rst <= 0;						@(posedge helper);
+			rst <= 1;						@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+			
+			
+		$stop; // End the simulation.
+	end
+endmodule
