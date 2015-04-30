@@ -3,197 +3,218 @@
 // Camera
 //
 // Description:
-// State machine for entering the interlock. Returns output
-// values to the DE_SoC1 to keep track of the current state.
 // 
 // Author(s):
 // Cody Ohlsen
 // Zach Nehrenberg
 //
 //----------------------------------------------------------- 
-module Camera(myStandby, myFilm, pauseCounter, countNegative, display, outSignals, rst, clock, download, inSignals, rstBehavior, percentVal);
+module Camera(myStandby, myFilm, pauseBuffer, emptyBuffer, display, outSignals, rst, clock, download, inSignals, rstBehavior, percentVal);
 
-input clock;
-input rst, rstBehavior, download;
-input [3:0] percentVal;
-input [2:0] inSignals;
+	input clock;
+	input rst, rstBehavior, download;
+	input [3:0] percentVal;
+	input [2:0] inSignals;
 
-// Signals
-//	  111  =  nothing
-//	  110  =  fifty percent
-//	  101  =  send standby signal
-//	  011  =  send filming signal
-output reg [2:0] outSignals;
+	// Signals for output. A low signal on a
+	// bit corresponds to active (active low)
+	//	  111  =  nothing
+	//	  110  =  fifty percent
+	//	  101  =  send standby signal
+	//	  011  =  send filming signal
+	output reg [2:0] outSignals;
+	
+	// Outputs for the camera. See
+	// DE1_SoC module for descriptions
+	output reg emptyBuffer;
+	output reg pauseBuffer;
+	output reg [6:0] display;
 
-output reg countNegative;
-output reg pauseCounter;
-output reg [6:0] display;
+	output reg myStandby;
+	output reg myFilm;
 
-output reg myStandby;
-output reg myFilm;
+	// Present state and next state of the
+	// camera state machine
+	reg[3:0] ps;
+	reg[3:0] ns;
 
-reg[3:0] ps;
-reg[3:0] ns;
+	// Parameters scoped just to this camera.
+	// Helps the camera to know where it is at
+	// based on the input of its percentVal of
+	// its buffer.
+	parameter zeroPercent 		= 4'b0000;
+	parameter halfPercent 		= 4'b0101;
+	parameter eightyPercent		= 4'b1000;
+	parameter ninetyPercent 	= 4'b1001;
+	parameter hundredPercent 	= 4'b1010;
 
-parameter zeroSec 	= 4'b0000;
-parameter fiveSec 	= 4'b0101;
-parameter eightSec	= 4'b1000;
-parameter nineSec 	= 4'b1001;
-parameter tenSec 		= 4'b1010;
+	// Parameters outputted through the outSignals
+	// to other cameras.
+	parameter fiftyPercent  = 3'b110;
+	parameter standbySignal = 3'b101;
+	parameter filmSignal		= 3'b011;
+	parameter noSignal		= 3'b111;
 
-parameter fiftyPercent  = 3'b110;
-parameter standbySignal = 3'b101;
-parameter filmSignal		= 3'b011;
-parameter noSignal		= 3'b111;
+	// Encodings of the different states this 
+	// camera can be in.
+	parameter 	lowPower			 		= 4'b0000,
+					standBy					= 4'b0001,
+					active	  		 		= 4'b0010,
+					reaches50		   	= 4'b0011,
+					signalToDownload	 	= 4'b0100,
+					reaches90			  	= 4'b0101,
+					downloading 			= 4'b0110,
+					idle						= 4'b0111,
+					flushing					= 4'b1000;
 
-parameter 	lowPower			 		= 4'b0000,
-				standBy					= 4'b0001,
-				active	  		 		= 4'b0010,
-				reaches50		   	= 4'b0011,
-				signalToDownload	 	= 4'b0100,
-				reaches90			  	= 4'b0101,
-				downloading 			= 4'b0110,
-				idle						= 4'b0111,
-				flushing					= 4'b1000;
-				
-parameter  	low 		= 7'b1000111;
-parameter 	hold		= 7'b0001001;
-parameter   activeD  = 7'b0001000;
-parameter   downloadD= 7'b0100001;
-parameter	idleD  	= 7'b0111111;
-parameter	flush 	= 7'b0001110;
-parameter	fifty 	= 7'b0010010;
-parameter	eighty	= 7'b0000000;
-parameter	ninty		= 7'b0011000;
+	// Various outputs to the HEX display
+	// to notify to the user what state this
+	// camera is in
+	parameter  	low 			= 7'b1000111;
+	parameter 	hold			= 7'b0001001;
+	parameter   activeD  	= 7'b0001000;
+	parameter   downloadD	= 7'b0100001;
+	parameter	idleD  		= 7'b0111111;
+	parameter	flush 		= 7'b0001110;
+	parameter	fifty 		= 7'b0010010;
+	parameter	eighty		= 7'b0000000;
+	parameter	ninty			= 7'b0011000;
 
-always @(*) begin
-	case(ps)
-		lowPower: begin
-			pauseCounter = 1;
-			countNegative = 0;
-			display = low;
-			outSignals = noSignal;
-			if (~myStandby)
-				ns = standBy;
-			else
+	always @(*) begin
+		case(ps)
+			lowPower: begin
+				pauseBuffer = 1;
+				emptyBuffer = 0;
+				display = low;
+				outSignals = noSignal;
+				if (~myStandby)
+					ns = standBy;
+				else
+					ns = lowPower;
+			end
+			standBy: begin
+				pauseBuffer = 1;
+				emptyBuffer = 0;
+				display = hold;
+				outSignals = noSignal;
+				if (~myFilm)
+					ns = active;
+				else
+					ns = standBy;
+			end
+			active: begin
+				pauseBuffer = 0;
+				emptyBuffer = 0;
+				display = activeD;
+				outSignals = noSignal;
+				if (percentVal == halfPercent)
+					ns = reaches50;
+				else
+					ns = active;
+			end
+			reaches50: begin
+				pauseBuffer = 0;
+				emptyBuffer = 0;
+				display = fifty;
+				outSignals = fiftyPercent;
+				if (percentVal == eightyPercent)
+					ns = signalToDownload;
+				else
+					ns = reaches50;
+			end
+			signalToDownload: begin
+				pauseBuffer = 0;
+				emptyBuffer = 0;
+				display = eighty;
+				outSignals = standbySignal;
+				if (percentVal == ninetyPercent)
+					ns = reaches90;
+				else
+					ns = signalToDownload;
+			end
+			reaches90: begin
+				pauseBuffer = 0;
+				emptyBuffer = 0;
+				display = ninty;
+				outSignals = filmSignal;
+				if(download & (percentVal == hundredPercent)) 
+					ns = downloading;
+				else if (percentVal == hundredPercent)
+					ns = idle;
+				else
+					ns = reaches90;
+			end
+			idle: begin
+				pauseBuffer = 1;
+				emptyBuffer = 0;
+				display = idleD;
+				outSignals = noSignal;
+				if(inSignals == fiftyPercent) 
+					ns = flushing;
+				else if (download)
+					ns = downloading;
+				else
+					ns = idle;
+			end
+			downloading: begin
+				pauseBuffer = 0;
+				emptyBuffer = 1;
+				display = downloadD;
+				outSignals = noSignal;
+				if(percentVal == zeroPercent) 
+					ns = lowPower;
+				else
+					ns = downloading;
+			end
+			flushing: begin
+				pauseBuffer = 0;
+				emptyBuffer = 1;
+				display = flush;
+				outSignals = noSignal;
+				if(percentVal == zeroPercent) 
+					ns = lowPower;
+				else
+					ns = flushing;
+			end
+			default: begin
+				pauseBuffer = 1;
+				emptyBuffer = 0;
+				display = low;
+				outSignals = noSignal;
 				ns = lowPower;
-		end
-		standBy: begin
-			pauseCounter = 1;
-			countNegative = 0;
-			display = hold;
-			outSignals = noSignal;
-			if (~myFilm)
-				ns = active;
-			else
-				ns = standBy;
-		end
-		active: begin
-			pauseCounter = 0;
-			countNegative = 0;
-			display = activeD;
-			outSignals = noSignal;
-			if (percentVal == fiveSec)
-				ns = reaches50;
-			else
-				ns = active;
-		end
-		reaches50: begin
-			pauseCounter = 0;
-			countNegative = 0;
-			display = fifty;
-			outSignals = fiftyPercent;
-			if (percentVal == eightSec)
-				ns = signalToDownload;
-			else
-				ns = reaches50;
-		end
-		signalToDownload: begin
-			pauseCounter = 0;
-			countNegative = 0;
-			display = eighty;
-			outSignals = standbySignal;
-			if (percentVal == nineSec)
-				ns = reaches90;
-			else
-				ns = signalToDownload;
-		end
-		reaches90: begin
-			pauseCounter = 0;
-			countNegative = 0;
-			display = ninty;
-			outSignals = filmSignal;
-			if(download & (percentVal == tenSec)) 
-				ns = downloading;
-			else if (percentVal == tenSec)
-				ns = idle;
-			else
-				ns = reaches90;
-		end
-		idle: begin
-			pauseCounter = 1;
-			countNegative = 0;
-			display = idleD;
-			outSignals = noSignal;
-			if(inSignals == fiftyPercent) 
-				ns = flushing;
-			else if (download)
-				ns = downloading;
-			else
-				ns = idle;
-		end
-		downloading: begin
-			pauseCounter = 0;
-			countNegative = 1;
-			display = downloadD;
-			outSignals = noSignal;
-			if(percentVal == zeroSec) 
-				ns = lowPower;
-			else
-				ns = downloading;
-		end
-		flushing: begin
-			pauseCounter = 0;
-			countNegative = 1;
-			display = flush;
-			outSignals = noSignal;
-			if(percentVal == zeroSec) 
-				ns = lowPower;
-			else
-				ns = flushing;
-		end
-		default: begin
-			pauseCounter = 1;
-			countNegative = 0;
-			display = low;
-			outSignals = noSignal;
-			ns = lowPower;
-		end
-	endcase
-end
+			end
+		endcase
+	end
 
-always @(posedge clock) begin
-	if(rst & rstBehavior) begin
-		ps <= active;
-		myStandby = 1'b1;
-		myFilm = 1'b1;
+	always @(posedge clock) begin
+		// Check if we are the starter clock. If we are,
+		// we want to go imediately to the active state.
+		// Otherwise we go to the low power state.
+		if(rst & rstBehavior) begin
+			ps <= active;
+			myStandby = 1'b1;
+			myFilm = 1'b1;
+		end
+		else if (rst) begin
+			ps <= lowPower;
+			myFilm = 1'b1;
+			myStandby = 1'b1;
+		end
+		else begin
+			// If we are not in reset behaviour get the next state on
+			// each clock edge, and if we recieve a signal from another
+			// camera, store that signal so we know to execute it when
+			// it is possible for us to.
+			ps <= ns;
+			if (inSignals == standbySignal) myStandby <= 1'b0;
+			else if (ps == standBy || ps == active) myStandby <= 1'b1;
+			else myStandby = myStandby;
+			
+			if (inSignals == filmSignal) myFilm <= 1'b0;
+			else if (ps == active) myFilm <= 1'b1;
+			else myFilm = myFilm;
+		end
 	end
-	else if (rst) begin
-		ps <= lowPower;
-		myFilm = 1'b1;
-		myStandby = 1'b1;
-	end
-	else begin
-		ps <= ns;
-		if (inSignals == standbySignal) myStandby <= 1'b0;
-		else if (ps == standBy || ps == active) myStandby <= 1'b1;
-		else myStandby = myStandby;
-		
-		if (inSignals == filmSignal) myFilm <= 1'b0;
-		else if (ps == active) myFilm <= 1'b1;
-		else myFilm = myFilm;
-	end
-end
 endmodule
 
 //-----------------------------------------------------------
@@ -276,8 +297,6 @@ reg myFilm;
 		@(posedge clock);
 		@(posedge clock);
 		@(posedge clock);
-		
-		//runs program again but through flush sequence
 		
 		//runs program again but with different default reset behavior
 		
