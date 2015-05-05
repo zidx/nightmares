@@ -6,6 +6,7 @@ void convertC2K(double *value);
 void convertK2F(double *value);
 void convertF2C(double *value);
 void run();
+char getUnits(int choice);
 
 int checkNotBelowAbs0(int type, double *value);
 int getChoice();
@@ -20,14 +21,16 @@ int main(int argc, char **args) {
 
 void run() {
 	// Initializes values
-	double temp = 0.0;	
+	double temp = 0.0;
+	double temp_new;
 	int convertFrom;
 	int convertTo;
 
 	// Get the temp input value
 	printf("Please enter your tempature value: ");
 	scanf("%lf", &temp);
-
+	temp_new = temp;
+	
 	// Gets the given value units
 	printf("Enter Given Tempature Units\n");
 	convertFrom = getChoice();
@@ -42,13 +45,20 @@ void run() {
 
 		// Loop and keep converting until the value is converted as desired
 		while(convertFrom != convertTo) {
-			if(convertFrom == 1) convertK2F(&temp);
-			else if(convertFrom == 2) convertF2C(&temp);
-			else convertC2K(&temp);
+			if(convertFrom == 1) convertK2F(&temp_new);
+			else if(convertFrom == 2) convertF2C(&temp_new);
+			else convertC2K(&temp_new);
 			convertFrom = (convertFrom % 3) + 1;
 		}
-		printf("\nYour value converted is %lf.\n", temp);
+		printf("\nYour original value (%lf %c) converted is %lf %c.\n",
+				temp_new, getUnits(convertFrom), temp, getUnits(convertTo));
 	}		
+}
+
+char getUnits(int choice) {
+	if(choice == 1) return 'K';
+	else if(choice == 2) return 'F';
+	else return 'C';
 }
 
 void welcome() {
