@@ -1,38 +1,41 @@
 //-----------------------------------------------------------
 // Module name:
-// Timer
+// Percents
 //
 // Description:
-// Counts the percent done of a camera. Resets to 0. Returns
-// amount of percent done through percent.
-// 10 is done, etc.
+//	Returns the percent the buffer is filled through the/
+// percent output. Allows the buffer to be flushed instead
+// through the emptyBuffer input being high. Allows the
+// buffer to be paused through the pasue input being high.
+// Resets to 0.
 // 
 // Author(s):
 // Cody Ohlsen
 // Zach Nehrenberg
 //
 //----------------------------------------------------------- 
-module Percents (clock, reset, countDirection, pause, percent);
-	input clock, reset, countDirection, pause;
+module Percents (clock, reset, emptyBuffer, pause, percent);
+	input clock, reset, emptyBuffer, pause;
 	output [3:0] percent;
 	
-	reg [3:0] percentPassed;
+	reg [3:0] percentFilled;
 	reg [18:0] clkCounter;
 	
-	 //number of clock cycles to represent one second
+	 //number of clock cycles to represent ten percent
 	 parameter uranusHz = 19'b1011111010111100001;
 	
-	 //after number of clock cycles, one second has passed.
+	 //after number of clock cycles, ten percent of the buffer has filled
 	 always @(posedge clock) begin
+		// On reset, return the percent filled to zero
 		if(reset) begin
 			clkCounter <= 19'b0000000000000000000;
-			percentPassed <= 3'b000;
+			percentFilled <= 3'b000;
 		end
 		else if (uranusHz == clkCounter) begin
-			if (pause) percentPassed = percentPassed;
+			if (pause) percentFilled = percentFilled;
 			else begin
-				if (countDirection) percentPassed <= percentPassed - 2'b10;
-				else percentPassed <= percentPassed + 1'b1;
+				if (emptyBuffer) percentFilled <= percentFilled - 2'b10;
+				else percentFilled <= percentFilled + 1'b1;
 			end
 			clkCounter <= 19'b0000000000000000000;
 		end
@@ -40,17 +43,17 @@ module Percents (clock, reset, countDirection, pause, percent);
 			clkCounter <= clkCounter + 1'b1;
 	 end
 	 
-	 assign percent = percentPassed;
+	 assign percent = percentFilled;
 	 
 endmodule
 
 //-----------------------------------------------------------
 // Module name:
-// TimerTestbench
+// PercentTestbench
 //
 // Description:
 // Module implemented as part of testing system.
-// Tests all possible states of Timer.
+// Tests all possible states of Percent.
 // 
 // Author(s):
 // Krista Holden
@@ -58,12 +61,12 @@ endmodule
 //----------------------------------------------------------- 
 module PercentTestbench ();
 	reg        clock, rst;
-	wire [3:0] seconds;
+	wire [3:0] percent;
 	
 	
 	reg helper;
-	parameter oneSec = 390625;
 	
+	parameter tenPercent = 390625;
 	parameter clkDur = 100;
 	
 	
@@ -76,12 +79,12 @@ module PercentTestbench ();
 	end
 	
 	always begin
-		#((clkDur * oneSec) / 2)
+		#((clkDur * tenPercent) / 2)
 		helper = ~helper;
 	end
 	initial rst = 0;
 	
-	Timer dut (clock, rst, seconds);
+	Timer dut (clock, rst, percent);
 	
 	initial begin
 			rst = 0;		@(posedge helper);

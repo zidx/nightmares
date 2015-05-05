@@ -16,7 +16,6 @@ int main(int argc, char **args) {
 
 	// Run the program
 	if (argc > 1) {
-		printf("\nYou are running in debug mode.\n");
 		debug();
 	} else {
 		run();
@@ -35,7 +34,7 @@ void run() {
 	delay = calculate(num_devices);
 
 	// Output delay
-	printf("\nYour circuit has a delay of %lf picoseconds.\n\n", delay);
+	printf("\nYour circuit with %d devices has a delay of %lf picoseconds.\n\n", num_devices, delay);
 }
 
 double calculate(int num_devices) {
@@ -43,6 +42,7 @@ double calculate(int num_devices) {
 }
 
 void debug() {
+	printf("\nYou are running in debug mode.\n");
 	int exp = 18;
 	int i;
 	

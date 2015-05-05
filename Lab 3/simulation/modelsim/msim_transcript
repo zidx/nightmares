@@ -1,0 +1,76 @@
+# Reading C:/altera/14.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do DE1_SoC_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 3 {C:/Users/codyohl/Documents/nightmares/Lab 3/DE1_SoC.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module DE1_SoC
+# -- Compiling module ClockDivider
+# 
+# Top level modules:
+# 	DE1_SoC
+# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 3 {C:/Users/codyohl/Documents/nightmares/Lab 3/Camera.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module Camera
+# -- Compiling module Camera_testbench
+# 
+# Top level modules:
+# 	Camera_testbench
+# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 3 {C:/Users/codyohl/Documents/nightmares/Lab 3/CountUp.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module CountUp
+# 
+# Top level modules:
+# 	CountUp
+# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 3 {C:/Users/codyohl/Documents/nightmares/Lab 3/DFlipFlop.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module DFlipFlop
+# 
+# Top level modules:
+# 	DFlipFlop
+# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 3 {C:/Users/codyohl/Documents/nightmares/Lab 3/UserInput.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module UserInput
+# 
+# Top level modules:
+# 	UserInput
+# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/Lab\ 3 {C:/Users/codyohl/Documents/nightmares/Lab 3/Percents.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module Percents
+# -- Compiling module PercentTestbench
+# 
+# Top level modules:
+# 	Percents
+# 	PercentTestbench
+# 
+vsim work.Camera_testbench
+# vsim work.Camera_testbench 
+# Loading sv_std.std
+# Loading work.Camera_testbench
+# Loading work.Camera
+add wave -position end  sim:/Camera_testbench/CLOCK_PERIOD
+add wave -position end  sim:/Camera_testbench/clock
+add wave -position end  sim:/Camera_testbench/rst
+add wave -position end  sim:/Camera_testbench/rstBehavior
+add wave -position end  sim:/Camera_testbench/download
+add wave -position end  sim:/Camera_testbench/percentVal
+add wave -position end  sim:/Camera_testbench/inSignals
+add wave -position end  sim:/Camera_testbench/outSignals
+add wave -position end  sim:/Camera_testbench/countNegative
+add wave -position end  sim:/Camera_testbench/pauseCounter
+add wave -position end  sim:/Camera_testbench/display
+add wave -position end  sim:/Camera_testbench/myStandby
+add wave -position end  sim:/Camera_testbench/myFilm
+add wave -position end  sim:/Camera_testbench/i
+# Break key hit 
+# Break key hit 
+run -all
+# Break in Module Camera_testbench at C:/Users/codyohl/Documents/nightmares/Lab 3/Camera.sv line 285

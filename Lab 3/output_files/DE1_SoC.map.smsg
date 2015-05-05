@@ -4,3 +4,4 @@ Warning (10034): Output port "LEDR[7..5]" at DE1_SoC.sv(19) has no driver
 Warning (10034): Output port "LEDR[2..0]" at DE1_SoC.sv(19) has no driver
 Warning (284006): Flipped 1 bits in user-encoded state machine |DE1_SoC|Camera:camera2|ps
 Warning (284006): Flipped 1 bits in user-encoded state machine |DE1_SoC|Camera:camera1|ps
+Warning (13024): Output pins are stuck at VCC or GND

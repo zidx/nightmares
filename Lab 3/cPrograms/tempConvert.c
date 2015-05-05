@@ -6,6 +6,7 @@ void convertC2K(double *value);
 void convertK2F(double *value);
 void convertF2C(double *value);
 void run();
+char getUnits(int choice);
 
 int checkNotBelowAbs0(int type, double *value);
 int getChoice();
@@ -20,14 +21,16 @@ int main(int argc, char **args) {
 
 void run() {
 	// Initializes values
-	double temp = 0.0;	
+	double temp = 0.0;
+	double temp_new;
 	int convertFrom;
 	int convertTo;
 
 	// Get the temp input value
 	printf("Please enter your tempature value: ");
 	scanf("%lf", &temp);
-
+	temp_new = temp;
+	
 	// Gets the given value units
 	printf("Enter Given Tempature Units\n");
 	convertFrom = getChoice();
@@ -40,15 +43,24 @@ void run() {
 		printf("Enter Desired Units\n");
 		convertTo = getChoice();
 
+		char old_unit = getUnits(convertFrom);
+
 		// Loop and keep converting until the value is converted as desired
 		while(convertFrom != convertTo) {
-			if(convertFrom == 1) convertK2F(&temp);
-			else if(convertFrom == 2) convertF2C(&temp);
-			else convertC2K(&temp);
+			if(convertFrom == 1) convertK2F(&temp_new);
+			else if(convertFrom == 2) convertF2C(&temp_new);
+			else convertC2K(&temp_new);
 			convertFrom = (convertFrom % 3) + 1;
 		}
-		printf("\nYour value converted is %lf.\n", temp);
+		printf("\nYour original value (%lf %c) converted is %lf %c.\n",
+				temp, old_unit, temp_new, getUnits(convertTo));
 	}		
+}
+
+char getUnits(int choice) {
+	if(choice == 1) return 'K';
+	else if(choice == 2) return 'F';
+	else return 'C';
 }
 
 void welcome() {
@@ -77,8 +89,8 @@ void convertF2C(double *value) {
 }
 
 int checkNotBelowAbs0(int type, double *value) {
-	if((type == 1 && *value >= 0.0) || (type == 2 && *value >= -273.15) 
-		|| (type == 3 && *value >= -459.67)) {
+	if((type == 1 && *value >= 0.0) || (type == 2 && *value >= -459.67) 
+		|| (type == 3 && *value >= -273.15)) {
 		return 1;
 	} else {
 		return 0;
@@ -87,6 +99,9 @@ int checkNotBelowAbs0(int type, double *value) {
 
 int getChoice() {
 	int choice = -1;
+	
+	int count = 0;
+	
 	while (0 > choice || choice > 3) {
 		printf("Please enter the # representing your choice:\n");
 		printf("(1) Kelvin\n");
@@ -99,6 +114,13 @@ int getChoice() {
 		if(0 > choice || choice > 3) {
 			printf("\nYour choice was not one of the integers 1, 2, or 3.\n");
 			printf("Please try again\n\n");
+		}
+		
+		count++;
+		if(count > 10) {
+			printf("You either entered a String or entered incorrectly too many times.\n");
+			printf("The program defaults to Kelvin.\n");
+			return 1;
 		}
 	}
 	return choice;
