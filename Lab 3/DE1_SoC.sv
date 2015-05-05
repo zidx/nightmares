@@ -70,7 +70,7 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 wire [31:0] clk;
 	 
 	 //uses clock 6 to use the lowest whole number of Hz for exactly precise timing.
-	 parameter whichClock = 7;
+	 parameter whichClock = 5;
 	 
 	 //clock 6 used in operation for the timer.
 	 wire clock = clk[whichClock];

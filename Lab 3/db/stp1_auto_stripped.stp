@@ -1,0 +1,889 @@
+<session jtag_chain="DE-SoC [USB-1]" jtag_device="@2: 5CSE(BA5|MA5)/5CSTFD5D5/.. (0x02D120DD)" sof_file="../output_files/DE1_SoC.sof">
+  <display_tree gui_logging_enabled="0">
+    <display_branch instance="Reset Behavior" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+    <display_branch instance="Signal Standby" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+    <display_branch instance="Signal Active" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+    <display_branch instance="Idle after 100%" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+    <display_branch instance="Flush after idle waiting" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+    <display_branch instance="Download Imediately (no idle)" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+    <display_branch instance="Download after idle" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+    <display_branch instance="Flushing/Download back to LP/SB/Active" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+  </display_tree>
+  <instance enabled="false" entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="Reset Behavior" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="6"/>
+    <signal_set global_temp="1" is_expanded="true" name="signal_set: 2015/05/05 16:07:00  #0">
+      <clock name="ClockDivider:cdiv|divided_clocks[5]" polarity="posedge" tap_mode="classic"/>
+      <config ram_type="AUTO" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="131072" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="KEY[0]" tap_mode="classic"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="Camera:camera1|ps.active" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.lowPower" tap_mode="classic"/>
+          <wire name="KEY[0]" tap_mode="classic"/>
+        </data_input_vec>
+        <storage_qualifier_input_vec>
+          <wire name="Camera:camera1|ps.active" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.lowPower" tap_mode="classic"/>
+          <wire name="KEY[0]" tap_mode="classic"/>
+        </storage_qualifier_input_vec>
+      </signal_vec>
+      <presentation>
+        <unified_setup_data_view>
+          <node data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="falling edge" name="KEY[0]" storage_index="2" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <node data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.active" storage_index="0" tap_mode="classic" type="unknown"/>
+          <node data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.lowPower" storage_index="1" tap_mode="classic" type="unknown"/>
+        </unified_setup_data_view>
+        <data_view>
+          <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="falling edge" name="KEY[0]" storage_index="2" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.active" storage_index="0" tap_mode="classic" type="unknown"/>
+          <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.lowPower" storage_index="1" tap_mode="classic" type="unknown"/>
+        </data_view>
+        <setup_view>
+          <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="falling edge" name="KEY[0]" storage_index="2" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.active" storage_index="0" tap_mode="classic" type="unknown"/>
+          <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.lowPower" storage_index="1" tap_mode="classic" type="unknown"/>
+        </setup_view>
+        <trigger_in_editor/>
+        <trigger_out_editor/>
+      </presentation>
+      <trigger CRC="3554013E" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2015/05/05 16:14:36  #0" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="32768" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
+        <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
+        <events use_custom_flow_control="no">
+          <level enabled="yes" name="condition1" type="basic">'KEY[0]' == falling edge
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
+          </level>
+        </events>
+        <storage_qualifier_events>
+          <transitional>001
+            <pwr_up_transitional>001</pwr_up_transitional>
+          </transitional>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+        </storage_qualifier_events>
+      </trigger>
+    </signal_set>
+    <position_info>
+      <single attribute="active tab" value="0"/>
+      <single attribute="data horizontal scroll position" value="0"/>
+      <single attribute="data vertical scroll position" value="0"/>
+      <single attribute="setup horizontal scroll position" value="0"/>
+      <single attribute="setup vertical scroll position" value="0"/>
+      <single attribute="zoom level denominator" value="1"/>
+      <single attribute="zoom level numerator" value="2"/>
+      <single attribute="zoom offset denominator" value="1"/>
+      <single attribute="zoom offset numerator" value="0"/>
+    </position_info>
+  </instance>
+  <instance enabled="false" entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="Signal Standby" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="1" mfg_id="110" node_id="0" version="6"/>
+    <signal_set global_temp="1" is_expanded="true" name="signal_set: 2015/05/05 16:07:00  #2">
+      <clock name="ClockDivider:cdiv|divided_clocks[5]" polarity="posedge" tap_mode="classic"/>
+      <config ram_type="AUTO" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="131072" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="Camera:camera1|ps.signalToDownload" tap_mode="classic"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="Camera:camera1|outSignals[0]" tap_mode="classic"/>
+          <wire name="Camera:camera1|outSignals[1]" tap_mode="classic"/>
+          <wire name="Camera:camera1|outSignals[2]" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.reaches50" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.signalToDownload" tap_mode="classic"/>
+          <wire name="Camera:camera2|inSignals[0]" tap_mode="classic"/>
+          <wire name="Camera:camera2|inSignals[1]" tap_mode="classic"/>
+          <wire name="Camera:camera2|inSignals[2]" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.lowPower" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.standBy" tap_mode="classic"/>
+        </data_input_vec>
+        <storage_qualifier_input_vec>
+          <wire name="Camera:camera1|outSignals[0]" tap_mode="classic"/>
+          <wire name="Camera:camera1|outSignals[1]" tap_mode="classic"/>
+          <wire name="Camera:camera1|outSignals[2]" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.reaches50" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.signalToDownload" tap_mode="classic"/>
+          <wire name="Camera:camera2|inSignals[0]" tap_mode="classic"/>
+          <wire name="Camera:camera2|inSignals[1]" tap_mode="classic"/>
+          <wire name="Camera:camera2|inSignals[2]" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.lowPower" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.standBy" tap_mode="classic"/>
+        </storage_qualifier_input_vec>
+      </signal_vec>
+      <presentation>
+        <unified_setup_data_view>
+          <node data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.reaches50" storage_index="3" tap_mode="classic" type="unknown"/>
+          <node data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="Camera:camera1|ps.signalToDownload" storage_index="4" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <node is_selected="false" level-0="alt_or" name="Camera:camera1|outSignals[2..0]" order="msb_to_lsb" type="combinatorial">
+            <node data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|outSignals[2]" storage_index="2" tap_mode="classic" type="unknown"/>
+            <node data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|outSignals[1]" storage_index="1" tap_mode="classic" type="unknown"/>
+            <node data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|outSignals[0]" storage_index="0" tap_mode="classic" type="unknown"/>
+          </node>
+          <node data_index="8" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.lowPower" storage_index="8" tap_mode="classic" type="unknown"/>
+          <node data_index="9" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.standBy" storage_index="9" tap_mode="classic" type="unknown"/>
+          <node is_selected="false" level-0="alt_or" name="Camera:camera2|inSignals[2..0]" order="msb_to_lsb" type="combinatorial">
+            <node data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|inSignals[2]" storage_index="7" tap_mode="classic" type="unknown"/>
+            <node data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|inSignals[1]" storage_index="6" tap_mode="classic" type="unknown"/>
+            <node data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|inSignals[0]" storage_index="5" tap_mode="classic" type="unknown"/>
+          </node>
+        </unified_setup_data_view>
+        <data_view>
+          <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.reaches50" storage_index="3" tap_mode="classic" type="unknown"/>
+          <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="Camera:camera1|ps.signalToDownload" storage_index="4" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="Camera:camera1|outSignals[2..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|outSignals[2]" storage_index="2" tap_mode="classic" type="unknown"/>
+            <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|outSignals[1]" storage_index="1" tap_mode="classic" type="unknown"/>
+            <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|outSignals[0]" storage_index="0" tap_mode="classic" type="unknown"/>
+          </bus>
+          <net data_index="8" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.lowPower" storage_index="8" tap_mode="classic" type="unknown"/>
+          <net data_index="9" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.standBy" storage_index="9" tap_mode="classic" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="Camera:camera2|inSignals[2..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|inSignals[2]" storage_index="7" tap_mode="classic" type="unknown"/>
+            <net data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|inSignals[1]" storage_index="6" tap_mode="classic" type="unknown"/>
+            <net data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|inSignals[0]" storage_index="5" tap_mode="classic" type="unknown"/>
+          </bus>
+        </data_view>
+        <setup_view>
+          <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.reaches50" storage_index="3" tap_mode="classic" type="unknown"/>
+          <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="Camera:camera1|ps.signalToDownload" storage_index="4" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="Camera:camera1|outSignals[2..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|outSignals[2]" storage_index="2" tap_mode="classic" type="unknown"/>
+            <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|outSignals[1]" storage_index="1" tap_mode="classic" type="unknown"/>
+            <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|outSignals[0]" storage_index="0" tap_mode="classic" type="unknown"/>
+          </bus>
+          <net data_index="8" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.lowPower" storage_index="8" tap_mode="classic" type="unknown"/>
+          <net data_index="9" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.standBy" storage_index="9" tap_mode="classic" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="Camera:camera2|inSignals[2..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|inSignals[2]" storage_index="7" tap_mode="classic" type="unknown"/>
+            <net data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|inSignals[1]" storage_index="6" tap_mode="classic" type="unknown"/>
+            <net data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|inSignals[0]" storage_index="5" tap_mode="classic" type="unknown"/>
+          </bus>
+        </setup_view>
+        <trigger_in_editor/>
+        <trigger_out_editor/>
+      </presentation>
+      <trigger CRC="B511032" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2015/05/05 16:07:00  #3" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="32768" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
+        <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
+        <events use_custom_flow_control="no">
+          <level enabled="yes" name="condition1" type="basic">'Camera:camera1|ps.signalToDownload' == high
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
+          </level>
+        </events>
+        <storage_qualifier_events>
+          <transitional>0000100000
+            <pwr_up_transitional>0000100000</pwr_up_transitional>
+          </transitional>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+        </storage_qualifier_events>
+      </trigger>
+    </signal_set>
+    <position_info>
+      <single attribute="active tab" value="0"/>
+      <single attribute="data horizontal scroll position" value="0"/>
+      <single attribute="data vertical scroll position" value="0"/>
+      <single attribute="setup horizontal scroll position" value="0"/>
+      <single attribute="setup vertical scroll position" value="0"/>
+      <single attribute="zoom level denominator" value="1"/>
+      <single attribute="zoom level numerator" value="2"/>
+      <single attribute="zoom offset denominator" value="1"/>
+      <single attribute="zoom offset numerator" value="0"/>
+    </position_info>
+  </instance>
+  <instance enabled="false" entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="Signal Active" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="2" mfg_id="110" node_id="0" version="6"/>
+    <signal_set global_temp="1" is_expanded="true" name="signal_set: 2015/05/05 16:07:00  #4">
+      <clock name="ClockDivider:cdiv|divided_clocks[5]" polarity="posedge" tap_mode="classic"/>
+      <config ram_type="AUTO" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="131072" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="Camera:camera1|ps.reaches90" tap_mode="classic"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="Camera:camera1|outSignals[0]" tap_mode="classic"/>
+          <wire name="Camera:camera1|outSignals[1]" tap_mode="classic"/>
+          <wire name="Camera:camera1|outSignals[2]" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.reaches90" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.signalToDownload" tap_mode="classic"/>
+          <wire name="Camera:camera2|inSignals[0]" tap_mode="classic"/>
+          <wire name="Camera:camera2|inSignals[1]" tap_mode="classic"/>
+          <wire name="Camera:camera2|inSignals[2]" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.active" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.standBy" tap_mode="classic"/>
+        </data_input_vec>
+        <storage_qualifier_input_vec>
+          <wire name="Camera:camera1|outSignals[0]" tap_mode="classic"/>
+          <wire name="Camera:camera1|outSignals[1]" tap_mode="classic"/>
+          <wire name="Camera:camera1|outSignals[2]" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.reaches90" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.signalToDownload" tap_mode="classic"/>
+          <wire name="Camera:camera2|inSignals[0]" tap_mode="classic"/>
+          <wire name="Camera:camera2|inSignals[1]" tap_mode="classic"/>
+          <wire name="Camera:camera2|inSignals[2]" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.active" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.standBy" tap_mode="classic"/>
+        </storage_qualifier_input_vec>
+      </signal_vec>
+      <presentation>
+        <unified_setup_data_view>
+          <node data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.signalToDownload" storage_index="4" tap_mode="classic" type="unknown"/>
+          <node data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="Camera:camera1|ps.reaches90" storage_index="3" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <node is_selected="false" level-0="alt_or" name="Camera:camera1|outSignals[2..0]" order="msb_to_lsb" type="combinatorial">
+            <node data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|outSignals[2]" storage_index="2" tap_mode="classic" type="unknown"/>
+            <node data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|outSignals[1]" storage_index="1" tap_mode="classic" type="unknown"/>
+            <node data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|outSignals[0]" storage_index="0" tap_mode="classic" type="unknown"/>
+          </node>
+          <node data_index="8" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.active" storage_index="8" tap_mode="classic" type="unknown"/>
+          <node data_index="9" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.standBy" storage_index="9" tap_mode="classic" type="unknown"/>
+          <node is_selected="false" level-0="alt_or" name="Camera:camera2|inSignals[2..0]" order="msb_to_lsb" type="combinatorial">
+            <node data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|inSignals[2]" storage_index="7" tap_mode="classic" type="unknown"/>
+            <node data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|inSignals[1]" storage_index="6" tap_mode="classic" type="unknown"/>
+            <node data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|inSignals[0]" storage_index="5" tap_mode="classic" type="unknown"/>
+          </node>
+        </unified_setup_data_view>
+        <data_view>
+          <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.signalToDownload" storage_index="4" tap_mode="classic" type="unknown"/>
+          <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="Camera:camera1|ps.reaches90" storage_index="3" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="Camera:camera1|outSignals[2..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|outSignals[2]" storage_index="2" tap_mode="classic" type="unknown"/>
+            <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|outSignals[1]" storage_index="1" tap_mode="classic" type="unknown"/>
+            <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|outSignals[0]" storage_index="0" tap_mode="classic" type="unknown"/>
+          </bus>
+          <net data_index="8" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.active" storage_index="8" tap_mode="classic" type="unknown"/>
+          <net data_index="9" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.standBy" storage_index="9" tap_mode="classic" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="Camera:camera2|inSignals[2..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|inSignals[2]" storage_index="7" tap_mode="classic" type="unknown"/>
+            <net data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|inSignals[1]" storage_index="6" tap_mode="classic" type="unknown"/>
+            <net data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|inSignals[0]" storage_index="5" tap_mode="classic" type="unknown"/>
+          </bus>
+        </data_view>
+        <setup_view>
+          <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.signalToDownload" storage_index="4" tap_mode="classic" type="unknown"/>
+          <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="Camera:camera1|ps.reaches90" storage_index="3" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="Camera:camera1|outSignals[2..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|outSignals[2]" storage_index="2" tap_mode="classic" type="unknown"/>
+            <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|outSignals[1]" storage_index="1" tap_mode="classic" type="unknown"/>
+            <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|outSignals[0]" storage_index="0" tap_mode="classic" type="unknown"/>
+          </bus>
+          <net data_index="8" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.active" storage_index="8" tap_mode="classic" type="unknown"/>
+          <net data_index="9" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.standBy" storage_index="9" tap_mode="classic" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="Camera:camera2|inSignals[2..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|inSignals[2]" storage_index="7" tap_mode="classic" type="unknown"/>
+            <net data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|inSignals[1]" storage_index="6" tap_mode="classic" type="unknown"/>
+            <net data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|inSignals[0]" storage_index="5" tap_mode="classic" type="unknown"/>
+          </bus>
+        </setup_view>
+        <trigger_in_editor/>
+        <trigger_out_editor/>
+      </presentation>
+      <trigger CRC="B513411" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2015/05/05 16:07:00  #5" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="32768" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
+        <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
+        <events use_custom_flow_control="no">
+          <level enabled="yes" name="condition1" type="basic">'Camera:camera1|ps.reaches90' == high
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
+          </level>
+        </events>
+        <storage_qualifier_events>
+          <transitional>0001000000
+            <pwr_up_transitional>0001000000</pwr_up_transitional>
+          </transitional>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+        </storage_qualifier_events>
+      </trigger>
+    </signal_set>
+    <position_info>
+      <single attribute="active tab" value="0"/>
+      <single attribute="data horizontal scroll position" value="0"/>
+      <single attribute="data vertical scroll position" value="0"/>
+      <single attribute="setup horizontal scroll position" value="0"/>
+      <single attribute="setup vertical scroll position" value="0"/>
+      <single attribute="zoom level denominator" value="1"/>
+      <single attribute="zoom level numerator" value="2"/>
+      <single attribute="zoom offset denominator" value="1"/>
+      <single attribute="zoom offset numerator" value="0"/>
+    </position_info>
+  </instance>
+  <instance enabled="false" entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="Idle after 100%" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="3" mfg_id="110" node_id="0" version="6"/>
+    <signal_set global_temp="1" is_expanded="true" name="signal_set: 2015/05/05 16:07:00  #6">
+      <clock name="ClockDivider:cdiv|divided_clocks[5]" polarity="posedge" tap_mode="classic"/>
+      <config ram_type="AUTO" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="131072" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="Camera:camera1|ps.idle" tap_mode="classic"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="Camera:camera1|download" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.idle" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.reaches90" tap_mode="classic"/>
+        </data_input_vec>
+        <storage_qualifier_input_vec>
+          <wire name="Camera:camera1|download" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.idle" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.reaches90" tap_mode="classic"/>
+        </storage_qualifier_input_vec>
+      </signal_vec>
+      <presentation>
+        <unified_setup_data_view>
+          <node data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.reaches90" storage_index="2" tap_mode="classic" type="unknown"/>
+          <node data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="Camera:camera1|ps.idle" storage_index="1" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <node data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|download" storage_index="0" tap_mode="classic" type="unknown"/>
+        </unified_setup_data_view>
+        <data_view>
+          <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.reaches90" storage_index="2" tap_mode="classic" type="unknown"/>
+          <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="Camera:camera1|ps.idle" storage_index="1" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|download" storage_index="0" tap_mode="classic" type="unknown"/>
+        </data_view>
+        <setup_view>
+          <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.reaches90" storage_index="2" tap_mode="classic" type="unknown"/>
+          <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="Camera:camera1|ps.idle" storage_index="1" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|download" storage_index="0" tap_mode="classic" type="unknown"/>
+        </setup_view>
+        <trigger_in_editor/>
+        <trigger_out_editor/>
+      </presentation>
+      <trigger CRC="3554AA75" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2015/05/05 16:07:00  #7" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="32768" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
+        <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
+        <events use_custom_flow_control="no">
+          <level enabled="yes" name="condition1" type="basic">'Camera:camera1|ps.idle' == high
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
+          </level>
+        </events>
+        <storage_qualifier_events>
+          <transitional>010
+            <pwr_up_transitional>010</pwr_up_transitional>
+          </transitional>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+        </storage_qualifier_events>
+      </trigger>
+    </signal_set>
+    <position_info>
+      <single attribute="active tab" value="0"/>
+      <single attribute="data horizontal scroll position" value="0"/>
+      <single attribute="data vertical scroll position" value="0"/>
+      <single attribute="setup horizontal scroll position" value="0"/>
+      <single attribute="setup vertical scroll position" value="0"/>
+      <single attribute="zoom level denominator" value="1"/>
+      <single attribute="zoom level numerator" value="2"/>
+      <single attribute="zoom offset denominator" value="1"/>
+      <single attribute="zoom offset numerator" value="0"/>
+    </position_info>
+  </instance>
+  <instance enabled="false" entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="Flush after idle waiting" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="4" mfg_id="110" node_id="0" version="6"/>
+    <signal_set global_temp="1" is_expanded="true" name="signal_set: 2015/05/05 16:07:00  #8">
+      <clock name="ClockDivider:cdiv|divided_clocks[5]" polarity="posedge" tap_mode="classic"/>
+      <config ram_type="AUTO" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="131072" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="Camera:camera1|ps.flushing" tap_mode="classic"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="Camera:camera1|inSignals[0]" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.flushing" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.idle" tap_mode="classic"/>
+          <wire name="Camera:camera2|outSignals[0]" tap_mode="classic"/>
+          <wire name="Camera:camera2|outSignals[1]" tap_mode="classic"/>
+          <wire name="Camera:camera2|outSignals[2]" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.active" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.reaches50" tap_mode="classic"/>
+        </data_input_vec>
+        <storage_qualifier_input_vec>
+          <wire name="Camera:camera1|inSignals[0]" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.flushing" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.idle" tap_mode="classic"/>
+          <wire name="Camera:camera2|outSignals[0]" tap_mode="classic"/>
+          <wire name="Camera:camera2|outSignals[1]" tap_mode="classic"/>
+          <wire name="Camera:camera2|outSignals[2]" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.active" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.reaches50" tap_mode="classic"/>
+        </storage_qualifier_input_vec>
+      </signal_vec>
+      <presentation>
+        <unified_setup_data_view>
+          <node data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.idle" storage_index="2" tap_mode="classic" type="unknown"/>
+          <node data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="Camera:camera1|ps.flushing" storage_index="1" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <node data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|inSignals[0]" storage_index="0" tap_mode="classic" type="unknown"/>
+          <node data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.active" storage_index="6" tap_mode="classic" type="unknown"/>
+          <node data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.reaches50" storage_index="7" tap_mode="classic" type="unknown"/>
+          <node is_selected="false" level-0="alt_or" name="Camera:camera2|outSignals[2..0]" order="msb_to_lsb" state="collapse" type="combinatorial">
+            <node data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|outSignals[2]" storage_index="5" tap_mode="classic" type="unknown"/>
+            <node data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|outSignals[1]" storage_index="4" tap_mode="classic" type="unknown"/>
+            <node data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|outSignals[0]" storage_index="3" tap_mode="classic" type="unknown"/>
+          </node>
+        </unified_setup_data_view>
+        <data_view>
+          <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.idle" storage_index="2" tap_mode="classic" type="unknown"/>
+          <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="Camera:camera1|ps.flushing" storage_index="1" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|inSignals[0]" storage_index="0" tap_mode="classic" type="unknown"/>
+          <net data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.active" storage_index="6" tap_mode="classic" type="unknown"/>
+          <net data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.reaches50" storage_index="7" tap_mode="classic" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="Camera:camera2|outSignals[2..0]" order="msb_to_lsb" state="collapse" type="combinatorial">
+            <net data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|outSignals[2]" storage_index="5" tap_mode="classic" type="unknown"/>
+            <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|outSignals[1]" storage_index="4" tap_mode="classic" type="unknown"/>
+            <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|outSignals[0]" storage_index="3" tap_mode="classic" type="unknown"/>
+          </bus>
+        </data_view>
+        <setup_view>
+          <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.idle" storage_index="2" tap_mode="classic" type="unknown"/>
+          <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="Camera:camera1|ps.flushing" storage_index="1" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|inSignals[0]" storage_index="0" tap_mode="classic" type="unknown"/>
+          <net data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.active" storage_index="6" tap_mode="classic" type="unknown"/>
+          <net data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.reaches50" storage_index="7" tap_mode="classic" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="Camera:camera2|outSignals[2..0]" order="msb_to_lsb" state="collapse" type="combinatorial">
+            <net data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|outSignals[2]" storage_index="5" tap_mode="classic" type="unknown"/>
+            <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|outSignals[1]" storage_index="4" tap_mode="classic" type="unknown"/>
+            <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|outSignals[0]" storage_index="3" tap_mode="classic" type="unknown"/>
+          </bus>
+        </setup_view>
+        <trigger_in_editor/>
+        <trigger_out_editor/>
+      </presentation>
+      <trigger CRC="4FF136B2" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2015/05/05 16:07:00  #9" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="32768" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
+        <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
+        <events use_custom_flow_control="no">
+          <level enabled="yes" name="condition1" type="basic">'Camera:camera1|ps.flushing' == high
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
+          </level>
+        </events>
+        <storage_qualifier_events>
+          <transitional>01000000
+            <pwr_up_transitional>01000000</pwr_up_transitional>
+          </transitional>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+        </storage_qualifier_events>
+      </trigger>
+    </signal_set>
+    <position_info>
+      <single attribute="active tab" value="0"/>
+      <single attribute="data horizontal scroll position" value="0"/>
+      <single attribute="data vertical scroll position" value="0"/>
+      <single attribute="setup horizontal scroll position" value="0"/>
+      <single attribute="setup vertical scroll position" value="0"/>
+      <single attribute="zoom level denominator" value="1"/>
+      <single attribute="zoom level numerator" value="2"/>
+      <single attribute="zoom offset denominator" value="1"/>
+      <single attribute="zoom offset numerator" value="0"/>
+    </position_info>
+  </instance>
+  <instance enabled="false" entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="Download Imediately (no idle)" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="5" mfg_id="110" node_id="0" version="6"/>
+    <signal_set global_temp="1" is_expanded="true" name="signal_set: 2015/05/05 16:07:00  #10">
+      <clock name="ClockDivider:cdiv|divided_clocks[5]" polarity="posedge" tap_mode="classic"/>
+      <config ram_type="AUTO" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="131072" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="Camera:camera1|ps.downloading" tap_mode="classic"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="Camera:camera1|download" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.downloading" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.idle" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.reaches90" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.active" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.reaches50" tap_mode="classic"/>
+        </data_input_vec>
+        <storage_qualifier_input_vec>
+          <wire name="Camera:camera1|download" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.downloading" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.idle" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.reaches90" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.active" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.reaches50" tap_mode="classic"/>
+        </storage_qualifier_input_vec>
+      </signal_vec>
+      <presentation>
+        <unified_setup_data_view>
+          <node data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.reaches90" storage_index="3" tap_mode="classic" type="unknown"/>
+          <node data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.idle" storage_index="2" tap_mode="classic" type="unknown"/>
+          <node data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="Camera:camera1|ps.downloading" storage_index="1" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <node data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|download" storage_index="0" tap_mode="classic" type="unknown"/>
+          <node data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.active" storage_index="4" tap_mode="classic" type="unknown"/>
+          <node data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.reaches50" storage_index="5" tap_mode="classic" type="unknown"/>
+        </unified_setup_data_view>
+        <data_view>
+          <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.reaches90" storage_index="3" tap_mode="classic" type="unknown"/>
+          <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.idle" storage_index="2" tap_mode="classic" type="unknown"/>
+          <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="Camera:camera1|ps.downloading" storage_index="1" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|download" storage_index="0" tap_mode="classic" type="unknown"/>
+          <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.active" storage_index="4" tap_mode="classic" type="unknown"/>
+          <net data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.reaches50" storage_index="5" tap_mode="classic" type="unknown"/>
+        </data_view>
+        <setup_view>
+          <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.reaches90" storage_index="3" tap_mode="classic" type="unknown"/>
+          <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.idle" storage_index="2" tap_mode="classic" type="unknown"/>
+          <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="Camera:camera1|ps.downloading" storage_index="1" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|download" storage_index="0" tap_mode="classic" type="unknown"/>
+          <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.active" storage_index="4" tap_mode="classic" type="unknown"/>
+          <net data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.reaches50" storage_index="5" tap_mode="classic" type="unknown"/>
+        </setup_view>
+        <trigger_in_editor/>
+        <trigger_out_editor/>
+      </presentation>
+      <trigger CRC="6098E47C" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2015/05/05 16:07:00  #11" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="32768" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
+        <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
+        <events use_custom_flow_control="no">
+          <level enabled="yes" name="condition1" type="basic">'Camera:camera1|ps.downloading' == high
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
+          </level>
+        </events>
+        <storage_qualifier_events>
+          <transitional>010000
+            <pwr_up_transitional>010000</pwr_up_transitional>
+          </transitional>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+        </storage_qualifier_events>
+      </trigger>
+    </signal_set>
+    <position_info>
+      <single attribute="active tab" value="0"/>
+      <single attribute="data horizontal scroll position" value="0"/>
+      <single attribute="data vertical scroll position" value="0"/>
+      <single attribute="setup horizontal scroll position" value="0"/>
+      <single attribute="setup vertical scroll position" value="0"/>
+      <single attribute="zoom level denominator" value="1"/>
+      <single attribute="zoom level numerator" value="2"/>
+      <single attribute="zoom offset denominator" value="1"/>
+      <single attribute="zoom offset numerator" value="0"/>
+    </position_info>
+  </instance>
+  <instance enabled="false" entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="Download after idle" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="6" mfg_id="110" node_id="0" version="6"/>
+    <signal_set global_temp="1" is_expanded="true" name="signal_set: 2015/05/05 16:07:00  #12">
+      <clock name="ClockDivider:cdiv|divided_clocks[5]" polarity="posedge" tap_mode="classic"/>
+      <config ram_type="AUTO" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="131072" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="Camera:camera1|ps.downloading" tap_mode="classic"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="Camera:camera1|download" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.downloading" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.idle" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.active" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.reaches50" tap_mode="classic"/>
+        </data_input_vec>
+        <storage_qualifier_input_vec>
+          <wire name="Camera:camera1|download" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.downloading" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.idle" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.active" tap_mode="classic"/>
+          <wire name="Camera:camera2|ps.reaches50" tap_mode="classic"/>
+        </storage_qualifier_input_vec>
+      </signal_vec>
+      <presentation>
+        <unified_setup_data_view>
+          <node data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.idle" storage_index="2" tap_mode="classic" type="unknown"/>
+          <node data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|download" storage_index="0" tap_mode="classic" type="unknown"/>
+          <node data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="Camera:camera1|ps.downloading" storage_index="1" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <node data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.active" storage_index="3" tap_mode="classic" type="unknown"/>
+          <node data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.reaches50" storage_index="4" tap_mode="classic" type="unknown"/>
+        </unified_setup_data_view>
+        <data_view>
+          <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.idle" storage_index="2" tap_mode="classic" type="unknown"/>
+          <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|download" storage_index="0" tap_mode="classic" type="unknown"/>
+          <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="Camera:camera1|ps.downloading" storage_index="1" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.active" storage_index="3" tap_mode="classic" type="unknown"/>
+          <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.reaches50" storage_index="4" tap_mode="classic" type="unknown"/>
+        </data_view>
+        <setup_view>
+          <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.idle" storage_index="2" tap_mode="classic" type="unknown"/>
+          <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|download" storage_index="0" tap_mode="classic" type="unknown"/>
+          <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="high" name="Camera:camera1|ps.downloading" storage_index="1" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.active" storage_index="3" tap_mode="classic" type="unknown"/>
+          <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|ps.reaches50" storage_index="4" tap_mode="classic" type="unknown"/>
+        </setup_view>
+        <trigger_in_editor/>
+        <trigger_out_editor/>
+      </presentation>
+      <trigger CRC="53DC7441" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2015/05/05 16:07:00  #13" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="32768" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
+        <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
+        <events use_custom_flow_control="no">
+          <level enabled="yes" name="condition1" type="basic">'Camera:camera1|ps.downloading' == high
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
+          </level>
+        </events>
+        <storage_qualifier_events>
+          <transitional>01000
+            <pwr_up_transitional>01000</pwr_up_transitional>
+          </transitional>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+        </storage_qualifier_events>
+      </trigger>
+    </signal_set>
+    <position_info>
+      <single attribute="active tab" value="0"/>
+      <single attribute="data horizontal scroll position" value="0"/>
+      <single attribute="data vertical scroll position" value="0"/>
+      <single attribute="setup horizontal scroll position" value="0"/>
+      <single attribute="setup vertical scroll position" value="0"/>
+      <single attribute="zoom level denominator" value="1"/>
+      <single attribute="zoom level numerator" value="2"/>
+      <single attribute="zoom offset denominator" value="1"/>
+      <single attribute="zoom offset numerator" value="0"/>
+    </position_info>
+  </instance>
+  <instance enabled="true" entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="Flushing/Download back to LP/SB/Active" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="7" mfg_id="110" node_id="0" version="6"/>
+    <signal_set global_temp="1" is_expanded="true" name="signal_set: 2015/05/05 16:07:00  #14">
+      <clock name="ClockDivider:cdiv|divided_clocks[5]" polarity="posedge" tap_mode="classic"/>
+      <config ram_type="AUTO" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="131072" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="Camera:camera1|ps.flushing" tap_mode="classic"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="Camera:camera1|inSignals[0]" tap_mode="classic"/>
+          <wire name="Camera:camera1|inSignals[1]" tap_mode="classic"/>
+          <wire name="Camera:camera1|inSignals[2]" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.active" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.flushing" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.lowPower" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.standBy" tap_mode="classic"/>
+          <wire name="Camera:camera2|outSignals[0]" tap_mode="classic"/>
+          <wire name="Camera:camera2|outSignals[1]" tap_mode="classic"/>
+          <wire name="Camera:camera2|outSignals[2]" tap_mode="classic"/>
+        </data_input_vec>
+        <storage_qualifier_input_vec>
+          <wire name="Camera:camera1|inSignals[0]" tap_mode="classic"/>
+          <wire name="Camera:camera1|inSignals[1]" tap_mode="classic"/>
+          <wire name="Camera:camera1|inSignals[2]" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.active" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.flushing" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.lowPower" tap_mode="classic"/>
+          <wire name="Camera:camera1|ps.standBy" tap_mode="classic"/>
+          <wire name="Camera:camera2|outSignals[0]" tap_mode="classic"/>
+          <wire name="Camera:camera2|outSignals[1]" tap_mode="classic"/>
+          <wire name="Camera:camera2|outSignals[2]" tap_mode="classic"/>
+        </storage_qualifier_input_vec>
+      </signal_vec>
+      <presentation>
+        <unified_setup_data_view>
+          <node is_selected="false" level-0="alt_or" name="Camera:camera1|inSignals[2..0]" order="msb_to_lsb" type="combinatorial">
+            <node data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|inSignals[2]" storage_index="2" tap_mode="classic" type="unknown"/>
+            <node data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|inSignals[1]" storage_index="1" tap_mode="classic" type="unknown"/>
+            <node data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|inSignals[0]" storage_index="0" tap_mode="classic" type="unknown"/>
+          </node>
+          <node data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="Camera:camera1|ps.flushing" storage_index="4" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <node data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.lowPower" storage_index="5" tap_mode="classic" type="unknown"/>
+          <node data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.standBy" storage_index="6" tap_mode="classic" type="unknown"/>
+          <node data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.active" storage_index="3" tap_mode="classic" type="unknown"/>
+          <node is_selected="false" level-0="alt_or" name="Camera:camera2|outSignals[2..0]" order="msb_to_lsb" type="combinatorial">
+            <node data_index="9" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|outSignals[2]" storage_index="9" tap_mode="classic" type="unknown"/>
+            <node data_index="8" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|outSignals[1]" storage_index="8" tap_mode="classic" type="unknown"/>
+            <node data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|outSignals[0]" storage_index="7" tap_mode="classic" type="unknown"/>
+          </node>
+        </unified_setup_data_view>
+        <data_view>
+          <bus is_selected="false" level-0="alt_or" name="Camera:camera1|inSignals[2..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|inSignals[2]" storage_index="2" tap_mode="classic" type="unknown"/>
+            <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|inSignals[1]" storage_index="1" tap_mode="classic" type="unknown"/>
+            <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|inSignals[0]" storage_index="0" tap_mode="classic" type="unknown"/>
+          </bus>
+          <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="Camera:camera1|ps.flushing" storage_index="4" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <net data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.lowPower" storage_index="5" tap_mode="classic" type="unknown"/>
+          <net data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.standBy" storage_index="6" tap_mode="classic" type="unknown"/>
+          <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.active" storage_index="3" tap_mode="classic" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="Camera:camera2|outSignals[2..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="9" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|outSignals[2]" storage_index="9" tap_mode="classic" type="unknown"/>
+            <net data_index="8" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|outSignals[1]" storage_index="8" tap_mode="classic" type="unknown"/>
+            <net data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|outSignals[0]" storage_index="7" tap_mode="classic" type="unknown"/>
+          </bus>
+        </data_view>
+        <setup_view>
+          <bus is_selected="false" level-0="alt_or" name="Camera:camera1|inSignals[2..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|inSignals[2]" storage_index="2" tap_mode="classic" type="unknown"/>
+            <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|inSignals[1]" storage_index="1" tap_mode="classic" type="unknown"/>
+            <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|inSignals[0]" storage_index="0" tap_mode="classic" type="unknown"/>
+          </bus>
+          <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="low" name="Camera:camera1|ps.flushing" storage_index="4" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <net data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.lowPower" storage_index="5" tap_mode="classic" type="unknown"/>
+          <net data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.standBy" storage_index="6" tap_mode="classic" type="unknown"/>
+          <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera1|ps.active" storage_index="3" tap_mode="classic" type="unknown"/>
+          <bus is_selected="false" level-0="alt_or" name="Camera:camera2|outSignals[2..0]" order="msb_to_lsb" type="combinatorial">
+            <net data_index="9" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|outSignals[2]" storage_index="9" tap_mode="classic" type="unknown"/>
+            <net data_index="8" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|outSignals[1]" storage_index="8" tap_mode="classic" type="unknown"/>
+            <net data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="false" name="Camera:camera2|outSignals[0]" storage_index="7" tap_mode="classic" type="unknown"/>
+          </bus>
+        </setup_view>
+        <trigger_in_editor/>
+        <trigger_out_editor/>
+      </presentation>
+      <trigger CRC="B518366" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2015/05/05 16:07:00  #15" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="32768" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
+        <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
+        <events use_custom_flow_control="no">
+          <level enabled="yes" name="condition1" type="basic">'Camera:camera1|ps.flushing' == low
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
+          </level>
+        </events>
+        <storage_qualifier_events>
+          <transitional>0000100000
+            <pwr_up_transitional>0000100000</pwr_up_transitional>
+          </transitional>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+        </storage_qualifier_events>
+      </trigger>
+    </signal_set>
+    <position_info>
+      <single attribute="active tab" value="0"/>
+      <single attribute="data horizontal scroll position" value="16340"/>
+      <single attribute="data vertical scroll position" value="0"/>
+      <single attribute="setup horizontal scroll position" value="0"/>
+      <single attribute="setup vertical scroll position" value="0"/>
+      <single attribute="zoom level denominator" value="1"/>
+      <single attribute="zoom level numerator" value="1024"/>
+      <single attribute="zoom offset denominator" value="1"/>
+      <single attribute="zoom offset numerator" value="0"/>
+    </position_info>
+  </instance>
+  <mnemonics/>
+  <static_plugin_mnemonics/>
+  <embedded_sof_files>
+  </embedded_sof_files>
+  <global_info>
+    <single attribute="active instance" value="7"/>
+    <single attribute="config widget visible" value="1"/>
+    <single attribute="data log widget visible" value="1"/>
+    <single attribute="hierarchy widget visible" value="1"/>
+    <single attribute="instance widget visible" value="1"/>
+    <single attribute="jtag widget visible" value="1"/>
+    <single attribute="lock mode" value="0"/>
+    <single attribute="sof manager visible" value="1"/>
+    <multi attribute="frame size" size="2" value="924,910"/>
+    <multi attribute="jtag widget size" size="2" value="334,203"/>
+  </global_info>
+</session>
