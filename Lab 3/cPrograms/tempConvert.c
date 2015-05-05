@@ -99,6 +99,9 @@ int checkNotBelowAbs0(int type, double *value) {
 
 int getChoice() {
 	int choice = -1;
+	
+	int count = 0;
+	
 	while (0 > choice || choice > 3) {
 		printf("Please enter the # representing your choice:\n");
 		printf("(1) Kelvin\n");
@@ -111,6 +114,13 @@ int getChoice() {
 		if(0 > choice || choice > 3) {
 			printf("\nYour choice was not one of the integers 1, 2, or 3.\n");
 			printf("Please try again\n\n");
+		}
+		
+		count++;
+		if(count > 10) {
+			printf("You either entered a String or entered incorrectly too many times.\n");
+			printf("The program defaults to Kelvin.\n");
+			return 1;
 		}
 	}
 	return choice;
