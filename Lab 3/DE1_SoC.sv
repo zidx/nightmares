@@ -102,7 +102,10 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 // Generate clk off of CLOCK_50, whichClock picks rate.
 	 // Rate determines buffer fill and empty rate
 	 wire [31:0] clk;
-	 parameter whichClock = 6;
+	 
+	 //uses clock 6 for implementation to DE1-SoC
+	 //uses clock 0 for testing.
+	 parameter whichClock = 0;
 	 
 <<<<<<< HEAD
 	 //uses clock 6 to use the lowest whole number of Hz for exactly precise timing.
@@ -186,7 +189,7 @@ module DE1_SoC_testbench ();
 	end
 	
 	always begin
-		#((clkDur * oneSec) / 2)
+		#((clkDur * oneSec) / 2);
 		helper = ~helper;
 	end
 	
@@ -198,6 +201,7 @@ module DE1_SoC_testbench ();
 		 	rst <= 1;						@(posedge helper);
 		 	rst <= 0;						@(posedge helper);
 			rst <= 1;						@(posedge helper);
+			//goes through cycles to show flush sequence
 												@(posedge helper);
 												@(posedge helper);
 												@(posedge helper);
@@ -214,8 +218,75 @@ module DE1_SoC_testbench ();
 												@(posedge helper);
 												@(posedge helper);
 												@(posedge helper);
-			
-			
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+			//switches download to send cameras through download sequence
+			download <= 1;
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+			rst <= 1;						@(posedge helper);
+			rst <= 0;						@(posedge helper);
+			//shows after reset sequence begins again
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
+												@(posedge helper);
 		$stop; // End the simulation.
 	end
 endmodule
