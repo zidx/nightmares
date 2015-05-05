@@ -43,6 +43,8 @@ void run() {
 		printf("Enter Desired Units\n");
 		convertTo = getChoice();
 
+		char old_unit = getUnits(convertFrom);
+
 		// Loop and keep converting until the value is converted as desired
 		while(convertFrom != convertTo) {
 			if(convertFrom == 1) convertK2F(&temp_new);
@@ -51,7 +53,7 @@ void run() {
 			convertFrom = (convertFrom % 3) + 1;
 		}
 		printf("\nYour original value (%lf %c) converted is %lf %c.\n",
-				temp_new, getUnits(convertFrom), temp, getUnits(convertTo));
+				temp, old_unit, temp_new, getUnits(convertTo));
 	}		
 }
 
