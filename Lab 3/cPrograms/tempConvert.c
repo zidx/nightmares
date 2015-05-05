@@ -89,8 +89,8 @@ void convertF2C(double *value) {
 }
 
 int checkNotBelowAbs0(int type, double *value) {
-	if((type == 1 && *value >= 0.0) || (type == 2 && *value >= -273.15) 
-		|| (type == 3 && *value >= -459.67)) {
+	if((type == 1 && *value >= 0.0) || (type == 2 && *value >= -459.67) 
+		|| (type == 3 && *value >= -273.15)) {
 		return 1;
 	} else {
 		return 0;
