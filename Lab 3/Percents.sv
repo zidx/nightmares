@@ -57,10 +57,12 @@ endmodule
 // 
 // Author(s):
 // Krista Holden
+// Zach Nehrenberg
 //
 //----------------------------------------------------------- 
 module PercentTestbench ();
-	reg        clock, rst;
+	reg clock, rst;
+	reg emptyBuffer, pause;
 	wire [3:0] percent;
 	
 	
@@ -84,22 +86,29 @@ module PercentTestbench ();
 	end
 	initial rst = 0;
 	
-	Timer dut (clock, rst, percent);
+	Percents dut (clock, rst, emptyBuffer, pause, percent);
 	
 	initial begin
-			rst = 0;		@(posedge helper);
-		 	rst = 1;		@(posedge helper);
-		 	rst = 0;		@(posedge helper);
-							@(posedge helper);
-							@(posedge helper);
-							@(posedge helper);
-							@(posedge helper);
-							@(posedge helper);
-							@(posedge helper);
-							@(posedge helper);
-							@(posedge helper);
-		 	rst = 1;		@(posedge helper);
-		 	rst = 0;		@(posedge helper);
+			rst = 0; pause = 0; 
+			emptyBuffer = 0;		@(posedge helper);
+		 	rst = 1;					@(posedge helper);
+		 	rst = 0;					@(posedge helper);
+										@(posedge helper);
+										@(posedge helper);
+										@(posedge helper);
+										@(posedge helper);
+										@(posedge helper);
+			pause = 1;				@(posedge helper);
+										@(posedge helper);
+			pause = 0;				@(posedge helper);
+										@(posedge helper);
+										@(posedge helper);
+			emptyBuffer = 1;		@(posedge helper);
+										@(posedge helper);
+										@(posedge helper);
+										@(posedge helper);
+		 	rst = 1;					@(posedge helper);
+		 	rst = 0;					@(posedge helper);
 		
 		
 		$stop; // End the simulation.

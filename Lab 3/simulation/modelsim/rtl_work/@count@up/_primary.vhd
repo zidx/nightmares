@@ -11,6 +11,8 @@ entity CountUp is
         c6              : vl_logic_vector(0 to 3) := (Hi0, Hi1, Hi1, Hi0);
         c7              : vl_logic_vector(0 to 3) := (Hi0, Hi1, Hi1, Hi1);
         c8              : vl_logic_vector(0 to 3) := (Hi1, Hi0, Hi0, Hi0);
+        c9              : vl_logic_vector(0 to 3) := (Hi1, Hi0, Hi0, Hi1);
+        c10             : vl_logic_vector(0 to 3) := (Hi1, Hi0, Hi1, Hi0);
         nothing         : vl_logic_vector(0 to 6) := (Hi1, Hi1, Hi1, Hi1, Hi1, Hi1, Hi1);
         zero            : vl_logic_vector(0 to 6) := (Hi1, Hi0, Hi0, Hi0, Hi0, Hi0, Hi0);
         one             : vl_logic_vector(0 to 6) := (Hi1, Hi0, Hi0, Hi1, Hi1, Hi1, Hi1);
@@ -20,7 +22,9 @@ entity CountUp is
         five            : vl_logic_vector(0 to 6) := (Hi0, Hi0, Hi1, Hi0, Hi0, Hi1, Hi0);
         six             : vl_logic_vector(0 to 6) := (Hi0, Hi0, Hi0, Hi0, Hi0, Hi1, Hi0);
         seven           : vl_logic_vector(0 to 6) := (Hi1, Hi1, Hi1, Hi1, Hi0, Hi0, Hi0);
-        eight           : vl_logic_vector(0 to 6) := (Hi0, Hi0, Hi0, Hi0, Hi0, Hi0, Hi0)
+        eight           : vl_logic_vector(0 to 6) := (Hi0, Hi0, Hi0, Hi0, Hi0, Hi0, Hi0);
+        nine            : vl_logic_vector(0 to 6) := (Hi0, Hi0, Hi1, Hi1, Hi0, Hi0, Hi0);
+        ten             : vl_logic_vector(0 to 6) := (Hi0, Hi1, Hi0, Hi0, Hi0, Hi1, Hi0)
     );
     port(
         count           : in     vl_logic_vector(3 downto 0);
@@ -36,6 +40,8 @@ entity CountUp is
     attribute mti_svvh_generic_type of c6 : constant is 1;
     attribute mti_svvh_generic_type of c7 : constant is 1;
     attribute mti_svvh_generic_type of c8 : constant is 1;
+    attribute mti_svvh_generic_type of c9 : constant is 1;
+    attribute mti_svvh_generic_type of c10 : constant is 1;
     attribute mti_svvh_generic_type of nothing : constant is 1;
     attribute mti_svvh_generic_type of zero : constant is 1;
     attribute mti_svvh_generic_type of one : constant is 1;
@@ -46,4 +52,6 @@ entity CountUp is
     attribute mti_svvh_generic_type of six : constant is 1;
     attribute mti_svvh_generic_type of seven : constant is 1;
     attribute mti_svvh_generic_type of eight : constant is 1;
+    attribute mti_svvh_generic_type of nine : constant is 1;
+    attribute mti_svvh_generic_type of ten : constant is 1;
 end CountUp;

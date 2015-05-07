@@ -107,15 +107,9 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 //uses clock 0 for testing.
 	 parameter whichClock = 0;
 	 
-<<<<<<< HEAD
-	 //uses clock 6 to use the lowest whole number of Hz for exactly precise timing.
-	 parameter whichClock = 5;
-	 
-	 //clock 6 used in operation for the timer.
-=======
+
 	 // Clock 6 used in operation for the buffer, but for debugging
 	 // clock 7 can be used to keep more time between states.
->>>>>>> 4cfc44d0029e91191ef0a0bca825448d0cd5959b
 	 wire clock = clk[whichClock];
 	 
 	 ClockDivider cdiv (CLOCK_50, clk);	 

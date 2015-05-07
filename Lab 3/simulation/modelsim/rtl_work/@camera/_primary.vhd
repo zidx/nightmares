@@ -2,11 +2,11 @@ library verilog;
 use verilog.vl_types.all;
 entity Camera is
     generic(
-        zeroSec         : vl_logic_vector(0 to 3) := (Hi0, Hi0, Hi0, Hi0);
-        fiveSec         : vl_logic_vector(0 to 3) := (Hi0, Hi1, Hi0, Hi1);
-        eightSec        : vl_logic_vector(0 to 3) := (Hi1, Hi0, Hi0, Hi0);
-        nineSec         : vl_logic_vector(0 to 3) := (Hi1, Hi0, Hi0, Hi1);
-        tenSec          : vl_logic_vector(0 to 3) := (Hi1, Hi0, Hi1, Hi0);
+        zeroPercent     : vl_logic_vector(0 to 3) := (Hi0, Hi0, Hi0, Hi0);
+        halfPercent     : vl_logic_vector(0 to 3) := (Hi0, Hi1, Hi0, Hi1);
+        eightyPercent   : vl_logic_vector(0 to 3) := (Hi1, Hi0, Hi0, Hi0);
+        ninetyPercent   : vl_logic_vector(0 to 3) := (Hi1, Hi0, Hi0, Hi1);
+        hundredPercent  : vl_logic_vector(0 to 3) := (Hi1, Hi0, Hi1, Hi0);
         fiftyPercent    : vl_logic_vector(0 to 2) := (Hi1, Hi1, Hi0);
         standbySignal   : vl_logic_vector(0 to 2) := (Hi1, Hi0, Hi1);
         filmSignal      : vl_logic_vector(0 to 2) := (Hi0, Hi1, Hi1);
@@ -33,8 +33,8 @@ entity Camera is
     port(
         myStandby       : out    vl_logic;
         myFilm          : out    vl_logic;
-        pauseCounter    : out    vl_logic;
-        countNegative   : out    vl_logic;
+        pauseBuffer     : out    vl_logic;
+        emptyBuffer     : out    vl_logic;
         display         : out    vl_logic_vector(6 downto 0);
         outSignals      : out    vl_logic_vector(2 downto 0);
         rst             : in     vl_logic;
@@ -45,11 +45,11 @@ entity Camera is
         percentVal      : in     vl_logic_vector(3 downto 0)
     );
     attribute mti_svvh_generic_type : integer;
-    attribute mti_svvh_generic_type of zeroSec : constant is 1;
-    attribute mti_svvh_generic_type of fiveSec : constant is 1;
-    attribute mti_svvh_generic_type of eightSec : constant is 1;
-    attribute mti_svvh_generic_type of nineSec : constant is 1;
-    attribute mti_svvh_generic_type of tenSec : constant is 1;
+    attribute mti_svvh_generic_type of zeroPercent : constant is 1;
+    attribute mti_svvh_generic_type of halfPercent : constant is 1;
+    attribute mti_svvh_generic_type of eightyPercent : constant is 1;
+    attribute mti_svvh_generic_type of ninetyPercent : constant is 1;
+    attribute mti_svvh_generic_type of hundredPercent : constant is 1;
     attribute mti_svvh_generic_type of fiftyPercent : constant is 1;
     attribute mti_svvh_generic_type of standbySignal : constant is 1;
     attribute mti_svvh_generic_type of filmSignal : constant is 1;

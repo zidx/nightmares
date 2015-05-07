@@ -7,7 +7,7 @@ entity Percents is
     port(
         clock           : in     vl_logic;
         reset           : in     vl_logic;
-        countDirection  : in     vl_logic;
+        emptyBuffer     : in     vl_logic;
         pause           : in     vl_logic;
         percent         : out    vl_logic_vector(3 downto 0)
     );
