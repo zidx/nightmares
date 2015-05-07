@@ -85,7 +85,14 @@ void welcome() {
 
 int getChoice() {
 	int choice = -1;
+	int count = 0;
 	while (0 > choice) {
+		if(count > 10) {
+			printf("\nYou have entered a string or given incorrect input > 10 times.");
+			printf("\nDefault value selected: 0.\n");
+			return 0;
+		}
+		
 		printf("Please enter your # of logic devices: ");
 		scanf("%u", &choice);
 
@@ -96,7 +103,7 @@ int getChoice() {
 		}
 	}
 	
-	printf("\nYou have entered %d logic devices.", choice);
+	printf("\nYou have entered %d logic devices.\n", choice);
 	
 	return choice;
 }
