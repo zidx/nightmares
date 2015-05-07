@@ -101,6 +101,7 @@ int getChoice() {
 			printf("or too large and caused overflow.\n");
 			printf("Please try again\n\n");
 		}
+		count++;
 	}
 	
 	printf("\nYou have entered %d logic devices.\n", choice);
