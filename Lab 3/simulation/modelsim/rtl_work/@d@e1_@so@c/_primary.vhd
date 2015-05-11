@@ -5,7 +5,7 @@ entity DE1_SoC is
         defaultCam1Behavior: vl_logic := Hi1;
         defaultCam2Behavior: vl_logic := Hi0;
         blank           : vl_logic_vector(0 to 6) := (Hi1, Hi1, Hi1, Hi1, Hi1, Hi1, Hi1);
-        whichClock      : integer := 7
+        whichClock      : integer := 0
     );
     port(
         CLOCK_50        : in     vl_logic;
