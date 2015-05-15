@@ -22,7 +22,7 @@ agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 608 424 800 440)
+	(rect 496 464 688 480)
 	(text "INPUT" (rect 157 0 185 10)(font "Arial" (font_size 6)))
 	(text "PLD_CLOCKINPUT" (rect 5 0 102 12)(font "Arial" ))
 	(pt 192 8)
@@ -35,7 +35,24 @@ agreement for further details.
 		(line (pt 141 12)(pt 145 8))
 	)
 	(text "VCC" (rect 160 7 180 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 520 368 600 384))
+	(annotation_block (location)(rect 488 408 568 424))
+)
+(pin
+	(input)
+	(rect 472 352 640 368)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "reset" (rect 5 0 30 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 408 368 472 384))
 )
 (pin
 	(output)
@@ -56,7 +73,7 @@ agreement for further details.
 	(annotation_block (location)(rect 520 536 584 648))
 )
 (symbol
-	(rect 560 448 592 464)
+	(rect 728 336 760 352)
 	(text "VCC" (rect 7 0 27 10)(font "Arial" (font_size 6)))
 	(text "inst2" (rect 3 5 26 17)(font "Arial" )(invisible))
 	(port
@@ -120,21 +137,25 @@ agreement for further details.
 	)
 )
 (connector
-	(pt 576 464)
-	(pt 576 472)
-)
-(connector
-	(pt 576 472)
-	(pt 848 472)
-)
-(connector
-	(pt 800 432)
-	(pt 848 432)
-)
-(connector
 	(pt 784 512)
 	(pt 848 512)
 	(bus)
+)
+(connector
+	(pt 848 472)
+	(pt 688 472)
+)
+(connector
+	(pt 656 360)
+	(pt 640 360)
+)
+(connector
+	(pt 656 360)
+	(pt 656 432)
+)
+(connector
+	(pt 656 432)
+	(pt 848 432)
 )
 (text "This is the top level for the HW tutorial" (rect 768 264 982 278)(font "Arial" (color 0 0 0)(font_size 8)))
 (text "NiosII QuartusII Project" (rect 768 232 1067 259)(font "Arial" (color 0 0 0)(font_size 18)))

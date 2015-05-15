@@ -7,7 +7,8 @@ LEDG[4] <= first_nios2_system:inst.led_pio_external_connection_export[4]
 LEDG[5] <= first_nios2_system:inst.led_pio_external_connection_export[5]
 LEDG[6] <= first_nios2_system:inst.led_pio_external_connection_export[6]
 LEDG[7] <= first_nios2_system:inst.led_pio_external_connection_export[7]
-PLD_CLOCKINPUT => first_nios2_system:inst.reset_reset_n
+reset => first_nios2_system:inst.reset_reset_n
+PLD_CLOCKINPUT => first_nios2_system:inst.clk_clk
 
 
 |nios2_quartus2_project|first_nios2_system:inst
