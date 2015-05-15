@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.altera.sbt4e.launch.hardware.Nios2HardwareLaunch">
+<stringAttribute key="bytestreamPath" value="/devices/5CSE(BA5|MA5)|5CSTFD5D5|..@2#USB-1#DE-SoC/(link)/JTAG/(110:128 v1 #0)/jtag_uart.jtag"/>
+<booleanAttribute key="checkSysid" value="true"/>
+<booleanAttribute key="checkTimestamp" value="true"/>
+<booleanAttribute key="connectToConsole" value="true"/>
+<booleanAttribute key="downloadElf" value="true"/>
+<stringAttribute key="elfFile" value="count_binary.elf"/>
+<stringAttribute key="org.eclipse.cdt.debug.mi.core.GDB_INIT" value=""/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_ID" value="com.altera.debug.cdi.gdb.plugin.Nios2GdbCdiDebugger"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="count_binary.elf"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="count_binary"/>
+<stringAttribute key="processorPath" value="/devices/5CSE(BA5|MA5)|5CSTFD5D5|..@2#USB-1#DE-SoC/(link)/JTAG/cpu.jtag/cpu.data_master"/>
+<stringAttribute key="project" value="count_binary"/>
+<booleanAttribute key="resetProcessor" value="true"/>
+<booleanAttribute key="startProcessor" value="true"/>
+</launchConfiguration>
