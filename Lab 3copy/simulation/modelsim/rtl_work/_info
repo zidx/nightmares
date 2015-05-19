@@ -1,0 +1,269 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\zachn\Documents\nightmares\Lab 3\simulation\modelsim
+vCamera
+Z1 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+Z2 ITdP4gd4^@:O>dB7V2GFTW0
+Z3 V7=RY;GjAegH]N2Fe<:ih:0
+Z4 !s105 Camera_sv_unit
+S1
+Z5 dC:\Users\zachn\Documents\nightmares\Lab 3\simulation\modelsim
+Z6 w1431039118
+Z7 8C:/Users/zachn/Documents/nightmares/Lab 3/Camera.sv
+Z8 FC:/Users/zachn/Documents/nightmares/Lab 3/Camera.sv
+L0 12
+Z9 OV;L;10.1e;51
+r1
+31
+Z10 !s108 1431040909.406000
+Z11 !s107 C:/Users/zachn/Documents/nightmares/Lab 3/Camera.sv|
+Z12 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 3|C:/Users/zachn/Documents/nightmares/Lab 3/Camera.sv|
+Z13 o-sv -work work -O0
+Z14 !s92 -sv -work work {+incdir+C:/Users/zachn/Documents/nightmares/Lab 3} -O0
+Z15 n@camera
+Z16 !s100 Ja]TGWLK>SnQ;BOPB@8Hf3
+!i10b 1
+!s85 0
+!s101 -O0
+vCamera_testbench
+R1
+Z17 I6S`PAM>79^M0K2]B?Q1Xj1
+Z18 VUo=3_OQYLOHR1EgFU?`=L3
+R4
+S1
+R5
+R6
+R7
+R8
+Z19 L0 232
+R9
+r1
+31
+R10
+R11
+R12
+R13
+R14
+Z20 n@camera_testbench
+Z21 !s100 3]]F8e`>4n3;moMQUKk<Y0
+!i10b 1
+!s85 0
+!s101 -O0
+vClockDivider
+R1
+Z22 Ijn3VioSSoeDfHhd40j8@:3
+Z23 VECfnOSAF3DOcO<o@hR5Cb3
+Z24 !s105 DE1_SoC_sv_unit
+S1
+R5
+Z25 w1431039761
+Z26 8C:/Users/zachn/Documents/nightmares/Lab 3/DE1_SoC.sv
+Z27 FC:/Users/zachn/Documents/nightmares/Lab 3/DE1_SoC.sv
+Z28 L0 134
+R9
+r1
+31
+Z29 !s108 1431040909.299000
+Z30 !s107 C:/Users/zachn/Documents/nightmares/Lab 3/DE1_SoC.sv|
+Z31 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 3|C:/Users/zachn/Documents/nightmares/Lab 3/DE1_SoC.sv|
+R13
+R14
+Z32 n@clock@divider
+Z33 !s100 aPUG7::E@1^BNclTzP=F:2
+!i10b 1
+!s85 0
+!s101 -O0
+vCountUp
+R1
+Z34 I7c8oJQ7cl7EMAJb@Ge4J73
+Z35 VCjJg2HU1WLf<bWbA:zb`j1
+Z36 !s105 CountUp_sv_unit
+S1
+R5
+R6
+Z37 8C:/Users/zachn/Documents/nightmares/Lab 3/CountUp.sv
+Z38 FC:/Users/zachn/Documents/nightmares/Lab 3/CountUp.sv
+L0 15
+R9
+r1
+31
+Z39 !s108 1431040909.509000
+Z40 !s107 C:/Users/zachn/Documents/nightmares/Lab 3/CountUp.sv|
+Z41 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 3|C:/Users/zachn/Documents/nightmares/Lab 3/CountUp.sv|
+R13
+R14
+Z42 n@count@up
+Z43 !s100 21W2mQdk[mNQd4ggeBDUF3
+!i10b 1
+!s85 0
+!s101 -O0
+vCountUpTestbench
+R1
+Z44 IOQMS4Ue4?PjzYAaCKVHNA2
+Z45 V?ni<;Go`C2MDPRf_c`KKc2
+R36
+S1
+R5
+R6
+R37
+R38
+L0 77
+R9
+r1
+31
+R39
+R40
+R41
+R13
+R14
+Z46 n@count@up@testbench
+Z47 !s100 f4e?5>d_E9idS<nV_k`_42
+!i10b 1
+!s85 0
+!s101 -O0
+vDE1_SoC
+R1
+Z48 I9cnM?bcIzT7>KezajM0j:3
+Z49 VmoTK]8_f16g^EDIHSPi`Z0
+R24
+S1
+R5
+R25
+R26
+R27
+L0 17
+R9
+r1
+31
+R29
+R30
+R31
+R13
+R14
+Z50 n@d@e1_@so@c
+Z51 !s100 nYU^T1he;j6n]HZhL@QJk1
+!i10b 1
+!s85 0
+!s101 -O0
+vDE1_SoC_testbench
+R1
+Z52 I1djPF6FE]23m>Q=o23QSL2
+Z53 V_aU@_bHgT6YUPCJ9P^54z2
+R24
+S1
+R5
+R25
+R26
+R27
+Z54 L0 158
+R9
+r1
+31
+R29
+R30
+R31
+R13
+R14
+Z55 n@d@e1_@so@c_testbench
+Z56 !s100 I3_XE@ZMERbGWS@2DQe;n3
+!i10b 1
+!s85 0
+!s101 -O0
+vDFlipFlop
+R1
+Z57 IKIjTgXLY_;SSinG?I9JR00
+Z58 VFLZl[_Y9Sz=YdCCc=CU[f3
+S1
+R5
+Z59 w1430351152
+Z60 8C:/Users/zachn/Documents/nightmares/Lab 3/DFlipFlop.sv
+Z61 FC:/Users/zachn/Documents/nightmares/Lab 3/DFlipFlop.sv
+L0 16
+R9
+r1
+31
+R13
+R14
+Z62 n@d@flip@flop
+Z63 !s100 RB`?6fmGV7Na6`Ec4jbAZ3
+Z64 !s105 DFlipFlop_sv_unit
+Z65 !s108 1431040909.594000
+Z66 !s107 C:/Users/zachn/Documents/nightmares/Lab 3/DFlipFlop.sv|
+Z67 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 3|C:/Users/zachn/Documents/nightmares/Lab 3/DFlipFlop.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vPercents
+R1
+!i10b 1
+!s100 9I0l26EMHHo^IET3h8>hF1
+INBfK?]9jU91R5YVYHj6BG2
+VdIBP0STKAG:@5kWniGA2J3
+Z68 !s105 Percents_sv_unit
+S1
+R5
+Z69 w1431040894
+Z70 8C:/Users/zachn/Documents/nightmares/Lab 3/Percents.sv
+Z71 FC:/Users/zachn/Documents/nightmares/Lab 3/Percents.sv
+L0 17
+R9
+r1
+!s85 0
+31
+Z72 !s108 1431040909.728000
+Z73 !s107 C:/Users/zachn/Documents/nightmares/Lab 3/Percents.sv|
+Z74 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 3|C:/Users/zachn/Documents/nightmares/Lab 3/Percents.sv|
+!s101 -O0
+R13
+R14
+n@percents
+vPercentTestbench
+R1
+!i10b 1
+!s100 Ng80zB@=<ORF6@I3ZWB<82
+IOUcX7ZN;`zTfA?^d624ga2
+VdlIoNNeZlRkjcL6GFklHd3
+R68
+S1
+R5
+R69
+R70
+R71
+L0 63
+R9
+r1
+!s85 0
+31
+R72
+R73
+R74
+!s101 -O0
+R13
+R14
+n@percent@testbench
+vUserInput
+R1
+Z75 ITIAYlf08;B9Zc`1]d>Z2a1
+Z76 VkQicUC:aX<IhBVgYCN08W0
+S1
+R5
+R59
+Z77 8C:/Users/zachn/Documents/nightmares/Lab 3/UserInput.sv
+Z78 FC:/Users/zachn/Documents/nightmares/Lab 3/UserInput.sv
+L0 14
+R9
+r1
+31
+R13
+R14
+Z79 n@user@input
+!i10b 1
+Z80 !s100 kHhz2n7:AMe[2?Tm=J3e20
+Z81 !s105 UserInput_sv_unit
+!s85 0
+Z82 !s108 1431040909.659000
+Z83 !s107 C:/Users/zachn/Documents/nightmares/Lab 3/UserInput.sv|
+Z84 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/zachn/Documents/nightmares/Lab 3|C:/Users/zachn/Documents/nightmares/Lab 3/UserInput.sv|
+!s101 -O0

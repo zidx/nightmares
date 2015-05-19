@@ -1,0 +1,33 @@
+
+State Machine - |DE1_SoC|switchesqsys:u0|switchesqsys_nios2_processor:nios2_processor|switchesqsys_nios2_processor_nios2_oci:the_switchesqsys_nios2_processor_nios2_oci|switchesqsys_nios2_processor_jtag_debug_module_wrapper:the_switchesqsys_nios2_processor_jtag_debug_module_wrapper|switchesqsys_nios2_processor_jtag_debug_module_tck:the_switchesqsys_nios2_processor_jtag_debug_module_tck|DRsize
+Name DRsize~5 DRsize~4 DRsize~3 
+DRsize.000 0 0 0 
+DRsize.001 0 0 1 
+DRsize.010 0 1 0 
+DRsize.011 0 1 1 
+DRsize.100 1 0 0 
+DRsize.101 1 0 1 
+
+State Machine - |DE1_SoC|Camera:camera2|ps
+Name ps~5 ps~4 ps~3 ps~2 
+ps.active 0 0 0 0 
+ps.standBy 0 0 1 1 
+ps.lowPower 0 0 1 0 
+ps.reaches50 0 0 0 1 
+ps.signalToDownload 0 1 1 0 
+ps.reaches90 0 1 1 1 
+ps.downloading 0 1 0 0 
+ps.idle 0 1 0 1 
+ps.flushing 1 0 1 0 
+
+State Machine - |DE1_SoC|Camera:camera1|ps
+Name ps~5 ps~4 ps~3 ps~2 
+ps.active 0 0 0 0 
+ps.standBy 0 0 1 1 
+ps.lowPower 0 0 1 0 
+ps.reaches50 0 0 0 1 
+ps.signalToDownload 0 1 1 0 
+ps.reaches90 0 1 1 1 
+ps.downloading 0 1 0 0 
+ps.idle 0 1 0 1 
+ps.flushing 1 0 1 0 

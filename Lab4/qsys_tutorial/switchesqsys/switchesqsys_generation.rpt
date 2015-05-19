@@ -1,0 +1,104 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: ip-generate --project-directory=C:\Users\codyohl\Documents\nightmares\Lab4\qsys_tutorial --output-directory=C:\Users\codyohl\Documents\nightmares\Lab4\qsys_tutorial\switchesqsys --report-file=bsf:C:\Users\codyohl\Documents\nightmares\Lab4\qsys_tutorial\switchesqsys\switchesqsys.bsf --system-info=DEVICE_FAMILY="Cyclone V" --system-info=DEVICE=5CSEMA5F31C6 --system-info=DEVICE_SPEEDGRADE=6 --component-file=C:\Users\codyohl\Documents\nightmares\Lab4\qsys_tutorial\switchesqsys.qsys
+Progress: Loading qsys_tutorial/switchesqsys.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 14.0]
+Progress: Parameterizing module clk_0
+Progress: Adding nios2_processor [altera_nios2_qsys 14.0]
+Progress: Parameterizing module nios2_processor
+Progress: Adding onchip_memory [altera_avalon_onchip_memory2 14.0]
+Progress: Parameterizing module onchip_memory
+Progress: Adding switches [altera_avalon_pio 14.0]
+Progress: Parameterizing module switches
+Progress: Adding LEDs [altera_avalon_pio 14.0]
+Progress: Parameterizing module LEDs
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 14.0]
+Progress: Parameterizing module jtag_uart
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: switchesqsys.nios2_processor: Please note that for early evaluation, preview versions of new Nios II Gen2 Processors are available with this release.
+Info: switchesqsys.switches: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory=C:\Users\codyohl\Documents\nightmares\Lab4\qsys_tutorial --output-directory=C:\Users\codyohl\Documents\nightmares\Lab4\qsys_tutorial\switchesqsys\synthesis --file-set=QUARTUS_SYNTH --report-file=html:C:\Users\codyohl\Documents\nightmares\Lab4\qsys_tutorial\switchesqsys\switchesqsys.html --report-file=sopcinfo:C:\Users\codyohl\Documents\nightmares\Lab4\qsys_tutorial\switchesqsys.sopcinfo --report-file=cmp:C:\Users\codyohl\Documents\nightmares\Lab4\qsys_tutorial\switchesqsys\switchesqsys.cmp --report-file=qip:C:\Users\codyohl\Documents\nightmares\Lab4\qsys_tutorial\switchesqsys\synthesis\switchesqsys.qip --report-file=svd:C:\Users\codyohl\Documents\nightmares\Lab4\qsys_tutorial\switchesqsys\synthesis\switchesqsys.svd --report-file=regmap:C:\Users\codyohl\Documents\nightmares\Lab4\qsys_tutorial\switchesqsys\synthesis\switchesqsys.regmap --report-file=xml:C:\Users\codyohl\Documents\nightmares\Lab4\qsys_tutorial\switchesqsys\switchesqsys.xml --report-file=debuginfo:C:\Users\codyohl\Documents\nightmares\Lab4\qsys_tutorial\switchesqsys\synthesis\switchesqsys.debuginfo --system-info=DEVICE_FAMILY="Cyclone V" --system-info=DEVICE=5CSEMA5F31C6 --system-info=DEVICE_SPEEDGRADE=6 --component-file=C:\Users\codyohl\Documents\nightmares\Lab4\qsys_tutorial\switchesqsys.qsys --language=VERILOG
+Progress: Loading qsys_tutorial/switchesqsys.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 14.0]
+Progress: Parameterizing module clk_0
+Progress: Adding nios2_processor [altera_nios2_qsys 14.0]
+Progress: Parameterizing module nios2_processor
+Progress: Adding onchip_memory [altera_avalon_onchip_memory2 14.0]
+Progress: Parameterizing module onchip_memory
+Progress: Adding switches [altera_avalon_pio 14.0]
+Progress: Parameterizing module switches
+Progress: Adding LEDs [altera_avalon_pio 14.0]
+Progress: Parameterizing module LEDs
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 14.0]
+Progress: Parameterizing module jtag_uart
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: switchesqsys.nios2_processor: Please note that for early evaluation, preview versions of new Nios II Gen2 Processors are available with this release.
+Info: switchesqsys.switches: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: switchesqsys: Generating switchesqsys "switchesqsys" for QUARTUS_SYNTH
+Info: nios2_processor: Starting RTL generation for module 'switchesqsys_nios2_processor'
+Info: nios2_processor:   Generation command is [exec C:/altera/14.0/quartus/bin64/eperlcmd.exe -I C:/altera/14.0/quartus/bin64/perl/lib -I C:/altera/14.0/quartus/sopc_builder/bin/europa -I C:/altera/14.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/14.0/quartus/sopc_builder/bin -I C:/altera/14.0/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I C:/altera/14.0/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I C:/altera/14.0/quartus/../ip/altera/nios2_ip/altera_nios2 -I C:/altera/14.0/quartus/../ip/altera/nios2_ip/altera_nios2 -- C:/altera/14.0/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=switchesqsys_nios2_processor --dir=C:/Users/codyohl/AppData/Local/Temp/alt6570_8034604820926972040.dir/0001_nios2_processor_gen/ --quartus_bindir=C:/altera/14.0/quartus/bin64 --verilog --config=C:/Users/codyohl/AppData/Local/Temp/alt6570_8034604820926972040.dir/0001_nios2_processor_gen//switchesqsys_nios2_processor_processor_configuration.pl  --do_build_sim=0  ]
+Info: nios2_processor: # 2015.05.15 16:45:28 (*) Starting Nios II generation
+Info: nios2_processor: # 2015.05.15 16:45:28 (*)   Checking for plaintext license.
+Info: nios2_processor: # 2015.05.15 16:45:30 (*)   Couldn't query license setup in Quartus directory C:/altera/14.0/quartus/bin64
+Info: nios2_processor: # 2015.05.15 16:45:30 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: nios2_processor: # 2015.05.15 16:45:50 (*)   Plaintext license not found.
+Info: nios2_processor: # 2015.05.15 16:45:50 (*)   No license required to generate encrypted Nios II/e.
+Info: nios2_processor: # 2015.05.15 16:45:50 (*)   Elaborating CPU configuration settings
+Info: nios2_processor: # 2015.05.15 16:45:50 (*)   Creating all objects for CPU
+Info: nios2_processor: # 2015.05.15 16:45:51 (*)   Generating RTL from CPU objects
+Info: nios2_processor: # 2015.05.15 16:45:51 (*)   Creating plain-text RTL
+Info: nios2_processor: # 2015.05.15 16:45:53 (*) Done Nios II generation
+Info: nios2_processor: Done RTL generation for module 'switchesqsys_nios2_processor'
+Info: nios2_processor: "switchesqsys" instantiated altera_nios2_qsys "nios2_processor"
+Info: onchip_memory: Starting RTL generation for module 'switchesqsys_onchip_memory'
+Info: onchip_memory:   Generation command is [exec C:/altera/14.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/14.0/quartus/bin64/perl/lib -I C:/altera/14.0/quartus/sopc_builder/bin/europa -I C:/altera/14.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/14.0/quartus/sopc_builder/bin -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=switchesqsys_onchip_memory --dir=C:/Users/codyohl/AppData/Local/Temp/alt6570_8034604820926972040.dir/0002_onchip_memory_gen/ --quartus_dir=C:/altera/14.0/quartus --verilog --config=C:/Users/codyohl/AppData/Local/Temp/alt6570_8034604820926972040.dir/0002_onchip_memory_gen//switchesqsys_onchip_memory_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory: Done RTL generation for module 'switchesqsys_onchip_memory'
+Info: onchip_memory: "switchesqsys" instantiated altera_avalon_onchip_memory2 "onchip_memory"
+Info: switches: Starting RTL generation for module 'switchesqsys_switches'
+Info: switches:   Generation command is [exec C:/altera/14.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/14.0/quartus/bin64/perl/lib -I C:/altera/14.0/quartus/sopc_builder/bin/europa -I C:/altera/14.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/14.0/quartus/sopc_builder/bin -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=switchesqsys_switches --dir=C:/Users/codyohl/AppData/Local/Temp/alt6570_8034604820926972040.dir/0003_switches_gen/ --quartus_dir=C:/altera/14.0/quartus --verilog --config=C:/Users/codyohl/AppData/Local/Temp/alt6570_8034604820926972040.dir/0003_switches_gen//switchesqsys_switches_component_configuration.pl  --do_build_sim=0  ]
+Info: switches: Done RTL generation for module 'switchesqsys_switches'
+Info: switches: "switchesqsys" instantiated altera_avalon_pio "switches"
+Info: LEDs: Starting RTL generation for module 'switchesqsys_LEDs'
+Info: LEDs:   Generation command is [exec C:/altera/14.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/14.0/quartus/bin64/perl/lib -I C:/altera/14.0/quartus/sopc_builder/bin/europa -I C:/altera/14.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/14.0/quartus/sopc_builder/bin -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=switchesqsys_LEDs --dir=C:/Users/codyohl/AppData/Local/Temp/alt6570_8034604820926972040.dir/0004_LEDs_gen/ --quartus_dir=C:/altera/14.0/quartus --verilog --config=C:/Users/codyohl/AppData/Local/Temp/alt6570_8034604820926972040.dir/0004_LEDs_gen//switchesqsys_LEDs_component_configuration.pl  --do_build_sim=0  ]
+Info: LEDs: Done RTL generation for module 'switchesqsys_LEDs'
+Info: LEDs: "switchesqsys" instantiated altera_avalon_pio "LEDs"
+Info: jtag_uart: Starting RTL generation for module 'switchesqsys_jtag_uart'
+Info: jtag_uart:   Generation command is [exec C:/altera/14.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/14.0/quartus/bin64/perl/lib -I C:/altera/14.0/quartus/sopc_builder/bin/europa -I C:/altera/14.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/14.0/quartus/sopc_builder/bin -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/altera/14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=switchesqsys_jtag_uart --dir=C:/Users/codyohl/AppData/Local/Temp/alt6570_8034604820926972040.dir/0005_jtag_uart_gen/ --quartus_dir=C:/altera/14.0/quartus --verilog --config=C:/Users/codyohl/AppData/Local/Temp/alt6570_8034604820926972040.dir/0005_jtag_uart_gen//switchesqsys_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart: Done RTL generation for module 'switchesqsys_jtag_uart'
+Info: jtag_uart: "switchesqsys" instantiated altera_avalon_jtag_uart "jtag_uart"
+Info: mm_interconnect_0: "switchesqsys" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: irq_mapper: "switchesqsys" instantiated altera_irq_mapper "irq_mapper"
+Info: rst_controller: "switchesqsys" instantiated altera_reset_controller "rst_controller"
+Info: nios2_processor_instruction_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "nios2_processor_instruction_master_translator"
+Info: nios2_processor_jtag_debug_module_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "nios2_processor_jtag_debug_module_translator"
+Info: nios2_processor_instruction_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "nios2_processor_instruction_master_agent"
+Info: nios2_processor_jtag_debug_module_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "nios2_processor_jtag_debug_module_agent"
+Info: nios2_processor_jtag_debug_module_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "nios2_processor_jtag_debug_module_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: cmd_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_002"
+Info: Reusing file C:/Users/codyohl/Documents/nightmares/Lab4/qsys_tutorial/switchesqsys/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_002"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file C:/Users/codyohl/Documents/nightmares/Lab4/qsys_tutorial/switchesqsys/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: Reusing file C:/Users/codyohl/Documents/nightmares/Lab4/qsys_tutorial/switchesqsys/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: switchesqsys: Done "switchesqsys" with 25 modules, 39 files
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

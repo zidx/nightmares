@@ -1,0 +1,66 @@
+# Reading C:/altera/14.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do DE1_SoC_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 3 {C:/Users/zachn/Documents/nightmares/Lab 3/DE1_SoC.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module DE1_SoC
+# -- Compiling module ClockDivider
+# -- Compiling module DE1_SoC_testbench
+# 
+# Top level modules:
+# 	DE1_SoC_testbench
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 3 {C:/Users/zachn/Documents/nightmares/Lab 3/Camera.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module Camera
+# -- Compiling module Camera_testbench
+# 
+# Top level modules:
+# 	Camera_testbench
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 3 {C:/Users/zachn/Documents/nightmares/Lab 3/CountUp.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module CountUp
+# -- Compiling module CountUpTestbench
+# 
+# Top level modules:
+# 	CountUpTestbench
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 3 {C:/Users/zachn/Documents/nightmares/Lab 3/DFlipFlop.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module DFlipFlop
+# 
+# Top level modules:
+# 	DFlipFlop
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 3 {C:/Users/zachn/Documents/nightmares/Lab 3/UserInput.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module UserInput
+# 
+# Top level modules:
+# 	UserInput
+# vlog -sv -work work +incdir+C:/Users/zachn/Documents/nightmares/Lab\ 3 {C:/Users/zachn/Documents/nightmares/Lab 3/Percents.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module Percents
+# -- Compiling module PercentTestbench
+# 
+# Top level modules:
+# 	PercentTestbench
+# 
+vsim work.PercentTestbench
+# vsim work.PercentTestbench 
+# Loading sv_std.std
+# Loading work.PercentTestbench
+# Loading work.Percents
+add wave -position end  sim:/PercentTestbench/rst
+add wave -position end  sim:/PercentTestbench/emptyBuffer
+add wave -position end  sim:/PercentTestbench/pause
+add wave -position end  sim:/PercentTestbench/percent
+add wave -position end  sim:/PercentTestbench/helper
+run -all
+# Break in Module PercentTestbench at C:/Users/zachn/Documents/nightmares/Lab 3/Percents.sv line 114

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="DE1_SoC">
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE1_SoC|sld_signaltap:Flushing_Download_back_to_LP_SB_Active|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_advance_pointer_counter" CBX_FILE_NAME="cntr_49i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE1_SoC|switchesqsys:u0|switchesqsys_jtag_uart:jtag_uart|switchesqsys_jtag_uart_scfifo_w:the_switchesqsys_jtag_uart_scfifo_w|scfifo:wfifo" CBX_FILE_NAME="scfifo_3291.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE1_SoC|switchesqsys:u0|switchesqsys_nios2_processor:nios2_processor|switchesqsys_nios2_processor_register_bank_a_module:switchesqsys_nios2_processor_register_bank_a|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_d5o1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE1_SoC|Buffer:buf1|altsyncram:memory_rtl_0" CBX_FILE_NAME="altsyncram_ivm1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE1_SoC|sld_signaltap:Flushing_Download_back_to_LP_SB_Active|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder" CBX_FILE_NAME="decode_vnf.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE1_SoC|sld_signaltap:Flushing_Download_back_to_LP_SB_Active|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_read_pointer_counter" CBX_FILE_NAME="cntr_kri.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE1_SoC|switchesqsys:u0|switchesqsys_nios2_processor:nios2_processor|switchesqsys_nios2_processor_register_bank_b_module:switchesqsys_nios2_processor_register_bank_b|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_e5o1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE1_SoC|switchesqsys:u0|switchesqsys_nios2_processor:nios2_processor|switchesqsys_nios2_processor_nios2_oci:the_switchesqsys_nios2_processor_nios2_oci|switchesqsys_nios2_processor_nios2_ocimem:the_switchesqsys_nios2_processor_nios2_ocimem|switchesqsys_nios2_processor_ociram_sp_ram_module:switchesqsys_nios2_processor_ociram_sp_ram|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_0cg1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE1_SoC|sld_signaltap:Flushing_Download_back_to_LP_SB_Active|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:read_pointer_counter" CBX_FILE_NAME="cntr_85j.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE1_SoC|switchesqsys:u0|switchesqsys_onchip_memory:onchip_memory|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_9lj1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE1_SoC|switchesqsys:u0|switchesqsys_jtag_uart:jtag_uart|switchesqsys_jtag_uart_scfifo_r:the_switchesqsys_jtag_uart_scfifo_r|scfifo:rfifo" CBX_FILE_NAME="scfifo_3291.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE1_SoC|sld_signaltap:Flushing_Download_back_to_LP_SB_Active|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram" CBX_FILE_NAME="altsyncram_k784.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE1_SoC|sld_signaltap:Flushing_Download_back_to_LP_SB_Active|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux" CBX_FILE_NAME="mux_glc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE1_SoC|sld_signaltap:Flushing_Download_back_to_LP_SB_Active|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:\adv_point_3_and_more:advance_pointer_counter" CBX_FILE_NAME="cntr_r8i.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
