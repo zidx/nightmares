@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for DE1_SoC
-Tue May 05 16:26:19 2015
+Tue May 19 16:28:59 2015
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Full Version
 
 
@@ -118,23 +118,25 @@ agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 2.06        ;
+; Average used               ; 1.46        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;  35.3%      ;
+;     Processors 2-4         ;  15.4%      ;
 ;     Processors 5-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------+
-; SDC File List                                     ;
-+---------------+--------+--------------------------+
-; SDC File Path ; Status ; Read at                  ;
-+---------------+--------+--------------------------+
-; DE1_SoC.sdc   ; OK     ; Tue May 05 16:26:05 2015 ;
-+---------------+--------+--------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; SDC File List                                                                                                               ;
++-----------------------------------------------------------------------------------------+--------+--------------------------+
+; SDC File Path                                                                           ; Status ; Read at                  ;
++-----------------------------------------------------------------------------------------+--------+--------------------------+
+; ../Lab4/qsys_tutorial/nios_system/synthesis/submodules/altera_reset_controller.sdc      ; OK     ; Tue May 19 16:28:47 2015 ;
+; ../Lab4/qsys_tutorial/nios_system/synthesis/submodules/switchesqsys_nios2_processor.sdc ; OK     ; Tue May 19 16:28:47 2015 ;
+; DE1_SoC.sdc                                                                             ; OK     ; Tue May 19 16:28:47 2015 ;
++-----------------------------------------------------------------------------------------+--------+--------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -152,8 +154,8 @@ agreement for further details.
 +------------+-----------------+---------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name          ; Note ;
 +------------+-----------------+---------------------+------+
-; 64.23 MHz  ; 64.23 MHz       ; altera_reserved_tck ;      ;
-; 203.33 MHz ; 203.33 MHz      ; CLOCK_50            ;      ;
+; 70.67 MHz  ; 70.67 MHz       ; altera_reserved_tck ;      ;
+; 280.03 MHz ; 280.03 MHz      ; CLOCK_50            ;      ;
 +------------+-----------------+---------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -169,8 +171,8 @@ HTML report is unavailable in plain text report export.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 10.311 ; 0.000         ;
-; CLOCK_50            ; 15.082 ; 0.000         ;
+; altera_reserved_tck ; 10.820 ; 0.000         ;
+; CLOCK_50            ; 16.429 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -179,8 +181,8 @@ HTML report is unavailable in plain text report export.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.281 ; 0.000         ;
-; CLOCK_50            ; 0.390 ; 0.000         ;
+; altera_reserved_tck ; 0.367 ; 0.000         ;
+; CLOCK_50            ; 0.648 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -189,7 +191,7 @@ HTML report is unavailable in plain text report export.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 14.327 ; 0.000         ;
+; altera_reserved_tck ; 14.893 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -198,7 +200,7 @@ HTML report is unavailable in plain text report export.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.589 ; 0.000         ;
+; altera_reserved_tck ; 0.922 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -207,8 +209,8 @@ HTML report is unavailable in plain text report export.
 +---------------------+--------+--------------------+
 ; Clock               ; Slack  ; End Point TNS      ;
 +---------------------+--------+--------------------+
-; CLOCK_50            ; 8.623  ; 0.000              ;
-; altera_reserved_tck ; 14.867 ; 0.000              ;
+; CLOCK_50            ; 8.678  ; 0.000              ;
+; altera_reserved_tck ; 14.822 ; 0.000              ;
 +---------------------+--------+--------------------+
 
 
@@ -217,8 +219,8 @@ HTML report is unavailable in plain text report export.
 +---------------------+---------------------+-------+-------+------------+---------------------+
 ; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
-; altera_reserved_tdi ; altera_reserved_tck ; 2.424 ; 3.130 ; Rise       ; altera_reserved_tck ;
-; altera_reserved_tms ; altera_reserved_tck ; 2.092 ; 2.462 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tdi ; altera_reserved_tck ; 2.198 ; 3.174 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tms ; altera_reserved_tck ; 3.091 ; 3.469 ; Rise       ; altera_reserved_tck ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 
 
@@ -228,7 +230,7 @@ HTML report is unavailable in plain text report export.
 ; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 ; altera_reserved_tdi ; altera_reserved_tck ; 0.761 ; 0.384 ; Rise       ; altera_reserved_tck ;
-; altera_reserved_tms ; altera_reserved_tck ; 0.531 ; 0.178 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tms ; altera_reserved_tck ; 0.667 ; 0.241 ; Rise       ; altera_reserved_tck ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 
 
@@ -238,7 +240,7 @@ HTML report is unavailable in plain text report export.
 ; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 ; altera_reserved_tdo ; altera_reserved_tck ; 5.509 ; 5.570 ; Rise       ; altera_reserved_tck ;
-; altera_reserved_tdo ; altera_reserved_tck ; 6.811 ; 6.873 ; Fall       ; altera_reserved_tck ;
+; altera_reserved_tdo ; altera_reserved_tck ; 6.598 ; 6.691 ; Fall       ; altera_reserved_tck ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 
 
@@ -263,8 +265,8 @@ No synchronizer chains to report.
 +------------+-----------------+---------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name          ; Note ;
 +------------+-----------------+---------------------+------+
-; 67.63 MHz  ; 67.63 MHz       ; altera_reserved_tck ;      ;
-; 206.91 MHz ; 206.91 MHz      ; CLOCK_50            ;      ;
+; 74.21 MHz  ; 74.21 MHz       ; altera_reserved_tck ;      ;
+; 277.55 MHz ; 277.55 MHz      ; CLOCK_50            ;      ;
 +------------+-----------------+---------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -274,8 +276,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 10.557 ; 0.000         ;
-; CLOCK_50            ; 15.167 ; 0.000         ;
+; altera_reserved_tck ; 11.030 ; 0.000         ;
+; CLOCK_50            ; 16.397 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -284,8 +286,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.302 ; 0.000         ;
-; CLOCK_50            ; 0.408 ; 0.000         ;
+; altera_reserved_tck ; 0.351 ; 0.000         ;
+; CLOCK_50            ; 0.526 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -294,7 +296,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 14.464 ; 0.000         ;
+; altera_reserved_tck ; 15.008 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -303,7 +305,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.551 ; 0.000         ;
+; altera_reserved_tck ; 0.844 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -312,8 +314,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+-------------------+
 ; Clock               ; Slack  ; End Point TNS     ;
 +---------------------+--------+-------------------+
-; CLOCK_50            ; 8.586  ; 0.000             ;
-; altera_reserved_tck ; 14.825 ; 0.000             ;
+; CLOCK_50            ; 8.687  ; 0.000             ;
+; altera_reserved_tck ; 14.792 ; 0.000             ;
 +---------------------+--------+-------------------+
 
 
@@ -322,8 +324,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+---------------------+-------+-------+------------+---------------------+
 ; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
-; altera_reserved_tdi ; altera_reserved_tck ; 2.418 ; 3.132 ; Rise       ; altera_reserved_tck ;
-; altera_reserved_tms ; altera_reserved_tck ; 2.167 ; 2.564 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tdi ; altera_reserved_tck ; 2.183 ; 3.190 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tms ; altera_reserved_tck ; 3.115 ; 3.497 ; Rise       ; altera_reserved_tck ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 
 
@@ -333,7 +335,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 ; altera_reserved_tdi ; altera_reserved_tck ; 0.790 ; 0.415 ; Rise       ; altera_reserved_tck ;
-; altera_reserved_tms ; altera_reserved_tck ; 0.550 ; 0.197 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tms ; altera_reserved_tck ; 0.604 ; 0.197 ; Rise       ; altera_reserved_tck ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 
 
@@ -343,7 +345,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 ; altera_reserved_tdo ; altera_reserved_tck ; 5.352 ; 5.388 ; Rise       ; altera_reserved_tck ;
-; altera_reserved_tdo ; altera_reserved_tck ; 6.431 ; 6.476 ; Fall       ; altera_reserved_tck ;
+; altera_reserved_tdo ; altera_reserved_tck ; 6.262 ; 6.318 ; Fall       ; altera_reserved_tck ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 
 
@@ -368,8 +370,8 @@ No synchronizer chains to report.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 13.061 ; 0.000         ;
-; CLOCK_50            ; 16.683 ; 0.000         ;
+; altera_reserved_tck ; 13.461 ; 0.000         ;
+; CLOCK_50            ; 17.773 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -378,8 +380,8 @@ No synchronizer chains to report.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.075 ; 0.000         ;
-; CLOCK_50            ; 0.188 ; 0.000         ;
+; altera_reserved_tck ; 0.132 ; 0.000         ;
+; CLOCK_50            ; 0.271 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -388,7 +390,7 @@ No synchronizer chains to report.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 15.565 ; 0.000         ;
+; altera_reserved_tck ; 15.976 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -397,7 +399,7 @@ No synchronizer chains to report.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.248 ; 0.000         ;
+; altera_reserved_tck ; 0.489 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -406,8 +408,8 @@ No synchronizer chains to report.
 +---------------------+--------+--------------------+
 ; Clock               ; Slack  ; End Point TNS      ;
 +---------------------+--------+--------------------+
-; CLOCK_50            ; 8.579  ; 0.000              ;
-; altera_reserved_tck ; 14.524 ; 0.000              ;
+; CLOCK_50            ; 8.652  ; 0.000              ;
+; altera_reserved_tck ; 14.570 ; 0.000              ;
 +---------------------+--------+--------------------+
 
 
@@ -416,8 +418,8 @@ No synchronizer chains to report.
 +---------------------+---------------------+-------+-------+------------+---------------------+
 ; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
-; altera_reserved_tdi ; altera_reserved_tck ; 1.451 ; 2.582 ; Rise       ; altera_reserved_tck ;
-; altera_reserved_tms ; altera_reserved_tck ; 1.216 ; 1.987 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tdi ; altera_reserved_tck ; 1.397 ; 2.656 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tms ; altera_reserved_tck ; 1.881 ; 2.705 ; Rise       ; altera_reserved_tck ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 
 
@@ -427,7 +429,7 @@ No synchronizer chains to report.
 ; Data Port           ; Clock Port          ; Rise  ; Fall   ; Clock Edge ; Clock Reference     ;
 +---------------------+---------------------+-------+--------+------------+---------------------+
 ; altera_reserved_tdi ; altera_reserved_tck ; 0.407 ; -0.282 ; Rise       ; altera_reserved_tck ;
-; altera_reserved_tms ; altera_reserved_tck ; 0.335 ; -0.385 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tms ; altera_reserved_tck ; 0.366 ; -0.368 ; Rise       ; altera_reserved_tck ;
 +---------------------+---------------------+-------+--------+------------+---------------------+
 
 
@@ -437,7 +439,7 @@ No synchronizer chains to report.
 ; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 ; altera_reserved_tdo ; altera_reserved_tck ; 3.369 ; 3.421 ; Rise       ; altera_reserved_tck ;
-; altera_reserved_tdo ; altera_reserved_tck ; 4.599 ; 4.654 ; Fall       ; altera_reserved_tck ;
+; altera_reserved_tdo ; altera_reserved_tck ; 4.458 ; 4.516 ; Fall       ; altera_reserved_tck ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 
 
@@ -462,8 +464,8 @@ No synchronizer chains to report.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 13.551 ; 0.000         ;
-; CLOCK_50            ; 17.005 ; 0.000         ;
+; altera_reserved_tck ; 13.888 ; 0.000         ;
+; CLOCK_50            ; 17.911 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -472,8 +474,8 @@ No synchronizer chains to report.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.064 ; 0.000         ;
-; CLOCK_50            ; 0.179 ; 0.000         ;
+; altera_reserved_tck ; 0.106 ; 0.000         ;
+; CLOCK_50            ; 0.298 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -482,7 +484,7 @@ No synchronizer chains to report.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 15.797 ; 0.000         ;
+; altera_reserved_tck ; 16.149 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -491,7 +493,7 @@ No synchronizer chains to report.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.216 ; 0.000         ;
+; altera_reserved_tck ; 0.434 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -500,8 +502,8 @@ No synchronizer chains to report.
 +---------------------+--------+-------------------+
 ; Clock               ; Slack  ; End Point TNS     ;
 +---------------------+--------+-------------------+
-; CLOCK_50            ; 8.560  ; 0.000             ;
-; altera_reserved_tck ; 14.520 ; 0.000             ;
+; CLOCK_50            ; 8.656  ; 0.000             ;
+; altera_reserved_tck ; 14.574 ; 0.000             ;
 +---------------------+--------+-------------------+
 
 
@@ -510,8 +512,8 @@ No synchronizer chains to report.
 +---------------------+---------------------+-------+-------+------------+---------------------+
 ; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
-; altera_reserved_tdi ; altera_reserved_tck ; 1.345 ; 2.441 ; Rise       ; altera_reserved_tck ;
-; altera_reserved_tms ; altera_reserved_tck ; 1.149 ; 1.957 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tdi ; altera_reserved_tck ; 1.296 ; 2.506 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tms ; altera_reserved_tck ; 1.733 ; 2.547 ; Rise       ; altera_reserved_tck ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 
 
@@ -521,7 +523,7 @@ No synchronizer chains to report.
 ; Data Port           ; Clock Port          ; Rise  ; Fall   ; Clock Edge ; Clock Reference     ;
 +---------------------+---------------------+-------+--------+------------+---------------------+
 ; altera_reserved_tdi ; altera_reserved_tck ; 0.414 ; -0.326 ; Rise       ; altera_reserved_tck ;
-; altera_reserved_tms ; altera_reserved_tck ; 0.297 ; -0.431 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tms ; altera_reserved_tck ; 0.337 ; -0.431 ; Rise       ; altera_reserved_tck ;
 +---------------------+---------------------+-------+--------+------------+---------------------+
 
 
@@ -531,7 +533,7 @@ No synchronizer chains to report.
 ; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 ; altera_reserved_tdo ; altera_reserved_tck ; 3.142 ; 3.174 ; Rise       ; altera_reserved_tck ;
-; altera_reserved_tdo ; altera_reserved_tck ; 4.299 ; 4.339 ; Fall       ; altera_reserved_tck ;
+; altera_reserved_tdo ; altera_reserved_tck ; 4.185 ; 4.224 ; Fall       ; altera_reserved_tck ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 
 
@@ -556,9 +558,9 @@ No synchronizer chains to report.
 +----------------------+--------+-------+----------+---------+---------------------+
 ; Clock                ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +----------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack     ; 10.311 ; 0.064 ; 14.327   ; 0.216   ; 8.560               ;
-;  CLOCK_50            ; 15.082 ; 0.179 ; N/A      ; N/A     ; 8.560               ;
-;  altera_reserved_tck ; 10.311 ; 0.064 ; 14.327   ; 0.216   ; 14.520              ;
+; Worst-case Slack     ; 10.820 ; 0.106 ; 14.893   ; 0.434   ; 8.652               ;
+;  CLOCK_50            ; 16.397 ; 0.271 ; N/A      ; N/A     ; 8.652               ;
+;  altera_reserved_tck ; 10.820 ; 0.106 ; 14.893   ; 0.434   ; 14.570              ;
 ; Design-wide TNS      ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
 ;  CLOCK_50            ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
 ;  altera_reserved_tck ; 0.000  ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
@@ -570,8 +572,8 @@ No synchronizer chains to report.
 +---------------------+---------------------+-------+-------+------------+---------------------+
 ; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
-; altera_reserved_tdi ; altera_reserved_tck ; 2.424 ; 3.132 ; Rise       ; altera_reserved_tck ;
-; altera_reserved_tms ; altera_reserved_tck ; 2.167 ; 2.564 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tdi ; altera_reserved_tck ; 2.198 ; 3.190 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tms ; altera_reserved_tck ; 3.115 ; 3.497 ; Rise       ; altera_reserved_tck ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 
 
@@ -581,7 +583,7 @@ No synchronizer chains to report.
 ; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 ; altera_reserved_tdi ; altera_reserved_tck ; 0.790 ; 0.415 ; Rise       ; altera_reserved_tck ;
-; altera_reserved_tms ; altera_reserved_tck ; 0.550 ; 0.197 ; Rise       ; altera_reserved_tck ;
+; altera_reserved_tms ; altera_reserved_tck ; 0.667 ; 0.241 ; Rise       ; altera_reserved_tck ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 
 
@@ -591,7 +593,7 @@ No synchronizer chains to report.
 ; Data Port           ; Clock Port          ; Rise  ; Fall  ; Clock Edge ; Clock Reference     ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 ; altera_reserved_tdo ; altera_reserved_tck ; 5.509 ; 5.570 ; Rise       ; altera_reserved_tck ;
-; altera_reserved_tdo ; altera_reserved_tck ; 6.811 ; 6.873 ; Fall       ; altera_reserved_tck ;
+; altera_reserved_tdo ; altera_reserved_tck ; 6.598 ; 6.691 ; Fall       ; altera_reserved_tck ;
 +---------------------+---------------------+-------+-------+------------+---------------------+
 
 
@@ -941,7 +943,7 @@ No synchronizer chains to report.
 +---------------------+---------------------+----------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+----------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 7965     ; 0        ; 45       ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 7943     ; 0        ; 45       ; 0        ;
 ; CLOCK_50            ; CLOCK_50            ; 21       ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -952,7 +954,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+----------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+----------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 7965     ; 0        ; 45       ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 7943     ; 0        ; 45       ; 0        ;
 ; CLOCK_50            ; CLOCK_50            ; 21       ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -963,7 +965,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+----------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+----------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 152      ; 0        ; 1        ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 153      ; 0        ; 1        ; 0        ;
 +---------------------+---------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -973,7 +975,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+----------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+----------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 152      ; 0        ; 1        ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 153      ; 0        ; 1        ; 0        ;
 +---------------------+---------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -996,7 +998,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Property                        ; Setup ; Hold ;
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
-; Unconstrained Clocks            ; 1     ; 1    ;
+; Unconstrained Clocks            ; 2     ; 2    ;
 ; Unconstrained Input Ports       ; 4     ; 4    ;
 ; Unconstrained Input Port Paths  ; 95    ; 95   ;
 ; Unconstrained Output Ports      ; 33    ; 33   ;
@@ -1010,141 +1012,458 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Full Version
-    Info: Processing started: Tue May 05 16:26:00 2015
+    Info: Processing started: Tue May 19 16:28:44 2015
 Info: Command: quartus_sta DE1_SoC -c DE1_SoC
 Info: qsta_default_script.tcl version: #1
+Warning (20013): Ignored assignments for entity "altera_avalon_sc_fifo" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_avalon_sc_fifo -entity altera_avalon_sc_fifo -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity altera_avalon_sc_fifo -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity altera_avalon_sc_fifo -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME YWx0ZXJhX2F2YWxvbl9zY19maWZv -entity altera_avalon_sc_fifo -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME QXZhbG9uLVNUIFNpbmdsZSBDbG9jayBGSUZP -entity altera_avalon_sc_fifo -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity altera_avalon_sc_fifo -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity altera_avalon_sc_fifo -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity altera_avalon_sc_fifo -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity altera_avalon_sc_fifo -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ" -entity altera_avalon_sc_fifo -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "altera_merlin_master_agent" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_master_agent -entity altera_merlin_master_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity altera_merlin_master_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity altera_merlin_master_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME "YWx0ZXJhX21lcmxpbl9tYXN0ZXJfYWdlbnQ=" -entity altera_merlin_master_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME "QXZhbG9uIE1NIE1hc3RlciBBZ2VudA==" -entity altera_merlin_master_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity altera_merlin_master_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity altera_merlin_master_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity altera_merlin_master_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity altera_merlin_master_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DESCRIPTION VHJhbnNsYXRlcyBBdmFsb24tTU0gbWFzdGVyIHRyYW5zYWN0aW9ucyBpbnRvIFFzeXMgY29tbWFuZCBwYWNrZXRzIGFuZCB0cmFuc2xhdGVzIHRoZSBRc3lzIEF2YWxvbi1NTSBzbGF2ZSByZXNwb25zZSBwYWNrZXRzIGludG8gQXZhbG9uLU1NIHJlc3BvbnNlcy4gUmVmZXIgdG8gdGhlIEF2YWxvbiBJbnRlcmZhY2UgU3BlY2lmaWNhdGlvbnMgKGh0dHA6Ly93d3cuYWx0ZXJhLmNvbS9saXRlcmF0dXJlL21hbnVhbC9tbmxfYXZhbG9uX3NwZWMucGRmKSBmb3IgYW4gZXhwbGFuYXRpb24gb2YgYnVyc3RpbmcgYmVoYXZpb3Iu -entity altera_merlin_master_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfUkFURQ==::NTAwMDAwMDA=::QXV0byBDTE9DS19SQVRF" -entity altera_merlin_master_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "altera_merlin_master_translator" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_master_translator -entity altera_merlin_master_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity altera_merlin_master_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity altera_merlin_master_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME "YWx0ZXJhX21lcmxpbl9tYXN0ZXJfdHJhbnNsYXRvcg==" -entity altera_merlin_master_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME QXZhbG9uIE1NIE1hc3RlciBUcmFuc2xhdG9y -entity altera_merlin_master_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity altera_merlin_master_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity altera_merlin_master_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity altera_merlin_master_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity altera_merlin_master_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DESCRIPTION Q29udmVydHMgdGhlIEF2YWxvbi1NTSBtYXN0ZXIgaW50ZXJmYWNlIHRvIGEgc2ltcGxlciByZXByZXNlbnRhdGlvbiB0aGF0IHRoZSBRc3lzIG5ldHdvcmsgdXNlcy4gUmVmZXIgdG8gdGhlIEF2YWxvbiBJbnRlcmZhY2UgU3BlY2lmaWNhdGlvbnMgKGh0dHA6Ly93d3cuYWx0ZXJhLmNvbS9saXRlcmF0dXJlL21hbnVhbC9tbmxfYXZhbG9uX3NwZWMucGRmKSBmb3IgZGVmaW5pdGlvbnMgb2YgdGhlIEF2YWxvbi1NTSBzaWduYWxzIGFuZCBleHBsYW5hdGlvbnMgb2YgdGhlIGJ1cnN0aW5nIHByb3BlcnRpZXMu -entity altera_merlin_master_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfUkFURQ==::NTAwMDAwMDA=::QXV0byBDTE9DS19SQVRF" -entity altera_merlin_master_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "altera_merlin_slave_agent" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_slave_agent -entity altera_merlin_slave_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity altera_merlin_slave_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity altera_merlin_slave_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME "YWx0ZXJhX21lcmxpbl9zbGF2ZV9hZ2VudA==" -entity altera_merlin_slave_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME QXZhbG9uIE1NIFNsYXZlIEFnZW50 -entity altera_merlin_slave_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity altera_merlin_slave_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity altera_merlin_slave_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity altera_merlin_slave_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity altera_merlin_slave_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DESCRIPTION "QWNjZXB0cyBjb21tYW5kIHBhY2tldHMgYW5kIGlzc3VlcyB0aGUgcmVzdWx0aW5nIHRyYW5zYWN0aW9ucyB0byB0aGUgQXZhbG9uIGludGVyZmFjZS4gUmVmZXIgdG8gdGhlIEF2YWxvbiBJbnRlcmZhY2UgU3BlY2lmaWNhdGlvbnMgKGh0dHA6Ly93d3cuYWx0ZXJhLmNvbS9saXRlcmF0dXJlL21hbnVhbC9tbmxfYXZhbG9uX3NwZWMucGRmKSBmb3IgZXhwbGFuYXRpb25zIG9mIHRoZSBidXJzdGluZyBwcm9wZXJ0aWVzLg==" -entity altera_merlin_slave_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "VVNFX1dSSVRFUkVTUE9OU0U=::MA==::VXNlIHdyaXRlcmVzcG9uc2U=" -entity altera_merlin_slave_agent -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "altera_merlin_slave_translator" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_slave_translator -entity altera_merlin_slave_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity altera_merlin_slave_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity altera_merlin_slave_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME YWx0ZXJhX21lcmxpbl9zbGF2ZV90cmFuc2xhdG9y -entity altera_merlin_slave_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME "QXZhbG9uIE1NIFNsYXZlIFRyYW5zbGF0b3I=" -entity altera_merlin_slave_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity altera_merlin_slave_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity altera_merlin_slave_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity altera_merlin_slave_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity altera_merlin_slave_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DESCRIPTION Q29udmVydHMgdGhlIEF2YWxvbi1NTSBzbGF2ZSBpbnRlcmZhY2UgdG8gYSBzaW1wbGlmaWVkIHJlcHJlc2VudGF0aW9uIHRoYXQgdGhlIFFzeXMgbmV0d29yayB1c2VzLiBSZWZlciB0byB0aGUgQXZhbG9uIEludGVyZmFjZSBTcGVjaWZpY2F0aW9ucyAoaHR0cDovL3d3dy5hbHRlcmEuY29tL2xpdGVyYXR1cmUvbWFudWFsL21ubF9hdmFsb25fc3BlYy5wZGYpIGZvciBkZWZpbml0aW9ucyBvZiB0aGUgQXZhbG9uLU1NIHNpZ25hbHMgYW5kIGV4cGxhbmF0aW9ucyBvZiB0aGUgYnVyc3RpbmcgcHJvcGVydGllcyBhbmQgYWRkcmVzcyBhbGlnbm1lbnQu -entity altera_merlin_slave_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "QVZfREFUQV9IT0xEX0NZQ0xFUw==::MA==::QVZfREFUQV9IT0xEX0NZQ0xFUw==" -entity altera_merlin_slave_translator -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "altera_reset_controller" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_reset_controller -entity altera_reset_controller -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity altera_reset_controller -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity altera_reset_controller -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME "YWx0ZXJhX3Jlc2V0X2NvbnRyb2xsZXI=" -entity altera_reset_controller -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME "TWVybGluIFJlc2V0IENvbnRyb2xsZXI=" -entity altera_reset_controller -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity altera_reset_controller -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity altera_reset_controller -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity altera_reset_controller -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity altera_reset_controller -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DESCRIPTION "Rm9yIHN5c3RlbXMgd2l0aCBtdWx0aXBsZSByZXNldCBpbnB1dHMsIHRoZSBNZXJsaW4gUmVzZXQgQ29udHJvbGxlciBPUnMgYWxsIHJlc2V0IGlucHV0cyBhbmQgZ2VuZXJhdGVzIGEgc2luZ2xlIHJlc2V0IG91dHB1dC4=" -entity altera_reset_controller -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfUkFURQ==::LTE=::QXV0byBDTE9DS19SQVRF" -entity altera_reset_controller -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_GENERATED_DEVICE_FAMILY "\{Cyclone V\}" -entity switchesqsys -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TARGETED_DEVICE_FAMILY "Cyclone V" -entity switchesqsys -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_QSYS_MODE UNKNOWN -entity switchesqsys -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME Qsys -entity switchesqsys -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME c3dpdGNoZXNxc3lz -entity switchesqsys -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME c3dpdGNoZXNxc3lz -entity switchesqsys -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY ON -entity switchesqsys -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity switchesqsys -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION MS4w -entity switchesqsys -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfUkVTRVRfRE9NQUlO::LTE=::QXV0byBSRVNFVF9ET01BSU4=" -entity switchesqsys -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name SLD_INFO "QSYS_NAME switchesqsys HAS_SOPCINFO 1 GENERATION_ID 1432077759" -entity switchesqsys -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys_LEDs" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_avalon_pio -entity switchesqsys_LEDs -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys_LEDs -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys_LEDs -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME "c3dpdGNoZXNxc3lzX0xFRHM=" -entity switchesqsys_LEDs -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME UElPIChQYXJhbGxlbCBJL08p -entity switchesqsys_LEDs -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity switchesqsys_LEDs -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity switchesqsys_LEDs -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity switchesqsys_LEDs -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity switchesqsys_LEDs -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9oYXNfaXJx::ZmFsc2U=::ZGVyaXZlZF9oYXNfaXJx" -entity switchesqsys_LEDs -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys_irq_mapper" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_irq_mapper -entity switchesqsys_irq_mapper -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys_irq_mapper -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys_irq_mapper -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME "c3dpdGNoZXNxc3lzX2lycV9tYXBwZXI=" -entity switchesqsys_irq_mapper -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME "TWVybGluIElSUSBNYXBwZXI=" -entity switchesqsys_irq_mapper -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity switchesqsys_irq_mapper -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity switchesqsys_irq_mapper -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity switchesqsys_irq_mapper -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity switchesqsys_irq_mapper -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DESCRIPTION Q29udmVydHMgaW5kaXZpZHVhbCBpbnRlcnJ1cHQgd2lyZXMgdG8gYSBidXMuIEJ5IGRlZmF1bHQsIHRoZSBpbnRlcnJ1cHQgc2VuZGVyIGNvbm5lY3RlZCB0byB0aGUgcmVjZWl2ZXIwIGludGVyZmFjZSBvZiB0aGUgSVJRIG1hcHBlciBpcyB0aGUgaGlnaGVzdCBwcmlvcml0eSB3aXRoIHNlcXVlbnRpYWwgcmVjZWl2ZXJzIGJlaWluZyBzdWNjZXNzaXZlbHkgbG93ZXIgcHJpb3JpdHku -entity switchesqsys_irq_mapper -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ" -entity switchesqsys_irq_mapper -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys_jtag_uart" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_avalon_jtag_uart -entity switchesqsys_jtag_uart -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys_jtag_uart -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys_jtag_uart -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME "c3dpdGNoZXNxc3lzX2p0YWdfdWFydA==" -entity switchesqsys_jtag_uart -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME SlRBRyBVQVJU -entity switchesqsys_jtag_uart -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity switchesqsys_jtag_uart -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity switchesqsys_jtag_uart -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity switchesqsys_jtag_uart -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity switchesqsys_jtag_uart -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "ZW5hYmxlSW50ZXJhY3RpdmVPdXRwdXQ=::ZmFsc2U=::ZW5hYmxlSW50ZXJhY3RpdmVPdXRwdXQ=" -entity switchesqsys_jtag_uart -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys_mm_interconnect_0" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_mm_interconnect -entity switchesqsys_mm_interconnect_0 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys_mm_interconnect_0 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys_mm_interconnect_0 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME c3dpdGNoZXNxc3lzX21tX2ludGVyY29ubmVjdF8w -entity switchesqsys_mm_interconnect_0 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME TU0gSW50ZXJjb25uZWN0 -entity switchesqsys_mm_interconnect_0 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity switchesqsys_mm_interconnect_0 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL ON -entity switchesqsys_mm_interconnect_0 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity switchesqsys_mm_interconnect_0 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity switchesqsys_mm_interconnect_0 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DESCRIPTION TU0gSW50ZXJjb25uZWN0 -entity switchesqsys_mm_interconnect_0 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNTRU1BNUYzMUM2::QXV0byBERVZJQ0U=" -entity switchesqsys_mm_interconnect_0 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys_mm_interconnect_0_cmd_demux" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_demultiplexer -entity switchesqsys_mm_interconnect_0_cmd_demux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys_mm_interconnect_0_cmd_demux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys_mm_interconnect_0_cmd_demux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME "c3dpdGNoZXNxc3lzX21tX2ludGVyY29ubmVjdF8wX2NtZF9kZW11eA==" -entity switchesqsys_mm_interconnect_0_cmd_demux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME TWVtb3J5IE1hcHBlZCBEZW11bHRpcGxleGVy -entity switchesqsys_mm_interconnect_0_cmd_demux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity switchesqsys_mm_interconnect_0_cmd_demux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity switchesqsys_mm_interconnect_0_cmd_demux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity switchesqsys_mm_interconnect_0_cmd_demux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity switchesqsys_mm_interconnect_0_cmd_demux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DESCRIPTION QWNjZXB0cyBjaGFubmVsaXplZCBkYXRhIG9uIGl0cyBzaW5rIGludGVyZmFjZSBhbmQgdHJhbnNtaXRzIHRoZSBkYXRhIG9uIG9uZSBvZiBpdHMgc291cmNlIGludGVyZmFjZXMu -entity switchesqsys_mm_interconnect_0_cmd_demux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ" -entity switchesqsys_mm_interconnect_0_cmd_demux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys_mm_interconnect_0_cmd_demux_001" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_demultiplexer -entity switchesqsys_mm_interconnect_0_cmd_demux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys_mm_interconnect_0_cmd_demux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys_mm_interconnect_0_cmd_demux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME "c3dpdGNoZXNxc3lzX21tX2ludGVyY29ubmVjdF8wX2NtZF9kZW11eF8wMDE=" -entity switchesqsys_mm_interconnect_0_cmd_demux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME TWVtb3J5IE1hcHBlZCBEZW11bHRpcGxleGVy -entity switchesqsys_mm_interconnect_0_cmd_demux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity switchesqsys_mm_interconnect_0_cmd_demux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity switchesqsys_mm_interconnect_0_cmd_demux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity switchesqsys_mm_interconnect_0_cmd_demux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity switchesqsys_mm_interconnect_0_cmd_demux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DESCRIPTION QWNjZXB0cyBjaGFubmVsaXplZCBkYXRhIG9uIGl0cyBzaW5rIGludGVyZmFjZSBhbmQgdHJhbnNtaXRzIHRoZSBkYXRhIG9uIG9uZSBvZiBpdHMgc291cmNlIGludGVyZmFjZXMu -entity switchesqsys_mm_interconnect_0_cmd_demux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ" -entity switchesqsys_mm_interconnect_0_cmd_demux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys_mm_interconnect_0_cmd_mux" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_multiplexer -entity switchesqsys_mm_interconnect_0_cmd_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys_mm_interconnect_0_cmd_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys_mm_interconnect_0_cmd_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME "c3dpdGNoZXNxc3lzX21tX2ludGVyY29ubmVjdF8wX2NtZF9tdXg=" -entity switchesqsys_mm_interconnect_0_cmd_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME "TWVtb3J5IE1hcHBlZCBNdWx0aXBsZXhlcg==" -entity switchesqsys_mm_interconnect_0_cmd_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity switchesqsys_mm_interconnect_0_cmd_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity switchesqsys_mm_interconnect_0_cmd_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity switchesqsys_mm_interconnect_0_cmd_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity switchesqsys_mm_interconnect_0_cmd_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DESCRIPTION "QXJiaXRyYXRlcyBiZXR3ZWVuIHJlcXVlc3RpbmcgbWFzdGVycyB1c2luZyBhbiBlcXVhbCBzaGFyZSwgcm91bmQtcm9iaW4gYWxnb3JpdGhtLiBUaGUgYXJiaXRyYXRpb24gc2NoZW1lIGNhbiBiZSBjaGFuZ2VkIHRvIHdlaWdodGVkIHJvdW5kLXJvYmluIGJ5IHNwZWNpZnlpbmcgYSByZWxhdGl2ZSBudW1iZXIgb2YgYXJiaXRyYXRpb24gc2hhcmVzIHRvIHRoZSBtYXN0ZXJzIHRoYXQgYWNjZXNzIGEgcGFydGljdWxhciBzbGF2ZS4=" -entity switchesqsys_mm_interconnect_0_cmd_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ" -entity switchesqsys_mm_interconnect_0_cmd_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys_mm_interconnect_0_cmd_mux_002" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_multiplexer -entity switchesqsys_mm_interconnect_0_cmd_mux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys_mm_interconnect_0_cmd_mux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys_mm_interconnect_0_cmd_mux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME c3dpdGNoZXNxc3lzX21tX2ludGVyY29ubmVjdF8wX2NtZF9tdXhfMDAy -entity switchesqsys_mm_interconnect_0_cmd_mux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME "TWVtb3J5IE1hcHBlZCBNdWx0aXBsZXhlcg==" -entity switchesqsys_mm_interconnect_0_cmd_mux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity switchesqsys_mm_interconnect_0_cmd_mux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity switchesqsys_mm_interconnect_0_cmd_mux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity switchesqsys_mm_interconnect_0_cmd_mux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity switchesqsys_mm_interconnect_0_cmd_mux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DESCRIPTION "QXJiaXRyYXRlcyBiZXR3ZWVuIHJlcXVlc3RpbmcgbWFzdGVycyB1c2luZyBhbiBlcXVhbCBzaGFyZSwgcm91bmQtcm9iaW4gYWxnb3JpdGhtLiBUaGUgYXJiaXRyYXRpb24gc2NoZW1lIGNhbiBiZSBjaGFuZ2VkIHRvIHdlaWdodGVkIHJvdW5kLXJvYmluIGJ5IHNwZWNpZnlpbmcgYSByZWxhdGl2ZSBudW1iZXIgb2YgYXJiaXRyYXRpb24gc2hhcmVzIHRvIHRoZSBtYXN0ZXJzIHRoYXQgYWNjZXNzIGEgcGFydGljdWxhciBzbGF2ZS4=" -entity switchesqsys_mm_interconnect_0_cmd_mux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ" -entity switchesqsys_mm_interconnect_0_cmd_mux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys_mm_interconnect_0_router" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_router -entity switchesqsys_mm_interconnect_0_router -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys_mm_interconnect_0_router -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys_mm_interconnect_0_router -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME "c3dpdGNoZXNxc3lzX21tX2ludGVyY29ubmVjdF8wX3JvdXRlcg==" -entity switchesqsys_mm_interconnect_0_router -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME "TWVtb3J5IE1hcHBlZCBSb3V0ZXI=" -entity switchesqsys_mm_interconnect_0_router -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity switchesqsys_mm_interconnect_0_router -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity switchesqsys_mm_interconnect_0_router -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity switchesqsys_mm_interconnect_0_router -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity switchesqsys_mm_interconnect_0_router -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DESCRIPTION Um91dGVzIGNvbW1hbmQgcGFja2V0cyBmcm9tIHRoZSBtYXN0ZXIgdG8gdGhlIHNsYXZlIGFuZCByZXNwb25zZSBwYWNrZXRzIGZyb20gdGhlIHNsYXZlIHRvIHRoZSBtYXN0ZXIu -entity switchesqsys_mm_interconnect_0_router -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfUkFURQ==::NTAwMDAwMDA=::QXV0byBDTE9DS19SQVRF" -entity switchesqsys_mm_interconnect_0_router -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys_mm_interconnect_0_router_001" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_router -entity switchesqsys_mm_interconnect_0_router_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys_mm_interconnect_0_router_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys_mm_interconnect_0_router_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME "c3dpdGNoZXNxc3lzX21tX2ludGVyY29ubmVjdF8wX3JvdXRlcl8wMDE=" -entity switchesqsys_mm_interconnect_0_router_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME "TWVtb3J5IE1hcHBlZCBSb3V0ZXI=" -entity switchesqsys_mm_interconnect_0_router_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity switchesqsys_mm_interconnect_0_router_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity switchesqsys_mm_interconnect_0_router_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity switchesqsys_mm_interconnect_0_router_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity switchesqsys_mm_interconnect_0_router_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DESCRIPTION Um91dGVzIGNvbW1hbmQgcGFja2V0cyBmcm9tIHRoZSBtYXN0ZXIgdG8gdGhlIHNsYXZlIGFuZCByZXNwb25zZSBwYWNrZXRzIGZyb20gdGhlIHNsYXZlIHRvIHRoZSBtYXN0ZXIu -entity switchesqsys_mm_interconnect_0_router_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfUkFURQ==::NTAwMDAwMDA=::QXV0byBDTE9DS19SQVRF" -entity switchesqsys_mm_interconnect_0_router_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys_mm_interconnect_0_router_002" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_router -entity switchesqsys_mm_interconnect_0_router_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys_mm_interconnect_0_router_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys_mm_interconnect_0_router_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME "c3dpdGNoZXNxc3lzX21tX2ludGVyY29ubmVjdF8wX3JvdXRlcl8wMDI=" -entity switchesqsys_mm_interconnect_0_router_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME "TWVtb3J5IE1hcHBlZCBSb3V0ZXI=" -entity switchesqsys_mm_interconnect_0_router_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity switchesqsys_mm_interconnect_0_router_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity switchesqsys_mm_interconnect_0_router_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity switchesqsys_mm_interconnect_0_router_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity switchesqsys_mm_interconnect_0_router_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DESCRIPTION Um91dGVzIGNvbW1hbmQgcGFja2V0cyBmcm9tIHRoZSBtYXN0ZXIgdG8gdGhlIHNsYXZlIGFuZCByZXNwb25zZSBwYWNrZXRzIGZyb20gdGhlIHNsYXZlIHRvIHRoZSBtYXN0ZXIu -entity switchesqsys_mm_interconnect_0_router_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfUkFURQ==::NTAwMDAwMDA=::QXV0byBDTE9DS19SQVRF" -entity switchesqsys_mm_interconnect_0_router_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys_mm_interconnect_0_router_004" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_router -entity switchesqsys_mm_interconnect_0_router_004 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys_mm_interconnect_0_router_004 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys_mm_interconnect_0_router_004 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME "c3dpdGNoZXNxc3lzX21tX2ludGVyY29ubmVjdF8wX3JvdXRlcl8wMDQ=" -entity switchesqsys_mm_interconnect_0_router_004 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME "TWVtb3J5IE1hcHBlZCBSb3V0ZXI=" -entity switchesqsys_mm_interconnect_0_router_004 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity switchesqsys_mm_interconnect_0_router_004 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity switchesqsys_mm_interconnect_0_router_004 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity switchesqsys_mm_interconnect_0_router_004 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity switchesqsys_mm_interconnect_0_router_004 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DESCRIPTION Um91dGVzIGNvbW1hbmQgcGFja2V0cyBmcm9tIHRoZSBtYXN0ZXIgdG8gdGhlIHNsYXZlIGFuZCByZXNwb25zZSBwYWNrZXRzIGZyb20gdGhlIHNsYXZlIHRvIHRoZSBtYXN0ZXIu -entity switchesqsys_mm_interconnect_0_router_004 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfUkFURQ==::NTAwMDAwMDA=::QXV0byBDTE9DS19SQVRF" -entity switchesqsys_mm_interconnect_0_router_004 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys_mm_interconnect_0_rsp_demux_002" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_demultiplexer -entity switchesqsys_mm_interconnect_0_rsp_demux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys_mm_interconnect_0_rsp_demux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys_mm_interconnect_0_rsp_demux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME "c3dpdGNoZXNxc3lzX21tX2ludGVyY29ubmVjdF8wX3JzcF9kZW11eF8wMDI=" -entity switchesqsys_mm_interconnect_0_rsp_demux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME TWVtb3J5IE1hcHBlZCBEZW11bHRpcGxleGVy -entity switchesqsys_mm_interconnect_0_rsp_demux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity switchesqsys_mm_interconnect_0_rsp_demux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity switchesqsys_mm_interconnect_0_rsp_demux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity switchesqsys_mm_interconnect_0_rsp_demux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity switchesqsys_mm_interconnect_0_rsp_demux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DESCRIPTION QWNjZXB0cyBjaGFubmVsaXplZCBkYXRhIG9uIGl0cyBzaW5rIGludGVyZmFjZSBhbmQgdHJhbnNtaXRzIHRoZSBkYXRhIG9uIG9uZSBvZiBpdHMgc291cmNlIGludGVyZmFjZXMu -entity switchesqsys_mm_interconnect_0_rsp_demux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ" -entity switchesqsys_mm_interconnect_0_rsp_demux_002 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys_mm_interconnect_0_rsp_mux" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_multiplexer -entity switchesqsys_mm_interconnect_0_rsp_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys_mm_interconnect_0_rsp_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys_mm_interconnect_0_rsp_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME "c3dpdGNoZXNxc3lzX21tX2ludGVyY29ubmVjdF8wX3JzcF9tdXg=" -entity switchesqsys_mm_interconnect_0_rsp_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME "TWVtb3J5IE1hcHBlZCBNdWx0aXBsZXhlcg==" -entity switchesqsys_mm_interconnect_0_rsp_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity switchesqsys_mm_interconnect_0_rsp_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity switchesqsys_mm_interconnect_0_rsp_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity switchesqsys_mm_interconnect_0_rsp_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity switchesqsys_mm_interconnect_0_rsp_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DESCRIPTION "QXJiaXRyYXRlcyBiZXR3ZWVuIHJlcXVlc3RpbmcgbWFzdGVycyB1c2luZyBhbiBlcXVhbCBzaGFyZSwgcm91bmQtcm9iaW4gYWxnb3JpdGhtLiBUaGUgYXJiaXRyYXRpb24gc2NoZW1lIGNhbiBiZSBjaGFuZ2VkIHRvIHdlaWdodGVkIHJvdW5kLXJvYmluIGJ5IHNwZWNpZnlpbmcgYSByZWxhdGl2ZSBudW1iZXIgb2YgYXJiaXRyYXRpb24gc2hhcmVzIHRvIHRoZSBtYXN0ZXJzIHRoYXQgYWNjZXNzIGEgcGFydGljdWxhciBzbGF2ZS4=" -entity switchesqsys_mm_interconnect_0_rsp_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ" -entity switchesqsys_mm_interconnect_0_rsp_mux -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys_mm_interconnect_0_rsp_mux_001" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_multiplexer -entity switchesqsys_mm_interconnect_0_rsp_mux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys_mm_interconnect_0_rsp_mux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys_mm_interconnect_0_rsp_mux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME c3dpdGNoZXNxc3lzX21tX2ludGVyY29ubmVjdF8wX3JzcF9tdXhfMDAx -entity switchesqsys_mm_interconnect_0_rsp_mux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME "TWVtb3J5IE1hcHBlZCBNdWx0aXBsZXhlcg==" -entity switchesqsys_mm_interconnect_0_rsp_mux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity switchesqsys_mm_interconnect_0_rsp_mux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity switchesqsys_mm_interconnect_0_rsp_mux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity switchesqsys_mm_interconnect_0_rsp_mux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity switchesqsys_mm_interconnect_0_rsp_mux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DESCRIPTION "QXJiaXRyYXRlcyBiZXR3ZWVuIHJlcXVlc3RpbmcgbWFzdGVycyB1c2luZyBhbiBlcXVhbCBzaGFyZSwgcm91bmQtcm9iaW4gYWxnb3JpdGhtLiBUaGUgYXJiaXRyYXRpb24gc2NoZW1lIGNhbiBiZSBjaGFuZ2VkIHRvIHdlaWdodGVkIHJvdW5kLXJvYmluIGJ5IHNwZWNpZnlpbmcgYSByZWxhdGl2ZSBudW1iZXIgb2YgYXJiaXRyYXRpb24gc2hhcmVzIHRvIHRoZSBtYXN0ZXJzIHRoYXQgYWNjZXNzIGEgcGFydGljdWxhciBzbGF2ZS4=" -entity switchesqsys_mm_interconnect_0_rsp_mux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ" -entity switchesqsys_mm_interconnect_0_rsp_mux_001 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys_nios2_processor" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_nios2_qsys -entity switchesqsys_nios2_processor -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys_nios2_processor -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys_nios2_processor -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME "c3dpdGNoZXNxc3lzX25pb3MyX3Byb2Nlc3Nvcg==" -entity switchesqsys_nios2_processor -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME "TmlvcyBJSSBQcm9jZXNzb3I=" -entity switchesqsys_nios2_processor -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity switchesqsys_nios2_processor -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity switchesqsys_nios2_processor -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity switchesqsys_nios2_processor -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity switchesqsys_nios2_processor -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DESCRIPTION QWx0ZXJhIE5pb3MgSUkgUHJvY2Vzc29y -entity switchesqsys_nios2_processor -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "ZGV2aWNlRmVhdHVyZXNTeXN0ZW1JbmZv::QUREUkVTU19TVEFMTCAxIEFEVkFOQ0VEX0lORk8gMCBBTExPV1NfQ09NUElMSU5HX09USEVSX0ZBTUlMWV9JUCAxIEFOWV9RRlAgMCBDRUxMX0xFVkVMX0JBQ0tfQU5OT1RBVElPTl9ESVNBQkxFRCAwIENPTVBJTEVSX1NVUFBPUlQgMSBEU1AgMCBEU1BfU0hJRlRFUl9CTE9DSyAwIERVTVBfQVNNX0xBQl9CSVRTX0ZPUl9QT1dFUiAwIEVNVUwgMSBFTkFCTEVfQURWQU5DRURfSU9fQU5BTFlTSVNfR1VJX0ZFQVRVUkVTIDEgRU5BQkxFX1BJTl9QTEFOTkVSIDAgRU5HSU5FRVJJTkdfU0FNUExFIDAgRVBDUyAxIEVTQiAwIEZBS0UxIDAgRkFLRTIgMCBGQUtFMyAwIEZBTUlMWV9MRVZFTF9JTlNUQUxMQVRJT05fT05MWSAwIEZBU1RFU1QgMCBGSU5BTF9USU1JTkdfTU9ERUwgMCBGSVRURVJfVVNFX0ZBTExJTkdfRURHRV9ERUxBWSAxIEdFTkVSQVRFX0RDX09OX0NVUlJFTlRfV0FSTklOR19GT1JfSU5URVJOQUxfQ0xBTVBJTkdfRElPREUgMSBIQVJEQ09QWSAwIEhBU18xOF9CSVRfTVVMVFMgMSBIQVNfQUNFX1NVUFBPUlQgMSBIQVNfQUNUSVZFX1BBUkFMTEVMX0ZMQVNIX1NVUFBPUlQgMCBIQVNfQURKVVNUQUJMRV9PVVRQVVRfSU9fVElNSU5HX01FQVNfUE9JTlQgMSBIQVNfQURWQU5DRURfSU9fSU5WRVJURURfQ09STkVSIDEgSEFTX0FEVkFOQ0VEX0lPX1BPV0VSX1NVUFBPUlQgMSBIQVNfQURWQU5DRURfSU9fVElNSU5HX1NVUFBPUlQgMSBIQVNfQUxNX1NVUFBPUlQgMSBIQVNfQVRPTV9BTkRfUk9VVElOR19QT1dFUl9NT0RFTEVEX1RPR0VUSEVSIDAgSEFTX0FVVE9fREVSSVZFX0NMT0NLX1VOQ0VSVEFJTlRZX1NVUFBPUlQgMSBIQVNfQVVUT19GSVRfU1VQUE9SVCAxIEhBU19CQUxBTkNFRF9PUFRfVEVDSE5JUVVFX1NVUFBPUlQgMSBIQVNfQkVORUZJQ0lBTF9TS0VXX1NVUFBPUlQgMCBIQVNfQklUTEVWRUxfRFJJVkVfU1RSRU5HVEhfQ09OVFJPTCAxIEhBU19CU0RMX0ZJTEVfR0VORVJBVElPTiAxIEhBU19DREJfUkVfTkVUV09SS19QUkVTRVJWQVRJT05fU1VQUE9SVCAwIEhBU19DR0FfU1VQUE9SVCAxIEhBU19DSEVDS19ORVRMSVNUX1NVUFBPUlQgMSBIQVNfQ0xPQ0tfUkVHSU9OX0NIRUNLRVJfRU5BQkxFRCAxIEhBU19DT1JFX0pVTkNUSU9OX1RFTVBfREVSQVRJTkcgMCBIQVNfQ1JPU1NUQUxLX1NVUFBPUlQgMCBIQVNfQ1VTVE9NX1JFR0lPTl9TVVBQT1JUIDEgSEFTX0RBUF9KVEFHX0ZST01fSFBTIDAgSEFTX0RBVEFfRFJJVkVOX0FDVlFfSFNTSV9TVVBQT1JUIDEgSEFTX0REQl9GRElfU1VQUE9SVCAxIEhBU19ERVNJR05fQU5BTFlaRVJfU1VQUE9SVCAxIEhBU19ERVRBSUxFRF9JT19SQUlMX1BPV0VSX01PREVMIDEgSEFTX0RFVEFJTEVEX0xFSU1fU1RBVElDX1BPV0VSX01PREVMIDAgSEFTX0RFVEFJTEVEX0xFX1BPV0VSX01PREVMIDEgSEFTX0RFVEFJTEVEX1JPVVRJTkdfTVVYX1NUQVRJQ19QT1dFUl9NT0RFTCAwIEhBU19ERVRBSUxFRF9USEVSTUFMX0NJUkNVSVRfUEFSQU1FVEVSX1NVUFBPUlQgMSBIQVNfREVWSUNFX01JR1JBVElPTl9TVVBQT1JUIDEgSEFTX0RJQUdPTkFMX01JR1JBVElPTl9TVVBQT1JUIDAgSEFTX0VNSUZfVE9PTEtJVF9TVVBQT1JUIDEgSEFTX0VSUk9SX0RFVEVDVElPTl9TVVBQT1JUIDEgSEFTX0ZBTUlMWV9WQVJJQU5UX01JR1JBVElPTl9TVVBQT1JUIDAgSEFTX0ZBTk9VVF9GUkVFX05PREVfU1VQUE9SVCAxIEhBU19GQVNUX0ZJVF9TVVBQT1JUIDEgSEFTX0ZJVFRFUl9FQVJMWV9USU1JTkdfRVNUSU1BVEVfU1VQUE9SVCAwIEhBU19GSVRURVJfRUNPX1NVUFBPUlQgMSBIQVNfRklUX05FVExJU1RfT1BUX1JFVElNRV9TVVBQT1JUIDEgSEFTX0ZJVF9ORVRMSVNUX09QVF9TVVBQT1JUIDEgSEFTX0ZPUk1BTF9WRVJJRklDQVRJT05fU1VQUE9SVCAxIEhBU19GUEdBX1hDSEFOR0VfU1VQUE9SVCAxIEhBU19GU0FDX0xVVFJBTV9SRUdJU1RFUl9QQUNLSU5HX1NVUFBPUlQgMSBIQVNfRlVMTF9EQVRfTUlOX1RJTUlOR19TVVBQT1JUIDEgSEFTX0ZVTExfSU5DUkVNRU5UQUxfREVTSUdOX1NVUFBPUlQgMSBIQVNfRlVOQ1RJT05BTF9TSU1VTEFUSU9OX1NVUFBPUlQgMCBIQVNfRlVOQ1RJT05BTF9WRVJJTE9HX1NJTVVMQVRJT05fU1VQUE9SVCAxIEhBU19GVU5DVElPTkFMX1ZIRExfU0lNVUxBVElPTl9TVVBQT1JUIDEgSEFTX0dMSVRDSF9GSUxURVJJTkdfU1VQUE9SVCAxIEhBU19IQVJEQ09QWUlJX1NVUFBPUlQgMCBIQVNfSENfUkVBRFlfU1VQUE9SVCAwIEhBU19ISUdIX1NQRUVEX0xPV19QT1dFUl9USUxFX1NVUFBPUlQgMCBIQVNfSE9MRF9USU1FX0FWT0lEQU5DRV9BQ1JPU1NfQ0xPQ0tfU1BJTkVfU1VQUE9SVCAxIEhBU19IU1BJQ0VfV1JJVEVSX1NVUFBPUlQgMSBIQVNfSFNTSV9QT1dFUl9DQUxDVUxBVE9SIDEgSEFTX0lCSVNPX1dSSVRFUl9TVVBQT1JUIDAgSEFTX0lDRF9EQVRBX0lQIDAgSEFTX0lOQ1JFTUVOVEFMX0RBVF9TVVBQT1JUIDEgSEFTX0lOQ1JFTUVOVEFMX1NZTlRIRVNJU19TVVBQT1JUIDEgSEFTX0lOVEVSRkFDRV9QTEFOTkVSX1NVUFBPUlQgMCBIQVNfSU9fQVNTSUdOTUVOVF9BTkFMWVNJU19TVVBQT1JUIDEgSEFTX0lPX0RFQ09ERVIgMSBIQVNfSU9fUExBQ0VNRU5UX09QVElNSVpBVElPTl9TVVBQT1JUIDEgSEFTX0lPX1NNQVJUX1JFQ09NUElMRV9TVVBQT1JUIDAgSEFTX0pJVFRFUl9TVVBQT1JUIDEgSEFTX0pUQUdfU0xEX0hVQl9TVVBQT1JUIDEgSEFTX0xJTUlURURfVENMX0ZJVFRFUl9TVVBQT1JUIDEgSEFTX0xPR0lDQUxfRkxPT1JQTEFOTkVSX1NVUFBPUlQgMCBIQVNfTE9HSUNfTE9DS19TVVBQT1JUIDEgSEFTX01JQ1JPUFJPQ0VTU09SIDAgSEFTX01JRl9TTUFSVF9DT01QSUxFX1NVUFBPUlQgMSBIQVNfTUlOTUFYX1RJTUlOR19NT0RFTElOR19TVVBQT1JUIDEgSEFTX01JTl9USU1JTkdfQU5BTFlTSVNfU1VQUE9SVCAxIEhBU19NVVhfUkVTVFJVQ1RVUkVfU1VQUE9SVCAxIEhBU19ORVdfSENfRkxPV19TVVBQT1JUIDAgSEFTX05FV19TRVJERVNfTUFYX1JFU09VUkNFX0NPVU5UX1JFUE9SVElOR19TVVBQT1JUIDAgSEFTX05FV19WUFJfU1VQUE9SVCAxIEhBU19OT05TT0NLRVRfVEVDSE5PTE9HWV9NSUdSQVRJT05fU1VQUE9SVCAwIEhBU19OT19IQVJEQkxPQ0tfUEFSVElUSU9OX1NVUFBPUlQgMCBIQVNfTk9fSlRBR19VU0VSQ09ERV9TVVBQT1JUIDAgSEFTX09QRVJBVElOR19TRVRUSU5HU19BTkRfQ09ORElUSU9OU19SRVBPUlRJTkdfU1VQUE9SVCAxIEhBU19QQURfTE9DQVRJT05fQVNTSUdOTUVOVF9TVVBQT1JUIDAgSEFTX1BBUlRJQUxfUkVDT05GSUdfU1VQUE9SVCAxIEhBU19QQVNTSVZFX1BBUkFMTEVMX1NVUFBPUlQgMCBIQVNfUEhZU0lDQUxfREVTSUdOX1BMQU5ORVJfU1VQUE9SVCAwIEhBU19QSFlTSUNBTF9ORVRMSVNUX09VVFBVVCAwIEhBU19QSFlTSUNBTF9ST1VUSU5HX1NVUFBPUlQgMSBIQVNfUElOX1NQRUNJRklDX1ZPTFRBR0VfU1VQUE9SVCAxIEhBU19QTERNX1JFRl9TVVBQT1JUIDAgSEFTX1BPV0VSX0JJTk5JTkdfTElNSVRTX0RBVEEgMSBIQVNfUE9XRVJfRVNUSU1BVElPTl9TVVBQT1JUIDEgSEFTX1BSRUxJTUlOQVJZX0NMT0NLX1VOQ0VSVEFJTlRZX05VTUJFUlMgMCBIQVNfUFJFX0ZJVFRFUl9GUFBfU1VQUE9SVCAxIEhBU19QUkVfRklUVEVSX0xVVFJBTV9ORVRMSVNUX0NIRUNLRVJfRU5BQkxFRCAxIEhBU19QVkFfU1VQUE9SVCAxIEhBU19SQVBJRF9SRUNPTVBJTEVfU1VQUE9SVCAxIEhBU19SQ0ZfU1VQUE9SVCAxIEhBU19SQ0ZfU1VQUE9SVF9GT1JfREVCVUdHSU5HIDAgSEFTX1JFRF9CTEFDS19TRVBBUkFUSU9OX1NVUFBPUlQgMCBIQVNfUkVfTEVWRUxfVElNSU5HX0dSQVBIX1NVUFBPUlQgMSBIQVNfUklTRUZBTExfREVMQVlfU1VQUE9SVCAxIEhBU19TSUdOQUxfUFJPQkVfU1VQUE9SVCAxIEhBU19TSUdOQUxfVEFQX1NVUFBPUlQgMSBIQVNfU0lNVUxBVE9SX1NVUFBPUlQgMCBIQVNfU1BMSVRfSU9fU1VQUE9SVCAxIEhBU19TUExJVF9MQ19TVVBQT1JUIDEgSEFTX1NUUklDVF9QUkVTRVJWQVRJT05fU1VQUE9SVCAxIEhBU19TWU5USF9GU1lOX05FVExJU1RfT1BUX1NVUFBPUlQgMSBIQVNfU1lOVEhfTkVUTElTVF9PUFRfUkVUSU1FX1NVUFBPUlQgMCBIQVNfU1lOVEhfTkVUTElTVF9PUFRfU1VQUE9SVCAxIEhBU19UQ0xfRklUVEVSX1NVUFBPUlQgMCBIQVNfVEVDSE5PTE9HWV9NSUdSQVRJT05fU1VQUE9SVCAwIEhBU19URU1QTEFURURfUkVHSVNURVJfUEFDS0lOR19TVVBQT1JUIDEgSEFTX1RJTUVfQk9SUk9XSU5HX1NVUFBPUlQgMCBIQVNfVElNSU5HX0RSSVZFTl9TWU5USEVTSVNfU1VQUE9SVCAxIEhBU19USU1JTkdfSU5GT19TVVBQT1JUIDEgSEFTX1RJTUlOR19PUEVSQVRJTkdfQ09ORElUSU9OUyAxIEhBU19USU1JTkdfU0lNVUxBVElPTl9TVVBQT1JUIDAgSEFTX1RJVEFOX0JBU0VEX01BQ19SRUdJU1RFUl9QQUNLRVJfU1VQUE9SVCAxIEhBU19VMkIyX1NVUFBPUlQgMCBIQVNfVVNFUl9ISUdIX1NQRUVEX0xPV19QT1dFUl9USUxFX1NVUFBPUlQgMCBIQVNfVVNFX0ZJVFRFUl9JTkZPX1NVUFBPUlQgMCBIQVNfVkNDUERfUE9XRVJfUkFJTCAxIEhBU19WRVJUSUNBTF9NSUdSQVRJT05fU1VQUE9SVCAxIEhBU19WSUVXRFJBV19TWU1CT0xfU1VQUE9SVCAwIEhBU19WSU9fU1VQUE9SVCAxIEhBU19WSVJUVUFMX0RFVklDRVMgMCBIQVNfV1lTSVdZR19ERkZFQVNfU1VQUE9SVCAxIEhBU19YSUJJU09fV1JJVEVSX1NVUFBPUlQgMSBJRlBfVVNFX0xFR0FDWV9JT19DSEVDS0VSIDEgSU5DUkVNRU5UQUxfREVTSUdOX1NVUFBPUlRTX0NPTVBBVElCTEVfQ09OU1RSQUlOVFMgMCBJTlNUQUxMRUQgMCBJTlRFUk5BTF9QT0ZfU1VQUE9SVF9FTkFCTEVEIDAgSU5URVJOQUxfVVNFX09OTFkgMCBJU1NVRV9NSUxJVEFSWV9URU1QRVJBVFVSRV9XQVJOSU5HIDAgSVNfQ09ORklHX1JPTSAwIElTX0RFRkFVTFRfRkFNSUxZIDAgSVNfSEFSRENPUFlfRkFNSUxZIDAgSVNfSEJHQV9QQUNLQUdFIDAgSVNfSElHSF9DVVJSRU5UX1BBUlQgMCBJU19MT1dfUE9XRVJfUEFSVCAwIElTX1NETV9PTkxZX1BBQ0tBR0UgMCBMVkRTX0lPIDEgTTEwS19NRU1PUlkgMSBNMTQ0S19NRU1PUlkgMCBNMjBLX01FTU9SWSAwIE00S19NRU1PUlkgMCBNNTEyX01FTU9SWSAwIE05S19NRU1PUlkgMCBNTEFCX01FTU9SWSAxIE1SQU1fTUVNT1JZIDAgTk9UX0xJU1RFRCAwIE5PVF9NSUdSQVRBQkxFIDAgTk9fRklUVEVSX0RFTEFZX0NBQ0hFX0dFTkVSQVRFRCAwIE5PX1BJTl9PVVQgMCBOT19QT0YgMCBOT19SUEVfU1VQUE9SVCAwIE5PX1NVUFBPUlRfRk9SX0xPR0lDTE9DS19DT05URU5UX0JBQ0tfQU5OT1RBVElPTiAxIE5PX1NVUFBPUlRfRk9SX1NUQV9DTE9DS19VTkNFUlRBSU5UWV9DSEVDSyAwIE5PX1REQ19TVVBQT1JUIDAgUE9TVEZJVF9CQUtfREFUQUJBU0VfRVhQT1JUX0VOQUJMRUQgMSBQT1NUTUFQX0JBS19EQVRBQkFTRV9FWFBPUlRfRU5BQkxFRCAxIFBST0dSQU1NRVJfU1VQUE9SVCAxIFBWQV9TVVBQT1JUU19PTkxZX1NVQlNFVF9PRl9BVE9NUyAwIFFGSVRfSU5fREVWRUxPUE1FTlQgMCBRTUFQX0lOX0RFVkVMT1BNRU5UIDAgUkFNX0xPR0lDQUxfTkFNRV9DSEVDS0lOR19JTl9DVVRfRU5BQkxFRCAxIFJFUE9SVFNfTUVUQVNUQUJJTElUWV9NVEJGIDEgUkVRVUlSRVNfSU5TVEFMTEFUSU9OX1BBVENIIDAgUkVRVUlSRVNfTElTVF9PRl9URU1QRVJBVFVSRV9BTkRfVk9MVEFHRV9PUEVSQVRJTkdfQ09ORElUSU9OUyAxIFJFU0VSVkVTX1NJR05BTF9QUk9CRV9QSU5TIDAgUkVTT0xWRV9NQVhfRkFOT1VUX0VBUkxZIDEgUkVTT0xWRV9NQVhfRkFOT1VUX0xBVEUgMCBSRVNQRUNUU19GSVhFRF9TSVpFRF9MT0NLRURfTE9DQVRJT05fTE9HSUNMT0NLIDEgUkVTVFJJQ1RFRF9VU0VSX1NFTEVDVElPTiAwIFJJU0VGQUxMX1NVUFBPUlRfSVNfSElEREVOIDAgU0hPV19ISURERU5fRkFNSUxZX0lOX1BST0dSQU1NRVIgMCBTVFJJQ1RfVElNSU5HX0RCX0NIRUNLUyAwIFNVUFBPUlRTX0FERElUSU9OQUxfT1BUSU9OU19GT1JfVU5VU0VEX0lPIDEgU1VQUE9SVFNfQ1JDIDEgU1VQUE9SVFNfRElGRkVSRU5USUFMX0FJT1RfQk9BUkRfVFJBQ0VfTU9ERUwgMSBTVVBQT1JUU19EU1BfQkFMQU5DSU5HX0JBQ0tfQU5OT1RBVElPTiAwIFNVUFBPUlRTX0dFTkVSQVRJT05fT0ZfRUFSTFlfUE9XRVJfRVNUSU1BVE9SX0ZJTEUgMSBTVVBQT1JUU19HTE9CQUxfU0lHTkFMX0JBQ0tfQU5OT1RBVElPTiAxIFNVUFBPUlRTX0hJUElfUkVUSU1JTkcgMCBTVVBQT1JUU19NQUNfQ0hBSU5fT1VUX0FEREVSIDEgU1VQUE9SVFNfUkFNX1BBQ0tJTkdfQkFDS19BTk5PVEFUSU9OIDAgU1VQUE9SVFNfUkVHX1BBQ0tJTkdfQkFDS19BTk5PVEFUSU9OIDAgU1VQUE9SVFNfU0lHTkFMUFJPQkVfUkVHSVNURVJfUElQRUxJTklORyAxIFNVUFBPUlRTX1NJTkdMRV9FTkRFRF9BSU9UX0JPQVJEX1RSQUNFX01PREVMIDEgU1VQUE9SVFNfVVNFUl9NQU5VQUxfTE9HSUNfRFVQTElDQVRJT04gMSBUTVZfUlVOX0NVU1RPTUlaQUJMRV9WSUVXRVIgMSBUTVZfUlVOX0lOVEVSTkFMX0RFVEFJTFMgMSBUTVZfUlVOX0lOVEVSTkFMX0RFVEFJTFNfT05fSU8gMCBUTVZfUlVOX0lOVEVSTkFMX0RFVEFJTFNfT05fSU9CVUYgMSBUTVZfUlVOX0lOVEVSTkFMX0RFVEFJTFNfT05fTENFTEwgMCBUTVZfUlVOX0lOVEVSTkFMX0RFVEFJTFNfT05fTFJBTSAwIFRSQU5TQ0VJVkVSXzNHX0JMT0NLIDEgVFJBTlNDRUlWRVJfNkdfQkxPQ0sgMSBVU0VTX0FDVl9GT1JfRkxFRCAxIFVTRVNfQURCX0ZPUl9CQUNLX0FOTk9UQVRJT04gMSBVU0VTX0FMVEVSQV9MTlNJTSAwIFVTRVNfQVNJQ19ST1VUSU5HX1BPV0VSX0NBTENVTEFUT1IgMCBVU0VTX0RBVEFfRFJJVkVOX1BMTF9DT01QVVRBVElPTl9VVElMIDEgVVNFU19ERVYgMSBVU0VTX0lDUF9GT1JfRUNPX0ZJVFRFUiAwIFVTRVNfTElCRVJUWV9USU1JTkcgMCBVU0VTX05FVFdPUktfUk9VVElOR19QT1dFUl9DQUxDVUxBVE9SIDAgVVNFU19QT1dFUl9TSUdOQUxfQUNUSVZJVElFUyAxIFVTRVNfUFZBRkFNMiAwIFVTRVNfVEhJUkRfR0VORVJBVElPTl9USU1JTkdfTU9ERUxTX1RJUyAxIFVTRVNfVTJCMl9USU1JTkdfTU9ERUxTIDAgVVNFU19YTUxfRk9STUFUX0ZPUl9FTUlGX1BJTl9NQVBfRklMRSAwIFVTRV9BRFZBTkNFRF9JT19QT1dFUl9CWV9ERUZBVUxUIDEgVVNFX0FEVkFOQ0VEX0lPX1RJTUlOR19CWV9ERUZBVUxUIDEgVVNFX0JBU0VfRkFNSUxZX0REQl9QQVRIIDAgVVNFX09DVF9BVVRPX0NBTElCUkFUSU9OIDEgVVNFX1JFTEFYX0lPX0FTU0lHTk1FTlRfUlVMRVMgMCBVU0VfUklTRUZBTExfT05MWSAxIFVTRV9TRVBBUkFURV9MSVNUX0ZPUl9URUNIX01JR1JBVElPTiAwIFVTRV9TSU5HTEVfQ09NUElMRVJfUEFTU19QTExfTUlGX0ZJTEVfV1JJVEVSIDEgVVNFX1RJVEFOX0lPX0JBU0VEX0lPX1JFR0lTVEVSX1BBQ0tFUl9VVElMIDEgVVNJTkdfMjhOTV9PUl9PTERFUl9USU1JTkdfTUVUSE9ET0xPR1kgMSBXWVNJV1lHX0JVU19XSURUSF9DSEVDS0lOR19JTl9DVVRfRU5BQkxFRCAx::ZGV2aWNlRmVhdHVyZXNTeXN0ZW1JbmZv" -entity switchesqsys_nios2_processor -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys_onchip_memory" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_avalon_onchip_memory2 -entity switchesqsys_onchip_memory -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys_onchip_memory -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys_onchip_memory -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME "c3dpdGNoZXNxc3lzX29uY2hpcF9tZW1vcnk=" -entity switchesqsys_onchip_memory -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME T24tQ2hpcCBNZW1vcnkgKFJBTSBvciBST00p -entity switchesqsys_onchip_memory -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity switchesqsys_onchip_memory -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity switchesqsys_onchip_memory -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity switchesqsys_onchip_memory -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity switchesqsys_onchip_memory -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9pbml0X2ZpbGVfbmFtZQ==::c3dpdGNoZXNxc3lzX29uY2hpcF9tZW1vcnkuaGV4::ZGVyaXZlZF9pbml0X2ZpbGVfbmFtZQ==" -entity switchesqsys_onchip_memory -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys_outSignal" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_avalon_pio -entity switchesqsys_outSignal -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys_outSignal -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys_outSignal -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME "c3dpdGNoZXNxc3lzX291dFNpZ25hbA==" -entity switchesqsys_outSignal -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME UElPIChQYXJhbGxlbCBJL08p -entity switchesqsys_outSignal -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity switchesqsys_outSignal -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity switchesqsys_outSignal -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity switchesqsys_outSignal -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity switchesqsys_outSignal -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9oYXNfaXJx::ZmFsc2U=::ZGVyaXZlZF9oYXNfaXJx" -entity switchesqsys_outSignal -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys_readyToDownload1" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_avalon_pio -entity switchesqsys_readyToDownload1 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys_readyToDownload1 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys_readyToDownload1 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME "c3dpdGNoZXNxc3lzX3JlYWR5VG9Eb3dubG9hZDE=" -entity switchesqsys_readyToDownload1 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME UElPIChQYXJhbGxlbCBJL08p -entity switchesqsys_readyToDownload1 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity switchesqsys_readyToDownload1 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity switchesqsys_readyToDownload1 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity switchesqsys_readyToDownload1 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity switchesqsys_readyToDownload1 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9oYXNfaXJx::ZmFsc2U=::ZGVyaXZlZF9oYXNfaXJx" -entity switchesqsys_readyToDownload1 -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+Warning (20013): Ignored assignments for entity "switchesqsys_switches" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_avalon_pio -entity switchesqsys_switches -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 14.0 -entity switchesqsys_switches -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity switchesqsys_switches -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_NAME c3dpdGNoZXNxc3lzX3N3aXRjaGVz -entity switchesqsys_switches -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_DISPLAY_NAME UElPIChQYXJhbGxlbCBJL08p -entity switchesqsys_switches -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_REPORT_HIERARCHY OFF -entity switchesqsys_switches -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_INTERNAL OFF -entity switchesqsys_switches -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_AUTHOR QWx0ZXJhIENvcnBvcmF0aW9u -entity switchesqsys_switches -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_VERSION "MTQuMA==" -entity switchesqsys_switches -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9oYXNfaXJx::ZmFsc2U=::ZGVyaXZlZF9oYXNfaXJx" -entity switchesqsys_switches -qip ../Lab4/qsys_tutorial/nios_system/synthesis/switchesqsys.qip -library switchesqsys was ignored
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Info (334003): Started post-fitting delay annotation
-Info (334004): Delay annotation completed successfully
 Info (332164): Evaluating HDL-embedded SDC commands
     Info (332165): Entity sld_jtag_hub
         Info (332166): create_clock -name altera_reserved_tck [get_ports {altera_reserved_tck}] -period 30MHz   
         Info (332166): if { [string equal quartus_fit $::TimeQuestInfo(nameofexecutable)] } { set_max_delay -to [get_ports { altera_reserved_tdo } ] 0 }
         Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
+Info (332104): Reading SDC File: '../Lab4/qsys_tutorial/nios_system/synthesis/submodules/altera_reset_controller.sdc'
+Info (332104): Reading SDC File: '../Lab4/qsys_tutorial/nios_system/synthesis/submodules/switchesqsys_nios2_processor.sdc'
 Info (332104): Reading SDC File: 'DE1_SoC.sdc'
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
-Info (332146): Worst-case setup slack is 10.311
+Info (332146): Worst-case setup slack is 10.820
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    10.311               0.000 altera_reserved_tck 
-    Info (332119):    15.082               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.281
+    Info (332119):    10.820               0.000 altera_reserved_tck 
+    Info (332119):    16.429               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.367
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.281               0.000 altera_reserved_tck 
-    Info (332119):     0.390               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is 14.327
+    Info (332119):     0.367               0.000 altera_reserved_tck 
+    Info (332119):     0.648               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is 14.893
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    14.327               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.589
+    Info (332119):    14.893               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.922
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.589               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 8.623
+    Info (332119):     0.922               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 8.678
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.623               0.000 CLOCK_50 
-    Info (332119):    14.867               0.000 altera_reserved_tck 
+    Info (332119):     8.678               0.000 CLOCK_50 
+    Info (332119):    14.822               0.000 altera_reserved_tck 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 10.557
+Info (332146): Worst-case setup slack is 11.030
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    10.557               0.000 altera_reserved_tck 
-    Info (332119):    15.167               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.302
+    Info (332119):    11.030               0.000 altera_reserved_tck 
+    Info (332119):    16.397               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.351
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.302               0.000 altera_reserved_tck 
-    Info (332119):     0.408               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is 14.464
+    Info (332119):     0.351               0.000 altera_reserved_tck 
+    Info (332119):     0.526               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is 15.008
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    14.464               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.551
+    Info (332119):    15.008               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.844
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.551               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 8.586
+    Info (332119):     0.844               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 8.687
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.586               0.000 CLOCK_50 
-    Info (332119):    14.825               0.000 altera_reserved_tck 
+    Info (332119):     8.687               0.000 CLOCK_50 
+    Info (332119):    14.792               0.000 altera_reserved_tck 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 13.061
+Info (332146): Worst-case setup slack is 13.461
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    13.061               0.000 altera_reserved_tck 
-    Info (332119):    16.683               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.075
+    Info (332119):    13.461               0.000 altera_reserved_tck 
+    Info (332119):    17.773               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.132
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.075               0.000 altera_reserved_tck 
-    Info (332119):     0.188               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is 15.565
+    Info (332119):     0.132               0.000 altera_reserved_tck 
+    Info (332119):     0.271               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is 15.976
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    15.565               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.248
+    Info (332119):    15.976               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.489
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.248               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 8.579
+    Info (332119):     0.489               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 8.652
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.579               0.000 CLOCK_50 
-    Info (332119):    14.524               0.000 altera_reserved_tck 
+    Info (332119):     8.652               0.000 CLOCK_50 
+    Info (332119):    14.570               0.000 altera_reserved_tck 
 Info: Analyzing Fast 1100mV 0C Model
-Info (334003): Started post-fitting delay annotation
-Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 13.551
+Info (332146): Worst-case setup slack is 13.888
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    13.551               0.000 altera_reserved_tck 
-    Info (332119):    17.005               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.064
+    Info (332119):    13.888               0.000 altera_reserved_tck 
+    Info (332119):    17.911               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.106
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.064               0.000 altera_reserved_tck 
-    Info (332119):     0.179               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is 15.797
+    Info (332119):     0.106               0.000 altera_reserved_tck 
+    Info (332119):     0.298               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is 16.149
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    15.797               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.216
+    Info (332119):    16.149               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.434
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.216               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 8.560
+    Info (332119):     0.434               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 8.656
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.560               0.000 CLOCK_50 
-    Info (332119):    14.520               0.000 altera_reserved_tck 
+    Info (332119):     8.656               0.000 CLOCK_50 
+    Info (332119):    14.574               0.000 altera_reserved_tck 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info (144001): Generated suppressed messages file C:/Users/zachn/Documents/nightmares/Lab 3/output_files/DE1_SoC.sta.smsg
-Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 1046 megabytes
-    Info: Processing ended: Tue May 05 16:26:19 2015
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:33
+Info (144001): Generated suppressed messages file C:/Users/klholden/Documents/nightmares/Lab 3/output_files/DE1_SoC.sta.smsg
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 319 warnings
+    Info: Peak virtual memory: 1025 megabytes
+    Info: Processing ended: Tue May 19 16:28:59 2015
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:22
 
 
 +-----------------------------------------------+
 ; TimeQuest Timing Analyzer Suppressed Messages ;
 +-----------------------------------------------+
-The suppressed messages can be found in C:/Users/zachn/Documents/nightmares/Lab 3/output_files/DE1_SoC.sta.smsg.
+The suppressed messages can be found in C:/Users/klholden/Documents/nightmares/Lab 3/output_files/DE1_SoC.sta.smsg.
 
 

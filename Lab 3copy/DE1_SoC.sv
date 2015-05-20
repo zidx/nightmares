@@ -141,15 +141,15 @@ module DE1_SoC (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	 Buffer  buf1 (clock, resetUI, emptyBuffer1, percentCamera1, percentCamera1, curByte1);
 	 Buffer  buf2 (clock, resetUI, emptyBuffer2, percentCamera2, percentCamera2, curByte2);
 	 
-	 wire[7:0]nothing;
+	 reg[7:0] nothing1, nothing2;
 	 wire[7:0] curByte1, curbyte2;
 	 reg[2:0] microControllerOut;
 	 
     switchesqsys u0 (
         .clk_clk                 (clock),                 //              clk.clk
         .reset_reset_n           (SW[5]),           //            reset.reset_n
-        .switches_export         (nothing),         //         switches.export
-        .leds_export             (nothing),             //             leds.export
+        .switches_export         (nothing1),         //         switches.export
+        .leds_export             (nothing2),             //             leds.export
         .readytodownload1_export (readyTodownload1), // readytodownload1.export
         .outsignal_export        (microControllerOut),        //        outsignal.export
         .curbyte1_export         (curByte1),         //         curbyte1.export

@@ -1,5 +1,5 @@
 Flow report for DE1_SoC
-Tue May 19 14:52:50 2015
+Tue May 19 18:36:40 2015
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Full Version
 
 
@@ -41,15 +41,15 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue May 19 14:52:50 2015       ;
+; Flow Status                     ; Successful - Tue May 19 18:36:40 2015       ;
 ; Quartus II 64-Bit Version       ; 14.0.0 Build 200 06/17/2014 SJ Full Version ;
 ; Revision Name                   ; DE1_SoC                                     ;
 ; Top-level Entity Name           ; DE1_SoC                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1,164 / 32,070 ( 4 % )                      ;
-; Total registers                 ; 1681                                        ;
+; Logic utilization (in ALMs)     ; 1,159 / 32,070 ( 4 % )                      ;
+; Total registers                 ; 1660                                        ;
 ; Total pins                      ; 67 / 457 ( 15 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 1,354,792 / 4,065,280 ( 33 % )              ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/19/2015 14:49:52 ;
+; Start date & time ; 05/19/2015 18:33:43 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE1_SoC             ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+-------------------------------------------------------+---------------+-------------+----------------------------------------+
 ; Assignment Name                     ; Value                                                 ; Default Value ; Entity Name ; Section Id                             ;
 +-------------------------------------+-------------------------------------------------------+---------------+-------------+----------------------------------------+
-; COMPILER_SIGNATURE_ID               ; 91758288366.143207219207560                           ; --            ; --          ; --                                     ;
+; COMPILER_SIGNATURE_ID               ; 91770741814.143208562306904                           ; --            ; --          ; --                                     ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                                     ; --            ; --          ; eda_simulation                         ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)                       ; <None>        ; --          ; --                                     ;
 ; ENABLE_SIGNALTAP                    ; On                                                    ; --            ; --          ; --                                     ;
@@ -126,12 +126,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:53     ; 1.0                     ; 781 MB              ; 00:00:40                           ;
-; Fitter                    ; 00:01:19     ; 2.2                     ; 2319 MB             ; 00:02:07                           ;
-; Assembler                 ; 00:00:13     ; 1.0                     ; 693 MB              ; 00:00:13                           ;
-; TimeQuest Timing Analyzer ; 00:00:19     ; 1.6                     ; 1067 MB             ; 00:00:31                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 630 MB              ; 00:00:02                           ;
-; Total                     ; 00:02:46     ; --                      ; --                  ; 00:03:33                           ;
+; Analysis & Synthesis      ; 00:00:51     ; 1.0                     ; 791 MB              ; 00:00:39                           ;
+; Fitter                    ; 00:01:18     ; 2.2                     ; 2229 MB             ; 00:02:14                           ;
+; Assembler                 ; 00:00:14     ; 1.0                     ; 706 MB              ; 00:00:14                           ;
+; TimeQuest Timing Analyzer ; 00:00:21     ; 1.8                     ; 1074 MB             ; 00:00:34                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 622 MB              ; 00:00:03                           ;
+; Total                     ; 00:02:46     ; --                      ; --                  ; 00:03:44                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -140,11 +140,11 @@ agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; EE-137PC03       ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; EE-137PC03       ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; EE-137PC03       ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; EE-137PC03       ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; EE-137PC03       ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; EE-137PC02       ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

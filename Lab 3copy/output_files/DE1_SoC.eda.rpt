@@ -1,5 +1,5 @@
 EDA Netlist Writer report for DE1_SoC
-Tue May 19 14:52:50 2015
+Tue May 19 18:36:40 2015
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Full Version
 
 
@@ -37,7 +37,7 @@ agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue May 19 14:52:50 2015 ;
+; EDA Netlist Writer Status ; Successful - Tue May 19 18:36:40 2015 ;
 ; Revision Name             ; DE1_SoC                               ;
 ; Top-level Entity Name     ; DE1_SoC                               ;
 ; Family                    ; Cyclone V                             ;
@@ -67,13 +67,13 @@ agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------------+
 
 
-+---------------------------------------------------------------------------------+
-; Simulation Generated Files                                                      ;
-+---------------------------------------------------------------------------------+
-; Generated Files                                                                 ;
-+---------------------------------------------------------------------------------+
-; C:/Users/codyohl/Documents/nightmares/Lab 3copy/simulation/modelsim/DE1_SoC.svo ;
-+---------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Simulation Generated Files                                                       ;
++----------------------------------------------------------------------------------+
+; Generated Files                                                                  ;
++----------------------------------------------------------------------------------+
+; C:/Users/klholden/Documents/nightmares/Lab 3copy/simulation/modelsim/DE1_SoC.svo ;
++----------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -82,12 +82,12 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Full Version
-    Info: Processing started: Tue May 19 14:52:48 2015
+    Info: Processing started: Tue May 19 18:36:38 2015
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off DE1_SoC -c DE1_SoC
-Info (204019): Generated file DE1_SoC.svo in folder "C:/Users/codyohl/Documents/nightmares/Lab 3copy/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file DE1_SoC.svo in folder "C:/Users/klholden/Documents/nightmares/Lab 3copy/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 630 megabytes
-    Info: Processing ended: Tue May 19 14:52:50 2015
+    Info: Peak virtual memory: 622 megabytes
+    Info: Processing ended: Tue May 19 18:36:40 2015
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:03
 

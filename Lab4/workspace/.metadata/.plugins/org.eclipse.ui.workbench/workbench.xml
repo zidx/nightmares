@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="36" version="2.0">
+<workbench progressCount="29" version="2.0">
 <workbenchAdvisor/>
-<window height="1160" width="1315" x="0" y="0">
+<window height="953" width="1315" x="113" y="112">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -13,13 +13,13 @@
 <coolItem id="org.eclipse.cdt.ui.CElementCreationActionSet" itemType="typeToolBarContribution" x="167" y="22"/>
 <coolItem id="org.eclipse.cdt.ui.buildConfigActionSet" itemType="typeToolBarContribution" x="89" y="22"/>
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="129" y="22"/>
-<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="99" y="22"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="61" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -28,31 +28,10 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" partName="hello_world_small.c" path="C:/Users/codyohl/Documents/nightmares/Lab4/qsys_tutorial/software/hello_world_small/hello_world_small.c" title="hello_world_small.c" tooltip="hello_world_small/hello_world_small.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/hello_world_small/hello_world_small.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3974" selectionTopPixel="1052"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" partName="hello_world_small.c" path="C:/Users/codyohl/Documents/nightmares/Lab4/qsys_tutorial/software/lightsAndSwitches/hello_world_small.c" title="hello_world_small.c" tooltip="lightsAndSwitches/hello_world_small.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/lightsAndSwitches/hello_world_small.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="17" selectionOffset="3726" selectionTopPixel="819"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="count_binary.h" partName="count_binary.h" path="C:/Users/codyohl/Documents/nightmares/Lab4/niosII_hw_dev_tutorial/software/count_binary/count_binary.h" title="count_binary.h" tooltip="count_binary/count_binary.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/count_binary/count_binary.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="186"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" partName="hello_world_small.c" path="C:/Users/codyohl/Documents/nightmares/Lab4/qsys_tutorial/software/lab4/hello_world_small.c" title="hello_world_small.c" tooltip="lab4/hello_world_small.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/lab4/hello_world_small.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="848"/>
-</editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
@@ -68,8 +47,7 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings"/>
-<category IMemento.internal.id="Errors"/>
+<category IMemento.internal.id="Errors (2 items)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="455"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -88,7 +66,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.navigator.ProjectExplorer" activePerspective="com.altera.sbtgui.ui.cPerspective">
+<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="com.altera.sbtgui.ui.cPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.cdt.internal.ui.CPerspectiveFactory" id="org.eclipse.cdt.ui.CPerspective" label="C/C++"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -292,168 +270,7 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory>
-<editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world_small/hello_world_small.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lightsAndSwitches/hello_world_small.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/count_binary/count_binary.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/count_binary/count_binary.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world_small/hello_world_small.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/count_binary/count_binary.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/count_binary/count_binary.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab4/hello_world_small.c"/>
-</editors>
-<item historyLabel="hello_world_small.c" index="1">
-<position/>
-</item>
-<item historyLabel="hello_world_small.c" index="1">
-<position info="not_deleted" x="3836" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="1">
-<position/>
-</item>
-<item historyLabel="hello_world_small.c" index="1">
-<position info="not_deleted" x="3983" y="4"/>
-</item>
-<item historyLabel="count_binary.c" index="2">
-<position info="not_deleted" x="7912" y="0"/>
-</item>
-<item historyLabel="count_binary.h" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="count_binary.c" index="2">
-<position info="not_deleted" x="7910" y="12"/>
-</item>
-<item historyLabel="hello_world_small.c" index="1">
-<position info="not_deleted" x="3983" y="4"/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position info="not_deleted" x="3611" y="10"/>
-</item>
-<item historyLabel="count_binary.c" index="2">
-<position info="not_deleted" x="13245" y="15"/>
-</item>
-<item historyLabel="count_binary.h" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="count_binary.c" index="2">
-<position info="not_deleted" x="7910" y="12"/>
-</item>
-<item historyLabel="hello_world_small.c" index="1">
-<position info="not_deleted" x="3983" y="4"/>
-</item>
-<item historyLabel="count_binary.h" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="count_binary.c" index="2">
-<position info="not_deleted" x="7910" y="12"/>
-</item>
-<item historyLabel="hello_world_small.c" index="1">
-<position info="not_deleted" x="3983" y="4"/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position info="not_deleted" x="3611" y="10"/>
-</item>
-<item historyLabel="hello_world_small.c" index="1">
-<position info="not_deleted" x="3663" y="1"/>
-</item>
-<item historyLabel="count_binary.h" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="count_binary.c" index="2">
-<position info="not_deleted" x="7910" y="12"/>
-</item>
-<item historyLabel="count_binary.c" index="2">
-<position info="not_deleted" x="1427" y="0"/>
-</item>
-<item historyLabel="count_binary.h" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="count_binary.c" index="2">
-<position info="not_deleted" x="7928" y="25"/>
-</item>
-<item historyLabel="hello_world_small.c" index="1">
-<position info="not_deleted" x="3663" y="1"/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position info="not_deleted" x="3611" y="10"/>
-</item>
-<item historyLabel="hello_world_small.c" index="1">
-<position info="not_deleted" x="3865" y="0"/>
-</item>
-<item historyLabel="count_binary.c" index="2">
-<position info="not_deleted" x="8115" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="1">
-<position info="not_deleted" x="3865" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="4">
-<position info="not_deleted" x="3976" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="1">
-<position info="not_deleted" x="3612" y="86"/>
-</item>
-<item historyLabel="hello_world_small.c" index="4">
-<position info="not_deleted" x="3976" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="4">
-<position info="not_deleted" x="3976" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="4">
-<position info="not_deleted" x="3796" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="4">
-<position info="not_deleted" x="3816" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="4">
-<position info="not_deleted" x="3841" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="4">
-<position info="not_deleted" x="3976" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="1">
-<position info="not_deleted" x="3716" y="28"/>
-</item>
-<item historyLabel="hello_world_small.c" index="4">
-<position info="not_deleted" x="3850" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="1">
-<position info="not_deleted" x="3726" y="18"/>
-</item>
-<item historyLabel="hello_world_small.c" index="4">
-<position info="not_deleted" x="3850" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="1">
-<position info="not_deleted" x="3726" y="18"/>
-</item>
-<item historyLabel="hello_world_small.c" index="4">
-<position info="not_deleted" x="3850" y="0"/>
-</item>
-<item historyLabel="count_binary.h" index="5">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="count_binary.c" index="6">
-<position info="not_deleted" x="8115" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="1">
-<position info="not_deleted" x="3726" y="17"/>
-</item>
-<item historyLabel="hello_world_small.c" index="4">
-<position info="not_deleted" x="3908" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="4">
-<position info="not_deleted" x="3919" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="4">
-<position info="not_deleted" x="3721" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="7">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item active="true" historyLabel="hello_world_small.c" index="4">
-<position info="not_deleted" x="3721" y="0"/>
-</item>
-</navigationHistory>
+<navigationHistory/>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
