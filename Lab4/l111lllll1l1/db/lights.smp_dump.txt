@@ -1,0 +1,33 @@
+
+State Machine - |lights|switchesqsys:u0|switchesqsys_nios2_processor:nios2_processor|switchesqsys_nios2_processor_nios2_oci:the_switchesqsys_nios2_processor_nios2_oci|switchesqsys_nios2_processor_jtag_debug_module_wrapper:the_switchesqsys_nios2_processor_jtag_debug_module_wrapper|switchesqsys_nios2_processor_jtag_debug_module_tck:the_switchesqsys_nios2_processor_jtag_debug_module_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 
+
+State Machine - |lights|Camera:camera2|ps
+Name ps.idle ps.downloading ps.reaches90 ps.signalToDownload ps.reaches50 ps.lowPower ps.standBy ps.active ps.flushing 
+ps.active 0 0 0 0 0 0 0 0 0 
+ps.standBy 0 0 0 0 0 0 1 1 0 
+ps.lowPower 0 0 0 0 0 1 0 1 0 
+ps.reaches50 0 0 0 0 1 0 0 1 0 
+ps.signalToDownload 0 0 0 1 0 0 0 1 0 
+ps.reaches90 0 0 1 0 0 0 0 1 0 
+ps.downloading 0 1 0 0 0 0 0 1 0 
+ps.idle 1 0 0 0 0 0 0 1 0 
+ps.flushing 0 0 0 0 0 0 0 1 1 
+
+State Machine - |lights|Camera:camera1|ps
+Name ps.idle ps.downloading ps.reaches90 ps.signalToDownload ps.reaches50 ps.lowPower ps.standBy ps.active ps.flushing 
+ps.active 0 0 0 0 0 0 0 0 0 
+ps.standBy 0 0 0 0 0 0 1 1 0 
+ps.lowPower 0 0 0 0 0 1 0 1 0 
+ps.reaches50 0 0 0 0 1 0 0 1 0 
+ps.signalToDownload 0 0 0 1 0 0 0 1 0 
+ps.reaches90 0 0 1 0 0 0 0 1 0 
+ps.downloading 0 1 0 0 0 0 0 1 0 
+ps.idle 1 0 0 0 0 0 0 1 0 
+ps.flushing 0 0 0 0 0 0 0 1 1 
