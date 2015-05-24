@@ -90,6 +90,7 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
 	 wire emptyBuffer1, emptyBuffer2;
 	 wire pauseBuffer1, pauseBuffer2;
 	 
+	 wire strobe1, strobe2;
 
 	 // HEX assignments
 	 parameter blank = 7'b1111111;
@@ -151,8 +152,8 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
 	 Camera camera1  (cam1Standby, cam1Film, pauseBuffer1, emptyBuffer1, displayCam1, cam1OutSignals, resetState, clock, microControllerOut[0], cam2OutSignals, microControllerOut[1], percentCamera1);
 	 Camera camera2  (cam2Standby, cam2Film, pauseBuffer2, emptyBuffer2, displayCam2, cam2OutSignals, resetState, clock, microControllerOut[0], cam1OutSignals, defaultCam2Behavior, percentCamera2);
 	 
-	 Buffer  buf1 (clock, resetState, emptyBuffer1, percentCamera1, percentCamera1, curByte1);
-	 Buffer  buf2 (clock, resetState, emptyBuffer2, percentCamera2, percentCamera2, curByte2);
+	 Buffer  buf1 (clock, resetState, emptyBuffer1, percentCamera1, percentCamera1, curByte1, strobe1 );
+	 Buffer  buf2 (clock, resetState, emptyBuffer2, percentCamera2, percentCamera2, curByte2, strobe2 );
 	 
 	 
     switchesqsys u0 (
@@ -164,7 +165,9 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
         .outsignal_export        (microControllerOut),        //        outsignal.export
         .curbyte1_export         (curByte1),         //         curbyte1.export
         .readytodownload2_export (readyTodownload2), // readytodownload2.export
-        .curbyte2_export         (curByte2)          //         curbyte2.export
+        .curbyte2_export         (curByte2),          //         curbyte2.export
+		  .stroberead1_export      (strobe1),      //      stroberead1.export
+        .stroberead2_export      (strobe2)       //      stroberead2.export
     );
 	 
 	 endmodule
