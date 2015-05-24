@@ -1,0 +1,280 @@
+
+**** Build of configuration Nios II for project hello_world_small5 ****
+
+make all 
+      1 [main] sh 1652 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 6676 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] echo 6296 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Building ../hello_world_small5_bsp/
+the public mailing list cygwin@cygwin.com
+make --no-print-directory -C ../hello_world_small5_bsp/
+      1 [main] pwd 8452 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 8872 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 7716 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+[BSP build complete]
+      0 [main] echo 3648 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
+the public mailing list cygwin@cygwin.com
+      0 [main] mkdir 5776 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+nios2-elf-gcc -xc -MP -MMD -c -I../hello_world_small5_bsp//HAL/inc -I../hello_world_small5_bsp/ -I../hello_world_small5_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/hello_world_small.o hello_world_small.c
+hello_world_small.c: In function 'main':
+Info: Linking hello_world_small5.elf
+hello_world_small.c:142:5: warning: implicit declaration of function 'IOWD_ALTERA_AVALON_PIO_DATA' [-Wimplicit-function-declaration]
+nios2-elf-g++  -T'../hello_world_small5_bsp//linker.x' -msys-crt0='../hello_world_small5_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../hello_world_small5_bsp/  -msmallc  -Wl,-Map=hello_world_small5.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o hello_world_small5.elf obj/default/hello_world_small.o -lm 
+      0 [main] true 8408 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] echo 8044 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+obj/default/hello_world_small.o: In function `main':
+C:\Users\klholden\Documents\nightmares\Lab4\qsys_tutorial\software\hello_world_small5/hello_world_small.c:144: undefined reference to `IOWD_ALTERA_AVALON_PIO_DATA'
+collect2.exe: error: ld returned 1 exit status
+make: *** [hello_world_small5.elf] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project hello_world_small5 ****
+
+make all 
+      1 [main] sh 7296 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 1668 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] echo 6548 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Building ../hello_world_small5_bsp/
+the public mailing list cygwin@cygwin.com
+make --no-print-directory -C ../hello_world_small5_bsp/
+      1 [main] pwd 6296 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 8452 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 8292 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+[BSP build complete]
+      0 [main] echo 8872 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
+the public mailing list cygwin@cygwin.com
+      0 [main] mkdir 5080 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+nios2-elf-gcc -xc -MP -MMD -c -I../hello_world_small5_bsp//HAL/inc -I../hello_world_small5_bsp/ -I../hello_world_small5_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/hello_world_small.o hello_world_small.c
+      0 [main] true 5104 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Linking hello_world_small5.elf
+the public mailing list cygwin@cygwin.com
+nios2-elf-g++  -T'../hello_world_small5_bsp//linker.x' -msys-crt0='../hello_world_small5_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../hello_world_small5_bsp/  -msmallc  -Wl,-Map=hello_world_small5.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o hello_world_small5.elf obj/default/hello_world_small.o -lm 
+      0 [main] echo 4520 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+nios2-elf-insert hello_world_small5.elf --thread_model hal --cpu_name nios2_processor --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name switchesqsys --quartus_project_dir "C:/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial" --sopcinfo C:/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial/software/hello_world_small5_bsp/../../switchesqsys.sopcinfo
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 8876 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] uname 8208 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 7824 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+Info: (hello_world_small5.elf) 1920 Bytes program size (code + initialized data).
+Info:                          2064 Bytes free for stack + heap.
+      0 [main] echo 9176 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+Info: Creating hello_world_small5.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source hello_world_small5.elf >hello_world_small5.objdump
+      0 [main] sh 4992 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 5984 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+[hello_world_small5 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project hello_world_small5 ****
+
+make all 
+      0 [main] sh 7692 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 6696 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] echo 4992 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Building ../hello_world_small5_bsp/
+the public mailing list cygwin@cygwin.com
+make --no-print-directory -C ../hello_world_small5_bsp/
+      0 [main] pwd 5984 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 2992 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 6132 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+[BSP build complete]
+      0 [main] true 8452 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 8396 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+[hello_world_small5 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project hello_world_small5 ****
+
+make all 
+      1 [main] sh 4504 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 5872 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] echo 8048 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Building ../hello_world_small5_bsp/
+the public mailing list cygwin@cygwin.com
+make --no-print-directory -C ../hello_world_small5_bsp/
+      1 [main] pwd 6468 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 7164 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 6780 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+[BSP build complete]
+the public mailing list cygwin@cygwin.com
+      0 [main] echo 7120 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
+the public mailing list cygwin@cygwin.com
+      0 [main] mkdir 6912 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+nios2-elf-gcc -xc -MP -MMD -c -I../hello_world_small5_bsp//HAL/inc -I../hello_world_small5_bsp/ -I../hello_world_small5_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/hello_world_small.o hello_world_small.c
+hello_world_small.c: In function 'main':
+hello_world_small.c:118:3: error: 'curOutSignal' undeclared (first use in this function)
+hello_world_small.c:118:3: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [obj/default/hello_world_small.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project hello_world_small5 ****
+
+make all 
+      0 [main] sh 8292 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 7348 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] echo 876 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Building ../hello_world_small5_bsp/
+the public mailing list cygwin@cygwin.com
+make --no-print-directory -C ../hello_world_small5_bsp/
+      0 [main] pwd 7316 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 2668 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 8048 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+[BSP build complete]
+      0 [main] echo 6468 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
+the public mailing list cygwin@cygwin.com
+      0 [main] mkdir 8324 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+nios2-elf-gcc -xc -MP -MMD -c -I../hello_world_small5_bsp//HAL/inc -I../hello_world_small5_bsp/ -I../hello_world_small5_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/hello_world_small.o hello_world_small.c
+hello_world_small.c: In function 'main':
+hello_world_small.c:118:3: error: 'curOutSignal' undeclared (first use in this function)
+hello_world_small.c:118:3: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [obj/default/hello_world_small.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project hello_world_small5 ****
+
+make all 
+      1 [main] sh 5076 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 1048 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] echo 4520 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Building ../hello_world_small5_bsp/
+the public mailing list cygwin@cygwin.com
+make --no-print-directory -C ../hello_world_small5_bsp/
+      0 [main] pwd 6752 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 8348 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 7760 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+[BSP build complete]
+      0 [main] echo 8292 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
+the public mailing list cygwin@cygwin.com
+      0 [main] mkdir 7348 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+nios2-elf-gcc -xc -MP -MMD -c -I../hello_world_small5_bsp//HAL/inc -I../hello_world_small5_bsp/ -I../hello_world_small5_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/hello_world_small.o hello_world_small.c
+      0 [main] true 5872 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Linking hello_world_small5.elf
+the public mailing list cygwin@cygwin.com
+nios2-elf-g++  -T'../hello_world_small5_bsp//linker.x' -msys-crt0='../hello_world_small5_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../hello_world_small5_bsp/  -msmallc  -Wl,-Map=hello_world_small5.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o hello_world_small5.elf obj/default/hello_world_small.o -lm 
+      0 [main] echo 8068 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+nios2-elf-insert hello_world_small5.elf --thread_model hal --cpu_name nios2_processor --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name switchesqsys --quartus_project_dir "C:/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial" --sopcinfo C:/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial/software/hello_world_small5_bsp/../../switchesqsys.sopcinfo
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 4352 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] uname 6780 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 4580 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+Info: (hello_world_small5.elf) 1828 Bytes program size (code + initialized data).
+Info:                          2156 Bytes free for stack + heap.
+      0 [main] echo 7120 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Creating hello_world_small5.objdump
+the public mailing list cygwin@cygwin.com
+nios2-elf-objdump --disassemble --syms --all-header --source hello_world_small5.elf >hello_world_small5.objdump
+      0 [main] sh 3736 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 5008 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+[hello_world_small5 build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project hello_world_small5 ****
+
+make all 
+      0 [main] sh 6912 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 8044 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] echo 5092 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+Info: Building ../hello_world_small5_bsp/
+make --no-print-directory -C ../hello_world_small5_bsp/
+      0 [main] pwd 8660 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 7244 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 4964 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+[BSP build complete]
+      0 [main] echo 4572 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
+the public mailing list cygwin@cygwin.com
+      0 [main] mkdir 5508 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+nios2-elf-gcc -xc -MP -MMD -c -I../hello_world_small5_bsp//HAL/inc -I../hello_world_small5_bsp/ -I../hello_world_small5_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/hello_world_small.o hello_world_small.c
+      0 [main] true 7272 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Linking hello_world_small5.elf
+the public mailing list cygwin@cygwin.com
+nios2-elf-g++  -T'../hello_world_small5_bsp//linker.x' -msys-crt0='../hello_world_small5_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../hello_world_small5_bsp/  -msmallc  -Wl,-Map=hello_world_small5.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o hello_world_small5.elf obj/default/hello_world_small.o -lm 
+      0 [main] echo 5604 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+nios2-elf-insert hello_world_small5.elf --thread_model hal --cpu_name nios2_processor --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name switchesqsys --quartus_project_dir "C:/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial" --sopcinfo C:/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial/software/hello_world_small5_bsp/../../switchesqsys.sopcinfo
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 4976 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] uname 3332 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 1048 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+Info: (hello_world_small5.elf) 1812 Bytes program size (code + initialized data).
+Info:                          2172 Bytes free for stack + heap.
+      0 [main] echo 8584 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+Info: Creating hello_world_small5.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source hello_world_small5.elf >hello_world_small5.objdump
+      0 [main] sh 5032 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 3736 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+[hello_world_small5 build complete]
+
+**** Build Finished ****
