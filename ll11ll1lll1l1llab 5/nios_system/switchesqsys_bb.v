@@ -8,7 +8,9 @@ module switchesqsys (
 	outsignal_export,
 	curbyte1_export,
 	readytodownload2_export,
-	curbyte2_export);	
+	curbyte2_export,
+	stroberead1_export,
+	stroberead2_export);	
 
 	input		clk_clk;
 	input		reset_reset_n;
@@ -19,4 +21,6 @@ module switchesqsys (
 	input	[7:0]	curbyte1_export;
 	input		readytodownload2_export;
 	input	[7:0]	curbyte2_export;
+	input		stroberead1_export;
+	input		stroberead2_export;
 endmodule
