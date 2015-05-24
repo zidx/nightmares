@@ -7,13 +7,14 @@
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
- <library expandedCategories="Project,Library" />
- <window width="1600" height="991" x="0" y="169" />
+ <library
+   expandedCategories="Library/Processors and Peripherals/Peripherals,Library,Project,Library/Processors and Peripherals" />
+ <window width="1530" height="1160" x="70" y="0" />
  <clocktable>
   <columns>
-   <clockname preferredWidth="404" />
-   <clocksource preferredWidth="403" />
-   <frequency preferredWidth="385" />
+   <clockname preferredWidth="385" />
+   <clocksource preferredWidth="384" />
+   <frequency preferredWidth="367" />
   </columns>
  </clocktable>
  <generation synthesis="VERILOG" path="nios_system" />

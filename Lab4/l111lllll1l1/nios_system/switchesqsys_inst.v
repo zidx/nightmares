@@ -7,6 +7,8 @@
 		.outsignal_export        (<connected-to-outsignal_export>),        //        outsignal.export
 		.curbyte1_export         (<connected-to-curbyte1_export>),         //         curbyte1.export
 		.readytodownload2_export (<connected-to-readytodownload2_export>), // readytodownload2.export
-		.curbyte2_export         (<connected-to-curbyte2_export>)          //         curbyte2.export
+		.curbyte2_export         (<connected-to-curbyte2_export>),         //         curbyte2.export
+		.stroberead1_export      (<connected-to-stroberead1_export>),      //      stroberead1.export
+		.stroberead2_export      (<connected-to-stroberead2_export>)       //      stroberead2.export
 	);
 

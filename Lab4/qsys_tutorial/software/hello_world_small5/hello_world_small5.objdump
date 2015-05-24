@@ -242,6 +242,7 @@ int main()
     105c:	defff504 	addi	sp,sp,-44
 	alt_u8 readyToDownload1;
 	alt_u8 readyToDownload2;
+	alt_u8 curOutSignal;
 	alt_u8 curByte1val = IORD_ALTERA_AVALON_PIO_DATA(curByte1);
     1060:	008c0804 	movi	r2,12320
 #define outSignal (volatile char *) 0x0003030
@@ -262,15 +263,15 @@ int main()
     1088:	dc000115 	stw	r16,4(sp)
 	alt_u8 readyToDownload1;
 	alt_u8 readyToDownload2;
+	alt_u8 curOutSignal;
 	alt_u8 curByte1val = IORD_ALTERA_AVALON_PIO_DATA(curByte1);
     108c:	14000037 	ldwio	r16,0(r2)
 	alt_u8 curByte2val = IORD_ALTERA_AVALON_PIO_DATA(curByte2);
     1090:	008c0004 	movi	r2,12288
     1094:	14400037 	ldwio	r17,0(r2)
+
 	alt_u8 prev1 = curByte1val;
 	alt_u8 prev2 = curByte2val;
-
-
 
 	IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
     1098:	008c0c04 	movi	r2,12336
@@ -284,8 +285,8 @@ int main()
     10ac:	00015040 	call	1504 <alt_putstr>
 		start = alt_getchar();
     10b0:	00011d40 	call	11d4 <alt_getchar>
-
-
+	alt_u8 prev1 = curByte1val;
+	alt_u8 prev2 = curByte2val;
 
 	IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
 	char start = 'a';
@@ -302,7 +303,6 @@ int main()
     10c8:	00c00084 	movi	r3,2
     10cc:	10c00035 	stwio	r3,0(r2)
 
-
 	while (1) {
 		readyToDownload1 = IORD_ALTERA_AVALON_PIO_DATA(rtd1);
     10d0:	054c1004 	movi	r21,12352
@@ -315,7 +315,7 @@ int main()
     10e4:	11400037 	ldwio	r5,0(r2)
 		curByte2val = IORD_ALTERA_AVALON_PIO_DATA(curByte2);
     10e8:	008c0004 	movi	r2,12288
-
+	IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x2);
 
 	while (1) {
 		readyToDownload1 = IORD_ALTERA_AVALON_PIO_DATA(rtd1);
@@ -335,9 +335,6 @@ int main()
     10f8:	a025883a 	mov	r18,r20
 		curOutSignal = IORD_ALTERA_AVALON_PIO_DATA(outSignal);
     10fc:	15800037 	ldwio	r22,0(r2)
-
-
-		//alt_printf("Current Buff1: %x\n", readyToDownload);
 
 		if(prev1 != curByte1val) {
     1100:	80c03fcc 	andi	r3,r16,255
