@@ -1,0 +1,24 @@
+#include "sys/alt_stdio.h"
+#define switches (volatile char *) 0x0003050
+#define leds (volatile char *) 0x0003060
+//#define rtd1 (volatile char *) 0x0003040
+
+int main()
+{ 
+  alt_putstr("Hello from Nios II!\n");
+
+  char g = 'a';
+  while (g != 'G') {
+	  g = alt_getchar();
+  }
+
+  while (1) {
+	 // alt_putstr(*rtd1);
+
+	  if(*switches % 2 == 0) *leds = *switches;
+	  else *leds = ~(*switches);
+  }
+
+
+  return 0;
+}
