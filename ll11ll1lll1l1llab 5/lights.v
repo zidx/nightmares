@@ -156,18 +156,18 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
 	 Buffer  buf2 (clock, resetState, emptyBuffer2, percentCamera2, percentCamera2, curByte2, strobe2 );
 	 
 	 
+	 
     switchesqsys u0 (
-        .clk_clk                 (CLOCK_50),                 //              clk.clk
-        .reset_reset_n           (KEY[0]),           //            reset.reset_n
-        .switches_export         (nothing1),         //         switches.export
-        .leds_export             (nothing2),             //             leds.export
-        .readytodownload1_export (readyTodownload1), // readytodownload1.export
-        .outsignal_export        (microControllerOut),        //        outsignal.export
-        .curbyte1_export         (curByte1),         //         curbyte1.export
-        .readytodownload2_export (readyTodownload2), // readytodownload2.export
-        .curbyte2_export         (curByte2),          //         curbyte2.export
-		  .stroberead1_export      (strobe1),      //      stroberead1.export
-        .stroberead2_export      (strobe2)       //      stroberead2.export
+        .clk_clk                (CLOCK_50),                //             clk.clk
+        .reset_reset_n          (KEY[0]),            //           reset.reset_n
+        .switches_export        (nothing1),       //        switches.export
+        .leds_export            (nothing2),            //            leds.export
+        .readytodownload_export (readyTodownload1 | readyTodownload2),// readytodownload.export
+        .outsignal_export       (microControllerOut),         //       outsignal.export
+        .curbyteout_export      (curByte1),      //      curbyteout.export
+        .instrobe_export        (<connected-to-instrobe_export>),        //        instrobe.export
+        .load_export            (<connected-to-load_export>),            //            load.export
+        .curbytein_export       (<connected-to-curbytein_export>)        //       curbytein.export
     );
 	 
 	 endmodule

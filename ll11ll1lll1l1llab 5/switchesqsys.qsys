@@ -24,7 +24,7 @@
    {
       datum baseAddress
       {
-         value = "12432";
+         value = "12416";
          type = "String";
       }
    }
@@ -36,7 +36,15 @@
          type = "int";
       }
    }
-   element curByte1
+   element curByteIn
+   {
+      datum _sortIndex
+      {
+         value = "9";
+         type = "int";
+      }
+   }
+   element curByteOut
    {
       datum _sortIndex
       {
@@ -44,7 +52,7 @@
          type = "int";
       }
    }
-   element curByte2
+   element inStrobe
    {
       datum _sortIndex
       {
@@ -65,6 +73,14 @@
       datum _sortIndex
       {
          value = "3";
+         type = "int";
+      }
+   }
+   element load
+   {
+      datum _sortIndex
+      {
+         value = "11";
          type = "int";
       }
    }
@@ -92,7 +108,7 @@
          type = "int";
       }
    }
-   element readyToDownload1
+   element readyToDownload
    {
       datum _sortIndex
       {
@@ -100,19 +116,19 @@
          type = "int";
       }
    }
-   element readyToDownload2
+   element curByteIn.reset
    {
-      datum _sortIndex
+      datum _tags
       {
-         value = "9";
-         type = "int";
+         value = "";
+         type = "String";
       }
    }
-   element LEDs.s1
+   element load.s1
    {
       datum baseAddress
       {
-         value = "12416";
+         value = "12304";
          type = "String";
       }
    }
@@ -124,55 +140,7 @@
          type = "String";
       }
    }
-   element strobeRead2.s1
-   {
-      datum baseAddress
-      {
-         value = "12288";
-         type = "String";
-      }
-   }
-   element readyToDownload2.s1
-   {
-      datum baseAddress
-      {
-         value = "12336";
-         type = "String";
-      }
-   }
-   element readyToDownload1.s1
-   {
-      datum baseAddress
-      {
-         value = "12384";
-         type = "String";
-      }
-   }
-   element curByte1.s1
-   {
-      datum baseAddress
-      {
-         value = "12352";
-         type = "String";
-      }
-   }
-   element strobeRead1.s1
-   {
-      datum baseAddress
-      {
-         value = "12304";
-         type = "String";
-      }
-   }
-   element curByte2.s1
-   {
-      datum baseAddress
-      {
-         value = "12320";
-         type = "String";
-      }
-   }
-   element outSignal.s1
+   element readyToDownload.s1
    {
       datum baseAddress
       {
@@ -180,7 +148,23 @@
          type = "String";
       }
    }
-   element switches.s1
+   element curByteIn.s1
+   {
+      datum baseAddress
+      {
+         value = "12288";
+         type = "String";
+      }
+   }
+   element curByteOut.s1
+   {
+      datum baseAddress
+      {
+         value = "12336";
+         type = "String";
+      }
+   }
+   element LEDs.s1
    {
       datum baseAddress
       {
@@ -188,20 +172,28 @@
          type = "String";
       }
    }
-   element strobeRead1
+   element inStrobe.s1
    {
-      datum _sortIndex
+      datum baseAddress
       {
-         value = "11";
-         type = "int";
+         value = "12320";
+         type = "String";
       }
    }
-   element strobeRead2
+   element switches.s1
    {
-      datum _sortIndex
+      datum baseAddress
       {
-         value = "12";
-         type = "int";
+         value = "12384";
+         type = "String";
+      }
+   }
+   element outSignal.s1
+   {
+      datum baseAddress
+      {
+         value = "12352";
+         type = "String";
       }
    }
    element switches
@@ -245,8 +237,8 @@
    type="conduit"
    dir="end" />
  <interface
-   name="readytodownload1"
-   internal="readyToDownload1.external_connection"
+   name="readytodownload"
+   internal="readyToDownload.external_connection"
    type="conduit"
    dir="end" />
  <interface
@@ -255,28 +247,23 @@
    type="conduit"
    dir="end" />
  <interface
-   name="curbyte1"
-   internal="curByte1.external_connection"
+   name="curbyteout"
+   internal="curByteOut.external_connection"
    type="conduit"
    dir="end" />
  <interface
-   name="readytodownload2"
-   internal="readyToDownload2.external_connection"
+   name="instrobe"
+   internal="inStrobe.external_connection"
    type="conduit"
    dir="end" />
  <interface
-   name="curbyte2"
-   internal="curByte2.external_connection"
+   name="load"
+   internal="load.external_connection"
    type="conduit"
    dir="end" />
  <interface
-   name="stroberead1"
-   internal="strobeRead1.external_connection"
-   type="conduit"
-   dir="end" />
- <interface
-   name="stroberead2"
-   internal="strobeRead2.external_connection"
+   name="curbytein"
+   internal="curByteIn.external_connection"
    type="conduit"
    dir="end" />
  <module kind="clock_source" version="14.0" enabled="1" name="clk_0">
@@ -401,7 +388,7 @@
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
   <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory.s1' start='0x1000' end='0x2000' /><slave name='nios2_processor.jtag_debug_module' start='0x2800' end='0x3000' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory.s1' start='0x1000' end='0x2000' /><slave name='nios2_processor.jtag_debug_module' start='0x2800' end='0x3000' /><slave name='strobeRead2.s1' start='0x3000' end='0x3010' /><slave name='strobeRead1.s1' start='0x3010' end='0x3020' /><slave name='curByte2.s1' start='0x3020' end='0x3030' /><slave name='readyToDownload2.s1' start='0x3030' end='0x3040' /><slave name='curByte1.s1' start='0x3040' end='0x3050' /><slave name='outSignal.s1' start='0x3050' end='0x3060' /><slave name='readyToDownload1.s1' start='0x3060' end='0x3070' /><slave name='switches.s1' start='0x3070' end='0x3080' /><slave name='LEDs.s1' start='0x3080' end='0x3090' /><slave name='jtag_uart.avalon_jtag_slave' start='0x3090' end='0x3098' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory.s1' start='0x1000' end='0x2000' /><slave name='nios2_processor.jtag_debug_module' start='0x2800' end='0x3000' /><slave name='curByteIn.s1' start='0x3000' end='0x3010' /><slave name='load.s1' start='0x3010' end='0x3020' /><slave name='inStrobe.s1' start='0x3020' end='0x3030' /><slave name='curByteOut.s1' start='0x3030' end='0x3040' /><slave name='outSignal.s1' start='0x3040' end='0x3050' /><slave name='readyToDownload.s1' start='0x3050' end='0x3060' /><slave name='switches.s1' start='0x3060' end='0x3070' /><slave name='LEDs.s1' start='0x3070' end='0x3080' /><slave name='jtag_uart.avalon_jtag_slave' start='0x3080' end='0x3088' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="deviceFamilyName" value="Cyclone V" />
   <parameter name="internalIrqMaskSystemInfo" value="32" />
@@ -494,7 +481,7 @@
    kind="altera_avalon_pio"
    version="14.0"
    enabled="1"
-   name="readyToDownload1">
+   name="readyToDownload">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -522,7 +509,49 @@
   <parameter name="width" value="2" />
   <parameter name="clockRate" value="50000000" />
  </module>
- <module kind="altera_avalon_pio" version="14.0" enabled="1" name="curByte1">
+ <module kind="altera_avalon_pio" version="14.0" enabled="1" name="curByteOut">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="8" />
+  <parameter name="clockRate" value="50000000" />
+ </module>
+ <module kind="altera_avalon_pio" version="14.0" enabled="1" name="inStrobe">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="1" />
+  <parameter name="clockRate" value="50000000" />
+ </module>
+ <module kind="altera_avalon_pio" version="14.0" enabled="1" name="load">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="1" />
+  <parameter name="clockRate" value="50000000" />
+ </module>
+ <module kind="altera_avalon_pio" version="14.0" enabled="1" name="curByteIn">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -534,74 +563,6 @@
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="8" />
-  <parameter name="clockRate" value="50000000" />
- </module>
- <module
-   kind="altera_avalon_pio"
-   version="14.0"
-   enabled="1"
-   name="readyToDownload2">
-  <parameter name="bitClearingEdgeCapReg" value="false" />
-  <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
-  <parameter name="direction" value="Input" />
-  <parameter name="edgeType" value="RISING" />
-  <parameter name="generateIRQ" value="false" />
-  <parameter name="irqType" value="LEVEL" />
-  <parameter name="resetValue" value="0" />
-  <parameter name="simDoTestBenchWiring" value="false" />
-  <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="1" />
-  <parameter name="clockRate" value="50000000" />
- </module>
- <module kind="altera_avalon_pio" version="14.0" enabled="1" name="curByte2">
-  <parameter name="bitClearingEdgeCapReg" value="false" />
-  <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
-  <parameter name="direction" value="Input" />
-  <parameter name="edgeType" value="RISING" />
-  <parameter name="generateIRQ" value="false" />
-  <parameter name="irqType" value="LEVEL" />
-  <parameter name="resetValue" value="0" />
-  <parameter name="simDoTestBenchWiring" value="false" />
-  <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="8" />
-  <parameter name="clockRate" value="50000000" />
- </module>
- <module
-   kind="altera_avalon_pio"
-   version="14.0"
-   enabled="1"
-   name="strobeRead1">
-  <parameter name="bitClearingEdgeCapReg" value="false" />
-  <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
-  <parameter name="direction" value="Input" />
-  <parameter name="edgeType" value="RISING" />
-  <parameter name="generateIRQ" value="false" />
-  <parameter name="irqType" value="LEVEL" />
-  <parameter name="resetValue" value="0" />
-  <parameter name="simDoTestBenchWiring" value="false" />
-  <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="1" />
-  <parameter name="clockRate" value="50000000" />
- </module>
- <module
-   kind="altera_avalon_pio"
-   version="14.0"
-   enabled="1"
-   name="strobeRead2">
-  <parameter name="bitClearingEdgeCapReg" value="false" />
-  <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
-  <parameter name="direction" value="Input" />
-  <parameter name="edgeType" value="RISING" />
-  <parameter name="generateIRQ" value="false" />
-  <parameter name="irqType" value="LEVEL" />
-  <parameter name="resetValue" value="0" />
-  <parameter name="simDoTestBenchWiring" value="false" />
-  <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="1" />
   <parameter name="clockRate" value="50000000" />
  </module>
  <connection
@@ -694,7 +655,7 @@
    start="nios2_processor.data_master"
    end="LEDs.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3080" />
+  <parameter name="baseAddress" value="0x3070" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -703,7 +664,7 @@
    start="nios2_processor.data_master"
    end="switches.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3070" />
+  <parameter name="baseAddress" value="0x3060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="14.0" start="clk_0.clk" end="jtag_uart.clk" />
@@ -723,7 +684,7 @@
    start="nios2_processor.data_master"
    end="jtag_uart.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3090" />
+  <parameter name="baseAddress" value="0x3080" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -737,26 +698,26 @@
    kind="reset"
    version="14.0"
    start="nios2_processor.jtag_debug_module_reset"
-   end="readyToDownload1.reset" />
+   end="readyToDownload.reset" />
  <connection
    kind="reset"
    version="14.0"
    start="clk_0.clk_reset"
-   end="readyToDownload1.reset" />
+   end="readyToDownload.reset" />
  <connection
    kind="avalon"
    version="14.0"
    start="nios2_processor.data_master"
-   end="readyToDownload1.s1">
+   end="readyToDownload.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3060" />
+  <parameter name="baseAddress" value="0x3050" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="clock"
    version="14.0"
    start="clk_0.clk"
-   end="readyToDownload1.clk" />
+   end="readyToDownload.clk" />
  <connection
    kind="reset"
    version="14.0"
@@ -768,7 +729,7 @@
    start="nios2_processor.data_master"
    end="outSignal.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3050" />
+  <parameter name="baseAddress" value="0x3040" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -781,32 +742,12 @@
    kind="reset"
    version="14.0"
    start="nios2_processor.jtag_debug_module_reset"
-   end="curByte1.reset" />
+   end="curByteOut.reset" />
  <connection
    kind="avalon"
    version="14.0"
    start="nios2_processor.data_master"
-   end="curByte1.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3040" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="reset"
-   version="14.0"
-   start="clk_0.clk_reset"
-   end="curByte1.reset" />
- <connection kind="clock" version="14.0" start="clk_0.clk" end="curByte1.clk" />
- <connection
-   kind="reset"
-   version="14.0"
-   start="nios2_processor.jtag_debug_module_reset"
-   end="readyToDownload2.reset" />
- <connection
-   kind="avalon"
-   version="14.0"
-   start="nios2_processor.data_master"
-   end="readyToDownload2.s1">
+   end="curByteOut.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x3030" />
   <parameter name="defaultConnection" value="false" />
@@ -815,23 +756,19 @@
    kind="reset"
    version="14.0"
    start="clk_0.clk_reset"
-   end="readyToDownload2.reset" />
- <connection
-   kind="clock"
-   version="14.0"
-   start="clk_0.clk"
-   end="readyToDownload2.clk" />
- <connection kind="clock" version="14.0" start="clk_0.clk" end="curByte2.clk" />
+   end="curByteOut.reset" />
+ <connection kind="clock" version="14.0" start="clk_0.clk" end="curByteOut.clk" />
+ <connection kind="clock" version="14.0" start="clk_0.clk" end="inStrobe.clk" />
  <connection
    kind="reset"
    version="14.0"
    start="clk_0.clk_reset"
-   end="curByte2.reset" />
+   end="inStrobe.reset" />
  <connection
    kind="avalon"
    version="14.0"
    start="nios2_processor.data_master"
-   end="curByte2.s1">
+   end="inStrobe.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x3020" />
   <parameter name="defaultConnection" value="false" />
@@ -840,18 +777,14 @@
    kind="reset"
    version="14.0"
    start="nios2_processor.jtag_debug_module_reset"
-   end="curByte2.reset" />
- <connection kind="clock" version="14.0" start="clk_0.clk" end="strobeRead1.clk" />
- <connection
-   kind="reset"
-   version="14.0"
-   start="clk_0.clk_reset"
-   end="strobeRead1.reset" />
+   end="inStrobe.reset" />
+ <connection kind="clock" version="14.0" start="clk_0.clk" end="load.clk" />
+ <connection kind="reset" version="14.0" start="clk_0.clk_reset" end="load.reset" />
  <connection
    kind="avalon"
    version="14.0"
    start="nios2_processor.data_master"
-   end="strobeRead1.s1">
+   end="load.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x3010" />
   <parameter name="defaultConnection" value="false" />
@@ -860,18 +793,18 @@
    kind="reset"
    version="14.0"
    start="nios2_processor.jtag_debug_module_reset"
-   end="strobeRead1.reset" />
- <connection kind="clock" version="14.0" start="clk_0.clk" end="strobeRead2.clk" />
+   end="load.reset" />
+ <connection kind="clock" version="14.0" start="clk_0.clk" end="curByteIn.clk" />
  <connection
    kind="reset"
    version="14.0"
    start="clk_0.clk_reset"
-   end="strobeRead2.reset" />
+   end="curByteIn.reset" />
  <connection
    kind="avalon"
    version="14.0"
    start="nios2_processor.data_master"
-   end="strobeRead2.s1">
+   end="curByteIn.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x3000" />
   <parameter name="defaultConnection" value="false" />
@@ -880,7 +813,7 @@
    kind="reset"
    version="14.0"
    start="nios2_processor.jtag_debug_module_reset"
-   end="strobeRead2.reset" />
+   end="curByteIn.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />
