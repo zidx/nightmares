@@ -18,7 +18,7 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -35,48 +35,33 @@
 <part id="3"/>
 <part id="4"/>
 <part id="5"/>
-<part id="6"/>
-<part id="7"/>
-<part id="8"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" partName="hello_world_small.c" path="C:/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial/software/hello_world_small5/hello_world_small.c" title="hello_world_small.c" tooltip="hello_world_small5/hello_world_small.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/hello_world_small5/hello_world_small.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4070" selectionTopPixel="1630"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="altera_avalon_pio_regs.h" partName="altera_avalon_pio_regs.h" path="C:/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial/software/hello_world_small5_bsp/drivers/inc/altera_avalon_pio_regs.h" title="altera_avalon_pio_regs.h" tooltip="hello_world_small5_bsp/drivers/inc/altera_avalon_pio_regs.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/hello_world_small5_bsp/drivers/inc/altera_avalon_pio_regs.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3425" selectionTopPixel="30"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="count_binary.c" partName="count_binary.c" path="C:/Users/klholden/Documents/nightmares/Lab4/niosII_hw_dev_tutorial/software/COUNT_BINARRRY/count_binary.c" title="count_binary.c" tooltip="COUNT_BINARRRY/count_binary.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/COUNT_BINARRRY/count_binary.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4544" selectionTopPixel="6417"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" partName="hello_world_small.c" path="C:/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial/software/Lab4_1/hello_world_small.c" title="hello_world_small.c" tooltip="Lab4_1/hello_world_small.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Lab4_1/hello_world_small.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4880" selectionTopPixel="1699"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" partName="hello_world_small.c" path="C:/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial/software/Lab4_2/hello_world_small.c" title="hello_world_small.c" tooltip="Lab4_2/hello_world_small.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Lab4_2/hello_world_small.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="5950" selectionOffset="0" selectionTopPixel="1081"/>
-</editor>
-<editor id="org.eclipse.ui.DefaultTextEditor" name="hello_world_small.c" partName="hello_world_small.c" path="C:/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial/software/hello_world_small5/hello_world_small.c" title="hello_world_small.c" tooltip="hello_world_small5/hello_world_small.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/hello_world_small5/hello_world_small.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="851" selectionTopPixel="1230"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" partName="hello_world_small.c" path="C:/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/hw2/hello_world_small.c" title="hello_world_small.c" tooltip="hw2/hello_world_small.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/hw2/hello_world_small.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="979" selectionTopPixel="870"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" partName="hello_world_small.c" path="C:/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial/software/standard_hello_world/hello_world_small.c" title="hello_world_small.c" tooltip="standard_hello_world/hello_world_small.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/standard_hello_world/hello_world_small.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2879" selectionTopPixel="832"/>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="count_binary.c" partName="count_binary.c" path="C:/Users/klholden/Documents/nightmares/Lab4/niosII_hw_dev_tutorial/software/cb/count_binary.c" title="count_binary.c" tooltip="cb/count_binary.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/cb/count_binary.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="990" selectionTopPixel="1350"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" partName="hello_world_small.c" path="C:/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/lab4_100000/hello_world_small.c" title="hello_world_small.c" tooltip="lab4_100000/hello_world_small.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/lab4_100000/hello_world_small.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="2077"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5082" selectionTopPixel="1799"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" partName="hello_world_small.c" path="C:/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/HELLO_WORLD_SMALL_FINAL/hello_world_small.c" title="hello_world_small.c" tooltip="HELLO_WORLD_SMALL_FINAL/hello_world_small.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/HELLO_WORLD_SMALL_FINAL/hello_world_small.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="832"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" partName="hello_world_small.c" path="C:/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/HELLO_WORLD_SMALL_IO/hello_world_small.c" title="hello_world_small.c" tooltip="HELLO_WORLD_SMALL_IO/hello_world_small.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/HELLO_WORLD_SMALL_IO/hello_world_small.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="96" selectionOffset="3591" selectionTopPixel="1036"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" partName="hello_world_small.c" path="C:/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/HELLO_WORLD_SMALL_IO_EXTENDED/hello_world_small.c" title="hello_world_small.c" tooltip="HELLO_WORLD_SMALL_IO_EXTENDED/hello_world_small.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/HELLO_WORLD_SMALL_IO_EXTENDED/hello_world_small.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3972" selectionTopPixel="1019"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" partName="hello_world_small.c" path="C:/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/LIGHTS_AND_SWITCHES_FINAL/hello_world_small.c" title="hello_world_small.c" tooltip="LIGHTS_AND_SWITCHES_FINAL/hello_world_small.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LIGHTS_AND_SWITCHES_FINAL/hello_world_small.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4059" selectionTopPixel="1070"/>
 </editor>
 </editors>
 <views>
@@ -92,9 +77,6 @@
 <view id="org.eclipse.cdt.make.ui.views.MakeView" partName="Make Target"/>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Errors"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="143" org.eclipse.ui.ide.severityAndDescriptionField="558"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -318,14 +300,6 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world_small5/hello_world_small.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world_small5_bsp/drivers/inc/altera_avalon_pio_regs.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/COUNT_BINARRRY/count_binary.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab4_1/hello_world_small.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab4_2/hello_world_small.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standard_hello_world/hello_world_small.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab4_100000/hello_world_small.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab4_2/hello_world_small.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/hello_world_small5/hello_world_small.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab4_2/hello_world_small.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab4_100000/hello_world_small.c"/>
@@ -337,156 +311,168 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab4_1/hello_world_small.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standard_hello_world/hello_world_small.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/COUNT_BINARY/count_binary.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab4_2/hello_world_small.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab4_1/hello_world_small.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world_small5/hello_world_small.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab4_100000/hello_world_small.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/cb/count_binary.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/hello_world_small5/hello_world_small.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hw/hello_world_small.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standard_hello_world/hello_world_small.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/HELLO_WORLD_SMALL_FINAL/hello_world_small.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/HELLO_WORLD_SMALL_IO/hello_world_small.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/HELLO_WORLD_SMALL_IO_EXTENDED/hello_world_small.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/LIGHTS_AND_SWITCHES_FINAL/hello_world_small.c"/>
 </editors>
-<item historyLabel="altera_avalon_pio_regs.h" index="1">
-<position info="not_deleted" x="2442" y="0"/>
-</item>
-<item historyLabel="count_binary.c" index="2">
-<position info="not_deleted" x="4751" y="4"/>
-</item>
 <item historyLabel="hello_world_small.c" index="0">
-<position info="not_deleted" x="3603" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position info="not_deleted" x="4442" y="0"/>
-</item>
-<item historyLabel="count_binary.c" index="2">
-<position info="not_deleted" x="4772" y="10"/>
-</item>
-<item historyLabel="altera_avalon_pio_regs.h" index="1">
-<position info="not_deleted" x="3425" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position info="not_deleted" x="5357" y="0"/>
-</item>
-<item historyLabel="altera_avalon_pio_regs.h" index="1">
-<position info="not_deleted" x="3425" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position info="not_deleted" x="5357" y="0"/>
-</item>
-<item historyLabel="altera_avalon_pio_regs.h" index="1">
-<position info="not_deleted" x="3425" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position info="not_deleted" x="5357" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position info="not_deleted" x="4314" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position info="not_deleted" x="4221" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position info="not_deleted" x="4800" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position info="not_deleted" x="4844" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position info="not_deleted" x="4907" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position info="not_deleted" x="4928" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position info="not_deleted" x="4929" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position info="not_deleted" x="4961" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position info="not_deleted" x="5179" y="0"/>
-</item>
-<item historyLabel="altera_avalon_pio_regs.h" index="1">
-<position info="not_deleted" x="3425" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position info="not_deleted" x="5175" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="0">
-<position info="not_deleted" x="4738" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="3">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="hello_world_small.c" index="0">
-<position info="not_deleted" x="3563" y="1803"/>
-</item>
-<item historyLabel="hello_world_small.c" index="3">
-<position info="not_deleted" x="4880" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="4">
-<position info="not_deleted" x="3628" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="5">
-<position info="not_deleted" x="3682" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="6">
-<position/>
-</item>
-<item historyLabel="hello_world_small.c" index="5">
-<position info="not_deleted" x="3682" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="6">
-<position/>
-</item>
-<item historyLabel="hello_world_small.c" index="7">
+<item historyLabel="hello_world_small.c" index="1">
 <position info="not_deleted" x="3561" y="2389"/>
 </item>
-<item historyLabel="hello_world_small.c" index="6">
-<position/>
-</item>
-<item historyLabel="hello_world_small.c" index="8">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="hello_world_small.c" index="9">
-<position info="not_deleted" x="3561" y="2389"/>
-</item>
-<item historyLabel="hello_world_small.c" index="10">
+<item historyLabel="hello_world_small.c" index="2">
 <position info="not_deleted" x="5571" y="0"/>
 </item>
-<item historyLabel="hello_world_small.c" index="9">
+<item historyLabel="hello_world_small.c" index="1">
 <position info="not_deleted" x="0" y="5950"/>
 </item>
-<item historyLabel="hello_world_small.c" index="11">
+<item historyLabel="hello_world_small.c" index="3">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="hello_world_small.c" index="12">
+<item historyLabel="hello_world_small.c" index="4">
 <position info="not_deleted" x="3563" y="1803"/>
 </item>
-<item historyLabel="count_binary.c" index="13">
+<item historyLabel="count_binary.c" index="5">
 <position info="not_deleted" x="4544" y="0"/>
 </item>
-<item historyLabel="hello_world_small.c" index="11">
+<item historyLabel="hello_world_small.c" index="3">
 <position info="not_deleted" x="979" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="8">
+<position info="not_deleted" x="4880" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="9">
+<position info="not_deleted" x="2879" y="0"/>
+</item>
+<item historyLabel="count_binary.c" index="10">
+<position info="not_deleted" x="16774" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="9">
+<position info="not_deleted" x="2879" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="11">
+<position info="not_deleted" x="0" y="5950"/>
+</item>
+<item historyLabel="hello_world_small.c" index="12">
+<position info="not_deleted" x="4880" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="11">
+<position info="not_deleted" x="4169" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="13">
+<position info="not_deleted" x="4070" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="11">
+<position info="not_deleted" x="4169" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="9">
+<position info="not_deleted" x="2879" y="0"/>
 </item>
 <item historyLabel="hello_world_small.c" index="14">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="hello_world_small.c" index="15">
+<item historyLabel="count_binary.c" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="count_binary.c" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="count_binary.c" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="14">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="hello_world_small.c" index="16">
-<position info="not_deleted" x="4880" y="0"/>
+<position info="not_deleted" x="4733" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="14">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="hello_world_small.c" index="17">
-<position info="not_deleted" x="2879" y="0"/>
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="count_binary.c" index="18">
-<position info="not_deleted" x="16774" y="0"/>
+<item historyLabel="hello_world_small.c" index="14">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item active="true" historyLabel="hello_world_small.c" index="17">
-<position info="not_deleted" x="2879" y="0"/>
+<item historyLabel="hello_world_small.c" index="18">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="14">
+<position info="not_deleted" x="4896" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="19">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="20">
+<position info="not_deleted" x="3920" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="14">
+<position info="not_deleted" x="3630" y="96"/>
+</item>
+<item historyLabel="hello_world_small.c" index="20">
+<position info="not_deleted" x="3753" y="33"/>
+</item>
+<item historyLabel="hello_world_small.c" index="14">
+<position info="not_deleted" x="3630" y="96"/>
+</item>
+<item historyLabel="hello_world_small.c" index="19">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="20">
+<position info="not_deleted" x="2916" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="14">
+<position info="not_deleted" x="5082" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="20">
+<position info="not_deleted" x="3563" y="355"/>
+</item>
+<item historyLabel="hello_world_small.c" index="21">
+<position info="not_deleted" x="3972" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="20">
+<position info="not_deleted" x="3875" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="14">
+<position info="not_deleted" x="5082" y="0"/>
+</item>
+<item historyLabel="count_binary.c" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="22">
+<position info="not_deleted" x="4335" y="0"/>
+</item>
+<item historyLabel="hello_world_small.c" index="20">
+<position info="not_deleted" x="3591" y="96"/>
+</item>
+<item historyLabel="hello_world_small.c" index="22">
+<position info="not_deleted" x="4059" y="0"/>
+</item>
+<item active="true" historyLabel="count_binary.c" index="15">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -506,17 +492,29 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" tooltip="lab4_100000/hello_world_small.c">
-<persistable path="/lab4_100000/hello_world_small.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" tooltip="LIGHTS_AND_SWITCHES_FINAL/hello_world_small.c">
+<persistable path="/LIGHTS_AND_SWITCHES_FINAL/hello_world_small.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" tooltip="standard_hello_world/hello_world_small.c">
-<persistable path="/standard_hello_world/hello_world_small.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" tooltip="HELLO_WORLD_SMALL_IO_EXTENDED/hello_world_small.c">
+<persistable path="/HELLO_WORLD_SMALL_IO_EXTENDED/hello_world_small.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" tooltip="hw2/hello_world_small.c">
-<persistable path="/hw2/hello_world_small.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" tooltip="HELLO_WORLD_SMALL_IO/hello_world_small.c">
+<persistable path="/HELLO_WORLD_SMALL_IO/hello_world_small.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" tooltip="HELLO_WORLD_SMALL_FINAL/hello_world_small.c">
+<persistable path="/HELLO_WORLD_SMALL_FINAL/hello_world_small.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="hello_world_small.c" tooltip="hello_world_small5/hello_world_small.c">
 <persistable path="/hello_world_small5/hello_world_small.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" tooltip="lab4_100000/hello_world_small.c">
+<persistable path="/lab4_100000/hello_world_small.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="count_binary.c" tooltip="cb/count_binary.c">
+<persistable path="/cb/count_binary.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" tooltip="hw2/hello_world_small.c">
+<persistable path="/hw2/hello_world_small.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" tooltip="Lab4_2/hello_world_small.c">
 <persistable path="/Lab4_2/hello_world_small.c"/>
@@ -538,15 +536,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="count_binary.map" tooltip="count_binary/count_binary.map">
 <persistable path="/count_binary/count_binary.map"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="count_binary.h" tooltip="count_binary/count_binary.h">
-<persistable path="/count_binary/count_binary.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="count_binary.c" tooltip="count_binary/count_binary.c">
-<persistable path="/count_binary/count_binary.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="readme.txt" tooltip="lightsAndSwitches/readme.txt">
-<persistable path="/lightsAndSwitches/readme.txt"/>
 </file>
 </mruList>
 </workbench>

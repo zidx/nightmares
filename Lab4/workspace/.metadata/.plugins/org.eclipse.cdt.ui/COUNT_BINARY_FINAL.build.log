@@ -1,0 +1,35 @@
+
+**** Build of configuration Nios II for project COUNT_BINARY_FINAL ****
+
+make all 
+      1 [main] sh 2020 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 924 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] echo 4884 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Building ../COUNT_BINARY_FINAL_bsp/
+the public mailing list cygwin@cygwin.com
+make --no-print-directory -C ../COUNT_BINARY_FINAL_bsp/
+      0 [main] pwd 6112 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 1080 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] sh 1888 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+[BSP build complete]
+      0 [main] true 5956 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      0 [main] echo 3808 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Linking COUNT_BINARY_FINAL.elf
+the public mailing list cygwin@cygwin.com
+nios2-elf-g++  -T'../COUNT_BINARY_FINAL_bsp//linker.x' -msys-crt0='../COUNT_BINARY_FINAL_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../COUNT_BINARY_FINAL_bsp/   -Wl,-Map=COUNT_BINARY_FINAL.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o COUNT_BINARY_FINAL.elf obj/default/count_binary.o -lm 
+c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: COUNT_BINARY_FINAL.elf section `.text' will not fit in region `onchip_memory'
+c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: address 0xf5e8 of COUNT_BINARY_FINAL.elf section `.rwdata' is not within region `onchip_memory'
+c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: address 0x11334 of COUNT_BINARY_FINAL.elf section `.bss' is not within region `onchip_memory'
+c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: address 0xf5e8 of COUNT_BINARY_FINAL.elf section `.rwdata' is not within region `onchip_memory'
+c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: address 0x11334 of COUNT_BINARY_FINAL.elf section `.bss' is not within region `onchip_memory'
+c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: region `onchip_memory' overflowed by 62260 bytes
+collect2.exe: error: ld returned 1 exit status
+make: *** [COUNT_BINARY_FINAL.elf] Error 1
+
+**** Build Finished ****
