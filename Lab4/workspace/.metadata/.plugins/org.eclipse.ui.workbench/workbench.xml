@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="35" version="2.0">
+<workbench progressCount="29" version="2.0">
 <workbenchAdvisor/>
+<<<<<<< HEAD
 <window height="1160" maximized="true" width="800" x="99" y="-9">
+=======
+<window height="1160" width="1014" x="0" y="0">
+>>>>>>> 1ebde3360205b20919081398f33b6745bed28468
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
 </perspectiveBar>
 <coolbarLayout>
 <coolItem id="group.file" itemType="typeGroupMarker"/>
+<<<<<<< HEAD
 <coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="153" y="22"/>
+=======
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="122" y="22"/>
+>>>>>>> 1ebde3360205b20919081398f33b6745bed28468
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.cdt.ui.CElementCreationActionSet" itemType="typeToolBarContribution" x="167" y="22"/>
 <coolItem id="org.eclipse.cdt.ui.buildConfigActionSet" itemType="typeToolBarContribution" x="89" y="22"/>
@@ -43,9 +51,23 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/cb/count_binary.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="990" selectionTopPixel="1350"/>
 </editor>
+<<<<<<< HEAD
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" partName="hello_world_small.c" path="C:/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/lab4_100000/hello_world_small.c" title="hello_world_small.c" tooltip="lab4_100000/hello_world_small.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/lab4_100000/hello_world_small.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5082" selectionTopPixel="1799"/>
+=======
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="altera_avalon_pio_regs.h" partName="altera_avalon_pio_regs.h" path="C:/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial/software/hello_world_small5_bsp/drivers/inc/altera_avalon_pio_regs.h" title="altera_avalon_pio_regs.h" tooltip="hello_world_small5_bsp/drivers/inc/altera_avalon_pio_regs.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/hello_world_small5_bsp/drivers/inc/altera_avalon_pio_regs.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3425" selectionTopPixel="30"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="count_binary.c" partName="count_binary.c" path="C:/Users/klholden/Documents/nightmares/Lab4/niosII_hw_dev_tutorial/software/COUNT_BINARRRY/count_binary.c" title="count_binary.c" tooltip="COUNT_BINARRRY/count_binary.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/COUNT_BINARRRY/count_binary.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4544" selectionTopPixel="6417"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" partName="hello_world_small.c" path="C:/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial/software/Lab4_2/hello_world_small.c" title="hello_world_small.c" tooltip="Lab4_2/hello_world_small.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Lab4_2/hello_world_small.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="5950" selectionOffset="0" selectionTopPixel="1081"/>
+>>>>>>> 1ebde3360205b20919081398f33b6745bed28468
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" partName="hello_world_small.c" path="C:/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/HELLO_WORLD_SMALL_FINAL/hello_world_small.c" title="hello_world_small.c" tooltip="HELLO_WORLD_SMALL_FINAL/hello_world_small.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/HELLO_WORLD_SMALL_FINAL/hello_world_small.c"/>
@@ -268,7 +290,11 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.18478261" ratioLeft="238" ratioRight="1050" relationship="2" relative="topLeft"/>
 <info folder="true" part="bottom" ratio="0.6345382" ratioLeft="474" ratioRight="273" relationship="4" relative="org.eclipse.ui.editorss">
+<<<<<<< HEAD
 <folder activePageID="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView:DE-SoC on localhost [USB-1].2.0" appearance="2" expanded="2">
+=======
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+>>>>>>> 1ebde3360205b20919081398f33b6745bed28468
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>

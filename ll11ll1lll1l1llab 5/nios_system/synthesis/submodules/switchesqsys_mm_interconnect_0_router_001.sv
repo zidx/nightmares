@@ -47,7 +47,7 @@ module switchesqsys_mm_interconnect_0_router_001_default_decode
      parameter DEFAULT_CHANNEL = 1,
                DEFAULT_WR_CHANNEL = -1,
                DEFAULT_RD_CHANNEL = -1,
-               DEFAULT_DESTID = 5 
+               DEFAULT_DESTID = 8 
    )
   (output [78 - 75 : 0] default_destination_id,
    output [12-1 : 0] default_wr_channel,
@@ -209,55 +209,55 @@ module switchesqsys_mm_interconnect_0_router_001
     // ( 0x1000 .. 0x2000 )
     if ( {address[RG:PAD0],{PAD0{1'b0}}} == 14'h1000   ) begin
             src_channel = 12'b000000000010;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 5;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 8;
     end
 
     // ( 0x2800 .. 0x3000 )
     if ( {address[RG:PAD1],{PAD1{1'b0}}} == 14'h2800   ) begin
             src_channel = 12'b000000000001;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 4;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 7;
     end
 
     // ( 0x3000 .. 0x3010 )
     if ( {address[RG:PAD2],{PAD2{1'b0}}} == 14'h3000  && read_transaction  ) begin
             src_channel = 12'b100000000000;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 10;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
     end
 
     // ( 0x3010 .. 0x3020 )
     if ( {address[RG:PAD3],{PAD3{1'b0}}} == 14'h3010  && read_transaction  ) begin
             src_channel = 12'b010000000000;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 9;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
     end
 
     // ( 0x3020 .. 0x3030 )
-    if ( {address[RG:PAD4],{PAD4{1'b0}}} == 14'h3020  && read_transaction  ) begin
+    if ( {address[RG:PAD4],{PAD4{1'b0}}} == 14'h3020   ) begin
             src_channel = 12'b001000000000;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 6;
     end
 
     // ( 0x3030 .. 0x3040 )
     if ( {address[RG:PAD5],{PAD5{1'b0}}} == 14'h3030  && read_transaction  ) begin
             src_channel = 12'b000100000000;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 8;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 4;
     end
 
     // ( 0x3040 .. 0x3050 )
-    if ( {address[RG:PAD6],{PAD6{1'b0}}} == 14'h3040  && read_transaction  ) begin
+    if ( {address[RG:PAD6],{PAD6{1'b0}}} == 14'h3040   ) begin
             src_channel = 12'b000010000000;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
     end
 
     // ( 0x3050 .. 0x3060 )
     if ( {address[RG:PAD7],{PAD7{1'b0}}} == 14'h3050   ) begin
             src_channel = 12'b000001000000;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 6;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 9;
     end
 
     // ( 0x3060 .. 0x3070 )
     if ( {address[RG:PAD8],{PAD8{1'b0}}} == 14'h3060  && read_transaction  ) begin
             src_channel = 12'b000000100000;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 7;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 10;
     end
 
     // ( 0x3070 .. 0x3080 )
@@ -275,7 +275,7 @@ module switchesqsys_mm_interconnect_0_router_001
     // ( 0x3090 .. 0x3098 )
     if ( {address[RG:PAD11],{PAD11{1'b0}}} == 14'h3090   ) begin
             src_channel = 12'b000000010000;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 5;
     end
 
 end

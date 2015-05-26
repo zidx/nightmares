@@ -1,5 +1,5 @@
 Assembler report for lights
-Thu May 21 18:28:33 2015
+Tue May 26 14:42:00 2015
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Full Version
 
 
@@ -11,7 +11,7 @@ Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Full Version
   3. Assembler Settings
   4. Assembler Encrypted IP Cores Summary
   5. Assembler Generated Files
-  6. Assembler Device Options: C:/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/output_files/lights.sof
+  6. Assembler Device Options: C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/output_files/lights.sof
   7. Assembler Messages
 
 
@@ -39,7 +39,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu May 21 18:28:33 2015 ;
+; Assembler Status      ; Successful - Tue May 26 14:42:00 2015 ;
 ; Revision Name         ; lights                                ;
 ; Top-level Entity Name ; lights                                ;
 ; Family                ; Cyclone V                             ;
@@ -64,24 +64,24 @@ agreement for further details.
 +--------+------------------------+--------------+
 
 
-+----------------------------------------------------------------------------------+
-; Assembler Generated Files                                                        ;
-+----------------------------------------------------------------------------------+
-; File Name                                                                        ;
-+----------------------------------------------------------------------------------+
-; C:/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/output_files/lights.sof ;
-+----------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Assembler Generated Files                                                         ;
++-----------------------------------------------------------------------------------+
+; File Name                                                                         ;
++-----------------------------------------------------------------------------------+
+; C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/output_files/lights.sof ;
++-----------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/output_files/lights.sof ;
-+----------------+-------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                   ;
-+----------------+-------------------------------------------------------------------------------------------+
-; Device         ; 5CSEMA5F31C6                                                                              ;
-; JTAG usercode  ; 0x0101C1BF                                                                                ;
-; Checksum       ; 0x0101C1BF                                                                                ;
-+----------------+-------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/output_files/lights.sof ;
++----------------+--------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                    ;
++----------------+--------------------------------------------------------------------------------------------+
+; Device         ; 5CSEMA5F31C6                                                                               ;
+; JTAG usercode  ; 0x00F87DA0                                                                                 ;
+; Checksum       ; 0x00F87DA0                                                                                 ;
++----------------+--------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -90,13 +90,13 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Full Version
-    Info: Processing started: Thu May 21 18:28:22 2015
+    Info: Processing started: Tue May 26 14:41:46 2015
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off lights -c lights
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 690 megabytes
-    Info: Processing ended: Thu May 21 18:28:34 2015
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:12
+    Info: Peak virtual memory: 693 megabytes
+    Info: Processing ended: Tue May 26 14:42:00 2015
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:11
 
 

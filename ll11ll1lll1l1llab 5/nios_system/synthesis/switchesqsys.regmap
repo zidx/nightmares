@@ -3,7 +3,7 @@
 <name>switchesqsys</name>
 <peripherals>
 <peripheral>
-      <name>switchesqsys_strobeRead2_s1_altera_avalon_pio</name><baseAddress>0x00000000</baseAddress> 
+      <name>switchesqsys_empty_s1_altera_avalon_pio</name><baseAddress>0x00000000</baseAddress> 
       <addressBlock>
         <offset>0x0</offset>
         <size>32</size>
@@ -121,7 +121,7 @@
     </registers>
    </peripheral>
   <peripheral>
-      <name>switchesqsys_strobeRead1_s1_altera_avalon_pio</name><baseAddress>0x00000000</baseAddress> 
+      <name>switchesqsys_curByteIn_s1_altera_avalon_pio</name><baseAddress>0x00000000</baseAddress> 
       <addressBlock>
         <offset>0x0</offset>
         <size>32</size>
@@ -239,7 +239,7 @@
     </registers>
    </peripheral>
   <peripheral>
-      <name>switchesqsys_curByte2_s1_altera_avalon_pio</name><baseAddress>0x00000000</baseAddress> 
+      <name>switchesqsys_load_s1_altera_avalon_pio</name><baseAddress>0x00000000</baseAddress> 
       <addressBlock>
         <offset>0x0</offset>
         <size>32</size>
@@ -357,7 +357,7 @@
     </registers>
    </peripheral>
   <peripheral>
-      <name>switchesqsys_readyToDownload2_s1_altera_avalon_pio</name><baseAddress>0x00000000</baseAddress> 
+      <name>switchesqsys_inStrobe_s1_altera_avalon_pio</name><baseAddress>0x00000000</baseAddress> 
       <addressBlock>
         <offset>0x0</offset>
         <size>32</size>
@@ -475,7 +475,7 @@
     </registers>
    </peripheral>
   <peripheral>
-      <name>switchesqsys_curByte1_s1_altera_avalon_pio</name><baseAddress>0x00000000</baseAddress> 
+      <name>switchesqsys_curByteOut_s1_altera_avalon_pio</name><baseAddress>0x00000000</baseAddress> 
       <addressBlock>
         <offset>0x0</offset>
         <size>32</size>
@@ -711,7 +711,7 @@
     </registers>
    </peripheral>
   <peripheral>
-      <name>switchesqsys_readyToDownload1_s1_altera_avalon_pio</name><baseAddress>0x00000000</baseAddress> 
+      <name>switchesqsys_readyToDownload_s1_altera_avalon_pio</name><baseAddress>0x00000000</baseAddress> 
       <addressBlock>
         <offset>0x0</offset>
         <size>32</size>

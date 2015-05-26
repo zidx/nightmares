@@ -4,23 +4,23 @@ module switchesqsys (
 	reset_reset_n,
 	switches_export,
 	leds_export,
-	readytodownload1_export,
+	readytodownload_export,
 	outsignal_export,
-	curbyte1_export,
-	readytodownload2_export,
-	curbyte2_export,
-	stroberead1_export,
-	stroberead2_export);	
+	curbyteout_export,
+	instrobe_export,
+	load_export,
+	curbytein_export,
+	empty_export);	
 
 	input		clk_clk;
 	input		reset_reset_n;
 	input	[7:0]	switches_export;
 	output	[7:0]	leds_export;
-	input		readytodownload1_export;
+	input		readytodownload_export;
 	output	[1:0]	outsignal_export;
-	input	[7:0]	curbyte1_export;
-	input		readytodownload2_export;
-	input	[7:0]	curbyte2_export;
-	input		stroberead1_export;
-	input		stroberead2_export;
+	output	[7:0]	curbyteout_export;
+	input		instrobe_export;
+	output		load_export;
+	input	[7:0]	curbytein_export;
+	input		empty_export;
 endmodule
