@@ -8,9 +8,8 @@
    <name preferredWidth="192" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Library/Processors and Peripherals/Peripherals,Library,Library/Processors and Peripherals,Project" />
- <window width="1616" height="1176" x="-8" y="-8" />
+ <library expandedCategories="Library,Project" />
+ <window width="1386" height="919" x="-8" y="-8" />
  <clocktable>
   <columns>
    <clockname preferredWidth="328" />

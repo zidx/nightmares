@@ -2049,3 +2049,619 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.e
 
 !ENTRY com.altera.sbtgui.launch 1 0 2015-05-21 18:29:34.986
 !MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/lab4_100000/lab4_100000.elf]
+!SESSION 2015-05-24 17:05:36.138 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-24 17:29:42.450
+!MESSAGE Indexed 'HELLO_WORLD_SMALL_FINAL_bsp' (78 sources, 101 headers) in 1.42 sec: 2,305 declarations; 3,957 references; 31 unresolved inclusions; 495 syntax errors; 276 unresolved names (4.22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-24 17:29:43.110
+!MESSAGE Indexed 'HELLO_WORLD_SMALL_FINAL' (1 sources, 13 headers) in 0.03 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-24 17:30:40.947
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-24 17:30:42.578
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/HELLO_WORLD_SMALL_FINAL/HELLO_WORLD_SMALL_FINAL.elf]
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-24 17:33:08.766
+!MESSAGE Indexed 'COUNT_BINARY_FINAL_bsp' (78 sources, 101 headers) in 0.76 sec: 2,155 declarations; 3,376 references; 98 unresolved inclusions; 5 syntax errors; 192 unresolved names (3.35%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-24 17:33:09.849
+!MESSAGE Indexed 'COUNT_BINARY_FINAL' (1 sources, 14 headers) in 0.02 sec: 20 declarations; 76 references; 19 unresolved inclusions; 0 syntax errors; 9 unresolved names (8.57%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-24 17:48:39.214
+!MESSAGE Indexed 'COUNT_BINARY_bsp' (78 sources, 55 headers) in 0.39 sec: 929 declarations; 2,202 references; 113 unresolved inclusions; 5 syntax errors; 194 unresolved names (5.83%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-24 17:48:40.536
+!MESSAGE Indexed 'COUNT_BINARY' (1 sources, 14 headers) in 0.02 sec: 20 declarations; 76 references; 19 unresolved inclusions; 0 syntax errors; 9 unresolved names (8.57%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-24 18:00:53.426
+!MESSAGE Indexed 'COUNT_BINARY_bsp' (78 sources, 55 headers) in 0.38 sec: 929 declarations; 2,202 references; 113 unresolved inclusions; 5 syntax errors; 194 unresolved names (5.83%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-24 18:00:54.763
+!MESSAGE Indexed 'COUNT_BINARY' (1 sources, 14 headers) in 0.02 sec: 20 declarations; 76 references; 19 unresolved inclusions; 0 syntax errors; 9 unresolved names (8.57%)
+
+!ENTRY org.eclipse.ltk.ui.refactoring 4 10000 2015-05-24 19:12:51.672
+!MESSAGE Internal Error
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:793)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:344)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:132)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+Contains: Could not delete 'C:\Users\klholden\Documents\nightmares\Lab4\qsys_tutorial\software\COUNT_BINARY_bsp\Makefile'.
+org.eclipse.core.runtime.CoreException: Problems encountered while deleting files.
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:125)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFile(ResourceTree.java:304)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteProject(ResourceTree.java:384)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteProject(ResourceTree.java:837)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1945)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:780)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:344)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:132)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+Contains: Could not delete: C:\Users\klholden\Documents\nightmares\Lab4\qsys_tutorial\software\COUNT_BINARY_bsp\Makefile.
+Contains: Could not delete 'C:\Users\klholden\Documents\nightmares\Lab4\qsys_tutorial\software\COUNT_BINARY_bsp'.
+!SUBENTRY 1 org.eclipse.core.resources 4 273 2015-05-24 19:12:51.673
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2015-05-24 19:12:51.673
+!MESSAGE Could not delete 'C:\Users\klholden\Documents\nightmares\Lab4\qsys_tutorial\software\COUNT_BINARY_bsp\Makefile'.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Problems encountered while deleting files.
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:125)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFile(ResourceTree.java:304)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteProject(ResourceTree.java:384)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteProject(ResourceTree.java:837)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1945)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:780)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:344)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:132)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+Contains: Could not delete: C:\Users\klholden\Documents\nightmares\Lab4\qsys_tutorial\software\COUNT_BINARY_bsp\Makefile.
+!SUBENTRY 3 org.eclipse.core.filesystem 4 273 2015-05-24 19:12:51.673
+!MESSAGE Problems encountered while deleting files.
+!SUBENTRY 4 org.eclipse.core.filesystem 4 273 2015-05-24 19:12:51.673
+!MESSAGE Could not delete: C:\Users\klholden\Documents\nightmares\Lab4\qsys_tutorial\software\COUNT_BINARY_bsp\Makefile.
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2015-05-24 19:12:51.673
+!MESSAGE Could not delete 'C:\Users\klholden\Documents\nightmares\Lab4\qsys_tutorial\software\COUNT_BINARY_bsp'.
+
+!ENTRY org.eclipse.core.resources 4 273 2015-05-24 19:12:51.681
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 1 org.eclipse.core.resources 4 273 2015-05-24 19:12:51.682
+!MESSAGE Could not delete 'C:\Users\klholden\Documents\nightmares\Lab4\qsys_tutorial\software\COUNT_BINARY_bsp\Makefile'.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Problems encountered while deleting files.
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:125)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFile(ResourceTree.java:304)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteProject(ResourceTree.java:384)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteProject(ResourceTree.java:837)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1945)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:780)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:344)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:132)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+Contains: Could not delete: C:\Users\klholden\Documents\nightmares\Lab4\qsys_tutorial\software\COUNT_BINARY_bsp\Makefile.
+!SUBENTRY 2 org.eclipse.core.filesystem 4 273 2015-05-24 19:12:51.682
+!MESSAGE Problems encountered while deleting files.
+!SUBENTRY 3 org.eclipse.core.filesystem 4 273 2015-05-24 19:12:51.682
+!MESSAGE Could not delete: C:\Users\klholden\Documents\nightmares\Lab4\qsys_tutorial\software\COUNT_BINARY_bsp\Makefile.
+!SUBENTRY 1 org.eclipse.core.resources 4 273 2015-05-24 19:12:51.682
+!MESSAGE Could not delete 'C:\Users\klholden\Documents\nightmares\Lab4\qsys_tutorial\software\COUNT_BINARY_bsp'.
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-24 19:13:03.276
+!MESSAGE Indexed 'COUNT_BINARY' (0 sources, 13 headers) in 0.03 sec: 0 declarations; 0 references; 13 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-24 19:14:13.431
+!MESSAGE Indexed 'Lab4_Count_Binary_bsp' (78 sources, 55 headers) in 0.34 sec: 929 declarations; 2,202 references; 113 unresolved inclusions; 5 syntax errors; 194 unresolved names (5.83%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-24 19:14:14.744
+!MESSAGE Indexed 'Lab4_Count_Binary' (1 sources, 14 headers) in 0.02 sec: 20 declarations; 76 references; 19 unresolved inclusions; 0 syntax errors; 9 unresolved names (8.57%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-24 19:15:58.413
+!MESSAGE Indexed 'cb_bsp' (82 sources, 60 headers) in 0.37 sec: 956 declarations; 2,339 references; 117 unresolved inclusions; 5 syntax errors; 198 unresolved names (5.67%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-24 19:15:59.772
+!MESSAGE Indexed 'cb' (1 sources, 14 headers) in 0.02 sec: 20 declarations; 76 references; 19 unresolved inclusions; 0 syntax errors; 9 unresolved names (8.57%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-24 19:19:32.442
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x11030]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-24 19:19:36.609
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x11030 /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/niosII_hw_dev_tutorial/software/cb/cb.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2015-05-24 19:19:45.009
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --go, --accept-bad-sysid, --sidp=0x11030, /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/niosII_hw_dev_tutorial/software/cb/cb.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2015-05-24 19:19:45.021
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:49.706
+!MESSAGE Connecting to System Console on port 65258
+
+!ENTRY com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:50.054
+!MESSAGE Complete response received
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:50.054
+!MESSAGE return "14.0"
+
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:50.054
+!MESSAGE package require systemconsole 14.0
+
+
+!ENTRY com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:50.606
+!MESSAGE Complete response received
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:50.606
+!MESSAGE return "/designs/nios2_quartus2_project.sof"
+
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:50.606
+!MESSAGE design_load {C:/Users/klholden/Documents/nightmares/Lab4/niosII_hw_dev_tutorial}
+
+
+!ENTRY com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.177
+!MESSAGE Complete response received
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.177
+!MESSAGE return "/devices/5CSE(BA5|MA5)|5CSTFD5D5|..@2#USB-1#DE-SoC/(link)/JTAG/cpu.jtag/cpu.data_master"
+
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.177
+!MESSAGE get_service_paths processor
+
+
+!ENTRY com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.191
+!MESSAGE Complete response received
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.191
+!MESSAGE return "JTAG_CABLE_NAME \{DE-SoC on localhost (USB-1)\} DEVICE_NAME 5CSE(BA5|MA5)|5CSTFD5D5|..@2#USB-1#DE-SoC DESIGN_HASH 0xab4b1f394215117896e2"
+
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.191
+!MESSAGE marker_get_info {/devices/5CSE(BA5|MA5)|5CSTFD5D5|..@2#USB-1#DE-SoC}
+
+
+!ENTRY com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.201
+!MESSAGE Complete response received
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.201
+!MESSAGE return "TYPE_NAME nios2_oci.jtag VERSION 3 FULL_HPATH first_nios2_system:inst|cpu SLD_INSTANCE 0 SLD_ENCODED_ID 420496896 JTAG_CABLE_NAME \{DE-SoC on localhost (USB-1)\} JTAG_DEVICE_INDEX 2"
+
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.201
+!MESSAGE marker_node_info {/devices/5CSE(BA5|MA5)|5CSTFD5D5|..@2#USB-1#DE-SoC/(link)/JTAG/cpu.jtag/cpu.data_master}
+
+
+!ENTRY com.altera.sbt4e.systemconsole 4 4 2015-05-24 19:21:56.210
+!MESSAGE 
+
+!ENTRY com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.265
+!MESSAGE Connecting to System Console on port 65258
+
+!ENTRY com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.341
+!MESSAGE Complete response received
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.341
+!MESSAGE return "14.0"
+
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.341
+!MESSAGE package require systemconsole 14.0
+
+
+!ENTRY com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.481
+!MESSAGE Complete response received
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.481
+!MESSAGE return "/designs/nios2_quartus2_project.sof"
+
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.481
+!MESSAGE design_load {C:/Users/klholden/Documents/nightmares/Lab4/niosII_hw_dev_tutorial}
+
+
+!ENTRY com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.486
+!MESSAGE Complete response received
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.486
+!MESSAGE return "\{/devices/5CSE(BA5|MA5)|5CSTFD5D5|..@2#USB-1#DE-SoC/(link)/JTAG/(110:128 v1 #0)/jtag_uart.jtag\}"
+
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.486
+!MESSAGE get_service_paths bytestream
+
+
+!ENTRY com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.489
+!MESSAGE Complete response received
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.489
+!MESSAGE return "JTAG_CABLE_NAME \{DE-SoC on localhost (USB-1)\} DEVICE_NAME 5CSE(BA5|MA5)|5CSTFD5D5|..@2#USB-1#DE-SoC DESIGN_HASH 0xab4b1f394215117896e2"
+
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.489
+!MESSAGE marker_get_info {/devices/5CSE(BA5|MA5)|5CSTFD5D5|..@2#USB-1#DE-SoC}
+
+
+!ENTRY com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.494
+!MESSAGE Complete response received
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.494
+!MESSAGE return "TYPE_NAME jtag_uart.jtag VERSION 1 FULL_HPATH first_nios2_system:inst|first_nios2_system_jtag_uart:jtag_uart|alt_jtag_atlantic:first_nios2_system_jtag_uart_alt_jtag_atlantic SLD_INSTANCE 0 SLD_ENCODED_ID 201354752 JTAG_CABLE_NAME \{DE-SoC on localhost (USB-1)\} JTAG_DEVICE_INDEX 2"
+
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:56.494
+!MESSAGE marker_node_info {/devices/5CSE(BA5|MA5)|5CSTFD5D5|..@2#USB-1#DE-SoC/(link)/JTAG/(110:128 v1 #0)/jtag_uart.jtag}
+
+
+!ENTRY com.altera.sbt4e.systemconsole 4 4 2015-05-24 19:21:56.497
+!MESSAGE 
+
+!ENTRY com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:57.540
+!MESSAGE Connecting to System Console on port 65258
+
+!ENTRY com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:57.568
+!MESSAGE Complete response received
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:57.568
+!MESSAGE return "14.0"
+
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:57.568
+!MESSAGE package require systemconsole 14.0
+
+
+!ENTRY com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:57.573
+!MESSAGE Complete response received
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:57.573
+!MESSAGE return ""
+
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:21:57.573
+!MESSAGE refresh_connections
+
+
+!ENTRY com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:22:03.685
+!MESSAGE Complete response received
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:22:03.686
+!MESSAGE return "/devices/5CSE(BA5|MA5)|5CSTFD5D5|..@2#USB-1#DE-SoC/(link)/JTAG/cpu.jtag/cpu.data_master"
+
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:22:03.686
+!MESSAGE get_service_paths processor
+
+
+!ENTRY com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:22:03.754
+!MESSAGE Complete response received
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:22:03.754
+!MESSAGE return "/channels/remote3/(lib)/processor_1"
+
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:22:03.754
+!MESSAGE claim_service processor {/devices/5CSE(BA5|MA5)|5CSTFD5D5|..@2#USB-1#DE-SoC/(link)/JTAG/cpu.jtag/cpu.data_master} ""
+
+
+!ENTRY com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:22:04.755
+!MESSAGE Complete response received
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:22:04.755
+!MESSAGE error "java.util.concurrent.ExecutionException: java.lang.Exception: processor_stop: com.altera.systemconsole.internal.plugin.jtag.oci.Nios2DebugException: Target is broken and needs to be reset\n    invoked from within\n\"processor_stop \{/channels/remote3/(lib)/processor_1\}\"\n    invoked from within\n\"interp eval \$slave \{\nprocessor_stop \{/channels/remote3/(lib)/processor_1\}\n\n\}\""
+
+!SUBENTRY 1 com.altera.sbt4e.systemconsole 1 1 2015-05-24 19:22:04.755
+!MESSAGE processor_stop {/channels/remote3/(lib)/processor_1}
+
+
+!ENTRY com.altera.sbt4e.launch 4 4 2015-05-24 19:22:04.763
+!MESSAGE Error reported by System Console
+!STACK 0
+com.altera.sbt4e.systemconsole.SystemConsoleTCLException: java.util.concurrent.ExecutionException: java.lang.Exception: processor_stop: com.altera.systemconsole.internal.plugin.jtag.oci.Nios2DebugException: Target is broken and needs to be reset
+    invoked from within
+"processor_stop {/channels/remote3/(lib)/processor_1}"
+    invoked from within
+"interp eval $slave {
+processor_stop {/channels/remote3/(lib)/processor_1}
+
+}"
+	at com.altera.sbt4e.systemconsole.SimpleTCLInterpreter$TclEventHandler.eval(SimpleTCLInterpreter.java:131)
+	at com.altera.sbt4e.systemconsole.SimpleTCLInterpreter.getResult(SimpleTCLInterpreter.java:54)
+	at com.altera.sbt4e.systemconsole.SystemConsoleCommand.sendCommand(SystemConsoleCommand.java:345)
+	at com.altera.sbt4e.systemconsole.SystemConsoleProcessorService.stop(SystemConsoleProcessorService.java:71)
+	at com.altera.sbt4e.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:192)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:854)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:703)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:937)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1141)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-24 19:22:32.114
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x11030]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-24 19:22:33.954
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x11030 /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/niosII_hw_dev_tutorial/software/cb/cb.elf]
+!SESSION 2015-05-26 09:57:53.604 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 09:58:55.695
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2015-05-26 09:58:57.908
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 09:58:57.966
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial/software/Lab4_2/Lab4_2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 09:59:30.481
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2015-05-26 09:59:32.190
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 09:59:32.247
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial/software/Lab4_2/Lab4_2.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 10:00:11.857
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=Not Found]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2015-05-26 10:00:13.567
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop, --accept-bad-sysid, --sidp=Not Found] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 10:00:13.653
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/lab4_100000/lab4_100000.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 10:12:35.321
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x11030]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 10:12:37.165
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x11030 /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/niosII_hw_dev_tutorial/software/cb/cb.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 10:15:07.571
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x11030]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 10:15:09.561
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x11030 /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/HELLO_WORLD_SMALL_FINAL/HELLO_WORLD_SMALL_FINAL.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 10:15:54.874
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x11030]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 10:15:56.727
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x11030 /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/HELLO_WORLD_SMALL_FINAL/HELLO_WORLD_SMALL_FINAL.elf]
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-26 10:17:46.372
+!MESSAGE Indexed 'hw_bsp' (78 sources, 110 headers) in 1.38 sec: 2,741 declarations; 4,403 references; 41 unresolved inclusions; 451 syntax errors; 231 unresolved names (3.13%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-26 10:17:47.173
+!MESSAGE Indexed 'hw' (1 sources, 13 headers) in 0.03 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 10:18:35.490
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 10:18:35.752
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 10:18:37.438
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial/software/hw/hw.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 10:22:06.207
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=' --instance=-1 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2015-05-26 10:22:07.516
+!MESSAGE Failed Executing: [nios2-download, '--cable=', --instance=-1, --stop, --accept-bad-sysid] return code: 16
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 10:22:07.570
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=' --instance=-1 --go --accept-bad-sysid /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial/software/standard_hello_world/standard_hello_world.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2015-05-26 10:22:09.176
+!MESSAGE Failed Executing: [nios2-download, '--cable=', --instance=-1, --go, --accept-bad-sysid, /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial/software/standard_hello_world/standard_hello_world.elf] return code: 16
+
+!ENTRY com.altera.sbtgui.launch 4 0 2015-05-26 10:22:09.185
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 10:23:13.617
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 10:23:13.859
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 10:23:15.422
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/lab4_100000/lab4_100000.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 10:24:01.359
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 10:24:02.924
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/HELLO_WORLD_SMALL_FINAL/HELLO_WORLD_SMALL_FINAL.elf]
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-26 11:04:57.830
+!MESSAGE Indexed 'HELLO_WORLD_SMALL_IO_bsp' (78 sources, 105 headers) in 0.74 sec: 2,339 declarations; 3,627 references; 89 unresolved inclusions; 58 syntax errors; 185 unresolved names (3.01%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-26 11:04:58.827
+!MESSAGE Indexed 'HELLO_WORLD_SMALL_IO' (1 sources, 13 headers) in 0.02 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:08:19.702
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:08:21.305
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/HELLO_WORLD_SMALL_IO/HELLO_WORLD_SMALL_IO.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:10:15.859
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:10:17.427
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/HELLO_WORLD_SMALL_IO/HELLO_WORLD_SMALL_IO.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:16:25.352
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:16:26.921
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/lab4_100000/lab4_100000.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:22:21.336
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:22:21.597
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:22:23.194
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/HELLO_WORLD_SMALL_IO/HELLO_WORLD_SMALL_IO.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:47:07.184
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:47:07.451
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:47:09.076
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/HELLO_WORLD_SMALL_FINAL/HELLO_WORLD_SMALL_FINAL.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:47:27.527
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:47:29.106
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/HELLO_WORLD_SMALL_IO/HELLO_WORLD_SMALL_IO.elf]
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-26 11:50:37.492
+!MESSAGE Indexed 'HELLO_WORLD_SMALL_IO_EXTENDED_bsp' (78 sources, 55 headers) in 0.38 sec: 929 declarations; 2,202 references; 113 unresolved inclusions; 5 syntax errors; 194 unresolved names (5.83%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-26 11:50:38.938
+!MESSAGE Indexed 'HELLO_WORLD_SMALL_IO_EXTENDED' (1 sources, 13 headers) in 0.02 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:51:34.832
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:51:36.438
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/HELLO_WORLD_SMALL_IO/HELLO_WORLD_SMALL_IO.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:53:18.565
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:53:20.174
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/HELLO_WORLD_SMALL_IO_EXTENDED/HELLO_WORLD_SMALL_IO_EXTENDED.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:54:45.117
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:54:46.691
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/lab4_100000/lab4_100000.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:58:22.006
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x11030]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 11:58:23.888
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x11030 /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/niosII_hw_dev_tutorial/software/cb/cb.elf]
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-26 11:59:48.324
+!MESSAGE Indexed 'LIGHTS_AND_SWITCHES_FINAL_bsp' (78 sources, 55 headers) in 0.63 sec: 929 declarations; 2,202 references; 113 unresolved inclusions; 5 syntax errors; 194 unresolved names (5.83%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-26 11:59:49.635
+!MESSAGE Indexed 'LIGHTS_AND_SWITCHES_FINAL' (1 sources, 13 headers) in 0.02 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 12:02:40.742
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 12:02:42.340
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/LIGHTS_AND_SWITCHES_FINAL/LIGHTS_AND_SWITCHES_FINAL.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 14:24:40.573
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 14:24:40.962
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 14:24:42.657
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/LIGHTS_AND_SWITCHES_FINAL/LIGHTS_AND_SWITCHES_FINAL.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 14:26:27.640
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x11030]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 14:26:29.356
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x11030 /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/niosII_hw_dev_tutorial/software/cb/cb.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 14:47:26.632
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x11030]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 14:47:28.440
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x11030 /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/niosII_hw_dev_tutorial/software/cb/cb.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2015-05-26 14:50:10.646
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception: System timestamp mismatch - connected: "0", expected: "1431472893".
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:631)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:854)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:703)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:937)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1141)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.altera.sbtgui.launch 4 0 2015-05-26 14:50:10.654
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception: System timestamp mismatch - connected: "0", expected: "1431472893".
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:631)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:854)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:703)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:937)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1141)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 14:50:50.833
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 14:50:52.410
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/LIGHTS_AND_SWITCHES_FINAL/LIGHTS_AND_SWITCHES_FINAL.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 14:51:40.186
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 14:51:41.764
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/HELLO_WORLD_SMALL_FINAL/HELLO_WORLD_SMALL_FINAL.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 14:52:01.667
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 14:52:03.282
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/HELLO_WORLD_SMALL_IO/HELLO_WORLD_SMALL_IO.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 14:52:32.948
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 14:52:34.536
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/HELLO_WORLD_SMALL_IO_EXTENDED/HELLO_WORLD_SMALL_IO_EXTENDED.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 14:54:01.843
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 14:54:02.126
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 14:54:03.727
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/klholden/Documents/nightmares/Lab4/l111lllll1l1/software/lab4_100000/lab4_100000.elf]

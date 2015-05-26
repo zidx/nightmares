@@ -16,7 +16,7 @@ output [7:0] LEDG;
 //.leds_export(LEDG));
 wire [3:0]out;
 
-    switchesqsys u0 (
+    /*switchesqsys u0 (
         .clk_clk                 (CLOCK_50),                 //              clk.clk
         .reset_reset_n           (KEY),           //            reset.reset_n
         .switches_export         (SW),         //         switches.export
@@ -26,6 +26,22 @@ wire [3:0]out;
         .curbyte1_export         (0),         //         curbyte1.export
         .readytodownload2_export (0), // readytodownload2.export
         .curbyte2_export         (0)          //         curbyte2.export
+    );*/
+	 
+	 
+	 
+	 switchesqsys u0 (
+			.clk_clk                 (CLOCK_50),                 //              clk.clk
+        .reset_reset_n           (KEY),           //            reset.reset_n
+        .switches_export         (SW),         //         switches.export
+        .leds_export             (LEDG),             //             leds.export
+        .readytodownload1_export (0), // readytodownload1.export
+        .outsignal_export        (out),        //        outsignal.export
+        .curbyte1_export         (0),         //         curbyte1.export
+        .readytodownload2_export (0), // readytodownload2.export
+        .curbyte2_export         (0),         //         curbyte2.export
+		  .stroberead1_export      (0),      //      stroberead1.export
+        .stroberead2_export      (0)       //      stroberead2.export
     );
 
 endmodule

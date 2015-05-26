@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lights
-Thu May 21 18:27:12 2015
+Sun May 24 17:04:42 2015
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Full Version
 
 
@@ -260,7 +260,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu May 21 18:27:12 2015       ;
+; Analysis & Synthesis Status     ; Successful - Sun May 24 17:04:42 2015       ;
 ; Quartus II 64-Bit Version       ; 14.0.0 Build 200 06/17/2014 SJ Full Version ;
 ; Revision Name                   ; lights                                      ;
 ; Top-level Entity Name           ; lights                                      ;
@@ -6306,7 +6306,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:08     ;
+; Top            ; 00:00:07     ;
 +----------------+--------------+
 
 
@@ -6316,7 +6316,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Full Version
-    Info: Processing started: Thu May 21 18:26:56 2015
+    Info: Processing started: Sun May 24 17:04:26 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lights -c lights
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file nios_system/synthesis/switchesqsys.v
@@ -6749,10 +6749,10 @@ Info (21057): Implemented 2000 device resources after synthesis - the final reso
     Info (21061): Implemented 1778 logic cells
     Info (21064): Implemented 152 RAM segments
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 42 warnings
-    Info: Peak virtual memory: 766 megabytes
-    Info: Processing ended: Thu May 21 18:27:12 2015
+    Info: Peak virtual memory: 767 megabytes
+    Info: Processing ended: Sun May 24 17:04:42 2015
     Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:15
+    Info: Total CPU time (on all processors): 00:00:14
 
 
 +------------------------------------------+

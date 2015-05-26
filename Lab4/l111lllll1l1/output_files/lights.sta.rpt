@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for lights
-Thu May 21 18:28:49 2015
+Sun May 24 17:06:08 2015
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Full Version
 
 
@@ -129,12 +129,12 @@ agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 2.09        ;
+; Average used               ; 1.30        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;  36.4%      ;
+;     Processors 2-4         ;  10.0%      ;
 ;     Processors 5-8         ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -144,8 +144,8 @@ agreement for further details.
 +-------------------------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                                     ; Status ; Read at                  ;
 +-------------------------------------------------------------------+--------+--------------------------+
-; nios_system/synthesis/submodules/altera_reset_controller.sdc      ; OK     ; Thu May 21 18:28:39 2015 ;
-; nios_system/synthesis/submodules/switchesqsys_nios2_processor.sdc ; OK     ; Thu May 21 18:28:39 2015 ;
+; nios_system/synthesis/submodules/altera_reset_controller.sdc      ; OK     ; Sun May 24 17:06:00 2015 ;
+; nios_system/synthesis/submodules/switchesqsys_nios2_processor.sdc ; OK     ; Sun May 24 17:06:00 2015 ;
 +-------------------------------------------------------------------+--------+--------------------------+
 
 
@@ -1385,7 +1385,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Full Version
-    Info: Processing started: Thu May 21 18:28:35 2015
+    Info: Processing started: Sun May 24 17:05:57 2015
 Info: Command: quartus_sta lights -c lights
 Info: qsta_default_script.tcl version: #1
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
@@ -1592,9 +1592,9 @@ Info (332114): Report Metastability: Found 2 synchronizer chains.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 991 megabytes
-    Info: Processing ended: Thu May 21 18:28:49 2015
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Peak virtual memory: 1013 megabytes
+    Info: Processing ended: Sun May 24 17:06:08 2015
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:14
 
 
