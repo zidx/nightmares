@@ -63,8 +63,8 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
 	 
 	 wire[7:0] curByte1, curByte2;
 	 
-	 reg[7:0] nothing1, nothing2;
-	 	 reg[2:0] microControllerOut;
+	 reg[7:0] nothing;
+	 reg[2:0] microControllerOut;
 	 
 	 // Idle state display of cameras show ready to download
 	 wire readyTodownload1 = (displayCam1 == idleD);
@@ -143,7 +143,6 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
 		else resetState = resetState;
 	 end
 	 
-	  
 	 // Instantiates buffer filler percent loaded feedback
 	 Percents cam1Percent  (clock, resetState, emptyBuffer1, pauseBuffer1, percentCamera1);
 	 Percents cam2Percent  (clock, resetState, emptyBuffer2, pauseBuffer2, percentCamera2);
@@ -152,23 +151,54 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
 	 Camera camera1  (cam1Standby, cam1Film, pauseBuffer1, emptyBuffer1, displayCam1, cam1OutSignals, resetState, clock, microControllerOut[0], cam2OutSignals, microControllerOut[1], percentCamera1);
 	 Camera camera2  (cam2Standby, cam2Film, pauseBuffer2, emptyBuffer2, displayCam2, cam2OutSignals, resetState, clock, microControllerOut[0], cam1OutSignals, defaultCam2Behavior, percentCamera2);
 	 
-	 Buffer  buf1 (clock, resetState, emptyBuffer1, percentCamera1, percentCamera1, curByte1, strobe1 );
-	 Buffer  buf2 (clock, resetState, emptyBuffer2, percentCamera2, percentCamera2, curByte2, strobe2 );
+//	 Buffer  buf1 (clock, resetState, emptyBuffer1, percentCamera1, percentCamera1, curByte1, strobe1 );
+//	 Buffer  buf2 (clock, resetState, emptyBuffer2, percentCamera2, percentCamera2, curByte2, strobe2 );
 	 
+	 wire enable, bicStrobe, serialDataIn;
+	 wire [3:0] bscOut, bicOut, loadOut;
 	 
+	 assign bicStrobe = (bicOut == bitEnd);	//right now strobe only turns on for one clock cycle, but we can hold it for more if needed.
+	 
+	 parameter bitMiddle = 4'b0111;
+	 parameter bitEnd    = 4'b1111;
+	 parameter ninethBit = 4'b1001;
+	 
+	 wire sampleBit = (bscOut == bitMiddle);
+	 wire nextBit   = (bscOut == bitEnd);
+	 wire nextStrobe = (bicOut == ninethBit);
+	 
+	 //will the ending bit still turn enable on after 9th bicstrobe resets? or will it work perfectly
+	 startBitDetect start (enable, clock, reset | bicStrobe, serialDataIn);
+	 
+	 fourBitCounter bitSampleCounter (bscOut, clock, reset, enable);
+	 
+	 fourBitCounter bitIndexCounter  (bicOut, nextBit, reset, enable);
+	 
+	 wire [7:0] parallelDataIn, parallelDataOut;
+	 
+	 shiftIn bufferIn ( parallelDataIn, sampleBit, reset, serialDataIn );
+	 
+	 wire hempTea, load;
+	 
+	 fourBitCounter bitLength (loadOut, clock, ~load, load);
+	 
+	 //loadOut[3] os the 16x slower clock
+	 shiftOut sendTheD (serialDataIn, hempTea, loadOut[3], reset, load, parallelDataOut);
 	 
     switchesqsys u0 (
         .clk_clk                (CLOCK_50),                //             clk.clk
         .reset_reset_n          (KEY[0]),            //           reset.reset_n
-        .switches_export        (nothing1),       //        switches.export
-        .leds_export            (nothing2),            //            leds.export
+        .switches_export        (nothing),       //        switches.export
+        .leds_export            (nothing),            //            leds.export
         .readytodownload_export (readyTodownload1 | readyTodownload2),// readytodownload.export
         .outsignal_export       (microControllerOut),         //       outsignal.export
-        .curbyteout_export      (curByte1),      //      curbyteout.export
-        .instrobe_export        (<connected-to-instrobe_export>),        //        instrobe.export
-        .load_export            (<connected-to-load_export>),            //            load.export
-        .curbytein_export       (<connected-to-curbytein_export>)        //       curbytein.export
+        .curbyteout_export      (parallelDataOut),      //      curbyteout.export
+        .instrobe_export        (nextStrobe),        //        instrobe.export
+        .load_export            (load),            //            load.export
+        .curbytein_export       (parallelDataIn),        //       curbytein.export
+		  .empty_export           (hempTea)            //           empty.export
     );
+
 	 
 	 endmodule
 

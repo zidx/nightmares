@@ -1,59 +1,59 @@
 |lights
 CLOCK_50 => CLOCK_50.IN2
-HEX0[0] << CountUp:countUpCam2.port1
-HEX0[1] << CountUp:countUpCam2.port1
-HEX0[2] << CountUp:countUpCam2.port1
-HEX0[3] << CountUp:countUpCam2.port1
-HEX0[4] << CountUp:countUpCam2.port1
-HEX0[5] << CountUp:countUpCam2.port1
-HEX0[6] << CountUp:countUpCam2.port1
-HEX1[0] << Camera:camera2.port4
-HEX1[1] << Camera:camera2.port4
-HEX1[2] << Camera:camera2.port4
-HEX1[3] << Camera:camera2.port4
-HEX1[4] << Camera:camera2.port4
-HEX1[5] << Camera:camera2.port4
-HEX1[6] << Camera:camera2.port4
-HEX2[0] << <VCC>
-HEX2[1] << <VCC>
-HEX2[2] << <VCC>
-HEX2[3] << <VCC>
-HEX2[4] << <VCC>
-HEX2[5] << <VCC>
-HEX2[6] << <VCC>
-HEX3[0] << <VCC>
-HEX3[1] << <VCC>
-HEX3[2] << <VCC>
-HEX3[3] << <VCC>
-HEX3[4] << <VCC>
-HEX3[5] << <VCC>
-HEX3[6] << <VCC>
-HEX4[0] << Camera:camera1.port4
-HEX4[1] << Camera:camera1.port4
-HEX4[2] << Camera:camera1.port4
-HEX4[3] << Camera:camera1.port4
-HEX4[4] << Camera:camera1.port4
-HEX4[5] << Camera:camera1.port4
-HEX4[6] << Camera:camera1.port4
-HEX5[0] << CountUp:countUpCam1.port1
-HEX5[1] << CountUp:countUpCam1.port1
-HEX5[2] << CountUp:countUpCam1.port1
-HEX5[3] << CountUp:countUpCam1.port1
-HEX5[4] << CountUp:countUpCam1.port1
-HEX5[5] << CountUp:countUpCam1.port1
-HEX5[6] << CountUp:countUpCam1.port1
+HEX0[0] <= CountUp:countUpCam2.port1
+HEX0[1] <= CountUp:countUpCam2.port1
+HEX0[2] <= CountUp:countUpCam2.port1
+HEX0[3] <= CountUp:countUpCam2.port1
+HEX0[4] <= CountUp:countUpCam2.port1
+HEX0[5] <= CountUp:countUpCam2.port1
+HEX0[6] <= CountUp:countUpCam2.port1
+HEX1[0] <= Camera:camera2.port4
+HEX1[1] <= Camera:camera2.port4
+HEX1[2] <= Camera:camera2.port4
+HEX1[3] <= Camera:camera2.port4
+HEX1[4] <= Camera:camera2.port4
+HEX1[5] <= Camera:camera2.port4
+HEX1[6] <= Camera:camera2.port4
+HEX2[0] <= <VCC>
+HEX2[1] <= <VCC>
+HEX2[2] <= <VCC>
+HEX2[3] <= <VCC>
+HEX2[4] <= <VCC>
+HEX2[5] <= <VCC>
+HEX2[6] <= <VCC>
+HEX3[0] <= <VCC>
+HEX3[1] <= <VCC>
+HEX3[2] <= <VCC>
+HEX3[3] <= <VCC>
+HEX3[4] <= <VCC>
+HEX3[5] <= <VCC>
+HEX3[6] <= <VCC>
+HEX4[0] <= Camera:camera1.port4
+HEX4[1] <= Camera:camera1.port4
+HEX4[2] <= Camera:camera1.port4
+HEX4[3] <= Camera:camera1.port4
+HEX4[4] <= Camera:camera1.port4
+HEX4[5] <= Camera:camera1.port4
+HEX4[6] <= Camera:camera1.port4
+HEX5[0] <= CountUp:countUpCam1.port1
+HEX5[1] <= CountUp:countUpCam1.port1
+HEX5[2] <= CountUp:countUpCam1.port1
+HEX5[3] <= CountUp:countUpCam1.port1
+HEX5[4] <= CountUp:countUpCam1.port1
+HEX5[5] <= CountUp:countUpCam1.port1
+HEX5[6] <= CountUp:countUpCam1.port1
 KEY[0] => KEY[0].IN1
 KEY[1] => ~NO_FANOUT~
 KEY[2] => ~NO_FANOUT~
 KEY[3] => ~NO_FANOUT~
-LEDG[0] << <GND>
-LEDG[1] << <GND>
-LEDG[2] << <GND>
-LEDG[3] << Camera:camera2.port1
-LEDG[4] << Camera:camera2.port0
-LEDG[5] << <GND>
-LEDG[6] << Camera:camera1.port1
-LEDG[7] << Camera:camera1.port0
+LEDG[0] <= <GND>
+LEDG[1] <= <GND>
+LEDG[2] <= <GND>
+LEDG[3] <= Camera:camera2.port1
+LEDG[4] <= Camera:camera2.port0
+LEDG[5] <= <GND>
+LEDG[6] <= Camera:camera1.port1
+LEDG[7] <= Camera:camera1.port0
 SW[0] => ~NO_FANOUT~
 SW[1] => ~NO_FANOUT~
 SW[2] => ~NO_FANOUT~
@@ -466,180 +466,163 @@ percentVal[3] => Equal3.IN0
 percentVal[3] => Equal5.IN0
 
 
-|lights|Buffer:buf1
-clock => memory.we_a.CLK
-clock => memory.waddr_a[3].CLK
-clock => memory.waddr_a[2].CLK
-clock => memory.waddr_a[1].CLK
-clock => memory.waddr_a[0].CLK
-clock => memory.data_a[7].CLK
-clock => memory.data_a[6].CLK
-clock => memory.data_a[5].CLK
-clock => memory.data_a[4].CLK
-clock => memory.data_a[3].CLK
-clock => memory.data_a[2].CLK
-clock => memory.data_a[1].CLK
-clock => memory.data_a[0].CLK
-clock => strobe~reg0.CLK
-clock => outputValue[0]~reg0.CLK
-clock => outputValue[1]~reg0.CLK
-clock => outputValue[2]~reg0.CLK
-clock => outputValue[3]~reg0.CLK
-clock => outputValue[4]~reg0.CLK
-clock => outputValue[5]~reg0.CLK
-clock => outputValue[6]~reg0.CLK
-clock => outputValue[7]~reg0.CLK
-clock => previousEmptyBuffer.CLK
-clock => previousPercentVal.CLK
-clock => memory.CLK0
-reset => outputValue.OUTPUTSELECT
-reset => outputValue.OUTPUTSELECT
-reset => outputValue.OUTPUTSELECT
-reset => outputValue.OUTPUTSELECT
-reset => outputValue.OUTPUTSELECT
-reset => outputValue.OUTPUTSELECT
-reset => outputValue.OUTPUTSELECT
-reset => outputValue.OUTPUTSELECT
-reset => memory.OUTPUTSELECT
-emptyBuffer => outputValue.OUTPUTSELECT
-emptyBuffer => outputValue.OUTPUTSELECT
-emptyBuffer => outputValue.OUTPUTSELECT
-emptyBuffer => outputValue.OUTPUTSELECT
-emptyBuffer => outputValue.OUTPUTSELECT
-emptyBuffer => outputValue.OUTPUTSELECT
-emptyBuffer => outputValue.OUTPUTSELECT
-emptyBuffer => outputValue.OUTPUTSELECT
-emptyBuffer => always1.IN1
-emptyBuffer => always1.IN1
-emptyBuffer => previousEmptyBuffer.DATAIN
-emptyBuffer => memory.DATAA
-percent[0] => always1.IN1
-percent[0] => memory.waddr_a[0].DATAIN
-percent[0] => previousPercentVal.DATAIN
-percent[0] => memory.WADDR
-percent[0] => memory.RADDR
-percent[1] => memory.waddr_a[1].DATAIN
-percent[1] => memory.WADDR1
-percent[1] => memory.RADDR1
-percent[2] => memory.waddr_a[2].DATAIN
-percent[2] => memory.WADDR2
-percent[2] => memory.RADDR2
-percent[3] => memory.waddr_a[3].DATAIN
-percent[3] => memory.WADDR3
-percent[3] => memory.RADDR3
-inputValue[0] => memory.data_a[0].DATAIN
-inputValue[0] => memory.DATAIN
-inputValue[1] => memory.data_a[1].DATAIN
-inputValue[1] => memory.DATAIN1
-inputValue[2] => memory.data_a[2].DATAIN
-inputValue[2] => memory.DATAIN2
-inputValue[3] => memory.data_a[3].DATAIN
-inputValue[3] => memory.DATAIN3
-inputValue[4] => memory.data_a[4].DATAIN
-inputValue[4] => memory.DATAIN4
-inputValue[5] => memory.data_a[5].DATAIN
-inputValue[5] => memory.DATAIN5
-inputValue[6] => memory.data_a[6].DATAIN
-inputValue[6] => memory.DATAIN6
-inputValue[7] => memory.data_a[7].DATAIN
-inputValue[7] => memory.DATAIN7
-outputValue[0] <= outputValue[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-outputValue[1] <= outputValue[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-outputValue[2] <= outputValue[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-outputValue[3] <= outputValue[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-outputValue[4] <= outputValue[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-outputValue[5] <= outputValue[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-outputValue[6] <= outputValue[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-outputValue[7] <= outputValue[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-strobe <= strobe~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|lights|startBitDetect:start
+enable <= enable~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => enable~reg0.CLK
+rst => enable.OUTPUTSELECT
+in => enable.OUTPUTSELECT
 
 
-|lights|Buffer:buf2
-clock => memory.we_a.CLK
-clock => memory.waddr_a[3].CLK
-clock => memory.waddr_a[2].CLK
-clock => memory.waddr_a[1].CLK
-clock => memory.waddr_a[0].CLK
-clock => memory.data_a[7].CLK
-clock => memory.data_a[6].CLK
-clock => memory.data_a[5].CLK
-clock => memory.data_a[4].CLK
-clock => memory.data_a[3].CLK
-clock => memory.data_a[2].CLK
-clock => memory.data_a[1].CLK
-clock => memory.data_a[0].CLK
-clock => strobe~reg0.CLK
-clock => outputValue[0]~reg0.CLK
-clock => outputValue[1]~reg0.CLK
-clock => outputValue[2]~reg0.CLK
-clock => outputValue[3]~reg0.CLK
-clock => outputValue[4]~reg0.CLK
-clock => outputValue[5]~reg0.CLK
-clock => outputValue[6]~reg0.CLK
-clock => outputValue[7]~reg0.CLK
-clock => previousEmptyBuffer.CLK
-clock => previousPercentVal.CLK
-clock => memory.CLK0
-reset => outputValue.OUTPUTSELECT
-reset => outputValue.OUTPUTSELECT
-reset => outputValue.OUTPUTSELECT
-reset => outputValue.OUTPUTSELECT
-reset => outputValue.OUTPUTSELECT
-reset => outputValue.OUTPUTSELECT
-reset => outputValue.OUTPUTSELECT
-reset => outputValue.OUTPUTSELECT
-reset => memory.OUTPUTSELECT
-emptyBuffer => outputValue.OUTPUTSELECT
-emptyBuffer => outputValue.OUTPUTSELECT
-emptyBuffer => outputValue.OUTPUTSELECT
-emptyBuffer => outputValue.OUTPUTSELECT
-emptyBuffer => outputValue.OUTPUTSELECT
-emptyBuffer => outputValue.OUTPUTSELECT
-emptyBuffer => outputValue.OUTPUTSELECT
-emptyBuffer => outputValue.OUTPUTSELECT
-emptyBuffer => always1.IN1
-emptyBuffer => always1.IN1
-emptyBuffer => previousEmptyBuffer.DATAIN
-emptyBuffer => memory.DATAA
-percent[0] => always1.IN1
-percent[0] => memory.waddr_a[0].DATAIN
-percent[0] => previousPercentVal.DATAIN
-percent[0] => memory.WADDR
-percent[0] => memory.RADDR
-percent[1] => memory.waddr_a[1].DATAIN
-percent[1] => memory.WADDR1
-percent[1] => memory.RADDR1
-percent[2] => memory.waddr_a[2].DATAIN
-percent[2] => memory.WADDR2
-percent[2] => memory.RADDR2
-percent[3] => memory.waddr_a[3].DATAIN
-percent[3] => memory.WADDR3
-percent[3] => memory.RADDR3
-inputValue[0] => memory.data_a[0].DATAIN
-inputValue[0] => memory.DATAIN
-inputValue[1] => memory.data_a[1].DATAIN
-inputValue[1] => memory.DATAIN1
-inputValue[2] => memory.data_a[2].DATAIN
-inputValue[2] => memory.DATAIN2
-inputValue[3] => memory.data_a[3].DATAIN
-inputValue[3] => memory.DATAIN3
-inputValue[4] => memory.data_a[4].DATAIN
-inputValue[4] => memory.DATAIN4
-inputValue[5] => memory.data_a[5].DATAIN
-inputValue[5] => memory.DATAIN5
-inputValue[6] => memory.data_a[6].DATAIN
-inputValue[6] => memory.DATAIN6
-inputValue[7] => memory.data_a[7].DATAIN
-inputValue[7] => memory.DATAIN7
-outputValue[0] <= outputValue[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-outputValue[1] <= outputValue[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-outputValue[2] <= outputValue[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-outputValue[3] <= outputValue[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-outputValue[4] <= outputValue[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-outputValue[5] <= outputValue[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-outputValue[6] <= outputValue[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-outputValue[7] <= outputValue[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-strobe <= strobe~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|lights|fourBitCounter:bitSampleCounter
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => out[0]~reg0.CLK
+clk => out[1]~reg0.CLK
+clk => out[2]~reg0.CLK
+clk => out[3]~reg0.CLK
+rst => always0.IN0
+enable => always0.IN1
+
+
+|lights|fourBitCounter:bitIndexCounter
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => out[0]~reg0.CLK
+clk => out[1]~reg0.CLK
+clk => out[2]~reg0.CLK
+clk => out[3]~reg0.CLK
+rst => always0.IN0
+enable => always0.IN1
+
+
+|lights|shiftIn:bufferIn
+out[0] <= DFlipFlop:d8.port0
+out[1] <= in7.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= in6.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= in5.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= in4.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= in3.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= in2.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= in1.DB_MAX_OUTPUT_PORT_TYPE
+clk => clk.IN8
+rst => rst.IN8
+in => in.IN1
+
+
+|lights|shiftIn:bufferIn|DFlipFlop:d1
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D => q.DATAA
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+
+
+|lights|shiftIn:bufferIn|DFlipFlop:d2
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D => q.DATAA
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+
+
+|lights|shiftIn:bufferIn|DFlipFlop:d3
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D => q.DATAA
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+
+
+|lights|shiftIn:bufferIn|DFlipFlop:d4
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D => q.DATAA
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+
+
+|lights|shiftIn:bufferIn|DFlipFlop:d5
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D => q.DATAA
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+
+
+|lights|shiftIn:bufferIn|DFlipFlop:d6
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D => q.DATAA
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+
+
+|lights|shiftIn:bufferIn|DFlipFlop:d7
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D => q.DATAA
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+
+
+|lights|shiftIn:bufferIn|DFlipFlop:d8
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D => q.DATAA
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+
+
+|lights|fourBitCounter:bitLength
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => out[0]~reg0.CLK
+clk => out[1]~reg0.CLK
+clk => out[2]~reg0.CLK
+clk => out[3]~reg0.CLK
+rst => always0.IN0
+enable => always0.IN1
+
+
+|lights|shiftOut:sendTheD
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+hempTea <= startBitDetect:sentTheD.port0
+clk => clk.IN3
+rst => rst.IN2
+load => load.IN1
+byteIn[0] => Mux0.IN15
+byteIn[1] => Mux0.IN14
+byteIn[2] => Mux0.IN13
+byteIn[3] => Mux0.IN12
+byteIn[4] => Mux0.IN11
+byteIn[5] => Mux0.IN10
+byteIn[6] => Mux0.IN9
+byteIn[7] => Mux0.IN8
+
+
+|lights|shiftOut:sendTheD|startBitDetect:detectLoad
+enable <= enable~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => enable~reg0.CLK
+rst => enable.OUTPUTSELECT
+in => enable.OUTPUTSELECT
+
+
+|lights|shiftOut:sendTheD|fourBitCounter:internalCounter
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => out[0]~reg0.CLK
+clk => out[1]~reg0.CLK
+clk => out[2]~reg0.CLK
+clk => out[3]~reg0.CLK
+rst => always0.IN0
+enable => always0.IN1
+
+
+|lights|shiftOut:sendTheD|startBitDetect:sentTheD
+enable <= enable~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => enable~reg0.CLK
+rst => enable.OUTPUTSELECT
+in => enable.OUTPUTSELECT
 
 
 |lights|switchesqsys:u0
@@ -661,28 +644,28 @@ leds_export[4] <= switchesqsys_LEDs:leds.out_port
 leds_export[5] <= switchesqsys_LEDs:leds.out_port
 leds_export[6] <= switchesqsys_LEDs:leds.out_port
 leds_export[7] <= switchesqsys_LEDs:leds.out_port
-readytodownload1_export => readytodownload1_export.IN1
+readytodownload_export => readytodownload_export.IN1
 outsignal_export[0] <= switchesqsys_outSignal:outsignal.out_port
 outsignal_export[1] <= switchesqsys_outSignal:outsignal.out_port
-curbyte1_export[0] => curbyte1_export[0].IN1
-curbyte1_export[1] => curbyte1_export[1].IN1
-curbyte1_export[2] => curbyte1_export[2].IN1
-curbyte1_export[3] => curbyte1_export[3].IN1
-curbyte1_export[4] => curbyte1_export[4].IN1
-curbyte1_export[5] => curbyte1_export[5].IN1
-curbyte1_export[6] => curbyte1_export[6].IN1
-curbyte1_export[7] => curbyte1_export[7].IN1
-readytodownload2_export => readytodownload2_export.IN1
-curbyte2_export[0] => curbyte2_export[0].IN1
-curbyte2_export[1] => curbyte2_export[1].IN1
-curbyte2_export[2] => curbyte2_export[2].IN1
-curbyte2_export[3] => curbyte2_export[3].IN1
-curbyte2_export[4] => curbyte2_export[4].IN1
-curbyte2_export[5] => curbyte2_export[5].IN1
-curbyte2_export[6] => curbyte2_export[6].IN1
-curbyte2_export[7] => curbyte2_export[7].IN1
-stroberead1_export => stroberead1_export.IN1
-stroberead2_export => stroberead2_export.IN1
+curbyteout_export[0] <= switchesqsys_LEDs:curbyteout.out_port
+curbyteout_export[1] <= switchesqsys_LEDs:curbyteout.out_port
+curbyteout_export[2] <= switchesqsys_LEDs:curbyteout.out_port
+curbyteout_export[3] <= switchesqsys_LEDs:curbyteout.out_port
+curbyteout_export[4] <= switchesqsys_LEDs:curbyteout.out_port
+curbyteout_export[5] <= switchesqsys_LEDs:curbyteout.out_port
+curbyteout_export[6] <= switchesqsys_LEDs:curbyteout.out_port
+curbyteout_export[7] <= switchesqsys_LEDs:curbyteout.out_port
+instrobe_export => instrobe_export.IN1
+load_export <= switchesqsys_load:load.out_port
+curbytein_export[0] => curbytein_export[0].IN1
+curbytein_export[1] => curbytein_export[1].IN1
+curbytein_export[2] => curbytein_export[2].IN1
+curbytein_export[3] => curbytein_export[3].IN1
+curbytein_export[4] => curbytein_export[4].IN1
+curbytein_export[5] => curbytein_export[5].IN1
+curbytein_export[6] => curbytein_export[6].IN1
+curbytein_export[7] => curbytein_export[7].IN1
+empty_export => empty_export.IN1
 
 
 |lights|switchesqsys:u0|switchesqsys_nios2_processor:nios2_processor
@@ -8770,7 +8753,7 @@ t_dat[7] <= t_dat[7].DB_MAX_OUTPUT_PORT_TYPE
 t_pause <= t_pause~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lights|switchesqsys:u0|switchesqsys_readyToDownload1:readytodownload1
+|lights|switchesqsys:u0|switchesqsys_readyToDownload:readytodownload
 address[0] => Equal0.IN31
 address[1] => Equal0.IN30
 clk => readdata[0]~reg0.CLK
@@ -8949,7 +8932,278 @@ readdata[30] <= <GND>
 readdata[31] <= <GND>
 
 
-|lights|switchesqsys:u0|switchesqsys_switches:curbyte1
+|lights|switchesqsys:u0|switchesqsys_LEDs:curbyteout
+address[0] => Equal0.IN31
+address[1] => Equal0.IN30
+chipselect => always0.IN0
+clk => data_out[0].CLK
+clk => data_out[1].CLK
+clk => data_out[2].CLK
+clk => data_out[3].CLK
+clk => data_out[4].CLK
+clk => data_out[5].CLK
+clk => data_out[6].CLK
+clk => data_out[7].CLK
+reset_n => data_out[0].ACLR
+reset_n => data_out[1].ACLR
+reset_n => data_out[2].ACLR
+reset_n => data_out[3].ACLR
+reset_n => data_out[4].ACLR
+reset_n => data_out[5].ACLR
+reset_n => data_out[6].ACLR
+reset_n => data_out[7].ACLR
+write_n => always0.IN1
+writedata[0] => data_out[0].DATAIN
+writedata[1] => data_out[1].DATAIN
+writedata[2] => data_out[2].DATAIN
+writedata[3] => data_out[3].DATAIN
+writedata[4] => data_out[4].DATAIN
+writedata[5] => data_out[5].DATAIN
+writedata[6] => data_out[6].DATAIN
+writedata[7] => data_out[7].DATAIN
+writedata[8] => ~NO_FANOUT~
+writedata[9] => ~NO_FANOUT~
+writedata[10] => ~NO_FANOUT~
+writedata[11] => ~NO_FANOUT~
+writedata[12] => ~NO_FANOUT~
+writedata[13] => ~NO_FANOUT~
+writedata[14] => ~NO_FANOUT~
+writedata[15] => ~NO_FANOUT~
+writedata[16] => ~NO_FANOUT~
+writedata[17] => ~NO_FANOUT~
+writedata[18] => ~NO_FANOUT~
+writedata[19] => ~NO_FANOUT~
+writedata[20] => ~NO_FANOUT~
+writedata[21] => ~NO_FANOUT~
+writedata[22] => ~NO_FANOUT~
+writedata[23] => ~NO_FANOUT~
+writedata[24] => ~NO_FANOUT~
+writedata[25] => ~NO_FANOUT~
+writedata[26] => ~NO_FANOUT~
+writedata[27] => ~NO_FANOUT~
+writedata[28] => ~NO_FANOUT~
+writedata[29] => ~NO_FANOUT~
+writedata[30] => ~NO_FANOUT~
+writedata[31] => ~NO_FANOUT~
+out_port[0] <= data_out[0].DB_MAX_OUTPUT_PORT_TYPE
+out_port[1] <= data_out[1].DB_MAX_OUTPUT_PORT_TYPE
+out_port[2] <= data_out[2].DB_MAX_OUTPUT_PORT_TYPE
+out_port[3] <= data_out[3].DB_MAX_OUTPUT_PORT_TYPE
+out_port[4] <= data_out[4].DB_MAX_OUTPUT_PORT_TYPE
+out_port[5] <= data_out[5].DB_MAX_OUTPUT_PORT_TYPE
+out_port[6] <= data_out[6].DB_MAX_OUTPUT_PORT_TYPE
+out_port[7] <= data_out[7].DB_MAX_OUTPUT_PORT_TYPE
+readdata[0] <= read_mux_out.DB_MAX_OUTPUT_PORT_TYPE
+readdata[1] <= read_mux_out.DB_MAX_OUTPUT_PORT_TYPE
+readdata[2] <= read_mux_out.DB_MAX_OUTPUT_PORT_TYPE
+readdata[3] <= read_mux_out.DB_MAX_OUTPUT_PORT_TYPE
+readdata[4] <= read_mux_out.DB_MAX_OUTPUT_PORT_TYPE
+readdata[5] <= read_mux_out.DB_MAX_OUTPUT_PORT_TYPE
+readdata[6] <= read_mux_out.DB_MAX_OUTPUT_PORT_TYPE
+readdata[7] <= read_mux_out.DB_MAX_OUTPUT_PORT_TYPE
+readdata[8] <= <GND>
+readdata[9] <= <GND>
+readdata[10] <= <GND>
+readdata[11] <= <GND>
+readdata[12] <= <GND>
+readdata[13] <= <GND>
+readdata[14] <= <GND>
+readdata[15] <= <GND>
+readdata[16] <= <GND>
+readdata[17] <= <GND>
+readdata[18] <= <GND>
+readdata[19] <= <GND>
+readdata[20] <= <GND>
+readdata[21] <= <GND>
+readdata[22] <= <GND>
+readdata[23] <= <GND>
+readdata[24] <= <GND>
+readdata[25] <= <GND>
+readdata[26] <= <GND>
+readdata[27] <= <GND>
+readdata[28] <= <GND>
+readdata[29] <= <GND>
+readdata[30] <= <GND>
+readdata[31] <= <GND>
+
+
+|lights|switchesqsys:u0|switchesqsys_readyToDownload:instrobe
+address[0] => Equal0.IN31
+address[1] => Equal0.IN30
+clk => readdata[0]~reg0.CLK
+clk => readdata[1]~reg0.CLK
+clk => readdata[2]~reg0.CLK
+clk => readdata[3]~reg0.CLK
+clk => readdata[4]~reg0.CLK
+clk => readdata[5]~reg0.CLK
+clk => readdata[6]~reg0.CLK
+clk => readdata[7]~reg0.CLK
+clk => readdata[8]~reg0.CLK
+clk => readdata[9]~reg0.CLK
+clk => readdata[10]~reg0.CLK
+clk => readdata[11]~reg0.CLK
+clk => readdata[12]~reg0.CLK
+clk => readdata[13]~reg0.CLK
+clk => readdata[14]~reg0.CLK
+clk => readdata[15]~reg0.CLK
+clk => readdata[16]~reg0.CLK
+clk => readdata[17]~reg0.CLK
+clk => readdata[18]~reg0.CLK
+clk => readdata[19]~reg0.CLK
+clk => readdata[20]~reg0.CLK
+clk => readdata[21]~reg0.CLK
+clk => readdata[22]~reg0.CLK
+clk => readdata[23]~reg0.CLK
+clk => readdata[24]~reg0.CLK
+clk => readdata[25]~reg0.CLK
+clk => readdata[26]~reg0.CLK
+clk => readdata[27]~reg0.CLK
+clk => readdata[28]~reg0.CLK
+clk => readdata[29]~reg0.CLK
+clk => readdata[30]~reg0.CLK
+clk => readdata[31]~reg0.CLK
+in_port => read_mux_out.IN1
+reset_n => readdata[0]~reg0.ACLR
+reset_n => readdata[1]~reg0.ACLR
+reset_n => readdata[2]~reg0.ACLR
+reset_n => readdata[3]~reg0.ACLR
+reset_n => readdata[4]~reg0.ACLR
+reset_n => readdata[5]~reg0.ACLR
+reset_n => readdata[6]~reg0.ACLR
+reset_n => readdata[7]~reg0.ACLR
+reset_n => readdata[8]~reg0.ACLR
+reset_n => readdata[9]~reg0.ACLR
+reset_n => readdata[10]~reg0.ACLR
+reset_n => readdata[11]~reg0.ACLR
+reset_n => readdata[12]~reg0.ACLR
+reset_n => readdata[13]~reg0.ACLR
+reset_n => readdata[14]~reg0.ACLR
+reset_n => readdata[15]~reg0.ACLR
+reset_n => readdata[16]~reg0.ACLR
+reset_n => readdata[17]~reg0.ACLR
+reset_n => readdata[18]~reg0.ACLR
+reset_n => readdata[19]~reg0.ACLR
+reset_n => readdata[20]~reg0.ACLR
+reset_n => readdata[21]~reg0.ACLR
+reset_n => readdata[22]~reg0.ACLR
+reset_n => readdata[23]~reg0.ACLR
+reset_n => readdata[24]~reg0.ACLR
+reset_n => readdata[25]~reg0.ACLR
+reset_n => readdata[26]~reg0.ACLR
+reset_n => readdata[27]~reg0.ACLR
+reset_n => readdata[28]~reg0.ACLR
+reset_n => readdata[29]~reg0.ACLR
+reset_n => readdata[30]~reg0.ACLR
+reset_n => readdata[31]~reg0.ACLR
+readdata[0] <= readdata[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[1] <= readdata[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[2] <= readdata[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[3] <= readdata[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[4] <= readdata[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[5] <= readdata[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[6] <= readdata[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[7] <= readdata[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[8] <= readdata[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[9] <= readdata[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[10] <= readdata[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[11] <= readdata[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[12] <= readdata[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[13] <= readdata[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[14] <= readdata[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[15] <= readdata[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[16] <= readdata[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[17] <= readdata[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[18] <= readdata[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[19] <= readdata[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[20] <= readdata[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[21] <= readdata[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[22] <= readdata[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[23] <= readdata[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[24] <= readdata[24]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[25] <= readdata[25]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[26] <= readdata[26]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[27] <= readdata[27]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[28] <= readdata[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[29] <= readdata[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[30] <= readdata[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readdata[31] <= readdata[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lights|switchesqsys:u0|switchesqsys_load:load
+address[0] => Equal0.IN31
+address[1] => Equal0.IN30
+chipselect => always0.IN0
+clk => data_out.CLK
+reset_n => data_out.ACLR
+write_n => always0.IN1
+writedata[0] => data_out.DATAIN
+writedata[1] => ~NO_FANOUT~
+writedata[2] => ~NO_FANOUT~
+writedata[3] => ~NO_FANOUT~
+writedata[4] => ~NO_FANOUT~
+writedata[5] => ~NO_FANOUT~
+writedata[6] => ~NO_FANOUT~
+writedata[7] => ~NO_FANOUT~
+writedata[8] => ~NO_FANOUT~
+writedata[9] => ~NO_FANOUT~
+writedata[10] => ~NO_FANOUT~
+writedata[11] => ~NO_FANOUT~
+writedata[12] => ~NO_FANOUT~
+writedata[13] => ~NO_FANOUT~
+writedata[14] => ~NO_FANOUT~
+writedata[15] => ~NO_FANOUT~
+writedata[16] => ~NO_FANOUT~
+writedata[17] => ~NO_FANOUT~
+writedata[18] => ~NO_FANOUT~
+writedata[19] => ~NO_FANOUT~
+writedata[20] => ~NO_FANOUT~
+writedata[21] => ~NO_FANOUT~
+writedata[22] => ~NO_FANOUT~
+writedata[23] => ~NO_FANOUT~
+writedata[24] => ~NO_FANOUT~
+writedata[25] => ~NO_FANOUT~
+writedata[26] => ~NO_FANOUT~
+writedata[27] => ~NO_FANOUT~
+writedata[28] => ~NO_FANOUT~
+writedata[29] => ~NO_FANOUT~
+writedata[30] => ~NO_FANOUT~
+writedata[31] => ~NO_FANOUT~
+out_port <= data_out.DB_MAX_OUTPUT_PORT_TYPE
+readdata[0] <= read_mux_out.DB_MAX_OUTPUT_PORT_TYPE
+readdata[1] <= <GND>
+readdata[2] <= <GND>
+readdata[3] <= <GND>
+readdata[4] <= <GND>
+readdata[5] <= <GND>
+readdata[6] <= <GND>
+readdata[7] <= <GND>
+readdata[8] <= <GND>
+readdata[9] <= <GND>
+readdata[10] <= <GND>
+readdata[11] <= <GND>
+readdata[12] <= <GND>
+readdata[13] <= <GND>
+readdata[14] <= <GND>
+readdata[15] <= <GND>
+readdata[16] <= <GND>
+readdata[17] <= <GND>
+readdata[18] <= <GND>
+readdata[19] <= <GND>
+readdata[20] <= <GND>
+readdata[21] <= <GND>
+readdata[22] <= <GND>
+readdata[23] <= <GND>
+readdata[24] <= <GND>
+readdata[25] <= <GND>
+readdata[26] <= <GND>
+readdata[27] <= <GND>
+readdata[28] <= <GND>
+readdata[29] <= <GND>
+readdata[30] <= <GND>
+readdata[31] <= <GND>
+
+
+|lights|switchesqsys:u0|switchesqsys_switches:curbytein
 address[0] => Equal0.IN31
 address[1] => Equal0.IN30
 clk => readdata[0]~reg0.CLK
@@ -9058,320 +9312,7 @@ readdata[30] <= readdata[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 readdata[31] <= readdata[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lights|switchesqsys:u0|switchesqsys_readyToDownload1:readytodownload2
-address[0] => Equal0.IN31
-address[1] => Equal0.IN30
-clk => readdata[0]~reg0.CLK
-clk => readdata[1]~reg0.CLK
-clk => readdata[2]~reg0.CLK
-clk => readdata[3]~reg0.CLK
-clk => readdata[4]~reg0.CLK
-clk => readdata[5]~reg0.CLK
-clk => readdata[6]~reg0.CLK
-clk => readdata[7]~reg0.CLK
-clk => readdata[8]~reg0.CLK
-clk => readdata[9]~reg0.CLK
-clk => readdata[10]~reg0.CLK
-clk => readdata[11]~reg0.CLK
-clk => readdata[12]~reg0.CLK
-clk => readdata[13]~reg0.CLK
-clk => readdata[14]~reg0.CLK
-clk => readdata[15]~reg0.CLK
-clk => readdata[16]~reg0.CLK
-clk => readdata[17]~reg0.CLK
-clk => readdata[18]~reg0.CLK
-clk => readdata[19]~reg0.CLK
-clk => readdata[20]~reg0.CLK
-clk => readdata[21]~reg0.CLK
-clk => readdata[22]~reg0.CLK
-clk => readdata[23]~reg0.CLK
-clk => readdata[24]~reg0.CLK
-clk => readdata[25]~reg0.CLK
-clk => readdata[26]~reg0.CLK
-clk => readdata[27]~reg0.CLK
-clk => readdata[28]~reg0.CLK
-clk => readdata[29]~reg0.CLK
-clk => readdata[30]~reg0.CLK
-clk => readdata[31]~reg0.CLK
-in_port => read_mux_out.IN1
-reset_n => readdata[0]~reg0.ACLR
-reset_n => readdata[1]~reg0.ACLR
-reset_n => readdata[2]~reg0.ACLR
-reset_n => readdata[3]~reg0.ACLR
-reset_n => readdata[4]~reg0.ACLR
-reset_n => readdata[5]~reg0.ACLR
-reset_n => readdata[6]~reg0.ACLR
-reset_n => readdata[7]~reg0.ACLR
-reset_n => readdata[8]~reg0.ACLR
-reset_n => readdata[9]~reg0.ACLR
-reset_n => readdata[10]~reg0.ACLR
-reset_n => readdata[11]~reg0.ACLR
-reset_n => readdata[12]~reg0.ACLR
-reset_n => readdata[13]~reg0.ACLR
-reset_n => readdata[14]~reg0.ACLR
-reset_n => readdata[15]~reg0.ACLR
-reset_n => readdata[16]~reg0.ACLR
-reset_n => readdata[17]~reg0.ACLR
-reset_n => readdata[18]~reg0.ACLR
-reset_n => readdata[19]~reg0.ACLR
-reset_n => readdata[20]~reg0.ACLR
-reset_n => readdata[21]~reg0.ACLR
-reset_n => readdata[22]~reg0.ACLR
-reset_n => readdata[23]~reg0.ACLR
-reset_n => readdata[24]~reg0.ACLR
-reset_n => readdata[25]~reg0.ACLR
-reset_n => readdata[26]~reg0.ACLR
-reset_n => readdata[27]~reg0.ACLR
-reset_n => readdata[28]~reg0.ACLR
-reset_n => readdata[29]~reg0.ACLR
-reset_n => readdata[30]~reg0.ACLR
-reset_n => readdata[31]~reg0.ACLR
-readdata[0] <= readdata[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[1] <= readdata[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[2] <= readdata[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[3] <= readdata[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[4] <= readdata[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[5] <= readdata[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[6] <= readdata[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[7] <= readdata[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[8] <= readdata[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[9] <= readdata[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[10] <= readdata[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[11] <= readdata[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[12] <= readdata[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[13] <= readdata[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[14] <= readdata[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[15] <= readdata[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[16] <= readdata[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[17] <= readdata[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[18] <= readdata[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[19] <= readdata[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[20] <= readdata[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[21] <= readdata[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[22] <= readdata[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[23] <= readdata[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[24] <= readdata[24]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[25] <= readdata[25]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[26] <= readdata[26]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[27] <= readdata[27]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[28] <= readdata[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[29] <= readdata[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[30] <= readdata[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[31] <= readdata[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|lights|switchesqsys:u0|switchesqsys_switches:curbyte2
-address[0] => Equal0.IN31
-address[1] => Equal0.IN30
-clk => readdata[0]~reg0.CLK
-clk => readdata[1]~reg0.CLK
-clk => readdata[2]~reg0.CLK
-clk => readdata[3]~reg0.CLK
-clk => readdata[4]~reg0.CLK
-clk => readdata[5]~reg0.CLK
-clk => readdata[6]~reg0.CLK
-clk => readdata[7]~reg0.CLK
-clk => readdata[8]~reg0.CLK
-clk => readdata[9]~reg0.CLK
-clk => readdata[10]~reg0.CLK
-clk => readdata[11]~reg0.CLK
-clk => readdata[12]~reg0.CLK
-clk => readdata[13]~reg0.CLK
-clk => readdata[14]~reg0.CLK
-clk => readdata[15]~reg0.CLK
-clk => readdata[16]~reg0.CLK
-clk => readdata[17]~reg0.CLK
-clk => readdata[18]~reg0.CLK
-clk => readdata[19]~reg0.CLK
-clk => readdata[20]~reg0.CLK
-clk => readdata[21]~reg0.CLK
-clk => readdata[22]~reg0.CLK
-clk => readdata[23]~reg0.CLK
-clk => readdata[24]~reg0.CLK
-clk => readdata[25]~reg0.CLK
-clk => readdata[26]~reg0.CLK
-clk => readdata[27]~reg0.CLK
-clk => readdata[28]~reg0.CLK
-clk => readdata[29]~reg0.CLK
-clk => readdata[30]~reg0.CLK
-clk => readdata[31]~reg0.CLK
-in_port[0] => read_mux_out[0].IN1
-in_port[1] => read_mux_out[1].IN1
-in_port[2] => read_mux_out[2].IN1
-in_port[3] => read_mux_out[3].IN1
-in_port[4] => read_mux_out[4].IN1
-in_port[5] => read_mux_out[5].IN1
-in_port[6] => read_mux_out[6].IN1
-in_port[7] => read_mux_out[7].IN1
-reset_n => readdata[0]~reg0.ACLR
-reset_n => readdata[1]~reg0.ACLR
-reset_n => readdata[2]~reg0.ACLR
-reset_n => readdata[3]~reg0.ACLR
-reset_n => readdata[4]~reg0.ACLR
-reset_n => readdata[5]~reg0.ACLR
-reset_n => readdata[6]~reg0.ACLR
-reset_n => readdata[7]~reg0.ACLR
-reset_n => readdata[8]~reg0.ACLR
-reset_n => readdata[9]~reg0.ACLR
-reset_n => readdata[10]~reg0.ACLR
-reset_n => readdata[11]~reg0.ACLR
-reset_n => readdata[12]~reg0.ACLR
-reset_n => readdata[13]~reg0.ACLR
-reset_n => readdata[14]~reg0.ACLR
-reset_n => readdata[15]~reg0.ACLR
-reset_n => readdata[16]~reg0.ACLR
-reset_n => readdata[17]~reg0.ACLR
-reset_n => readdata[18]~reg0.ACLR
-reset_n => readdata[19]~reg0.ACLR
-reset_n => readdata[20]~reg0.ACLR
-reset_n => readdata[21]~reg0.ACLR
-reset_n => readdata[22]~reg0.ACLR
-reset_n => readdata[23]~reg0.ACLR
-reset_n => readdata[24]~reg0.ACLR
-reset_n => readdata[25]~reg0.ACLR
-reset_n => readdata[26]~reg0.ACLR
-reset_n => readdata[27]~reg0.ACLR
-reset_n => readdata[28]~reg0.ACLR
-reset_n => readdata[29]~reg0.ACLR
-reset_n => readdata[30]~reg0.ACLR
-reset_n => readdata[31]~reg0.ACLR
-readdata[0] <= readdata[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[1] <= readdata[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[2] <= readdata[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[3] <= readdata[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[4] <= readdata[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[5] <= readdata[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[6] <= readdata[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[7] <= readdata[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[8] <= readdata[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[9] <= readdata[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[10] <= readdata[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[11] <= readdata[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[12] <= readdata[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[13] <= readdata[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[14] <= readdata[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[15] <= readdata[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[16] <= readdata[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[17] <= readdata[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[18] <= readdata[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[19] <= readdata[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[20] <= readdata[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[21] <= readdata[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[22] <= readdata[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[23] <= readdata[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[24] <= readdata[24]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[25] <= readdata[25]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[26] <= readdata[26]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[27] <= readdata[27]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[28] <= readdata[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[29] <= readdata[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[30] <= readdata[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[31] <= readdata[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|lights|switchesqsys:u0|switchesqsys_readyToDownload1:stroberead1
-address[0] => Equal0.IN31
-address[1] => Equal0.IN30
-clk => readdata[0]~reg0.CLK
-clk => readdata[1]~reg0.CLK
-clk => readdata[2]~reg0.CLK
-clk => readdata[3]~reg0.CLK
-clk => readdata[4]~reg0.CLK
-clk => readdata[5]~reg0.CLK
-clk => readdata[6]~reg0.CLK
-clk => readdata[7]~reg0.CLK
-clk => readdata[8]~reg0.CLK
-clk => readdata[9]~reg0.CLK
-clk => readdata[10]~reg0.CLK
-clk => readdata[11]~reg0.CLK
-clk => readdata[12]~reg0.CLK
-clk => readdata[13]~reg0.CLK
-clk => readdata[14]~reg0.CLK
-clk => readdata[15]~reg0.CLK
-clk => readdata[16]~reg0.CLK
-clk => readdata[17]~reg0.CLK
-clk => readdata[18]~reg0.CLK
-clk => readdata[19]~reg0.CLK
-clk => readdata[20]~reg0.CLK
-clk => readdata[21]~reg0.CLK
-clk => readdata[22]~reg0.CLK
-clk => readdata[23]~reg0.CLK
-clk => readdata[24]~reg0.CLK
-clk => readdata[25]~reg0.CLK
-clk => readdata[26]~reg0.CLK
-clk => readdata[27]~reg0.CLK
-clk => readdata[28]~reg0.CLK
-clk => readdata[29]~reg0.CLK
-clk => readdata[30]~reg0.CLK
-clk => readdata[31]~reg0.CLK
-in_port => read_mux_out.IN1
-reset_n => readdata[0]~reg0.ACLR
-reset_n => readdata[1]~reg0.ACLR
-reset_n => readdata[2]~reg0.ACLR
-reset_n => readdata[3]~reg0.ACLR
-reset_n => readdata[4]~reg0.ACLR
-reset_n => readdata[5]~reg0.ACLR
-reset_n => readdata[6]~reg0.ACLR
-reset_n => readdata[7]~reg0.ACLR
-reset_n => readdata[8]~reg0.ACLR
-reset_n => readdata[9]~reg0.ACLR
-reset_n => readdata[10]~reg0.ACLR
-reset_n => readdata[11]~reg0.ACLR
-reset_n => readdata[12]~reg0.ACLR
-reset_n => readdata[13]~reg0.ACLR
-reset_n => readdata[14]~reg0.ACLR
-reset_n => readdata[15]~reg0.ACLR
-reset_n => readdata[16]~reg0.ACLR
-reset_n => readdata[17]~reg0.ACLR
-reset_n => readdata[18]~reg0.ACLR
-reset_n => readdata[19]~reg0.ACLR
-reset_n => readdata[20]~reg0.ACLR
-reset_n => readdata[21]~reg0.ACLR
-reset_n => readdata[22]~reg0.ACLR
-reset_n => readdata[23]~reg0.ACLR
-reset_n => readdata[24]~reg0.ACLR
-reset_n => readdata[25]~reg0.ACLR
-reset_n => readdata[26]~reg0.ACLR
-reset_n => readdata[27]~reg0.ACLR
-reset_n => readdata[28]~reg0.ACLR
-reset_n => readdata[29]~reg0.ACLR
-reset_n => readdata[30]~reg0.ACLR
-reset_n => readdata[31]~reg0.ACLR
-readdata[0] <= readdata[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[1] <= readdata[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[2] <= readdata[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[3] <= readdata[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[4] <= readdata[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[5] <= readdata[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[6] <= readdata[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[7] <= readdata[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[8] <= readdata[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[9] <= readdata[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[10] <= readdata[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[11] <= readdata[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[12] <= readdata[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[13] <= readdata[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[14] <= readdata[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[15] <= readdata[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[16] <= readdata[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[17] <= readdata[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[18] <= readdata[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[19] <= readdata[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[20] <= readdata[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[21] <= readdata[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[22] <= readdata[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[23] <= readdata[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[24] <= readdata[24]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[25] <= readdata[25]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[26] <= readdata[26]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[27] <= readdata[27]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[28] <= readdata[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[29] <= readdata[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[30] <= readdata[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-readdata[31] <= readdata[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|lights|switchesqsys:u0|switchesqsys_readyToDownload1:stroberead2
+|lights|switchesqsys:u0|switchesqsys_readyToDownload:empty
 address[0] => Equal0.IN31
 address[1] => Equal0.IN30
 clk => readdata[0]~reg0.CLK
@@ -9610,74 +9551,176 @@ nios2_processor_instruction_master_readdata[28] <= altera_merlin_master_translat
 nios2_processor_instruction_master_readdata[29] <= altera_merlin_master_translator:nios2_processor_instruction_master_translator.av_readdata
 nios2_processor_instruction_master_readdata[30] <= altera_merlin_master_translator:nios2_processor_instruction_master_translator.av_readdata
 nios2_processor_instruction_master_readdata[31] <= altera_merlin_master_translator:nios2_processor_instruction_master_translator.av_readdata
-curByte1_s1_address[0] <= altera_merlin_slave_translator:curbyte1_s1_translator.av_address
-curByte1_s1_address[1] <= altera_merlin_slave_translator:curbyte1_s1_translator.av_address
-curByte1_s1_readdata[0] => curByte1_s1_readdata[0].IN1
-curByte1_s1_readdata[1] => curByte1_s1_readdata[1].IN1
-curByte1_s1_readdata[2] => curByte1_s1_readdata[2].IN1
-curByte1_s1_readdata[3] => curByte1_s1_readdata[3].IN1
-curByte1_s1_readdata[4] => curByte1_s1_readdata[4].IN1
-curByte1_s1_readdata[5] => curByte1_s1_readdata[5].IN1
-curByte1_s1_readdata[6] => curByte1_s1_readdata[6].IN1
-curByte1_s1_readdata[7] => curByte1_s1_readdata[7].IN1
-curByte1_s1_readdata[8] => curByte1_s1_readdata[8].IN1
-curByte1_s1_readdata[9] => curByte1_s1_readdata[9].IN1
-curByte1_s1_readdata[10] => curByte1_s1_readdata[10].IN1
-curByte1_s1_readdata[11] => curByte1_s1_readdata[11].IN1
-curByte1_s1_readdata[12] => curByte1_s1_readdata[12].IN1
-curByte1_s1_readdata[13] => curByte1_s1_readdata[13].IN1
-curByte1_s1_readdata[14] => curByte1_s1_readdata[14].IN1
-curByte1_s1_readdata[15] => curByte1_s1_readdata[15].IN1
-curByte1_s1_readdata[16] => curByte1_s1_readdata[16].IN1
-curByte1_s1_readdata[17] => curByte1_s1_readdata[17].IN1
-curByte1_s1_readdata[18] => curByte1_s1_readdata[18].IN1
-curByte1_s1_readdata[19] => curByte1_s1_readdata[19].IN1
-curByte1_s1_readdata[20] => curByte1_s1_readdata[20].IN1
-curByte1_s1_readdata[21] => curByte1_s1_readdata[21].IN1
-curByte1_s1_readdata[22] => curByte1_s1_readdata[22].IN1
-curByte1_s1_readdata[23] => curByte1_s1_readdata[23].IN1
-curByte1_s1_readdata[24] => curByte1_s1_readdata[24].IN1
-curByte1_s1_readdata[25] => curByte1_s1_readdata[25].IN1
-curByte1_s1_readdata[26] => curByte1_s1_readdata[26].IN1
-curByte1_s1_readdata[27] => curByte1_s1_readdata[27].IN1
-curByte1_s1_readdata[28] => curByte1_s1_readdata[28].IN1
-curByte1_s1_readdata[29] => curByte1_s1_readdata[29].IN1
-curByte1_s1_readdata[30] => curByte1_s1_readdata[30].IN1
-curByte1_s1_readdata[31] => curByte1_s1_readdata[31].IN1
-curByte2_s1_address[0] <= altera_merlin_slave_translator:curbyte2_s1_translator.av_address
-curByte2_s1_address[1] <= altera_merlin_slave_translator:curbyte2_s1_translator.av_address
-curByte2_s1_readdata[0] => curByte2_s1_readdata[0].IN1
-curByte2_s1_readdata[1] => curByte2_s1_readdata[1].IN1
-curByte2_s1_readdata[2] => curByte2_s1_readdata[2].IN1
-curByte2_s1_readdata[3] => curByte2_s1_readdata[3].IN1
-curByte2_s1_readdata[4] => curByte2_s1_readdata[4].IN1
-curByte2_s1_readdata[5] => curByte2_s1_readdata[5].IN1
-curByte2_s1_readdata[6] => curByte2_s1_readdata[6].IN1
-curByte2_s1_readdata[7] => curByte2_s1_readdata[7].IN1
-curByte2_s1_readdata[8] => curByte2_s1_readdata[8].IN1
-curByte2_s1_readdata[9] => curByte2_s1_readdata[9].IN1
-curByte2_s1_readdata[10] => curByte2_s1_readdata[10].IN1
-curByte2_s1_readdata[11] => curByte2_s1_readdata[11].IN1
-curByte2_s1_readdata[12] => curByte2_s1_readdata[12].IN1
-curByte2_s1_readdata[13] => curByte2_s1_readdata[13].IN1
-curByte2_s1_readdata[14] => curByte2_s1_readdata[14].IN1
-curByte2_s1_readdata[15] => curByte2_s1_readdata[15].IN1
-curByte2_s1_readdata[16] => curByte2_s1_readdata[16].IN1
-curByte2_s1_readdata[17] => curByte2_s1_readdata[17].IN1
-curByte2_s1_readdata[18] => curByte2_s1_readdata[18].IN1
-curByte2_s1_readdata[19] => curByte2_s1_readdata[19].IN1
-curByte2_s1_readdata[20] => curByte2_s1_readdata[20].IN1
-curByte2_s1_readdata[21] => curByte2_s1_readdata[21].IN1
-curByte2_s1_readdata[22] => curByte2_s1_readdata[22].IN1
-curByte2_s1_readdata[23] => curByte2_s1_readdata[23].IN1
-curByte2_s1_readdata[24] => curByte2_s1_readdata[24].IN1
-curByte2_s1_readdata[25] => curByte2_s1_readdata[25].IN1
-curByte2_s1_readdata[26] => curByte2_s1_readdata[26].IN1
-curByte2_s1_readdata[27] => curByte2_s1_readdata[27].IN1
-curByte2_s1_readdata[28] => curByte2_s1_readdata[28].IN1
-curByte2_s1_readdata[29] => curByte2_s1_readdata[29].IN1
-curByte2_s1_readdata[30] => curByte2_s1_readdata[30].IN1
-curByte2_s1_readdata[31] => curByte2_s1_readdata[31].IN1
+curByteIn_s1_address[0] <= altera_merlin_slave_translator:curbytein_s1_translator.av_address
+curByteIn_s1_address[1] <= altera_merlin_slave_translator:curbytein_s1_translator.av_address
+curByteIn_s1_readdata[0] => curByteIn_s1_readdata[0].IN1
+curByteIn_s1_readdata[1] => curByteIn_s1_readdata[1].IN1
+curByteIn_s1_readdata[2] => curByteIn_s1_readdata[2].IN1
+curByteIn_s1_readdata[3] => curByteIn_s1_readdata[3].IN1
+curByteIn_s1_readdata[4] => curByteIn_s1_readdata[4].IN1
+curByteIn_s1_readdata[5] => curByteIn_s1_readdata[5].IN1
+curByteIn_s1_readdata[6] => curByteIn_s1_readdata[6].IN1
+curByteIn_s1_readdata[7] => curByteIn_s1_readdata[7].IN1
+curByteIn_s1_readdata[8] => curByteIn_s1_readdata[8].IN1
+curByteIn_s1_readdata[9] => curByteIn_s1_readdata[9].IN1
+curByteIn_s1_readdata[10] => curByteIn_s1_readdata[10].IN1
+curByteIn_s1_readdata[11] => curByteIn_s1_readdata[11].IN1
+curByteIn_s1_readdata[12] => curByteIn_s1_readdata[12].IN1
+curByteIn_s1_readdata[13] => curByteIn_s1_readdata[13].IN1
+curByteIn_s1_readdata[14] => curByteIn_s1_readdata[14].IN1
+curByteIn_s1_readdata[15] => curByteIn_s1_readdata[15].IN1
+curByteIn_s1_readdata[16] => curByteIn_s1_readdata[16].IN1
+curByteIn_s1_readdata[17] => curByteIn_s1_readdata[17].IN1
+curByteIn_s1_readdata[18] => curByteIn_s1_readdata[18].IN1
+curByteIn_s1_readdata[19] => curByteIn_s1_readdata[19].IN1
+curByteIn_s1_readdata[20] => curByteIn_s1_readdata[20].IN1
+curByteIn_s1_readdata[21] => curByteIn_s1_readdata[21].IN1
+curByteIn_s1_readdata[22] => curByteIn_s1_readdata[22].IN1
+curByteIn_s1_readdata[23] => curByteIn_s1_readdata[23].IN1
+curByteIn_s1_readdata[24] => curByteIn_s1_readdata[24].IN1
+curByteIn_s1_readdata[25] => curByteIn_s1_readdata[25].IN1
+curByteIn_s1_readdata[26] => curByteIn_s1_readdata[26].IN1
+curByteIn_s1_readdata[27] => curByteIn_s1_readdata[27].IN1
+curByteIn_s1_readdata[28] => curByteIn_s1_readdata[28].IN1
+curByteIn_s1_readdata[29] => curByteIn_s1_readdata[29].IN1
+curByteIn_s1_readdata[30] => curByteIn_s1_readdata[30].IN1
+curByteIn_s1_readdata[31] => curByteIn_s1_readdata[31].IN1
+curByteOut_s1_address[0] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_address
+curByteOut_s1_address[1] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_address
+curByteOut_s1_write <= altera_merlin_slave_translator:curbyteout_s1_translator.av_write
+curByteOut_s1_readdata[0] => curByteOut_s1_readdata[0].IN1
+curByteOut_s1_readdata[1] => curByteOut_s1_readdata[1].IN1
+curByteOut_s1_readdata[2] => curByteOut_s1_readdata[2].IN1
+curByteOut_s1_readdata[3] => curByteOut_s1_readdata[3].IN1
+curByteOut_s1_readdata[4] => curByteOut_s1_readdata[4].IN1
+curByteOut_s1_readdata[5] => curByteOut_s1_readdata[5].IN1
+curByteOut_s1_readdata[6] => curByteOut_s1_readdata[6].IN1
+curByteOut_s1_readdata[7] => curByteOut_s1_readdata[7].IN1
+curByteOut_s1_readdata[8] => curByteOut_s1_readdata[8].IN1
+curByteOut_s1_readdata[9] => curByteOut_s1_readdata[9].IN1
+curByteOut_s1_readdata[10] => curByteOut_s1_readdata[10].IN1
+curByteOut_s1_readdata[11] => curByteOut_s1_readdata[11].IN1
+curByteOut_s1_readdata[12] => curByteOut_s1_readdata[12].IN1
+curByteOut_s1_readdata[13] => curByteOut_s1_readdata[13].IN1
+curByteOut_s1_readdata[14] => curByteOut_s1_readdata[14].IN1
+curByteOut_s1_readdata[15] => curByteOut_s1_readdata[15].IN1
+curByteOut_s1_readdata[16] => curByteOut_s1_readdata[16].IN1
+curByteOut_s1_readdata[17] => curByteOut_s1_readdata[17].IN1
+curByteOut_s1_readdata[18] => curByteOut_s1_readdata[18].IN1
+curByteOut_s1_readdata[19] => curByteOut_s1_readdata[19].IN1
+curByteOut_s1_readdata[20] => curByteOut_s1_readdata[20].IN1
+curByteOut_s1_readdata[21] => curByteOut_s1_readdata[21].IN1
+curByteOut_s1_readdata[22] => curByteOut_s1_readdata[22].IN1
+curByteOut_s1_readdata[23] => curByteOut_s1_readdata[23].IN1
+curByteOut_s1_readdata[24] => curByteOut_s1_readdata[24].IN1
+curByteOut_s1_readdata[25] => curByteOut_s1_readdata[25].IN1
+curByteOut_s1_readdata[26] => curByteOut_s1_readdata[26].IN1
+curByteOut_s1_readdata[27] => curByteOut_s1_readdata[27].IN1
+curByteOut_s1_readdata[28] => curByteOut_s1_readdata[28].IN1
+curByteOut_s1_readdata[29] => curByteOut_s1_readdata[29].IN1
+curByteOut_s1_readdata[30] => curByteOut_s1_readdata[30].IN1
+curByteOut_s1_readdata[31] => curByteOut_s1_readdata[31].IN1
+curByteOut_s1_writedata[0] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[1] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[2] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[3] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[4] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[5] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[6] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[7] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[8] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[9] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[10] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[11] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[12] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[13] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[14] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[15] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[16] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[17] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[18] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[19] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[20] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[21] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[22] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[23] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[24] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[25] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[26] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[27] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[28] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[29] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[30] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_writedata[31] <= altera_merlin_slave_translator:curbyteout_s1_translator.av_writedata
+curByteOut_s1_chipselect <= altera_merlin_slave_translator:curbyteout_s1_translator.av_chipselect
+empty_s1_address[0] <= altera_merlin_slave_translator:empty_s1_translator.av_address
+empty_s1_address[1] <= altera_merlin_slave_translator:empty_s1_translator.av_address
+empty_s1_readdata[0] => empty_s1_readdata[0].IN1
+empty_s1_readdata[1] => empty_s1_readdata[1].IN1
+empty_s1_readdata[2] => empty_s1_readdata[2].IN1
+empty_s1_readdata[3] => empty_s1_readdata[3].IN1
+empty_s1_readdata[4] => empty_s1_readdata[4].IN1
+empty_s1_readdata[5] => empty_s1_readdata[5].IN1
+empty_s1_readdata[6] => empty_s1_readdata[6].IN1
+empty_s1_readdata[7] => empty_s1_readdata[7].IN1
+empty_s1_readdata[8] => empty_s1_readdata[8].IN1
+empty_s1_readdata[9] => empty_s1_readdata[9].IN1
+empty_s1_readdata[10] => empty_s1_readdata[10].IN1
+empty_s1_readdata[11] => empty_s1_readdata[11].IN1
+empty_s1_readdata[12] => empty_s1_readdata[12].IN1
+empty_s1_readdata[13] => empty_s1_readdata[13].IN1
+empty_s1_readdata[14] => empty_s1_readdata[14].IN1
+empty_s1_readdata[15] => empty_s1_readdata[15].IN1
+empty_s1_readdata[16] => empty_s1_readdata[16].IN1
+empty_s1_readdata[17] => empty_s1_readdata[17].IN1
+empty_s1_readdata[18] => empty_s1_readdata[18].IN1
+empty_s1_readdata[19] => empty_s1_readdata[19].IN1
+empty_s1_readdata[20] => empty_s1_readdata[20].IN1
+empty_s1_readdata[21] => empty_s1_readdata[21].IN1
+empty_s1_readdata[22] => empty_s1_readdata[22].IN1
+empty_s1_readdata[23] => empty_s1_readdata[23].IN1
+empty_s1_readdata[24] => empty_s1_readdata[24].IN1
+empty_s1_readdata[25] => empty_s1_readdata[25].IN1
+empty_s1_readdata[26] => empty_s1_readdata[26].IN1
+empty_s1_readdata[27] => empty_s1_readdata[27].IN1
+empty_s1_readdata[28] => empty_s1_readdata[28].IN1
+empty_s1_readdata[29] => empty_s1_readdata[29].IN1
+empty_s1_readdata[30] => empty_s1_readdata[30].IN1
+empty_s1_readdata[31] => empty_s1_readdata[31].IN1
+inStrobe_s1_address[0] <= altera_merlin_slave_translator:instrobe_s1_translator.av_address
+inStrobe_s1_address[1] <= altera_merlin_slave_translator:instrobe_s1_translator.av_address
+inStrobe_s1_readdata[0] => inStrobe_s1_readdata[0].IN1
+inStrobe_s1_readdata[1] => inStrobe_s1_readdata[1].IN1
+inStrobe_s1_readdata[2] => inStrobe_s1_readdata[2].IN1
+inStrobe_s1_readdata[3] => inStrobe_s1_readdata[3].IN1
+inStrobe_s1_readdata[4] => inStrobe_s1_readdata[4].IN1
+inStrobe_s1_readdata[5] => inStrobe_s1_readdata[5].IN1
+inStrobe_s1_readdata[6] => inStrobe_s1_readdata[6].IN1
+inStrobe_s1_readdata[7] => inStrobe_s1_readdata[7].IN1
+inStrobe_s1_readdata[8] => inStrobe_s1_readdata[8].IN1
+inStrobe_s1_readdata[9] => inStrobe_s1_readdata[9].IN1
+inStrobe_s1_readdata[10] => inStrobe_s1_readdata[10].IN1
+inStrobe_s1_readdata[11] => inStrobe_s1_readdata[11].IN1
+inStrobe_s1_readdata[12] => inStrobe_s1_readdata[12].IN1
+inStrobe_s1_readdata[13] => inStrobe_s1_readdata[13].IN1
+inStrobe_s1_readdata[14] => inStrobe_s1_readdata[14].IN1
+inStrobe_s1_readdata[15] => inStrobe_s1_readdata[15].IN1
+inStrobe_s1_readdata[16] => inStrobe_s1_readdata[16].IN1
+inStrobe_s1_readdata[17] => inStrobe_s1_readdata[17].IN1
+inStrobe_s1_readdata[18] => inStrobe_s1_readdata[18].IN1
+inStrobe_s1_readdata[19] => inStrobe_s1_readdata[19].IN1
+inStrobe_s1_readdata[20] => inStrobe_s1_readdata[20].IN1
+inStrobe_s1_readdata[21] => inStrobe_s1_readdata[21].IN1
+inStrobe_s1_readdata[22] => inStrobe_s1_readdata[22].IN1
+inStrobe_s1_readdata[23] => inStrobe_s1_readdata[23].IN1
+inStrobe_s1_readdata[24] => inStrobe_s1_readdata[24].IN1
+inStrobe_s1_readdata[25] => inStrobe_s1_readdata[25].IN1
+inStrobe_s1_readdata[26] => inStrobe_s1_readdata[26].IN1
+inStrobe_s1_readdata[27] => inStrobe_s1_readdata[27].IN1
+inStrobe_s1_readdata[28] => inStrobe_s1_readdata[28].IN1
+inStrobe_s1_readdata[29] => inStrobe_s1_readdata[29].IN1
+inStrobe_s1_readdata[30] => inStrobe_s1_readdata[30].IN1
+inStrobe_s1_readdata[31] => inStrobe_s1_readdata[31].IN1
 jtag_uart_avalon_jtag_slave_address[0] <= altera_merlin_slave_translator:jtag_uart_avalon_jtag_slave_translator.av_address
 jtag_uart_avalon_jtag_slave_write <= altera_merlin_slave_translator:jtag_uart_avalon_jtag_slave_translator.av_write
 jtag_uart_avalon_jtag_slave_read <= altera_merlin_slave_translator:jtag_uart_avalon_jtag_slave_translator.av_read
@@ -9815,6 +9858,74 @@ LEDs_s1_writedata[29] <= altera_merlin_slave_translator:leds_s1_translator.av_wr
 LEDs_s1_writedata[30] <= altera_merlin_slave_translator:leds_s1_translator.av_writedata
 LEDs_s1_writedata[31] <= altera_merlin_slave_translator:leds_s1_translator.av_writedata
 LEDs_s1_chipselect <= altera_merlin_slave_translator:leds_s1_translator.av_chipselect
+load_s1_address[0] <= altera_merlin_slave_translator:load_s1_translator.av_address
+load_s1_address[1] <= altera_merlin_slave_translator:load_s1_translator.av_address
+load_s1_write <= altera_merlin_slave_translator:load_s1_translator.av_write
+load_s1_readdata[0] => load_s1_readdata[0].IN1
+load_s1_readdata[1] => load_s1_readdata[1].IN1
+load_s1_readdata[2] => load_s1_readdata[2].IN1
+load_s1_readdata[3] => load_s1_readdata[3].IN1
+load_s1_readdata[4] => load_s1_readdata[4].IN1
+load_s1_readdata[5] => load_s1_readdata[5].IN1
+load_s1_readdata[6] => load_s1_readdata[6].IN1
+load_s1_readdata[7] => load_s1_readdata[7].IN1
+load_s1_readdata[8] => load_s1_readdata[8].IN1
+load_s1_readdata[9] => load_s1_readdata[9].IN1
+load_s1_readdata[10] => load_s1_readdata[10].IN1
+load_s1_readdata[11] => load_s1_readdata[11].IN1
+load_s1_readdata[12] => load_s1_readdata[12].IN1
+load_s1_readdata[13] => load_s1_readdata[13].IN1
+load_s1_readdata[14] => load_s1_readdata[14].IN1
+load_s1_readdata[15] => load_s1_readdata[15].IN1
+load_s1_readdata[16] => load_s1_readdata[16].IN1
+load_s1_readdata[17] => load_s1_readdata[17].IN1
+load_s1_readdata[18] => load_s1_readdata[18].IN1
+load_s1_readdata[19] => load_s1_readdata[19].IN1
+load_s1_readdata[20] => load_s1_readdata[20].IN1
+load_s1_readdata[21] => load_s1_readdata[21].IN1
+load_s1_readdata[22] => load_s1_readdata[22].IN1
+load_s1_readdata[23] => load_s1_readdata[23].IN1
+load_s1_readdata[24] => load_s1_readdata[24].IN1
+load_s1_readdata[25] => load_s1_readdata[25].IN1
+load_s1_readdata[26] => load_s1_readdata[26].IN1
+load_s1_readdata[27] => load_s1_readdata[27].IN1
+load_s1_readdata[28] => load_s1_readdata[28].IN1
+load_s1_readdata[29] => load_s1_readdata[29].IN1
+load_s1_readdata[30] => load_s1_readdata[30].IN1
+load_s1_readdata[31] => load_s1_readdata[31].IN1
+load_s1_writedata[0] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[1] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[2] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[3] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[4] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[5] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[6] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[7] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[8] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[9] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[10] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[11] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[12] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[13] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[14] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[15] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[16] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[17] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[18] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[19] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[20] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[21] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[22] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[23] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[24] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[25] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[26] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[27] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[28] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[29] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[30] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_writedata[31] <= altera_merlin_slave_translator:load_s1_translator.av_writedata
+load_s1_chipselect <= altera_merlin_slave_translator:load_s1_translator.av_chipselect
 nios2_processor_jtag_debug_module_address[0] <= altera_merlin_slave_translator:nios2_processor_jtag_debug_module_translator.av_address
 nios2_processor_jtag_debug_module_address[1] <= altera_merlin_slave_translator:nios2_processor_jtag_debug_module_translator.av_address
 nios2_processor_jtag_debug_module_address[2] <= altera_merlin_slave_translator:nios2_processor_jtag_debug_module_translator.av_address
@@ -10045,142 +10156,40 @@ outSignal_s1_writedata[29] <= altera_merlin_slave_translator:outsignal_s1_transl
 outSignal_s1_writedata[30] <= altera_merlin_slave_translator:outsignal_s1_translator.av_writedata
 outSignal_s1_writedata[31] <= altera_merlin_slave_translator:outsignal_s1_translator.av_writedata
 outSignal_s1_chipselect <= altera_merlin_slave_translator:outsignal_s1_translator.av_chipselect
-readyToDownload1_s1_address[0] <= altera_merlin_slave_translator:readytodownload1_s1_translator.av_address
-readyToDownload1_s1_address[1] <= altera_merlin_slave_translator:readytodownload1_s1_translator.av_address
-readyToDownload1_s1_readdata[0] => readyToDownload1_s1_readdata[0].IN1
-readyToDownload1_s1_readdata[1] => readyToDownload1_s1_readdata[1].IN1
-readyToDownload1_s1_readdata[2] => readyToDownload1_s1_readdata[2].IN1
-readyToDownload1_s1_readdata[3] => readyToDownload1_s1_readdata[3].IN1
-readyToDownload1_s1_readdata[4] => readyToDownload1_s1_readdata[4].IN1
-readyToDownload1_s1_readdata[5] => readyToDownload1_s1_readdata[5].IN1
-readyToDownload1_s1_readdata[6] => readyToDownload1_s1_readdata[6].IN1
-readyToDownload1_s1_readdata[7] => readyToDownload1_s1_readdata[7].IN1
-readyToDownload1_s1_readdata[8] => readyToDownload1_s1_readdata[8].IN1
-readyToDownload1_s1_readdata[9] => readyToDownload1_s1_readdata[9].IN1
-readyToDownload1_s1_readdata[10] => readyToDownload1_s1_readdata[10].IN1
-readyToDownload1_s1_readdata[11] => readyToDownload1_s1_readdata[11].IN1
-readyToDownload1_s1_readdata[12] => readyToDownload1_s1_readdata[12].IN1
-readyToDownload1_s1_readdata[13] => readyToDownload1_s1_readdata[13].IN1
-readyToDownload1_s1_readdata[14] => readyToDownload1_s1_readdata[14].IN1
-readyToDownload1_s1_readdata[15] => readyToDownload1_s1_readdata[15].IN1
-readyToDownload1_s1_readdata[16] => readyToDownload1_s1_readdata[16].IN1
-readyToDownload1_s1_readdata[17] => readyToDownload1_s1_readdata[17].IN1
-readyToDownload1_s1_readdata[18] => readyToDownload1_s1_readdata[18].IN1
-readyToDownload1_s1_readdata[19] => readyToDownload1_s1_readdata[19].IN1
-readyToDownload1_s1_readdata[20] => readyToDownload1_s1_readdata[20].IN1
-readyToDownload1_s1_readdata[21] => readyToDownload1_s1_readdata[21].IN1
-readyToDownload1_s1_readdata[22] => readyToDownload1_s1_readdata[22].IN1
-readyToDownload1_s1_readdata[23] => readyToDownload1_s1_readdata[23].IN1
-readyToDownload1_s1_readdata[24] => readyToDownload1_s1_readdata[24].IN1
-readyToDownload1_s1_readdata[25] => readyToDownload1_s1_readdata[25].IN1
-readyToDownload1_s1_readdata[26] => readyToDownload1_s1_readdata[26].IN1
-readyToDownload1_s1_readdata[27] => readyToDownload1_s1_readdata[27].IN1
-readyToDownload1_s1_readdata[28] => readyToDownload1_s1_readdata[28].IN1
-readyToDownload1_s1_readdata[29] => readyToDownload1_s1_readdata[29].IN1
-readyToDownload1_s1_readdata[30] => readyToDownload1_s1_readdata[30].IN1
-readyToDownload1_s1_readdata[31] => readyToDownload1_s1_readdata[31].IN1
-readyToDownload2_s1_address[0] <= altera_merlin_slave_translator:readytodownload2_s1_translator.av_address
-readyToDownload2_s1_address[1] <= altera_merlin_slave_translator:readytodownload2_s1_translator.av_address
-readyToDownload2_s1_readdata[0] => readyToDownload2_s1_readdata[0].IN1
-readyToDownload2_s1_readdata[1] => readyToDownload2_s1_readdata[1].IN1
-readyToDownload2_s1_readdata[2] => readyToDownload2_s1_readdata[2].IN1
-readyToDownload2_s1_readdata[3] => readyToDownload2_s1_readdata[3].IN1
-readyToDownload2_s1_readdata[4] => readyToDownload2_s1_readdata[4].IN1
-readyToDownload2_s1_readdata[5] => readyToDownload2_s1_readdata[5].IN1
-readyToDownload2_s1_readdata[6] => readyToDownload2_s1_readdata[6].IN1
-readyToDownload2_s1_readdata[7] => readyToDownload2_s1_readdata[7].IN1
-readyToDownload2_s1_readdata[8] => readyToDownload2_s1_readdata[8].IN1
-readyToDownload2_s1_readdata[9] => readyToDownload2_s1_readdata[9].IN1
-readyToDownload2_s1_readdata[10] => readyToDownload2_s1_readdata[10].IN1
-readyToDownload2_s1_readdata[11] => readyToDownload2_s1_readdata[11].IN1
-readyToDownload2_s1_readdata[12] => readyToDownload2_s1_readdata[12].IN1
-readyToDownload2_s1_readdata[13] => readyToDownload2_s1_readdata[13].IN1
-readyToDownload2_s1_readdata[14] => readyToDownload2_s1_readdata[14].IN1
-readyToDownload2_s1_readdata[15] => readyToDownload2_s1_readdata[15].IN1
-readyToDownload2_s1_readdata[16] => readyToDownload2_s1_readdata[16].IN1
-readyToDownload2_s1_readdata[17] => readyToDownload2_s1_readdata[17].IN1
-readyToDownload2_s1_readdata[18] => readyToDownload2_s1_readdata[18].IN1
-readyToDownload2_s1_readdata[19] => readyToDownload2_s1_readdata[19].IN1
-readyToDownload2_s1_readdata[20] => readyToDownload2_s1_readdata[20].IN1
-readyToDownload2_s1_readdata[21] => readyToDownload2_s1_readdata[21].IN1
-readyToDownload2_s1_readdata[22] => readyToDownload2_s1_readdata[22].IN1
-readyToDownload2_s1_readdata[23] => readyToDownload2_s1_readdata[23].IN1
-readyToDownload2_s1_readdata[24] => readyToDownload2_s1_readdata[24].IN1
-readyToDownload2_s1_readdata[25] => readyToDownload2_s1_readdata[25].IN1
-readyToDownload2_s1_readdata[26] => readyToDownload2_s1_readdata[26].IN1
-readyToDownload2_s1_readdata[27] => readyToDownload2_s1_readdata[27].IN1
-readyToDownload2_s1_readdata[28] => readyToDownload2_s1_readdata[28].IN1
-readyToDownload2_s1_readdata[29] => readyToDownload2_s1_readdata[29].IN1
-readyToDownload2_s1_readdata[30] => readyToDownload2_s1_readdata[30].IN1
-readyToDownload2_s1_readdata[31] => readyToDownload2_s1_readdata[31].IN1
-strobeRead1_s1_address[0] <= altera_merlin_slave_translator:stroberead1_s1_translator.av_address
-strobeRead1_s1_address[1] <= altera_merlin_slave_translator:stroberead1_s1_translator.av_address
-strobeRead1_s1_readdata[0] => strobeRead1_s1_readdata[0].IN1
-strobeRead1_s1_readdata[1] => strobeRead1_s1_readdata[1].IN1
-strobeRead1_s1_readdata[2] => strobeRead1_s1_readdata[2].IN1
-strobeRead1_s1_readdata[3] => strobeRead1_s1_readdata[3].IN1
-strobeRead1_s1_readdata[4] => strobeRead1_s1_readdata[4].IN1
-strobeRead1_s1_readdata[5] => strobeRead1_s1_readdata[5].IN1
-strobeRead1_s1_readdata[6] => strobeRead1_s1_readdata[6].IN1
-strobeRead1_s1_readdata[7] => strobeRead1_s1_readdata[7].IN1
-strobeRead1_s1_readdata[8] => strobeRead1_s1_readdata[8].IN1
-strobeRead1_s1_readdata[9] => strobeRead1_s1_readdata[9].IN1
-strobeRead1_s1_readdata[10] => strobeRead1_s1_readdata[10].IN1
-strobeRead1_s1_readdata[11] => strobeRead1_s1_readdata[11].IN1
-strobeRead1_s1_readdata[12] => strobeRead1_s1_readdata[12].IN1
-strobeRead1_s1_readdata[13] => strobeRead1_s1_readdata[13].IN1
-strobeRead1_s1_readdata[14] => strobeRead1_s1_readdata[14].IN1
-strobeRead1_s1_readdata[15] => strobeRead1_s1_readdata[15].IN1
-strobeRead1_s1_readdata[16] => strobeRead1_s1_readdata[16].IN1
-strobeRead1_s1_readdata[17] => strobeRead1_s1_readdata[17].IN1
-strobeRead1_s1_readdata[18] => strobeRead1_s1_readdata[18].IN1
-strobeRead1_s1_readdata[19] => strobeRead1_s1_readdata[19].IN1
-strobeRead1_s1_readdata[20] => strobeRead1_s1_readdata[20].IN1
-strobeRead1_s1_readdata[21] => strobeRead1_s1_readdata[21].IN1
-strobeRead1_s1_readdata[22] => strobeRead1_s1_readdata[22].IN1
-strobeRead1_s1_readdata[23] => strobeRead1_s1_readdata[23].IN1
-strobeRead1_s1_readdata[24] => strobeRead1_s1_readdata[24].IN1
-strobeRead1_s1_readdata[25] => strobeRead1_s1_readdata[25].IN1
-strobeRead1_s1_readdata[26] => strobeRead1_s1_readdata[26].IN1
-strobeRead1_s1_readdata[27] => strobeRead1_s1_readdata[27].IN1
-strobeRead1_s1_readdata[28] => strobeRead1_s1_readdata[28].IN1
-strobeRead1_s1_readdata[29] => strobeRead1_s1_readdata[29].IN1
-strobeRead1_s1_readdata[30] => strobeRead1_s1_readdata[30].IN1
-strobeRead1_s1_readdata[31] => strobeRead1_s1_readdata[31].IN1
-strobeRead2_s1_address[0] <= altera_merlin_slave_translator:stroberead2_s1_translator.av_address
-strobeRead2_s1_address[1] <= altera_merlin_slave_translator:stroberead2_s1_translator.av_address
-strobeRead2_s1_readdata[0] => strobeRead2_s1_readdata[0].IN1
-strobeRead2_s1_readdata[1] => strobeRead2_s1_readdata[1].IN1
-strobeRead2_s1_readdata[2] => strobeRead2_s1_readdata[2].IN1
-strobeRead2_s1_readdata[3] => strobeRead2_s1_readdata[3].IN1
-strobeRead2_s1_readdata[4] => strobeRead2_s1_readdata[4].IN1
-strobeRead2_s1_readdata[5] => strobeRead2_s1_readdata[5].IN1
-strobeRead2_s1_readdata[6] => strobeRead2_s1_readdata[6].IN1
-strobeRead2_s1_readdata[7] => strobeRead2_s1_readdata[7].IN1
-strobeRead2_s1_readdata[8] => strobeRead2_s1_readdata[8].IN1
-strobeRead2_s1_readdata[9] => strobeRead2_s1_readdata[9].IN1
-strobeRead2_s1_readdata[10] => strobeRead2_s1_readdata[10].IN1
-strobeRead2_s1_readdata[11] => strobeRead2_s1_readdata[11].IN1
-strobeRead2_s1_readdata[12] => strobeRead2_s1_readdata[12].IN1
-strobeRead2_s1_readdata[13] => strobeRead2_s1_readdata[13].IN1
-strobeRead2_s1_readdata[14] => strobeRead2_s1_readdata[14].IN1
-strobeRead2_s1_readdata[15] => strobeRead2_s1_readdata[15].IN1
-strobeRead2_s1_readdata[16] => strobeRead2_s1_readdata[16].IN1
-strobeRead2_s1_readdata[17] => strobeRead2_s1_readdata[17].IN1
-strobeRead2_s1_readdata[18] => strobeRead2_s1_readdata[18].IN1
-strobeRead2_s1_readdata[19] => strobeRead2_s1_readdata[19].IN1
-strobeRead2_s1_readdata[20] => strobeRead2_s1_readdata[20].IN1
-strobeRead2_s1_readdata[21] => strobeRead2_s1_readdata[21].IN1
-strobeRead2_s1_readdata[22] => strobeRead2_s1_readdata[22].IN1
-strobeRead2_s1_readdata[23] => strobeRead2_s1_readdata[23].IN1
-strobeRead2_s1_readdata[24] => strobeRead2_s1_readdata[24].IN1
-strobeRead2_s1_readdata[25] => strobeRead2_s1_readdata[25].IN1
-strobeRead2_s1_readdata[26] => strobeRead2_s1_readdata[26].IN1
-strobeRead2_s1_readdata[27] => strobeRead2_s1_readdata[27].IN1
-strobeRead2_s1_readdata[28] => strobeRead2_s1_readdata[28].IN1
-strobeRead2_s1_readdata[29] => strobeRead2_s1_readdata[29].IN1
-strobeRead2_s1_readdata[30] => strobeRead2_s1_readdata[30].IN1
-strobeRead2_s1_readdata[31] => strobeRead2_s1_readdata[31].IN1
+readyToDownload_s1_address[0] <= altera_merlin_slave_translator:readytodownload_s1_translator.av_address
+readyToDownload_s1_address[1] <= altera_merlin_slave_translator:readytodownload_s1_translator.av_address
+readyToDownload_s1_readdata[0] => readyToDownload_s1_readdata[0].IN1
+readyToDownload_s1_readdata[1] => readyToDownload_s1_readdata[1].IN1
+readyToDownload_s1_readdata[2] => readyToDownload_s1_readdata[2].IN1
+readyToDownload_s1_readdata[3] => readyToDownload_s1_readdata[3].IN1
+readyToDownload_s1_readdata[4] => readyToDownload_s1_readdata[4].IN1
+readyToDownload_s1_readdata[5] => readyToDownload_s1_readdata[5].IN1
+readyToDownload_s1_readdata[6] => readyToDownload_s1_readdata[6].IN1
+readyToDownload_s1_readdata[7] => readyToDownload_s1_readdata[7].IN1
+readyToDownload_s1_readdata[8] => readyToDownload_s1_readdata[8].IN1
+readyToDownload_s1_readdata[9] => readyToDownload_s1_readdata[9].IN1
+readyToDownload_s1_readdata[10] => readyToDownload_s1_readdata[10].IN1
+readyToDownload_s1_readdata[11] => readyToDownload_s1_readdata[11].IN1
+readyToDownload_s1_readdata[12] => readyToDownload_s1_readdata[12].IN1
+readyToDownload_s1_readdata[13] => readyToDownload_s1_readdata[13].IN1
+readyToDownload_s1_readdata[14] => readyToDownload_s1_readdata[14].IN1
+readyToDownload_s1_readdata[15] => readyToDownload_s1_readdata[15].IN1
+readyToDownload_s1_readdata[16] => readyToDownload_s1_readdata[16].IN1
+readyToDownload_s1_readdata[17] => readyToDownload_s1_readdata[17].IN1
+readyToDownload_s1_readdata[18] => readyToDownload_s1_readdata[18].IN1
+readyToDownload_s1_readdata[19] => readyToDownload_s1_readdata[19].IN1
+readyToDownload_s1_readdata[20] => readyToDownload_s1_readdata[20].IN1
+readyToDownload_s1_readdata[21] => readyToDownload_s1_readdata[21].IN1
+readyToDownload_s1_readdata[22] => readyToDownload_s1_readdata[22].IN1
+readyToDownload_s1_readdata[23] => readyToDownload_s1_readdata[23].IN1
+readyToDownload_s1_readdata[24] => readyToDownload_s1_readdata[24].IN1
+readyToDownload_s1_readdata[25] => readyToDownload_s1_readdata[25].IN1
+readyToDownload_s1_readdata[26] => readyToDownload_s1_readdata[26].IN1
+readyToDownload_s1_readdata[27] => readyToDownload_s1_readdata[27].IN1
+readyToDownload_s1_readdata[28] => readyToDownload_s1_readdata[28].IN1
+readyToDownload_s1_readdata[29] => readyToDownload_s1_readdata[29].IN1
+readyToDownload_s1_readdata[30] => readyToDownload_s1_readdata[30].IN1
+readyToDownload_s1_readdata[31] => readyToDownload_s1_readdata[31].IN1
 switches_s1_address[0] <= altera_merlin_slave_translator:switches_s1_translator.av_address
 switches_s1_address[1] <= altera_merlin_slave_translator:switches_s1_translator.av_address
 switches_s1_readdata[0] => switches_s1_readdata[0].IN1
@@ -11982,7 +11991,7 @@ av_writeresponserequest <= uav_writeresponserequest.DB_MAX_OUTPUT_PORT_TYPE
 av_writeresponsevalid => uav_writeresponsevalid.DATAIN
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:readytodownload1_s1_translator
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:readytodownload_s1_translator
 clk => in_transfer.CLK
 clk => end_beginbursttransfer.CLK
 clk => end_begintransfer.CLK
@@ -12536,7 +12545,7 @@ av_writeresponserequest <= uav_writeresponserequest.DB_MAX_OUTPUT_PORT_TYPE
 av_writeresponsevalid => uav_writeresponsevalid.DATAIN
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:curbyte1_s1_translator
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:curbyteout_s1_translator
 clk => in_transfer.CLK
 clk => end_beginbursttransfer.CLK
 clk => end_begintransfer.CLK
@@ -12813,7 +12822,7 @@ av_writeresponserequest <= uav_writeresponserequest.DB_MAX_OUTPUT_PORT_TYPE
 av_writeresponsevalid => uav_writeresponsevalid.DATAIN
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:readytodownload2_s1_translator
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:instrobe_s1_translator
 clk => in_transfer.CLK
 clk => end_beginbursttransfer.CLK
 clk => end_begintransfer.CLK
@@ -13090,7 +13099,7 @@ av_writeresponserequest <= uav_writeresponserequest.DB_MAX_OUTPUT_PORT_TYPE
 av_writeresponsevalid => uav_writeresponsevalid.DATAIN
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:curbyte2_s1_translator
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:load_s1_translator
 clk => in_transfer.CLK
 clk => end_beginbursttransfer.CLK
 clk => end_begintransfer.CLK
@@ -13367,7 +13376,7 @@ av_writeresponserequest <= uav_writeresponserequest.DB_MAX_OUTPUT_PORT_TYPE
 av_writeresponsevalid => uav_writeresponsevalid.DATAIN
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:stroberead1_s1_translator
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:curbytein_s1_translator
 clk => in_transfer.CLK
 clk => end_beginbursttransfer.CLK
 clk => end_begintransfer.CLK
@@ -13644,7 +13653,7 @@ av_writeresponserequest <= uav_writeresponserequest.DB_MAX_OUTPUT_PORT_TYPE
 av_writeresponsevalid => uav_writeresponsevalid.DATAIN
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:stroberead2_s1_translator
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_translator:empty_s1_translator
 clk => in_transfer.CLK
 clk => end_beginbursttransfer.CLK
 clk => end_begintransfer.CLK
@@ -22339,7 +22348,7 @@ almost_full_data <= <GND>
 almost_empty_data <= <GND>
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:readytodownload1_s1_agent
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:readytodownload_s1_agent
 clk => clk.IN1
 reset => reset.IN1
 m0_address[0] <= <GND>
@@ -22950,7 +22959,7 @@ rp_startofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_startof
 rp_endofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_endofpacket
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:readytodownload1_s1_agent|altera_merlin_burst_uncompressor:uncompressor
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:readytodownload_s1_agent|altera_merlin_burst_uncompressor:uncompressor
 clk => burst_uncompress_address_offset[0].CLK
 clk => burst_uncompress_address_offset[1].CLK
 clk => burst_uncompress_address_offset[2].CLK
@@ -23146,7 +23155,7 @@ source_burstsize[1] <= sink_burstsize[1].DB_MAX_OUTPUT_PORT_TYPE
 source_burstsize[2] <= sink_burstsize[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:readytodownload1_s1_agent_rsp_fifo
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:readytodownload_s1_agent_rsp_fifo
 clk => csr_readdata[0]~reg0.CLK
 clk => csr_readdata[1]~reg0.CLK
 clk => csr_readdata[2]~reg0.CLK
@@ -25459,7 +25468,7 @@ almost_full_data <= <GND>
 almost_empty_data <= <GND>
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:curbyte1_s1_agent
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:curbyteout_s1_agent
 clk => clk.IN1
 reset => reset.IN1
 m0_address[0] <= <GND>
@@ -26070,7 +26079,7 @@ rp_startofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_startof
 rp_endofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_endofpacket
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:curbyte1_s1_agent|altera_merlin_burst_uncompressor:uncompressor
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:curbyteout_s1_agent|altera_merlin_burst_uncompressor:uncompressor
 clk => burst_uncompress_address_offset[0].CLK
 clk => burst_uncompress_address_offset[1].CLK
 clk => burst_uncompress_address_offset[2].CLK
@@ -26266,7 +26275,7 @@ source_burstsize[1] <= sink_burstsize[1].DB_MAX_OUTPUT_PORT_TYPE
 source_burstsize[2] <= sink_burstsize[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:curbyte1_s1_agent_rsp_fifo
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:curbyteout_s1_agent_rsp_fifo
 clk => csr_readdata[0]~reg0.CLK
 clk => csr_readdata[1]~reg0.CLK
 clk => csr_readdata[2]~reg0.CLK
@@ -27019,7 +27028,7 @@ almost_full_data <= <GND>
 almost_empty_data <= <GND>
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:readytodownload2_s1_agent
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:instrobe_s1_agent
 clk => clk.IN1
 reset => reset.IN1
 m0_address[0] <= <GND>
@@ -27630,7 +27639,7 @@ rp_startofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_startof
 rp_endofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_endofpacket
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:readytodownload2_s1_agent|altera_merlin_burst_uncompressor:uncompressor
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:instrobe_s1_agent|altera_merlin_burst_uncompressor:uncompressor
 clk => burst_uncompress_address_offset[0].CLK
 clk => burst_uncompress_address_offset[1].CLK
 clk => burst_uncompress_address_offset[2].CLK
@@ -27826,7 +27835,7 @@ source_burstsize[1] <= sink_burstsize[1].DB_MAX_OUTPUT_PORT_TYPE
 source_burstsize[2] <= sink_burstsize[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:readytodownload2_s1_agent_rsp_fifo
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:instrobe_s1_agent_rsp_fifo
 clk => csr_readdata[0]~reg0.CLK
 clk => csr_readdata[1]~reg0.CLK
 clk => csr_readdata[2]~reg0.CLK
@@ -28579,7 +28588,7 @@ almost_full_data <= <GND>
 almost_empty_data <= <GND>
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:curbyte2_s1_agent
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:load_s1_agent
 clk => clk.IN1
 reset => reset.IN1
 m0_address[0] <= <GND>
@@ -29190,7 +29199,7 @@ rp_startofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_startof
 rp_endofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_endofpacket
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:curbyte2_s1_agent|altera_merlin_burst_uncompressor:uncompressor
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:load_s1_agent|altera_merlin_burst_uncompressor:uncompressor
 clk => burst_uncompress_address_offset[0].CLK
 clk => burst_uncompress_address_offset[1].CLK
 clk => burst_uncompress_address_offset[2].CLK
@@ -29386,7 +29395,7 @@ source_burstsize[1] <= sink_burstsize[1].DB_MAX_OUTPUT_PORT_TYPE
 source_burstsize[2] <= sink_burstsize[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:curbyte2_s1_agent_rsp_fifo
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:load_s1_agent_rsp_fifo
 clk => csr_readdata[0]~reg0.CLK
 clk => csr_readdata[1]~reg0.CLK
 clk => csr_readdata[2]~reg0.CLK
@@ -30139,7 +30148,7 @@ almost_full_data <= <GND>
 almost_empty_data <= <GND>
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:stroberead1_s1_agent
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:curbytein_s1_agent
 clk => clk.IN1
 reset => reset.IN1
 m0_address[0] <= <GND>
@@ -30750,7 +30759,7 @@ rp_startofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_startof
 rp_endofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_endofpacket
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:stroberead1_s1_agent|altera_merlin_burst_uncompressor:uncompressor
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:curbytein_s1_agent|altera_merlin_burst_uncompressor:uncompressor
 clk => burst_uncompress_address_offset[0].CLK
 clk => burst_uncompress_address_offset[1].CLK
 clk => burst_uncompress_address_offset[2].CLK
@@ -30946,7 +30955,7 @@ source_burstsize[1] <= sink_burstsize[1].DB_MAX_OUTPUT_PORT_TYPE
 source_burstsize[2] <= sink_burstsize[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:stroberead1_s1_agent_rsp_fifo
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:curbytein_s1_agent_rsp_fifo
 clk => csr_readdata[0]~reg0.CLK
 clk => csr_readdata[1]~reg0.CLK
 clk => csr_readdata[2]~reg0.CLK
@@ -31699,7 +31708,7 @@ almost_full_data <= <GND>
 almost_empty_data <= <GND>
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:stroberead2_s1_agent
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:empty_s1_agent
 clk => clk.IN1
 reset => reset.IN1
 m0_address[0] <= <GND>
@@ -32310,7 +32319,7 @@ rp_startofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_startof
 rp_endofpacket <= altera_merlin_burst_uncompressor:uncompressor.source_endofpacket
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:stroberead2_s1_agent|altera_merlin_burst_uncompressor:uncompressor
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_merlin_slave_agent:empty_s1_agent|altera_merlin_burst_uncompressor:uncompressor
 clk => burst_uncompress_address_offset[0].CLK
 clk => burst_uncompress_address_offset[1].CLK
 clk => burst_uncompress_address_offset[2].CLK
@@ -32506,7 +32515,7 @@ source_burstsize[1] <= sink_burstsize[1].DB_MAX_OUTPUT_PORT_TYPE
 source_burstsize[2] <= sink_burstsize[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:stroberead2_s1_agent_rsp_fifo
+|lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|altera_avalon_sc_fifo:empty_s1_agent_rsp_fifo
 clk => csr_readdata[0]~reg0.CLK
 clk => csr_readdata[1]~reg0.CLK
 clk => csr_readdata[2]~reg0.CLK
@@ -33474,10 +33483,10 @@ src_ready => sink_ready.DATAIN
 
 
 |lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|switchesqsys_mm_interconnect_0_router:router|switchesqsys_mm_interconnect_0_router_default_decode:the_default_decode
-default_destination_id[0] <= <VCC>
+default_destination_id[0] <= <GND>
 default_destination_id[1] <= <GND>
-default_destination_id[2] <= <VCC>
-default_destination_id[3] <= <GND>
+default_destination_id[2] <= <GND>
+default_destination_id[3] <= <VCC>
 default_wr_channel[0] <= <GND>
 default_wr_channel[1] <= <GND>
 default_wr_channel[2] <= <GND>
@@ -33684,8 +33693,6 @@ sink_data[53] => always1.IN1
 sink_data[53] => always1.IN1
 sink_data[53] => always1.IN1
 sink_data[53] => always1.IN1
-sink_data[53] => always1.IN1
-sink_data[53] => always1.IN1
 sink_data[53] => src_data[53].DATAIN
 sink_data[54] => src_data[54].DATAIN
 sink_data[55] => src_data[55].DATAIN
@@ -33839,10 +33846,10 @@ src_ready => sink_ready.DATAIN
 
 
 |lights|switchesqsys:u0|switchesqsys_mm_interconnect_0:mm_interconnect_0|switchesqsys_mm_interconnect_0_router_001:router_001|switchesqsys_mm_interconnect_0_router_001_default_decode:the_default_decode
-default_destination_id[0] <= <VCC>
+default_destination_id[0] <= <GND>
 default_destination_id[1] <= <GND>
-default_destination_id[2] <= <VCC>
-default_destination_id[3] <= <GND>
+default_destination_id[2] <= <GND>
+default_destination_id[3] <= <VCC>
 default_wr_channel[0] <= <GND>
 default_wr_channel[1] <= <GND>
 default_wr_channel[2] <= <GND>

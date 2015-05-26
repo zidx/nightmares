@@ -9,7 +9,8 @@ module switchesqsys (
 	curbyteout_export,
 	instrobe_export,
 	load_export,
-	curbytein_export);	
+	curbytein_export,
+	empty_export);	
 
 	input		clk_clk;
 	input		reset_reset_n;
@@ -21,4 +22,5 @@ module switchesqsys (
 	input		instrobe_export;
 	output		load_export;
 	input	[7:0]	curbytein_export;
+	input		empty_export;
 endmodule

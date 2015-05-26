@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="35" version="2.0">
+<workbench progressCount="29" version="2.0">
 <workbenchAdvisor/>
-<window height="1160" width="800" x="0" y="0">
+<window height="1160" width="1014" x="0" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
 </perspectiveBar>
 <coolbarLayout>
 <coolItem id="group.file" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="187" y="22"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="122" y="22"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.cdt.ui.CElementCreationActionSet" itemType="typeToolBarContribution" x="167" y="22"/>
 <coolItem id="org.eclipse.cdt.ui.buildConfigActionSet" itemType="typeToolBarContribution" x="89" y="22"/>
@@ -53,10 +53,6 @@
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="count_binary.c" partName="count_binary.c" path="C:/Users/klholden/Documents/nightmares/Lab4/niosII_hw_dev_tutorial/software/COUNT_BINARRRY/count_binary.c" title="count_binary.c" tooltip="COUNT_BINARRRY/count_binary.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/COUNT_BINARRRY/count_binary.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4544" selectionTopPixel="6417"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" partName="hello_world_small.c" path="C:/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial/software/Lab4_1/hello_world_small.c" title="hello_world_small.c" tooltip="Lab4_1/hello_world_small.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Lab4_1/hello_world_small.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4880" selectionTopPixel="1737"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="hello_world_small.c" partName="hello_world_small.c" path="C:/Users/klholden/Documents/nightmares/Lab4/qsys_tutorial/software/Lab4_2/hello_world_small.c" title="hello_world_small.c" tooltip="Lab4_2/hello_world_small.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Lab4_2/hello_world_small.c"/>
@@ -283,7 +279,7 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.18478261" ratioLeft="238" ratioRight="1050" relationship="2" relative="topLeft"/>
 <info folder="true" part="bottom" ratio="0.6345382" ratioLeft="474" ratioRight="273" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ProblemView" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>

@@ -8,6 +8,7 @@
 		.curbyteout_export      (<connected-to-curbyteout_export>),      //      curbyteout.export
 		.instrobe_export        (<connected-to-instrobe_export>),        //        instrobe.export
 		.load_export            (<connected-to-load_export>),            //            load.export
-		.curbytein_export       (<connected-to-curbytein_export>)        //       curbytein.export
+		.curbytein_export       (<connected-to-curbytein_export>),       //       curbytein.export
+		.empty_export           (<connected-to-empty_export>)            //           empty.export
 	);
 

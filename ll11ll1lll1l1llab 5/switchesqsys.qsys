@@ -24,7 +24,7 @@
    {
       datum baseAddress
       {
-         value = "12416";
+         value = "12432";
          type = "String";
       }
    }
@@ -49,6 +49,14 @@
       datum _sortIndex
       {
          value = "8";
+         type = "int";
+      }
+   }
+   element empty
+   {
+      datum _sortIndex
+      {
+         value = "12";
          type = "int";
       }
    }
@@ -124,11 +132,11 @@
          type = "String";
       }
    }
-   element load.s1
+   element inStrobe.s1
    {
       datum baseAddress
       {
-         value = "12304";
+         value = "12336";
          type = "String";
       }
    }
@@ -140,51 +148,11 @@
          type = "String";
       }
    }
-   element readyToDownload.s1
-   {
-      datum baseAddress
-      {
-         value = "12368";
-         type = "String";
-      }
-   }
-   element curByteIn.s1
-   {
-      datum baseAddress
-      {
-         value = "12288";
-         type = "String";
-      }
-   }
    element curByteOut.s1
    {
       datum baseAddress
       {
-         value = "12336";
-         type = "String";
-      }
-   }
-   element LEDs.s1
-   {
-      datum baseAddress
-      {
-         value = "12400";
-         type = "String";
-      }
-   }
-   element inStrobe.s1
-   {
-      datum baseAddress
-      {
-         value = "12320";
-         type = "String";
-      }
-   }
-   element switches.s1
-   {
-      datum baseAddress
-      {
-         value = "12384";
+         value = "12352";
          type = "String";
       }
    }
@@ -192,7 +160,55 @@
    {
       datum baseAddress
       {
-         value = "12352";
+         value = "12368";
+         type = "String";
+      }
+   }
+   element readyToDownload.s1
+   {
+      datum baseAddress
+      {
+         value = "12384";
+         type = "String";
+      }
+   }
+   element curByteIn.s1
+   {
+      datum baseAddress
+      {
+         value = "12304";
+         type = "String";
+      }
+   }
+   element load.s1
+   {
+      datum baseAddress
+      {
+         value = "12320";
+         type = "String";
+      }
+   }
+   element empty.s1
+   {
+      datum baseAddress
+      {
+         value = "12288";
+         type = "String";
+      }
+   }
+   element switches.s1
+   {
+      datum baseAddress
+      {
+         value = "12400";
+         type = "String";
+      }
+   }
+   element LEDs.s1
+   {
+      datum baseAddress
+      {
+         value = "12416";
          type = "String";
       }
    }
@@ -264,6 +280,11 @@
  <interface
    name="curbytein"
    internal="curByteIn.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="empty"
+   internal="empty.external_connection"
    type="conduit"
    dir="end" />
  <module kind="clock_source" version="14.0" enabled="1" name="clk_0">
@@ -388,7 +409,7 @@
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
   <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory.s1' start='0x1000' end='0x2000' /><slave name='nios2_processor.jtag_debug_module' start='0x2800' end='0x3000' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory.s1' start='0x1000' end='0x2000' /><slave name='nios2_processor.jtag_debug_module' start='0x2800' end='0x3000' /><slave name='curByteIn.s1' start='0x3000' end='0x3010' /><slave name='load.s1' start='0x3010' end='0x3020' /><slave name='inStrobe.s1' start='0x3020' end='0x3030' /><slave name='curByteOut.s1' start='0x3030' end='0x3040' /><slave name='outSignal.s1' start='0x3040' end='0x3050' /><slave name='readyToDownload.s1' start='0x3050' end='0x3060' /><slave name='switches.s1' start='0x3060' end='0x3070' /><slave name='LEDs.s1' start='0x3070' end='0x3080' /><slave name='jtag_uart.avalon_jtag_slave' start='0x3080' end='0x3088' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory.s1' start='0x1000' end='0x2000' /><slave name='nios2_processor.jtag_debug_module' start='0x2800' end='0x3000' /><slave name='empty.s1' start='0x3000' end='0x3010' /><slave name='curByteIn.s1' start='0x3010' end='0x3020' /><slave name='load.s1' start='0x3020' end='0x3030' /><slave name='inStrobe.s1' start='0x3030' end='0x3040' /><slave name='curByteOut.s1' start='0x3040' end='0x3050' /><slave name='outSignal.s1' start='0x3050' end='0x3060' /><slave name='readyToDownload.s1' start='0x3060' end='0x3070' /><slave name='switches.s1' start='0x3070' end='0x3080' /><slave name='LEDs.s1' start='0x3080' end='0x3090' /><slave name='jtag_uart.avalon_jtag_slave' start='0x3090' end='0x3098' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="deviceFamilyName" value="Cyclone V" />
   <parameter name="internalIrqMaskSystemInfo" value="32" />
@@ -565,6 +586,20 @@
   <parameter name="width" value="8" />
   <parameter name="clockRate" value="50000000" />
  </module>
+ <module kind="altera_avalon_pio" version="14.0" enabled="1" name="empty">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="1" />
+  <parameter name="clockRate" value="50000000" />
+ </module>
  <connection
    kind="avalon"
    version="14.0"
@@ -655,7 +690,7 @@
    start="nios2_processor.data_master"
    end="LEDs.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3070" />
+  <parameter name="baseAddress" value="0x3080" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -664,7 +699,7 @@
    start="nios2_processor.data_master"
    end="switches.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3060" />
+  <parameter name="baseAddress" value="0x3070" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="14.0" start="clk_0.clk" end="jtag_uart.clk" />
@@ -684,7 +719,7 @@
    start="nios2_processor.data_master"
    end="jtag_uart.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3080" />
+  <parameter name="baseAddress" value="0x3090" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -710,7 +745,7 @@
    start="nios2_processor.data_master"
    end="readyToDownload.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3050" />
+  <parameter name="baseAddress" value="0x3060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -729,7 +764,7 @@
    start="nios2_processor.data_master"
    end="outSignal.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3040" />
+  <parameter name="baseAddress" value="0x3050" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -749,7 +784,7 @@
    start="nios2_processor.data_master"
    end="curByteOut.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3030" />
+  <parameter name="baseAddress" value="0x3040" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -770,7 +805,7 @@
    start="nios2_processor.data_master"
    end="inStrobe.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3020" />
+  <parameter name="baseAddress" value="0x3030" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -786,7 +821,7 @@
    start="nios2_processor.data_master"
    end="load.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3010" />
+  <parameter name="baseAddress" value="0x3020" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -806,7 +841,7 @@
    start="nios2_processor.data_master"
    end="curByteIn.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3000" />
+  <parameter name="baseAddress" value="0x3010" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -814,6 +849,22 @@
    version="14.0"
    start="nios2_processor.jtag_debug_module_reset"
    end="curByteIn.reset" />
+ <connection
+   kind="reset"
+   version="14.0"
+   start="nios2_processor.jtag_debug_module_reset"
+   end="empty.reset" />
+ <connection
+   kind="avalon"
+   version="14.0"
+   start="nios2_processor.data_master"
+   end="empty.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x3000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection kind="reset" version="14.0" start="clk_0.clk_reset" end="empty.reset" />
+ <connection kind="clock" version="14.0" start="clk_0.clk" end="empty.clk" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />
