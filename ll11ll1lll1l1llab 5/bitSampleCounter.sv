@@ -26,8 +26,11 @@ module fourBitCounter(out, clk, rst, enable);
 	output reg [3:0] out;
 
 	always @(posedge clk)
-		if (rst | ~enable)
+		if (rst)
 			out <= 4'b0000;
-		else
+		else if (enable)
 			out <= out + 1'b1;
+		else
+			out <= out;
+
 endmodule

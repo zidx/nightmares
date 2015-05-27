@@ -3,7 +3,7 @@
 module startBitDetect(enable, clk, rst, in);
 	input clk, rst;
 	input in;
-	output enable;
+	output reg enable;
 	
 	always @(posedge clk) begin
 		if (rst) enable <= 0;

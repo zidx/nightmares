@@ -51,7 +51,7 @@ LEDG[1] <= <GND>
 LEDG[2] <= <GND>
 LEDG[3] <= Camera:camera2.port1
 LEDG[4] <= Camera:camera2.port0
-LEDG[5] <= <GND>
+LEDG[5] <= serialDataIn.DB_MAX_OUTPUT_PORT_TYPE
 LEDG[6] <= Camera:camera1.port1
 LEDG[7] <= Camera:camera1.port0
 SW[0] => ~NO_FANOUT~
@@ -166,6 +166,13 @@ clk => prev.CLK
 in => pressed.IN1
 in => prev.DATAIN
 pressed <= pressed.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lights|DFlipFlop:dffload
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D => q.DATAA
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
 
 
 |lights|Percents:cam1Percent
@@ -482,8 +489,14 @@ clk => out[0]~reg0.CLK
 clk => out[1]~reg0.CLK
 clk => out[2]~reg0.CLK
 clk => out[3]~reg0.CLK
-rst => always0.IN0
-enable => always0.IN1
+rst => out.OUTPUTSELECT
+rst => out.OUTPUTSELECT
+rst => out.OUTPUTSELECT
+rst => out.OUTPUTSELECT
+enable => out.OUTPUTSELECT
+enable => out.OUTPUTSELECT
+enable => out.OUTPUTSELECT
+enable => out.OUTPUTSELECT
 
 
 |lights|fourBitCounter:bitIndexCounter
@@ -495,8 +508,14 @@ clk => out[0]~reg0.CLK
 clk => out[1]~reg0.CLK
 clk => out[2]~reg0.CLK
 clk => out[3]~reg0.CLK
-rst => always0.IN0
-enable => always0.IN1
+rst => out.OUTPUTSELECT
+rst => out.OUTPUTSELECT
+rst => out.OUTPUTSELECT
+rst => out.OUTPUTSELECT
+enable => out.OUTPUTSELECT
+enable => out.OUTPUTSELECT
+enable => out.OUTPUTSELECT
+enable => out.OUTPUTSELECT
 
 
 |lights|shiftIn:bufferIn
@@ -569,24 +588,14 @@ clk => q~reg0.CLK
 rst => q.OUTPUTSELECT
 
 
-|lights|fourBitCounter:bitLength
-out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-clk => out[0]~reg0.CLK
-clk => out[1]~reg0.CLK
-clk => out[2]~reg0.CLK
-clk => out[3]~reg0.CLK
-rst => always0.IN0
-enable => always0.IN1
-
-
 |lights|shiftOut:sendTheD
 out <= out.DB_MAX_OUTPUT_PORT_TYPE
 hempTea <= startBitDetect:sentTheD.port0
 clk => clk.IN3
-rst => rst.IN2
+rst => comb.IN1
+rst => comb.IN1
+rst => comb.IN1
+rst => comb.IN0
 load => load.IN1
 byteIn[0] => Mux0.IN15
 byteIn[1] => Mux0.IN14
@@ -614,8 +623,33 @@ clk => out[0]~reg0.CLK
 clk => out[1]~reg0.CLK
 clk => out[2]~reg0.CLK
 clk => out[3]~reg0.CLK
-rst => always0.IN0
-enable => always0.IN1
+rst => out.OUTPUTSELECT
+rst => out.OUTPUTSELECT
+rst => out.OUTPUTSELECT
+rst => out.OUTPUTSELECT
+enable => out.OUTPUTSELECT
+enable => out.OUTPUTSELECT
+enable => out.OUTPUTSELECT
+enable => out.OUTPUTSELECT
+
+
+|lights|shiftOut:sendTheD|fourBitCounter:internalCounter2
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => out[0]~reg0.CLK
+clk => out[1]~reg0.CLK
+clk => out[2]~reg0.CLK
+clk => out[3]~reg0.CLK
+rst => out.OUTPUTSELECT
+rst => out.OUTPUTSELECT
+rst => out.OUTPUTSELECT
+rst => out.OUTPUTSELECT
+enable => out.OUTPUTSELECT
+enable => out.OUTPUTSELECT
+enable => out.OUTPUTSELECT
+enable => out.OUTPUTSELECT
 
 
 |lights|shiftOut:sendTheD|startBitDetect:sentTheD
