@@ -1,0 +1,367 @@
+# Reading C:/altera/14.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do lights_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlib switchesqsys
+# ** Warning: (vlib-34) Library already exists at "switchesqsys".
+# 
+# vmap switchesqsys switchesqsys
+# Modifying modelsim.ini
+# vlog -vlog01compat -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/switchesqsys.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys
+# 
+# Top level modules:
+# 	switchesqsys
+# vlog -vlog01compat -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/altera_reset_controller.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module altera_reset_controller
+# 
+# Top level modules:
+# 	altera_reset_controller
+# vlog -vlog01compat -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/altera_reset_synchronizer.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module altera_reset_synchronizer
+# 
+# Top level modules:
+# 	altera_reset_synchronizer
+# vlog -vlog01compat -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_mm_interconnect_0.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_mm_interconnect_0
+# 
+# Top level modules:
+# 	switchesqsys_mm_interconnect_0
+# vlog -vlog01compat -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/altera_avalon_sc_fifo.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module altera_avalon_sc_fifo
+# 
+# Top level modules:
+# 	altera_avalon_sc_fifo
+# vlog -vlog01compat -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_load.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_load
+# 
+# Top level modules:
+# 	switchesqsys_load
+# vlog -vlog01compat -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_outSignal.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_outSignal
+# 
+# Top level modules:
+# 	switchesqsys_outSignal
+# vlog -vlog01compat -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_readyToDownload.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_readyToDownload
+# 
+# Top level modules:
+# 	switchesqsys_readyToDownload
+# vlog -vlog01compat -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_jtag_uart.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_jtag_uart_sim_scfifo_w
+# -- Compiling module switchesqsys_jtag_uart_scfifo_w
+# -- Compiling module switchesqsys_jtag_uart_sim_scfifo_r
+# -- Compiling module switchesqsys_jtag_uart_scfifo_r
+# -- Compiling module switchesqsys_jtag_uart
+# 
+# Top level modules:
+# 	switchesqsys_jtag_uart
+# vlog -vlog01compat -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_LEDs.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_LEDs
+# 
+# Top level modules:
+# 	switchesqsys_LEDs
+# vlog -vlog01compat -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_switches.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_switches
+# 
+# Top level modules:
+# 	switchesqsys_switches
+# vlog -vlog01compat -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_onchip_memory.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_onchip_memory
+# 
+# Top level modules:
+# 	switchesqsys_onchip_memory
+# vlog -vlog01compat -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_nios2_processor.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_nios2_processor_register_bank_a_module
+# -- Compiling module switchesqsys_nios2_processor_register_bank_b_module
+# -- Compiling module switchesqsys_nios2_processor_nios2_oci_debug
+# -- Compiling module switchesqsys_nios2_processor_ociram_sp_ram_module
+# -- Compiling module switchesqsys_nios2_processor_nios2_ocimem
+# -- Compiling module switchesqsys_nios2_processor_nios2_avalon_reg
+# -- Compiling module switchesqsys_nios2_processor_nios2_oci_break
+# -- Compiling module switchesqsys_nios2_processor_nios2_oci_xbrk
+# -- Compiling module switchesqsys_nios2_processor_nios2_oci_dbrk
+# -- Compiling module switchesqsys_nios2_processor_nios2_oci_itrace
+# -- Compiling module switchesqsys_nios2_processor_nios2_oci_td_mode
+# -- Compiling module switchesqsys_nios2_processor_nios2_oci_dtrace
+# -- Compiling module switchesqsys_nios2_processor_nios2_oci_compute_input_tm_cnt
+# -- Compiling module switchesqsys_nios2_processor_nios2_oci_fifo_wrptr_inc
+# -- Compiling module switchesqsys_nios2_processor_nios2_oci_fifo_cnt_inc
+# -- Compiling module switchesqsys_nios2_processor_nios2_oci_fifo
+# -- Compiling module switchesqsys_nios2_processor_nios2_oci_pib
+# -- Compiling module switchesqsys_nios2_processor_nios2_oci_im
+# -- Compiling module switchesqsys_nios2_processor_nios2_performance_monitors
+# -- Compiling module switchesqsys_nios2_processor_nios2_oci
+# -- Compiling module switchesqsys_nios2_processor
+# 
+# Top level modules:
+# 	switchesqsys_nios2_processor_nios2_performance_monitors
+# 	switchesqsys_nios2_processor
+# vlog -vlog01compat -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_nios2_processor_jtag_debug_module_sysclk.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_nios2_processor_jtag_debug_module_sysclk
+# 
+# Top level modules:
+# 	switchesqsys_nios2_processor_jtag_debug_module_sysclk
+# vlog -vlog01compat -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_nios2_processor_jtag_debug_module_tck.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_nios2_processor_jtag_debug_module_tck
+# 
+# Top level modules:
+# 	switchesqsys_nios2_processor_jtag_debug_module_tck
+# vlog -vlog01compat -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_nios2_processor_jtag_debug_module_wrapper.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_nios2_processor_jtag_debug_module_wrapper
+# 
+# Top level modules:
+# 	switchesqsys_nios2_processor_jtag_debug_module_wrapper
+# vlog -vlog01compat -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_nios2_processor_oci_test_bench.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_nios2_processor_oci_test_bench
+# 
+# Top level modules:
+# 	switchesqsys_nios2_processor_oci_test_bench
+# vlog -vlog01compat -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_nios2_processor_test_bench.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_nios2_processor_test_bench
+# 
+# Top level modules:
+# 	switchesqsys_nios2_processor_test_bench
+# vlog -vlog01compat -work work +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5 {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/lights.v}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module lights
+# -- Compiling module ClockDivider
+# 
+# Top level modules:
+# 	lights
+# vlog -sv -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_irq_mapper.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_irq_mapper
+# 
+# Top level modules:
+# 	switchesqsys_irq_mapper
+# vlog -sv -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module altera_merlin_arbitrator
+# -- Compiling module altera_merlin_arb_adder
+# 
+# Top level modules:
+# 	altera_merlin_arbitrator
+# vlog -sv -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_mm_interconnect_0_rsp_mux_001.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_mm_interconnect_0_rsp_mux_001
+# 
+# Top level modules:
+# 	switchesqsys_mm_interconnect_0_rsp_mux_001
+# vlog -sv -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_mm_interconnect_0_rsp_mux.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_mm_interconnect_0_rsp_mux
+# 
+# Top level modules:
+# 	switchesqsys_mm_interconnect_0_rsp_mux
+# vlog -sv -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_mm_interconnect_0_rsp_demux_002.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_mm_interconnect_0_rsp_demux_002
+# 
+# Top level modules:
+# 	switchesqsys_mm_interconnect_0_rsp_demux_002
+# vlog -sv -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_mm_interconnect_0_cmd_mux_002.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_mm_interconnect_0_cmd_mux_002
+# 
+# Top level modules:
+# 	switchesqsys_mm_interconnect_0_cmd_mux_002
+# vlog -sv -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_mm_interconnect_0_cmd_mux.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_mm_interconnect_0_cmd_mux
+# 
+# Top level modules:
+# 	switchesqsys_mm_interconnect_0_cmd_mux
+# vlog -sv -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_mm_interconnect_0_cmd_demux_001.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_mm_interconnect_0_cmd_demux_001
+# 
+# Top level modules:
+# 	switchesqsys_mm_interconnect_0_cmd_demux_001
+# vlog -sv -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_mm_interconnect_0_cmd_demux.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_mm_interconnect_0_cmd_demux
+# 
+# Top level modules:
+# 	switchesqsys_mm_interconnect_0_cmd_demux
+# vlog -sv -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_mm_interconnect_0_router_004.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_mm_interconnect_0_router_004_default_decode
+# -- Compiling module switchesqsys_mm_interconnect_0_router_004
+# 
+# Top level modules:
+# 	switchesqsys_mm_interconnect_0_router_004
+# vlog -sv -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_mm_interconnect_0_router_002.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_mm_interconnect_0_router_002_default_decode
+# -- Compiling module switchesqsys_mm_interconnect_0_router_002
+# 
+# Top level modules:
+# 	switchesqsys_mm_interconnect_0_router_002
+# vlog -sv -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_mm_interconnect_0_router_001.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_mm_interconnect_0_router_001_default_decode
+# -- Compiling module switchesqsys_mm_interconnect_0_router_001
+# 
+# Top level modules:
+# 	switchesqsys_mm_interconnect_0_router_001
+# vlog -sv -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/switchesqsys_mm_interconnect_0_router.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module switchesqsys_mm_interconnect_0_router_default_decode
+# -- Compiling module switchesqsys_mm_interconnect_0_router
+# 
+# Top level modules:
+# 	switchesqsys_mm_interconnect_0_router
+# vlog -sv -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/altera_merlin_slave_agent.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module altera_merlin_slave_agent
+# ** Warning: C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/altera_merlin_slave_agent.sv(606): (vlog-2186) SystemVerilog testbench feature
+# 
+# (randomization, coverage or assertion) detected in the design.
+# 
+# These features are only supported in Questasim.
+# 
+# ** Warning: C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/altera_merlin_slave_agent.sv(486): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/altera_merlin_slave_agent.sv(487): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/altera_merlin_slave_agent.sv(488): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/altera_merlin_slave_agent.sv(489): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/altera_merlin_slave_agent.sv(34): (vlog-2186) SystemVerilog testbench feature
+# 
+# (randomization, coverage or assertion) detected in the design.
+# 
+# These features are only supported in Questasim.
+# 
+# 
+# Top level modules:
+# 	altera_merlin_slave_agent
+# vlog -sv -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module altera_merlin_burst_uncompressor
+# 
+# Top level modules:
+# 	altera_merlin_burst_uncompressor
+# vlog -sv -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/altera_merlin_master_agent.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module altera_merlin_master_agent
+# 
+# Top level modules:
+# 	altera_merlin_master_agent
+# vlog -sv -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/altera_merlin_slave_translator.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module altera_merlin_slave_translator
+# 
+# Top level modules:
+# 	altera_merlin_slave_translator
+# vlog -sv -work switchesqsys +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/nios_system/synthesis/submodules {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/nios_system/synthesis/submodules/altera_merlin_master_translator.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module altera_merlin_master_translator
+# 
+# Top level modules:
+# 	altera_merlin_master_translator
+# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5/output_files {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/output_files/Camera.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module Camera
+# -- Compiling module Camera_testbench
+# 
+# Top level modules:
+# 	Camera_testbench
+# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5 {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/CountUp.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module CountUp
+# -- Compiling module CountUpTestbench
+# 
+# Top level modules:
+# 	CountUpTestbench
+# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5 {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/DFlipFlop.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module DFlipFlop
+# 
+# Top level modules:
+# 	DFlipFlop
+# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5 {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/UserInput.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module UserInput
+# 
+# Top level modules:
+# 	UserInput
+# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5 {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/Percents.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module Percents
+# -- Compiling module PercentTestbench
+# 
+# Top level modules:
+# 	PercentTestbench
+# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5 {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/startBuffer.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module startBitDetect
+# 
+# Top level modules:
+# 	startBitDetect
+# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5 {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/bitSampleCounter.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module fourBitCounter
+# 
+# Top level modules:
+# 	fourBitCounter
+# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5 {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/shiftIn.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module shiftIn
+# 
+# Top level modules:
+# 	shiftIn
+# vlog -sv -work work +incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab\ 5 {C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/shiftOut.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module shiftOut
+# -- Compiling module shiftOut_testbench
+# 
+# Top level modules:
+# 	shiftOut_testbench
+# 
+vsim work.shiftOut_testbench
+# vsim work.shiftOut_testbench 
+# Loading sv_std.std
+# Loading work.shiftOut_testbench
+# Loading work.shiftOut
+# Loading work.startBitDetect
+# Loading work.fourBitCounter
+add wave -position end  sim:/shiftOut_testbench/clkDur
+add wave -position end  sim:/shiftOut_testbench/clk
+add wave -position end  sim:/shiftOut_testbench/rst
+add wave -position end  sim:/shiftOut_testbench/load
+add wave -position end  sim:/shiftOut_testbench/byteIn
+add wave -position end  sim:/shiftOut_testbench/out
+add wave -position end  sim:/shiftOut_testbench/hempTea
+add wave -position end  sim:/shiftOut_testbench/dut/internalCounter2/out
+add wave -position end  sim:/shiftOut_testbench/dut/internalCounter/out
+run -all
+# Break in Module shiftOut_testbench at C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/shiftOut.sv line 621

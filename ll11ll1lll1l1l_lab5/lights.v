@@ -67,6 +67,9 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
 	 reg[2:0] microControllerOut;
 	 
 	 // Idle state display of cameras show ready to download
+	 parameter idleD = 7'b0111111;	 
+	 
+	 // Idle state display of cameras show ready to download
 	 wire readyTodownload1 = (displayCam1 == idleD);
 	 wire readyTodownload2 = (displayCam2 == idleD);
 	 //assign LEDG[5] = readyTodownload;
@@ -76,8 +79,6 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
 	 //parameter defaultCam1Behavior = 1'b1; microControllerOut[1]
 	 parameter defaultCam2Behavior = 1'b0;
 	 
-	 // Idle state display of cameras show ready to download
-	 parameter idleD = 7'b0111111;	 
 	 
 	 // Percentage control wires
 	 //	emptyBuffer:
@@ -110,6 +111,8 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
 	 assign LEDG[4] = ~cam2Standby;
 	 assign LEDG[3] = ~cam2Film;	 
 	 
+	 wire enable, bicStrobe, serialDataIn;
+	 wire [3:0] bscOut, bicOut, loadOut;
 	 
 	 // Generate clk off of CLOCK_50, whichClock picks rate.
 	 // Rate determines buffer fill and empty rate
@@ -117,7 +120,9 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
 	 
 	 // Uses clock 6 for implementation to DE1-SoC
 	 // Uses clock 0 for testing.
-	 parameter whichClock = 6;
+	 parameter whichClock = 16;
+	 
+	 assign LEDG[5] = serialDataIn;
 	 
 
 	 // Clock 6 used in operation for the buffer, but for debugging
@@ -130,8 +135,11 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
 	 CountUp countUpCam1 ( percentCamera1, displayCam1Percent );
 	 CountUp countUpCam2 ( percentCamera2, displayCam2Percent );
 	 
+	 wire loadUI;
+	 
 	 // Sends all asynchronous input through a DFF
 	 UserInput resetInput (clock, reset, resetUI );
+	 DFlipFlop dffload (loadUI, load, clock, reset);
 	 
 	 // Sets ResetState if reset is signaled
 	 reg resetState;	 
@@ -153,19 +161,19 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
 	 
 //	 Buffer  buf1 (clock, resetState, emptyBuffer1, percentCamera1, percentCamera1, curByte1, strobe1 );
 //	 Buffer  buf2 (clock, resetState, emptyBuffer2, percentCamera2, percentCamera2, curByte2, strobe2 );
-	 
-	 wire enable, bicStrobe, serialDataIn;
-	 wire [3:0] bscOut, bicOut, loadOut;
-	 
-	 assign bicStrobe = (bicOut == bitEnd);	//right now strobe only turns on for one clock cycle, but we can hold it for more if needed.
-	 
+	 	 
 	 parameter bitMiddle = 4'b0111;
 	 parameter bitEnd    = 4'b1111;
 	 parameter ninethBit = 4'b1001;
 	 
+	 assign bicStrobe = (bicOut == bitEnd);	//right now strobe only turns on for one clock cycle, but we can hold it for more if needed.
+	 
 	 wire sampleBit = (bscOut == bitMiddle);
 	 wire nextBit   = (bscOut == bitEnd);
 	 wire nextStrobe = (bicOut == ninethBit);
+	 
+	  wire [7:0] parallelDataIn, parallelDataOut;
+	  wire hempTea;
 	 
 	 //will the ending bit still turn enable on after 9th bicstrobe resets? or will it work perfectly
 	 startBitDetect start (enable, clock, reset | bicStrobe, serialDataIn);
@@ -174,29 +182,23 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
 	 
 	 fourBitCounter bitIndexCounter  (bicOut, nextBit, reset, enable);
 	 
-	 wire [7:0] parallelDataIn, parallelDataOut;
 	 
 	 shiftIn bufferIn ( parallelDataIn, sampleBit, reset, serialDataIn );
-	 
-	 wire hempTea, load;
-	 
-	 fourBitCounter bitLength (loadOut, clock, ~load, load);
-	 
-	 //loadOut[3] os the 16x slower clock
-	 shiftOut sendTheD (serialDataIn, hempTea, loadOut[3], reset, load, parallelDataOut);
+	
+	 shiftOut sendTheD (serialDataIn, hempTea, clock, reset, loadUI, parallelDataOut);
 	 
     switchesqsys u0 (
-        .clk_clk                (CLOCK_50),                //             clk.clk
-        .reset_reset_n          (KEY[0]),            //           reset.reset_n
-        .switches_export        (nothing),       //        switches.export
-        .leds_export            (nothing),            //            leds.export
-        .readytodownload_export (readyTodownload1 | readyTodownload2),// readytodownload.export
-        .outsignal_export       (microControllerOut),         //       outsignal.export
-        .curbyteout_export      (parallelDataOut),      //      curbyteout.export
-        .instrobe_export        (nextStrobe),        //        instrobe.export
-        .load_export            (load),            //            load.export
+        .clk_clk                (CLOCK_50),              //             clk.clk
+        .reset_reset_n          (KEY[0]),            		//           reset.reset_n
+        .switches_export        (nothing),       			//        switches.export
+        .leds_export            (nothing),            	//            leds.export
+        .readytodownload_export (readyTodownload1 | readyTodownload2),	// readytodownload.export
+        .outsignal_export       (microControllerOut),    //       outsignal.export
+        .curbyteout_export      (parallelDataOut),      	//      curbyteout.export
+        .instrobe_export        (nextStrobe),        		//        instrobe.export
+        .load_export            (load),            		//            load.export
         .curbytein_export       (parallelDataIn),        //       curbytein.export
-		  .empty_export           (hempTea)            //           empty.export
+		  .empty_export           (hempTea)           		//           empty.export
     );
 
 	 
