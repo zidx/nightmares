@@ -108,7 +108,7 @@ int main() {
 	alt_u8 prevVal = curByteInVal;
 	//alt_u8 prevStrobe = inStrobeVal;
 
-	alt_printf("\nInitial prevVal %x \n", curByteInVal);
+	alt_printf("\nInitial prevVal %c \n", curByteInVal);
 
 	//IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
 	char start = 'a';
@@ -146,6 +146,10 @@ int main() {
 			alt_putstr("Enter a character to send: ");
 			start = alt_getchar();
 			IOWR_ALTERA_AVALON_PIO_DATA(curByteOut, start);
+
+			alt_printf("Expected character out: ");
+			alt_printf("%c \n", start);
+
 			IOWR_ALTERA_AVALON_PIO_DATA(load, 0x1);
 
 			temp_load = IORD_ALTERA_AVALON_PIO_DATA(load);
@@ -157,28 +161,33 @@ int main() {
 				alt_printf("hempTea %x\n", hempTeaVal);
 			}*/
 
-			hempTeaVal = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
-			alt_printf("Waiting for Empty");
+			alt_u8 start_char = IORD_ALTERA_AVALON_PIO_DATA(curByteOut);
+			alt_printf("Expected character again: ");
+			alt_printf("%c \n", start_char);
+
+
+//			hempTeaVal = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
+//			alt_printf("Waiting for Empty");
 			int count = 0;
 			int wait_value = 10000;
+//
+//			while(hempTeaVal == 0) {
+//				if(count % wait_value == 0) alt_printf(".");
+//				count++;
+//				count %= wait_value;
+//				hempTeaVal = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
+//			}
+//			alt_printf("\n");
+//
+//			IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
+//
+//			temp_load = IORD_ALTERA_AVALON_PIO_DATA(load);
+//			alt_printf("temp_load (0) %x\n", temp_load);
+//
+//			count = 0;
+//			alt_printf("Waiting for Strobe");
 
-			while(hempTeaVal == 0) {
-				if(count % wait_value == 0) alt_printf(".");
-				count++;
-				count %= wait_value;
-				hempTeaVal = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
-			}
-			alt_printf("\n");
-
-			IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
-
-			temp_load = IORD_ALTERA_AVALON_PIO_DATA(load);
-			alt_printf("temp_load (0) %x\n", temp_load);
-
-			count = 0;
-			alt_printf("Waiting for Strobe");
-
-			//inStrobeVal = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+			inStrobeVal = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
 			while(inStrobeVal == 0) { // possible infinite loop
 				if(count % wait_value == 0) alt_printf(".");
 				count++;
