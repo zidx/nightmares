@@ -17,7 +17,7 @@ module DFlipFlop(q,  D, clk, rst);
 	input D, clk, rst;
 	output q;
 	reg q;
-		always@ (posedge clk)
+		always@ (posedge clk or posedge rst)
 		begin  // Statements need to be non-blocking
 			if(rst)
 				q <= 0;

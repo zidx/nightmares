@@ -17,7 +17,7 @@ L0 12
 Z9 OV;L;10.1e;51
 r1
 31
-Z10 !s108 1432697838.760000
+Z10 !s108 1432700349.134000
 Z11 !s107 C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/output_files/Camera.sv|
 Z12 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/output_files|C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/output_files/Camera.sv|
 Z13 o-sv -work work -O0
@@ -55,14 +55,14 @@ vClockDivider
 Z22 IEV?bC=>=mbnH]iz`a8CX=1
 Z23 VECfnOSAF3DOcO<o@hR5Cb3
 R5
-Z24 w1432696752
+Z24 w1432698859
 Z25 8C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/lights.v
 Z26 FC:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/lights.v
 Z27 L0 207
 R9
 r1
 31
-Z28 !s108 1432697836.948000
+Z28 !s108 1432700347.514000
 Z29 !s107 C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/lights.v|
 Z30 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5|C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/lights.v|
 Z31 o-vlog01compat -work work -O0
@@ -86,7 +86,7 @@ L0 15
 R9
 r1
 31
-Z41 !s108 1432697838.843000
+Z41 !s108 1432700349.216000
 Z42 !s107 C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/CountUp.sv|
 Z43 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5|C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/CountUp.sv|
 R13
@@ -138,7 +138,7 @@ R44
 Z55 n@d@flip@flop
 Z56 !s100 NnK[KN:O:j0=oa9^ZlECe3
 Z57 !s105 DFlipFlop_sv_unit
-Z58 !s108 1432697839.032000
+Z58 !s108 1432700349.295000
 Z59 !s107 C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/DFlipFlop.sv|
 Z60 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5|C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/DFlipFlop.sv|
 !i10b 1
@@ -146,11 +146,11 @@ Z60 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/codyohl/Documents/n
 !s101 -O0
 vfourBitCounter
 R1
-Z61 I7^oRXjN9b:[7;?R0>U^E_3
+Z61 IF_<Jc58LKC926<NfU_2Wj3
 Z62 VU=Kc6JM6[T;6d]F7AcMjc0
 S1
 R5
-Z63 w1432687727
+Z63 w1432700141
 Z64 8C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/bitSampleCounter.sv
 Z65 FC:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/bitSampleCounter.sv
 L0 1
@@ -160,16 +160,16 @@ r1
 R13
 R44
 Z66 nfour@bit@counter
-Z67 !s100 DVF8jH<UhkCQUFHO:Qf[c0
+Z67 !s100 jNFKMDem7C8JRk[^_z5Y;1
 Z68 !s105 bitSampleCounter_sv_unit
-Z69 !s108 1432697839.359000
+Z69 !s108 1432700349.563000
 Z70 !s107 C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/bitSampleCounter.sv|
 Z71 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5|C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/bitSampleCounter.sv|
 !i10b 1
 !s85 0
 !s101 -O0
 vlights
-Z72 Id`;?Fc1i49[`HAf1TCcIN1
+Z72 IXz:<]1Um`kMXEk8N<zD4P3
 Z73 Vj4f3Q8Hn2WJ4A9<bTIcdd1
 R5
 R24
@@ -184,7 +184,7 @@ R29
 R30
 R31
 R32
-Z74 !s100 kBzUjZ:3o<emgb[A9A^dU2
+Z74 !s100 GCYUX[:n[;5k?<]`=iSk`3
 !i10b 1
 !s85 0
 !s101 -O0
@@ -202,7 +202,7 @@ L0 17
 R9
 r1
 31
-Z80 !s108 1432697839.190000
+Z80 !s108 1432700349.420000
 Z81 !s107 C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/Percents.sv|
 Z82 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5|C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/Percents.sv|
 R13
@@ -256,20 +256,20 @@ Z94 nshift@in
 Z95 !s100 ]d0R9z4z_Aga^2hH^BLB[3
 Z96 !s105 shiftIn_sv_unit
 !s85 0
-Z97 !s108 1432697839.422000
+Z97 !s108 1432700349.628000
 Z98 !s107 C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/shiftIn.sv|
 Z99 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5|C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/shiftIn.sv|
 !s101 -O0
 vshiftOut
 R1
 !i10b 1
-!s100 CO_dMdNml2PDbBN02Um;B2
-IRU^B2F7ORALAd9ggHICEc3
+!s100 HkXm2[Q>cT`hQ2Ccd>>mj2
+IJ>[QiHed^oH5l`U]jFYWh2
 V1Lk3=U^Z7iSJ`DZiiIm:U1
 Z100 !s105 shiftOut_sv_unit
 S1
 R5
-Z101 w1432696932
+Z101 w1432700321
 Z102 8C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/shiftOut.sv
 Z103 FC:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/shiftOut.sv
 L0 10
@@ -277,7 +277,7 @@ R9
 r1
 !s85 0
 31
-Z104 !s108 1432697839.485000
+Z104 !s108 1432700349.692000
 Z105 !s107 C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/shiftOut.sv|
 Z106 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5|C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/shiftOut.sv|
 !s101 -O0
@@ -287,9 +287,9 @@ nshift@out
 vshiftOut_testbench
 R1
 !i10b 1
-!s100 K8emMBe<aQ:z@`iFW=P^T3
-Im3[lz`>N2=FS7mV=WX<f43
-VBaO@:>g5FlH`mkO4E6DRa0
+!s100 3<jB2hf2g14_cTkPdn0>O2
+IfBWa7SUH4kBlAP@Y1SCDD0
+V0e=DO<G<zUaWEbcNZYN]g1
 R100
 S1
 R5
@@ -326,7 +326,7 @@ R44
 Z112 nstart@bit@detect
 Z113 !s100 5;e4ChVh=zifN8fcEM@Kd3
 Z114 !s105 startBuffer_sv_unit
-Z115 !s108 1432697839.294000
+Z115 !s108 1432700349.499000
 Z116 !s107 C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/startBuffer.sv|
 Z117 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5|C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/startBuffer.sv|
 !i10b 1
@@ -350,7 +350,7 @@ R44
 Z122 n@user@input
 Z123 !s100 2o3g[:iH8[j=PbW2j4Y302
 Z124 !s105 UserInput_sv_unit
-Z125 !s108 1432697839.119000
+Z125 !s108 1432700349.357000
 Z126 !s107 C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/UserInput.sv|
 Z127 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5|C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/UserInput.sv|
 !i10b 1

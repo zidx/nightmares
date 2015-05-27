@@ -361,7 +361,22 @@ add wave -position end  sim:/shiftOut_testbench/load
 add wave -position end  sim:/shiftOut_testbench/byteIn
 add wave -position end  sim:/shiftOut_testbench/out
 add wave -position end  sim:/shiftOut_testbench/hempTea
-add wave -position end  sim:/shiftOut_testbench/dut/internalCounter2/out
+add wave -position end  sim:/shiftOut_testbench/dut/detectLoad/clk
+add wave -position end  sim:/shiftOut_testbench/dut/detectLoad/rst
+add wave -position end  sim:/shiftOut_testbench/dut/detectLoad/in
+add wave -position end  sim:/shiftOut_testbench/dut/detectLoad/enable
+add wave -position end  sim:/shiftOut_testbench/dut/internalCounter/clk
+add wave -position end  sim:/shiftOut_testbench/dut/internalCounter/rst
+add wave -position end  sim:/shiftOut_testbench/dut/internalCounter/enable
 add wave -position end  sim:/shiftOut_testbench/dut/internalCounter/out
+add wave -position end  sim:/shiftOut_testbench/dut/internalCounterTwo/clk
+add wave -position end  sim:/shiftOut_testbench/dut/internalCounterTwo/rst
+add wave -position end  sim:/shiftOut_testbench/dut/internalCounterTwo/enable
+add wave -position end  sim:/shiftOut_testbench/dut/internalCounterTwo/out
+add wave -position end  sim:/shiftOut_testbench/dut/sentTheD/clk
+add wave -position end  sim:/shiftOut_testbench/dut/sentTheD/rst
+add wave -position end  sim:/shiftOut_testbench/dut/sentTheD/in
+add wave -position end  sim:/shiftOut_testbench/dut/sentTheD/enable
 run -all
 # Break in Module shiftOut_testbench at C:/Users/codyohl/Documents/nightmares/ll11ll1lll1l1llab 5/shiftOut.sv line 621
+add wave -position 4  sim:/shiftOut_testbench/clk

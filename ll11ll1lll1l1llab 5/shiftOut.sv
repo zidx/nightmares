@@ -20,17 +20,18 @@ module shiftOut(out, hempTea, clk, rst, load, byteIn);
 	wire [3:0] index, counterConnect;
 	wire enable;
 	
-	//when load goes from l to h enable.
-	startBitDetect detectLoad (enable, clk, rst | hempTea | ~load, load);
+	//when load goes from l to h enable forever until reset.
+	startBitDetect detectLoad (enable, clk, rst | hempTea | ~load, load, 0);
 	//begin counting
 	fourBitCounter internalCounter (counterConnect, clk, rst | hempTea | ~load, enable);
 	
-	fourBitCounter internalCounter2 (index, counterConnect[3], rst | hempTea | ~load, enable);
+	fourBitCounter internalCounterTwo (index, counterConnect[3], rst | hempTea | ~load, enable);
 
 	assign out = signal[index] & enable;
 	
-	//when load goes from l to h enable.
-	startBitDetect sentTheD (hempTea, clk, rst | ~load, index == 10);
+	//when index goes to 10 disable (hemptea) forever until reset
+	//activates hempTea correct time to ensure out is always correct
+	startBitDetect sentTheD (hempTea, clk, rst | ~load, index == 4'd10, 0); // && counterConnect == 4'd7);
 	//the line above does this exact same thing as below
 //	always @(posedge clk) begin
 //		if(rst)
@@ -53,7 +54,7 @@ module shiftOut_testbench();
 	
 	shiftOut dut (out, hempTea, clk, rst, load, byteIn);
 	
-	parameter clkDur = 100;
+	parameter clkDur = 2;
 	
 	// Set up the clock. 
 	initial clk=0;
@@ -224,7 +225,6 @@ module shiftOut_testbench();
 							@(posedge clk);
 							@(posedge clk);
 							@(posedge clk);
-							@(posedge clk);@(posedge clk);
 							@(posedge clk);
 							@(posedge clk);
 							@(posedge clk);
@@ -269,8 +269,8 @@ module shiftOut_testbench();
 							@(posedge clk);
 							@(posedge clk);
 							@(posedge clk);
-			load = 0;
 							@(posedge clk);
+							@(posedge clk); load = 0;
 							@(posedge clk);
 							@(posedge clk);
 							@(posedge clk);
@@ -307,7 +307,6 @@ module shiftOut_testbench();
 							@(posedge clk);
 							@(posedge clk);
 							@(posedge clk);
-							@(posedge clk);@(posedge clk);
 							@(posedge clk);
 							@(posedge clk);
 							@(posedge clk);
@@ -321,7 +320,11 @@ module shiftOut_testbench();
 							@(posedge clk);
 							@(posedge clk);
 							@(posedge clk);
-							@(posedge clk);@(posedge clk);
+							@(posedge clk);
+							@(posedge clk);
+							@(posedge clk);
+							@(posedge clk);
+							@(posedge clk);
 							@(posedge clk);
 							@(posedge clk);
 							@(posedge clk);

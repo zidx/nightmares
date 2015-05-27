@@ -99,7 +99,7 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
 	 assign HEX1 = displayCam2;
 	 
 	 assign HEX2 = blank;
-	 assign HEX3 = blank;
+	 //assign HEX3 = blank;
 	 
 	 assign HEX4 = displayCam1;
 	 assign HEX5 = displayCam1Percent;
@@ -135,7 +135,7 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
 	 CountUp countUpCam1 ( percentCamera1, displayCam1Percent );
 	 CountUp countUpCam2 ( percentCamera2, displayCam2Percent );
 	 
-	 wire loadUI;
+	 wire loadUI, load;
 	 
 	 // Sends all asynchronous input through a DFF
 	 UserInput resetInput (clock, reset, resetUI );
@@ -166,26 +166,33 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
 	 parameter bitEnd    = 4'b1111;
 	 parameter ninethBit = 4'b1001;
 	 
-	 assign bicStrobe = (bicOut == bitEnd);	//right now strobe only turns on for one clock cycle, but we can hold it for more if needed.
+	 //assign bicStrobe = (bicOut == bitEnd);	//right now strobe only turns on for one clock cycle, but we can hold it for more if needed.
 	 
 	 wire sampleBit = (bscOut == bitMiddle);
 	 wire nextBit   = (bscOut == bitEnd);
-	 wire nextStrobe = (bicOut == ninethBit);
+	 wire nextStrobe = ({bicOut,bscOut} == 8'b10010010);
 	 
 	  wire [7:0] parallelDataIn, parallelDataOut;
 	  wire hempTea;
 	 
 	 //will the ending bit still turn enable on after 9th bicstrobe resets? or will it work perfectly
-	 startBitDetect start (enable, clock, reset | bicStrobe, serialDataIn);
+	 startBitDetect start (enable, clock, reset | nextStrobe, serialDataIn, {bicOut, bscOut});
 	 
-	 fourBitCounter bitSampleCounter (bscOut, clock, reset, enable);
+//	 fourBitCounter bitSampleCounter (bscOut, clock, reset, enable);
+//	 
+//	 fourBitCounter bitIndexCounter  (bicOut, nextBit, reset, enable);
 	 
-	 fourBitCounter bitIndexCounter  (bicOut, nextBit, reset, enable);
+	 eightBitCounter bscbic ({bicOut,bscOut}, clock, reset, enable);
+	
 	 
-	 
-	 shiftIn bufferIn ( parallelDataIn, sampleBit, reset, serialDataIn );
+	 shiftIn bufferIn ( parallelDataIn, sampleBit, reset, serialDataIn, {bicOut,bscOut} );
 	
 	 shiftOut sendTheD (serialDataIn, hempTea, clock, reset, loadUI, parallelDataOut);
+	 
+	 assign HEX3 = parallelDataIn[6:0];
+	 assign LEDG[0] = parallelDataIn[7];
+	 assign LEDG[1] = enable;
+	  assign LEDG[2] = nextStrobe;
 	 
     switchesqsys u0 (
         .clk_clk                (CLOCK_50),              //             clk.clk
