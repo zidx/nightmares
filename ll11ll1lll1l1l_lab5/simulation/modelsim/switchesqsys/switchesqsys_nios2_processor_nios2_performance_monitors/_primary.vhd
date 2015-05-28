@@ -1,0 +1,4 @@
+library verilog;
+use verilog.vl_types.all;
+entity switchesqsys_nios2_processor_nios2_performance_monitors is
+end switchesqsys_nios2_processor_nios2_performance_monitors;

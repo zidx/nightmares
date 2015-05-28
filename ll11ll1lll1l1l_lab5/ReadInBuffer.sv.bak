@@ -1,0 +1,14 @@
+// Detects the start bit, when the stream goes from a 
+// high signal to a low signal
+module ReadInBuffer(rst, clk, sampleBit, charOut);
+	input clk, rst;
+	input sampleBit;
+	output [7:0] charOut;
+	
+	wire in1, in2, in3, in4, in5, in6, in7, in8;
+
+	
+	assign charOut = {in1, in2, in3, in4, in5, in6, in7, in8};
+	
+endmodule
+

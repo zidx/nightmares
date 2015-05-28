@@ -1,4 +1,4 @@
-//-----------------------------------------------------------
+ //-----------------------------------------------------------
 // Module name:
 // DE1_SoC
 //
@@ -14,10 +14,12 @@
 // Zach Nehrenberg
 //
 //----------------------------------------------------------- 
-module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW); 
+module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW, SEND, RECIEVE); 
 	 input CLOCK_50;
+	 input RECIEVE;
 	 output [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5; 
-	 output [7:0] LEDG; 
+	 output [7:0] LEDG;
+	 output SEND;
 	 input [3:0] KEY; 
 	 input [9:0] SW; 
 	 
@@ -67,11 +69,14 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
 	 reg[2:0] microControllerOut;
 	 
 	 // Idle state display of cameras show ready to download
-	 parameter idleD = 7'b0111111;	 
+	 parameter idleD = 7'b0111111;
+	 parameter D = 7'b0100001;
 	 
 	 // Idle state display of cameras show ready to download
 	 wire readyTodownload1 = (displayCam1 == idleD);
+	 wire downloading1 = (displayCam1 == D);
 	 wire readyTodownload2 = (displayCam2 == idleD);
+	 wire downloading2 = (displayCam2 == D);
 	 //assign LEDG[5] = readyTodownload;
 	 
 	 // Default camera behavios
@@ -111,25 +116,19 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
 	 assign LEDG[4] = ~cam2Standby;
 	 assign LEDG[3] = ~cam2Film;	 
 	 
-	 wire enable, bicStrobe, serialDataIn;
-	 wire [3:0] bscOut, bicOut, loadOut;
-	 
 	 // Generate clk off of CLOCK_50, whichClock picks rate.
 	 // Rate determines buffer fill and empty rate
 	 wire [31:0] clk;
 	 
 	 // Uses clock 6 for implementation to DE1-SoC
 	 // Uses clock 0 for testing.
-	 parameter whichClock = 16;
+	 parameter whichClock = 5;
 	 
-	 assign LEDG[5] = serialDataIn;
-	 
-
 	 // Clock 6 used in operation for the buffer, but for debugging
 	 // clock 7 can be used to keep more time between states.
-	 wire clock = clk[whichClock];
-	 
-	 ClockDivider cdiv (CLOCK_50, clk);	 
+	 wire clock;
+	 ClockDivider cdiv (CLOCK_50, clk);
+	 ClockMultiDivide cmdiv (clk[whichClock], reset, clock);
 	 
 	 // Percent filled buffer displays
 	 CountUp countUpCam1 ( percentCamera1, displayCam1Percent );
@@ -146,53 +145,73 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
 	 initial resetState = 1;
 	 
 	 always @(posedge clock) begin
-		if(resetUI) resetState = 1;
-		else if(microControllerOut[1]) resetState = 0;
-		else resetState = resetState;
+		if(resetUI) resetState <= 1;
+		else if(microControllerOut[1]) resetState <= 0;
+		else resetState <= resetState;
 	 end
 	 
+	 // Global reset for cameras, so that they reset on the same clock
+	 // as everything else, but don't come out of reset until told to
+	 // by the microprocessor.
+	 wire globalReset = resetState | resetUI;
+	 
 	 // Instantiates buffer filler percent loaded feedback
-	 Percents cam1Percent  (clock, resetState, emptyBuffer1, pauseBuffer1, percentCamera1);
-	 Percents cam2Percent  (clock, resetState, emptyBuffer2, pauseBuffer2, percentCamera2);
+	 Percents cam1Percent  (clock, globalReset, emptyBuffer1, pauseBuffer1, percentCamera1);
+	 Percents cam2Percent  (clock, globalReset, emptyBuffer2, pauseBuffer2, percentCamera2);
 	 	 
 	 // Initialize cameras
-	 Camera camera1  (cam1Standby, cam1Film, pauseBuffer1, emptyBuffer1, displayCam1, cam1OutSignals, resetState, clock, microControllerOut[0], cam2OutSignals, microControllerOut[1], percentCamera1);
-	 Camera camera2  (cam2Standby, cam2Film, pauseBuffer2, emptyBuffer2, displayCam2, cam2OutSignals, resetState, clock, microControllerOut[0], cam1OutSignals, defaultCam2Behavior, percentCamera2);
+	 Camera camera1  (cam1Standby, cam1Film, pauseBuffer1, emptyBuffer1, displayCam1, 
+							cam1OutSignals, globalReset, clock, microControllerOut[0], 
+							cam2OutSignals, microControllerOut[1], percentCamera1);
+	 Camera camera2  (cam2Standby, cam2Film, pauseBuffer2, emptyBuffer2, displayCam2, 
+							cam2OutSignals, globalReset, clock, microControllerOut[0], 
+							cam1OutSignals, defaultCam2Behavior, percentCamera2);
 	 
-//	 Buffer  buf1 (clock, resetState, emptyBuffer1, percentCamera1, percentCamera1, curByte1, strobe1 );
-//	 Buffer  buf2 (clock, resetState, emptyBuffer2, percentCamera2, percentCamera2, curByte2, strobe2 );
-	 	 
-	 parameter bitMiddle = 4'b0111;
-	 parameter bitEnd    = 4'b1111;
-	 parameter ninethBit = 4'b1001;
+	 Buffer  buf1 (clock, resetState, emptyBuffer1, percentCamera1, percentCamera1, curByte1, strobe1);
+	 Buffer  buf2 (clock, resetState, emptyBuffer2, percentCamera2, percentCamera2, curByte2, strobe2);
+
 	 
-	 //assign bicStrobe = (bicOut == bitEnd);	//right now strobe only turns on for one clock cycle, but we can hold it for more if needed.
 	 
-	 wire sampleBit = (bscOut == bitMiddle);
-	 wire nextBit   = (bscOut == bitEnd);
-	 wire nextStrobe = ({bicOut,bscOut} == 8'b10010010);
+	 ///////////////////////// Begin Networking code section /////////////////////////////
 	 
-	  wire [7:0] parallelDataIn, parallelDataOut;
-	  wire hempTea;
+	 wire [7:0] curByte;
 	 
-	 //will the ending bit still turn enable on after 9th bicstrobe resets? or will it work perfectly
-	 startBitDetect start (enable, clock, reset | nextStrobe, serialDataIn, {bicOut, bscOut});
+	 // Assign the current byte
+	 always @(*) begin
+		if (downloading1) curByte = curByte1;
+		else if (downloading2) curByte = curByte2;
+		else curByte = parallelIn;
+	 end
 	 
-//	 fourBitCounter bitSampleCounter (bscOut, clock, reset, enable);
-//	 
-//	 fourBitCounter bitIndexCounter  (bicOut, nextBit, reset, enable);
+	 // Parallel input and output going in and out of the CPU
+	 wire [7:0] parallelIn, parallelOut;
 	 
-	 eightBitCounter bscbic ({bicOut,bscOut}, clock, reset, enable);
-	
+	 // Strobe to signal to the CPU that the buffer is ready to be sampled
+	 // Send to the inBuffer that it should shift the next input
+	 wire strobe, sampleBit;
 	 
-	 shiftIn bufferIn ( parallelDataIn, sampleBit, reset, serialDataIn, {bicOut,bscOut} );
-	
-	 shiftOut sendTheD (serialDataIn, hempTea, clock, reset, loadUI, parallelDataOut);
+	 // Signal to notify the CPU that the input buffer is now empty
+	 wire inputBufferEmpty;
 	 
-	 assign HEX3 = parallelDataIn[6:0];
-	 assign LEDG[0] = parallelDataIn[7];
-	 assign LEDG[1] = enable;
-	  assign LEDG[2] = nextStrobe;
+	 // Signals that the input should be going
+	 wire enable;
+	 
+	 assign LEDG[0] = enable;
+	 assign LEDG[1] = RECIEVE;
+	 assign LEDG[2] = sampleBit;
+	 assign LEDG[5] = strobe;
+	 
+	 // Input modules
+	 startBitDetect start (enable, resetUI, clock, RECIEVE, strobe);
+	 streamCounter inputCounter (sampleBit, strobe, resetUI, clock, enable);
+	 ReadInBuffer inBuffer (parallelIn, resetUI, clock, sampleBit, RECIEVE);
+	 
+	 // Output modules 
+	 readOutBuffer readOut (inputBufferEmpty, SEND, clock, resetUI, loadUI, parallelOut);
+	 
+	 //We might need to be passing load through a dff. (also, resetUI into processor)
+	 
+	 ///////////////////////   CPU Initialization   //////////////////////////////
 	 
     switchesqsys u0 (
         .clk_clk                (CLOCK_50),              //             clk.clk
@@ -201,16 +220,39 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW);
         .leds_export            (nothing),            	//            leds.export
         .readytodownload_export (readyTodownload1 | readyTodownload2),	// readytodownload.export
         .outsignal_export       (microControllerOut),    //       outsignal.export
-        .curbyteout_export      (parallelDataOut),      	//      curbyteout.export
-        .instrobe_export        (nextStrobe),        		//        instrobe.export
-        .load_export            (load),            		//            load.export
-        .curbytein_export       (parallelDataIn),        //       curbytein.export
-		  .empty_export           (hempTea)           		//           empty.export
+        .curbyteout_export      (parallelOut),      	//      curbyteout.export
+        .instrobe_export        (strobe | strobe1 | strobe2),        		//        instrobe.export
+        .load_export            (load),            	//            load.export
+        .curbytein_export       (curByte),         //       curbytein.export
+		  .empty_export           (inputBufferEmpty)    //           empty.export
     );
-
 	 
-	 endmodule
 
+endmodule
+	 
+module ClockMultiDivide(clock, reset, divided_clock);
+	input clock, reset;  // Divided clock [5]
+	output reg divided_clock;
+	parameter clkVal = 3'd5;
+	reg [3:0] counter;
+	
+	always @(posedge clock) begin
+		if (reset) begin
+			divided_clock <= 0;
+			counter <= 0;
+		end else begin
+			if (counter == clkVal) begin
+				divided_clock <= 1;
+				counter <= 0;
+			end else begin
+				divided_clock <= 0;
+				counter <= counter + 4'd1;
+			end
+		end
+	end
+endmodule
+		
+		
 module ClockDivider (clock, divided_clocks);
 	 input clock;
 	 output [31:0] divided_clocks;
@@ -235,3 +277,39 @@ endmodule
 // Cody Ohlsen
 //
 //----------------------------------------------------------- 
+module lights_testbench();
+	 reg clk;
+	 wire [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5; 
+	 wire [7:0] LEDG; 
+	 reg [3:0] KEY; 
+	 reg [9:0] SW; 
+	// Set up the clock. 
+	parameter clkDur = 100;
+	initial clk=0;
+	always begin 
+		#(clkDur/2); 
+		clk = ~clk; 
+	end
+	
+	lights dut (clk, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW); 
+	
+	initial begin
+			KEY[0] <= 1; SW[9:0] <= 10'd0; 
+
+												@(posedge clk);
+			KEY[0] <= 0;
+			repeat(10)						@(posedge clk);
+			SW[8] <= 1; 
+			repeat(16 * 11) 				@(posedge clk);
+			
+												@(posedge clk);
+			SW[8] <= 0;						@(posedge clk);
+			repeat(16 * 3)					@(posedge clk);
+			SW[8] <= 1;						@(posedge clk);
+												@(posedge clk);
+												
+			repeat(16 * 20) 				@(posedge clk);
+			
+			$stop; // End the simulation.
+	end
+endmodule

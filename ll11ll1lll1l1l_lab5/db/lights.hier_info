@@ -21,13 +21,13 @@ HEX2[3] <= <VCC>
 HEX2[4] <= <VCC>
 HEX2[5] <= <VCC>
 HEX2[6] <= <VCC>
-HEX3[0] <= parallelDataIn[0].DB_MAX_OUTPUT_PORT_TYPE
-HEX3[1] <= parallelDataIn[1].DB_MAX_OUTPUT_PORT_TYPE
-HEX3[2] <= parallelDataIn[2].DB_MAX_OUTPUT_PORT_TYPE
-HEX3[3] <= parallelDataIn[3].DB_MAX_OUTPUT_PORT_TYPE
-HEX3[4] <= parallelDataIn[4].DB_MAX_OUTPUT_PORT_TYPE
-HEX3[5] <= parallelDataIn[5].DB_MAX_OUTPUT_PORT_TYPE
-HEX3[6] <= parallelDataIn[6].DB_MAX_OUTPUT_PORT_TYPE
+HEX3[0] <= <GND>
+HEX3[1] <= <GND>
+HEX3[2] <= <GND>
+HEX3[3] <= <GND>
+HEX3[4] <= <GND>
+HEX3[5] <= <GND>
+HEX3[6] <= <GND>
 HEX4[0] <= Camera:camera1.port4
 HEX4[1] <= Camera:camera1.port4
 HEX4[2] <= Camera:camera1.port4
@@ -46,12 +46,12 @@ KEY[0] => KEY[0].IN1
 KEY[1] => ~NO_FANOUT~
 KEY[2] => ~NO_FANOUT~
 KEY[3] => ~NO_FANOUT~
-LEDG[0] <= parallelDataIn[7].DB_MAX_OUTPUT_PORT_TYPE
-LEDG[1] <= enable.DB_MAX_OUTPUT_PORT_TYPE
-LEDG[2] <= nextStrobe.DB_MAX_OUTPUT_PORT_TYPE
+LEDG[0] <= enable.DB_MAX_OUTPUT_PORT_TYPE
+LEDG[1] <= RECIEVE.DB_MAX_OUTPUT_PORT_TYPE
+LEDG[2] <= sampleBit.DB_MAX_OUTPUT_PORT_TYPE
 LEDG[3] <= Camera:camera2.port1
 LEDG[4] <= Camera:camera2.port0
-LEDG[5] <= serialDataIn.DB_MAX_OUTPUT_PORT_TYPE
+LEDG[5] <= strobe.DB_MAX_OUTPUT_PORT_TYPE
 LEDG[6] <= Camera:camera1.port1
 LEDG[7] <= Camera:camera1.port0
 SW[0] => ~NO_FANOUT~
@@ -64,6 +64,8 @@ SW[6] => ~NO_FANOUT~
 SW[7] => ~NO_FANOUT~
 SW[8] => ~NO_FANOUT~
 SW[9] => ~NO_FANOUT~
+SEND <= readOutBuffer:readOut.port1
+RECIEVE => RECIEVE.IN2
 
 
 |lights|ClockDivider:cdiv
@@ -133,6 +135,20 @@ divided_clocks[30] <= divided_clocks[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 divided_clocks[31] <= divided_clocks[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|lights|ClockMultiDivide:cmdiv
+clock => counter[0].CLK
+clock => counter[1].CLK
+clock => counter[2].CLK
+clock => counter[3].CLK
+clock => divided_clock~reg0.CLK
+reset => divided_clock.OUTPUTSELECT
+reset => counter.OUTPUTSELECT
+reset => counter.OUTPUTSELECT
+reset => counter.OUTPUTSELECT
+reset => counter.OUTPUTSELECT
+divided_clock <= divided_clock~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |lights|CountUp:countUpCam1
 count[0] => Decoder0.IN3
 count[1] => Decoder0.IN2
@@ -170,9 +186,9 @@ pressed <= pressed.DB_MAX_OUTPUT_PORT_TYPE
 
 |lights|DFlipFlop:dffload
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-D => q~reg0.DATAIN
+D => q.DATAA
 clk => q~reg0.CLK
-rst => q~reg0.ACLR
+rst => q.OUTPUTSELECT
 
 
 |lights|Percents:cam1Percent
@@ -474,243 +490,139 @@ percentVal[3] => Equal5.IN0
 
 
 |lights|startBitDetect:start
-enable <= enable~reg0.DB_MAX_OUTPUT_PORT_TYPE
-clk => rstCount[0].CLK
-clk => rstCount[1].CLK
-clk => rstCount[2].CLK
-clk => rstCount[3].CLK
-clk => enable~reg0.CLK
-rst => enable.OUTPUTSELECT
-rst => rstCount.OUTPUTSELECT
-rst => rstCount.OUTPUTSELECT
-rst => rstCount.OUTPUTSELECT
-rst => rstCount.OUTPUTSELECT
-in => always0.IN1
-counter[0] => LessThan1.IN16
-counter[1] => LessThan1.IN15
-counter[2] => LessThan1.IN14
-counter[3] => LessThan1.IN13
-counter[4] => LessThan1.IN12
-counter[5] => LessThan1.IN11
-counter[6] => LessThan1.IN10
-counter[7] => LessThan1.IN9
+enable <= enable.DB_MAX_OUTPUT_PORT_TYPE
+rst => always0.IN0
+rst => enable.IN1
+clk => ps.CLK
+clk => prevBit.CLK
+bitStream => prevBit.DATAA
+bitStream => always0.IN1
+strobe => always0.IN1
 
 
-|lights|eightBitCounter:bscbic
-out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[7] <= out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-clk => out[0]~reg0.CLK
-clk => out[1]~reg0.CLK
-clk => out[2]~reg0.CLK
-clk => out[3]~reg0.CLK
-clk => out[4]~reg0.CLK
-clk => out[5]~reg0.CLK
-clk => out[6]~reg0.CLK
-clk => out[7]~reg0.CLK
-rst => ~NO_FANOUT~
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
+|lights|streamCounter:inputCounter
+sampleBit <= sampleBit.DB_MAX_OUTPUT_PORT_TYPE
+strobe <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
+rst => always0.IN0
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => counter[4].CLK
+clk => counter[5].CLK
+clk => counter[6].CLK
+clk => counter[7].CLK
+enable => always0.IN1
 
 
-|lights|shiftIn:bufferIn
-out[0] <= DFlipFlop:d8.port0
-out[1] <= in7.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= in6.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= in5.DB_MAX_OUTPUT_PORT_TYPE
-out[4] <= in4.DB_MAX_OUTPUT_PORT_TYPE
-out[5] <= in3.DB_MAX_OUTPUT_PORT_TYPE
-out[6] <= in2.DB_MAX_OUTPUT_PORT_TYPE
-out[7] <= in1.DB_MAX_OUTPUT_PORT_TYPE
-clk => myClock.IN1
-rst => rst.IN8
+|lights|ReadInBuffer:inBuffer
+charOut[0] <= in7.DB_MAX_OUTPUT_PORT_TYPE
+charOut[1] <= in6.DB_MAX_OUTPUT_PORT_TYPE
+charOut[2] <= in5.DB_MAX_OUTPUT_PORT_TYPE
+charOut[3] <= in4.DB_MAX_OUTPUT_PORT_TYPE
+charOut[4] <= in3.DB_MAX_OUTPUT_PORT_TYPE
+charOut[5] <= in2.DB_MAX_OUTPUT_PORT_TYPE
+charOut[6] <= in1.DB_MAX_OUTPUT_PORT_TYPE
+charOut[7] <= in0.DB_MAX_OUTPUT_PORT_TYPE
+rst => rst.IN9
+clk => clk.IN9
+sampleBit => sampleBit.IN9
 in => in.IN1
-counter[0] => LessThan0.IN16
-counter[1] => LessThan0.IN15
-counter[2] => LessThan0.IN14
-counter[3] => LessThan0.IN13
-counter[4] => LessThan0.IN12
-counter[5] => LessThan0.IN11
-counter[6] => LessThan0.IN10
-counter[7] => LessThan0.IN9
 
 
-|lights|shiftIn:bufferIn|DFlipFlop:d1
+|lights|ReadInBuffer:inBuffer|DFlipFlopS:d0
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-D => q~reg0.DATAIN
+D => q.DATAB
 clk => q~reg0.CLK
-rst => q~reg0.ACLR
+rst => q.OUTPUTSELECT
+signal => q.OUTPUTSELECT
 
 
-|lights|shiftIn:bufferIn|DFlipFlop:d2
+|lights|ReadInBuffer:inBuffer|DFlipFlopS:d1
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-D => q~reg0.DATAIN
+D => q.DATAB
 clk => q~reg0.CLK
-rst => q~reg0.ACLR
+rst => q.OUTPUTSELECT
+signal => q.OUTPUTSELECT
 
 
-|lights|shiftIn:bufferIn|DFlipFlop:d3
+|lights|ReadInBuffer:inBuffer|DFlipFlopS:d2
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-D => q~reg0.DATAIN
+D => q.DATAB
 clk => q~reg0.CLK
-rst => q~reg0.ACLR
+rst => q.OUTPUTSELECT
+signal => q.OUTPUTSELECT
 
 
-|lights|shiftIn:bufferIn|DFlipFlop:d4
+|lights|ReadInBuffer:inBuffer|DFlipFlopS:d3
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-D => q~reg0.DATAIN
+D => q.DATAB
 clk => q~reg0.CLK
-rst => q~reg0.ACLR
+rst => q.OUTPUTSELECT
+signal => q.OUTPUTSELECT
 
 
-|lights|shiftIn:bufferIn|DFlipFlop:d5
+|lights|ReadInBuffer:inBuffer|DFlipFlopS:d4
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-D => q~reg0.DATAIN
+D => q.DATAB
 clk => q~reg0.CLK
-rst => q~reg0.ACLR
+rst => q.OUTPUTSELECT
+signal => q.OUTPUTSELECT
 
 
-|lights|shiftIn:bufferIn|DFlipFlop:d6
+|lights|ReadInBuffer:inBuffer|DFlipFlopS:d5
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-D => q~reg0.DATAIN
+D => q.DATAB
 clk => q~reg0.CLK
-rst => q~reg0.ACLR
+rst => q.OUTPUTSELECT
+signal => q.OUTPUTSELECT
 
 
-|lights|shiftIn:bufferIn|DFlipFlop:d7
+|lights|ReadInBuffer:inBuffer|DFlipFlopS:d6
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-D => q~reg0.DATAIN
+D => q.DATAB
 clk => q~reg0.CLK
-rst => q~reg0.ACLR
+rst => q.OUTPUTSELECT
+signal => q.OUTPUTSELECT
 
 
-|lights|shiftIn:bufferIn|DFlipFlop:d8
+|lights|ReadInBuffer:inBuffer|DFlipFlopS:d7
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-D => q~reg0.DATAIN
+D => q.DATAB
 clk => q~reg0.CLK
-rst => q~reg0.ACLR
+rst => q.OUTPUTSELECT
+signal => q.OUTPUTSELECT
 
 
-|lights|shiftOut:sendTheD
-out <= out.DB_MAX_OUTPUT_PORT_TYPE
-hempTea <= startBitDetect:sentTheD.port0
-clk => clk.IN3
-rst => comb.IN1
-rst => comb.IN1
-rst => comb.IN1
-rst => comb.IN0
-load => load.IN1
-byteIn[0] => Mux0.IN15
-byteIn[1] => Mux0.IN14
-byteIn[2] => Mux0.IN13
-byteIn[3] => Mux0.IN12
-byteIn[4] => Mux0.IN11
-byteIn[5] => Mux0.IN10
-byteIn[6] => Mux0.IN9
-byteIn[7] => Mux0.IN8
+|lights|ReadInBuffer:inBuffer|DFlipFlopS:d8
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+D => q.DATAB
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+signal => q.OUTPUTSELECT
 
 
-|lights|shiftOut:sendTheD|startBitDetect:detectLoad
-enable <= enable~reg0.DB_MAX_OUTPUT_PORT_TYPE
-clk => rstCount[0].CLK
-clk => rstCount[1].CLK
-clk => rstCount[2].CLK
-clk => rstCount[3].CLK
-clk => enable~reg0.CLK
-rst => enable.OUTPUTSELECT
-rst => rstCount.OUTPUTSELECT
-rst => rstCount.OUTPUTSELECT
-rst => rstCount.OUTPUTSELECT
-rst => rstCount.OUTPUTSELECT
-in => always0.IN1
-counter[0] => LessThan1.IN16
-counter[1] => LessThan1.IN15
-counter[2] => LessThan1.IN14
-counter[3] => LessThan1.IN13
-counter[4] => LessThan1.IN12
-counter[5] => LessThan1.IN11
-counter[6] => LessThan1.IN10
-counter[7] => LessThan1.IN9
-
-
-|lights|shiftOut:sendTheD|fourBitCounter:internalCounter
-out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-clk => out[0]~reg0.CLK
-clk => out[1]~reg0.CLK
-clk => out[2]~reg0.CLK
-clk => out[3]~reg0.CLK
-rst => out[0]~reg0.ACLR
-rst => out[1]~reg0.ACLR
-rst => out[2]~reg0.ACLR
-rst => out[3]~reg0.ACLR
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
-
-
-|lights|shiftOut:sendTheD|fourBitCounter:internalCounterTwo
-out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-clk => out[0]~reg0.CLK
-clk => out[1]~reg0.CLK
-clk => out[2]~reg0.CLK
-clk => out[3]~reg0.CLK
-rst => out[0]~reg0.ACLR
-rst => out[1]~reg0.ACLR
-rst => out[2]~reg0.ACLR
-rst => out[3]~reg0.ACLR
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
-enable => out.OUTPUTSELECT
-
-
-|lights|shiftOut:sendTheD|startBitDetect:sentTheD
-enable <= enable~reg0.DB_MAX_OUTPUT_PORT_TYPE
-clk => rstCount[0].CLK
-clk => rstCount[1].CLK
-clk => rstCount[2].CLK
-clk => rstCount[3].CLK
-clk => enable~reg0.CLK
-rst => enable.OUTPUTSELECT
-rst => rstCount.OUTPUTSELECT
-rst => rstCount.OUTPUTSELECT
-rst => rstCount.OUTPUTSELECT
-rst => rstCount.OUTPUTSELECT
-in => always0.IN1
-counter[0] => LessThan1.IN16
-counter[1] => LessThan1.IN15
-counter[2] => LessThan1.IN14
-counter[3] => LessThan1.IN13
-counter[4] => LessThan1.IN12
-counter[5] => LessThan1.IN11
-counter[6] => LessThan1.IN10
-counter[7] => LessThan1.IN9
+|lights|readOutBuffer:readOut
+empty <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+outputStream <= outputStream.DB_MAX_OUTPUT_PORT_TYPE
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => counter[4].CLK
+clk => counter[5].CLK
+clk => counter[6].CLK
+clk => counter[7].CLK
+rst => globalReset.IN0
+load => globalReset.IN1
+parallelIn[0] => Mux0.IN15
+parallelIn[1] => Mux0.IN14
+parallelIn[2] => Mux0.IN13
+parallelIn[3] => Mux0.IN12
+parallelIn[4] => Mux0.IN11
+parallelIn[5] => Mux0.IN10
+parallelIn[6] => Mux0.IN9
+parallelIn[7] => Mux0.IN8
 
 
 |lights|switchesqsys:u0

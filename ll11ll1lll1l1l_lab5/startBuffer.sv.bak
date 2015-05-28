@@ -1,6 +1,0 @@
-module startBitDetect(enable, clk, rst, in);
-	input clk, rst;
-	input in;
-	output enable;
-	
-	

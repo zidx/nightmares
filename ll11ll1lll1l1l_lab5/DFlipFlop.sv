@@ -12,16 +12,29 @@
 // *NOTE: modified the always block assign statements to be
 //        non-blocking statements for correct verilog usage.
 //----------------------------------------------------------- 
-
-module DFlipFlop(q,  D, clk, rst);
+module DFlipFlop(q, D, clk, rst);
 	input D, clk, rst;
+	output reg q;
+	
+	always @(posedge clk) begin
+		if (rst)
+			q <= 0;
+		else
+			q <= D;
+	end
+endmodule
+
+module DFlipFlopS(q,  D, clk, rst, signal);
+	input D, clk, rst, signal;
 	output q;
 	reg q;
-		always@ (posedge clk or posedge rst)
+		always @(posedge clk)
 		begin  // Statements need to be non-blocking
 			if(rst)
 				q <= 0;
-			else
+			else if (signal)
 				q <= D;
+			else 
+				q <= q;
 		end
 endmodule
