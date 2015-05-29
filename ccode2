@@ -90,7 +90,10 @@
 #define curByteIn (volatile char *)  0x0003010
 #define hempTea (volatile char *)    0x0003000
 
+void sendData(alt_u8 data);
+
 int main() {
+	IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
 	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
 	alt_u8 curByteInVal = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
 	alt_u8 hempTeaVal = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
@@ -102,13 +105,14 @@ int main() {
 	alt_printf("Initial inStrobeVal %x \n", inStrobeVal);
 	alt_printf("Initial hempTeaVal %x \n", hempTeaVal);
 
+	IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
 	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
 
 	alt_printf("\nInitial prevVal %c \n", curByteInVal);
 
 	//IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
 	char start = 'a';
-	while(start != 'S' || start != 'R') {
+	while(start != 'S' && start != 'R') {
 		alt_putstr("Enter a S to send or R to receive: \n");
 		start = alt_getchar();
 	}
@@ -116,6 +120,7 @@ int main() {
 
 	if (start == 'S') {
 		start = 'a';
+		alt_getchar();
 		while(start != 'F') {
 			alt_putstr("Enter an F to start filming\n");
 			start = alt_getchar();
@@ -129,40 +134,34 @@ int main() {
 			alt_u8 readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
 			if (readyToDownload == 1) {
 				alt_u8 downloadRequest = 255;
-				alt_u8 empty = 0;
 				alt_u8 strobe = 0;
 				int downloadPermission = 1;  // Request was sent back or not 0 for not
 				alt_u8 curByte = 0;
 				int count = 0;
-				int wait_value = 1000;
-
-//				IOWR_ALTERA_AVALON_PIO_DATA(curByteOut, downloadRequest);
-//				IOWR_ALTERA_AVALON_PIO_DATA(load, 0x1);
-//
-//				empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
-//				while (empty == 0) {
-//					empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
-//				}
-//				IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
+				int wait_value = 10000;
 
 				sendData(downloadRequest);
 
 				alt_printf("Waiting for download permission:\n");
 				strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+
 				while (strobe == 0) {
 					if(count % wait_value == 0) alt_printf(".");
 					count++;
-					if (count == 1000000) {
+					readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
+					if (readyToDownload == 0) {
 						alt_printf("Download permission timeout\n");
 						downloadPermission = 0;
 						break;
+
 					}
-					inStrobeVal = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+					strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
 				}
 
 				// Check if the recieved byte was for permission
 				if (downloadPermission) {
 					curByte = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+					alt_printf(" downloadPermission = %x\n", curByte);
 				}
 
 				if (curByte == 254) {
@@ -176,14 +175,6 @@ int main() {
 							strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
 						}
 						curByte = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
-//
-//						IOWR_ALTERA_AVALON_PIO_DATA(curByteOut, curByte);
-//						IOWR_ALTERA_AVALON_PIO_DATA(load, 0x1);
-//						empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
-//						while (empty == 0) {
-//							empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
-//						}
-//						IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
 
 						sendData(curByte);
 					}
@@ -191,13 +182,13 @@ int main() {
 				}
 				else {
 					alt_printf("Download permission denied \n");
-				}
-
-				// Wait for readyToDownload to turn off
-				readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
-				while (readyToDownload != 0) {
+					// Wait for readyToDownload to turn off
 					readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
+					while (readyToDownload != 0) {
+						readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
+					}
 				}
+				IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x2);
 			}
 		}
 	}
@@ -223,6 +214,7 @@ int main() {
 			if (getRequest == downloadRequest) {
 				// Prompts user to give permission for the D
 				char permission;
+				alt_getchar();
 				alt_putstr("Enter the D to give permission for the download \n");
 				permission = alt_getchar();
 				//if user enter the D, send permission to downlad
@@ -249,7 +241,7 @@ int main() {
 						}
 						curByte = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
 
-						alt_printf(" %c", curByte);
+						alt_printf(" %x", curByte);
 					}
 					alt_printf("\nDownload Complete\n\n");
 				}
@@ -270,6 +262,8 @@ int main() {
 			}
 		}
 	}
+
+	return 0;
 }
 
 void sendData(alt_u8 data) {
@@ -277,7 +271,7 @@ void sendData(alt_u8 data) {
 	//sends data to camera
 	IOWR_ALTERA_AVALON_PIO_DATA(curByteOut, data);
 	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x1);
-
+	alt_printf("Sending data: %x\n", data);
 	empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
 	while (empty == 0) {
 		empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
