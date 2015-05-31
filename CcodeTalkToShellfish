@@ -99,17 +99,18 @@ int main() {
 	IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
 	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
 
-	alt_putstr("Enter an F to start filming\n");
+	alt_putstr("EARTH: Enter an F to start filming\n");
 	char start = alt_getchar();
 	///////////////////////////// SENDING MODE/RECIEVING MODE WITH SAME BOARD ////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//SEND MODE
 	while (start != 'F') {
+		alt_putstr("EARTH: Please enter an F to start filming.\n");
 		start = alt_getchar();
 	}
 	// Start filming
 	IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x2);
-
+	alt_putstr("CAMERA: camera System Started.\n");
 	while (1) {
 		//repeatedly waits until ready to download
 		IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
