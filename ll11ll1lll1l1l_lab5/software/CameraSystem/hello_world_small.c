@@ -80,6 +80,7 @@
 
 #include "sys/alt_stdio.h"
 #include "altera_avalon_pio_regs.h"
+#include "alt_types.h"
 
 #define rtd (volatile char *) 	 	 0x0003060
 #define outSignal (volatile char *)  0x0003050
@@ -89,42 +90,37 @@
 #define curByteIn (volatile char *)  0x0003010
 #define hempTea (volatile char *)    0x0003000
 
+void sendData(alt_u8 data);
+
 int main() {
+	IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
 	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
-	alt_u8 readyToDownload;
-	alt_u8 curOutSignal;
 	alt_u8 curByteInVal = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
 	alt_u8 hempTeaVal = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
 	alt_u8 inStrobeVal = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
 
+//	alt_printf("Initial curByteInVal %x \n", curByteInVal);
+//	alt_printf("Initial inStrobeVal %x \n", inStrobeVal);
+//	alt_printf("Initial hempTeaVal %x \n", hempTeaVal);
 
-
-	alt_printf("Initial curByteInVal %x \n", curByteInVal);
-	alt_printf("Initial inStrobeVal %x \n", inStrobeVal);
-	alt_printf("Initial hempTeaVal %x \n", hempTeaVal);
-
+	IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
 	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
-
-	alt_u8 prevVal = curByteInVal;
-	//alt_u8 prevStrobe = inStrobeVal;
 
 	alt_printf("\nInitial prevVal %c \n", curByteInVal);
 
-	//IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
 	char start = 'a';
-	while(start != 'S' || start != 'R') {
+	while(start != 'S' && start != 'R') {
 		alt_putstr("Enter a S to send or R to receive: \n");
 		start = alt_getchar();
 	}
-	//IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x2);
-
+	///////////////////////////// SENDING MODE ////////////////////////////////
 	if (start == 'S') {
 		start = 'a';
+		alt_getchar();
 		while(start != 'F') {
 			alt_putstr("Enter an F to start filming\n");
 			start = alt_getchar();
 		}
-
 		// Start filming
 		IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x2);
 
@@ -132,163 +128,138 @@ int main() {
 			IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
 			alt_u8 readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
 			if (readyToDownload == 1) {
-				downloadPrevious = 1;
-				alt_u8 downloadRequest = 377;
-				alt_u8 empty = 0;
+				alt_u8 downloadRequest = 255;
 				alt_u8 strobe = 0;
-				int downloadPermission = 1;
+				int downloadPermission = 1;  // Request was sent back or not 0 for not
 				alt_u8 curByte = 0;
 				int count = 0;
-				int wait_value = 1000;
+				int wait_value = 10000;
 
-				IOWR_ALTERA_AVALON_PIO_DATA(curByteOut, downloadRequest);
-				IOWR_ALTERA_AVALON_PIO_DATA(load, 0x1);
-
-				empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
-				while (empty == 0) {
-					empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
-				}
-				IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
+				sendData(downloadRequest);
 
 				alt_printf("Waiting for download permission:\n");
 				strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+
 				while (strobe == 0) {
 					if(count % wait_value == 0) alt_printf(".");
 					count++;
-					if (count == 1000000) {
+					readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
+					if (readyToDownload == 0) {
 						alt_printf("Download permission timeout\n");
 						downloadPermission = 0;
 						break;
 					}
-					inStrobeVal = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+					strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
 				}
 
 				// Check if the recieved byte was for permission
 				if (downloadPermission) {
 					curByte = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+					alt_printf(" downloadPermission = %x\n", curByte);
 				}
 
-				if (permissionRecieved == 376) {
+				if (curByte == 254) {
 					alt_printf("Permission Granted: Downloading data to Earth\n");
 					IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x3);
 
-					for (int i = 0; i <= 10; i++) {
+					int i;
+					for (i = 0; i < 10; i++) {
 						strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
 						while (strobe == 0) {
-							inStrobeVal = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+							strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
 						}
 						curByte = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
 
-						IOWR_ALTERA_AVALON_PIO_DATA(curByteOut, curByte);
-						IOWR_ALTERA_AVALON_PIO_DATA(load, 0x1);
-						empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
-						while (empty == 0) {
-							empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
-						}
-						IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
+						sendData(curByte);
 					}
 					alt_printf("Download Complete\n");
 				}
 				else {
 					alt_printf("Download permission denied \n");
-				}
-
-				// Wait for readyToDownload to turn off
-				readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
-				while (readyToDownload != 0) {
+					// Wait for readyToDownload to turn off
 					readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
+					while (readyToDownload != 0) {
+						readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
+					}
 				}
+				IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x2);
 			}
 		}
 	}
+	/////////////////  RECIEVING MODE /////////////////////////////////////
 	else if (start == 'R') {
 		while (1) {
 			IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
 
+			alt_u8 downloadRequest = 255;
+			alt_u8 giveDPermission = 254;
+			alt_u8 empty = 0;
+			alt_u8 getRequest = 0;
+			alt_u8 strobe = 0;
+			alt_u8 curByte = 0;
+
+			alt_printf("Waiting for request... \n");
+			strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+			while (strobe == 0) {
+				strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+			}
+			//gets input byte and checks that it is the request
+			getRequest = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+			if (getRequest == downloadRequest) {
+				// Prompts user to give permission for the D
+				char permission;
+				alt_getchar();
+				alt_putstr("Enter the D to give permission for the download \n");
+				permission = alt_getchar();
+				//if user enter the D, send permission to downlad
+				if (permission == 'D') {
+
+					//sends the permission to the camera
+					sendData(giveDPermission);
+
+					//recieves the data from the camera
+					alt_printf("\nRecieving Data:");
+					int i;
+					for (i = 0; i < 10; i++) {
+						strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+						while (strobe == 0) {
+							strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+						}
+						curByte = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+
+						alt_printf(" %x", curByte);
+					}
+					alt_printf("\nDownload Complete\n\n");
+				}
+				else { // Deny Permission for the D
+					alt_printf("\nPermission Denied.\n");
+					//sends a zero to the camera
+					IOWR_ALTERA_AVALON_PIO_DATA(curByteOut, 0);
+					IOWR_ALTERA_AVALON_PIO_DATA(load, 0x1);
+
+					empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
+					while (empty == 0) {
+						empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
+					}
+					IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
+				}
+			} else { //strobed, but no request
+				alt_printf("incorrect download request recieved. \n");
+			}
 		}
 	}
-	while (1) {
-			IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
-
-			readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
-			curOutSignal = IORD_ALTERA_AVALON_PIO_DATA(outSignal);
-			hempTeaVal = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
-
-			alt_printf("Loop readyToDownload %x \n", readyToDownload);
-			alt_printf("Loop curOutSignal %x \n", curOutSignal);
-			alt_printf("Loop hempTeaVal %x \n", hempTeaVal);
-
-			alt_u8 temp_load = IORD_ALTERA_AVALON_PIO_DATA(load);
-			alt_printf("Loop temp_load (0) %x\n", temp_load);
-
-			// Catch the extra
-			alt_getchar();
-
-
-			//while(1) {
-			//				hempTeaVal = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
-			//				alt_printf("hempTea %x\n", hempTeaVal);
-			//
-
-			// Get the character to send
-			alt_putstr("Enter a character to send: ");
-			start = alt_getchar();
-			IOWR_ALTERA_AVALON_PIO_DATA(curByteOut, start);
-
-			alt_printf("Expected character out: ");
-			alt_printf("%c \n", start);
-
-			IOWR_ALTERA_AVALON_PIO_DATA(load, 0x1);
-
-			temp_load = IORD_ALTERA_AVALON_PIO_DATA(load);
-			alt_printf("temp_load (1) %x\n", temp_load);
-
-
-			/*while(1) {
-				hempTeaVal = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
-				alt_printf("hempTea %x\n", hempTeaVal);
-			}*/
-
-			alt_u8 start_char = IORD_ALTERA_AVALON_PIO_DATA(curByteOut);
-			alt_printf("Expected character again: ");
-			alt_printf("%c \n", start_char);
-
-
-//			hempTeaVal = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
-//			alt_printf("Waiting for Empty");
-			int count = 0;
-			int wait_value = 10000;
-//
-//			while(hempTeaVal == 0) {
-//				if(count % wait_value == 0) alt_printf(".");
-//				count++;
-//				count %= wait_value;
-//				hempTeaVal = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
-//			}
-//			alt_printf("\n");
-//
-//			IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
-//
-//			temp_load = IORD_ALTERA_AVALON_PIO_DATA(load);
-//			alt_printf("temp_load (0) %x\n", temp_load);
-//
-//			count = 0;
-//			alt_printf("Waiting for Strobe");
-
-			inStrobeVal = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
-			while(inStrobeVal == 0) { // possible infinite loop
-				if(count % wait_value == 0) alt_printf(".");
-				count++;
-				count %= wait_value;
-				inStrobeVal = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
-			}
-			curByteInVal = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
-			alt_printf("\n");
-
-			alt_printf("Downloading byte input: ");
-			alt_printf("%c ", curByteInVal);
-
-	}
-
 	return 0;
+}
+
+void sendData(alt_u8 data) {
+	alt_u8 empty = 0;
+	//sends data to camera
+	IOWR_ALTERA_AVALON_PIO_DATA(curByteOut, data);
+	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x1);
+	alt_printf("Sending data: %x\n", data);
+	empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
+	while (empty == 0) {
+		empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
+	}
+	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
 }
