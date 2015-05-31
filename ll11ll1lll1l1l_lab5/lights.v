@@ -128,7 +128,7 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW, SEND
 	 // clock 7 can be used to keep more time between states.
 	 wire clock;
 	 ClockDivider cdiv (CLOCK_50, clk);
-	 ClockMultiDivide cmdiv (clk[whichClock], reset, clock);
+	 ClockMultiDivide cmdiv (clk[whichClock], clock);
 	 
 	 // Percent filled buffer displays
 	 CountUp countUpCam1 ( percentCamera1, displayCam1Percent );
@@ -138,7 +138,7 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW, SEND
 	 
 	 // Sends all asynchronous input through a DFF
 	 UserInput resetInput (clock, reset, resetUI );
-	 DFlipFlop dffload (loadUI, load, clock, reset);
+	 DFlipFlop dffload (loadUI, load, clock, resetUI);
 	 
 	 // Sets ResetState if reset is signaled
 	 reg resetState;	 
@@ -174,7 +174,7 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW, SEND
 	 
 	 ///////////////////////// Begin Networking code section /////////////////////////////
 	 
-	 wire [7:0] curByte;
+	 reg [7:0] curByte;
 	 
 	 // Assign the current byte
 	 always @(*) begin
@@ -202,12 +202,12 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW, SEND
 	 assign LEDG[5] = strobe;
 	 
 	 // Input modules
-	 startBitDetect start (enable, resetUI, clock, RECIEVE, strobe);
-	 streamCounter inputCounter (sampleBit, strobe, resetUI, clock, enable);
-	 ReadInBuffer inBuffer (parallelIn, resetUI, clock, sampleBit, RECIEVE);
+	 startBitDetect start (enable, reset, clock, RECIEVE, strobe);
+	 streamCounter inputCounter (sampleBit, strobe, reset, clock, enable);
+	 ReadInBuffer inBuffer (parallelIn, reset, clock, sampleBit, RECIEVE);
 	 
 	 // Output modules 
-	 readOutBuffer readOut (inputBufferEmpty, SEND, clock, resetUI, loadUI, parallelOut);
+	 readOutBuffer readOut (inputBufferEmpty, SEND, clock, reset, loadUI, parallelOut);
 	 
 	 //We might need to be passing load through a dff. (also, resetUI into processor)
 	 
@@ -230,25 +230,20 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW, SEND
 
 endmodule
 	 
-module ClockMultiDivide(clock, reset, divided_clock);
-	input clock, reset;  // Divided clock [5]
+module ClockMultiDivide(clock, divided_clock);
+	input clock;  // Divided clock [5]
 	output reg divided_clock;
 	parameter clkVal = 3'd5;
-	reg [3:0] counter;
+	reg [2:0] counter;
 	
 	always @(posedge clock) begin
-		if (reset) begin
-			divided_clock <= 0;
-			counter <= 0;
-		end else begin
 			if (counter == clkVal) begin
 				divided_clock <= 1;
 				counter <= 0;
 			end else begin
 				divided_clock <= 0;
-				counter <= counter + 4'd1;
+				counter <= counter + 3'd1;
 			end
-		end
 	end
 endmodule
 		

@@ -22,8 +22,8 @@ module Percents (clock, reset, emptyBuffer, pause, percent);
 	reg [18:0] clkCounter;
 	
 	 //number of clock cycles to represent ten percent
-	 parameter uranusHz = 19'b1011111010111100001;
-	 parameter uranusKindaHz = 19'b0101111101011110000;
+	 parameter uranusHz = 19'b0011111111111111111;
+	 parameter uranusKindaHz = 19'b0001111111111111111;
 	
 	 //after number of clock cycles, ten percent of the buffer has filled
 	 always @(posedge clock) begin

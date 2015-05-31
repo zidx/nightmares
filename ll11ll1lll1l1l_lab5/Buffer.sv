@@ -44,9 +44,9 @@ module Buffer (clock, reset, emptyBuffer, percent, inputValue, outputValue, stro
 	 
 	 always @(posedge clock) begin
 		if ( (emptyBuffer & (percent[0] != previousPercentVal)) | (previousEmptyBuffer == 0 && emptyBuffer == 1) )
-				strobe <= ~strobe;
+				strobe <= 1;
 		else
-			strobe <= strobe;
+			strobe <= 0;
 	 end
 	 
 endmodule
