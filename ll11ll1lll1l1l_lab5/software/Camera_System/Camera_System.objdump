@@ -1,0 +1,1675 @@
+
+Camera_System.elf:     file format elf32-littlenios2
+Camera_System.elf
+architecture: nios2, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00001020
+
+Program Header:
+    LOAD off    0x00001000 vaddr 0x00001000 paddr 0x00001000 align 2**12
+         filesz 0x00000020 memsz 0x00000020 flags r-x
+    LOAD off    0x00001020 vaddr 0x00001020 paddr 0x00001020 align 2**12
+         filesz 0x00000b7c memsz 0x00000b7c flags r-x
+    LOAD off    0x00001b9c vaddr 0x00001b9c paddr 0x00001c0c align 2**12
+         filesz 0x00000070 memsz 0x00000070 flags rw-
+    LOAD off    0x00001c7c vaddr 0x00001c7c paddr 0x00001c7c align 2**12
+         filesz 0x00000000 memsz 0x0000000c flags rw-
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .entry        00000020  00001000  00001000  00001000  2**5
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .text         00000940  00001020  00001020  00001020  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .rodata       0000023c  00001960  00001960  00001960  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .rwdata       00000070  00001b9c  00001c0c  00001b9c  2**2
+                  CONTENTS, ALLOC, LOAD, DATA, SMALL_DATA
+  4 .bss          0000000c  00001c7c  00001c7c  00001c7c  2**2
+                  ALLOC, SMALL_DATA
+  5 .comment      00000023  00000000  00000000  00001c0c  2**0
+                  CONTENTS, READONLY
+  6 .debug_aranges 00000230  00000000  00000000  00001c30  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_info   00001ef4  00000000  00000000  00001e60  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_abbrev 00000d0e  00000000  00000000  00003d54  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_line   00000dc8  00000000  00000000  00004a62  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_frame  000002d4  00000000  00000000  0000582c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_str    00000962  00000000  00000000  00005b00  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_loc    00000b7b  00000000  00000000  00006462  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_alt_sim_info 00000010  00000000  00000000  00006fe0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_ranges 000000d0  00000000  00000000  00006ff0  2**3
+                  CONTENTS, READONLY, DEBUGGING
+ 15 .thread_model 00000003  00000000  00000000  00008032  2**0
+                  CONTENTS, READONLY
+ 16 .cpu          0000000f  00000000  00000000  00008035  2**0
+                  CONTENTS, READONLY
+ 17 .qsys         00000001  00000000  00000000  00008044  2**0
+                  CONTENTS, READONLY
+ 18 .simulation_enabled 00000001  00000000  00000000  00008045  2**0
+                  CONTENTS, READONLY
+ 19 .stderr_dev   00000009  00000000  00000000  00008046  2**0
+                  CONTENTS, READONLY
+ 20 .stdin_dev    00000009  00000000  00000000  0000804f  2**0
+                  CONTENTS, READONLY
+ 21 .stdout_dev   00000009  00000000  00000000  00008058  2**0
+                  CONTENTS, READONLY
+ 22 .sopc_system_name 0000000c  00000000  00000000  00008061  2**0
+                  CONTENTS, READONLY
+ 23 .quartus_project_dir 00000039  00000000  00000000  0000806d  2**0
+                  CONTENTS, READONLY
+ 24 .sopcinfo     00062b84  00000000  00000000  000080a6  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+00001000 l    d  .entry	00000000 .entry
+00001020 l    d  .text	00000000 .text
+00001960 l    d  .rodata	00000000 .rodata
+00001b9c l    d  .rwdata	00000000 .rwdata
+00001c7c l    d  .bss	00000000 .bss
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_alt_sim_info	00000000 .debug_alt_sim_info
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00000000 l    df *ABS*	00000000 ../Camera_System_bsp//obj/HAL/src/crt0.o
+00001058 l       .text	00000000 alt_after_alt_main
+00000000 l    df *ABS*	00000000 hello_world_small.c
+00000000 l    df *ABS*	00000000 lib2-divmod.c
+000013d4 l     F .text	00000074 udivmodsi4
+00000000 l    df *ABS*	00000000 alt_getchar.c
+00000000 l    df *ABS*	00000000 alt_load.c
+00000000 l    df *ABS*	00000000 alt_main.c
+00000000 l    df *ABS*	00000000 alt_printf.c
+00000000 l    df *ABS*	00000000 alt_putchar.c
+00000000 l    df *ABS*	00000000 alt_putstr.c
+00000000 l    df *ABS*	00000000 alt_sys_init.c
+00000000 l    df *ABS*	00000000 altera_avalon_jtag_uart_read.c
+00000000 l    df *ABS*	00000000 altera_avalon_jtag_uart_write.c
+00000000 l    df *ABS*	00000000 alt_dcache_flush_all.c
+00000000 l    df *ABS*	00000000 alt_dev.c
+00001924 l     F .text	00000008 alt_dev_null_write
+00000000 l    df *ABS*	00000000 alt_icache_flush_all.c
+00000000 l    df *ABS*	00000000 altera_nios2_qsys_irq.c
+00000000 l    df *ABS*	00000000 strlen.c
+00000000 l    df *ABS*	00000000 
+0000164c g     F .text	0000002c alt_main
+00001c0c g       *ABS*	00000000 __flash_rwdata_start
+00001834 g     F .text	00000038 alt_putstr
+00001bf4 g     O .rwdata	00000004 jtag_uart
+00001000 g     F .entry	0000000c __reset
+00001020 g       *ABS*	00000000 __flash_exceptions_start
+00001c80 g     O .bss	00000004 alt_argv
+00009bf4 g       *ABS*	00000000 _gp
+00001b9c g     O .rwdata	00000030 alt_fd_list
+00001890 g     F .text	0000005c altera_avalon_jtag_uart_read
+000014f4 g     F .text	00000008 __udivsi3
+00001bf8 g     O .rwdata	00000004 alt_max_fd
+00001c88 g       *ABS*	00000000 __bss_end
+00001504 g     F .text	00000044 alt_getchar
+00001bcc g     O .rwdata	00000028 alt_dev_null
+00001920 g     F .text	00000004 alt_dcache_flush_all
+00001c0c g       *ABS*	00000000 __ram_rwdata_end
+00001000 g       *ABS*	00000000 __alt_mem_onchip_memory
+00001bfc g     O .rwdata	00000008 alt_dev_list
+00001b9c g       *ABS*	00000000 __ram_rodata_end
+000014fc g     F .text	00000008 __umodsi3
+00001c88 g       *ABS*	00000000 end
+00002000 g       *ABS*	00000000 __alt_stack_pointer
+000018ec g     F .text	00000034 altera_avalon_jtag_uart_write
+00001678 g     F .text	00000170 alt_printf
+00001020 g     F .text	0000003c _start
+0000188c g     F .text	00000004 alt_sys_init
+00001b9c g       *ABS*	00000000 __ram_rwdata_start
+00001960 g       *ABS*	00000000 __ram_rodata_start
+00001c88 g       *ABS*	00000000 __alt_stack_base
+00001c7c g       *ABS*	00000000 __bss_start
+000010b0 g     F .text	00000324 main
+00001c7c g     O .bss	00000004 alt_envp
+00001448 g     F .text	00000050 __divsi3
+00001960 g       *ABS*	00000000 __flash_rodata_start
+0000186c g     F .text	00000020 alt_irq_init
+0000105c g     F .text	00000054 sendData
+00001c84 g     O .bss	00000004 alt_argc
+00001c04 g     O .rwdata	00000008 alt_fs_list
+00001020 g       *ABS*	00000000 __ram_exceptions_start
+00001c0c g       *ABS*	00000000 _edata
+00001c88 g       *ABS*	00000000 _end
+00001020 g       *ABS*	00000000 __ram_exceptions_end
+00001930 g     F .text	00000008 altera_nios2_qsys_irq_init
+00001498 g     F .text	0000005c __modsi3
+00002000 g       *ABS*	00000000 __alt_data_end
+0000100c g       .entry	00000000 _exit
+00001938 g     F .text	00000028 strlen
+000017e8 g     F .text	0000004c alt_putchar
+0000192c g     F .text	00000004 alt_icache_flush_all
+00001548 g     F .text	00000104 alt_load
+
+
+
+Disassembly of section .entry:
+
+00001000 <__reset>:
+ * Jump to the _start entry point in the .text section if reset code
+ * is allowed or if optimizing for RTL simulation.
+ */
+#if defined(ALT_ALLOW_CODE_AT_RESET) || defined(ALT_SIM_OPTIMIZE)
+    /* Jump to the _start entry point in the .text section. */
+    movhi r1, %hi(_start)
+    1000:	00400034 	movhi	at,0
+    ori r1, r1, %lo(_start)
+    1004:	08440814 	ori	at,at,4128
+    jmp r1
+    1008:	0800683a 	jmp	at
+
+0000100c <_exit>:
+	...
+
+Disassembly of section .text:
+
+00001020 <_start>:
+
+    /*
+     * Now that the caches are initialized, set up the stack pointer and global pointer.
+     * The values provided by the linker are assumed to be correctly aligned.
+     */
+    movhi sp, %hi(__alt_stack_pointer)
+    1020:	06c00034 	movhi	sp,0
+    ori sp, sp, %lo(__alt_stack_pointer)
+    1024:	dec80014 	ori	sp,sp,8192
+    movhi gp, %hi(_gp)
+    1028:	06800034 	movhi	gp,0
+    ori gp, gp, %lo(_gp)
+    102c:	d6a6fd14 	ori	gp,gp,39924
+ */
+#ifndef ALT_SIM_OPTIMIZE
+    /* Log that the BSS is about to be cleared. */
+    ALT_LOG_PUTS(alt_log_msg_bss)
+
+    movhi r2, %hi(__bss_start)
+    1030:	00800034 	movhi	r2,0
+    ori r2, r2, %lo(__bss_start)
+    1034:	10871f14 	ori	r2,r2,7292
+
+    movhi r3, %hi(__bss_end)
+    1038:	00c00034 	movhi	r3,0
+    ori r3, r3, %lo(__bss_end)
+    103c:	18c72214 	ori	r3,r3,7304
+
+    beq r2, r3, 1f
+    1040:	10c00326 	beq	r2,r3,1050 <_start+0x30>
+
+0:
+    stw zero, (r2)
+    1044:	10000015 	stw	zero,0(r2)
+    addi r2, r2, 4
+    1048:	10800104 	addi	r2,r2,4
+    bltu r2, r3, 0b
+    104c:	10fffd36 	bltu	r2,r3,1044 <_gp+0xffff7450>
+     * section aren't defined until alt_load() has been called).
+     */
+    mov   et, zero
+#endif
+
+    call alt_load
+    1050:	00015480 	call	1548 <alt_load>
+
+    /* Log that alt_main is about to be called. */
+    ALT_LOG_PUTS(alt_log_msg_alt_main)
+
+    /* Call the C entry point. It should never return. */
+    call alt_main
+    1054:	000164c0 	call	164c <alt_main>
+
+00001058 <alt_after_alt_main>:
+
+    /* Wait in infinite loop in case alt_main does return. */
+alt_after_alt_main:
+    br alt_after_alt_main
+    1058:	003fff06 	br	1058 <_gp+0xffff7464>
+
+0000105c <sendData>:
+		}
+	}
+	return 0;
+}
+
+void sendData(alt_u8 data) {
+    105c:	defffe04 	addi	sp,sp,-8
+    1060:	dfc00115 	stw	ra,4(sp)
+    1064:	dc000015 	stw	r16,0(sp)
+	alt_u8 empty = 0;
+	//sends data to camera
+	IOWR_ALTERA_AVALON_PIO_DATA(curByteOut, data);
+    1068:	21403fcc 	andi	r5,r4,255
+    106c:	008c1004 	movi	r2,12352
+    1070:	11400035 	stwio	r5,0(r2)
+	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x1);
+    1074:	040c0804 	movi	r16,12320
+    1078:	00800044 	movi	r2,1
+    107c:	80800035 	stwio	r2,0(r16)
+	alt_printf("Sending Data: %x\n", data);
+    1080:	01000034 	movhi	r4,0
+    1084:	21065804 	addi	r4,r4,6496
+    1088:	00016780 	call	1678 <alt_printf>
+	empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
+    108c:	00cc0004 	movi	r3,12288
+	while (empty == 0) {
+		empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
+    1090:	18800037 	ldwio	r2,0(r3)
+	//sends data to camera
+	IOWR_ALTERA_AVALON_PIO_DATA(curByteOut, data);
+	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x1);
+	alt_printf("Sending Data: %x\n", data);
+	empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
+	while (empty == 0) {
+    1094:	10803fcc 	andi	r2,r2,255
+    1098:	103ffd26 	beq	r2,zero,1090 <_gp+0xffff749c>
+		empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
+	}
+	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
+    109c:	80000035 	stwio	zero,0(r16)
+}
+    10a0:	dfc00117 	ldw	ra,4(sp)
+    10a4:	dc000017 	ldw	r16,0(sp)
+    10a8:	dec00204 	addi	sp,sp,8
+    10ac:	f800283a 	ret
+
+000010b0 <main>:
+#define curByteIn (volatile char *)  0x0003010
+#define hempTea (volatile char *)    0x0003000
+
+void sendData(alt_u8 data);
+
+int main() {
+    10b0:	defffb04 	addi	sp,sp,-20
+    10b4:	dc400115 	stw	r17,4(sp)
+    10b8:	dfc00415 	stw	ra,16(sp)
+    10bc:	dcc00315 	stw	r19,12(sp)
+    10c0:	dc800215 	stw	r18,8(sp)
+    10c4:	dc000015 	stw	r16,0(sp)
+	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
+    10c8:	044c0804 	movi	r17,12320
+    10cc:	88000035 	stwio	zero,0(r17)
+	alt_u8 curByteInVal = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+    10d0:	008c0404 	movi	r2,12304
+    10d4:	14000037 	ldwio	r16,0(r2)
+	alt_u8 hempTeaVal = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
+    10d8:	008c0004 	movi	r2,12288
+    10dc:	14800037 	ldwio	r18,0(r2)
+	alt_u8 inStrobeVal = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+    10e0:	008c0c04 	movi	r2,12336
+    10e4:	14c00037 	ldwio	r19,0(r2)
+
+
+
+	alt_printf("Initial curByteInVal %x \n", curByteInVal);
+    10e8:	01000034 	movhi	r4,0
+    10ec:	21065d04 	addi	r4,r4,6516
+    10f0:	84003fcc 	andi	r16,r16,255
+    10f4:	800b883a 	mov	r5,r16
+    10f8:	00016780 	call	1678 <alt_printf>
+	alt_printf("Initial inStrobeVal %x \n", inStrobeVal);
+    10fc:	99403fcc 	andi	r5,r19,255
+    1100:	01000034 	movhi	r4,0
+    1104:	21066404 	addi	r4,r4,6544
+    1108:	00016780 	call	1678 <alt_printf>
+	alt_printf("Initial hempTeaVal %x \n", hempTeaVal);
+    110c:	01000034 	movhi	r4,0
+    1110:	21066b04 	addi	r4,r4,6572
+    1114:	91403fcc 	andi	r5,r18,255
+    1118:	00016780 	call	1678 <alt_printf>
+
+	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
+    111c:	88000035 	stwio	zero,0(r17)
+	IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
+    1120:	008c1404 	movi	r2,12368
+    1124:	10000035 	stwio	zero,0(r2)
+
+	alt_printf("\nInitial prevVal %c \n", curByteInVal);
+    1128:	800b883a 	mov	r5,r16
+    112c:	01000034 	movhi	r4,0
+    1130:	21067104 	addi	r4,r4,6596
+    1134:	00016780 	call	1678 <alt_printf>
+
+	//IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
+	char start = 'a';
+    1138:	00801844 	movi	r2,97
+	while(start != 'S' && start != 'R') {
+    113c:	04000044 	movi	r16,1
+    1140:	00000406 	br	1154 <main+0xa4>
+		alt_putstr("Enter a S to send or R to receive: \n");
+    1144:	01000034 	movhi	r4,0
+    1148:	21067704 	addi	r4,r4,6620
+    114c:	00018340 	call	1834 <alt_putstr>
+		start = alt_getchar();
+    1150:	00015040 	call	1504 <alt_getchar>
+
+	alt_printf("\nInitial prevVal %c \n", curByteInVal);
+
+	//IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
+	char start = 'a';
+	while(start != 'S' && start != 'R') {
+    1154:	10ffeb84 	addi	r3,r2,-82
+    1158:	18c03fcc 	andi	r3,r3,255
+    115c:	80fff936 	bltu	r16,r3,1144 <_gp+0xffff7550>
+		alt_putstr("Enter a S to send or R to receive: \n");
+		start = alt_getchar();
+	}
+	//IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x2);
+
+	if (start == 'S') {
+    1160:	10803fcc 	andi	r2,r2,255
+    1164:	1080201c 	xori	r2,r2,128
+    1168:	10bfe004 	addi	r2,r2,-128
+    116c:	00c014c4 	movi	r3,83
+    1170:	10c0511e 	bne	r2,r3,12b8 <main+0x208>
+		start = 'a';
+		alt_getchar();
+    1174:	00015040 	call	1504 <alt_getchar>
+		while(start != 'F') {
+    1178:	04001184 	movi	r16,70
+			alt_putstr("Enter an F to start filming\n");
+    117c:	01000034 	movhi	r4,0
+    1180:	21068104 	addi	r4,r4,6660
+    1184:	00018340 	call	1834 <alt_putstr>
+			start = alt_getchar();
+    1188:	00015040 	call	1504 <alt_getchar>
+	//IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x2);
+
+	if (start == 'S') {
+		start = 'a';
+		alt_getchar();
+		while(start != 'F') {
+    118c:	10803fcc 	andi	r2,r2,255
+    1190:	1080201c 	xori	r2,r2,128
+    1194:	10bfe004 	addi	r2,r2,-128
+    1198:	143ff81e 	bne	r2,r16,117c <_gp+0xffff7588>
+			alt_putstr("Enter an F to start filming\n");
+			start = alt_getchar();
+		}
+
+		// Start filming
+		IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x2);
+    119c:	008c1404 	movi	r2,12368
+    11a0:	00c00084 	movi	r3,2
+    11a4:	10c00035 	stwio	r3,0(r2)
+
+		while (1) {
+			IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
+    11a8:	014c0804 	movi	r5,12320
+			alt_u8 readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
+    11ac:	010c1804 	movi	r4,12384
+			if (readyToDownload == 1) {
+    11b0:	00800044 	movi	r2,1
+
+		// Start filming
+		IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x2);
+
+		while (1) {
+			IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
+    11b4:	28000035 	stwio	zero,0(r5)
+			alt_u8 readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
+    11b8:	20c00037 	ldwio	r3,0(r4)
+			if (readyToDownload == 1) {
+    11bc:	18c03fcc 	andi	r3,r3,255
+    11c0:	18bffc1e 	bne	r3,r2,11b4 <_gp+0xffff75c0>
+				int downloadPermission = 1;  // Request was sent back or not 0 for not
+				alt_u8 curByte = 0;
+				int count = 0;
+				int wait_value = 10000;
+
+				sendData(downloadRequest);
+    11c4:	01003fc4 	movi	r4,255
+    11c8:	000105c0 	call	105c <sendData>
+
+				alt_printf("Waiting for download permission:\n");
+    11cc:	01000034 	movhi	r4,0
+    11d0:	21068904 	addi	r4,r4,6692
+    11d4:	00016780 	call	1678 <alt_printf>
+				strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+    11d8:	00cc0c04 	movi	r3,12336
+    11dc:	18800037 	ldwio	r2,0(r3)
+			if (readyToDownload == 1) {
+				alt_u8 downloadRequest = 255;
+				alt_u8 strobe = 0;
+				int downloadPermission = 1;  // Request was sent back or not 0 for not
+				alt_u8 curByte = 0;
+				int count = 0;
+    11e0:	0021883a 	mov	r16,zero
+				alt_printf("Waiting for download permission:\n");
+				strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+				while (strobe == 0) {
+					if(count % wait_value == 0) alt_printf(".");
+					count++;
+					readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
+    11e4:	044c1804 	movi	r17,12384
+					if (readyToDownload == 0) {
+						alt_printf("Download permission timeout\n");
+						downloadPermission = 0;
+						break;
+					}
+					strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+    11e8:	1825883a 	mov	r18,r3
+
+				sendData(downloadRequest);
+
+				alt_printf("Waiting for download permission:\n");
+				strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+				while (strobe == 0) {
+    11ec:	00001006 	br	1230 <main+0x180>
+					if(count % wait_value == 0) alt_printf(".");
+    11f0:	8009883a 	mov	r4,r16
+    11f4:	0149c404 	movi	r5,10000
+    11f8:	00014980 	call	1498 <__modsi3>
+    11fc:	1000031e 	bne	r2,zero,120c <main+0x15c>
+    1200:	01000034 	movhi	r4,0
+    1204:	21069204 	addi	r4,r4,6728
+    1208:	00016780 	call	1678 <alt_printf>
+					count++;
+    120c:	84000044 	addi	r16,r16,1
+					readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
+					if (readyToDownload == 0) {
+    1210:	88800037 	ldwio	r2,0(r17)
+    1214:	10803fcc 	andi	r2,r2,255
+    1218:	1000041e 	bne	r2,zero,122c <main+0x17c>
+						alt_printf("Download permission timeout\n");
+    121c:	01000034 	movhi	r4,0
+    1220:	21069304 	addi	r4,r4,6732
+    1224:	00016780 	call	1678 <alt_printf>
+    1228:	00001b06 	br	1298 <main+0x1e8>
+						downloadPermission = 0;
+						break;
+					}
+					strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+    122c:	90800037 	ldwio	r2,0(r18)
+
+				sendData(downloadRequest);
+
+				alt_printf("Waiting for download permission:\n");
+				strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+				while (strobe == 0) {
+    1230:	10803fcc 	andi	r2,r2,255
+    1234:	103fee26 	beq	r2,zero,11f0 <_gp+0xffff75fc>
+    1238:	00006006 	br	13bc <main+0x30c>
+				if (downloadPermission) {
+					curByte = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+				}
+
+				if (curByte == 254) {
+					alt_printf("Permission Granted: Downloading data to Earth\n");
+    123c:	01000034 	movhi	r4,0
+    1240:	21069b04 	addi	r4,r4,6764
+    1244:	00016780 	call	1678 <alt_printf>
+					IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x3);
+    1248:	008c1404 	movi	r2,12368
+    124c:	00c000c4 	movi	r3,3
+    1250:	10c00035 	stwio	r3,0(r2)
+    1254:	04000284 	movi	r16,10
+
+					int i;
+					for (i = 0; i < 10; i++) {
+						strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+    1258:	048c0c04 	movi	r18,12336
+    125c:	90800037 	ldwio	r2,0(r18)
+    1260:	00cc0c04 	movi	r3,12336
+						while (strobe == 0) {
+    1264:	00000106 	br	126c <main+0x1bc>
+							strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+    1268:	18800037 	ldwio	r2,0(r3)
+					IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x3);
+
+					int i;
+					for (i = 0; i < 10; i++) {
+						strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+						while (strobe == 0) {
+    126c:	10803fcc 	andi	r2,r2,255
+    1270:	103ffd26 	beq	r2,zero,1268 <_gp+0xffff7674>
+							strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+						}
+						curByte = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+    1274:	89000037 	ldwio	r4,0(r17)
+
+						sendData(curByte);
+    1278:	21003fcc 	andi	r4,r4,255
+    127c:	843fffc4 	addi	r16,r16,-1
+    1280:	000105c0 	call	105c <sendData>
+				if (curByte == 254) {
+					alt_printf("Permission Granted: Downloading data to Earth\n");
+					IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x3);
+
+					int i;
+					for (i = 0; i < 10; i++) {
+    1284:	803ff51e 	bne	r16,zero,125c <_gp+0xffff7668>
+						}
+						curByte = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+
+						sendData(curByte);
+					}
+					alt_printf("Download Complete\n");
+    1288:	01000034 	movhi	r4,0
+    128c:	2106a704 	addi	r4,r4,6812
+    1290:	00016780 	call	1678 <alt_printf>
+    1294:	003fc106 	br	119c <_gp+0xffff75a8>
+				}
+				else {
+					alt_printf("Download permission denied \n");
+    1298:	01000034 	movhi	r4,0
+    129c:	2106ac04 	addi	r4,r4,6832
+    12a0:	00016780 	call	1678 <alt_printf>
+
+					// Wait for readyToDownload to turn off
+					readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
+    12a4:	00cc1804 	movi	r3,12384
+					while (readyToDownload != 0) {
+						readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
+    12a8:	18800037 	ldwio	r2,0(r3)
+				else {
+					alt_printf("Download permission denied \n");
+
+					// Wait for readyToDownload to turn off
+					readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
+					while (readyToDownload != 0) {
+    12ac:	10803fcc 	andi	r2,r2,255
+    12b0:	103ffd1e 	bne	r2,zero,12a8 <_gp+0xffff76b4>
+    12b4:	003fb906 	br	119c <_gp+0xffff75a8>
+		}
+	}
+	//RECIEVING MODE
+	else if (start == 'R') {
+		while (1) {
+			IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
+    12b8:	008c0804 	movi	r2,12320
+    12bc:	10000035 	stwio	zero,0(r2)
+			alt_u8 empty = 0;
+			alt_u8 getRequest = 0;
+			alt_u8 strobe = 0;
+			alt_u8 curByte = 0;
+
+			alt_printf("Waiting for request... \n");
+    12c0:	01000034 	movhi	r4,0
+    12c4:	2106b404 	addi	r4,r4,6864
+    12c8:	00016780 	call	1678 <alt_printf>
+			strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+    12cc:	00cc0c04 	movi	r3,12336
+			while (strobe == 0) {
+				strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+    12d0:	18800037 	ldwio	r2,0(r3)
+			alt_u8 strobe = 0;
+			alt_u8 curByte = 0;
+
+			alt_printf("Waiting for request... \n");
+			strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+			while (strobe == 0) {
+    12d4:	10803fcc 	andi	r2,r2,255
+    12d8:	103ffd26 	beq	r2,zero,12d0 <_gp+0xffff76dc>
+				strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+			}
+			//gets input byte and checks that it is the request
+			getRequest = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+    12dc:	044c0404 	movi	r17,12304
+    12e0:	88c00037 	ldwio	r3,0(r17)
+			if (getRequest == downloadRequest) {
+    12e4:	00803fc4 	movi	r2,255
+    12e8:	18c03fcc 	andi	r3,r3,255
+    12ec:	18802f1e 	bne	r3,r2,13ac <main+0x2fc>
+				// Prompts user to give permission for the D
+				char permission;
+				alt_getchar();
+    12f0:	00015040 	call	1504 <alt_getchar>
+				alt_putstr("Enter the D to give permission for the download \n");
+    12f4:	01000034 	movhi	r4,0
+    12f8:	2106bb04 	addi	r4,r4,6892
+    12fc:	00018340 	call	1834 <alt_putstr>
+				permission = alt_getchar();
+    1300:	00015040 	call	1504 <alt_getchar>
+				//if user enter the D, send permission to downlad
+				if (permission == 'D') {
+    1304:	10803fcc 	andi	r2,r2,255
+    1308:	1080201c 	xori	r2,r2,128
+    130c:	10bfe004 	addi	r2,r2,-128
+    1310:	00c01104 	movi	r3,68
+    1314:	10c0171e 	bne	r2,r3,1374 <main+0x2c4>
+
+					sendData(giveDPermission);
+    1318:	01003f84 	movi	r4,254
+    131c:	000105c0 	call	105c <sendData>
+
+					//recieves the data from the camera
+					alt_printf("\nRecieving Data:");
+    1320:	01000034 	movhi	r4,0
+    1324:	2106c804 	addi	r4,r4,6944
+    1328:	00016780 	call	1678 <alt_printf>
+    132c:	04000284 	movi	r16,10
+					int i;
+					for (i = 0; i < 10; i++) {
+						strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+    1330:	048c0c04 	movi	r18,12336
+    1334:	90800037 	ldwio	r2,0(r18)
+    1338:	00cc0c04 	movi	r3,12336
+						while (strobe == 0) {
+    133c:	00000106 	br	1344 <main+0x294>
+							strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+    1340:	18800037 	ldwio	r2,0(r3)
+					//recieves the data from the camera
+					alt_printf("\nRecieving Data:");
+					int i;
+					for (i = 0; i < 10; i++) {
+						strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+						while (strobe == 0) {
+    1344:	10803fcc 	andi	r2,r2,255
+    1348:	103ffd26 	beq	r2,zero,1340 <_gp+0xffff774c>
+							strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+						}
+						curByte = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+    134c:	89400037 	ldwio	r5,0(r17)
+
+						alt_printf(" %x", curByte);
+    1350:	01000034 	movhi	r4,0
+    1354:	2106cd04 	addi	r4,r4,6964
+    1358:	29403fcc 	andi	r5,r5,255
+    135c:	843fffc4 	addi	r16,r16,-1
+    1360:	00016780 	call	1678 <alt_printf>
+					sendData(giveDPermission);
+
+					//recieves the data from the camera
+					alt_printf("\nRecieving Data:");
+					int i;
+					for (i = 0; i < 10; i++) {
+    1364:	803ff31e 	bne	r16,zero,1334 <_gp+0xffff7740>
+						}
+						curByte = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+
+						alt_printf(" %x", curByte);
+					}
+					alt_printf("\nDownload Complete\n\n");
+    1368:	01000034 	movhi	r4,0
+    136c:	2106ce04 	addi	r4,r4,6968
+    1370:	00001006 	br	13b4 <main+0x304>
+				}
+				else { // Deny Permission for the D
+					alt_printf("\nPermission Denied.\n");
+    1374:	01000034 	movhi	r4,0
+    1378:	2106d404 	addi	r4,r4,6992
+    137c:	00016780 	call	1678 <alt_printf>
+					//sends a zero to the camera
+					IOWR_ALTERA_AVALON_PIO_DATA(curByteOut, 0);
+    1380:	008c1004 	movi	r2,12352
+    1384:	10000035 	stwio	zero,0(r2)
+					IOWR_ALTERA_AVALON_PIO_DATA(load, 0x1);
+    1388:	008c0804 	movi	r2,12320
+    138c:	00c00044 	movi	r3,1
+    1390:	10c00035 	stwio	r3,0(r2)
+
+					empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
+    1394:	010c0004 	movi	r4,12288
+					while (empty == 0) {
+						empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
+    1398:	20c00037 	ldwio	r3,0(r4)
+					//sends a zero to the camera
+					IOWR_ALTERA_AVALON_PIO_DATA(curByteOut, 0);
+					IOWR_ALTERA_AVALON_PIO_DATA(load, 0x1);
+
+					empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
+					while (empty == 0) {
+    139c:	18c03fcc 	andi	r3,r3,255
+    13a0:	183ffd26 	beq	r3,zero,1398 <_gp+0xffff77a4>
+						empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
+					}
+					IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
+    13a4:	10000035 	stwio	zero,0(r2)
+    13a8:	003fc306 	br	12b8 <_gp+0xffff76c4>
+				}
+			} else { //strobed, but no request
+				alt_printf("incorrect download request recieved. \n");
+    13ac:	01000034 	movhi	r4,0
+    13b0:	2106da04 	addi	r4,r4,7016
+    13b4:	00016780 	call	1678 <alt_printf>
+    13b8:	003fbf06 	br	12b8 <_gp+0xffff76c4>
+					strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+				}
+
+				// Check if the recieved byte was for permission
+				if (downloadPermission) {
+					curByte = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+    13bc:	044c0404 	movi	r17,12304
+    13c0:	88c00037 	ldwio	r3,0(r17)
+				}
+
+				if (curByte == 254) {
+    13c4:	00803f84 	movi	r2,254
+    13c8:	18c03fcc 	andi	r3,r3,255
+    13cc:	18bf9b26 	beq	r3,r2,123c <_gp+0xffff7648>
+    13d0:	003fb106 	br	1298 <_gp+0xffff76a4>
+
+000013d4 <udivmodsi4>:
+    13d4:	2005883a 	mov	r2,r4
+    13d8:	2900182e 	bgeu	r5,r4,143c <udivmodsi4+0x68>
+    13dc:	28001716 	blt	r5,zero,143c <udivmodsi4+0x68>
+    13e0:	01000804 	movi	r4,32
+    13e4:	00c00044 	movi	r3,1
+    13e8:	00000206 	br	13f4 <udivmodsi4+0x20>
+    13ec:	20001126 	beq	r4,zero,1434 <udivmodsi4+0x60>
+    13f0:	28000516 	blt	r5,zero,1408 <udivmodsi4+0x34>
+    13f4:	294b883a 	add	r5,r5,r5
+    13f8:	213fffc4 	addi	r4,r4,-1
+    13fc:	18c7883a 	add	r3,r3,r3
+    1400:	28bffa36 	bltu	r5,r2,13ec <_gp+0xffff77f8>
+    1404:	18000b26 	beq	r3,zero,1434 <udivmodsi4+0x60>
+    1408:	0009883a 	mov	r4,zero
+    140c:	11400236 	bltu	r2,r5,1418 <udivmodsi4+0x44>
+    1410:	1145c83a 	sub	r2,r2,r5
+    1414:	20c8b03a 	or	r4,r4,r3
+    1418:	1806d07a 	srli	r3,r3,1
+    141c:	280ad07a 	srli	r5,r5,1
+    1420:	183ffa1e 	bne	r3,zero,140c <_gp+0xffff7818>
+    1424:	3000021e 	bne	r6,zero,1430 <udivmodsi4+0x5c>
+    1428:	2005883a 	mov	r2,r4
+    142c:	f800283a 	ret
+    1430:	f800283a 	ret
+    1434:	0009883a 	mov	r4,zero
+    1438:	003ffa06 	br	1424 <_gp+0xffff7830>
+    143c:	00c00044 	movi	r3,1
+    1440:	0009883a 	mov	r4,zero
+    1444:	003ff106 	br	140c <_gp+0xffff7818>
+
+00001448 <__divsi3>:
+    1448:	defffe04 	addi	sp,sp,-8
+    144c:	dfc00115 	stw	ra,4(sp)
+    1450:	dc000015 	stw	r16,0(sp)
+    1454:	20000a16 	blt	r4,zero,1480 <__divsi3+0x38>
+    1458:	0021883a 	mov	r16,zero
+    145c:	28000b16 	blt	r5,zero,148c <__divsi3+0x44>
+    1460:	000d883a 	mov	r6,zero
+    1464:	00013d40 	call	13d4 <udivmodsi4>
+    1468:	80000126 	beq	r16,zero,1470 <__divsi3+0x28>
+    146c:	0085c83a 	sub	r2,zero,r2
+    1470:	dfc00117 	ldw	ra,4(sp)
+    1474:	dc000017 	ldw	r16,0(sp)
+    1478:	dec00204 	addi	sp,sp,8
+    147c:	f800283a 	ret
+    1480:	0109c83a 	sub	r4,zero,r4
+    1484:	04000044 	movi	r16,1
+    1488:	283ff50e 	bge	r5,zero,1460 <_gp+0xffff786c>
+    148c:	014bc83a 	sub	r5,zero,r5
+    1490:	8400005c 	xori	r16,r16,1
+    1494:	003ff206 	br	1460 <_gp+0xffff786c>
+
+00001498 <__modsi3>:
+    1498:	deffff04 	addi	sp,sp,-4
+    149c:	dfc00015 	stw	ra,0(sp)
+    14a0:	20000516 	blt	r4,zero,14b8 <__modsi3+0x20>
+    14a4:	28000c16 	blt	r5,zero,14d8 <__modsi3+0x40>
+    14a8:	01800044 	movi	r6,1
+    14ac:	dfc00017 	ldw	ra,0(sp)
+    14b0:	dec00104 	addi	sp,sp,4
+    14b4:	00013d41 	jmpi	13d4 <udivmodsi4>
+    14b8:	0109c83a 	sub	r4,zero,r4
+    14bc:	28000b16 	blt	r5,zero,14ec <__modsi3+0x54>
+    14c0:	01800044 	movi	r6,1
+    14c4:	00013d40 	call	13d4 <udivmodsi4>
+    14c8:	0085c83a 	sub	r2,zero,r2
+    14cc:	dfc00017 	ldw	ra,0(sp)
+    14d0:	dec00104 	addi	sp,sp,4
+    14d4:	f800283a 	ret
+    14d8:	014bc83a 	sub	r5,zero,r5
+    14dc:	01800044 	movi	r6,1
+    14e0:	dfc00017 	ldw	ra,0(sp)
+    14e4:	dec00104 	addi	sp,sp,4
+    14e8:	00013d41 	jmpi	13d4 <udivmodsi4>
+    14ec:	014bc83a 	sub	r5,zero,r5
+    14f0:	003ff306 	br	14c0 <_gp+0xffff78cc>
+
+000014f4 <__udivsi3>:
+    14f4:	000d883a 	mov	r6,zero
+    14f8:	00013d41 	jmpi	13d4 <udivmodsi4>
+
+000014fc <__umodsi3>:
+    14fc:	01800044 	movi	r6,1
+    1500:	00013d41 	jmpi	13d4 <udivmodsi4>
+
+00001504 <alt_getchar>:
+{
+#ifdef ALT_USE_DIRECT_DRIVERS
+    ALT_DRIVER_READ_EXTERNS(ALT_STDIN_DEV);
+    char c;
+
+    if (ALT_DRIVER_READ(ALT_STDIN_DEV, &c, 1, alt_fd_list[STDIN_FILENO].fd_flags) <= 0) {
+    1504:	00800034 	movhi	r2,0
+    1508:	1086e704 	addi	r2,r2,7068
+    150c:	11c00217 	ldw	r7,8(r2)
+ * Uses the ALT_DRIVER_READ() macro to call directly to driver if available.
+ * Otherwise, uses newlib provided getchar() routine.
+ */
+int 
+alt_getchar(void)
+{
+    1510:	defffe04 	addi	sp,sp,-8
+#ifdef ALT_USE_DIRECT_DRIVERS
+    ALT_DRIVER_READ_EXTERNS(ALT_STDIN_DEV);
+    char c;
+
+    if (ALT_DRIVER_READ(ALT_STDIN_DEV, &c, 1, alt_fd_list[STDIN_FILENO].fd_flags) <= 0) {
+    1514:	01000034 	movhi	r4,0
+    1518:	2106fd04 	addi	r4,r4,7156
+    151c:	d80b883a 	mov	r5,sp
+    1520:	01800044 	movi	r6,1
+ * Uses the ALT_DRIVER_READ() macro to call directly to driver if available.
+ * Otherwise, uses newlib provided getchar() routine.
+ */
+int 
+alt_getchar(void)
+{
+    1524:	dfc00115 	stw	ra,4(sp)
+#ifdef ALT_USE_DIRECT_DRIVERS
+    ALT_DRIVER_READ_EXTERNS(ALT_STDIN_DEV);
+    char c;
+
+    if (ALT_DRIVER_READ(ALT_STDIN_DEV, &c, 1, alt_fd_list[STDIN_FILENO].fd_flags) <= 0) {
+    1528:	00018900 	call	1890 <altera_avalon_jtag_uart_read>
+    152c:	0080020e 	bge	zero,r2,1538 <alt_getchar+0x34>
+        return -1;
+    }
+    return c;
+    1530:	d8800007 	ldb	r2,0(sp)
+    1534:	00000106 	br	153c <alt_getchar+0x38>
+#ifdef ALT_USE_DIRECT_DRIVERS
+    ALT_DRIVER_READ_EXTERNS(ALT_STDIN_DEV);
+    char c;
+
+    if (ALT_DRIVER_READ(ALT_STDIN_DEV, &c, 1, alt_fd_list[STDIN_FILENO].fd_flags) <= 0) {
+        return -1;
+    1538:	00bfffc4 	movi	r2,-1
+    }
+    return c;
+#else
+    return getchar();
+#endif
+}
+    153c:	dfc00117 	ldw	ra,4(sp)
+    1540:	dec00204 	addi	sp,sp,8
+    1544:	f800283a 	ret
+
+00001548 <alt_load>:
+ * there is no bootloader, so this application is responsible for loading to
+ * RAM any sections that are required.
+ */  
+
+void alt_load (void)
+{
+    1548:	deffff04 	addi	sp,sp,-4
+    154c:	dfc00015 	stw	ra,0(sp)
+    1550:	00c00034 	movhi	r3,0
+    1554:	18c6e704 	addi	r3,r3,7068
+    1558:	01000034 	movhi	r4,0
+    155c:	21070304 	addi	r4,r4,7180
+
+static void ALT_INLINE alt_load_section (alt_u32* from, 
+                                         alt_u32* to, 
+                                         alt_u32* end)
+{
+  if (to != from)
+    1560:	1900061e 	bne	r3,r4,157c <alt_load+0x34>
+    1564:	00c00034 	movhi	r3,0
+    1568:	18c40804 	addi	r3,r3,4128
+    156c:	01000034 	movhi	r4,0
+    1570:	21040804 	addi	r4,r4,4128
+    1574:	1900151e 	bne	r3,r4,15cc <alt_load+0x84>
+    1578:	00000e06 	br	15b4 <alt_load+0x6c>
+ * alt_load() is called when the code is executing from flash. In this case
+ * there is no bootloader, so this application is responsible for loading to
+ * RAM any sections that are required.
+ */  
+
+void alt_load (void)
+    157c:	01400034 	movhi	r5,0
+    1580:	29470304 	addi	r5,r5,7180
+    1584:	00bfff04 	movi	r2,-4
+    1588:	28cbc83a 	sub	r5,r5,r3
+    158c:	288a703a 	and	r5,r5,r2
+    1590:	0005883a 	mov	r2,zero
+    1594:	00000506 	br	15ac <alt_load+0x64>
+    1598:	208f883a 	add	r7,r4,r2
+  {
+    while( to != end )
+    {
+      *to++ = *from++;
+    159c:	39c00017 	ldw	r7,0(r7)
+    15a0:	188d883a 	add	r6,r3,r2
+    15a4:	10800104 	addi	r2,r2,4
+    15a8:	31c00015 	stw	r7,0(r6)
+                                         alt_u32* to, 
+                                         alt_u32* end)
+{
+  if (to != from)
+  {
+    while( to != end )
+    15ac:	117ffa1e 	bne	r2,r5,1598 <_gp+0xffff79a4>
+    15b0:	003fec06 	br	1564 <_gp+0xffff7970>
+    15b4:	00c00034 	movhi	r3,0
+    15b8:	18c65804 	addi	r3,r3,6496
+    15bc:	01000034 	movhi	r4,0
+    15c0:	21065804 	addi	r4,r4,6496
+
+static void ALT_INLINE alt_load_section (alt_u32* from, 
+                                         alt_u32* to, 
+                                         alt_u32* end)
+{
+  if (to != from)
+    15c4:	1900131e 	bne	r3,r4,1614 <alt_load+0xcc>
+    15c8:	00000e06 	br	1604 <alt_load+0xbc>
+    15cc:	01400034 	movhi	r5,0
+    15d0:	29440804 	addi	r5,r5,4128
+    15d4:	00bfff04 	movi	r2,-4
+    15d8:	28cbc83a 	sub	r5,r5,r3
+    15dc:	288a703a 	and	r5,r5,r2
+    15e0:	0005883a 	mov	r2,zero
+    15e4:	00000506 	br	15fc <alt_load+0xb4>
+    15e8:	208f883a 	add	r7,r4,r2
+  {
+    while( to != end )
+    {
+      *to++ = *from++;
+    15ec:	39c00017 	ldw	r7,0(r7)
+    15f0:	188d883a 	add	r6,r3,r2
+    15f4:	10800104 	addi	r2,r2,4
+    15f8:	31c00015 	stw	r7,0(r6)
+                                         alt_u32* to, 
+                                         alt_u32* end)
+{
+  if (to != from)
+  {
+    while( to != end )
+    15fc:	117ffa1e 	bne	r2,r5,15e8 <_gp+0xffff79f4>
+    1600:	003fec06 	br	15b4 <_gp+0xffff79c0>
+  
+  /*
+   * Now ensure that the caches are in synch.
+   */
+  
+  alt_dcache_flush_all();
+    1604:	00019200 	call	1920 <alt_dcache_flush_all>
+  alt_icache_flush_all();
+}
+    1608:	dfc00017 	ldw	ra,0(sp)
+    160c:	dec00104 	addi	sp,sp,4
+  /*
+   * Now ensure that the caches are in synch.
+   */
+  
+  alt_dcache_flush_all();
+  alt_icache_flush_all();
+    1610:	000192c1 	jmpi	192c <alt_icache_flush_all>
+ * alt_load() is called when the code is executing from flash. In this case
+ * there is no bootloader, so this application is responsible for loading to
+ * RAM any sections that are required.
+ */  
+
+void alt_load (void)
+    1614:	01400034 	movhi	r5,0
+    1618:	2946e704 	addi	r5,r5,7068
+    161c:	00bfff04 	movi	r2,-4
+    1620:	28cbc83a 	sub	r5,r5,r3
+    1624:	288a703a 	and	r5,r5,r2
+    1628:	0005883a 	mov	r2,zero
+    162c:	00000506 	br	1644 <alt_load+0xfc>
+    1630:	208f883a 	add	r7,r4,r2
+    {
+      *to++ = *from++;
+    1634:	39c00017 	ldw	r7,0(r7)
+    1638:	188d883a 	add	r6,r3,r2
+    163c:	10800104 	addi	r2,r2,4
+    1640:	31c00015 	stw	r7,0(r6)
+                                         alt_u32* to, 
+                                         alt_u32* end)
+{
+  if (to != from)
+  {
+    while( to != end )
+    1644:	117ffa1e 	bne	r2,r5,1630 <_gp+0xffff7a3c>
+    1648:	003fee06 	br	1604 <_gp+0xffff7a10>
+
+0000164c <alt_main>:
+ * devices/filesystems/components in the system; and call the entry point for
+ * the users application, i.e. main().
+ */
+
+void alt_main (void)
+{
+    164c:	deffff04 	addi	sp,sp,-4
+#endif
+
+  /* ALT LOG - please see HAL/sys/alt_log_printf.h for details */
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Entering alt_main, calling alt_irq_init.\r\n");
+  /* Initialize the interrupt controller. */
+  alt_irq_init (NULL);
+    1650:	0009883a 	mov	r4,zero
+ * devices/filesystems/components in the system; and call the entry point for
+ * the users application, i.e. main().
+ */
+
+void alt_main (void)
+{
+    1654:	dfc00015 	stw	ra,0(sp)
+#endif
+
+  /* ALT LOG - please see HAL/sys/alt_log_printf.h for details */
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Entering alt_main, calling alt_irq_init.\r\n");
+  /* Initialize the interrupt controller. */
+  alt_irq_init (NULL);
+    1658:	000186c0 	call	186c <alt_irq_init>
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Done OS Init, calling alt_sem_create.\r\n");
+  ALT_SEM_CREATE (&alt_fd_list_lock, 1);
+
+  /* Initialize the device drivers/software components. */
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Calling alt_sys_init.\r\n");
+  alt_sys_init();
+    165c:	000188c0 	call	188c <alt_sys_init>
+   */
+
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Calling main.\r\n");
+
+#ifdef ALT_NO_EXIT
+  main (alt_argc, alt_argv, alt_envp);
+    1660:	d1202417 	ldw	r4,-32624(gp)
+    1664:	d1602317 	ldw	r5,-32628(gp)
+    1668:	d1a02217 	ldw	r6,-32632(gp)
+  close(STDOUT_FILENO);
+  exit (result);
+#endif
+
+  ALT_LOG_PRINT_BOOT("[alt_main.c] After main - we should not be here?.\r\n");
+}
+    166c:	dfc00017 	ldw	ra,0(sp)
+    1670:	dec00104 	addi	sp,sp,4
+   */
+
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Calling main.\r\n");
+
+#ifdef ALT_NO_EXIT
+  main (alt_argc, alt_argv, alt_envp);
+    1674:	00010b01 	jmpi	10b0 <main>
+
+00001678 <alt_printf>:
+/* 
+ * ALT printf function 
+ */
+void 
+alt_printf(const char* fmt, ... )
+{
+    1678:	defff204 	addi	sp,sp,-56
+    167c:	dfc00a15 	stw	ra,40(sp)
+    1680:	df000915 	stw	fp,36(sp)
+    1684:	ddc00815 	stw	r23,32(sp)
+    1688:	dd800715 	stw	r22,28(sp)
+    168c:	dd400615 	stw	r21,24(sp)
+    1690:	dd000515 	stw	r20,20(sp)
+    1694:	dcc00415 	stw	r19,16(sp)
+    1698:	dc800315 	stw	r18,12(sp)
+    169c:	dc400215 	stw	r17,8(sp)
+    16a0:	dc000115 	stw	r16,4(sp)
+    16a4:	d9400b15 	stw	r5,44(sp)
+    16a8:	d9800c15 	stw	r6,48(sp)
+    16ac:	d9c00d15 	stw	r7,52(sp)
+    w = fmt;
+    while ((c = *w++) != 0)
+    {
+        /* If not a format escape character, just print  */
+        /* character.  Otherwise, process format string. */
+        if (c != '%')
+    16b0:	04c00944 	movi	r19,37
+ */
+void 
+alt_printf(const char* fmt, ... )
+{
+	va_list args;
+	va_start(args, fmt);
+    16b4:	dc000b04 	addi	r16,sp,44
+    const char *w;
+    char c;
+
+    /* Process format string. */
+    w = fmt;
+    16b8:	2025883a 	mov	r18,r4
+                if (c == '%')
+                {
+                    /* Process "%" escape sequence. */
+                    alt_putchar(c);
+                } 
+                else if (c == 'c')
+    16bc:	050018c4 	movi	r20,99
+                {
+                    int v = va_arg(args, int);
+                    alt_putchar(v);
+                }
+                else if (c == 'x')
+    16c0:	05401e04 	movi	r21,120
+                        else
+                            c = 'a' + digit - 10;
+                        alt_putchar(c);
+                    }
+                }
+                else if (c == 's')
+    16c4:	05801cc4 	movi	r22,115
+    const char *w;
+    char c;
+
+    /* Process format string. */
+    w = fmt;
+    while ((c = *w++) != 0)
+    16c8:	00003906 	br	17b0 <alt_printf+0x138>
+    {
+        /* If not a format escape character, just print  */
+        /* character.  Otherwise, process format string. */
+        if (c != '%')
+    16cc:	24c00226 	beq	r4,r19,16d8 <alt_printf+0x60>
+    const char *w;
+    char c;
+
+    /* Process format string. */
+    w = fmt;
+    while ((c = *w++) != 0)
+    16d0:	94800044 	addi	r18,r18,1
+    16d4:	00000506 	br	16ec <alt_printf+0x74>
+        }
+        else
+        {
+            /* Get format character.  If none     */
+            /* available, processing is complete. */
+            if ((c = *w++) != 0)
+    16d8:	90800047 	ldb	r2,1(r18)
+    16dc:	94800084 	addi	r18,r18,2
+    16e0:	10003526 	beq	r2,zero,17b8 <alt_printf+0x140>
+            {
+                if (c == '%')
+    16e4:	14c0031e 	bne	r2,r19,16f4 <alt_printf+0x7c>
+                {
+                    /* Process "%" escape sequence. */
+                    alt_putchar(c);
+    16e8:	9809883a 	mov	r4,r19
+    16ec:	00017e80 	call	17e8 <alt_putchar>
+    16f0:	00002f06 	br	17b0 <alt_printf+0x138>
+                } 
+                else if (c == 'c')
+    16f4:	1500051e 	bne	r2,r20,170c <alt_printf+0x94>
+                {
+                    int v = va_arg(args, int);
+                    alt_putchar(v);
+    16f8:	81000017 	ldw	r4,0(r16)
+                    /* Process "%" escape sequence. */
+                    alt_putchar(c);
+                } 
+                else if (c == 'c')
+                {
+                    int v = va_arg(args, int);
+    16fc:	84400104 	addi	r17,r16,4
+    1700:	8821883a 	mov	r16,r17
+                    alt_putchar(v);
+    1704:	00017e80 	call	17e8 <alt_putchar>
+    1708:	00002906 	br	17b0 <alt_printf+0x138>
+                }
+                else if (c == 'x')
+    170c:	1540201e 	bne	r2,r21,1790 <alt_printf+0x118>
+                {
+                    /* Process hexadecimal number format. */
+                    unsigned long v = va_arg(args, unsigned long);
+    1710:	85c00017 	ldw	r23,0(r16)
+    1714:	84000104 	addi	r16,r16,4
+                    unsigned long digit;
+                    int digit_shift;
+
+                    /* If the number value is zero, just print and continue. */
+                    if (v == 0)
+    1718:	b800041e 	bne	r23,zero,172c <alt_printf+0xb4>
+                    {
+                        alt_putchar('0');
+    171c:	01000c04 	movi	r4,48
+    1720:	003ff206 	br	16ec <_gp+0xffff7af8>
+                    }
+
+                    /* Find first non-zero digit. */
+                    digit_shift = 28;
+                    while (!(v & (0xF << digit_shift)))
+                        digit_shift -= 4;
+    1724:	8c7fff04 	addi	r17,r17,-4
+    1728:	00000206 	br	1734 <alt_printf+0xbc>
+                    unsigned long v = va_arg(args, unsigned long);
+                    unsigned long digit;
+                    int digit_shift;
+
+                    /* If the number value is zero, just print and continue. */
+                    if (v == 0)
+    172c:	04400704 	movi	r17,28
+                        continue;
+                    }
+
+                    /* Find first non-zero digit. */
+                    digit_shift = 28;
+                    while (!(v & (0xF << digit_shift)))
+    1730:	00c003c4 	movi	r3,15
+    1734:	1c44983a 	sll	r2,r3,r17
+    1738:	15c4703a 	and	r2,r2,r23
+    173c:	103ff926 	beq	r2,zero,1724 <_gp+0xffff7b30>
+    1740:	00000f06 	br	1780 <alt_printf+0x108>
+                        digit_shift -= 4;
+
+                    /* Print digits. */
+                    for (; digit_shift >= 0; digit_shift -= 4)
+                    {
+                        digit = (v & (0xF << digit_shift)) >> digit_shift;
+    1744:	e448983a 	sll	r4,fp,r17
+    1748:	25c8703a 	and	r4,r4,r23
+    174c:	2448d83a 	srl	r4,r4,r17
+                        if (digit <= 9)
+    1750:	19000236 	bltu	r3,r4,175c <alt_printf+0xe4>
+                            c = '0' + digit;
+    1754:	21000c04 	addi	r4,r4,48
+    1758:	00000106 	br	1760 <alt_printf+0xe8>
+                        else
+                            c = 'a' + digit - 10;
+    175c:	210015c4 	addi	r4,r4,87
+                        alt_putchar(c);
+    1760:	21003fcc 	andi	r4,r4,255
+    1764:	2100201c 	xori	r4,r4,128
+    1768:	213fe004 	addi	r4,r4,-128
+    176c:	d8c00015 	stw	r3,0(sp)
+    1770:	00017e80 	call	17e8 <alt_putchar>
+                    digit_shift = 28;
+                    while (!(v & (0xF << digit_shift)))
+                        digit_shift -= 4;
+
+                    /* Print digits. */
+                    for (; digit_shift >= 0; digit_shift -= 4)
+    1774:	8c7fff04 	addi	r17,r17,-4
+    1778:	d8c00017 	ldw	r3,0(sp)
+    177c:	00000206 	br	1788 <alt_printf+0x110>
+                    {
+                        digit = (v & (0xF << digit_shift)) >> digit_shift;
+    1780:	070003c4 	movi	fp,15
+                        if (digit <= 9)
+    1784:	00c00244 	movi	r3,9
+                    digit_shift = 28;
+                    while (!(v & (0xF << digit_shift)))
+                        digit_shift -= 4;
+
+                    /* Print digits. */
+                    for (; digit_shift >= 0; digit_shift -= 4)
+    1788:	883fee0e 	bge	r17,zero,1744 <_gp+0xffff7b50>
+    178c:	00000806 	br	17b0 <alt_printf+0x138>
+                        else
+                            c = 'a' + digit - 10;
+                        alt_putchar(c);
+                    }
+                }
+                else if (c == 's')
+    1790:	1580071e 	bne	r2,r22,17b0 <alt_printf+0x138>
+                {
+                    /* Process string format. */
+                    char *s = va_arg(args, char *);
+    1794:	84400017 	ldw	r17,0(r16)
+    1798:	84000104 	addi	r16,r16,4
+
+                    while(*s)
+    179c:	00000206 	br	17a8 <alt_printf+0x130>
+                      alt_putchar(*s++);
+    17a0:	8c400044 	addi	r17,r17,1
+    17a4:	00017e80 	call	17e8 <alt_putchar>
+                else if (c == 's')
+                {
+                    /* Process string format. */
+                    char *s = va_arg(args, char *);
+
+                    while(*s)
+    17a8:	89000007 	ldb	r4,0(r17)
+    17ac:	203ffc1e 	bne	r4,zero,17a0 <_gp+0xffff7bac>
+    const char *w;
+    char c;
+
+    /* Process format string. */
+    w = fmt;
+    while ((c = *w++) != 0)
+    17b0:	91000007 	ldb	r4,0(r18)
+    17b4:	203fc51e 	bne	r4,zero,16cc <_gp+0xffff7ad8>
+            {
+                break;
+            }
+        }
+    }
+}
+    17b8:	dfc00a17 	ldw	ra,40(sp)
+    17bc:	df000917 	ldw	fp,36(sp)
+    17c0:	ddc00817 	ldw	r23,32(sp)
+    17c4:	dd800717 	ldw	r22,28(sp)
+    17c8:	dd400617 	ldw	r21,24(sp)
+    17cc:	dd000517 	ldw	r20,20(sp)
+    17d0:	dcc00417 	ldw	r19,16(sp)
+    17d4:	dc800317 	ldw	r18,12(sp)
+    17d8:	dc400217 	ldw	r17,8(sp)
+    17dc:	dc000117 	ldw	r16,4(sp)
+    17e0:	dec00e04 	addi	sp,sp,56
+    17e4:	f800283a 	ret
+
+000017e8 <alt_putchar>:
+ * Uses the ALT_DRIVER_WRITE() macro to call directly to driver if available.
+ * Otherwise, uses newlib provided putchar() routine.
+ */
+int 
+alt_putchar(int c)
+{
+    17e8:	defffd04 	addi	sp,sp,-12
+    17ec:	dc000115 	stw	r16,4(sp)
+#ifdef ALT_USE_DIRECT_DRIVERS
+    ALT_DRIVER_WRITE_EXTERNS(ALT_STDOUT_DEV);
+    char        c1 = (char)(c & 0xff);
+    17f0:	d9000005 	stb	r4,0(sp)
+ * Uses the ALT_DRIVER_WRITE() macro to call directly to driver if available.
+ * Otherwise, uses newlib provided putchar() routine.
+ */
+int 
+alt_putchar(int c)
+{
+    17f4:	2021883a 	mov	r16,r4
+#ifdef ALT_USE_DIRECT_DRIVERS
+    ALT_DRIVER_WRITE_EXTERNS(ALT_STDOUT_DEV);
+    char        c1 = (char)(c & 0xff);
+
+    if (ALT_DRIVER_WRITE(ALT_STDOUT_DEV, &c1, 1, 0) == -1) {
+    17f8:	d80b883a 	mov	r5,sp
+    17fc:	01000034 	movhi	r4,0
+    1800:	2106fd04 	addi	r4,r4,7156
+    1804:	01800044 	movi	r6,1
+    1808:	000f883a 	mov	r7,zero
+ * Uses the ALT_DRIVER_WRITE() macro to call directly to driver if available.
+ * Otherwise, uses newlib provided putchar() routine.
+ */
+int 
+alt_putchar(int c)
+{
+    180c:	dfc00215 	stw	ra,8(sp)
+#ifdef ALT_USE_DIRECT_DRIVERS
+    ALT_DRIVER_WRITE_EXTERNS(ALT_STDOUT_DEV);
+    char        c1 = (char)(c & 0xff);
+
+    if (ALT_DRIVER_WRITE(ALT_STDOUT_DEV, &c1, 1, 0) == -1) {
+    1810:	00018ec0 	call	18ec <altera_avalon_jtag_uart_write>
+    1814:	00ffffc4 	movi	r3,-1
+    1818:	10c0011e 	bne	r2,r3,1820 <alt_putchar+0x38>
+        return -1;
+    181c:	1021883a 	mov	r16,r2
+    }
+    return c;
+#else
+    return putchar(c);
+#endif
+}
+    1820:	8005883a 	mov	r2,r16
+    1824:	dfc00217 	ldw	ra,8(sp)
+    1828:	dc000117 	ldw	r16,4(sp)
+    182c:	dec00304 	addi	sp,sp,12
+    1830:	f800283a 	ret
+
+00001834 <alt_putstr>:
+ * Uses the ALT_DRIVER_WRITE() macro to call directly to driver if available.
+ * Otherwise, uses newlib provided fputs() routine.
+ */
+int 
+alt_putstr(const char* str)
+{
+    1834:	defffe04 	addi	sp,sp,-8
+    1838:	dc000015 	stw	r16,0(sp)
+    183c:	dfc00115 	stw	ra,4(sp)
+    1840:	2021883a 	mov	r16,r4
+#ifdef ALT_USE_DIRECT_DRIVERS
+    ALT_DRIVER_WRITE_EXTERNS(ALT_STDOUT_DEV);
+    return ALT_DRIVER_WRITE(ALT_STDOUT_DEV, str, strlen(str), 0);
+    1844:	00019380 	call	1938 <strlen>
+    1848:	01000034 	movhi	r4,0
+    184c:	2106fd04 	addi	r4,r4,7156
+    1850:	800b883a 	mov	r5,r16
+    1854:	100d883a 	mov	r6,r2
+    1858:	000f883a 	mov	r7,zero
+#else
+    return fputs(str, stdout);
+#endif
+}
+    185c:	dfc00117 	ldw	ra,4(sp)
+    1860:	dc000017 	ldw	r16,0(sp)
+    1864:	dec00204 	addi	sp,sp,8
+int 
+alt_putstr(const char* str)
+{
+#ifdef ALT_USE_DIRECT_DRIVERS
+    ALT_DRIVER_WRITE_EXTERNS(ALT_STDOUT_DEV);
+    return ALT_DRIVER_WRITE(ALT_STDOUT_DEV, str, strlen(str), 0);
+    1868:	00018ec1 	jmpi	18ec <altera_avalon_jtag_uart_write>
+
+0000186c <alt_irq_init>:
+ * The "base" parameter is ignored and only
+ * present for backwards-compatibility.
+ */
+
+void alt_irq_init ( const void* base )
+{
+    186c:	deffff04 	addi	sp,sp,-4
+    1870:	dfc00015 	stw	ra,0(sp)
+    ALTERA_NIOS2_QSYS_IRQ_INIT ( NIOS2_PROCESSOR, nios2_processor);
+    1874:	00019300 	call	1930 <altera_nios2_qsys_irq_init>
+ * alt_irq_cpu_enable_interrupts() enables the CPU to start taking interrupts.
+ */
+static ALT_INLINE void ALT_ALWAYS_INLINE 
+       alt_irq_cpu_enable_interrupts ()
+{
+    NIOS2_WRITE_STATUS(NIOS2_STATUS_PIE_MSK
+    1878:	00800044 	movi	r2,1
+    187c:	1001703a 	wrctl	status,r2
+    alt_irq_cpu_enable_interrupts();
+}
+    1880:	dfc00017 	ldw	ra,0(sp)
+    1884:	dec00104 	addi	sp,sp,4
+    1888:	f800283a 	ret
+
+0000188c <alt_sys_init>:
+ * Initialize the non-interrupt controller devices.
+ * Called after alt_irq_init().
+ */
+
+void alt_sys_init( void )
+{
+    188c:	f800283a 	ret
+
+00001890 <altera_avalon_jtag_uart_read>:
+
+int 
+altera_avalon_jtag_uart_read(altera_avalon_jtag_uart_state* sp, 
+  char* buffer, int space, int flags)
+{
+  unsigned int base = sp->base;
+    1890:	21000017 	ldw	r4,0(r4)
+
+  char * ptr = buffer;
+  char * end = buffer + space;
+    1894:	298d883a 	add	r6,r5,r6
+
+  while (ptr < end)
+    1898:	2805883a 	mov	r2,r5
+
+    if (data & ALTERA_AVALON_JTAG_UART_DATA_RVALID_MSK)
+      *ptr++ = (data & ALTERA_AVALON_JTAG_UART_DATA_DATA_MSK) >> ALTERA_AVALON_JTAG_UART_DATA_DATA_OFST;
+    else if (ptr != buffer)
+      break;
+    else if(flags & O_NONBLOCK)
+    189c:	3a10000c 	andi	r8,r7,16384
+  unsigned int base = sp->base;
+
+  char * ptr = buffer;
+  char * end = buffer + space;
+
+  while (ptr < end)
+    18a0:	00000a06 	br	18cc <altera_avalon_jtag_uart_read+0x3c>
+  {
+    unsigned int data = IORD_ALTERA_AVALON_JTAG_UART_DATA(base);
+    18a4:	20c00037 	ldwio	r3,0(r4)
+
+    if (data & ALTERA_AVALON_JTAG_UART_DATA_RVALID_MSK)
+    18a8:	1a60000c 	andi	r9,r3,32768
+    18ac:	48000326 	beq	r9,zero,18bc <altera_avalon_jtag_uart_read+0x2c>
+      *ptr++ = (data & ALTERA_AVALON_JTAG_UART_DATA_DATA_MSK) >> ALTERA_AVALON_JTAG_UART_DATA_DATA_OFST;
+    18b0:	10c00005 	stb	r3,0(r2)
+    18b4:	10800044 	addi	r2,r2,1
+    18b8:	00000406 	br	18cc <altera_avalon_jtag_uart_read+0x3c>
+    else if (ptr != buffer)
+    18bc:	11400226 	beq	r2,r5,18c8 <altera_avalon_jtag_uart_read+0x38>
+      break;   
+    
+  }
+
+  if (ptr != buffer)
+    return ptr - buffer;
+    18c0:	1145c83a 	sub	r2,r2,r5
+    18c4:	f800283a 	ret
+
+    if (data & ALTERA_AVALON_JTAG_UART_DATA_RVALID_MSK)
+      *ptr++ = (data & ALTERA_AVALON_JTAG_UART_DATA_DATA_MSK) >> ALTERA_AVALON_JTAG_UART_DATA_DATA_OFST;
+    else if (ptr != buffer)
+      break;
+    else if(flags & O_NONBLOCK)
+    18c8:	4000021e 	bne	r8,zero,18d4 <altera_avalon_jtag_uart_read+0x44>
+  unsigned int base = sp->base;
+
+  char * ptr = buffer;
+  char * end = buffer + space;
+
+  while (ptr < end)
+    18cc:	11bff536 	bltu	r2,r6,18a4 <_gp+0xffff7cb0>
+    else if(flags & O_NONBLOCK)
+      break;   
+    
+  }
+
+  if (ptr != buffer)
+    18d0:	117ffb1e 	bne	r2,r5,18c0 <_gp+0xffff7ccc>
+    return ptr - buffer;
+  else if (flags & O_NONBLOCK)
+    18d4:	39d0000c 	andi	r7,r7,16384
+    18d8:	38000226 	beq	r7,zero,18e4 <altera_avalon_jtag_uart_read+0x54>
+    return -EWOULDBLOCK;
+    18dc:	00bffd44 	movi	r2,-11
+    18e0:	f800283a 	ret
+  else
+    return -EIO;
+    18e4:	00bffec4 	movi	r2,-5
+}
+    18e8:	f800283a 	ret
+
+000018ec <altera_avalon_jtag_uart_write>:
+ */
+
+int altera_avalon_jtag_uart_write(altera_avalon_jtag_uart_state* sp, 
+  const char * ptr, int count, int flags)
+{
+  unsigned int base = sp->base;
+    18ec:	20c00017 	ldw	r3,0(r4)
+ * one FIFOs worth of data.  But you said you didn't want to use interrupts :-)
+ */
+
+int altera_avalon_jtag_uart_write(altera_avalon_jtag_uart_state* sp, 
+  const char * ptr, int count, int flags)
+{
+    18f0:	3005883a 	mov	r2,r6
+  unsigned int base = sp->base;
+
+  const char * end = ptr + count;
+    18f4:	2989883a 	add	r4,r5,r6
+
+  while (ptr < end)
+    if ((IORD_ALTERA_AVALON_JTAG_UART_CONTROL(base) & ALTERA_AVALON_JTAG_UART_CONTROL_WSPACE_MSK) != 0)
+    18f8:	19800104 	addi	r6,r3,4
+{
+  unsigned int base = sp->base;
+
+  const char * end = ptr + count;
+
+  while (ptr < end)
+    18fc:	00000606 	br	1918 <altera_avalon_jtag_uart_write+0x2c>
+    if ((IORD_ALTERA_AVALON_JTAG_UART_CONTROL(base) & ALTERA_AVALON_JTAG_UART_CONTROL_WSPACE_MSK) != 0)
+    1900:	31c00037 	ldwio	r7,0(r6)
+    1904:	39ffffec 	andhi	r7,r7,65535
+    1908:	383ffd26 	beq	r7,zero,1900 <_gp+0xffff7d0c>
+      IOWR_ALTERA_AVALON_JTAG_UART_DATA(base, *ptr++);
+    190c:	29c00007 	ldb	r7,0(r5)
+    1910:	29400044 	addi	r5,r5,1
+    1914:	19c00035 	stwio	r7,0(r3)
+{
+  unsigned int base = sp->base;
+
+  const char * end = ptr + count;
+
+  while (ptr < end)
+    1918:	293ff936 	bltu	r5,r4,1900 <_gp+0xffff7d0c>
+    if ((IORD_ALTERA_AVALON_JTAG_UART_CONTROL(base) & ALTERA_AVALON_JTAG_UART_CONTROL_WSPACE_MSK) != 0)
+      IOWR_ALTERA_AVALON_JTAG_UART_DATA(base, *ptr++);
+
+  return count;
+}
+    191c:	f800283a 	ret
+
+00001920 <alt_dcache_flush_all>:
+/*
+ * alt_dcache_flush_all() is called to flush the entire data cache.
+ */
+
+void alt_dcache_flush_all (void)
+{
+    1920:	f800283a 	ret
+
+00001924 <alt_dev_null_write>:
+ */
+
+static int alt_dev_null_write (alt_fd* fd, const char* ptr, int len)
+{
+  return len;
+}
+    1924:	3005883a 	mov	r2,r6
+    1928:	f800283a 	ret
+
+0000192c <alt_icache_flush_all>:
+/*
+ * alt_icache_flush_all() is called to flush the entire instruction cache.
+ */
+
+void alt_icache_flush_all (void)
+{
+    192c:	f800283a 	ret
+
+00001930 <altera_nios2_qsys_irq_init>:
+ * To initialize the internal interrupt controller, just clear the IENABLE
+ * register so that all possible IRQs are disabled.
+ */
+void altera_nios2_qsys_irq_init(void) 
+{
+    NIOS2_WRITE_IENABLE(0);
+    1930:	000170fa 	wrctl	ienable,zero
+    1934:	f800283a 	ret
+
+00001938 <strlen>:
+    1938:	20800007 	ldb	r2,0(r4)
+    193c:	10000626 	beq	r2,zero,1958 <strlen+0x20>
+    1940:	2005883a 	mov	r2,r4
+    1944:	10800044 	addi	r2,r2,1
+    1948:	10c00007 	ldb	r3,0(r2)
+    194c:	183ffd1e 	bne	r3,zero,1944 <_gp+0xffff7d50>
+    1950:	1105c83a 	sub	r2,r2,r4
+    1954:	f800283a 	ret
+    1958:	0005883a 	mov	r2,zero
+    195c:	f800283a 	ret
