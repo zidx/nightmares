@@ -174,15 +174,6 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW, SEND
 	 
 	 ///////////////////////// Begin Networking code section /////////////////////////////
 	 
-	 reg [7:0] curByte;
-	 
-	 // Assign the current byte
-	 always @(*) begin
-		if (downloading1) curByte = curByte1;
-		else if (downloading2) curByte = curByte2;
-		else curByte = parallelIn;
-	 end
-	 
 	 // Parallel input and output going in and out of the CPU
 	 wire [7:0] parallelIn, parallelOut;
 	 
@@ -200,6 +191,15 @@ module lights (CLOCK_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDG, SW, SEND
 	 assign LEDG[1] = RECIEVE;
 	 assign LEDG[2] = sampleBit;
 	 assign LEDG[5] = strobe;
+	 
+	 reg [7:0] curByte;
+	 
+	 // Assign the current byte
+	 always @(*) begin
+		if (downloading1) curByte = curByte1;
+		else if (downloading2) curByte = curByte2;
+		else curByte = parallelIn;
+	 end
 	 
 	 // Input modules
 	 startBitDetect start (enable, reset, clock, RECIEVE, strobe);

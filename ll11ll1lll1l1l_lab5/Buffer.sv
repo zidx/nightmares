@@ -69,36 +69,30 @@ module Buffer_testbench();
 		clock = ~clock; 
 	end
 	
-	// Loop the percents
-	initial percent = 4'b1111;
-	always begin
-		percent <= percent + 1;
-		@(posedge clock);
-	end
-	
-	// Modify stored value
-	initial inputValue = 8'b11111111;
-	always begin
-		inputValue <= inputValue + 8'00010001;
-		@(posedge clock);
-	end
-	
 	Buffer dut (clock, reset, emptyBuffer, percent, inputValue, outputValue, strobe);
 	
 	initial begin
 		// Loading Data In
-		emptyBuffer <= 0;
+		emptyBuffer <= 0; inputValue = 8'b00000000; percent = 4'b0000;
 		reset <= 1; @(posedge clock);		
 		reset <= 0; @(posedge clock);
-		repeat(10)  @(posedge clock);
+		repeat(9)  begin
+			percent <= percent + 1;
+			inputValue <= inputValue + 8'b00010001;
+			@(posedge clock);
+		end
 		
 		// Reading Data Out
-		emptyBuffer <= 1;
 		reset <= 1; @(posedge clock);		
-		reset <= 0; @(posedge clock);
-		repeat(10)  @(posedge clock);
+		reset <= 0; emptyBuffer <= 1; inputValue = 8'b00000000; percent = 4'b0000; @(posedge clock);
+		repeat(9)  begin
+			percent <= percent + 1;
+			inputValue <= inputValue + 8'b00010001;
+			@(posedge clock);
+		end
 		
 		emptyBuffer <= 0; @(posedge clock);
+								@(posedge clock);
 		
 		$stop; // End the simulation.
 	end
