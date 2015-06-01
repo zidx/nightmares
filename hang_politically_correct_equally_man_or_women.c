@@ -259,77 +259,82 @@ void game_master() {
 	}
 }
 
-//void player() {
-//	while (1) {
-//		// Wait for the code that the master is ready
-//		int wordLen = recieveData();
-//		alt_u8 guessesRemaining = MAX_GUESSES;
-//		// Send that we got the word and are about to play
-//		sendData(DATA_RECIEVED);
-//
-//		while (1) {
-//			// Now we are ready to send guesses!
-//			alt_getchar();
-//			alt_putstr("Please enter a letter and press enter\n");
-//			alt_u8 letter = alt_getchar();
-//
-//			// Send the letter
-//			sendData(letter);
-//
-//			// Get the response
-//			alt_u8 response = recieveData();
-//
-//			if (response == WIN_VAL) {
-//				alt_putstr("Congratulations you won!\nWaiting for new game...\n");
-//				break;
-//			}
-//			else if (response == LOSE_VAL) {
-//				alt_putstr("You lost because you have no friends and your life is\nmeaningless and you smell bad.\nWaiting for new game...\n");
-//				break;
-//			}
-//			// If we come here than we're in normal gameplay
-//			sendData(DATA_RECIEVED);
-//			guessesRemaining = recieveData();
-//
-//			if (response == 0) {
-//				alt_printf("Sorry, the letter '%c' was incorrect\n", letter);
-//			}
-//			else if (response <= wordLen) {
-//				alt_printf("The letter '%c' was correct and filled %x places!\n", letter, response);
-//			}
-//			else
-//				alt_printf("You already guessed the letter '%c'!\n", letter);
-//
-//			// Acknowledge last data recieved
-//			sendData(DATA_RECIEVED);
-//
-//			// Print out the characters
-//			alt_putstr("Word: ");
-//			int i;
-//			for (i = 0; i < wordLen; i++) {
-//				letter = recieveData();
-//				alt_printf("%c ", letter);
-//			}
-//			alt_putstr("\n");
-//
-//			sendData(DATA_RECIEVED);
-//
-//			// Print out guessed characters
-//			alt_putstr("Guessed characters: ");
-//			int numGuesses = MAX_GUESSES - guessesRemaining;
-//			for (i = 0; i < numGuesses; i++) {
-//				letter = recieveData();
-//				if (i == 0)
-//					alt_printf("%c", letter);
-//				else
-//					alt_printf(", %c", letter);
-//			}
-//			alt_putstr("\n");
-//
-//			alt_printf("You now have '%x' guesses remaining.\n\n", guessesRemaining);
-//		}
-//	}
-//}
+void player() {
+	while (1) {
+		// Wait for the code that the master is ready
+		int wordLen = recieveData();
+		alt_u8 guessesRemaining = MAX_GUESSES;
+		// Send that we got the word and are about to play
+		sendData(DATA_RECIEVED);
+
+		while (1) {
+			// Now we are ready to send guesses!
+			alt_getchar();
+			alt_putstr("Please enter a letter and press enter\n");
+			alt_u8 letter = alt_getchar();
+
+			// Send the letter
+
+			sendData(letter);
+
+			// Get the response
+			alt_u8 response = recieveData();
+
+			if (response == WIN_VAL) {
+				alt_putstr("Congratulations you won!\n");
+				break;
+			}
+			else if (response == LOSE_VAL) {
+				alt_putstr("You lost because you have no friends and your life is\nmeaningless and you smell bad.\nWaiting for new game...\n");
+				break;
+			}
+			// If we come here than we're in normal gameplay
+			sendData(DATA_RECIEVED);
+			guessesRemaining = recieveData();
+
+			if (response == 0) {
+				alt_printf("Sorry, the letter '%c' was incorrect\n", letter);
+			}
+			else if (response <= wordLen) {
+				alt_printf("The letter '%c' was correct and filled %x places!\n", letter, response);
+			}
+			else
+				alt_printf("You already guessed the letter '%c'!\n", letter);
+			int numGuesses = MAX_GUESSES - guessesRemaining;
+			// Acknowledge last data recieved
+			sendData(DATA_RECIEVED);
+
+			// Print out the characters
+			alt_putstr("Word: ");
+			int i;
+			for (i = 0; i < wordLen; i++) {
+				letter = recieveData();
+				alt_printf("%c ", letter);
+
+				sendData(DATA_RECIEVED);
+			}
+			alt_putstr("\nGuessed characters: ");
+
+			//acknowledgement for ready to recieve before recieving
+			for (i = 0; i < numGuesses; i++) {
+				sendData(DATA_RECIEVED);
+
+				letter = recieveData();
+
+				if (i == 0)
+					alt_printf("%c", letter);
+				else
+					alt_printf(", %c", letter);
+				//alt_printf("sent data recieved\n");
+
+			}
+			alt_putstr("\n");
+
+			alt_printf("You now have '%x' guesses remaining.\n\n", guessesRemaining);
+		}
+	}
+}
+
 
 void setWord() {
 	alt_putstr("Please enter your word (Max 20 letters):\n");
