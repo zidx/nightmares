@@ -1,10 +1,15 @@
 <sld_project_info>
   <project>
+<<<<<<< HEAD
     <hash md5_digest_80b="bf9a05c4a7260becf4c1"/>
+=======
+    <hash md5_digest_80b="eb1a5a58b5a68fb74931"/>
+>>>>>>> 99bbcb0f38b86196c1f7f03ea8489c1ba0363acf
   </project>
   <file_info>
     <file device="5CSEMA5F31C6" path="lights.sof" usercode="0xFFFFFFFF"/>
   </file_info>
+<<<<<<< HEAD
   <hub_info hub_ir_width="10" ir_width="10" node_addr_width="3" node_count="5"/>
   <node_info>
     <node hpath="switchesqsys:u0|switchesqsys_nios2_processor:nios2_processor|switchesqsys_nios2_processor_nios2_oci:the_switchesqsys_nios2_processor_nios2_oci|switchesqsys_nios2_processor_jtag_debug_module_wrapper:the_switchesqsys_nios2_processor_jtag_debug_module_wrapper|sld_virtual_jtag_basic:switchesqsys_nios2_processor_jtag_debug_module_phy|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst" instance_id="0" mfg_id="70" node_id="34" sld_node_info="0x19104600" version="3">
@@ -320,4 +325,6 @@
       <parameters/>
     </sld_info>
   </sld_infos>
+=======
+>>>>>>> 99bbcb0f38b86196c1f7f03ea8489c1ba0363acf
 </sld_project_info>

@@ -3708,7 +3708,11 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.e
 
 !ENTRY com.altera.sbtgui.launch 1 0 2015-05-26 20:29:40.708
 !MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/klholden/Documents/nightmares/ll11ll1lll1l1l_lab5/software/LAB5_jabbamyhutt/LAB5_jabbamyhutt.elf]
+<<<<<<< HEAD
+!SESSION 2015-05-28 22:26:12.430 -----------------------------------------------
+=======
 !SESSION 2015-05-29 16:57:05.472 -----------------------------------------------
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 eclipse.buildId=M20120208-0800
 java.version=1.6.0_23
 java.vendor=Sun Microsystems Inc.
@@ -3716,9 +3720,15 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
 Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
 
+<<<<<<< HEAD
+!ENTRY org.eclipse.core.resources 4 567 2015-05-28 22:26:15.575
+!MESSAGE Workspace restored, but some problems occurred.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.575
+=======
 !ENTRY org.eclipse.core.resources 4 567 2015-05-29 16:57:53.733
 !MESSAGE Workspace restored, but some problems occurred.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.733
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'HELLO_WORLD_SMALL_FINAL'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'HELLO_WORLD_SMALL_FINAL' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -3762,9 +3772,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.575
+!MESSAGE The project description file (.project) for 'HELLO_WORLD_SMALL_FINAL' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.576
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.733
 !MESSAGE The project description file (.project) for 'HELLO_WORLD_SMALL_FINAL' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.733
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'HELLO_WORLD_SMALL_FINAL_bsp'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'HELLO_WORLD_SMALL_FINAL_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -3808,9 +3824,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.576
+!MESSAGE The project description file (.project) for 'HELLO_WORLD_SMALL_FINAL_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.576
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.733
 !MESSAGE The project description file (.project) for 'HELLO_WORLD_SMALL_FINAL_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.733
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'HELLO_WORLD_SMALL_IO'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'HELLO_WORLD_SMALL_IO' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -3854,9 +3876,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.576
+!MESSAGE The project description file (.project) for 'HELLO_WORLD_SMALL_IO' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.576
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.733
 !MESSAGE The project description file (.project) for 'HELLO_WORLD_SMALL_IO' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.733
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'HELLO_WORLD_SMALL_IO_EXTENDED'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'HELLO_WORLD_SMALL_IO_EXTENDED' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -3900,9 +3928,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.577
+!MESSAGE The project description file (.project) for 'HELLO_WORLD_SMALL_IO_EXTENDED' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.577
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.743
 !MESSAGE The project description file (.project) for 'HELLO_WORLD_SMALL_IO_EXTENDED' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.743
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'HELLO_WORLD_SMALL_IO_EXTENDED_bsp'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'HELLO_WORLD_SMALL_IO_EXTENDED_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -3946,9 +3980,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.577
+!MESSAGE The project description file (.project) for 'HELLO_WORLD_SMALL_IO_EXTENDED_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.577
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.743
 !MESSAGE The project description file (.project) for 'HELLO_WORLD_SMALL_IO_EXTENDED_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.743
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'HELLO_WORLD_SMALL_IO_bsp'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'HELLO_WORLD_SMALL_IO_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -3992,9 +4032,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.577
+!MESSAGE The project description file (.project) for 'HELLO_WORLD_SMALL_IO_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.577
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.743
 !MESSAGE The project description file (.project) for 'HELLO_WORLD_SMALL_IO_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.743
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'LAB5_jabbamyhutt'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'LAB5_jabbamyhutt' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -4038,9 +4084,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.578
+!MESSAGE The project description file (.project) for 'LAB5_jabbamyhutt' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.578
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.743
 !MESSAGE The project description file (.project) for 'LAB5_jabbamyhutt' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.743
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'LAB5_jabbamyhutt_bsp'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'LAB5_jabbamyhutt_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -4084,9 +4136,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.578
+!MESSAGE The project description file (.project) for 'LAB5_jabbamyhutt_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.578
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.743
 !MESSAGE The project description file (.project) for 'LAB5_jabbamyhutt_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.743
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'LIGHTS_AND_SWITCHES_FINAL'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'LIGHTS_AND_SWITCHES_FINAL' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -4130,9 +4188,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.578
+!MESSAGE The project description file (.project) for 'LIGHTS_AND_SWITCHES_FINAL' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.578
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.743
 !MESSAGE The project description file (.project) for 'LIGHTS_AND_SWITCHES_FINAL' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.743
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'LIGHTS_AND_SWITCHES_FINAL_bsp'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'LIGHTS_AND_SWITCHES_FINAL_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -4176,9 +4240,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.579
+!MESSAGE The project description file (.project) for 'LIGHTS_AND_SWITCHES_FINAL_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.579
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.743
 !MESSAGE The project description file (.project) for 'LIGHTS_AND_SWITCHES_FINAL_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.743
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'Lab4_1'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'Lab4_1' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -4222,9 +4292,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.579
+!MESSAGE The project description file (.project) for 'Lab4_1' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.580
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.743
 !MESSAGE The project description file (.project) for 'Lab4_1' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.743
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'Lab4_1_bsp'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'Lab4_1_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -4268,9 +4344,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.580
+!MESSAGE The project description file (.project) for 'Lab4_1_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.580
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
 !MESSAGE The project description file (.project) for 'Lab4_1_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'Lab4_2'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'Lab4_2' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -4314,9 +4396,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.581
+!MESSAGE The project description file (.project) for 'Lab4_2' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.581
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
 !MESSAGE The project description file (.project) for 'Lab4_2' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'Lab4_2_bsp'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'Lab4_2_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -4360,9 +4448,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.581
+!MESSAGE The project description file (.project) for 'Lab4_2_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.581
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
 !MESSAGE The project description file (.project) for 'Lab4_2_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'cb'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'cb' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -4406,9 +4500,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.581
+!MESSAGE The project description file (.project) for 'cb' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.582
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
 !MESSAGE The project description file (.project) for 'cb' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'cb_bsp'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'cb_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -4452,9 +4552,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.582
+!MESSAGE The project description file (.project) for 'cb_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.582
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
 !MESSAGE The project description file (.project) for 'cb_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'hello_world_small5'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'hello_world_small5' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -4498,9 +4604,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.582
+!MESSAGE The project description file (.project) for 'hello_world_small5' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.582
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
 !MESSAGE The project description file (.project) for 'hello_world_small5' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'hello_world_small5_bsp'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'hello_world_small5_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -4544,9 +4656,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.583
+!MESSAGE The project description file (.project) for 'hello_world_small5_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.583
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
 !MESSAGE The project description file (.project) for 'hello_world_small5_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'hw2'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'hw2' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -4590,9 +4708,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.583
+!MESSAGE The project description file (.project) for 'hw2' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.583
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
 !MESSAGE The project description file (.project) for 'hw2' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'hw2_bsp'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'hw2_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -4636,9 +4760,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.583
+!MESSAGE The project description file (.project) for 'hw2_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.583
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
 !MESSAGE The project description file (.project) for 'hw2_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'lab4_100000'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'lab4_100000' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -4682,9 +4812,15 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.583
+!MESSAGE The project description file (.project) for 'lab4_100000' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.584
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
 !MESSAGE The project description file (.project) for 'lab4_100000' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685
 !MESSAGE Could not read metadata for 'lab4_100000_bsp'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'lab4_100000_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -4728,5 +4864,125 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+<<<<<<< HEAD
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-28 22:26:15.584
+!MESSAGE The project description file (.project) for 'lab4_100000_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-28 22:30:20.405
+!MESSAGE Indexed 'Camera_System_bsp' (78 sources, 112 headers) in 1.56 sec: 3,206 declarations; 4,950 references; 55 unresolved inclusions; 176 syntax errors; 113 unresolved names (1.37%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-28 22:30:21.109
+!MESSAGE Indexed 'Camera_System' (1 sources, 13 headers) in 0.04 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-28 23:50:44.899
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-28 23:50:46.596
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/codyohl/Documents/nightmares/ll11ll1lll1l1l_lab5/software/Camera_System/Camera_System.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-28 23:52:17.197
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-28 23:52:17.471
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-28 23:52:19.107
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/codyohl/Documents/nightmares/ll11ll1lll1l1l_lab5/software/Camera_System/Camera_System.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:02:25.291
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:02:25.577
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:02:27.228
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/codyohl/Documents/nightmares/ll11ll1lll1l1l_lab5/software/Camera_System/Camera_System.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:27:55.521
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:27:55.796
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:27:57.438
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/codyohl/Documents/nightmares/ll11ll1lll1l1l_lab5/software/Camera_System/Camera_System.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:36:44.650
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:36:44.967
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:36:46.646
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/codyohl/Documents/nightmares/ll11ll1lll1l1l_lab5/software/Camera_System/Camera_System.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:37:01.563
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:37:01.884
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:37:03.566
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/codyohl/Documents/nightmares/ll11ll1lll1l1l_lab5/software/Camera_System/Camera_System.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:40:48.605
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:40:48.954
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:40:50.730
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/codyohl/Documents/nightmares/ll11ll1lll1l1l_lab5/software/Camera_System/Camera_System.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:48:18.059
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:48:18.352
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:48:19.996
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/codyohl/Documents/nightmares/ll11ll1lll1l1l_lab5/software/Camera_System/Camera_System.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:53:25.626
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:53:25.915
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:53:27.594
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/codyohl/Documents/nightmares/ll11ll1lll1l1l_lab5/software/Camera_System/Camera_System.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:56:16.278
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:56:16.581
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:56:18.248
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/codyohl/Documents/nightmares/ll11ll1lll1l1l_lab5/software/Camera_System/Camera_System.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:59:58.465
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 00:59:58.796
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2015-05-29 01:00:00.478
+!MESSAGE Executing: [C:/altera/14.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid /cygdrive/c/Users/codyohl/Documents/nightmares/ll11ll1lll1l1l_lab5/software/Camera_System/Camera_System.elf]
+!SESSION 2015-05-29 16:39:12.102 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-31 15:42:55.925
+!MESSAGE Indexed 'TalkToShelfish_bsp' (78 sources, 98 headers) in 1.51 sec: 2,208 declarations; 3,660 references; 73 unresolved inclusions; 372 syntax errors; 301 unresolved names (4.88%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-31 15:42:57.101
+!MESSAGE Indexed 'TalkToShelfish' (1 sources, 13 headers) in 0.03 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+=======
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2015-05-29 16:57:53.753
 !MESSAGE The project description file (.project) for 'lab4_100000_bsp' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+>>>>>>> c55a9c2fc73bb8e49deed40a9f54f6cff5b57685

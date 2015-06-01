@@ -51,4 +51,50 @@ module Buffer (clock, reset, emptyBuffer, percent, inputValue, outputValue, stro
 	 
 endmodule
 
+module Buffer_testbench();
+	reg clock, reset, emptyBuffer;
+	reg [3:0] percent;
+	reg [7:0] inputValue;
+	
+	wire strobe;
+	wire [7:0] outputValue;
+	
+	parameter clkDur = 100;
+	parameter full = 4'b1010;
+	
+	// Set up the clock. 
+	initial clock=0;
+	always begin 
+		#(clkDur/2); 
+		clock = ~clock; 
+	end
+	
+	Buffer dut (clock, reset, emptyBuffer, percent, inputValue, outputValue, strobe);
+	
+	initial begin
+		// Loading Data In
+		emptyBuffer <= 0; inputValue = 8'b00000000; percent = 4'b0000;
+		reset <= 1; @(posedge clock);		
+		reset <= 0; @(posedge clock);
+		repeat(9)  begin
+			percent <= percent + 1;
+			inputValue <= inputValue + 8'b00010001;
+			@(posedge clock);
+		end
+		
+		// Reading Data Out
+		reset <= 1; @(posedge clock);		
+		reset <= 0; emptyBuffer <= 1; inputValue = 8'b00000000; percent = 4'b0000; @(posedge clock);
+		repeat(9)  begin
+			percent <= percent + 1;
+			inputValue <= inputValue + 8'b00010001;
+			@(posedge clock);
+		end
+		
+		emptyBuffer <= 0; @(posedge clock);
+								@(posedge clock);
+		
+		$stop; // End the simulation.
+	end
 
+endmodule

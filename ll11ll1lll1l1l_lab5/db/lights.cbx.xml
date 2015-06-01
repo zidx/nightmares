@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="lights">
+<<<<<<< HEAD
 		<CBX_INST_ENTRY INSTANCE_NAME="|lights|sld_signaltap:Start_Bit_Finish|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:read_pointer_counter" CBX_FILE_NAME="cntr_85j.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|lights|sld_signaltap:curByte_shift|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_advance_pointer_counter" CBX_FILE_NAME="cntr_49i.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|lights|switchesqsys:u0|switchesqsys_jtag_uart:jtag_uart|switchesqsys_jtag_uart_scfifo_w:the_switchesqsys_jtag_uart_scfifo_w|scfifo:wfifo" CBX_FILE_NAME="scfifo_3291.tdf"/>
@@ -30,5 +31,7 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|lights|Buffer:buf2|altsyncram:memory_rtl_0" CBX_FILE_NAME="altsyncram_ivm1.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|lights|sld_signaltap:Start_Bit_Finish|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder" CBX_FILE_NAME="decode_vnf.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|lights|sld_signaltap:Start_Bit_Finish|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_read_pointer_counter" CBX_FILE_NAME="cntr_kri.tdf"/>
+=======
+>>>>>>> 99bbcb0f38b86196c1f7f03ea8489c1ba0363acf
 	</PROJECT>
 </LOG_ROOT>

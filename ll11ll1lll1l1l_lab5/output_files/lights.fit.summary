@@ -1,15 +1,27 @@
+<<<<<<< HEAD
 Fitter Status : Successful - Sun May 31 22:06:07 2015
+=======
+Fitter Status : Successful - Sun May 31 19:16:57 2015
+>>>>>>> 99bbcb0f38b86196c1f7f03ea8489c1ba0363acf
 Quartus II 64-Bit Version : 14.0.0 Build 200 06/17/2014 SJ Full Version
 Revision Name : lights
-Top-level Entity Name : lights
+Top-level Entity Name : readOutBuffer
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
+<<<<<<< HEAD
 Logic utilization (in ALMs) : 2,015 / 32,070 ( 6 % )
 Total registers : 2849
 Total pins : 67 / 457 ( 15 % )
 Total virtual pins : 0
 Total block memory bits : 2,272,336 / 4,065,280 ( 56 % )
+=======
+Logic utilization (in ALMs) : 11 / 32,070 ( < 1 % )
+Total registers : 8
+Total pins : 13 / 457 ( 3 % )
+Total virtual pins : 0
+Total block memory bits : 0 / 4,065,280 ( 0 % )
+>>>>>>> 99bbcb0f38b86196c1f7f03ea8489c1ba0363acf
 Total DSP Blocks : 0 / 87 ( 0 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

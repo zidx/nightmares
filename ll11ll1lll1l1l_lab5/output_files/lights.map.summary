@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 Analysis & Synthesis Status : Successful - Sun May 31 22:04:40 2015
+=======
+Analysis & Synthesis Status : Successful - Sun May 31 19:16:25 2015
+>>>>>>> 99bbcb0f38b86196c1f7f03ea8489c1ba0363acf
 Quartus II 64-Bit Version : 14.0.0 Build 200 06/17/2014 SJ Full Version
 Revision Name : lights
-Top-level Entity Name : lights
+Top-level Entity Name : readOutBuffer
 Family : Cyclone V
+<<<<<<< HEAD
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge
 Total pins : N/A until Partition Merge
@@ -15,3 +20,17 @@ Total HSSI TX PCSs : N/A until Partition Merge
 Total HSSI PMA TX Serializers : N/A until Partition Merge
 Total PLLs : N/A until Partition Merge
 Total DLLs : N/A until Partition Merge
+=======
+Logic utilization (in ALMs) : N/A
+Total registers : 8
+Total pins : 13
+Total virtual pins : 0
+Total block memory bits : 0
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0
+>>>>>>> 99bbcb0f38b86196c1f7f03ea8489c1ba0363acf
