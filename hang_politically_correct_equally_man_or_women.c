@@ -101,7 +101,7 @@ alt_u8 letterCount;
 
 
 void sendData(alt_u8 data);
-alt_u8 recieveData(void);
+alt_u8 recieveData();
 void game_master();
 void player();
 void setWord();
@@ -114,11 +114,8 @@ int main() {
 	IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
 	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
 	alt_u8 curByteInVal = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
-	alt_u8 hempTeaVal = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
-	alt_u8 inStrobeVal = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
 	IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
 	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
-	players = 0;
 
 	alt_printf("\nInitial prevVal %c \n", curByteInVal);
 
@@ -127,19 +124,21 @@ int main() {
 		alt_putstr("Enter an 'M' to be game master or 'P' to be a player");
 		start = alt_getchar();
 	}
-	
+
 	if (start == 'M')
 		game_master();
 	else
 		player();
 
+	return 0;
 }
 
 void game_master() {
 	while (1) {
 		// Set word
 		alt_getchar();  // Recieve dummy byte
-		alt_u8 wordLen = setWord();
+		setWord();
+		alt_u8 wordLen = letterCount;
 
 		// Word placements
 		int letterPlacement[wordLen];
@@ -161,9 +160,9 @@ void game_master() {
 		// Now we are ready to wait to recieve data
 		alt_u8 guess;
 		alt_u8 retVal;
+		int lettersCorrect;
 		while (!win || guesses < MAX_GUESSES) {
 			guess = recieveData();
-			int correct = 0;
 			int i;
 			retVal = 0; // 1 - wordLen == correct, 0 == wrong, wordLen+1 = alreadyGuessed
 
@@ -177,7 +176,7 @@ void game_master() {
 			if (retVal == 0) {
 				guessedLetters[guesses] = guess;
 				for (i = 0; i < wordLen; i++) {
-					if (word[i] = guess) {
+					if (word[i] == guess) {
 						retVal++;
 						letterPlacement[i] = 1;
 					}
@@ -187,7 +186,7 @@ void game_master() {
 			}
 
 			// Display letter placements
-			int lettersCorrect = 0;
+			lettersCorrect = 0;
 			alt_putstr("Word: ");
 			for (i = 0; i < wordLen; i++) {
 				if (letterPlacement[i] == 1) {
@@ -225,7 +224,7 @@ void game_master() {
 		else {
 			sendData(LOSE_VAL);
 			alt_getchar();
-			alt_putstr("Player Lost\nPlay again?");
+			alt_putstr("Player Lost\nPlay again?\n");
 			char response = alt_getchar();
 			if (response != 'y') {
 				break;
@@ -239,22 +238,21 @@ void player() {
 		// Wait for the code that the master is ready
 		int wordLen = recieveData();
 		alt_u8 guessesRemaining = MAX_GUESSES;
-		int win = 0;
 		// Send that we got the word and are about to play
 		sendData(DATA_RECIEVED);
-		
+
 		while (1) {
 			// Now we are ready to send guesses!
 			alt_getchar();
 			alt_putstr("Please enter a letter and press enter\n");
 			alt_u8 letter = alt_getchar();
-			
+
 			// Send the letter
 			sendData(letter);
-			
+
 			// Get the response
 			alt_u8 response = recieveData();
-			
+
 			if (response == WIN_VAL) {
 				alt_putstr("Congratulations you won!\nWaiting for new game...\n");
 				break;
@@ -266,16 +264,16 @@ void player() {
 			// If we come here than we're in normal gameplay
 			sendData(DATA_RECIEVED);
 			guessesRemaining = recieveData();
-			
+
 			if (response == 0) {
 				alt_printf("Sorry, the letter '%c' was incorrect\n", letter);
 			}
 			if (response <= wordLen) {
 				alt_printf("The letter '%c' was correct and filled %x places!\n", letter, response);
 			}
-			else 
+			else
 				alt_printf("You already guessed the letter '%c'!\n", letter);
-			
+
 			alt_printf("You now have '%x' guesses remaining.\n", guessesRemaining);
 		}
 	}
@@ -285,7 +283,7 @@ void setWord() {
 	alt_putstr("Please enter your word (Max 20 letters):\n");
 	char letter = '#';
 	letterCount = 0;
-	while ((letter = alt_getchar()) != EOF) {
+	while ((letter = alt_getchar()) != '\n') {
 		word[letterCount] = letter;
 		letterCount++;
 		if (letterCount == 20) {
