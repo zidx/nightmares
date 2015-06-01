@@ -1,0 +1,2312 @@
+
+TictacToes.elf:     file format elf32-littlenios2
+TictacToes.elf
+architecture: nios2, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00001020
+
+Program Header:
+    LOAD off    0x00001000 vaddr 0x00001000 paddr 0x00001000 align 2**12
+         filesz 0x00000020 memsz 0x00000020 flags r-x
+    LOAD off    0x00001020 vaddr 0x00001020 paddr 0x00001020 align 2**12
+         filesz 0x00000e3c memsz 0x00000e3c flags r-x
+    LOAD off    0x00001e5c vaddr 0x00001e5c paddr 0x00001ecc align 2**12
+         filesz 0x00000070 memsz 0x00000070 flags rw-
+    LOAD off    0x00001f3c vaddr 0x00001f3c paddr 0x00001f3c align 2**12
+         filesz 0x00000000 memsz 0x0000000c flags rw-
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .entry        00000020  00001000  00001000  00001000  2**5
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .text         00000b4c  00001020  00001020  00001020  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .rodata       000002f0  00001b6c  00001b6c  00001b6c  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .rwdata       00000070  00001e5c  00001ecc  00001e5c  2**2
+                  CONTENTS, ALLOC, LOAD, DATA, SMALL_DATA
+  4 .bss          0000000c  00001f3c  00001f3c  00001f3c  2**2
+                  ALLOC, SMALL_DATA
+  5 .comment      00000023  00000000  00000000  00001ecc  2**0
+                  CONTENTS, READONLY
+  6 .debug_aranges 00000210  00000000  00000000  00001ef0  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_info   00001f20  00000000  00000000  00002100  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_abbrev 00000cb8  00000000  00000000  00004020  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_line   00000e37  00000000  00000000  00004cd8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_frame  000002f8  00000000  00000000  00005b10  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_str    0000087e  00000000  00000000  00005e08  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_loc    00000a91  00000000  00000000  00006686  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_alt_sim_info 00000010  00000000  00000000  00007118  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_ranges 000000d8  00000000  00000000  00007128  2**3
+                  CONTENTS, READONLY, DEBUGGING
+ 15 .thread_model 00000003  00000000  00000000  00008151  2**0
+                  CONTENTS, READONLY
+ 16 .cpu          0000000f  00000000  00000000  00008154  2**0
+                  CONTENTS, READONLY
+ 17 .qsys         00000001  00000000  00000000  00008163  2**0
+                  CONTENTS, READONLY
+ 18 .simulation_enabled 00000001  00000000  00000000  00008164  2**0
+                  CONTENTS, READONLY
+ 19 .stderr_dev   00000009  00000000  00000000  00008165  2**0
+                  CONTENTS, READONLY
+ 20 .stdin_dev    00000009  00000000  00000000  0000816e  2**0
+                  CONTENTS, READONLY
+ 21 .stdout_dev   00000009  00000000  00000000  00008177  2**0
+                  CONTENTS, READONLY
+ 22 .sopc_system_name 0000000c  00000000  00000000  00008180  2**0
+                  CONTENTS, READONLY
+ 23 .quartus_project_dir 00000037  00000000  00000000  0000818c  2**0
+                  CONTENTS, READONLY
+ 24 .sopcinfo     00062b84  00000000  00000000  000081c3  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+00001000 l    d  .entry	00000000 .entry
+00001020 l    d  .text	00000000 .text
+00001b6c l    d  .rodata	00000000 .rodata
+00001e5c l    d  .rwdata	00000000 .rwdata
+00001f3c l    d  .bss	00000000 .bss
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_alt_sim_info	00000000 .debug_alt_sim_info
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00000000 l    df *ABS*	00000000 ../TictacToes_bsp//obj/HAL/src/crt0.o
+00001058 l       .text	00000000 alt_after_alt_main
+00000000 l    df *ABS*	00000000 hello_world_small.c
+00000000 l    df *ABS*	00000000 alt_getchar.c
+00000000 l    df *ABS*	00000000 alt_load.c
+00000000 l    df *ABS*	00000000 alt_main.c
+00000000 l    df *ABS*	00000000 alt_printf.c
+00000000 l    df *ABS*	00000000 alt_putchar.c
+00000000 l    df *ABS*	00000000 alt_putstr.c
+00000000 l    df *ABS*	00000000 alt_sys_init.c
+00000000 l    df *ABS*	00000000 altera_avalon_jtag_uart_read.c
+00000000 l    df *ABS*	00000000 altera_avalon_jtag_uart_write.c
+00000000 l    df *ABS*	00000000 alt_dcache_flush_all.c
+00000000 l    df *ABS*	00000000 alt_dev.c
+00001b30 l     F .text	00000008 alt_dev_null_write
+00000000 l    df *ABS*	00000000 alt_icache_flush_all.c
+00000000 l    df *ABS*	00000000 altera_nios2_qsys_irq.c
+00000000 l    df *ABS*	00000000 strlen.c
+00000000 l    df *ABS*	00000000 
+00001858 g     F .text	0000002c alt_main
+00001ecc g       *ABS*	00000000 __flash_rwdata_start
+0000139c g     F .text	0000030c game_master
+00001a40 g     F .text	00000038 alt_putstr
+00001eb4 g     O .rwdata	00000004 jtag_uart
+00001000 g     F .entry	0000000c __reset
+00001020 g       *ABS*	00000000 __flash_exceptions_start
+00001f40 g     O .bss	00000004 alt_argv
+00009eb4 g       *ABS*	00000000 _gp
+0000120c g     F .text	00000190 player
+00001e5c g     O .rwdata	00000030 alt_fd_list
+0000105c g     F .text	00000070 setWord
+00001a9c g     F .text	0000005c altera_avalon_jtag_uart_read
+00001eb8 g     O .rwdata	00000004 alt_max_fd
+00001f48 g       *ABS*	00000000 __bss_end
+00001710 g     F .text	00000044 alt_getchar
+000010cc g     F .text	00000034 recieveData
+00001e8c g     O .rwdata	00000028 alt_dev_null
+00001b2c g     F .text	00000004 alt_dcache_flush_all
+00001ecc g       *ABS*	00000000 __ram_rwdata_end
+00001000 g       *ABS*	00000000 __alt_mem_onchip_memory
+00001ebc g     O .rwdata	00000008 alt_dev_list
+00001e5c g       *ABS*	00000000 __ram_rodata_end
+00001f48 g       *ABS*	00000000 end
+00002000 g       *ABS*	00000000 __alt_stack_pointer
+00001af8 g     F .text	00000034 altera_avalon_jtag_uart_write
+00001884 g     F .text	00000170 alt_printf
+00001020 g     F .text	0000003c _start
+00001130 g     F .text	000000dc startGame
+00001a98 g     F .text	00000004 alt_sys_init
+00001e5c g       *ABS*	00000000 __ram_rwdata_start
+00001b6c g       *ABS*	00000000 __ram_rodata_start
+00001f48 g       *ABS*	00000000 __alt_stack_base
+00001f3c g       *ABS*	00000000 __bss_start
+000016a8 g     F .text	00000068 main
+00001f3c g     O .bss	00000004 alt_envp
+00001b6c g       *ABS*	00000000 __flash_rodata_start
+00001a78 g     F .text	00000020 alt_irq_init
+00001100 g     F .text	00000030 sendData
+00001f44 g     O .bss	00000004 alt_argc
+00001ec4 g     O .rwdata	00000008 alt_fs_list
+00001020 g       *ABS*	00000000 __ram_exceptions_start
+00001ecc g       *ABS*	00000000 _edata
+00001f48 g       *ABS*	00000000 _end
+00001020 g       *ABS*	00000000 __ram_exceptions_end
+00001b3c g     F .text	00000008 altera_nios2_qsys_irq_init
+00002000 g       *ABS*	00000000 __alt_data_end
+0000100c g       .entry	00000000 _exit
+00001b44 g     F .text	00000028 strlen
+000019f4 g     F .text	0000004c alt_putchar
+00001b38 g     F .text	00000004 alt_icache_flush_all
+00001754 g     F .text	00000104 alt_load
+
+
+
+Disassembly of section .entry:
+
+00001000 <__reset>:
+ * Jump to the _start entry point in the .text section if reset code
+ * is allowed or if optimizing for RTL simulation.
+ */
+#if defined(ALT_ALLOW_CODE_AT_RESET) || defined(ALT_SIM_OPTIMIZE)
+    /* Jump to the _start entry point in the .text section. */
+    movhi r1, %hi(_start)
+    1000:	00400034 	movhi	at,0
+    ori r1, r1, %lo(_start)
+    1004:	08440814 	ori	at,at,4128
+    jmp r1
+    1008:	0800683a 	jmp	at
+
+0000100c <_exit>:
+	...
+
+Disassembly of section .text:
+
+00001020 <_start>:
+
+    /*
+     * Now that the caches are initialized, set up the stack pointer and global pointer.
+     * The values provided by the linker are assumed to be correctly aligned.
+     */
+    movhi sp, %hi(__alt_stack_pointer)
+    1020:	06c00034 	movhi	sp,0
+    ori sp, sp, %lo(__alt_stack_pointer)
+    1024:	dec80014 	ori	sp,sp,8192
+    movhi gp, %hi(_gp)
+    1028:	06800034 	movhi	gp,0
+    ori gp, gp, %lo(_gp)
+    102c:	d6a7ad14 	ori	gp,gp,40628
+ */
+#ifndef ALT_SIM_OPTIMIZE
+    /* Log that the BSS is about to be cleared. */
+    ALT_LOG_PUTS(alt_log_msg_bss)
+
+    movhi r2, %hi(__bss_start)
+    1030:	00800034 	movhi	r2,0
+    ori r2, r2, %lo(__bss_start)
+    1034:	1087cf14 	ori	r2,r2,7996
+
+    movhi r3, %hi(__bss_end)
+    1038:	00c00034 	movhi	r3,0
+    ori r3, r3, %lo(__bss_end)
+    103c:	18c7d214 	ori	r3,r3,8008
+
+    beq r2, r3, 1f
+    1040:	10c00326 	beq	r2,r3,1050 <_start+0x30>
+
+0:
+    stw zero, (r2)
+    1044:	10000015 	stw	zero,0(r2)
+    addi r2, r2, 4
+    1048:	10800104 	addi	r2,r2,4
+    bltu r2, r3, 0b
+    104c:	10fffd36 	bltu	r2,r3,1044 <_gp+0xffff7190>
+     * section aren't defined until alt_load() has been called).
+     */
+    mov   et, zero
+#endif
+
+    call alt_load
+    1050:	00017540 	call	1754 <alt_load>
+
+    /* Log that alt_main is about to be called. */
+    ALT_LOG_PUTS(alt_log_msg_alt_main)
+
+    /* Call the C entry point. It should never return. */
+    call alt_main
+    1054:	00018580 	call	1858 <alt_main>
+
+00001058 <alt_after_alt_main>:
+
+    /* Wait in infinite loop in case alt_main does return. */
+alt_after_alt_main:
+    br alt_after_alt_main
+    1058:	003fff06 	br	1058 <_gp+0xffff71a4>
+
+0000105c <setWord>:
+		alt_printf("You now have '%x' guesses remaining.\n\n", guessesRemaining);
+	}
+}
+
+
+alt_u8 setWord(char * word) {
+    105c:	defffc04 	addi	sp,sp,-16
+    1060:	dc400115 	stw	r17,4(sp)
+    1064:	2023883a 	mov	r17,r4
+	alt_putstr("Please enter your word (Max 20 letters):\n");
+    1068:	01000034 	movhi	r4,0
+    106c:	2106db04 	addi	r4,r4,7020
+		alt_printf("You now have '%x' guesses remaining.\n\n", guessesRemaining);
+	}
+}
+
+
+alt_u8 setWord(char * word) {
+    1070:	dc800215 	stw	r18,8(sp)
+    1074:	dc000015 	stw	r16,0(sp)
+    1078:	dfc00315 	stw	ra,12(sp)
+	alt_putstr("Please enter your word (Max 20 letters):\n");
+	char letter = '#';
+	alt_u8 letterCount = 0;
+    107c:	0021883a 	mov	r16,zero
+	}
+}
+
+
+alt_u8 setWord(char * word) {
+	alt_putstr("Please enter your word (Max 20 letters):\n");
+    1080:	0001a400 	call	1a40 <alt_putstr>
+	char letter = '#';
+	alt_u8 letterCount = 0;
+	while ((letter = alt_getchar()) != '\n') {
+    1084:	04800284 	movi	r18,10
+    1088:	00000406 	br	109c <setWord+0x40>
+		word[letterCount] = letter;
+    108c:	80c03fcc 	andi	r3,r16,255
+    1090:	88c7883a 	add	r3,r17,r3
+    1094:	18800005 	stb	r2,0(r3)
+		letterCount++;
+    1098:	84000044 	addi	r16,r16,1
+
+alt_u8 setWord(char * word) {
+	alt_putstr("Please enter your word (Max 20 letters):\n");
+	char letter = '#';
+	alt_u8 letterCount = 0;
+	while ((letter = alt_getchar()) != '\n') {
+    109c:	00017100 	call	1710 <alt_getchar>
+    10a0:	10c03fcc 	andi	r3,r2,255
+    10a4:	18c0201c 	xori	r3,r3,128
+    10a8:	18ffe004 	addi	r3,r3,-128
+    10ac:	1cbff71e 	bne	r3,r18,108c <_gp+0xffff71d8>
+		word[letterCount] = letter;
+		letterCount++;
+	}
+	return letterCount;
+}
+    10b0:	8005883a 	mov	r2,r16
+    10b4:	dfc00317 	ldw	ra,12(sp)
+    10b8:	dc800217 	ldw	r18,8(sp)
+    10bc:	dc400117 	ldw	r17,4(sp)
+    10c0:	dc000017 	ldw	r16,0(sp)
+    10c4:	dec00404 	addi	sp,sp,16
+    10c8:	f800283a 	ret
+
+000010cc <recieveData>:
+	// Should never get here
+	return 0;
+}
+
+alt_u8 recieveData() {
+	alt_u8 strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+    10cc:	008c0c04 	movi	r2,12336
+	while (strobe == 0) {
+		strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+    10d0:	10c00037 	ldwio	r3,0(r2)
+	return 0;
+}
+
+alt_u8 recieveData() {
+	alt_u8 strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+	while (strobe == 0) {
+    10d4:	19003fcc 	andi	r4,r3,255
+    10d8:	203ffd26 	beq	r4,zero,10d0 <_gp+0xffff721c>
+		strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+	}
+	alt_u8 retVal = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+    10dc:	008c0404 	movi	r2,12304
+    10e0:	10800037 	ldwio	r2,0(r2)
+	while (strobe == 1) {
+    10e4:	01000044 	movi	r4,1
+		strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+    10e8:	014c0c04 	movi	r5,12336
+	alt_u8 strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+	while (strobe == 0) {
+		strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+	}
+	alt_u8 retVal = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+	while (strobe == 1) {
+    10ec:	00000106 	br	10f4 <recieveData+0x28>
+		strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+    10f0:	28c00037 	ldwio	r3,0(r5)
+	alt_u8 strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+	while (strobe == 0) {
+		strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+	}
+	alt_u8 retVal = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+	while (strobe == 1) {
+    10f4:	18c03fcc 	andi	r3,r3,255
+    10f8:	193ffd26 	beq	r3,r4,10f0 <_gp+0xffff723c>
+		strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+	}
+	return retVal;
+}
+    10fc:	f800283a 	ret
+
+00001100 <sendData>:
+
+
+void sendData(alt_u8 data) {
+	alt_u8 empty = 0;
+	//sends data to camera
+	IOWR_ALTERA_AVALON_PIO_DATA(curByteOut, data);
+    1100:	21003fcc 	andi	r4,r4,255
+    1104:	008c1004 	movi	r2,12352
+    1108:	11000035 	stwio	r4,0(r2)
+	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x1);
+    110c:	010c0804 	movi	r4,12320
+    1110:	00800044 	movi	r2,1
+    1114:	20800035 	stwio	r2,0(r4)
+
+	empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
+    1118:	00cc0004 	movi	r3,12288
+	while (empty == 0) {
+		empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
+    111c:	18800037 	ldwio	r2,0(r3)
+	//sends data to camera
+	IOWR_ALTERA_AVALON_PIO_DATA(curByteOut, data);
+	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x1);
+
+	empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
+	while (empty == 0) {
+    1120:	10803fcc 	andi	r2,r2,255
+    1124:	103ffd26 	beq	r2,zero,111c <_gp+0xffff7268>
+		empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
+	}
+	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
+    1128:	20000035 	stwio	zero,0(r4)
+    112c:	f800283a 	ret
+
+00001130 <startGame>:
+	return letterCount;
+}
+
+// Retries the send/recieve pattern after a timeout
+// until data is recieved.
+alt_u8 startGame(alt_u8 letterCount) {
+    1130:	defffa04 	addi	sp,sp,-24
+    1134:	dd000415 	stw	r20,16(sp)
+    1138:	dcc00315 	stw	r19,12(sp)
+    113c:	dc800215 	stw	r18,8(sp)
+    1140:	dc000015 	stw	r16,0(sp)
+    1144:	dfc00515 	stw	ra,20(sp)
+    1148:	dc400115 	stw	r17,4(sp)
+	int timeout = 0;
+    114c:	0025883a 	mov	r18,zero
+	do {
+		alt_u8 retVal = 0;
+		int wait = 0;
+		sendData(letterCount);
+    1150:	24c03fcc 	andi	r19,r4,255
+		alt_u8 strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+    1154:	050c0c04 	movi	r20,12336
+				alt_putstr("Player waiting timeout. Retrying...\n");
+				timeout = 1;
+				break;
+			}
+		}
+		if (strobe == 1) {
+    1158:	04000044 	movi	r16,1
+alt_u8 startGame(alt_u8 letterCount) {
+	int timeout = 0;
+	do {
+		alt_u8 retVal = 0;
+		int wait = 0;
+		sendData(letterCount);
+    115c:	9809883a 	mov	r4,r19
+    1160:	00011000 	call	1100 <sendData>
+		alt_u8 strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+    1164:	a4400037 	ldwio	r17,0(r20)
+		while (strobe == 0) {
+    1168:	008007f4 	movhi	r2,31
+    116c:	10a12004 	addi	r2,r2,-31616
+    1170:	00cc0c04 	movi	r3,12336
+    1174:	00000a06 	br	11a0 <startGame+0x70>
+			strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+    1178:	1c400037 	ldwio	r17,0(r3)
+    117c:	10bfffc4 	addi	r2,r2,-1
+			wait++;
+			if (wait == 2000000) {
+    1180:	1000071e 	bne	r2,zero,11a0 <startGame+0x70>
+				alt_putstr("Player waiting timeout. Retrying...\n");
+    1184:	01000034 	movhi	r4,0
+    1188:	2106e604 	addi	r4,r4,7064
+				timeout = 1;
+				break;
+			}
+		}
+		if (strobe == 1) {
+    118c:	8c403fcc 	andi	r17,r17,255
+		alt_u8 strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+		while (strobe == 0) {
+			strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+			wait++;
+			if (wait == 2000000) {
+				alt_putstr("Player waiting timeout. Retrying...\n");
+    1190:	0001a400 	call	1a40 <alt_putstr>
+				timeout = 1;
+				break;
+			}
+		}
+		if (strobe == 1) {
+    1194:	8c000526 	beq	r17,r16,11ac <startGame+0x7c>
+		while (strobe == 0) {
+			strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+			wait++;
+			if (wait == 2000000) {
+				alt_putstr("Player waiting timeout. Retrying...\n");
+				timeout = 1;
+    1198:	04800044 	movi	r18,1
+    119c:	003fef06 	br	115c <_gp+0xffff72a8>
+	do {
+		alt_u8 retVal = 0;
+		int wait = 0;
+		sendData(letterCount);
+		alt_u8 strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+		while (strobe == 0) {
+    11a0:	8c403fcc 	andi	r17,r17,255
+    11a4:	883ff426 	beq	r17,zero,1178 <_gp+0xffff72c4>
+				alt_putstr("Player waiting timeout. Retrying...\n");
+				timeout = 1;
+				break;
+			}
+		}
+		if (strobe == 1) {
+    11a8:	8c000e1e 	bne	r17,r16,11e4 <startGame+0xb4>
+			retVal = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+    11ac:	008c0404 	movi	r2,12304
+    11b0:	10c00037 	ldwio	r3,0(r2)
+			if (retVal == DATA_RECIEVED) {	// Value to show data was received
+    11b4:	00803fc4 	movi	r2,255
+    11b8:	18c03fcc 	andi	r3,r3,255
+    11bc:	18800226 	beq	r3,r2,11c8 <startGame+0x98>
+		}
+		wait = 0;
+	} while (timeout == 1);
+
+	// Should never get here
+	return 0;
+    11c0:	0005883a 	mov	r2,zero
+    11c4:	00000906 	br	11ec <startGame+0xbc>
+		}
+		if (strobe == 1) {
+			retVal = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+			if (retVal == DATA_RECIEVED) {	// Value to show data was received
+				while (strobe == 1) {
+					strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+    11c8:	010c0c04 	movi	r4,12336
+			}
+		}
+		if (strobe == 1) {
+			retVal = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+			if (retVal == DATA_RECIEVED) {	// Value to show data was received
+				while (strobe == 1) {
+    11cc:	00800044 	movi	r2,1
+					strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+    11d0:	20c00037 	ldwio	r3,0(r4)
+			}
+		}
+		if (strobe == 1) {
+			retVal = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+			if (retVal == DATA_RECIEVED) {	// Value to show data was received
+				while (strobe == 1) {
+    11d4:	18c03fcc 	andi	r3,r3,255
+    11d8:	18bffd26 	beq	r3,r2,11d0 <_gp+0xffff731c>
+					strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+				}
+				return 1;
+    11dc:	00800044 	movi	r2,1
+    11e0:	00000206 	br	11ec <startGame+0xbc>
+				timeout = 1;
+			}
+			timeout = 0;
+		}
+		wait = 0;
+	} while (timeout == 1);
+    11e4:	943fdd26 	beq	r18,r16,115c <_gp+0xffff72a8>
+    11e8:	003ff506 	br	11c0 <_gp+0xffff730c>
+
+	// Should never get here
+	return 0;
+}
+    11ec:	dfc00517 	ldw	ra,20(sp)
+    11f0:	dd000417 	ldw	r20,16(sp)
+    11f4:	dcc00317 	ldw	r19,12(sp)
+    11f8:	dc800217 	ldw	r18,8(sp)
+    11fc:	dc400117 	ldw	r17,4(sp)
+    1200:	dc000017 	ldw	r16,0(sp)
+    1204:	dec00604 	addi	sp,sp,24
+    1208:	f800283a 	ret
+
+0000120c <player>:
+		alt_getchar();
+		//break;
+	}
+}
+
+void player() {
+    120c:	defffb04 	addi	sp,sp,-20
+    1210:	dc800215 	stw	r18,8(sp)
+    1214:	dfc00415 	stw	ra,16(sp)
+    1218:	dcc00315 	stw	r19,12(sp)
+    121c:	dc400115 	stw	r17,4(sp)
+    1220:	dc000015 	stw	r16,0(sp)
+	// Wait for the code that the master is ready
+	int wordLen = recieveData();
+    1224:	00010cc0 	call	10cc <recieveData>
+	alt_u8 guessesRemaining = MAX_GUESSES;
+	// Send that we got the word and are about to play
+	sendData(DATA_RECIEVED);
+    1228:	01003fc4 	movi	r4,255
+	}
+}
+
+void player() {
+	// Wait for the code that the master is ready
+	int wordLen = recieveData();
+    122c:	14803fcc 	andi	r18,r2,255
+	alt_u8 guessesRemaining = MAX_GUESSES;
+	// Send that we got the word and are about to play
+	sendData(DATA_RECIEVED);
+    1230:	00011000 	call	1100 <sendData>
+
+	while (1) {
+		// Now we are ready to send guesses!
+		alt_getchar();
+    1234:	00017100 	call	1710 <alt_getchar>
+		alt_putstr("Please enter a letter and press enter\n");
+    1238:	01000034 	movhi	r4,0
+    123c:	2106f004 	addi	r4,r4,7104
+    1240:	0001a400 	call	1a40 <alt_putstr>
+		alt_u8 letter = alt_getchar();
+    1244:	00017100 	call	1710 <alt_getchar>
+
+		// Send the letter
+
+		sendData(letter);
+    1248:	14403fcc 	andi	r17,r2,255
+    124c:	8809883a 	mov	r4,r17
+    1250:	00011000 	call	1100 <sendData>
+
+		// Get the response
+		alt_u8 response = recieveData();
+    1254:	00010cc0 	call	10cc <recieveData>
+
+		if (response == WIN_VAL) {
+    1258:	14003fcc 	andi	r16,r2,255
+    125c:	00803f84 	movi	r2,254
+    1260:	8080031e 	bne	r16,r2,1270 <player+0x64>
+			alt_putstr("Congratulations you won!\n");
+    1264:	01000034 	movhi	r4,0
+    1268:	2106fa04 	addi	r4,r4,7144
+    126c:	00000406 	br	1280 <player+0x74>
+			break;
+		}
+		else if (response == LOSE_VAL) {
+    1270:	00803f44 	movi	r2,253
+    1274:	8080091e 	bne	r16,r2,129c <player+0x90>
+			alt_putstr("You lost because you have no friends and your life is\nmeaningless and you smell bad.\nWaiting for new game...\n");
+    1278:	01000034 	movhi	r4,0
+    127c:	21070104 	addi	r4,r4,7172
+		}
+		alt_putstr("\n");
+
+		alt_printf("You now have '%x' guesses remaining.\n\n", guessesRemaining);
+	}
+}
+    1280:	dfc00417 	ldw	ra,16(sp)
+    1284:	dcc00317 	ldw	r19,12(sp)
+    1288:	dc800217 	ldw	r18,8(sp)
+    128c:	dc400117 	ldw	r17,4(sp)
+    1290:	dc000017 	ldw	r16,0(sp)
+    1294:	dec00504 	addi	sp,sp,20
+		if (response == WIN_VAL) {
+			alt_putstr("Congratulations you won!\n");
+			break;
+		}
+		else if (response == LOSE_VAL) {
+			alt_putstr("You lost because you have no friends and your life is\nmeaningless and you smell bad.\nWaiting for new game...\n");
+    1298:	0001a401 	jmpi	1a40 <alt_putstr>
+			break;
+		}
+		// If we come here than we're in normal gameplay
+		sendData(DATA_RECIEVED);
+    129c:	01003fc4 	movi	r4,255
+    12a0:	00011000 	call	1100 <sendData>
+		guessesRemaining = recieveData();
+    12a4:	00010cc0 	call	10cc <recieveData>
+    12a8:	1027883a 	mov	r19,r2
+
+		if (response == 0) {
+    12ac:	8000031e 	bne	r16,zero,12bc <player+0xb0>
+			alt_printf("Sorry, the letter '%c' was incorrect\n", letter);
+    12b0:	01000034 	movhi	r4,0
+    12b4:	21071d04 	addi	r4,r4,7284
+    12b8:	00000906 	br	12e0 <player+0xd4>
+		}
+		else if (response <= wordLen) {
+    12bc:	94000616 	blt	r18,r16,12d8 <player+0xcc>
+			alt_printf("The letter '%c' was correct and filled %x places!\n", letter, response);
+    12c0:	01000034 	movhi	r4,0
+    12c4:	21072704 	addi	r4,r4,7324
+    12c8:	880b883a 	mov	r5,r17
+    12cc:	800d883a 	mov	r6,r16
+    12d0:	00018840 	call	1884 <alt_printf>
+    12d4:	00000406 	br	12e8 <player+0xdc>
+		}
+		else
+			alt_printf("You already guessed the letter '%c'!\n", letter);
+    12d8:	01000034 	movhi	r4,0
+    12dc:	21073404 	addi	r4,r4,7376
+    12e0:	880b883a 	mov	r5,r17
+    12e4:	00018840 	call	1884 <alt_printf>
+		int numGuesses = MAX_GUESSES - guessesRemaining;
+		// Acknowledge last data recieved
+		sendData(DATA_RECIEVED);
+    12e8:	01003fc4 	movi	r4,255
+    12ec:	00011000 	call	1100 <sendData>
+		else if (response <= wordLen) {
+			alt_printf("The letter '%c' was correct and filled %x places!\n", letter, response);
+		}
+		else
+			alt_printf("You already guessed the letter '%c'!\n", letter);
+		int numGuesses = MAX_GUESSES - guessesRemaining;
+    12f0:	9c403fcc 	andi	r17,r19,255
+		// Acknowledge last data recieved
+		sendData(DATA_RECIEVED);
+
+		// Print out the characters
+		alt_putstr("Word: ");
+    12f4:	01000034 	movhi	r4,0
+    12f8:	21073e04 	addi	r4,r4,7416
+		else if (response <= wordLen) {
+			alt_printf("The letter '%c' was correct and filled %x places!\n", letter, response);
+		}
+		else
+			alt_printf("You already guessed the letter '%c'!\n", letter);
+		int numGuesses = MAX_GUESSES - guessesRemaining;
+    12fc:	04c00304 	movi	r19,12
+    1300:	9c67c83a 	sub	r19,r19,r17
+		// Acknowledge last data recieved
+		sendData(DATA_RECIEVED);
+
+		// Print out the characters
+		alt_putstr("Word: ");
+    1304:	0001a400 	call	1a40 <alt_putstr>
+		int i;
+		for (i = 0; i < wordLen; i++) {
+    1308:	0021883a 	mov	r16,zero
+    130c:	00000806 	br	1330 <player+0x124>
+			letter = recieveData();
+    1310:	00010cc0 	call	10cc <recieveData>
+			alt_printf("%c ", letter);
+    1314:	01000034 	movhi	r4,0
+    1318:	21074004 	addi	r4,r4,7424
+    131c:	11403fcc 	andi	r5,r2,255
+    1320:	00018840 	call	1884 <alt_printf>
+
+			sendData(DATA_RECIEVED);
+    1324:	01003fc4 	movi	r4,255
+    1328:	00011000 	call	1100 <sendData>
+		sendData(DATA_RECIEVED);
+
+		// Print out the characters
+		alt_putstr("Word: ");
+		int i;
+		for (i = 0; i < wordLen; i++) {
+    132c:	84000044 	addi	r16,r16,1
+    1330:	84bff716 	blt	r16,r18,1310 <_gp+0xffff745c>
+			letter = recieveData();
+			alt_printf("%c ", letter);
+
+			sendData(DATA_RECIEVED);
+		}
+		alt_putstr("\nGuessed characters: ");
+    1334:	01000034 	movhi	r4,0
+    1338:	21074104 	addi	r4,r4,7428
+    133c:	0001a400 	call	1a40 <alt_putstr>
+
+		//acknowledgement for ready to recieve before recieving
+		for (i = 0; i < numGuesses; i++) {
+    1340:	0021883a 	mov	r16,zero
+    1344:	00000c06 	br	1378 <player+0x16c>
+			sendData(DATA_RECIEVED);
+    1348:	01003fc4 	movi	r4,255
+    134c:	00011000 	call	1100 <sendData>
+
+			letter = recieveData();
+    1350:	00010cc0 	call	10cc <recieveData>
+    1354:	11403fcc 	andi	r5,r2,255
+
+			if (i == 0)
+    1358:	8000031e 	bne	r16,zero,1368 <player+0x15c>
+				alt_printf("%c", letter);
+    135c:	01000034 	movhi	r4,0
+    1360:	21074704 	addi	r4,r4,7452
+    1364:	00000206 	br	1370 <player+0x164>
+			else
+				alt_printf(", %c", letter);
+    1368:	01000034 	movhi	r4,0
+    136c:	21074804 	addi	r4,r4,7456
+    1370:	00018840 	call	1884 <alt_printf>
+			sendData(DATA_RECIEVED);
+		}
+		alt_putstr("\nGuessed characters: ");
+
+		//acknowledgement for ready to recieve before recieving
+		for (i = 0; i < numGuesses; i++) {
+    1374:	84000044 	addi	r16,r16,1
+    1378:	84fff316 	blt	r16,r19,1348 <_gp+0xffff7494>
+			else
+				alt_printf(", %c", letter);
+			//alt_printf("sent data recieved\n");
+
+		}
+		alt_putstr("\n");
+    137c:	01000034 	movhi	r4,0
+    1380:	21073d04 	addi	r4,r4,7412
+    1384:	0001a400 	call	1a40 <alt_putstr>
+
+		alt_printf("You now have '%x' guesses remaining.\n\n", guessesRemaining);
+    1388:	01000034 	movhi	r4,0
+    138c:	21074a04 	addi	r4,r4,7464
+    1390:	880b883a 	mov	r5,r17
+    1394:	00018840 	call	1884 <alt_printf>
+	}
+    1398:	003fa606 	br	1234 <_gp+0xffff7380>
+
+0000139c <game_master>:
+			player();
+
+	return 0;
+}
+
+void game_master() {
+    139c:	deffee04 	addi	sp,sp,-72
+    13a0:	df001015 	stw	fp,64(sp)
+    13a4:	df000804 	addi	fp,sp,32
+    13a8:	dfc01115 	stw	ra,68(sp)
+    13ac:	ddc00f15 	stw	r23,60(sp)
+    13b0:	dd800e15 	stw	r22,56(sp)
+    13b4:	dd400d15 	stw	r21,52(sp)
+    13b8:	dd000c15 	stw	r20,48(sp)
+    13bc:	dcc00b15 	stw	r19,44(sp)
+    13c0:	dc800a15 	stw	r18,40(sp)
+    13c4:	dc400915 	stw	r17,36(sp)
+    13c8:	dc000815 	stw	r16,32(sp)
+	// Set word
+	alt_getchar();  // Recieve dummy byte
+    13cc:	00017100 	call	1710 <alt_getchar>
+	char word[20];
+	int j;
+	for (j = 0; j < 20; j++) {
+    13d0:	0005883a 	mov	r2,zero
+		word[j] = '\n';
+    13d4:	01400284 	movi	r5,10
+void game_master() {
+	// Set word
+	alt_getchar();  // Recieve dummy byte
+	char word[20];
+	int j;
+	for (j = 0; j < 20; j++) {
+    13d8:	00c00504 	movi	r3,20
+			player();
+
+	return 0;
+}
+
+void game_master() {
+    13dc:	e1bff804 	addi	r6,fp,-32
+    13e0:	3089883a 	add	r4,r6,r2
+	// Set word
+	alt_getchar();  // Recieve dummy byte
+	char word[20];
+	int j;
+	for (j = 0; j < 20; j++) {
+		word[j] = '\n';
+    13e4:	21400005 	stb	r5,0(r4)
+void game_master() {
+	// Set word
+	alt_getchar();  // Recieve dummy byte
+	char word[20];
+	int j;
+	for (j = 0; j < 20; j++) {
+    13e8:	10800044 	addi	r2,r2,1
+    13ec:	10fffb1e 	bne	r2,r3,13dc <_gp+0xffff7528>
+		word[j] = '\n';
+	}
+	alt_u8 letterCount = setWord(word);
+    13f0:	3009883a 	mov	r4,r6
+    13f4:	000105c0 	call	105c <setWord>
+
+	// Word placements
+	alt_u8 letterPlacement[letterCount];
+    13f8:	14403fcc 	andi	r17,r2,255
+	char word[20];
+	int j;
+	for (j = 0; j < 20; j++) {
+		word[j] = '\n';
+	}
+	alt_u8 letterCount = setWord(word);
+    13fc:	102d883a 	mov	r22,r2
+
+	// Word placements
+	alt_u8 letterPlacement[letterCount];
+    1400:	888000c4 	addi	r2,r17,3
+    1404:	10807f0c 	andi	r2,r2,508
+    1408:	d8b7c83a 	sub	sp,sp,r2
+    140c:	d82b883a 	mov	r21,sp
+
+	for (j = 0; j < letterCount; j++) {
+    1410:	d807883a 	mov	r3,sp
+    1414:	00000206 	br	1420 <game_master+0x84>
+		letterPlacement[j] = 0;
+    1418:	18000005 	stb	zero,0(r3)
+    141c:	18c00044 	addi	r3,r3,1
+			player();
+
+	return 0;
+}
+
+void game_master() {
+    1420:	1d45c83a 	sub	r2,r3,r21
+	alt_u8 letterCount = setWord(word);
+
+	// Word placements
+	alt_u8 letterPlacement[letterCount];
+
+	for (j = 0; j < letterCount; j++) {
+    1424:	147ffc16 	blt	r2,r17,1418 <_gp+0xffff7564>
+    1428:	0007883a 	mov	r3,zero
+	// Now we recieve input from the player and check it
+	int guesses = 0;
+	int win = 0;
+	alt_u8 guessedLetters[MAX_GUESSES];  // Already guessed letters
+	for (j = 0; j < MAX_GUESSES;  j++) {
+		guessedLetters[j] = '\n';
+    142c:	01400284 	movi	r5,10
+
+	// Now we recieve input from the player and check it
+	int guesses = 0;
+	int win = 0;
+	alt_u8 guessedLetters[MAX_GUESSES];  // Already guessed letters
+	for (j = 0; j < MAX_GUESSES;  j++) {
+    1430:	00800304 	movi	r2,12
+			player();
+
+	return 0;
+}
+
+void game_master() {
+    1434:	e1bffd04 	addi	r6,fp,-12
+    1438:	30c9883a 	add	r4,r6,r3
+	// Now we recieve input from the player and check it
+	int guesses = 0;
+	int win = 0;
+	alt_u8 guessedLetters[MAX_GUESSES];  // Already guessed letters
+	for (j = 0; j < MAX_GUESSES;  j++) {
+		guessedLetters[j] = '\n';
+    143c:	21400005 	stb	r5,0(r4)
+
+	// Now we recieve input from the player and check it
+	int guesses = 0;
+	int win = 0;
+	alt_u8 guessedLetters[MAX_GUESSES];  // Already guessed letters
+	for (j = 0; j < MAX_GUESSES;  j++) {
+    1440:	18c00044 	addi	r3,r3,1
+    1444:	18bffb1e 	bne	r3,r2,1434 <_gp+0xffff7580>
+
+	// Send to the player to say that we're ready for guesses
+	// We use 255 for send
+	// Wait for the return signal from the player so we know to start the game
+	// If we don't get this, something has gone wrong and we need to retry
+	startGame(letterCount);
+    1448:	8809883a 	mov	r4,r17
+    144c:	00011300 	call	1130 <startGame>
+	for (j = 0; j < letterCount; j++) {
+		letterPlacement[j] = 0;
+	}
+
+	// Now we recieve input from the player and check it
+	int guesses = 0;
+    1450:	0021883a 	mov	r16,zero
+
+		// Check if the letter is already guessed
+		for (i = 0; i < guesses; i++) {
+			if (guessedLetters[i] == guess) {
+				alt_putstr("This letter has already been guessed!\n");
+				retVal = letterCount+1;
+    1454:	b5800044 	addi	r22,r22,1
+	// Now we are ready to wait to recieve data
+	alt_u8 guess;
+	alt_u8 retVal;
+	int lettersCorrect;
+	while (!win && guesses < MAX_GUESSES) {
+		alt_putstr("Waiting for next guess\n");
+    1458:	01000034 	movhi	r4,0
+    145c:	21075404 	addi	r4,r4,7504
+    1460:	0001a400 	call	1a40 <alt_putstr>
+		guess = recieveData();
+    1464:	00010cc0 	call	10cc <recieveData>
+    1468:	1029883a 	mov	r20,r2
+		alt_putstr("Guess recieved\n");
+    146c:	01000034 	movhi	r4,0
+    1470:	21075a04 	addi	r4,r4,7528
+    1474:	0001a400 	call	1a40 <alt_putstr>
+
+		int i;
+		retVal = 0; // 1 - letterCount == correct, 0 == wrong, letterCount+1 = alreadyGuessed
+
+		// Check if the letter is already guessed
+		for (i = 0; i < guesses; i++) {
+    1478:	0027883a 	mov	r19,zero
+		alt_putstr("Waiting for next guess\n");
+		guess = recieveData();
+		alt_putstr("Guess recieved\n");
+
+		int i;
+		retVal = 0; // 1 - letterCount == correct, 0 == wrong, letterCount+1 = alreadyGuessed
+    147c:	0025883a 	mov	r18,zero
+
+		// Check if the letter is already guessed
+		for (i = 0; i < guesses; i++) {
+			if (guessedLetters[i] == guess) {
+    1480:	a5c03fcc 	andi	r23,r20,255
+
+		int i;
+		retVal = 0; // 1 - letterCount == correct, 0 == wrong, letterCount+1 = alreadyGuessed
+
+		// Check if the letter is already guessed
+		for (i = 0; i < guesses; i++) {
+    1484:	00000906 	br	14ac <game_master+0x110>
+			player();
+
+	return 0;
+}
+
+void game_master() {
+    1488:	e0fffd04 	addi	r3,fp,-12
+    148c:	1cc5883a 	add	r2,r3,r19
+		int i;
+		retVal = 0; // 1 - letterCount == correct, 0 == wrong, letterCount+1 = alreadyGuessed
+
+		// Check if the letter is already guessed
+		for (i = 0; i < guesses; i++) {
+			if (guessedLetters[i] == guess) {
+    1490:	10800003 	ldbu	r2,0(r2)
+    1494:	15c0041e 	bne	r2,r23,14a8 <game_master+0x10c>
+				alt_putstr("This letter has already been guessed!\n");
+    1498:	01000034 	movhi	r4,0
+    149c:	21075e04 	addi	r4,r4,7544
+    14a0:	0001a400 	call	1a40 <alt_putstr>
+				retVal = letterCount+1;
+    14a4:	b025883a 	mov	r18,r22
+
+		int i;
+		retVal = 0; // 1 - letterCount == correct, 0 == wrong, letterCount+1 = alreadyGuessed
+
+		// Check if the letter is already guessed
+		for (i = 0; i < guesses; i++) {
+    14a8:	9cc00044 	addi	r19,r19,1
+    14ac:	9c3ff616 	blt	r19,r16,1488 <_gp+0xffff75d4>
+			if (guessedLetters[i] == guess) {
+				alt_putstr("This letter has already been guessed!\n");
+				retVal = letterCount+1;
+			}
+		}
+		if (retVal == 0) {
+    14b0:	90803fcc 	andi	r2,r18,255
+    14b4:	1000111e 	bne	r2,zero,14fc <game_master+0x160>
+			guessedLetters[guesses] = guess;
+    14b8:	e17ffd04 	addi	r5,fp,-12
+    14bc:	2c05883a 	add	r2,r5,r16
+    14c0:	15000005 	stb	r20,0(r2)
+			for (i = 0; i < letterCount; i++) {
+    14c4:	0007883a 	mov	r3,zero
+				if (word[i] == guess) {
+    14c8:	a5003fcc 	andi	r20,r20,255
+					retVal++;
+					letterPlacement[i] = 1;
+    14cc:	00800044 	movi	r2,1
+				retVal = letterCount+1;
+			}
+		}
+		if (retVal == 0) {
+			guessedLetters[guesses] = guess;
+			for (i = 0; i < letterCount; i++) {
+    14d0:	00000806 	br	14f4 <game_master+0x158>
+			player();
+
+	return 0;
+}
+
+void game_master() {
+    14d4:	e1bff804 	addi	r6,fp,-32
+    14d8:	30c9883a 	add	r4,r6,r3
+			}
+		}
+		if (retVal == 0) {
+			guessedLetters[guesses] = guess;
+			for (i = 0; i < letterCount; i++) {
+				if (word[i] == guess) {
+    14dc:	21000007 	ldb	r4,0(r4)
+    14e0:	2500031e 	bne	r4,r20,14f0 <game_master+0x154>
+			player();
+
+	return 0;
+}
+
+void game_master() {
+    14e4:	a8c9883a 	add	r4,r21,r3
+		}
+		if (retVal == 0) {
+			guessedLetters[guesses] = guess;
+			for (i = 0; i < letterCount; i++) {
+				if (word[i] == guess) {
+					retVal++;
+    14e8:	94800044 	addi	r18,r18,1
+					letterPlacement[i] = 1;
+    14ec:	20800005 	stb	r2,0(r4)
+				retVal = letterCount+1;
+			}
+		}
+		if (retVal == 0) {
+			guessedLetters[guesses] = guess;
+			for (i = 0; i < letterCount; i++) {
+    14f0:	18c00044 	addi	r3,r3,1
+    14f4:	1c7ff716 	blt	r3,r17,14d4 <_gp+0xffff7620>
+					retVal++;
+					letterPlacement[i] = 1;
+				}
+			}
+			// Increment guess value
+			guesses++;
+    14f8:	84000044 	addi	r16,r16,1
+		}
+
+		// Display letter placements
+		lettersCorrect = 0;
+		alt_putstr("Word: ");
+    14fc:	01000034 	movhi	r4,0
+    1500:	21073e04 	addi	r4,r4,7416
+    1504:	0001a400 	call	1a40 <alt_putstr>
+		for (i = 0; i < letterCount; i++) {
+    1508:	0027883a 	mov	r19,zero
+			// Increment guess value
+			guesses++;
+		}
+
+		// Display letter placements
+		lettersCorrect = 0;
+    150c:	0029883a 	mov	r20,zero
+		alt_putstr("Word: ");
+		for (i = 0; i < letterCount; i++) {
+			if (letterPlacement[i] == 1) {
+    1510:	05c00044 	movi	r23,1
+		}
+
+		// Display letter placements
+		lettersCorrect = 0;
+		alt_putstr("Word: ");
+		for (i = 0; i < letterCount; i++) {
+    1514:	00000f06 	br	1554 <game_master+0x1b8>
+			player();
+
+	return 0;
+}
+
+void game_master() {
+    1518:	acc5883a 	add	r2,r21,r19
+
+		// Display letter placements
+		lettersCorrect = 0;
+		alt_putstr("Word: ");
+		for (i = 0; i < letterCount; i++) {
+			if (letterPlacement[i] == 1) {
+    151c:	10800003 	ldbu	r2,0(r2)
+    1520:	15c0081e 	bne	r2,r23,1544 <game_master+0x1a8>
+			player();
+
+	return 0;
+}
+
+void game_master() {
+    1524:	e0fff804 	addi	r3,fp,-32
+    1528:	1cc5883a 	add	r2,r3,r19
+		// Display letter placements
+		lettersCorrect = 0;
+		alt_putstr("Word: ");
+		for (i = 0; i < letterCount; i++) {
+			if (letterPlacement[i] == 1) {
+				alt_printf("%c ", word[i]);
+    152c:	11400007 	ldb	r5,0(r2)
+    1530:	01000034 	movhi	r4,0
+    1534:	21074004 	addi	r4,r4,7424
+				lettersCorrect++;
+    1538:	a5000044 	addi	r20,r20,1
+		// Display letter placements
+		lettersCorrect = 0;
+		alt_putstr("Word: ");
+		for (i = 0; i < letterCount; i++) {
+			if (letterPlacement[i] == 1) {
+				alt_printf("%c ", word[i]);
+    153c:	00018840 	call	1884 <alt_printf>
+    1540:	00000306 	br	1550 <game_master+0x1b4>
+				lettersCorrect++;
+			} else
+				alt_putstr("_ ");
+    1544:	01000034 	movhi	r4,0
+    1548:	21076804 	addi	r4,r4,7584
+    154c:	0001a400 	call	1a40 <alt_putstr>
+		}
+
+		// Display letter placements
+		lettersCorrect = 0;
+		alt_putstr("Word: ");
+		for (i = 0; i < letterCount; i++) {
+    1550:	9cc00044 	addi	r19,r19,1
+    1554:	9c7ff016 	blt	r19,r17,1518 <_gp+0xffff7664>
+				alt_printf("%c ", word[i]);
+				lettersCorrect++;
+			} else
+				alt_putstr("_ ");
+		}
+		alt_putstr("\nGuessed Letters: ");
+    1558:	01000034 	movhi	r4,0
+    155c:	21076904 	addi	r4,r4,7588
+    1560:	0001a400 	call	1a40 <alt_putstr>
+		for (i = 0; i < guesses; i++) {
+    1564:	0027883a 	mov	r19,zero
+    1568:	00000c06 	br	159c <game_master+0x200>
+			if (i == 0)
+    156c:	9800041e 	bne	r19,zero,1580 <game_master+0x1e4>
+				alt_printf("%c", guessedLetters[i]);
+    1570:	01000034 	movhi	r4,0
+    1574:	21074704 	addi	r4,r4,7452
+    1578:	e17ffd03 	ldbu	r5,-12(fp)
+    157c:	00000506 	br	1594 <game_master+0x1f8>
+			else
+				alt_printf(", %c", guessedLetters[i]);
+    1580:	e17ffd04 	addi	r5,fp,-12
+    1584:	2cc5883a 	add	r2,r5,r19
+    1588:	11400003 	ldbu	r5,0(r2)
+    158c:	01000034 	movhi	r4,0
+    1590:	21074804 	addi	r4,r4,7456
+    1594:	00018840 	call	1884 <alt_printf>
+				lettersCorrect++;
+			} else
+				alt_putstr("_ ");
+		}
+		alt_putstr("\nGuessed Letters: ");
+		for (i = 0; i < guesses; i++) {
+    1598:	9cc00044 	addi	r19,r19,1
+    159c:	9c3ff316 	blt	r19,r16,156c <_gp+0xffff76b8>
+			if (i == 0)
+				alt_printf("%c", guessedLetters[i]);
+			else
+				alt_printf(", %c", guessedLetters[i]);
+		}
+		alt_putstr("\n\n");
+    15a0:	01000034 	movhi	r4,0
+    15a4:	21075304 	addi	r4,r4,7500
+    15a8:	0001a400 	call	1a40 <alt_putstr>
+
+		// Check if win is true
+		if (lettersCorrect == letterCount) {
+    15ac:	a440051e 	bne	r20,r17,15c4 <game_master+0x228>
+		}
+	}
+
+	// Check win condition
+	if (lettersCorrect == letterCount) {
+		sendData(WIN_VAL);
+    15b0:	01003f84 	movi	r4,254
+    15b4:	00011000 	call	1100 <sendData>
+		//alt_getchar();
+		alt_putstr("Player won!\nPress a character to play again\n");
+    15b8:	01000034 	movhi	r4,0
+    15bc:	21076e04 	addi	r4,r4,7608
+    15c0:	00002a06 	br	166c <game_master+0x2d0>
+		// Check if win is true
+		if (lettersCorrect == letterCount) {
+			win = 1;
+			break;
+		}
+		else if (guesses == MAX_GUESSES) {
+    15c4:	04c00304 	movi	r19,12
+    15c8:	84c0021e 	bne	r16,r19,15d4 <game_master+0x238>
+			sendData(guessedLetters[i]);
+		}
+	}
+
+	// Check win condition
+	if (lettersCorrect == letterCount) {
+    15cc:	a440231e 	bne	r20,r17,165c <game_master+0x2c0>
+    15d0:	003ff706 	br	15b0 <_gp+0xffff76fc>
+		else if (guesses == MAX_GUESSES) {
+			break;
+		}
+
+		// Send back the guessed answer
+		sendData(retVal);
+    15d4:	91003fcc 	andi	r4,r18,255
+    15d8:	00011000 	call	1100 <sendData>
+		recieveData();
+    15dc:	00010cc0 	call	10cc <recieveData>
+
+		// Send back how many guesses remain
+		sendData(MAX_GUESSES - guesses);
+    15e0:	9c09c83a 	sub	r4,r19,r16
+    15e4:	21003fcc 	andi	r4,r4,255
+    15e8:	00011000 	call	1100 <sendData>
+		recieveData();
+    15ec:	00010cc0 	call	10cc <recieveData>
+
+		// Now send the word
+		for (i = 0; i < letterCount; i++) {
+    15f0:	0025883a 	mov	r18,zero
+			if (letterPlacement[i] == 1) {
+    15f4:	04c00044 	movi	r19,1
+		// Send back how many guesses remain
+		sendData(MAX_GUESSES - guesses);
+		recieveData();
+
+		// Now send the word
+		for (i = 0; i < letterCount; i++) {
+    15f8:	00000b06 	br	1628 <game_master+0x28c>
+			player();
+
+	return 0;
+}
+
+void game_master() {
+    15fc:	ac85883a 	add	r2,r21,r18
+		sendData(MAX_GUESSES - guesses);
+		recieveData();
+
+		// Now send the word
+		for (i = 0; i < letterCount; i++) {
+			if (letterPlacement[i] == 1) {
+    1600:	10800003 	ldbu	r2,0(r2)
+    1604:	14c0041e 	bne	r2,r19,1618 <game_master+0x27c>
+			player();
+
+	return 0;
+}
+
+void game_master() {
+    1608:	e1bff804 	addi	r6,fp,-32
+    160c:	3485883a 	add	r2,r6,r18
+		recieveData();
+
+		// Now send the word
+		for (i = 0; i < letterCount; i++) {
+			if (letterPlacement[i] == 1) {
+				sendData(word[i]);
+    1610:	11000003 	ldbu	r4,0(r2)
+    1614:	00000106 	br	161c <game_master+0x280>
+			}
+			else {
+				sendData('_');
+    1618:	010017c4 	movi	r4,95
+    161c:	00011000 	call	1100 <sendData>
+			}
+			recieveData();  //Confirmation
+    1620:	00010cc0 	call	10cc <recieveData>
+		// Send back how many guesses remain
+		sendData(MAX_GUESSES - guesses);
+		recieveData();
+
+		// Now send the word
+		for (i = 0; i < letterCount; i++) {
+    1624:	94800044 	addi	r18,r18,1
+    1628:	947ff416 	blt	r18,r17,15fc <_gp+0xffff7748>
+    162c:	0025883a 	mov	r18,zero
+    1630:	00000606 	br	164c <game_master+0x2b0>
+			recieveData();  //Confirmation
+		}
+
+		// Now send guesses
+		for (i = 0; i < guesses; i++) {
+			recieveData();
+    1634:	00010cc0 	call	10cc <recieveData>
+			player();
+
+	return 0;
+}
+
+void game_master() {
+    1638:	e0fffd04 	addi	r3,fp,-12
+    163c:	1c85883a 	add	r2,r3,r18
+		}
+
+		// Now send guesses
+		for (i = 0; i < guesses; i++) {
+			recieveData();
+			sendData(guessedLetters[i]);
+    1640:	11000003 	ldbu	r4,0(r2)
+			}
+			recieveData();  //Confirmation
+		}
+
+		// Now send guesses
+		for (i = 0; i < guesses; i++) {
+    1644:	94800044 	addi	r18,r18,1
+			recieveData();
+			sendData(guessedLetters[i]);
+    1648:	00011000 	call	1100 <sendData>
+			}
+			recieveData();  //Confirmation
+		}
+
+		// Now send guesses
+		for (i = 0; i < guesses; i++) {
+    164c:	943ff916 	blt	r18,r16,1634 <_gp+0xffff7780>
+
+	// Now we are ready to wait to recieve data
+	alt_u8 guess;
+	alt_u8 retVal;
+	int lettersCorrect;
+	while (!win && guesses < MAX_GUESSES) {
+    1650:	008002c4 	movi	r2,11
+    1654:	143f800e 	bge	r2,r16,1458 <_gp+0xffff75a4>
+    1658:	003fdc06 	br	15cc <_gp+0xffff7718>
+		alt_putstr("Player won!\nPress a character to play again\n");
+		alt_getchar();
+		//break;
+	}
+	else {
+		sendData(LOSE_VAL);
+    165c:	01003f44 	movi	r4,253
+    1660:	00011000 	call	1100 <sendData>
+		//alt_getchar();
+		alt_putstr("Player Lost\nPress a character to play again\n");
+    1664:	01000034 	movhi	r4,0
+    1668:	21077a04 	addi	r4,r4,7656
+    166c:	0001a400 	call	1a40 <alt_putstr>
+		alt_getchar();
+    1670:	00017100 	call	1710 <alt_getchar>
+		//break;
+	}
+}
+    1674:	e037883a 	mov	sp,fp
+    1678:	dfc00917 	ldw	ra,36(sp)
+    167c:	df000817 	ldw	fp,32(sp)
+    1680:	ddc00717 	ldw	r23,28(sp)
+    1684:	dd800617 	ldw	r22,24(sp)
+    1688:	dd400517 	ldw	r21,20(sp)
+    168c:	dd000417 	ldw	r20,16(sp)
+    1690:	dcc00317 	ldw	r19,12(sp)
+    1694:	dc800217 	ldw	r18,8(sp)
+    1698:	dc400117 	ldw	r17,4(sp)
+    169c:	dc000017 	ldw	r16,0(sp)
+    16a0:	dec00a04 	addi	sp,sp,40
+    16a4:	f800283a 	ret
+
+000016a8 <main>:
+alt_u8 setWord(char * word);
+alt_u8 startGame(alt_u8 letterCount);
+
+
+
+int main() {
+    16a8:	defffd04 	addi	sp,sp,-12
+    16ac:	dfc00215 	stw	ra,8(sp)
+    16b0:	dc400115 	stw	r17,4(sp)
+    16b4:	dc000015 	stw	r16,0(sp)
+	// Must reset everything, even the things we're not using
+	IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
+    16b8:	00cc1404 	movi	r3,12368
+    16bc:	18000035 	stwio	zero,0(r3)
+	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
+    16c0:	008c0804 	movi	r2,12320
+    16c4:	10000035 	stwio	zero,0(r2)
+	IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
+    16c8:	18000035 	stwio	zero,0(r3)
+	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
+    16cc:	10000035 	stwio	zero,0(r2)
+
+	char start = 'a';
+	while(start != 'M' && start != 'P') {
+    16d0:	04401344 	movi	r17,77
+    16d4:	04001404 	movi	r16,80
+		alt_putstr("Enter an 'M' to be game master or 'P' to be a player\n");
+    16d8:	01000034 	movhi	r4,0
+    16dc:	21078604 	addi	r4,r4,7704
+    16e0:	0001a400 	call	1a40 <alt_putstr>
+		start = alt_getchar();
+    16e4:	00017100 	call	1710 <alt_getchar>
+	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
+	IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
+	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
+
+	char start = 'a';
+	while(start != 'M' && start != 'P') {
+    16e8:	10803fcc 	andi	r2,r2,255
+    16ec:	1080201c 	xori	r2,r2,128
+    16f0:	10bfe004 	addi	r2,r2,-128
+    16f4:	14400226 	beq	r2,r17,1700 <main+0x58>
+    16f8:	143ff71e 	bne	r2,r16,16d8 <_gp+0xffff7824>
+    16fc:	00000206 	br	1708 <main+0x60>
+		start = alt_getchar();
+	}
+
+	if (start == 'M')
+		while (1)
+			game_master();
+    1700:	000139c0 	call	139c <game_master>
+    1704:	003ffe06 	br	1700 <_gp+0xffff784c>
+	else if (start == 'P')
+		while (1)
+			player();
+    1708:	000120c0 	call	120c <player>
+    170c:	003ffe06 	br	1708 <_gp+0xffff7854>
+
+00001710 <alt_getchar>:
+{
+#ifdef ALT_USE_DIRECT_DRIVERS
+    ALT_DRIVER_READ_EXTERNS(ALT_STDIN_DEV);
+    char c;
+
+    if (ALT_DRIVER_READ(ALT_STDIN_DEV, &c, 1, alt_fd_list[STDIN_FILENO].fd_flags) <= 0) {
+    1710:	00800034 	movhi	r2,0
+    1714:	10879704 	addi	r2,r2,7772
+    1718:	11c00217 	ldw	r7,8(r2)
+ * Uses the ALT_DRIVER_READ() macro to call directly to driver if available.
+ * Otherwise, uses newlib provided getchar() routine.
+ */
+int 
+alt_getchar(void)
+{
+    171c:	defffe04 	addi	sp,sp,-8
+#ifdef ALT_USE_DIRECT_DRIVERS
+    ALT_DRIVER_READ_EXTERNS(ALT_STDIN_DEV);
+    char c;
+
+    if (ALT_DRIVER_READ(ALT_STDIN_DEV, &c, 1, alt_fd_list[STDIN_FILENO].fd_flags) <= 0) {
+    1720:	01000034 	movhi	r4,0
+    1724:	2107ad04 	addi	r4,r4,7860
+    1728:	d80b883a 	mov	r5,sp
+    172c:	01800044 	movi	r6,1
+ * Uses the ALT_DRIVER_READ() macro to call directly to driver if available.
+ * Otherwise, uses newlib provided getchar() routine.
+ */
+int 
+alt_getchar(void)
+{
+    1730:	dfc00115 	stw	ra,4(sp)
+#ifdef ALT_USE_DIRECT_DRIVERS
+    ALT_DRIVER_READ_EXTERNS(ALT_STDIN_DEV);
+    char c;
+
+    if (ALT_DRIVER_READ(ALT_STDIN_DEV, &c, 1, alt_fd_list[STDIN_FILENO].fd_flags) <= 0) {
+    1734:	0001a9c0 	call	1a9c <altera_avalon_jtag_uart_read>
+    1738:	0080020e 	bge	zero,r2,1744 <alt_getchar+0x34>
+        return -1;
+    }
+    return c;
+    173c:	d8800007 	ldb	r2,0(sp)
+    1740:	00000106 	br	1748 <alt_getchar+0x38>
+#ifdef ALT_USE_DIRECT_DRIVERS
+    ALT_DRIVER_READ_EXTERNS(ALT_STDIN_DEV);
+    char c;
+
+    if (ALT_DRIVER_READ(ALT_STDIN_DEV, &c, 1, alt_fd_list[STDIN_FILENO].fd_flags) <= 0) {
+        return -1;
+    1744:	00bfffc4 	movi	r2,-1
+    }
+    return c;
+#else
+    return getchar();
+#endif
+}
+    1748:	dfc00117 	ldw	ra,4(sp)
+    174c:	dec00204 	addi	sp,sp,8
+    1750:	f800283a 	ret
+
+00001754 <alt_load>:
+ * there is no bootloader, so this application is responsible for loading to
+ * RAM any sections that are required.
+ */  
+
+void alt_load (void)
+{
+    1754:	deffff04 	addi	sp,sp,-4
+    1758:	dfc00015 	stw	ra,0(sp)
+    175c:	00c00034 	movhi	r3,0
+    1760:	18c79704 	addi	r3,r3,7772
+    1764:	01000034 	movhi	r4,0
+    1768:	2107b304 	addi	r4,r4,7884
+
+static void ALT_INLINE alt_load_section (alt_u32* from, 
+                                         alt_u32* to, 
+                                         alt_u32* end)
+{
+  if (to != from)
+    176c:	1900061e 	bne	r3,r4,1788 <alt_load+0x34>
+    1770:	00c00034 	movhi	r3,0
+    1774:	18c40804 	addi	r3,r3,4128
+    1778:	01000034 	movhi	r4,0
+    177c:	21040804 	addi	r4,r4,4128
+    1780:	1900151e 	bne	r3,r4,17d8 <alt_load+0x84>
+    1784:	00000e06 	br	17c0 <alt_load+0x6c>
+ * alt_load() is called when the code is executing from flash. In this case
+ * there is no bootloader, so this application is responsible for loading to
+ * RAM any sections that are required.
+ */  
+
+void alt_load (void)
+    1788:	01400034 	movhi	r5,0
+    178c:	2947b304 	addi	r5,r5,7884
+    1790:	00bfff04 	movi	r2,-4
+    1794:	28cbc83a 	sub	r5,r5,r3
+    1798:	288a703a 	and	r5,r5,r2
+    179c:	0005883a 	mov	r2,zero
+    17a0:	00000506 	br	17b8 <alt_load+0x64>
+    17a4:	208f883a 	add	r7,r4,r2
+  {
+    while( to != end )
+    {
+      *to++ = *from++;
+    17a8:	39c00017 	ldw	r7,0(r7)
+    17ac:	188d883a 	add	r6,r3,r2
+    17b0:	10800104 	addi	r2,r2,4
+    17b4:	31c00015 	stw	r7,0(r6)
+                                         alt_u32* to, 
+                                         alt_u32* end)
+{
+  if (to != from)
+  {
+    while( to != end )
+    17b8:	117ffa1e 	bne	r2,r5,17a4 <_gp+0xffff78f0>
+    17bc:	003fec06 	br	1770 <_gp+0xffff78bc>
+    17c0:	00c00034 	movhi	r3,0
+    17c4:	18c6db04 	addi	r3,r3,7020
+    17c8:	01000034 	movhi	r4,0
+    17cc:	2106db04 	addi	r4,r4,7020
+
+static void ALT_INLINE alt_load_section (alt_u32* from, 
+                                         alt_u32* to, 
+                                         alt_u32* end)
+{
+  if (to != from)
+    17d0:	1900131e 	bne	r3,r4,1820 <alt_load+0xcc>
+    17d4:	00000e06 	br	1810 <alt_load+0xbc>
+    17d8:	01400034 	movhi	r5,0
+    17dc:	29440804 	addi	r5,r5,4128
+    17e0:	00bfff04 	movi	r2,-4
+    17e4:	28cbc83a 	sub	r5,r5,r3
+    17e8:	288a703a 	and	r5,r5,r2
+    17ec:	0005883a 	mov	r2,zero
+    17f0:	00000506 	br	1808 <alt_load+0xb4>
+    17f4:	208f883a 	add	r7,r4,r2
+  {
+    while( to != end )
+    {
+      *to++ = *from++;
+    17f8:	39c00017 	ldw	r7,0(r7)
+    17fc:	188d883a 	add	r6,r3,r2
+    1800:	10800104 	addi	r2,r2,4
+    1804:	31c00015 	stw	r7,0(r6)
+                                         alt_u32* to, 
+                                         alt_u32* end)
+{
+  if (to != from)
+  {
+    while( to != end )
+    1808:	117ffa1e 	bne	r2,r5,17f4 <_gp+0xffff7940>
+    180c:	003fec06 	br	17c0 <_gp+0xffff790c>
+  
+  /*
+   * Now ensure that the caches are in synch.
+   */
+  
+  alt_dcache_flush_all();
+    1810:	0001b2c0 	call	1b2c <alt_dcache_flush_all>
+  alt_icache_flush_all();
+}
+    1814:	dfc00017 	ldw	ra,0(sp)
+    1818:	dec00104 	addi	sp,sp,4
+  /*
+   * Now ensure that the caches are in synch.
+   */
+  
+  alt_dcache_flush_all();
+  alt_icache_flush_all();
+    181c:	0001b381 	jmpi	1b38 <alt_icache_flush_all>
+ * alt_load() is called when the code is executing from flash. In this case
+ * there is no bootloader, so this application is responsible for loading to
+ * RAM any sections that are required.
+ */  
+
+void alt_load (void)
+    1820:	01400034 	movhi	r5,0
+    1824:	29479704 	addi	r5,r5,7772
+    1828:	00bfff04 	movi	r2,-4
+    182c:	28cbc83a 	sub	r5,r5,r3
+    1830:	288a703a 	and	r5,r5,r2
+    1834:	0005883a 	mov	r2,zero
+    1838:	00000506 	br	1850 <alt_load+0xfc>
+    183c:	208f883a 	add	r7,r4,r2
+    {
+      *to++ = *from++;
+    1840:	39c00017 	ldw	r7,0(r7)
+    1844:	188d883a 	add	r6,r3,r2
+    1848:	10800104 	addi	r2,r2,4
+    184c:	31c00015 	stw	r7,0(r6)
+                                         alt_u32* to, 
+                                         alt_u32* end)
+{
+  if (to != from)
+  {
+    while( to != end )
+    1850:	117ffa1e 	bne	r2,r5,183c <_gp+0xffff7988>
+    1854:	003fee06 	br	1810 <_gp+0xffff795c>
+
+00001858 <alt_main>:
+ * devices/filesystems/components in the system; and call the entry point for
+ * the users application, i.e. main().
+ */
+
+void alt_main (void)
+{
+    1858:	deffff04 	addi	sp,sp,-4
+#endif
+
+  /* ALT LOG - please see HAL/sys/alt_log_printf.h for details */
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Entering alt_main, calling alt_irq_init.\r\n");
+  /* Initialize the interrupt controller. */
+  alt_irq_init (NULL);
+    185c:	0009883a 	mov	r4,zero
+ * devices/filesystems/components in the system; and call the entry point for
+ * the users application, i.e. main().
+ */
+
+void alt_main (void)
+{
+    1860:	dfc00015 	stw	ra,0(sp)
+#endif
+
+  /* ALT LOG - please see HAL/sys/alt_log_printf.h for details */
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Entering alt_main, calling alt_irq_init.\r\n");
+  /* Initialize the interrupt controller. */
+  alt_irq_init (NULL);
+    1864:	0001a780 	call	1a78 <alt_irq_init>
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Done OS Init, calling alt_sem_create.\r\n");
+  ALT_SEM_CREATE (&alt_fd_list_lock, 1);
+
+  /* Initialize the device drivers/software components. */
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Calling alt_sys_init.\r\n");
+  alt_sys_init();
+    1868:	0001a980 	call	1a98 <alt_sys_init>
+   */
+
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Calling main.\r\n");
+
+#ifdef ALT_NO_EXIT
+  main (alt_argc, alt_argv, alt_envp);
+    186c:	d1202417 	ldw	r4,-32624(gp)
+    1870:	d1602317 	ldw	r5,-32628(gp)
+    1874:	d1a02217 	ldw	r6,-32632(gp)
+  close(STDOUT_FILENO);
+  exit (result);
+#endif
+
+  ALT_LOG_PRINT_BOOT("[alt_main.c] After main - we should not be here?.\r\n");
+}
+    1878:	dfc00017 	ldw	ra,0(sp)
+    187c:	dec00104 	addi	sp,sp,4
+   */
+
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Calling main.\r\n");
+
+#ifdef ALT_NO_EXIT
+  main (alt_argc, alt_argv, alt_envp);
+    1880:	00016a81 	jmpi	16a8 <main>
+
+00001884 <alt_printf>:
+/* 
+ * ALT printf function 
+ */
+void 
+alt_printf(const char* fmt, ... )
+{
+    1884:	defff204 	addi	sp,sp,-56
+    1888:	dfc00a15 	stw	ra,40(sp)
+    188c:	df000915 	stw	fp,36(sp)
+    1890:	ddc00815 	stw	r23,32(sp)
+    1894:	dd800715 	stw	r22,28(sp)
+    1898:	dd400615 	stw	r21,24(sp)
+    189c:	dd000515 	stw	r20,20(sp)
+    18a0:	dcc00415 	stw	r19,16(sp)
+    18a4:	dc800315 	stw	r18,12(sp)
+    18a8:	dc400215 	stw	r17,8(sp)
+    18ac:	dc000115 	stw	r16,4(sp)
+    18b0:	d9400b15 	stw	r5,44(sp)
+    18b4:	d9800c15 	stw	r6,48(sp)
+    18b8:	d9c00d15 	stw	r7,52(sp)
+    w = fmt;
+    while ((c = *w++) != 0)
+    {
+        /* If not a format escape character, just print  */
+        /* character.  Otherwise, process format string. */
+        if (c != '%')
+    18bc:	04c00944 	movi	r19,37
+ */
+void 
+alt_printf(const char* fmt, ... )
+{
+	va_list args;
+	va_start(args, fmt);
+    18c0:	dc000b04 	addi	r16,sp,44
+    const char *w;
+    char c;
+
+    /* Process format string. */
+    w = fmt;
+    18c4:	2025883a 	mov	r18,r4
+                if (c == '%')
+                {
+                    /* Process "%" escape sequence. */
+                    alt_putchar(c);
+                } 
+                else if (c == 'c')
+    18c8:	050018c4 	movi	r20,99
+                {
+                    int v = va_arg(args, int);
+                    alt_putchar(v);
+                }
+                else if (c == 'x')
+    18cc:	05401e04 	movi	r21,120
+                        else
+                            c = 'a' + digit - 10;
+                        alt_putchar(c);
+                    }
+                }
+                else if (c == 's')
+    18d0:	05801cc4 	movi	r22,115
+    const char *w;
+    char c;
+
+    /* Process format string. */
+    w = fmt;
+    while ((c = *w++) != 0)
+    18d4:	00003906 	br	19bc <alt_printf+0x138>
+    {
+        /* If not a format escape character, just print  */
+        /* character.  Otherwise, process format string. */
+        if (c != '%')
+    18d8:	24c00226 	beq	r4,r19,18e4 <alt_printf+0x60>
+    const char *w;
+    char c;
+
+    /* Process format string. */
+    w = fmt;
+    while ((c = *w++) != 0)
+    18dc:	94800044 	addi	r18,r18,1
+    18e0:	00000506 	br	18f8 <alt_printf+0x74>
+        }
+        else
+        {
+            /* Get format character.  If none     */
+            /* available, processing is complete. */
+            if ((c = *w++) != 0)
+    18e4:	90800047 	ldb	r2,1(r18)
+    18e8:	94800084 	addi	r18,r18,2
+    18ec:	10003526 	beq	r2,zero,19c4 <alt_printf+0x140>
+            {
+                if (c == '%')
+    18f0:	14c0031e 	bne	r2,r19,1900 <alt_printf+0x7c>
+                {
+                    /* Process "%" escape sequence. */
+                    alt_putchar(c);
+    18f4:	9809883a 	mov	r4,r19
+    18f8:	00019f40 	call	19f4 <alt_putchar>
+    18fc:	00002f06 	br	19bc <alt_printf+0x138>
+                } 
+                else if (c == 'c')
+    1900:	1500051e 	bne	r2,r20,1918 <alt_printf+0x94>
+                {
+                    int v = va_arg(args, int);
+                    alt_putchar(v);
+    1904:	81000017 	ldw	r4,0(r16)
+                    /* Process "%" escape sequence. */
+                    alt_putchar(c);
+                } 
+                else if (c == 'c')
+                {
+                    int v = va_arg(args, int);
+    1908:	84400104 	addi	r17,r16,4
+    190c:	8821883a 	mov	r16,r17
+                    alt_putchar(v);
+    1910:	00019f40 	call	19f4 <alt_putchar>
+    1914:	00002906 	br	19bc <alt_printf+0x138>
+                }
+                else if (c == 'x')
+    1918:	1540201e 	bne	r2,r21,199c <alt_printf+0x118>
+                {
+                    /* Process hexadecimal number format. */
+                    unsigned long v = va_arg(args, unsigned long);
+    191c:	85c00017 	ldw	r23,0(r16)
+    1920:	84000104 	addi	r16,r16,4
+                    unsigned long digit;
+                    int digit_shift;
+
+                    /* If the number value is zero, just print and continue. */
+                    if (v == 0)
+    1924:	b800041e 	bne	r23,zero,1938 <alt_printf+0xb4>
+                    {
+                        alt_putchar('0');
+    1928:	01000c04 	movi	r4,48
+    192c:	003ff206 	br	18f8 <_gp+0xffff7a44>
+                    }
+
+                    /* Find first non-zero digit. */
+                    digit_shift = 28;
+                    while (!(v & (0xF << digit_shift)))
+                        digit_shift -= 4;
+    1930:	8c7fff04 	addi	r17,r17,-4
+    1934:	00000206 	br	1940 <alt_printf+0xbc>
+                    unsigned long v = va_arg(args, unsigned long);
+                    unsigned long digit;
+                    int digit_shift;
+
+                    /* If the number value is zero, just print and continue. */
+                    if (v == 0)
+    1938:	04400704 	movi	r17,28
+                        continue;
+                    }
+
+                    /* Find first non-zero digit. */
+                    digit_shift = 28;
+                    while (!(v & (0xF << digit_shift)))
+    193c:	00c003c4 	movi	r3,15
+    1940:	1c44983a 	sll	r2,r3,r17
+    1944:	15c4703a 	and	r2,r2,r23
+    1948:	103ff926 	beq	r2,zero,1930 <_gp+0xffff7a7c>
+    194c:	00000f06 	br	198c <alt_printf+0x108>
+                        digit_shift -= 4;
+
+                    /* Print digits. */
+                    for (; digit_shift >= 0; digit_shift -= 4)
+                    {
+                        digit = (v & (0xF << digit_shift)) >> digit_shift;
+    1950:	e448983a 	sll	r4,fp,r17
+    1954:	25c8703a 	and	r4,r4,r23
+    1958:	2448d83a 	srl	r4,r4,r17
+                        if (digit <= 9)
+    195c:	19000236 	bltu	r3,r4,1968 <alt_printf+0xe4>
+                            c = '0' + digit;
+    1960:	21000c04 	addi	r4,r4,48
+    1964:	00000106 	br	196c <alt_printf+0xe8>
+                        else
+                            c = 'a' + digit - 10;
+    1968:	210015c4 	addi	r4,r4,87
+                        alt_putchar(c);
+    196c:	21003fcc 	andi	r4,r4,255
+    1970:	2100201c 	xori	r4,r4,128
+    1974:	213fe004 	addi	r4,r4,-128
+    1978:	d8c00015 	stw	r3,0(sp)
+    197c:	00019f40 	call	19f4 <alt_putchar>
+                    digit_shift = 28;
+                    while (!(v & (0xF << digit_shift)))
+                        digit_shift -= 4;
+
+                    /* Print digits. */
+                    for (; digit_shift >= 0; digit_shift -= 4)
+    1980:	8c7fff04 	addi	r17,r17,-4
+    1984:	d8c00017 	ldw	r3,0(sp)
+    1988:	00000206 	br	1994 <alt_printf+0x110>
+                    {
+                        digit = (v & (0xF << digit_shift)) >> digit_shift;
+    198c:	070003c4 	movi	fp,15
+                        if (digit <= 9)
+    1990:	00c00244 	movi	r3,9
+                    digit_shift = 28;
+                    while (!(v & (0xF << digit_shift)))
+                        digit_shift -= 4;
+
+                    /* Print digits. */
+                    for (; digit_shift >= 0; digit_shift -= 4)
+    1994:	883fee0e 	bge	r17,zero,1950 <_gp+0xffff7a9c>
+    1998:	00000806 	br	19bc <alt_printf+0x138>
+                        else
+                            c = 'a' + digit - 10;
+                        alt_putchar(c);
+                    }
+                }
+                else if (c == 's')
+    199c:	1580071e 	bne	r2,r22,19bc <alt_printf+0x138>
+                {
+                    /* Process string format. */
+                    char *s = va_arg(args, char *);
+    19a0:	84400017 	ldw	r17,0(r16)
+    19a4:	84000104 	addi	r16,r16,4
+
+                    while(*s)
+    19a8:	00000206 	br	19b4 <alt_printf+0x130>
+                      alt_putchar(*s++);
+    19ac:	8c400044 	addi	r17,r17,1
+    19b0:	00019f40 	call	19f4 <alt_putchar>
+                else if (c == 's')
+                {
+                    /* Process string format. */
+                    char *s = va_arg(args, char *);
+
+                    while(*s)
+    19b4:	89000007 	ldb	r4,0(r17)
+    19b8:	203ffc1e 	bne	r4,zero,19ac <_gp+0xffff7af8>
+    const char *w;
+    char c;
+
+    /* Process format string. */
+    w = fmt;
+    while ((c = *w++) != 0)
+    19bc:	91000007 	ldb	r4,0(r18)
+    19c0:	203fc51e 	bne	r4,zero,18d8 <_gp+0xffff7a24>
+            {
+                break;
+            }
+        }
+    }
+}
+    19c4:	dfc00a17 	ldw	ra,40(sp)
+    19c8:	df000917 	ldw	fp,36(sp)
+    19cc:	ddc00817 	ldw	r23,32(sp)
+    19d0:	dd800717 	ldw	r22,28(sp)
+    19d4:	dd400617 	ldw	r21,24(sp)
+    19d8:	dd000517 	ldw	r20,20(sp)
+    19dc:	dcc00417 	ldw	r19,16(sp)
+    19e0:	dc800317 	ldw	r18,12(sp)
+    19e4:	dc400217 	ldw	r17,8(sp)
+    19e8:	dc000117 	ldw	r16,4(sp)
+    19ec:	dec00e04 	addi	sp,sp,56
+    19f0:	f800283a 	ret
+
+000019f4 <alt_putchar>:
+ * Uses the ALT_DRIVER_WRITE() macro to call directly to driver if available.
+ * Otherwise, uses newlib provided putchar() routine.
+ */
+int 
+alt_putchar(int c)
+{
+    19f4:	defffd04 	addi	sp,sp,-12
+    19f8:	dc000115 	stw	r16,4(sp)
+#ifdef ALT_USE_DIRECT_DRIVERS
+    ALT_DRIVER_WRITE_EXTERNS(ALT_STDOUT_DEV);
+    char        c1 = (char)(c & 0xff);
+    19fc:	d9000005 	stb	r4,0(sp)
+ * Uses the ALT_DRIVER_WRITE() macro to call directly to driver if available.
+ * Otherwise, uses newlib provided putchar() routine.
+ */
+int 
+alt_putchar(int c)
+{
+    1a00:	2021883a 	mov	r16,r4
+#ifdef ALT_USE_DIRECT_DRIVERS
+    ALT_DRIVER_WRITE_EXTERNS(ALT_STDOUT_DEV);
+    char        c1 = (char)(c & 0xff);
+
+    if (ALT_DRIVER_WRITE(ALT_STDOUT_DEV, &c1, 1, 0) == -1) {
+    1a04:	d80b883a 	mov	r5,sp
+    1a08:	01000034 	movhi	r4,0
+    1a0c:	2107ad04 	addi	r4,r4,7860
+    1a10:	01800044 	movi	r6,1
+    1a14:	000f883a 	mov	r7,zero
+ * Uses the ALT_DRIVER_WRITE() macro to call directly to driver if available.
+ * Otherwise, uses newlib provided putchar() routine.
+ */
+int 
+alt_putchar(int c)
+{
+    1a18:	dfc00215 	stw	ra,8(sp)
+#ifdef ALT_USE_DIRECT_DRIVERS
+    ALT_DRIVER_WRITE_EXTERNS(ALT_STDOUT_DEV);
+    char        c1 = (char)(c & 0xff);
+
+    if (ALT_DRIVER_WRITE(ALT_STDOUT_DEV, &c1, 1, 0) == -1) {
+    1a1c:	0001af80 	call	1af8 <altera_avalon_jtag_uart_write>
+    1a20:	00ffffc4 	movi	r3,-1
+    1a24:	10c0011e 	bne	r2,r3,1a2c <alt_putchar+0x38>
+        return -1;
+    1a28:	1021883a 	mov	r16,r2
+    }
+    return c;
+#else
+    return putchar(c);
+#endif
+}
+    1a2c:	8005883a 	mov	r2,r16
+    1a30:	dfc00217 	ldw	ra,8(sp)
+    1a34:	dc000117 	ldw	r16,4(sp)
+    1a38:	dec00304 	addi	sp,sp,12
+    1a3c:	f800283a 	ret
+
+00001a40 <alt_putstr>:
+ * Uses the ALT_DRIVER_WRITE() macro to call directly to driver if available.
+ * Otherwise, uses newlib provided fputs() routine.
+ */
+int 
+alt_putstr(const char* str)
+{
+    1a40:	defffe04 	addi	sp,sp,-8
+    1a44:	dc000015 	stw	r16,0(sp)
+    1a48:	dfc00115 	stw	ra,4(sp)
+    1a4c:	2021883a 	mov	r16,r4
+#ifdef ALT_USE_DIRECT_DRIVERS
+    ALT_DRIVER_WRITE_EXTERNS(ALT_STDOUT_DEV);
+    return ALT_DRIVER_WRITE(ALT_STDOUT_DEV, str, strlen(str), 0);
+    1a50:	0001b440 	call	1b44 <strlen>
+    1a54:	01000034 	movhi	r4,0
+    1a58:	2107ad04 	addi	r4,r4,7860
+    1a5c:	800b883a 	mov	r5,r16
+    1a60:	100d883a 	mov	r6,r2
+    1a64:	000f883a 	mov	r7,zero
+#else
+    return fputs(str, stdout);
+#endif
+}
+    1a68:	dfc00117 	ldw	ra,4(sp)
+    1a6c:	dc000017 	ldw	r16,0(sp)
+    1a70:	dec00204 	addi	sp,sp,8
+int 
+alt_putstr(const char* str)
+{
+#ifdef ALT_USE_DIRECT_DRIVERS
+    ALT_DRIVER_WRITE_EXTERNS(ALT_STDOUT_DEV);
+    return ALT_DRIVER_WRITE(ALT_STDOUT_DEV, str, strlen(str), 0);
+    1a74:	0001af81 	jmpi	1af8 <altera_avalon_jtag_uart_write>
+
+00001a78 <alt_irq_init>:
+ * The "base" parameter is ignored and only
+ * present for backwards-compatibility.
+ */
+
+void alt_irq_init ( const void* base )
+{
+    1a78:	deffff04 	addi	sp,sp,-4
+    1a7c:	dfc00015 	stw	ra,0(sp)
+    ALTERA_NIOS2_QSYS_IRQ_INIT ( NIOS2_PROCESSOR, nios2_processor);
+    1a80:	0001b3c0 	call	1b3c <altera_nios2_qsys_irq_init>
+ * alt_irq_cpu_enable_interrupts() enables the CPU to start taking interrupts.
+ */
+static ALT_INLINE void ALT_ALWAYS_INLINE 
+       alt_irq_cpu_enable_interrupts ()
+{
+    NIOS2_WRITE_STATUS(NIOS2_STATUS_PIE_MSK
+    1a84:	00800044 	movi	r2,1
+    1a88:	1001703a 	wrctl	status,r2
+    alt_irq_cpu_enable_interrupts();
+}
+    1a8c:	dfc00017 	ldw	ra,0(sp)
+    1a90:	dec00104 	addi	sp,sp,4
+    1a94:	f800283a 	ret
+
+00001a98 <alt_sys_init>:
+ * Initialize the non-interrupt controller devices.
+ * Called after alt_irq_init().
+ */
+
+void alt_sys_init( void )
+{
+    1a98:	f800283a 	ret
+
+00001a9c <altera_avalon_jtag_uart_read>:
+
+int 
+altera_avalon_jtag_uart_read(altera_avalon_jtag_uart_state* sp, 
+  char* buffer, int space, int flags)
+{
+  unsigned int base = sp->base;
+    1a9c:	21000017 	ldw	r4,0(r4)
+
+  char * ptr = buffer;
+  char * end = buffer + space;
+    1aa0:	298d883a 	add	r6,r5,r6
+
+  while (ptr < end)
+    1aa4:	2805883a 	mov	r2,r5
+
+    if (data & ALTERA_AVALON_JTAG_UART_DATA_RVALID_MSK)
+      *ptr++ = (data & ALTERA_AVALON_JTAG_UART_DATA_DATA_MSK) >> ALTERA_AVALON_JTAG_UART_DATA_DATA_OFST;
+    else if (ptr != buffer)
+      break;
+    else if(flags & O_NONBLOCK)
+    1aa8:	3a10000c 	andi	r8,r7,16384
+  unsigned int base = sp->base;
+
+  char * ptr = buffer;
+  char * end = buffer + space;
+
+  while (ptr < end)
+    1aac:	00000a06 	br	1ad8 <altera_avalon_jtag_uart_read+0x3c>
+  {
+    unsigned int data = IORD_ALTERA_AVALON_JTAG_UART_DATA(base);
+    1ab0:	20c00037 	ldwio	r3,0(r4)
+
+    if (data & ALTERA_AVALON_JTAG_UART_DATA_RVALID_MSK)
+    1ab4:	1a60000c 	andi	r9,r3,32768
+    1ab8:	48000326 	beq	r9,zero,1ac8 <altera_avalon_jtag_uart_read+0x2c>
+      *ptr++ = (data & ALTERA_AVALON_JTAG_UART_DATA_DATA_MSK) >> ALTERA_AVALON_JTAG_UART_DATA_DATA_OFST;
+    1abc:	10c00005 	stb	r3,0(r2)
+    1ac0:	10800044 	addi	r2,r2,1
+    1ac4:	00000406 	br	1ad8 <altera_avalon_jtag_uart_read+0x3c>
+    else if (ptr != buffer)
+    1ac8:	11400226 	beq	r2,r5,1ad4 <altera_avalon_jtag_uart_read+0x38>
+      break;   
+    
+  }
+
+  if (ptr != buffer)
+    return ptr - buffer;
+    1acc:	1145c83a 	sub	r2,r2,r5
+    1ad0:	f800283a 	ret
+
+    if (data & ALTERA_AVALON_JTAG_UART_DATA_RVALID_MSK)
+      *ptr++ = (data & ALTERA_AVALON_JTAG_UART_DATA_DATA_MSK) >> ALTERA_AVALON_JTAG_UART_DATA_DATA_OFST;
+    else if (ptr != buffer)
+      break;
+    else if(flags & O_NONBLOCK)
+    1ad4:	4000021e 	bne	r8,zero,1ae0 <altera_avalon_jtag_uart_read+0x44>
+  unsigned int base = sp->base;
+
+  char * ptr = buffer;
+  char * end = buffer + space;
+
+  while (ptr < end)
+    1ad8:	11bff536 	bltu	r2,r6,1ab0 <_gp+0xffff7bfc>
+    else if(flags & O_NONBLOCK)
+      break;   
+    
+  }
+
+  if (ptr != buffer)
+    1adc:	117ffb1e 	bne	r2,r5,1acc <_gp+0xffff7c18>
+    return ptr - buffer;
+  else if (flags & O_NONBLOCK)
+    1ae0:	39d0000c 	andi	r7,r7,16384
+    1ae4:	38000226 	beq	r7,zero,1af0 <altera_avalon_jtag_uart_read+0x54>
+    return -EWOULDBLOCK;
+    1ae8:	00bffd44 	movi	r2,-11
+    1aec:	f800283a 	ret
+  else
+    return -EIO;
+    1af0:	00bffec4 	movi	r2,-5
+}
+    1af4:	f800283a 	ret
+
+00001af8 <altera_avalon_jtag_uart_write>:
+ */
+
+int altera_avalon_jtag_uart_write(altera_avalon_jtag_uart_state* sp, 
+  const char * ptr, int count, int flags)
+{
+  unsigned int base = sp->base;
+    1af8:	20c00017 	ldw	r3,0(r4)
+ * one FIFOs worth of data.  But you said you didn't want to use interrupts :-)
+ */
+
+int altera_avalon_jtag_uart_write(altera_avalon_jtag_uart_state* sp, 
+  const char * ptr, int count, int flags)
+{
+    1afc:	3005883a 	mov	r2,r6
+  unsigned int base = sp->base;
+
+  const char * end = ptr + count;
+    1b00:	2989883a 	add	r4,r5,r6
+
+  while (ptr < end)
+    if ((IORD_ALTERA_AVALON_JTAG_UART_CONTROL(base) & ALTERA_AVALON_JTAG_UART_CONTROL_WSPACE_MSK) != 0)
+    1b04:	19800104 	addi	r6,r3,4
+{
+  unsigned int base = sp->base;
+
+  const char * end = ptr + count;
+
+  while (ptr < end)
+    1b08:	00000606 	br	1b24 <altera_avalon_jtag_uart_write+0x2c>
+    if ((IORD_ALTERA_AVALON_JTAG_UART_CONTROL(base) & ALTERA_AVALON_JTAG_UART_CONTROL_WSPACE_MSK) != 0)
+    1b0c:	31c00037 	ldwio	r7,0(r6)
+    1b10:	39ffffec 	andhi	r7,r7,65535
+    1b14:	383ffd26 	beq	r7,zero,1b0c <_gp+0xffff7c58>
+      IOWR_ALTERA_AVALON_JTAG_UART_DATA(base, *ptr++);
+    1b18:	29c00007 	ldb	r7,0(r5)
+    1b1c:	29400044 	addi	r5,r5,1
+    1b20:	19c00035 	stwio	r7,0(r3)
+{
+  unsigned int base = sp->base;
+
+  const char * end = ptr + count;
+
+  while (ptr < end)
+    1b24:	293ff936 	bltu	r5,r4,1b0c <_gp+0xffff7c58>
+    if ((IORD_ALTERA_AVALON_JTAG_UART_CONTROL(base) & ALTERA_AVALON_JTAG_UART_CONTROL_WSPACE_MSK) != 0)
+      IOWR_ALTERA_AVALON_JTAG_UART_DATA(base, *ptr++);
+
+  return count;
+}
+    1b28:	f800283a 	ret
+
+00001b2c <alt_dcache_flush_all>:
+/*
+ * alt_dcache_flush_all() is called to flush the entire data cache.
+ */
+
+void alt_dcache_flush_all (void)
+{
+    1b2c:	f800283a 	ret
+
+00001b30 <alt_dev_null_write>:
+ */
+
+static int alt_dev_null_write (alt_fd* fd, const char* ptr, int len)
+{
+  return len;
+}
+    1b30:	3005883a 	mov	r2,r6
+    1b34:	f800283a 	ret
+
+00001b38 <alt_icache_flush_all>:
+/*
+ * alt_icache_flush_all() is called to flush the entire instruction cache.
+ */
+
+void alt_icache_flush_all (void)
+{
+    1b38:	f800283a 	ret
+
+00001b3c <altera_nios2_qsys_irq_init>:
+ * To initialize the internal interrupt controller, just clear the IENABLE
+ * register so that all possible IRQs are disabled.
+ */
+void altera_nios2_qsys_irq_init(void) 
+{
+    NIOS2_WRITE_IENABLE(0);
+    1b3c:	000170fa 	wrctl	ienable,zero
+    1b40:	f800283a 	ret
+
+00001b44 <strlen>:
+    1b44:	20800007 	ldb	r2,0(r4)
+    1b48:	10000626 	beq	r2,zero,1b64 <strlen+0x20>
+    1b4c:	2005883a 	mov	r2,r4
+    1b50:	10800044 	addi	r2,r2,1
+    1b54:	10c00007 	ldb	r3,0(r2)
+    1b58:	183ffd1e 	bne	r3,zero,1b50 <_gp+0xffff7c9c>
+    1b5c:	1105c83a 	sub	r2,r2,r4
+    1b60:	f800283a 	ret
+    1b64:	0005883a 	mov	r2,zero
+    1b68:	f800283a 	ret

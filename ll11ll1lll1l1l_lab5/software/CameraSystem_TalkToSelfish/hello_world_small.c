@@ -99,17 +99,18 @@ int main() {
 	IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
 	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
 
-	alt_putstr("Enter an F to start filming\n");
+	alt_putstr("EARTH: Enter an F to start filming\n");
 	char start = alt_getchar();
 	///////////////////////////// SENDING MODE/RECIEVING MODE WITH SAME BOARD ////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//SEND MODE
 	while (start != 'F') {
+		alt_putstr("EARTH: Please enter an F to start filming.\n");
 		start = alt_getchar();
 	}
 	// Start filming
 	IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x2);
-
+	alt_putstr("CAMERA: camera System Started.\n");
 	while (1) {
 		//repeatedly waits until ready to download
 		IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
@@ -123,60 +124,42 @@ int main() {
 			int count = 0;
 			int wait_value = 10000;
 			//CAMERA sends the d request
-			alt_printf("Camera ready to Download! Sending download ready to earth..");
-
+			alt_printf(
+					"CAMERA: Camera ready to Download! Sending download ready signal to earth..\n");
+			alt_u8 getRequest = sendData(downloadRequest);
 			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			//RECIEVE MODE
-			alt_printf("Waiting for request... \n");
+			alt_printf("EARTH: Waiting for Ready to Download from camera... \n");
 
-			alt_u8 getRequest = sendData(downloadRequest);
 			if (getRequest == downloadRequest) {
 				// Prompts user to give permission for the D
 				char permission;
 				//gets an empty character in case of reading in unwanted values unexpectedly
 				alt_getchar();
 				alt_putstr(
-						"Enter the D to give permission for the download \n");
+						"EARTH: Download Request recieved. Enter the D to give permission for the download. \n");
 				permission = alt_getchar();
-				//if user enter the D, send permission to downlad
-				if (permission == 'D') {
+				//if user enter the D, send permission to downlad if ready to download
+				readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
+				if (permission == 'D' && readyToDownload == 1) {
 
 					//sends the permission to the camera
-					alt_printf("Sending permission to the Camera...");
+					alt_printf("EARTH: Sending permission to the Camera...\n");
 					alt_u8 recievedData = sendData(giveDPermission);
-
 
 					//////////////////////////////////////////////////////////////////////////////////////////////////
 					//SENDING MODE
-					alt_printf("Waiting for download permission:\n");
-
-
-					// NEED TO RE-IMPLEMENT THIS WITHOUT WORRYING ABOUT STROBE
-
-//					strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
-//
-//					while (strobe == 0) {
-//						if (count % wait_value == 0)
-//							alt_printf(".");
-//						count++;
-//						readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
-//						if (readyToDownload == 0) {
-//							alt_printf("Download permission timeout\n");
-//							downloadPermission = 0;
-//							break;
-//						}
-//						strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
-//					}
+					alt_printf("CAMERA: Waiting for download permission....");
 
 					// Check if the recieved byte was for permission and no timeout
 					if (downloadPermission) {
 						curByte = recievedData;
-						alt_printf(" downloadPermission = %x\n", curByte);
+						alt_printf("Permission Granted.\n", curByte);
 					}
 					// They did enter in D in this if loop, so this will always be true.
 					if (curByte == giveDPermission) {
 						alt_printf(
-								"Permission Granted: Downloading data to Earth\n");
+								"CAMERA: Downloading data to Earth\n");
 						IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x3);
 
 						//retrieve from the buffer camera
@@ -187,39 +170,41 @@ int main() {
 								strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
 							}
 							curByte = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
-							alt_printf("Sending Data from buffer: %c \n", curByte);
+							alt_printf("CAMERA: Sending Data from buffer: %x \n",
+									curByte);
 
 							alt_u8 recievedData = sendData(curByte);
 
 							//////////////////////////////////////////////////////////////////////////////////////////////////
 							//RECIEVING MODE
 
-							alt_printf("\nRecieving Data: %x", recievedData);
+							alt_printf("EARTH: Recieving Data: %x\n", recievedData);
 
 							//////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 						}
-						alt_printf("Download Complete\n");
+						alt_printf("CAMERA: Download Complete\n");
 					} else {
-						alt_printf(" DONT GO HERE!!!!!!!!!!!!!!!1LLLL1L1L1L1LL1L1L1Lll1l1l1l1l1l1ll1l1l1ll1l1 :) \n");
+						alt_printf(
+								" DONT GO HERE!!!!!!!!!!!!!!!1LLLL1L1L1L1LL1L1L1Lll1l1l1l1l1l1ll1l1l1ll1l1 :) \n");
 						return 0;
 					}
 					IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x2);
 
 					//////////////////////////////////////////////////////////////////////////////////////////////////
 
-					alt_printf("\nDownload Complete\n\n");
-				} else { // Deny Permission for the D
-					alt_printf("\nPermission Denied.\n");
+					alt_printf("EARTH: Download Complete.\n\n");
+				} else if (!readyToDownload) {
+					alt_printf(
+							"EARTH: Permission Denied. Camera Timed Out and flushed.\n");
 					//sends a zero to the camera
 					alt_u8 zero = 0;
-
+					alt_printf("EARTH: Sending Data: %x\n", zero);
 					alt_u8 recievedData = sendData(zero);
 
 					/////////////////////////////////////////////////////////////////
 					curByte = recievedData;
-					alt_printf("\nRecieving Data: %x", curByte);
+					alt_printf("CAMERA: Recieving Data: %x. Permission Denied to Download.\n\n", curByte);
 
 					//always true because just sent a zero
 					if (curByte != giveDPermission) {
@@ -229,7 +214,34 @@ int main() {
 							readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
 						}
 					} else {
-						alt_printf(" DONT GO HERE2!!!!!!!!!!!!!!!1LLLL1L1L1L1LL1L1L1Lll1l1l1l1l1l1ll1l1l1ll1l1 :) \n");
+						alt_printf(
+								"Unexpected system error. unreachable code.\n");
+						return 0;
+					}
+
+					/////////////////////////////////////////////////////////////////
+
+				} else { // Deny Permission for the D
+					alt_printf("EARTH: sending Permission Denied signal.\n");
+					//sends a zero to the camera
+					alt_u8 zero = 0;
+
+					alt_u8 recievedData = sendData(zero);
+
+					/////////////////////////////////////////////////////////////////
+					curByte = recievedData;
+					alt_printf("CAMERA: Recieving Data: %x. Permission Denied to Download.\n\n", curByte);
+
+					//always true because just sent a zero
+					if (curByte != giveDPermission) {
+						// Wait for readyToDownload to turn off
+						readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
+						while (readyToDownload != 0) {
+							readyToDownload = IORD_ALTERA_AVALON_PIO_DATA(rtd);
+						}
+					} else {
+						alt_printf(
+								"Unexpected system error. unreachable code.\n");
 						return 0;
 					}
 
@@ -257,7 +269,7 @@ alt_u8 sendData(alt_u8 data) {
 //sends data to camera
 	IOWR_ALTERA_AVALON_PIO_DATA(curByteOut, data);
 	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x1);
-	alt_printf("Sending data: %x\n", data);
+	//alt_printf("Sending data: %d\n", data);
 	empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
 	while (empty == 0) {
 		empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);

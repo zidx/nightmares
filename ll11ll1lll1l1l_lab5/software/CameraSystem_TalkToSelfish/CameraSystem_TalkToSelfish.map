@@ -85,7 +85,7 @@ LOAD c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4
                 0x0000000000001020                PROVIDE (__ram_exceptions_end, ABSOLUTE (.))
                 0x0000000000001020                PROVIDE (__flash_exceptions_start, LOADADDR (.exceptions))
 
-.text           0x0000000000001020      0x72c
+.text           0x0000000000001020      0x790
                 0x0000000000001020                PROVIDE (stext, ABSOLUTE (.))
  *(.interp)
  *(.hash)
@@ -132,170 +132,170 @@ LOAD c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4
  *(.text .stub .text.* .gnu.linkonce.t.*)
  .text          0x0000000000001020       0x3c ../CameraSystem_TalkToSelfish_bsp//obj/HAL/src/crt0.o
                 0x0000000000001020                _start
- .text          0x000000000000105c       0x5c obj/default/hello_world_small.o
+ .text          0x000000000000105c       0x38 obj/default/hello_world_small.o
                 0x000000000000105c                sendData
- .text.startup  0x00000000000010b8      0x238 obj/default/hello_world_small.o
-                0x00000000000010b8                main
- .text          0x00000000000012f0       0x44 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_getchar.o)
-                0x00000000000012f0                alt_getchar
- .text          0x0000000000001334      0x104 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_load.o)
-                0x0000000000001334                alt_load
- .text          0x0000000000001438       0x2c ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_main.o)
-                0x0000000000001438                alt_main
- .text          0x0000000000001464      0x170 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_printf.o)
-                0x0000000000001464                alt_printf
- .text          0x00000000000015d4       0x4c ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putchar.o)
-                0x00000000000015d4                alt_putchar
- .text          0x0000000000001620       0x38 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putstr.o)
-                0x0000000000001620                alt_putstr
- .text          0x0000000000001658       0x24 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_sys_init.o)
-                0x0000000000001658                alt_irq_init
-                0x0000000000001678                alt_sys_init
- .text          0x000000000000167c       0x5c ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
-                0x000000000000167c                altera_avalon_jtag_uart_read
- .text          0x00000000000016d8       0x34 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
-                0x00000000000016d8                altera_avalon_jtag_uart_write
- .text          0x000000000000170c        0x4 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
-                0x000000000000170c                alt_dcache_flush_all
- .text          0x0000000000001710        0x8 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dev.o)
- .text          0x0000000000001718        0x4 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
-                0x0000000000001718                alt_icache_flush_all
- .text          0x000000000000171c        0x8 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
-                0x000000000000171c                altera_nios2_qsys_irq_init
- .text          0x0000000000001724       0x28 c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(lib_a-strlen.o)
-                0x0000000000001724                strlen
+ .text.startup  0x0000000000001094      0x2c0 obj/default/hello_world_small.o
+                0x0000000000001094                main
+ .text          0x0000000000001354       0x44 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_getchar.o)
+                0x0000000000001354                alt_getchar
+ .text          0x0000000000001398      0x104 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_load.o)
+                0x0000000000001398                alt_load
+ .text          0x000000000000149c       0x2c ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_main.o)
+                0x000000000000149c                alt_main
+ .text          0x00000000000014c8      0x170 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_printf.o)
+                0x00000000000014c8                alt_printf
+ .text          0x0000000000001638       0x4c ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putchar.o)
+                0x0000000000001638                alt_putchar
+ .text          0x0000000000001684       0x38 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putstr.o)
+                0x0000000000001684                alt_putstr
+ .text          0x00000000000016bc       0x24 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_sys_init.o)
+                0x00000000000016bc                alt_irq_init
+                0x00000000000016dc                alt_sys_init
+ .text          0x00000000000016e0       0x5c ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
+                0x00000000000016e0                altera_avalon_jtag_uart_read
+ .text          0x000000000000173c       0x34 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+                0x000000000000173c                altera_avalon_jtag_uart_write
+ .text          0x0000000000001770        0x4 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+                0x0000000000001770                alt_dcache_flush_all
+ .text          0x0000000000001774        0x8 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dev.o)
+ .text          0x000000000000177c        0x4 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+                0x000000000000177c                alt_icache_flush_all
+ .text          0x0000000000001780        0x8 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
+                0x0000000000001780                altera_nios2_qsys_irq_init
+ .text          0x0000000000001788       0x28 c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(lib_a-strlen.o)
+                0x0000000000001788                strlen
  *(.gnu.warning.*)
  *(.fini)
-                0x000000000000174c                PROVIDE (__etext, ABSOLUTE (.))
-                0x000000000000174c                PROVIDE (_etext, ABSOLUTE (.))
-                0x000000000000174c                PROVIDE (etext, ABSOLUTE (.))
+                0x00000000000017b0                PROVIDE (__etext, ABSOLUTE (.))
+                0x00000000000017b0                PROVIDE (_etext, ABSOLUTE (.))
+                0x00000000000017b0                PROVIDE (etext, ABSOLUTE (.))
  *(.eh_frame_hdr)
-                0x000000000000174c                . = ALIGN (0x4)
-                0x000000000000174c                PROVIDE (__preinit_array_start, ABSOLUTE (.))
+                0x00000000000017b0                . = ALIGN (0x4)
+                0x00000000000017b0                PROVIDE (__preinit_array_start, ABSOLUTE (.))
  *(.preinit_array)
-                0x000000000000174c                PROVIDE (__preinit_array_end, ABSOLUTE (.))
-                0x000000000000174c                PROVIDE (__init_array_start, ABSOLUTE (.))
+                0x00000000000017b0                PROVIDE (__preinit_array_end, ABSOLUTE (.))
+                0x00000000000017b0                PROVIDE (__init_array_start, ABSOLUTE (.))
  *(.init_array)
-                0x000000000000174c                PROVIDE (__init_array_end, ABSOLUTE (.))
-                0x000000000000174c                PROVIDE (__fini_array_start, ABSOLUTE (.))
+                0x00000000000017b0                PROVIDE (__init_array_end, ABSOLUTE (.))
+                0x00000000000017b0                PROVIDE (__fini_array_start, ABSOLUTE (.))
  *(.fini_array)
-                0x000000000000174c                PROVIDE (__fini_array_end, ABSOLUTE (.))
+                0x00000000000017b0                PROVIDE (__fini_array_end, ABSOLUTE (.))
  *(.eh_frame)
  *(.gcc_except_table .gcc_except_table.*)
  *(.dynamic)
-                0x000000000000174c                PROVIDE (__CTOR_LIST__, ABSOLUTE (.))
+                0x00000000000017b0                PROVIDE (__CTOR_LIST__, ABSOLUTE (.))
  *(.ctors)
  *(SORT(.ctors.*))
-                0x000000000000174c                PROVIDE (__CTOR_END__, ABSOLUTE (.))
-                0x000000000000174c                PROVIDE (__DTOR_LIST__, ABSOLUTE (.))
+                0x00000000000017b0                PROVIDE (__CTOR_END__, ABSOLUTE (.))
+                0x00000000000017b0                PROVIDE (__DTOR_LIST__, ABSOLUTE (.))
  *(.dtors)
  *(SORT(.dtors.*))
-                0x000000000000174c                PROVIDE (__DTOR_END__, ABSOLUTE (.))
+                0x00000000000017b0                PROVIDE (__DTOR_END__, ABSOLUTE (.))
  *(.jcr)
-                0x000000000000174c                . = ALIGN (0x4)
+                0x00000000000017b0                . = ALIGN (0x4)
 
-.rodata         0x000000000000174c      0x2a0
-                0x000000000000174c                PROVIDE (__ram_rodata_start, ABSOLUTE (.))
-                0x000000000000174c                . = ALIGN (0x4)
+.rodata         0x00000000000017b0      0x3d0
+                0x00000000000017b0                PROVIDE (__ram_rodata_start, ABSOLUTE (.))
+                0x00000000000017b0                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.str1.4
-                0x000000000000174c      0x293 obj/default/hello_world_small.o
-                                        0x294 (size before relaxing)
- *fill*         0x00000000000019df        0x1 
+                0x00000000000017b0      0x3c3 obj/default/hello_world_small.o
+                                        0x3c4 (size before relaxing)
+ *fill*         0x0000000000001b73        0x1 
  .rodata.str1.4
-                0x00000000000019e0        0xc ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dev.o)
+                0x0000000000001b74        0xc ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dev.o)
  *(.rodata1)
-                0x00000000000019ec                . = ALIGN (0x4)
-                0x00000000000019ec                PROVIDE (__ram_rodata_end, ABSOLUTE (.))
-                0x000000000000174c                PROVIDE (__flash_rodata_start, LOADADDR (.rodata))
+                0x0000000000001b80                . = ALIGN (0x4)
+                0x0000000000001b80                PROVIDE (__ram_rodata_end, ABSOLUTE (.))
+                0x00000000000017b0                PROVIDE (__flash_rodata_start, LOADADDR (.rodata))
 
-.rwdata         0x00000000000019ec       0x70 load address 0x0000000000001a5c
-                0x00000000000019ec                PROVIDE (__ram_rwdata_start, ABSOLUTE (.))
-                0x00000000000019ec                . = ALIGN (0x4)
+.rwdata         0x0000000000001b80       0x70 load address 0x0000000000001bf0
+                0x0000000000001b80                PROVIDE (__ram_rwdata_start, ABSOLUTE (.))
+                0x0000000000001b80                . = ALIGN (0x4)
  *(.got.plt)
  *(.got)
  *(.data1)
  *(.data .data.* .gnu.linkonce.d.*)
- .data          0x00000000000019ec        0x0 ../CameraSystem_TalkToSelfish_bsp//obj/HAL/src/crt0.o
- .data          0x00000000000019ec        0x0 obj/default/hello_world_small.o
- .data          0x00000000000019ec        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_getchar.o)
- .data          0x00000000000019ec        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_load.o)
- .data          0x00000000000019ec        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_main.o)
- .data          0x00000000000019ec        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_printf.o)
- .data          0x00000000000019ec        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putchar.o)
- .data          0x00000000000019ec        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putstr.o)
- .data          0x00000000000019ec        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_sys_init.o)
- .data          0x00000000000019ec        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
- .data          0x00000000000019ec        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .data          0x00000000000019ec        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
- .data          0x00000000000019ec       0x58 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dev.o)
-                0x00000000000019ec                alt_fd_list
-                0x0000000000001a1c                alt_dev_null
- .data          0x0000000000001a44        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
- .data          0x0000000000001a44        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
- .data          0x0000000000001a44        0x0 c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(lib_a-strlen.o)
-                0x0000000000009a44                _gp = ABSOLUTE ((. + 0x8000))
-                0x0000000000009a44                PROVIDE (gp, _gp)
+ .data          0x0000000000001b80        0x0 ../CameraSystem_TalkToSelfish_bsp//obj/HAL/src/crt0.o
+ .data          0x0000000000001b80        0x0 obj/default/hello_world_small.o
+ .data          0x0000000000001b80        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_getchar.o)
+ .data          0x0000000000001b80        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_load.o)
+ .data          0x0000000000001b80        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_main.o)
+ .data          0x0000000000001b80        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_printf.o)
+ .data          0x0000000000001b80        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putchar.o)
+ .data          0x0000000000001b80        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putstr.o)
+ .data          0x0000000000001b80        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .data          0x0000000000001b80        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
+ .data          0x0000000000001b80        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .data          0x0000000000001b80        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .data          0x0000000000001b80       0x58 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dev.o)
+                0x0000000000001b80                alt_fd_list
+                0x0000000000001bb0                alt_dev_null
+ .data          0x0000000000001bd8        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .data          0x0000000000001bd8        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .data          0x0000000000001bd8        0x0 c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(lib_a-strlen.o)
+                0x0000000000009bd8                _gp = ABSOLUTE ((. + 0x8000))
+                0x0000000000009bd8                PROVIDE (gp, _gp)
  *(.rwdata .rwdata.*)
  *(.sdata .sdata.* .gnu.linkonce.s.*)
- .sdata         0x0000000000001a44        0x4 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_sys_init.o)
-                0x0000000000001a44                jtag_uart
- .sdata         0x0000000000001a48       0x14 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dev.o)
-                0x0000000000001a48                alt_max_fd
-                0x0000000000001a4c                alt_dev_list
-                0x0000000000001a54                alt_fs_list
+ .sdata         0x0000000000001bd8        0x4 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_sys_init.o)
+                0x0000000000001bd8                jtag_uart
+ .sdata         0x0000000000001bdc       0x14 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dev.o)
+                0x0000000000001bdc                alt_max_fd
+                0x0000000000001be0                alt_dev_list
+                0x0000000000001be8                alt_fs_list
  *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
-                0x0000000000001a5c                . = ALIGN (0x4)
-                0x0000000000001a5c                _edata = ABSOLUTE (.)
-                0x0000000000001a5c                PROVIDE (edata, ABSOLUTE (.))
-                0x0000000000001a5c                PROVIDE (__ram_rwdata_end, ABSOLUTE (.))
-                0x0000000000001a5c                PROVIDE (__flash_rwdata_start, LOADADDR (.rwdata))
+                0x0000000000001bf0                . = ALIGN (0x4)
+                0x0000000000001bf0                _edata = ABSOLUTE (.)
+                0x0000000000001bf0                PROVIDE (edata, ABSOLUTE (.))
+                0x0000000000001bf0                PROVIDE (__ram_rwdata_end, ABSOLUTE (.))
+                0x0000000000001bf0                PROVIDE (__flash_rwdata_start, LOADADDR (.rwdata))
 
-.bss            0x0000000000001acc        0xc
-                0x0000000000001acc                __bss_start = ABSOLUTE (.)
-                0x0000000000001acc                PROVIDE (__sbss_start, ABSOLUTE (.))
-                0x0000000000001acc                PROVIDE (___sbss_start, ABSOLUTE (.))
+.bss            0x0000000000001c60        0xc
+                0x0000000000001c60                __bss_start = ABSOLUTE (.)
+                0x0000000000001c60                PROVIDE (__sbss_start, ABSOLUTE (.))
+                0x0000000000001c60                PROVIDE (___sbss_start, ABSOLUTE (.))
  *(.dynsbss)
  *(.sbss .sbss.* .gnu.linkonce.sb.*)
- .sbss          0x0000000000001acc        0xc ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_main.o)
-                0x0000000000001acc                alt_envp
-                0x0000000000001ad0                alt_argv
-                0x0000000000001ad4                alt_argc
+ .sbss          0x0000000000001c60        0xc ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_main.o)
+                0x0000000000001c60                alt_envp
+                0x0000000000001c64                alt_argv
+                0x0000000000001c68                alt_argc
  *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
  *(.scommon)
-                0x0000000000001ad8                PROVIDE (__sbss_end, ABSOLUTE (.))
-                0x0000000000001ad8                PROVIDE (___sbss_end, ABSOLUTE (.))
+                0x0000000000001c6c                PROVIDE (__sbss_end, ABSOLUTE (.))
+                0x0000000000001c6c                PROVIDE (___sbss_end, ABSOLUTE (.))
  *(.dynbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0x0000000000001ad8        0x0 ../CameraSystem_TalkToSelfish_bsp//obj/HAL/src/crt0.o
- .bss           0x0000000000001ad8        0x0 obj/default/hello_world_small.o
- .bss           0x0000000000001ad8        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_getchar.o)
- .bss           0x0000000000001ad8        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_load.o)
- .bss           0x0000000000001ad8        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_main.o)
- .bss           0x0000000000001ad8        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_printf.o)
- .bss           0x0000000000001ad8        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putchar.o)
- .bss           0x0000000000001ad8        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putstr.o)
- .bss           0x0000000000001ad8        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_sys_init.o)
- .bss           0x0000000000001ad8        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
- .bss           0x0000000000001ad8        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .bss           0x0000000000001ad8        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
- .bss           0x0000000000001ad8        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dev.o)
- .bss           0x0000000000001ad8        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
- .bss           0x0000000000001ad8        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
- .bss           0x0000000000001ad8        0x0 c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(lib_a-strlen.o)
+ .bss           0x0000000000001c6c        0x0 ../CameraSystem_TalkToSelfish_bsp//obj/HAL/src/crt0.o
+ .bss           0x0000000000001c6c        0x0 obj/default/hello_world_small.o
+ .bss           0x0000000000001c6c        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_getchar.o)
+ .bss           0x0000000000001c6c        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_load.o)
+ .bss           0x0000000000001c6c        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_main.o)
+ .bss           0x0000000000001c6c        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_printf.o)
+ .bss           0x0000000000001c6c        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putchar.o)
+ .bss           0x0000000000001c6c        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putstr.o)
+ .bss           0x0000000000001c6c        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .bss           0x0000000000001c6c        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
+ .bss           0x0000000000001c6c        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .bss           0x0000000000001c6c        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .bss           0x0000000000001c6c        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dev.o)
+ .bss           0x0000000000001c6c        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .bss           0x0000000000001c6c        0x0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .bss           0x0000000000001c6c        0x0 c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(lib_a-strlen.o)
  *(COMMON)
-                0x0000000000001ad8                . = ALIGN (0x4)
-                0x0000000000001ad8                __bss_end = ABSOLUTE (.)
+                0x0000000000001c6c                . = ALIGN (0x4)
+                0x0000000000001c6c                __bss_end = ABSOLUTE (.)
 
-.onchip_memory  0x0000000000001ad8        0x0
-                0x0000000000001ad8                PROVIDE (_alt_partition_onchip_memory_start, ABSOLUTE (.))
+.onchip_memory  0x0000000000001c6c        0x0
+                0x0000000000001c6c                PROVIDE (_alt_partition_onchip_memory_start, ABSOLUTE (.))
  *(.onchip_memory .onchip_memory. onchip_memory.*)
-                0x0000000000001ad8                . = ALIGN (0x4)
-                0x0000000000001ad8                PROVIDE (_alt_partition_onchip_memory_end, ABSOLUTE (.))
-                0x0000000000001ad8                _end = ABSOLUTE (.)
-                0x0000000000001ad8                end = ABSOLUTE (.)
-                0x0000000000001ad8                __alt_stack_base = ABSOLUTE (.)
-                0x0000000000001ad8                PROVIDE (_alt_partition_onchip_memory_load_addr, LOADADDR (.onchip_memory))
+                0x0000000000001c6c                . = ALIGN (0x4)
+                0x0000000000001c6c                PROVIDE (_alt_partition_onchip_memory_end, ABSOLUTE (.))
+                0x0000000000001c6c                _end = ABSOLUTE (.)
+                0x0000000000001c6c                end = ABSOLUTE (.)
+                0x0000000000001c6c                __alt_stack_base = ABSOLUTE (.)
+                0x0000000000001c6c                PROVIDE (_alt_partition_onchip_memory_load_addr, LOADADDR (.onchip_memory))
 
 .stab
  *(.stab)
@@ -384,24 +384,24 @@ LOAD c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x1c02
+.debug_info     0x0000000000000000     0x1c9b
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000       0x94 ../CameraSystem_TalkToSelfish_bsp//obj/HAL/src/crt0.o
- .debug_info    0x0000000000000094      0x42f obj/default/hello_world_small.o
- .debug_info    0x00000000000004c3      0x374 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_getchar.o)
- .debug_info    0x0000000000000837      0x1d9 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_load.o)
- .debug_info    0x0000000000000a10      0x194 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_main.o)
- .debug_info    0x0000000000000ba4      0x163 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_printf.o)
- .debug_info    0x0000000000000d07      0x148 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putchar.o)
- .debug_info    0x0000000000000e4f      0x171 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putstr.o)
- .debug_info    0x0000000000000fc0      0x193 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_sys_init.o)
- .debug_info    0x0000000000001153      0x1bd ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
- .debug_info    0x0000000000001310      0x1a0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_info    0x00000000000014b0       0x8f ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_info    0x000000000000153f      0x4df ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dev.o)
- .debug_info    0x0000000000001a1e       0x8f ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
- .debug_info    0x0000000000001aad       0x8f ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
- .debug_info    0x0000000000001b3c       0xc6 c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(lib_a-strlen.o)
+ .debug_info    0x0000000000000094      0x4c8 obj/default/hello_world_small.o
+ .debug_info    0x000000000000055c      0x374 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_getchar.o)
+ .debug_info    0x00000000000008d0      0x1d9 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_info    0x0000000000000aa9      0x194 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_info    0x0000000000000c3d      0x163 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_printf.o)
+ .debug_info    0x0000000000000da0      0x148 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putchar.o)
+ .debug_info    0x0000000000000ee8      0x171 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putstr.o)
+ .debug_info    0x0000000000001059      0x193 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_info    0x00000000000011ec      0x1bd ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
+ .debug_info    0x00000000000013a9      0x1a0 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_info    0x0000000000001549       0x8f ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_info    0x00000000000015d8      0x4df ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dev.o)
+ .debug_info    0x0000000000001ab7       0x8f ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_info    0x0000000000001b46       0x8f ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_info    0x0000000000001bd5       0xc6 c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(lib_a-strlen.o)
 
 .debug_abbrev   0x0000000000000000      0xc15
  *(.debug_abbrev)
@@ -422,42 +422,42 @@ LOAD c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4
  .debug_abbrev  0x0000000000000b54       0x42 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
  .debug_abbrev  0x0000000000000b96       0x7f c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(lib_a-strlen.o)
 
-.debug_line     0x0000000000000000      0xcd0
+.debug_line     0x0000000000000000      0xce6
  *(.debug_line)
  .debug_line    0x0000000000000000       0x66 ../CameraSystem_TalkToSelfish_bsp//obj/HAL/src/crt0.o
- .debug_line    0x0000000000000066      0x123 obj/default/hello_world_small.o
- .debug_line    0x0000000000000189       0xad ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_getchar.o)
- .debug_line    0x0000000000000236       0xd6 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_load.o)
- .debug_line    0x000000000000030c       0xbd ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_main.o)
- .debug_line    0x00000000000003c9      0x122 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_printf.o)
- .debug_line    0x00000000000004eb       0x4d ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putchar.o)
- .debug_line    0x0000000000000538      0x127 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putstr.o)
- .debug_line    0x000000000000065f      0x101 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_sys_init.o)
- .debug_line    0x0000000000000760      0x104 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
- .debug_line    0x0000000000000864       0xf5 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_line    0x0000000000000959       0x4e ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_line    0x00000000000009a7      0x119 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dev.o)
- .debug_line    0x0000000000000ac0       0x4e ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
- .debug_line    0x0000000000000b0e       0x50 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
- .debug_line    0x0000000000000b5e      0x172 c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(lib_a-strlen.o)
+ .debug_line    0x0000000000000066      0x139 obj/default/hello_world_small.o
+ .debug_line    0x000000000000019f       0xad ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_getchar.o)
+ .debug_line    0x000000000000024c       0xd6 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_line    0x0000000000000322       0xbd ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_line    0x00000000000003df      0x122 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_printf.o)
+ .debug_line    0x0000000000000501       0x4d ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putchar.o)
+ .debug_line    0x000000000000054e      0x127 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putstr.o)
+ .debug_line    0x0000000000000675      0x101 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_line    0x0000000000000776      0x104 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
+ .debug_line    0x000000000000087a       0xf5 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_line    0x000000000000096f       0x4e ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_line    0x00000000000009bd      0x119 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dev.o)
+ .debug_line    0x0000000000000ad6       0x4e ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_line    0x0000000000000b24       0x50 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_line    0x0000000000000b74      0x172 c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(lib_a-strlen.o)
 
-.debug_frame    0x0000000000000000      0x264
+.debug_frame    0x0000000000000000      0x25c
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0x48 obj/default/hello_world_small.o
- .debug_frame   0x0000000000000048       0x28 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_getchar.o)
- .debug_frame   0x0000000000000070       0x28 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_load.o)
- .debug_frame   0x0000000000000098       0x28 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_main.o)
- .debug_frame   0x00000000000000c0       0x38 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_printf.o)
- .debug_frame   0x00000000000000f8       0x2c ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putchar.o)
- .debug_frame   0x0000000000000124       0x28 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putstr.o)
- .debug_frame   0x000000000000014c       0x38 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_sys_init.o)
- .debug_frame   0x0000000000000184       0x20 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
- .debug_frame   0x00000000000001a4       0x20 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_frame   0x00000000000001c4       0x20 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_frame   0x00000000000001e4       0x20 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dev.o)
- .debug_frame   0x0000000000000204       0x20 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
- .debug_frame   0x0000000000000224       0x20 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
- .debug_frame   0x0000000000000244       0x20 c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(lib_a-strlen.o)
+ .debug_frame   0x0000000000000000       0x40 obj/default/hello_world_small.o
+ .debug_frame   0x0000000000000040       0x28 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_getchar.o)
+ .debug_frame   0x0000000000000068       0x28 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_frame   0x0000000000000090       0x28 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_frame   0x00000000000000b8       0x38 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_printf.o)
+ .debug_frame   0x00000000000000f0       0x2c ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putchar.o)
+ .debug_frame   0x000000000000011c       0x28 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putstr.o)
+ .debug_frame   0x0000000000000144       0x38 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_frame   0x000000000000017c       0x20 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
+ .debug_frame   0x000000000000019c       0x20 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_frame   0x00000000000001bc       0x20 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_frame   0x00000000000001dc       0x20 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_dev.o)
+ .debug_frame   0x00000000000001fc       0x20 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_frame   0x000000000000021c       0x20 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_frame   0x000000000000023c       0x20 c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(lib_a-strlen.o)
 
 .debug_str      0x0000000000000000      0x856
  *(.debug_str)
@@ -492,19 +492,19 @@ LOAD c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4
  .debug_str     0x000000000000077a       0xdc c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(lib_a-strlen.o)
                                         0x18e (size before relaxing)
 
-.debug_loc      0x0000000000000000      0x718
+.debug_loc      0x0000000000000000      0x783
  *(.debug_loc)
- .debug_loc     0x0000000000000000      0x214 obj/default/hello_world_small.o
- .debug_loc     0x0000000000000214       0x40 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_getchar.o)
- .debug_loc     0x0000000000000254       0x20 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_load.o)
- .debug_loc     0x0000000000000274       0x20 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_main.o)
- .debug_loc     0x0000000000000294      0x244 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_printf.o)
- .debug_loc     0x00000000000004d8       0x4c ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putchar.o)
- .debug_loc     0x0000000000000524       0x57 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putstr.o)
- .debug_loc     0x000000000000057b       0x41 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_sys_init.o)
- .debug_loc     0x00000000000005bc       0xb5 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
- .debug_loc     0x0000000000000671       0x7e ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_loc     0x00000000000006ef       0x29 c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(lib_a-strlen.o)
+ .debug_loc     0x0000000000000000      0x27f obj/default/hello_world_small.o
+ .debug_loc     0x000000000000027f       0x40 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_getchar.o)
+ .debug_loc     0x00000000000002bf       0x20 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_loc     0x00000000000002df       0x20 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_loc     0x00000000000002ff      0x244 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_printf.o)
+ .debug_loc     0x0000000000000543       0x4c ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putchar.o)
+ .debug_loc     0x000000000000058f       0x57 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_putstr.o)
+ .debug_loc     0x00000000000005e6       0x41 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_loc     0x0000000000000627       0xb5 ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
+ .debug_loc     0x00000000000006dc       0x7e ../CameraSystem_TalkToSelfish_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_loc     0x000000000000075a       0x29 c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4.7.3/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(lib_a-strlen.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -528,8 +528,8 @@ LOAD c:/altera/14.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/4
                 0x0000000000000000       0x10 ../CameraSystem_TalkToSelfish_bsp//obj/HAL/src/crt0.o
                 0x0000000000002000                __alt_data_end = 0x2000
                 0x0000000000002000                PROVIDE (__alt_stack_pointer, __alt_data_end)
-                0x0000000000001ad8                PROVIDE (__alt_stack_limit, __alt_stack_base)
-                0x0000000000001ad8                PROVIDE (__alt_heap_start, end)
+                0x0000000000001c6c                PROVIDE (__alt_stack_limit, __alt_stack_base)
+                0x0000000000001c6c                PROVIDE (__alt_heap_start, end)
                 0x0000000000002000                PROVIDE (__alt_heap_limit, 0x2000)
 OUTPUT(CameraSystem_TalkToSelfish.elf elf32-littlenios2)
 
