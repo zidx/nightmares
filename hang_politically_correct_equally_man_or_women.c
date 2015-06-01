@@ -96,15 +96,15 @@
 #define DATA_RECIEVED 255
 
 // For setWord. This makes this easier
-char word[20];
-alt_u8 letterCount;
+//char word[20];
+//alt_u8 letterCount;
 
 
 void sendData(alt_u8 data);
 alt_u8 recieveData();
 void game_master();
 void player();
-void setWord();
+alt_u8 setWord(char * word);
 alt_u8 startGame(alt_u8 letterCount);
 
 
@@ -123,11 +123,9 @@ int main() {
 	}
 
 	if (start == 'M')
-		while (1)
-			game_master();
+		game_master();
 	else if (start == 'P')
-		while (1)
-			player();
+		player();
 
 	return 0;
 }
@@ -135,11 +133,12 @@ int main() {
 void game_master() {
 	// Set word
 	alt_getchar();  // Recieve dummy byte
+	char word[20];
 	int j;
 	for (j = 0; j < 20; j++) {
 		word[j] = '\n';
 	}
-	setWord();
+	alt_u8 letterCount = setWord(word);
 
 	// Word placements
 	alt_u8 letterPlacement[letterCount];
@@ -299,7 +298,7 @@ void player() {
 		if (response == 0) {
 			alt_printf("Sorry, the letter '%c' was incorrect\n", letter);
 		}
-		else if (response <= letterCount) {
+		else if (response <= wordLen) {
 			alt_printf("The letter '%c' was correct and filled %x places!\n", letter, response);
 		}
 		else
@@ -339,21 +338,15 @@ void player() {
 }
 
 
-void setWord() {
+alt_u8 setWord(char * word) {
 	alt_putstr("Please enter your word (Max 20 letters):\n");
 	char letter = '#';
-	letterCount = 0;
+	alt_u8 letterCount = 0;
 	while ((letter = alt_getchar()) != '\n') {
 		word[letterCount] = letter;
 		letterCount++;
-		if (letterCount == 20) {
-			alt_putstr("Max word length reached.\n");
-		}
 	}
-	if (letterCount == 0) {
-		alt_putstr("You must enter at least one character. Please try again\n");
-		setWord();
-	}
+	return letterCount;
 }
 
 // Retries the send/recieve pattern after a timeout
