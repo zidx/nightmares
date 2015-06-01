@@ -103,9 +103,9 @@ alt_u8 letterCount;
 void sendData(alt_u8 data);
 alt_u8 recieveData();
 void game_master();
-//void player();
+void player();
 void setWord();
-alt_u8 startGame(alt_u8 wordLen);
+alt_u8 startGame(alt_u8 letterCount);
 
 
 
@@ -123,215 +123,218 @@ int main() {
 	}
 
 	if (start == 'M')
-		game_master();
-	else
-		//player();
+		while (1)
+			game_master();
+	else if (start == 'P')
+		while (1)
+			player();
 
 	return 0;
 }
 
 void game_master() {
-	while (1) {
-		// Set word
-		alt_getchar();  // Recieve dummy byte
-		setWord();
-		alt_u8 wordLen = letterCount;
+	// Set word
+	alt_getchar();  // Recieve dummy byte
+	int j;
+	for (j = 0; j < 20; j++) {
+		word[j] = '\n';
+	}
+	setWord();
 
-		// Word placements
-		int letterPlacement[wordLen];
+	// Word placements
+	alt_u8 letterPlacement[letterCount];
 
-		int j;
-		for (j = 0; j < wordLen; j++) {
-			letterPlacement[j] = 0;
-		}
+	for (j = 0; j < letterCount; j++) {
+		letterPlacement[j] = 0;
+	}
 
-		// Now we recieve input from the player and check it
-		int guesses = 0;
-		int win = 0;
-		alt_u8 guessedLetters[MAX_GUESSES];  // Already guessed letters
+	// Now we recieve input from the player and check it
+	int guesses = 0;
+	int win = 0;
+	alt_u8 guessedLetters[MAX_GUESSES];  // Already guessed letters
+	for (j = 0; j < MAX_GUESSES;  j++) {
+		guessedLetters[j] = '\n';
+	}
 
-		// Send to the player to say that we're ready for guesses
-		// We use 255 for send
-		// Wait for the return signal from the player so we know to start the game
-		// If we don't get this, something has gone wrong and we need to retry
-		alt_u8 start = startGame(wordLen);
+	// Send to the player to say that we're ready for guesses
+	// We use 255 for send
+	// Wait for the return signal from the player so we know to start the game
+	// If we don't get this, something has gone wrong and we need to retry
+	startGame(letterCount);
 
-		if (!start)
-			alt_putstr("Something has gone horribly wrong\n");
+	// Now we are ready to wait to recieve data
+	alt_u8 guess;
+	alt_u8 retVal;
+	int lettersCorrect;
+	while (!win && guesses < MAX_GUESSES) {
+		alt_putstr("Waiting for next guess\n");
+		guess = recieveData();
+		alt_putstr("Guess recieved\n");
 
-		// Now we are ready to wait to recieve data
-		alt_u8 guess;
-		alt_u8 retVal;
-		int lettersCorrect;
-		while (!win && guesses < MAX_GUESSES) {
-			alt_putstr("Waiting for next guess\n");
-			guess = recieveData();
-			alt_putstr("Guess recieved\n");
+		int i;
+		retVal = 0; // 1 - letterCount == correct, 0 == wrong, letterCount+1 = alreadyGuessed
 
-			int i;
-			retVal = 0; // 1 - wordLen == correct, 0 == wrong, wordLen+1 = alreadyGuessed
-
-			// Check if the letter is already guessed
-			for (i = 0; i < guesses; i++) {
-				if (guessedLetters[i] == guess) {
-					alt_putstr("This letter has already been guessed!\n");
-					retVal = wordLen+1;
-				}
-			}
-			if (retVal == 0) {
-				guessedLetters[guesses] = guess;
-				for (i = 0; i < wordLen; i++) {
-					if (word[i] == guess) {
-						retVal++;
-						letterPlacement[i] = 1;
-					}
-				}
-				// Increment guess value
-				guesses++;
-			}
-
-			// Display letter placements
-			lettersCorrect = 0;
-			alt_putstr("Word: ");
-			for (i = 0; i < wordLen; i++) {
-				if (letterPlacement[i] == 1) {
-					alt_printf("%c ", word[i]);
-					lettersCorrect++;
-				} else
-					alt_putstr("_ ");
-			}
-			alt_putstr("\nGuessed Letters: ");
-			for (i = 0; i < guesses; i++) {
-				if (i == 0)
-					alt_printf("%c", guessedLetters[i]);
-				else
-					alt_printf(", %c", guessedLetters[i]);
-			}
-			alt_putstr("\n\n");
-
-			// Check if win is true
-			if (lettersCorrect == wordLen) {
-				win = 1;
-				break;
-			}
-
-			// Send back the guessed answer
-			sendData(retVal);
-			recieveData();
-
-			// Send back how many guesses remain
-			sendData(MAX_GUESSES - guesses);
-			recieveData();
-
-			// Now send the word
-			for (i = 0; i < wordLen; i++) {
-				if (letterPlacement[i] == 1) {
-					sendData(word[i]);
-				}
-				else {
-					sendData('_');
-				}
-				recieveData();  //Confirmation
-			}
-
-			// Now send guesses
-			for (i = 0; i < guesses; i++) {
-				recieveData();
-				sendData(guessedLetters[i]);
+		// Check if the letter is already guessed
+		for (i = 0; i < guesses; i++) {
+			if (guessedLetters[i] == guess) {
+				alt_putstr("This letter has already been guessed!\n");
+				retVal = letterCount+1;
 			}
 		}
+		if (retVal == 0) {
+			guessedLetters[guesses] = guess;
+			for (i = 0; i < letterCount; i++) {
+				if (word[i] == guess) {
+					retVal++;
+					letterPlacement[i] = 1;
+				}
+			}
+			// Increment guess value
+			guesses++;
+		}
 
-		// Check win condition
-		if (lettersCorrect == wordLen) {
-			sendData(WIN_VAL);
-			//alt_getchar();
-			alt_putstr("Player won!\nPress a character to quit\n");
-			alt_getchar();
+		// Display letter placements
+		lettersCorrect = 0;
+		alt_putstr("Word: ");
+		for (i = 0; i < letterCount; i++) {
+			if (letterPlacement[i] == 1) {
+				alt_printf("%c ", word[i]);
+				lettersCorrect++;
+			} else
+				alt_putstr("_ ");
+		}
+		alt_putstr("\nGuessed Letters: ");
+		for (i = 0; i < guesses; i++) {
+			if (i == 0)
+				alt_printf("%c", guessedLetters[i]);
+			else
+				alt_printf(", %c", guessedLetters[i]);
+		}
+		alt_putstr("\n\n");
+
+		// Check if win is true
+		if (lettersCorrect == letterCount) {
+			win = 1;
 			break;
 		}
-		else {
-			sendData(LOSE_VAL);
-			//alt_getchar();
-			alt_putstr("Player Lost\nPress a character to quit\n");
-			alt_getchar();
+		else if (guesses == MAX_GUESSES) {
 			break;
 		}
+
+		// Send back the guessed answer
+		sendData(retVal);
+		recieveData();
+
+		// Send back how many guesses remain
+		sendData(MAX_GUESSES - guesses);
+		recieveData();
+
+		// Now send the word
+		for (i = 0; i < letterCount; i++) {
+			if (letterPlacement[i] == 1) {
+				sendData(word[i]);
+			}
+			else {
+				sendData('_');
+			}
+			recieveData();  //Confirmation
+		}
+
+		// Now send guesses
+		for (i = 0; i < guesses; i++) {
+			recieveData();
+			sendData(guessedLetters[i]);
+		}
+	}
+
+	// Check win condition
+	if (lettersCorrect == letterCount) {
+		sendData(WIN_VAL);
+		//alt_getchar();
+		alt_putstr("Player won!\nPress a character to quit\n");
+		alt_getchar();
+		//break;
+	}
+	else {
+		sendData(LOSE_VAL);
+		//alt_getchar();
+		alt_putstr("Player Lost\nPress a character to quit\n");
+		alt_getchar();
+		//break;
 	}
 }
 
 void player() {
+	// Wait for the code that the master is ready
+	int wordLen = recieveData();
+	alt_u8 guessesRemaining = MAX_GUESSES;
+	// Send that we got the word and are about to play
+	sendData(DATA_RECIEVED);
+
 	while (1) {
-		// Wait for the code that the master is ready
-		int wordLen = recieveData();
-		alt_u8 guessesRemaining = MAX_GUESSES;
-		// Send that we got the word and are about to play
+		// Now we are ready to send guesses!
+		alt_getchar();
+		alt_putstr("Please enter a letter and press enter\n");
+		alt_u8 letter = alt_getchar();
+
+		// Send the letter
+
+		sendData(letter);
+
+		// Get the response
+		alt_u8 response = recieveData();
+
+		if (response == WIN_VAL) {
+			alt_putstr("Congratulations you won!\n");
+			break;
+		}
+		else if (response == LOSE_VAL) {
+			alt_putstr("You lost because you have no friends and your life is\nmeaningless and you smell bad.\nWaiting for new game...\n");
+			break;
+		}
+		// If we come here than we're in normal gameplay
+		sendData(DATA_RECIEVED);
+		guessesRemaining = recieveData();
+
+		if (response == 0) {
+			alt_printf("Sorry, the letter '%c' was incorrect\n", letter);
+		}
+		else if (response <= letterCount) {
+			alt_printf("The letter '%c' was correct and filled %x places!\n", letter, response);
+		}
+		else
+			alt_printf("You already guessed the letter '%c'!\n", letter);
+		int numGuesses = MAX_GUESSES - guessesRemaining;
+		// Acknowledge last data recieved
 		sendData(DATA_RECIEVED);
 
-		while (1) {
-			// Now we are ready to send guesses!
-			alt_getchar();
-			alt_putstr("Please enter a letter and press enter\n");
-			alt_u8 letter = alt_getchar();
+		// Print out the characters
+		alt_putstr("Word: ");
+		int i;
+		for (i = 0; i < wordLen; i++) {
+			letter = recieveData();
+			alt_printf("%c ", letter);
 
-			// Send the letter
-
-			sendData(letter);
-
-			// Get the response
-			alt_u8 response = recieveData();
-
-			if (response == WIN_VAL) {
-				alt_putstr("Congratulations you won!\n");
-				break;
-			}
-			else if (response == LOSE_VAL) {
-				alt_putstr("You lost because you have no friends and your life is\nmeaningless and you smell bad.\nWaiting for new game...\n");
-				break;
-			}
-			// If we come here than we're in normal gameplay
 			sendData(DATA_RECIEVED);
-			guessesRemaining = recieveData();
-
-			if (response == 0) {
-				alt_printf("Sorry, the letter '%c' was incorrect\n", letter);
-			}
-			else if (response <= wordLen) {
-				alt_printf("The letter '%c' was correct and filled %x places!\n", letter, response);
-			}
-			else
-				alt_printf("You already guessed the letter '%c'!\n", letter);
-			int numGuesses = MAX_GUESSES - guessesRemaining;
-			// Acknowledge last data recieved
-			sendData(DATA_RECIEVED);
-
-			// Print out the characters
-			alt_putstr("Word: ");
-			int i;
-			for (i = 0; i < wordLen; i++) {
-				letter = recieveData();
-				alt_printf("%c ", letter);
-
-				sendData(DATA_RECIEVED);
-			}
-			alt_putstr("\nGuessed characters: ");
-
-			//acknowledgement for ready to recieve before recieving
-			for (i = 0; i < numGuesses; i++) {
-				sendData(DATA_RECIEVED);
-
-				letter = recieveData();
-
-				if (i == 0)
-					alt_printf("%c", letter);
-				else
-					alt_printf(", %c", letter);
-				//alt_printf("sent data recieved\n");
-
-			}
-			alt_putstr("\n");
-
-			alt_printf("You now have '%x' guesses remaining.\n\n", guessesRemaining);
 		}
+		alt_putstr("\nGuessed characters: ");
+
+		//acknowledgement for ready to recieve before recieving
+		for (i = 0; i < numGuesses; i++) {
+			sendData(DATA_RECIEVED);
+
+			letter = recieveData();
+
+			if (i == 0)
+				alt_printf("%c", letter);
+			else
+				alt_printf(", %c", letter);
+			//alt_printf("sent data recieved\n");
+
+		}
+		alt_putstr("\n");
+
+		alt_printf("You now have '%x' guesses remaining.\n\n", guessesRemaining);
 	}
 }
 
@@ -355,12 +358,12 @@ void setWord() {
 
 // Retries the send/recieve pattern after a timeout
 // until data is recieved.
-alt_u8 startGame(alt_u8 wordLen) {
+alt_u8 startGame(alt_u8 letterCount) {
 	int timeout = 0;
 	do {
 		alt_u8 retVal = 0;
 		int wait = 0;
-		sendData(wordLen);
+		sendData(letterCount);
 		alt_u8 strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
 		while (strobe == 0) {
 			strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
@@ -380,7 +383,6 @@ alt_u8 startGame(alt_u8 wordLen) {
 				return 1;
 			}
 			else {
-				alt_putstr("Incorrect signal recieved. Retrying...");
 				timeout = 1;
 			}
 			timeout = 0;
