@@ -113,11 +113,8 @@ int main() {
 	// Must reset everything, even the things we're not using
 	IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
 	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
-	alt_u8 curByteInVal = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
 	IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
 	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
-
-	alt_printf("\nInitial prevVal %c \n", curByteInVal);
 
 	char start = 'a';
 	while(start != 'M' && start != 'P') {
@@ -161,7 +158,7 @@ void game_master() {
 		alt_u8 guess;
 		alt_u8 retVal;
 		int lettersCorrect;
-		while (!win || guesses < MAX_GUESSES) {
+		while (!win && guesses < MAX_GUESSES) {
 			guess = recieveData();
 			int i;
 			retVal = 0; // 1 - wordLen == correct, 0 == wrong, wordLen+1 = alreadyGuessed
@@ -202,13 +199,30 @@ void game_master() {
 				else
 					alt_printf(", %c", guessedLetters[i]);
 			}
-			alt_putstr("\n");
+			alt_putstr("\n\n");
 
 			// Send back the guessed answer
 			sendData(retVal);
 			recieveData();
 			// Send back how many guesses remain
 			sendData(MAX_GUESSES - guesses);
+			recieveData();
+
+			// Now send the word
+			for (i = 0; i < wordLen; i++) {
+				if (letterPlacement[i] == 1)
+					sendData(word[i]);
+				else
+					sendData('_');
+			}
+
+			// Wait for acknoledgement
+			recieveData();
+
+			// Now send guesses
+			for (i = 0; i < guesses; i++) {
+				sendData(guessedLetters[i]);
+			}
 		}
 
 		// Check win condition
@@ -268,13 +282,39 @@ void player() {
 			if (response == 0) {
 				alt_printf("Sorry, the letter '%c' was incorrect\n", letter);
 			}
-			if (response <= wordLen) {
+			else if (response <= wordLen) {
 				alt_printf("The letter '%c' was correct and filled %x places!\n", letter, response);
 			}
 			else
 				alt_printf("You already guessed the letter '%c'!\n", letter);
 
-			alt_printf("You now have '%x' guesses remaining.\n", guessesRemaining);
+			// Acknowledge last data recieved
+			sendData(DATA_RECIEVED);
+
+			// Print out the characters
+			alt_putstr("Word: ");
+			int i;
+			for (i = 0; i < wordLen; i++) {
+				letter = recieveData();
+				alt_printf("%c ");
+			}
+			alt_putstr("\n");
+
+			sendData(DATA_RECIEVED);
+
+			// Print out guessed characters
+			alt_putstr("Guessed characters: ");
+			int numGuesses = MAX_GUESSES - guessesRemaining;
+			for (i = 0; i < numGuesses; i++) {
+				letter = recieveData();
+				if (i == 0)
+					alt_printf("%c", letter);
+				else
+					alt_printf(", %c", letter);
+			}
+			alt_putstr("\n");
+
+			alt_printf("You now have '%x' guesses remaining.\n\n", guessesRemaining);
 		}
 	}
 }
@@ -299,16 +339,16 @@ void setWord() {
 // Retries the send/recieve pattern after a timeout
 // until data is recieved.
 alt_u8 startGame(alt_u8 wordLen) {
-	alt_u8 retVal = 0;
-	int wait = 0;
 	int timeout = 0;
-	sendData(wordLen);
-	alt_u8 strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
 	do {
+		alt_u8 retVal = 0;
+		int wait = 0;
+		sendData(wordLen);
+		alt_u8 strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
 		while (strobe == 0) {
 			strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
 			wait++;
-			if (wait == 200000) {
+			if (wait == 2000000) {
 				alt_putstr("Player waiting timeout. Retrying...\n");
 				timeout = 1;
 				break;
@@ -316,8 +356,12 @@ alt_u8 startGame(alt_u8 wordLen) {
 		}
 		if (strobe == 1) {
 			retVal = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
-			if (retVal == DATA_RECIEVED)  // Value to show data was received
+			if (retVal == DATA_RECIEVED) {	// Value to show data was received
+				while (strobe == 1) {
+					strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+				}
 				return 1;
+			}
 			else {
 				alt_putstr("Incorrect signal recieved. Retrying...");
 				timeout = 1;
@@ -336,7 +380,11 @@ alt_u8 recieveData() {
 	while (strobe == 0) {
 		strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
 	}
-	return IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+	alt_u8 retVal = IORD_ALTERA_AVALON_PIO_DATA(curByteIn);
+	while (strobe == 1) {
+		strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
+	}
+	return retVal;
 }
 
 
