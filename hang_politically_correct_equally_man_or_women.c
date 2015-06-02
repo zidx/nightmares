@@ -90,7 +90,7 @@
 #define curByteIn (volatile char *)  0x0003010
 #define hempTea (volatile char *)    0x0003000
 
-#define MAX_GUESSES 10  // Corresponds to correct and incorrect guesses
+#define MAX_GUESSES 12  // Corresponds to correct and incorrect guesses
 #define WIN_VAL 254
 #define LOSE_VAL 253
 #define DATA_RECIEVED 255
@@ -123,9 +123,11 @@ int main() {
 	}
 
 	if (start == 'M')
-		game_master();
+		while (1)
+			game_master();
 	else if (start == 'P')
-		player();
+		while (1)
+			player();
 
 	return 0;
 }
@@ -250,14 +252,14 @@ void game_master() {
 	if (lettersCorrect == letterCount) {
 		sendData(WIN_VAL);
 		//alt_getchar();
-		alt_putstr("Player won!\nPress a character to quit\n");
+		alt_putstr("Player won!\nPress a character to play again\n");
 		alt_getchar();
 		//break;
 	}
 	else {
 		sendData(LOSE_VAL);
 		//alt_getchar();
-		alt_putstr("Player Lost\nPress a character to quit\n");
+		alt_putstr("Player Lost\nPress a character to play again\n");
 		alt_getchar();
 		//break;
 	}
