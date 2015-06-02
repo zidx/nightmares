@@ -99,25 +99,21 @@ int main() {
 	alt_u8 hempTeaVal = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
 	alt_u8 inStrobeVal = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
 
-
-
-	alt_printf("Initial curByteInVal %x \n", curByteInVal);
-	alt_printf("Initial inStrobeVal %x \n", inStrobeVal);
-	alt_printf("Initial hempTeaVal %x \n", hempTeaVal);
+//	alt_printf("Initial curByteInVal %x \n", curByteInVal);
+//	alt_printf("Initial inStrobeVal %x \n", inStrobeVal);
+//	alt_printf("Initial hempTeaVal %x \n", hempTeaVal);
 
 	IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
 	IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
 
 	alt_printf("\nInitial prevVal %c \n", curByteInVal);
 
-	//IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x0);
 	char start = 'a';
 	while(start != 'S' && start != 'R') {
 		alt_putstr("Enter a S to send or R to receive: \n");
 		start = alt_getchar();
 	}
-	//IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x2);
-
+	///////////////////////////// SENDING MODE ////////////////////////////////
 	if (start == 'S') {
 		start = 'a';
 		alt_getchar();
@@ -125,7 +121,6 @@ int main() {
 			alt_putstr("Enter an F to start filming\n");
 			start = alt_getchar();
 		}
-
 		// Start filming
 		IOWR_ALTERA_AVALON_PIO_DATA(outSignal, 0x2);
 
@@ -153,7 +148,6 @@ int main() {
 						alt_printf("Download permission timeout\n");
 						downloadPermission = 0;
 						break;
-
 					}
 					strobe = IORD_ALTERA_AVALON_PIO_DATA(inStrobe);
 				}
@@ -192,7 +186,7 @@ int main() {
 			}
 		}
 	}
-	//RECIEVING MODE
+	/////////////////  RECIEVING MODE /////////////////////////////////////
 	else if (start == 'R') {
 		while (1) {
 			IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
@@ -221,14 +215,6 @@ int main() {
 				if (permission == 'D') {
 
 					//sends the permission to the camera
-//					IOWR_ALTERA_AVALON_PIO_DATA(curByteOut, giveDPermission);
-//					IOWR_ALTERA_AVALON_PIO_DATA(load, 0x1);
-//
-//					empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
-//					while (empty == 0) {
-//						empty = IORD_ALTERA_AVALON_PIO_DATA(hempTea);
-//					}
-//					IOWR_ALTERA_AVALON_PIO_DATA(load, 0x0);
 					sendData(giveDPermission);
 
 					//recieves the data from the camera
@@ -262,7 +248,6 @@ int main() {
 			}
 		}
 	}
-
 	return 0;
 }
 
